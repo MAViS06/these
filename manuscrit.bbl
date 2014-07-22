@@ -1,3 +1,39 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{1988:Clavel}
+R.~Clavel.
+\newblock Delta, a fast robot with parallel geometry.
+\newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
+  Lausanne, 26-28 april 1988.
+
+\bibitem{journals/gosselin1989}
+C.~Gosselin and J.~Angeles.
+\newblock The optimum kinematic design of a spherical three-degree-of-freedom
+  parallel manipulator.
+\newblock {\em J. of Mechanisms, Transmissions and Automation in De- sign},
+  1989.
+
+\bibitem{1956:Gough}
+V.E. Gough.
+\newblock Contribution to discussion of papers on research in automobile
+  stability, control and tyre performance, 1956-1957.
+\newblock Proc. Auto Div. Inst. Mech. Eng.
+
+\bibitem{merlet1997robots}
+J.P. Merlet.
+\newblock {\em Les robots parall{\`e}les}.
+\newblock Collection robotique. Hermes, 1997.
+
+\bibitem{pieper1968kinematics}
+D.L. Pieper.
+\newblock {\em The Kinematics of Manipulators Under Computer Control}.
+\newblock Memo (Stanford artificial intelligence Laboratory). Department of
+  Mechanical Engineering, Stanford University, 1968.
+
+\bibitem{1965:Stewart}
+D.~Stewart.
+\newblock A platform with 6 degrees of freedom.
+\newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
+  15):371--386, 1965.
 
 \end{thebibliography}

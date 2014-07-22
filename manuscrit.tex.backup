@@ -1,38 +1,57 @@
-\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{article}
 %\documentclass[a4paper,10pt]{scrartcl}
 
-
-
-
+\documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
 
-\title{}
-\author{}
-\date{}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-\pdfinfo{%
-  /Title    ()
-  /Author   ()
-  /Creator  ()
-  /Producer ()
-  /Subject  ()
-  /Keywords ()
-}
+\usepackage{cite}
+
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\usepackage{tabularx}
+
+\usepackage{hyperref}
+
+\newcommand{\bv}{\hbox{\boldmath $v$}}
+\newcommand{\bomega}{\hbox{\boldmath $\omega$}}
 
 \begin{document}
 
-\include{preambule}
+\include{./titlepage/titlepage}
 
-\include{intro}
+\pagebreak
 
-\include{chapter01}
+\include{preambule/preambule}
 
-\include{chapter02}
+\pagebreak
 
-\include{chapter03}
+\include{intro/intro}
 
-\include{validations}
+\pagebreak
 
-\include{conclusions}
+\include{chapter01/chapter01}
 
+\pagebreak
+
+\include{chapter02/chapter02}
+
+\pagebreak
+
+\include{chapter03/chapter03}
+
+\pagebreak
+
+\include{validations/validations}
+
+\pagebreak
+
+\include{conclusions/conclusions}
+
+
+\bibliographystyle{plain}
+\bibliography{./biblio/bibliography}
 \end{document}

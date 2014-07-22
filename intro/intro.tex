@@ -8,21 +8,108 @@ Apr\`es un rappel des mod\`eles d'asservissement visuel, nous introduirons les s
 
 \subsection{Manipulateurs s\'erie et parall\`eles}
 
-C'est incontestablement l'industrie qui aura \'et\'e le principal vecteur de d\'eveloppement de la robotique ces deux derniers si\`ecles. L'introduction des robots dans les usines s'inscrit dans une d\'emarche d'augmentation de la productivit\'e et d'am\'elioration de la manufacture. Cela aura permis d\`es lors de soulager le travailleur humain dans des situations de travail p\'enible et/ou r\'ep\'etitif, et d'augmenter ses comp\'etences en permettant par exemple une pr\'ecision qu'il ne saurait fournir seul, ou la possibilit\'e de d\'eplacer des charges \'elev\'ees. Si la grande diversit\'e que recouvre aujourd'hui le terme de {\it robot} rend extr\^ement difficile l'\'elaboration d'une d\'efinition g\'en\'erique, nous pouvons cependant en d\'eriver des sous-cat\'egories plus faciles \`a appr\'ehender. Parmi celles-ci, nous distinguons en particulier la classe des manipulateurs dont l'objectif sera le d\'eplacement d\'objets dans l'espace. Un manipulateur sera constitu\'e de mani\`ere g\'en\'erale d'une base et d\'un organe terminal, reli\'es par une ou plusieurs cha\^ines cin\'ematiques plus ou moins \'elabor\'ees.
+\subsubsection{D\'efinitions}
 
-Une cha\^ine cin\'ematique est caract\'eris\'ee par une succession de solides reli\'es par des articulations. Les articulations simples peuvent \^etre de nature {\it prismatique} \ref{intro:fig0view0} -- permettant la translation d'un solide par rapport \`a l'autre -- ou {\it roto\"ides} \ref{intro:fig0view1} -- effectuant un mouvement de rotation autour d'un axe donn\'e. Des articulations complexes sont obtenues \`a partir de la combinaison de mouvements prismatiques et roto\"ides : une articulation cylindrique \ref{intro:fig0view2} permet par exemple la combinaison d'un mouvement de translation selon un axe donn\'e et d'un mouvement de rotation autour de ce m\^eme axe ; une articulation sph\'erique \ref{intro:fig0view3} combinera trois rotations).
+C'est incontestablement l'industrie qui aura \'et\'e le principal vecteur de d\'eveloppe\-ment de la robotique ces deux derniers si\`ecles. L'introduction des robots dans les usines s'inscrit dans une d\'emarche d'augmentation de la productivit\'e et d'am\'elio\-ration de la manufacture. Cela aura permis d\`es lors de soulager le travailleur humain dans des situations de travail p\'enible et/ou r\'ep\'etitif, et d'augmenter ses comp\'etences en permettant par exemple une pr\'ecision qu'il ne saurait fournir seul, ou la possibilit\'e de d\'eplacer des charges \'elev\'ees. Si la grande diversit\'e que recouvre aujourd'hui le terme de {\it robot} rend extr\^ement difficile l'\'elaboration d'une d\'efinition g\'en\'erique, nous pouvons cependant en d\'eriver des sous-cat\'egories plus faciles \`a appr\'ehender. Parmi celles-ci, nous distinguons en particulier la classe des manipulateurs dont l'objectif sera le d\'eplacement et positionnement d\'objets dans l'espace. Un manipulateur sera constitu\'e de mani\`ere g\'en\'erale d'une base et d\'un organe terminal, reli\'es par une ou plusieurs cha\^ines cin\'ematiques plus ou moins \'elabor\'ees.
 
-\begin{figure}[!h]
+Une cha\^ine cin\'ematique est caract\'eris\'ee par une succession de solides reli\'es par des articulations. Les articulations simples peuvent \^etre de nature {\it prismatique} \ref{intro:fig0view0} -- permettant la translation d'un solide par rapport \`a l'autre -- ou {\it roto\"ides} \ref{intro:fig0view1} -- effectuant un mouvement de rotation autour d'un axe donn\'e. Des articulations complexes sont obtenues \`a partir de la combinaison de mouvements prismatiques et/ou roto\"ides : une articulation cylindrique \ref{intro:fig0view2} permet par exemple la combinaison d'un mouvement de translation selon un axe donn\'e et d'un mouvement de rotation autour de ce m\^eme axe ; autre exemple, une articulation sph\'erique \ref{intro:fig0view3} combinera quant \`a elle trois rotations.
+
+\begin{figure}[!ht]
   \centering
       \subfloat[Articulation simple de type prismatique]{\label{intro:fig0view0}
-    \includegraphics[width=.22\linewidth]{./intro/figures/prismaticJoint.jpg}} \hfill
+    \includegraphics[width=.24\linewidth]{./intro/figures/prismaticJoint.jpg}} \hfill
     \subfloat[Articulation simple de type roto\"ide]{\label{intro:fig0view1}
-    \includegraphics[width=.22\linewidth]{./intro/figures/revoluteJoint.jpg}} \hfill
+    \includegraphics[width=.24\linewidth]{./intro/figures/revoluteJoint.jpg}} \hfill
   \subfloat[Articulation compos\'ee de type cylindrique]{\label{intro:fig0view2}
-    \includegraphics[width=.22\linewidth]{./intro/figures/cylindricalJoint.jpg}} \hfill
+    \includegraphics[width=.24\linewidth]{./intro/figures/cylindricalJoint.jpg}} \hfill
   \subfloat[Articulation compos\'ee de type sph\'erique]{\label{intro:fig0view3}
-    \includegraphics[width=.22\linewidth]{./intro/figures/sphericalJoint.jpg}}
+    \includegraphics[width=.24\linewidth]{./intro/figures/sphericalJoint.jpg}}
     \caption{\footnotesize{Diff\'erents exemples d'articulations.}}
 \label{intro:fig0}
 \end{figure}
+
+On appelle {\it coordonn\'ees articulaires} l'ensemble des \'etats de chacune des articulations \`a un instant donn\'e. Lorsque les articulations ne sont pas laiss\'ees libres, leur valeur dans l'{\it espace articulaire} sera contr\^ol\'ee par des {\it actionneurs} : on distinguera donc les {\it articulations actionn\'ees} des {\it articulations libres}. Les coordonn\'ees articulaires sont exprim\'ees dans un espace articulaire propre \`a chaque articulation. Les param\`etres n\'ecessaires \`a l'expression des coordonn\'ees articulaires sont g\'en\'eralement au nombre de 3 pour un point (ses coordonn\'ees dans l'espace cart\'esien) et de 6 pour un solide (position cart\'esienne compl\'et\'ee par trois angles de rotation). Le nombre de param\`etres non fix\'es par la g\'eom\'etrie du robot et n\'ecessaires \`a la description exhaustive des coordonn\'ees d\'une articulation est appel\'e {\it degr\'e de libert\'e}.
+
+De la m\^eme mani\`ere, on parlera des {\it coordonn\'ees op\'erationnelles} pour d\'efinir la position de l'organe terminal, exprim\'ees dans le rep\`ere de l'organe terminal. A nouveau, nous pouvons d\'efinir les degr\'es de libert\'e de l'organe terminal comme le nombre de param\`etres contr\^ol\'es pour le d\'eplacer dans l'espace. Cette notion est \`a distinguer de la mobilit\'e de l'organe terminal, qui correspond aux possibilit\'es de d\'eplacement de l'organe terminal. Si l'on d\'ecide par exemple de contr\^oler les mouvements en rotation, de bloquer deux rotations mais d'en laisser libre une, la mobilit\'e sera de 4, mais le nombre de degr\'es de libert\'es ne sera que de 3.
+
+Enfin, on peut d\'efinir pour chaque segment son {\it degr\'e de connexion} comme \'etant le nombre de solides auxquels il est reli\'e par une articulation libre ou actionn\'ee. Lorsque l'ensemble des segments ont un degr\'e de connexion \'egal \`a 2 \`a l'exception de la base et de l'organe terminal qui ont de degr\'e de connexion \'egal \`a 1, on parle de {\it cha\^ine cin\'ematique ouverte} \ref{intro:fig1view0}. Lorsque l'un des segments au moins (différent de la base) poss\`ede un degr\'e de connexion sup\'erieur ou \'egal \`a 3, nous avons une {\it cha\^ine cin\'ematique ferm\'ee} \ref{intro:fig1view1} \cite{journals/gosselin1989}. Les cha\^ines cin\'ematiques complexes sont constitu\'ees de plusieurs cha\^ines ferm\'ees et/ou ouvertes.
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Sch\'ema d'une cha\^ine cin\'ematique ouverte]{\label{intro:fig1view0}
+    \includegraphics[width=.48\linewidth]{./intro/figures/openchain.png}} \hfill
+    \subfloat[Sch\'ema d'une cha\^ine cin\'ematique ferm\'ee]{\label{intro:fig1view1}
+    \includegraphics[width=.48\linewidth]{./intro/figures/closedchain.png}}
+    \caption{\footnotesize{Exemples de cha\^ines cin\'ematiques ouvertes et ferm\'ees : les $S_i$ repr\'esentent les diff\'erents segments interm\'ediaires, tandis que les $A_i$ correspondent aux articulations. Dans \ref{intro:fig1view0}, tous les segments $S_i$ ont un degr\'e de connexion \'egal \`a 2 ; seuls la base et l'organe terminal ont un degr\'e de connexion \'egal \`a 1. Il est visible dans \ref{intro:fig1view1} que tous les segments \`a l'exception de $S_4$ poss\`edent un degr\'e de connexion \`egal \`a 3.}}
+\label{intro:fig1}
+\end{figure}
+
+\subsubsection{Architectures s\'eries}
+
+On appelle {\it robot série} un système constitué d'{\bf une chaîne cinématique ouverte dont chaque segment est relié au suivant par une articulation simple} \ref{intro:fig2}. Longtemps dominants dans l'industrie, les robots séries ont pu être privilégiés grâce aux deux caractéristiques suivantes :
+\begin{itemize}
+ \item sous certaines conditions, le modèle cinématique inverse des robots séries peut être résolu analytiquement \cite{pieper1968kinematics}
+ \item leur espace de travail peut rapidement devenir assez conséquent.
+\end{itemize}
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Robot série présentant 3 articulations rotoïdes]{\label{intro:fig2view0}
+    \includegraphics[width=.48\linewidth]{./intro/figures/serialrobot01.png}} \hfill
+    \subfloat[Robot série présentant 3 articulations prismatiques]{\label{intro:fig2view1}
+    \includegraphics[width=.48\linewidth]{./intro/figures/serialrobot02.png}}
+    \caption{\footnotesize{Exemples de robots séries}}
+\label{intro:fig2}
+\end{figure}
+
+Une architecture série présente toutefois plusieurs inconvénients non-négligeables dans un contexte industriel tels que :
+\begin{itemize}
+ \item chaque segment et articulation porte la charge de tous ceux qui leur succèdent dans la chaîne cinématique. En particulier, cela affaiblit la dynamique lors de l'actionnement des articulations : segments et articulations doivent être rigidifiés, ils sont donc plus lourds, 
+ \item les erreurs se propagent de segments en segments ; la précision tout comme la répétabilité du manipulateur en sont affectées,
+ \item les charges manipulables ne peuvent être excessives, car elles seront supportées par l'ensemble des segments et articulations.
+\end{itemize}
+
+Ainsi, une architecture série impose souvent un dispositif imposant, dont la précision, la dynamique et la faible capacité de charges se révèleront insuffisants pour un grand nombre de tâches requises en particulier par l'industrie moderne.
+
+Une alternative possible consiste en l'utilisation de chaînes cinématiques fermées permettant
+\begin{itemize}
+ \item une répartition des charges (segment ultérieurs et poids de l'objet manipulé),
+ \item une compensation des erreurs entre chaque ``branche'' de la chaîne cinématique fermée,
+ \item une plus grand flexibilité des articulations, impliquant une dynamique plus grande.
+\end{itemize}
+
+Les architectures parallèles en particulier présentent une des implémentations possibles de chaînes cinématiques fermées, et leurs caractéristiques -- sur lesquelles nous allons nous pencher par la suite -- ont contribué à ce qu'elles s'installent progressivement dans le paysage de la robotique.
+
+
+\subsubsection{Architectures parallèles}
+
+Une définition des robots parallèles est donnée dans \cite{merlet1997robots} :\\
+{\it Un manipulateur parallèle est constitué d’un organe terminal à $n$ degrés de liberté et d’une base fixe, reliés entre eux par au moins deux chaînes
+cinématiques indépendantes, la motorisation s’effectuant par $n$ actionneurs simples.}\\
+
+Parmi les exemples les plus cités dans la littérature, nous trouvons la plateforme de Gough-Stewart \cite{1956:Gough}, \cite{1965:Stewart} et le robot Delta \cite{1988:Clavel}.
+
+Initialement développée pour des applications dans l'industrie automobile \ref{intro:fig3view0}, la plateforme de Gough-Stewart a par la suite été utilisée dans des applications diverses au rang desquelles les simulateurs de vols \ref{intro:fig3view1}. Sa plateforme mobile peut être déplacée selon 6 degrés de liberté (translations $+$ rotations) à l'aide de six jambes indépendantes actionnées par des vérins pneumatiques. Les articulations la reliant à la base (cardan) et à la plateforme (rotule) sont quant à elles laissées libres.
+
+Le robot Delta \ref{intro:fig3view2} permet un déplacement de sa platforme selon les trois degrés de liberté correspondant aux translations. Trois jambes sont utilisées pour cela, chacune étant reliée à la base par une articulation rotoïde à un levier, lui-même relié à un segment parallélogramme par une seconde articulation rotoïde, une troisième articulation rotoïde liant ce segment à l'organe terminal. Il peut atteindre des vitesses allant jusqu'à 10 m/s et des accélérations jusqu'à 20G, ce qui le rend particulièrement adapté pour des tâches de conditionnement. 
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Plateforme de Gough utilisée dans une usine de pneumatiques]{\label{intro:fig3view0}
+    \includegraphics[width=.34\linewidth]{./intro/figures/parallelrobot01.jpg}} \hfill
+    \subfloat[Plateforme de Gouch-Stewart utilisée pour des simulateurs de vols]{\label{intro:fig3view1}
+    \includegraphics[width=.60\linewidth]{./intro/figures/parallelrobot02.jpg}} \\
+    \subfloat[Robot Delta, particulièrement adapté aux tâches de ``pick and place'']{\label{intro:fig3view2}
+    \includegraphics[width=.45\linewidth]{./intro/figures/parallelrobot03.jpg}}
+    \caption{\footnotesize{Exemples de robots parallèles}}
+\label{intro:fig3}
+\end{figure}
+
+De manière générale, les manipulateurs parallèles présentent les caractéristi\-ques sui\-vantes permettant de les comparer avantageusement aux manipulateurs séries :
+\begin{itemize}
+ \item blablabla
+ \item blablabla
+ \item blablabla
+ \item blablabla
+\end{itemize}
 
