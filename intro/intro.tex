@@ -62,7 +62,7 @@ On appelle {\it robot série} un système constitué d'{\bf une chaîne cinémat
 \label{intro:fig2}
 \end{figure}
 
-Une architecture série présente toutefois plusieurs inconvénients non-négligeables dans un contexte industriel tels que :
+Une architecture série présente toutefois plusieurs inconvénients non négligeables dans un contexte industriel tels que :
 \begin{itemize}
  \item chaque segment et articulation porte la charge de tous ceux qui leur succèdent dans la chaîne cinématique. En particulier, cela affaiblit la dynamique lors de l'actionnement des articulations : segments et articulations doivent être rigidifiés, ils sont donc plus lourds, 
  \item les erreurs se propagent de segments en segments ; la précision tout comme la répétabilité du manipulateur en sont affectées,
@@ -107,9 +107,73 @@ Le robot Delta \ref{intro:fig3view2} permet un déplacement de sa platforme selo
 
 De manière générale, les manipulateurs parallèles présentent les caractéristi\-ques sui\-vantes permettant de les comparer avantageusement aux manipulateurs séries :
 \begin{itemize}
- \item blablabla
- \item blablabla
- \item blablabla
- \item blablabla
+ \item une précision accrue par un mécanisme de {\bf compensation} des erreurs entre les différentes chaînes cinématiques (autrement appelées {\it jambes}),
+ \item une capacité de charge élevée due à la {\bf répartition} de la charge sur les différentes jambes,
+ \item une grande rigidité provenant de la taille réduite des chaînes cinématiques,
+ \item une dynamique élevée conséquente de la {\bf coopération} des différentes jambes dans le positionnement de l'organe terminal.
 \end{itemize}
+
+Toutefois, les mécanismes parallèles possèdent plusieurs inconvénients qui doivent être pris en compte lors du choix d'une architecture :
+\begin{itemize}
+ \item des modèles géométriques directs complexes, dont la résolution algébrique n'est pas toujours possible,
+ \item existence de singularités pouvant conduire à une perte de contrôle du manipulateur,
+ \item la répartition entre les jambes des forces appliquées sur la plateforme n'est qu'en de très rares cas uniforme ; certaines positions peuvent affecter le contrôle, la rigidité et la précision du mécanisme,
+ \item un espace de travail limité inférieur à l'intersection des espaces atteignables par chaque jambe,
+\end{itemize}
+
+On peut distinguer deux types de stratégies concernant la résolution des modèles géométriques directs : une première consiste à utiliser des outils numé\-riques tels l'analyse par intervalles \cite{Merlet04solvingthe}, une seconde à choisir une géométrie pour laquelle une résolution algébrique est possible \cite{2003:Krut1}. Concernant les diverses singularités, la difficulté peut être contournée par exemple par l'utilisation de méthodes de planification de trajectoires \cite{2008:Chen.Chi}, \cite{1998:Dasgupta.Mruthyunjaya} ou à nouveau grâce à la détermination de géométries adaptées \cite{w1994:DiCaprioStanisic}. Il est évidemment possible de renforcer la structure des jambes et des actionneurs pour assurer la rigidité des chaînes cinématiques en toutes circonstances ; il est également possible, lorsque pour une position de l'organe terminal donnée, plusieurs configurations articulaires sont possibles, de choisir celle qui garantit le meilleur fonctionnement du robot \cite{2002:Verhoeven.Miller} : ainsi, l'existence de plusieurs solutions au modèle géométrique direct devient un avantage plus qu'en inconvénient, en ce que cela permet d'optimiser certains critères -- ici la répartition des forces exercées sur la plateforme -- pour un meilleur contrôle du robot.
+
+La problématique d'un espace de travail réduit subsiste et reste une contrainte forte des mécanismes parallèles. Bien qu'ils présentent des spécificités propres pour chacune des caractéristiques déjà évoquées (rigidité, précision, charge nominale, \dots), la classe des robots parallèles à câbles a principalement été développée afin de conserver les propriétés des robots parallèles pour des applications exigeant un mécanisme léger possédant un volume de travail de taille conséquente, par exemple pour intervenir lors de catastrophes naturelles ou dans des environnements toxiques \cite{1992:Albus.Bostelman.ea}. C'est à l'étude et au développement de cette catégorie paticulière de manipulateurs que seront consacrés l'essentiel des travaux présentés dans ce manuscrit et pour laquelle nous emploierons désormais indistinctement les noms de robots, manipulateurs, robots parallèles à câbles ou CDPR (pour {\it cable-driven parallel robot}).
+
+\subsection{Les manipulateurs parallèles à câbles}
+
+Les manipulateurs parallèles à câbles présentent une structure en chaînes cinématiques fermées, la base et la plateforme étant reliées exclusivements au moyen de câbles. Les actionneurs sont en général positionnés sur la base et leur fonction consiste à contrôler la longueur des câbles. On peut donc les considérer comme des articulations prismatiques dont la course peut s'avérer rapidement atteindre des longueurs remarquables, augmentant considérablement l'espace de travail du manipulateur.
+
+Afin de contrôler la longueur des câbles, plusieurs types d'articulations peuvent être utilisés, parmi lesquels :
+\begin{itemize}
+ \item des poulies actionnées par des moteurs rotatifs autour desquelles s'enrouleront ou se dérouleront les câbles \ref{intro:fig4view0} ; cette solution a l'avantage d'être extrêmement légère et aisément déployable, mais présente l'inconvénient du contrôle de la longueur enroulée lorsque le câble n'est pas guidé : il est dès lors impossible d'éviter une superposition lors de l'enroulement, et dès lors de connnaître le diamètre réel pour une couche donnée.
+ \item les câbles sont reliés à des plateformes se déplaçant sur des rails, ce qui permet d'en contrôler la longueur \cite{merlet2008} ; la multiplication des plateformes en mouvement permet en théorie un contrôle plus rapide et plus précis \ref{intro:fig4view1}. 
+\end{itemize}
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[L'enroulement et le déroulement des câble sse fait ici par un système de poulie actionnée par un moteur]{\label{intro:fig4view0}
+    \includegraphics[width=.55\linewidth]{./intro/figures/winchesactuator.jpg}} \hfill
+    \subfloat[Les câbles sont fixés à des plateformes pouvant se déplacer linéairement sur des rails, permettant un contrôle de la longueur]{\label{intro:fig4view1}
+    \includegraphics[width=.42\linewidth]{./intro/figures/linearactuator.png}}
+    \caption{\footnotesize Deux types d'articulations et d'actionnement pour un robot à câble}
+\label{intro:fig4}
+\end{figure}
+
+Toutefois, quelque-soit le type d'articulation et d'actionnement choisis, la force que peut exercer un seul câble sur l'organe terminal est nécessairement unilatérale : un câble seul peut tirer, mais ne peut pas pousser la plateforme. Il faut donc, pour pouvoir contrôler le mouvement dans son intégralité, que les câbles travaillent en opposition. Il a ainsi été montré que $n+1$ câbles au minimum sont requis pour assurer le contrôle de $n$ degrés de liberté. On peut cependant considérer la gravité comme une force unilatérale et la représenter comme un câble virtuel : il est ainsi possible de n'utiliser que $n$ câbles pour $n$ degrés de liberté.
+
+On distingue donc deux types de configurations pour un robot parallèle à câbles :
+\begin{itemize}
+ \item en {\it configuration pleinement contrainte} \ref{intro:fig5view0}, les câbles travaillent en opposition et $n+1$ sont nécessaires pour assurer des déplacements et l'application de forces correspondant à $n$ degrés de liberté.
+ \item en {\it configuration suspendue} \ref{intro:fig5view1}, la gravité agit comme un câble virtuel : les câbles sont fixés généralement au point le plus haut du dispositif, et $n$ suffisent pour déplacer et orienter l'organe terminal selon $n$ degrés de liberté. On retrouve parfois ce type de configuration dans la littérature sous le nom de {\it grue} ou {\it crane}. Pour exemple, le manipulateur {\it Nist Spider} \cite{1992:Albus.Bostelman.ea} mentionné précédemment présentait une configuration suspendue.
+\end{itemize}
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Exemple de configuration pleinement contrainte]{\label{intro:fig5view0}
+    \includegraphics[width=.50\linewidth]{./intro/figures/robot_cdpr_noncrane.jpg}} \hfill
+    \subfloat[LExemple de configuration suspendue]{\label{intro:fig5view1}
+    \includegraphics[width=.40\linewidth]{./intro/figures/robot_cdpr_crane.jpg}}
+    \caption{\footnotesize Deux configurations possibles pour un robot parallèle à câble}
+\label{intro:fig5}
+\end{figure}
+
+Une caractéristique sensible des manipulateurs parallèles à câbles qui les différencie des manipulateurs parallèles classiques est la {\bf non-rigidité des jambes}. Sous certaines conditions, un ou plusieurs câbles peuvent être détendus, ce qui a pour effet 1/ de modifier leur géométrie, 2/ ils n'exercent plus de force sur la plateforme. Pour certaines configurations, il peut d'ailleurs être montré qu'il existera toujours au moins un câble détendu quelque-soit la position de l'organe terminal et les forces exercées sur celui-ci. Le prototype sur lequel nous avons conduit nos expériences présentant ce type de comportement, nous reviendrons plusieurs fois largement sur ce point.
+
+Enfin, lorsqu'un câble est sous tension, un modèle complet doit pouvoir prendre en compte son élasticité, sa masse, \dots qui affecteront sa longueur réelle et donc la précision avec laquelle le manipulateur est contrôlé.
+
+Comparativement donc aux robots parallèles classiques, les robots parallèles à câbles présentent les caractéristiques suivantes :
+\begin{itemize}
+ \item la structure parallèle permet de conserver les propriétés de compensation des erreurs, de répartition des charges et des efforts, de coopération des chaînes cinématique pour l'exécution d'un mouvement
+ \item l'espace de travail est considérablement agrandi malgré la conservation de la légèreté du dispositif.
+ \item la modélisation des câbles ainsi que le choix des articulations et actionneurs complexifient le modèle du robot ; une simplification du modèle en négligeant certaines de ces caractéristiques est alors source d'imprécisions qui devront être intégrées au schéma de contrôle.
+ \item l'unilatéralité des forces suppose que nous puissions nous retrouver dans une situation où un ou plusieurs câbles sont détendus. Nous verrons cependant qu'il est possible de prendre avantage de cette situation afin d'améliorer le contrôle de l'organe terminal pour une trajectoire donnée.
+\end{itemize}
+
+
 

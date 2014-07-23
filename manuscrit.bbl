@@ -1,10 +1,34 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{1992:Albus.Bostelman.ea}
+J.~Albus, R.~Bostelman, and N.~Dagalakis.
+\newblock The nist spider, a robot crane.
+\newblock {\em Journal of research of the National Institute of Standards and
+  Technology}, 97(3):373--385, may 1992.
+
+\bibitem{2008:Chen.Chi}
+C-T. Chen and H-W. Chi.
+\newblock Singularity-free trajectory planning of platform-type parallel
+  manipulators for minimum actuating efforts and reactions.
+\newblock {\em Robotica}, 26(3):371--384, may 2008.
 
 \bibitem{1988:Clavel}
 R.~Clavel.
 \newblock Delta, a fast robot with parallel geometry.
 \newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
   Lausanne, 26-28 april 1988.
+
+\bibitem{1998:Dasgupta.Mruthyunjaya}
+B.~Dasgupta and T.S. Mruthyunjaya.
+\newblock Singularity-free path planning for the stewart platform manipulator.
+\newblock {\em Mechanism and Machine Theory}, 33(6):711--725, august 1998.
+
+\bibitem{w1994:DiCaprioStanisic}
+F.~Di~Caprio and M.~M. Stanivsic.
+\newblock The kinematic control equations of a singularity-free
+  six-degree-of-freedom manipulator.
+\newblock {\em Transactions of the ASME, Journal of Mechanical Design},
+  116:17--21, 1994.
 
 \bibitem{journals/gosselin1989}
 C.~Gosselin and J.~Angeles.
@@ -18,6 +42,25 @@ V.E. Gough.
 \newblock Contribution to discussion of papers on research in automobile
   stability, control and tyre performance, 1956-1957.
 \newblock Proc. Auto Div. Inst. Mech. Eng.
+
+\bibitem{2003:Krut1}
+S.~Krut.
+\newblock {\em Contribution `a l''etude des robots parall`eles l'egers, 3T-1R
+  et 3T-2R, `a forts d'ebattements angulaires}.
+\newblock PhD thesis, Universit'e Montpellier II, Montpellier, 13 november
+  2003.
+
+\bibitem{Merlet04solvingthe}
+J.-P. Merlet.
+\newblock Solving the forward kinematics of a gough-type parallel manipulator
+  with interval analysis, 2004.
+
+\bibitem{merlet2008}
+J.~P Merlet.
+\newblock Kinematics of the wire-driven parallel robot marionet using linear
+  actuators.
+\newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
+  Conference on}, pages 3857--3862, May 2008.
 
 \bibitem{merlet1997robots}
 J.P. Merlet.
@@ -35,5 +78,11 @@ D.~Stewart.
 \newblock A platform with 6 degrees of freedom.
 \newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
   15):371--386, 1965.
+
+\bibitem{2002:Verhoeven.Miller}
+R.~Verhoeven and M.~Miller.
+\newblock Tension distribution in tendon-based stewart platform.
+\newblock In {\em ARK}, pages 117--124, Caldes de Malavalla, 29 june -- 2 july
+  2002.
 
 \end{thebibliography}
