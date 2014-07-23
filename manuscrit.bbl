@@ -6,6 +6,13 @@ J.~Albus, R.~Bostelman, and N.~Dagalakis.
 \newblock {\em Journal of research of the National Institute of Standards and
   Technology}, 97(3):373--385, may 1992.
 
+\bibitem{2011:Carricato.Merlet}
+M.~Carricato and J-P. Merlet.
+\newblock Direct geometrico-static problem of under-constrained cable-driven
+  parallel robots with three cables.
+\newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
+  3011--3017, Shangai, 9-13 may 2011.
+
 \bibitem{2008:Chen.Chi}
 C-T. Chen and H-W. Chi.
 \newblock Singularity-free trajectory planning of platform-type parallel
@@ -42,6 +49,18 @@ V.E. Gough.
 \newblock Contribution to discussion of papers on research in automobile
   stability, control and tyre performance, 1956-1957.
 \newblock Proc. Auto Div. Inst. Mech. Eng.
+
+\bibitem{1974IrvineCaughey}
+H.~M. {Irvine} and T.~K. {Caughey}.
+\newblock {The Linear Theory of Free Vibrations of a Suspended Cable}.
+\newblock {\em Royal Society of London Proceedings Series A}, 341:299--315,
+  December 1974.
+
+\bibitem{2006:Kozak.ea}
+K.~Kozak et~al.
+\newblock Static analysis of cable-driven manipulators with non-negligible
+  cable mass.
+\newblock {\em IEEE Trans. on Robotics}, 22(3):425--433, june 2006.
 
 \bibitem{2003:Krut1}
 S.~Krut.

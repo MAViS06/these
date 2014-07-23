@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  23 JUL 2014 17:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  23 JUL 2014 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,31 +694,13 @@ File: ./intro/figures/serialrobot02.png Graphic file (type png)
 Package pdftex.def Info: ./intro/figures/serialrobot02.png used on input line 6
 0.
 (pdftex.def)             Requested size: 165.59853pt x 105.9416pt.
-
-Overfull \hbox (15.2505pt too wide) in paragraph at lines 65--66
-[]\OT1/cmr/m/n/10 Une ar-chi-tec-ture s^^Serie pr^^Sesente toute-fois plusieurs
- in-conv^^Senients non n^^Segligeables
- []
-
-[2 <./intro/figures/prismaticJoint.jpg> <./intro/figures/revoluteJoint.jpg> <./
-intro/figures/cylindricalJoint.jpg> <./intro/figures/sphericalJoint.jpg>]
-[3 <./intro/figures/openchain.png> <./intro/figures/closedchain.png> <./intro/f
-igures/serialrobot01.png> <./intro/figures/serialrobot02.png>]
-Overfull \hbox (15.58385pt too wide) in paragraph at lines 77--78
-[]\OT1/cmr/m/n/10 une com-pen-sa-tion des er-reurs en-tre chaque ``branche'' de
- la cha^^^Pne cin^^Sematique
- []
-
-
+ [2 <./intro/figures/prismaticJoint.jpg> <./intro/figures/revoluteJoint.jpg> <.
+/intro/figures/cylindricalJoint.jpg> <./intro/figures/sphericalJoint.jpg>] [3 <
+./intro/figures/openchain.png> <./intro/figures/closedchain.png> <./intro/figur
+es/serialrobot01.png> <./intro/figures/serialrobot02.png>]
 Overfull \hbox (0.63936pt too wide) in paragraph at lines 81--82
 []\OT1/cmr/m/n/10 Les ar-chi-tec-tures par-all^^Reles en par-ti-c-ulier pr^^Ses
 entent une des impl^^Sementations
- []
-
-
-Overfull \hbox (4.36153pt too wide) in paragraph at lines 81--82
-\OT1/cmr/m/n/10 pos-si-bles de cha^^^Pnes cin^^Sematiques ferm^^Sees, et leurs 
-car-act^^Seristiques -- sur lesquelles
  []
 
 
@@ -749,29 +731,11 @@ File: ./intro/figures/parallelrobot03.jpg Graphic file (type jpg)
 Package pdftex.def Info: ./intro/figures/parallelrobot03.jpg used on input line
  103.
 (pdftex.def)             Requested size: 155.24895pt x 189.78786pt.
-
-Overfull \hbox (6.75009pt too wide) in paragraph at lines 113--114
-[]\OT1/cmr/m/n/10 une dy-namique ^^Selev^^See cons^^Sequente de la \OT1/cmr/bx/
-n/10 coop^^Seration \OT1/cmr/m/n/10 des diff^^Serentes jambes
- []
-
-[4] [5 <./intro/figures/parallelrobot01.jpg> <./intro/figures/parallelrobot02.j
-pg> <./intro/figures/parallelrobot03.jpg>]
-Overfull \hbox (24.05608pt too wide) in paragraph at lines 130--131
+ [4] [5 <./intro/figures/parallelrobot01.jpg> <./intro/figures/parallelrobot02.
+jpg> <./intro/figures/parallelrobot03.jpg>]
+Overfull \hbox (1.50047pt too wide) in paragraph at lines 130--131
 \OT1/cmr/m/n/10 Les ma-nip-u-la-teurs par-all^^Reles ^^Ra c^ables pr^^Sesentent
- une struc-ture en cha^^^Pnes cin^^Sematiques
- []
-
-
-Overfull \hbox (12.88945pt too wide) in paragraph at lines 134--135
-[]\OT1/cmr/m/n/10 des poulies ac-tionn^^Sees par des mo-teurs ro-tat-ifs au-tou
-r desquelles s'enrouleront
- []
-
-
-Overfull \hbox (11.81534pt too wide) in paragraph at lines 134--135
-\OT1/cmr/m/n/10 ou se d^^Serouleront les c^ables []5a[] ; cette so-lu-tion a l'
-avantage d'^etre extr^emement
+ une struc-ture en cha^^^Pnes cin^^Sema-
  []
 
 [6] <./intro/figures/winchesactuator.jpg, id=130, 803.0pt x 452.69125pt>
@@ -782,21 +746,21 @@ Package pdftex.def Info: ./intro/figures/winchesactuator.jpg used on input line
  141.
 (pdftex.def)             Requested size: 189.75105pt x 106.96959pt.
 
-<./intro/figures/linearactuator.png, id=131, 3083.52pt x 2312.64pt>
+<./intro/figures/linearactuator.png, id=131, 803.0pt x 602.25pt>
 File: ./intro/figures/linearactuator.png Graphic file (type png)
 
 <use ./intro/figures/linearactuator.png>
 Package pdftex.def Info: ./intro/figures/linearactuator.png used on input line 
 143.
-(pdftex.def)             Requested size: 144.89937pt x 108.65175pt.
+(pdftex.def)             Requested size: 144.89937pt x 108.676pt.
 
-<./intro/figures/robot_cdpr_noncrane.jpg, id=135, 693.5511pt x 455.301pt>
+<./intro/figures/robot_cdpr_noncrane.jpg, id=135, 803.0pt x 526.96875pt>
 File: ./intro/figures/robot_cdpr_noncrane.jpg Graphic file (type jpg)
 
 <use ./intro/figures/robot_cdpr_noncrane.jpg>
 Package pdftex.def Info: ./intro/figures/robot_cdpr_noncrane.jpg used on input 
 line 159.
-(pdftex.def)             Requested size: 172.5pt x 113.2414pt.
+(pdftex.def)             Requested size: 172.5pt x 113.19957pt.
 
 <./intro/figures/robot_cdpr_crane.jpg, id=136, 469.755pt x 380.42125pt>
 File: ./intro/figures/robot_cdpr_crane.jpg Graphic file (type jpg)
@@ -806,22 +770,26 @@ Package pdftex.def Info: ./intro/figures/robot_cdpr_crane.jpg used on input lin
 e 161.
 (pdftex.def)             Requested size: 137.9979pt x 111.7531pt.
 
-Overfull \hbox (11.33583pt too wide) in paragraph at lines 166--167
-\OT1/cmr/m/n/10 diff^^Serencie des ma-nip-u-la-teurs par-all^^Reles clas-siques
- est la \OT1/cmr/bx/n/10 non-rigidit^^Se des jambes\OT1/cmr/m/n/10 .
+Underfull \hbox (badness 1953) in paragraph at lines 161--161
+[]\OT1/cmr/m/n/8 (b) |Ex-em-ple de con-fig-u-ra-tion sus-
  []
 
-[7 <./intro/figures/winchesactuator.jpg> <./intro/figures/linearactuator.png>])
+[7 <./intro/figures/winchesactuator.jpg> <./intro/figures/linearactuator.png>]
 [8 <./intro/figures/robot_cdpr_noncrane.jpg> <./intro/figures/robot_cdpr_crane.
-jpg>] (./manuscrit.bbl [9
+jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+) [9] (./manuscrit.bbl [10
 
 
-])
+] [11])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
- [10]
+ [12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
- (./manuscrit.aux (./titlepage/titlepage.aux)
-(./preambule/preambule.aux) (./intro/intro.aux))
+ (./manuscrit.aux
+(./titlepage/titlepage.aux) (./preambule/preambule.aux) (./intro/intro.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
@@ -829,28 +797,30 @@ Package rerunfilecheck Info: File `manuscrit.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7725 strings out of 495028
- 115304 string characters out of 6181498
- 204302 words of memory out of 5000000
- 10750 multiletter control sequences out of 15000+600000
- 11262 words of font info for 43 fonts, out of 8000000 for 9000
+ 7741 strings out of 495028
+ 115526 string characters out of 6181498
+ 204481 words of memory out of 5000000
+ 10756 multiletter control sequences out of 15000+600000
+ 11881 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,9n,49p,1387b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,49p,1387b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb>
-Output written on manuscrit.pdf (10 pages, 15612332 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on manuscrit.pdf (12 pages, 4713943 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 61 named destinations out of 1000 (max. 500000)
  100 words of extra memory for PDF output out of 10000 (max. 10000000)
 
