@@ -13,6 +13,12 @@ M.~Carricato and J-P. Merlet.
 \newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
   3011--3017, Shangai, 9-13 may 2011.
 
+\bibitem{Carricato-2010-06b}
+Marco Carricato and Jean-Pierre Merlet.
+\newblock {\em Geometrico-static analysis of under-constrained cable-driven
+  parallel robots}, pages 309--319.
+\newblock Springer, 2010.
+
 \bibitem{2008:Chen.Chi}
 C-T. Chen and H-W. Chi.
 \newblock Singularity-free trajectory planning of platform-type parallel

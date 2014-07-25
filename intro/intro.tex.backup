@@ -62,7 +62,7 @@ On appelle {\it robot série} un système constitué d'{\bf une chaîne cinémat
 \label{intro:fig2}
 \end{figure}
 
-Une architecture série présente toutefois plusieurs inconvénients non négligeables dans un contexte industriel tels que :
+Une architecture série présente toutefois plusieurs inconvénients non négli\-gea\-bles dans un contexte industriel tels que :
 \begin{itemize}
  \item chaque segment et articulation porte la charge de tous ceux qui leur succèdent dans la chaîne cinématique. En particulier, cela affaiblit la dynamique lors de l'actionnement des articulations : segments et articulations doivent être rigidifiés, ils sont donc plus lourds, 
  \item les erreurs se propagent de segments en segments ; la précision tout comme la répétabilité du manipulateur en sont affectées,
@@ -74,17 +74,17 @@ Ainsi, une architecture série impose souvent un dispositif imposant, dont la pr
 Une alternative possible consiste en l'utilisation de chaînes cinématiques fermées permettant
 \begin{itemize}
  \item une répartition des charges (segment ultérieurs et poids de l'objet manipulé),
- \item une compensation des erreurs entre chaque ``branche'' de la chaîne cinématique fermée,
+ \item une compensation des erreurs entre chaque ``branche'' de la chaîne cinéma\-tique fermée,
  \item une plus grand flexibilité des articulations, impliquant une dynamique plus grande.
 \end{itemize}
 
-Les architectures parallèles en particulier présentent une des implémentations possibles de chaînes cinématiques fermées, et leurs caractéristiques -- sur lesquelles nous allons nous pencher par la suite -- ont contribué à ce qu'elles s'installent progressivement dans le paysage de la robotique.
+Les architectures parallèles en particulier présentent une des implémentations possibles de chaînes cinématiques fermées, et leurs caractéristiques -- sur lesquel\-les nous allons nous pencher par la suite -- ont contribué à ce qu'elles s'installent progressivement dans le paysage de la robotique.
 
 
 \subsubsection{Architectures parallèles}
 
 Une définition des robots parallèles est donnée dans \cite{merlet1997robots} :\\
-{\it Un manipulateur parallèle est constitué d’un organe terminal à $n$ degrés de liberté et d’une base fixe, reliés entre eux par au moins deux chaînes
+{\it Un manipulateur parallèle est constitué d’un organe terminal à $n$ degrés de li\-berté et d’une base fixe, reliés entre eux par au moins deux chaînes
 cinématiques indépendantes, la motorisation s’effectuant par $n$ actionneurs simples.}\\
 
 Parmi les exemples les plus cités dans la littérature, nous trouvons la plateforme de Gough-Stewart \cite{1956:Gough}, \cite{1965:Stewart} et le robot Delta \cite{1988:Clavel}.
@@ -110,7 +110,7 @@ De manière générale, les manipulateurs parallèles présentent les caractéri
  \item une précision accrue par un mécanisme de {\bf compensation} des erreurs entre les différentes chaînes cinématiques (autrement appelées {\it jambes}),
  \item une capacité de charge élevée due à la {\bf répartition} de la charge sur les différentes jambes,
  \item une grande rigidité provenant de la taille réduite des chaînes cinématiques,
- \item une dynamique élevée conséquente de la {\bf coopération} des différentes jambes dans le positionnement de l'organe terminal.
+ \item une dynamique élevée conséquente de la {\bf coopération} des différentes jam\-bes dans le positionnement de l'organe terminal.
 \end{itemize}
 
 Toutefois, les mécanismes parallèles possèdent plusieurs inconvénients qui doivent être pris en compte lors du choix d'une architecture :
@@ -127,11 +127,11 @@ La problématique d'un espace de travail réduit subsiste et reste une contraint
 
 \subsection{Les manipulateurs parallèles à câbles}
 
-Les manipulateurs parallèles à câbles présentent une structure en chaînes cinématiques fermées, la base et la plateforme étant reliées exclusivements au moyen de câbles. Les actionneurs sont en général positionnés sur la base et leur fonction consiste à contrôler la longueur des câbles. On peut donc les considérer comme des articulations prismatiques dont la course peut s'avérer rapidement atteindre des longueurs remarquables, augmentant considérablement l'espace de travail du manipulateur.
+Les manipulateurs parallèles à câbles présentent une structure en chaînes cinéma\-tiques fermées, la base et la plateforme étant reliées exclusivement au moyen de câbles. Les actionneurs sont en général positionnés sur la base et leur fonction consiste à contrôler la longueur des câbles. On peut donc les considérer comme des articulations prismatiques dont la course peut s'avérer rapidement atteindre des longueurs remarquables, augmentant considérablement l'espace de travail du manipulateur.
 
 Afin de contrôler la longueur des câbles, plusieurs types d'articulations peuvent être utilisés, parmi lesquels :
 \begin{itemize}
- \item des poulies actionnées par des moteurs rotatifs autour desquelles s'enrouleront ou se dérouleront les câbles \ref{intro:fig4view0} ; cette solution a l'avantage d'être extrêmement légère et aisément déployable, mais présente l'inconvénient du contrôle de la longueur enroulée lorsque le câble n'est pas guidé : il est dès lors impossible d'éviter une superposition lors de l'enroulement, et dès lors de connnaître le diamètre réel pour une couche donnée.
+ \item des poulies actionnées par des moteurs rotatifs autour desquelles s'enrou\-leront ou se dérouleront les câbles \ref{intro:fig4view0} ; cette solution a l'avantage d'être extrêmement légère et aisément déployable, mais présente l'inconvénient du contrôle de la longueur enroulée lorsque le câble n'est pas guidé : il est dès lors impossible d'éviter une superposition lors de l'enroulement, et dès lors de connnaître le diamètre réel pour une couche donnée.
  \item les câbles sont reliés à des plateformes se déplaçant sur des rails, ce qui permet d'en contrôler la longueur \cite{merlet2008} ; la multiplication des plateformes en mouvement permet en théorie un contrôle plus rapide et plus précis \ref{intro:fig4view1}. 
 \end{itemize}
 
@@ -155,7 +155,7 @@ On distingue donc deux types de configurations pour un robot parallèle à câbl
 
 \begin{figure}[!ht]
   \centering
-      \subfloat[Exemple de configuration pleinement contrainte]{\label{intro:fig5view0}
+     \subfloat[Exemple de configuration pleinement contrainte]{\label{intro:fig5view0}
     \includegraphics[width=.50\linewidth]{./intro/figures/robot_cdpr_noncrane.jpg}} \hfill
     \subfloat[Exemple de configuration suspendue]{\label{intro:fig5view1}
     \includegraphics[width=.40\linewidth]{./intro/figures/robot_cdpr_crane.jpg}}
@@ -163,7 +163,7 @@ On distingue donc deux types de configurations pour un robot parallèle à câbl
 \label{intro:fig5}
 \end{figure}
 
-Une caractéristique sensible des manipulateurs parallèles à câbles qui les différencie des manipulateurs parallèles classiques est la {\bf non-rigidité des jambes}. Sous certaines conditions, un ou plusieurs câbles peuvent être détendus, ce qui a pour effet 1/ de modifier leur géométrie, 2/ ils n'exercent plus de force sur la plateforme. Pour certaines configurations, il peut d'ailleurs être montré qu'il existera toujours au moins un câble détendu quelque-soit la position de l'organe terminal et les forces exercées sur celui-ci \cite{2011:Carricato.Merlet}. Le prototype sur lequel nous avons conduit nos expériences présentant ce type de comportement, nous reviendrons plusieurs fois largement sur ce point.
+Une caractéristique sensible des manipulateurs parallèles à câbles qui les différencie des manipulateurs parallèles classiques est la {\bf non-rigidité des jam\-bes}. Sous certaines conditions, un ou plusieurs câbles peuvent être détendus, ce qui a pour effet 1/ de modifier leur géométrie, 2/ ils n'exercent plus de force sur la plateforme. Pour certaines configurations, il peut d'ailleurs être montré qu'il existera toujours au moins un câble détendu quelque-soit la position de l'organe terminal et les forces exercées sur celui-ci \cite{2011:Carricato.Merlet}. Le prototype sur lequel nous avons conduit nos expériences présentant ce type de comportement, nous reviendrons plusieurs fois largement sur ce point.
 
 Enfin, lorsqu'un câble est sous tension, un modèle complet doit pouvoir prendre en compte son élasticité, sa masse, \dots qui affecteront sa longueur réelle et donc la précision avec laquelle le manipulateur est contrôlé.
 
@@ -172,7 +172,7 @@ Comparativement donc aux robots parallèles classiques, les robots parallèles �
  \item la structure parallèle permet de conserver les propriétés de compensation des erreurs, de répartition des charges et des efforts, de coopération des chaînes cinématique pour l'exécution d'un mouvement
  \item l'espace de travail est considérablement agrandi malgré la conservation de la légèreté du dispositif.
  \item la modélisation des câbles ainsi que le choix des articulations et actionneurs complexifient le modèle du robot ; une simplification du modèle en négligeant certaines de ces caractéristiques est alors source d'imprécisions qui devront être intégrées au schéma de contrôle.
- \item l'unilatéralité des forces suppose que nous puissions nous retrouver dans une situation avec un ou plusieurs câbles détendus. Nous verrons cependant qu'il est possible de prendre avantage de cette situation afin d'améliorer le contrôle de l'organe terminal pour une trajectoire donnée.
+ \item l'unilatéralité des forces suppose que nous puissions nous retrouver dans une situation avec un ou plusieurs câbles détendus. Nous verrons cependant qu'il est possible de prendre avantage de cette situation afin d'amélio\-rer le contrôle de l'organe terminal pour une trajectoire donnée.
 \end{itemize}
 
 Après avoir introduit quelques notations utiles, nous allons à présent décrire les modèles géométriques directs et indirects, cinématiques ainsi que l'équilibre statique pour les robots parallèles à câble. Ceci nous permettra de lister tant que faire se peut l'ensemble des difficultés posées par ce type de manipulateur et auxquelles nous avons été confrontées dans le cadre de ces recherches.
@@ -194,7 +194,17 @@ Enfin, on utilisera la notation $J^{-1}$ pour exprimer la jacobienne inverse, et
 
 \subsubsection{Modèle géométrique indirect}
 
-Le modèle géométrique direct consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie $A_i$ et le point d'attache à la plateforme $B_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance.\\
+Le modèle géométrique direct consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie $A_i$ et le point d'attache à la plateforme $B_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance \ref{intro:fig5view0}.\\
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Forme d'un câble dont la tension serait nulle]{\label{intro:fig6view0}
+    \includegraphics[width=.45\linewidth]{./intro/figures/nulltensionwire.png}} \hfill
+    \subfloat[Câble élastique sur lequel est appliquée une tension positive : la longueur réelle diffère de la longueur déroulée]{\label{intro:fig6view1}
+    \includegraphics[width=.45\linewidth]{./intro/figures/positivetensionwire.png}} \\
+    \caption{\footnotesize{Dans le cas d'un câble détendu (tension nulle), la longueur déroulée sera supérieure à la distance entre les deux points d'attache ; de plus, la forme du câble sera telle qu'il y a risque d'intersection avec d'autres câbles, l'environnement, \dots. Dans le cas d'un câble élastique tendu (tension strictement positive), la longueur déroulée sera inférieure à la distance entre les points d'attache correspondant à la longueur réelle du câble}}
+\label{intro:fig6}
+\end{figure}
 
 Nous partons donc des relations suivantes :
 \begin{eqnarray}
@@ -203,11 +213,61 @@ Nous partons donc des relations suivantes :
 \label{intro:eq1}
 \end{eqnarray}
 
-Notons que les câbles peuvent être élastiques : ainsi, lorsqu'ils sont en tension, la longueur déroulée pourra être inférieure à la distance $d_i = ||A_i B_i||$. Plusieurs modèles de câbles peuvent être utilisés pour estimer le rapport entre la longueur réelle et la longueur déroulée. Une estimation 
+Notons que les câbles peuvent être élastiques : ainsi, lorsqu'ils sont en tension, la longueur déroulée pourra être inférieure à la distance $d_i = ||A_i B_i||$ \ref{intro:fig5view1}. Plusieurs modèles de câbles peuvent être utilisés pour estimer le rapport entre la longueur réelle et la longueur déroulée \cite{1974IrvineCaughey}, \cite{2006:Kozak.ea}. A titre d'exemple, le modèle linéaire suivant peut-être utilisé lorsque la masse des câbles est négligeable devant les forces appliquées sur la plateforme :
+$$\tau_i = \kappa(\rho_i - l_i)$$
+où $\kappa$ est un coefficient correspondant à la raideur linéique du câble.
+
+Pour être complet, le modèle géométrique inverse doit donc envisager toutes les configurations possibles de répartition de tension dans les câbles et, le cas échéant, intégrer la modélisation des câbles dans le processus de résolution. Il est donc fondamental de vérifier la tension exercée dan chaque câble, et en avoir une estimation suffisante selon le modèle d'élasticité des câbles choisi. Nous parlerons donc avec \cite{Carricato-2010-06b} de modèle géométrico-statique indirect, requérant que l'étude de l'équilibre statique.
+
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Forme d'un câble dont la tension serait nulle]{\label{intro:fig6view0}
+    \includegraphics[width=.45\linewidth]{./intro/figures/nulltensionwire.png}} \hfill
+    \subfloat[Câble élastique sur lequel est appliquée une tension positive : la longueur réelle diffère de la longueur déroulée]{\label{intro:fig6view1}
+    \includegraphics[width=.45\linewidth]{./intro/figures/positivetensionwire.png}} \\
+    \caption{\footnotesize{Dans le cas d'un câble détendu (tension nulle), la longueur déroulée sera supérieure à la distance entre les deux points d'attache ; de plus, la forme du câble sera telle qu'il y a risque d'intersection avec d'autres câbles, l'environnement, \dots. Dans le cas d'un câble élastique tendu (tension strictement positive), la longueur déroulée sera inférieure à la distance entre les points d'attache correspondant à la longueur réelle du câble}}
+\label{intro:fig6}
+\end{figure}
+
+\subsubsection{Equilibre statique}
+
+On dit pour un solide au repos qu'il est en équilibre statique si l'ensemble des forces exercées s'annulent de manière à ce qu'il ne puisse générer ni de mouvement dans l'espace ni de rotation :
+
+\begin{equation}
+\mathcal {\bf F}_{\hbox{ext}} = \vec {\bf 0}
+\label{intro:eq2}
+\end{equation}
+
+L'hypothèse est émise selon laquelle les forces de frottement, de résistance, \dots sont négligeables. Nous ne prenons en compte dès lors que la force de gravité appliquée sur la plateforme, les efforts exercés sur chacun des câbles, ainsi que les couples qui doivent être nuls.
+
+Soit $W_i$ torseur d'effort correspondant aux efforts et couples exercés sur le câble $i$ :
+\begin{equation}
+W_i = ({\bf u}_i^T, (\mathcal R {\bf b}_i \times {\bf u}_i)^T)^T
+\label{intro:eq3}
+\end{equation}
+avec $u_i = \frac{A_iB_i}{\rho_i}$ la direction dans laquelle l'effort est exercé (de $B_i$ vers $A_i$).
+
+En posant $\mathcal F = [0, 0, -mg, 0, 0, 0]^T$ pour le câble virtuel modélisant la force de gravité exercée sur la plateforme, \ref{intro:eq3} devient :
+\begin{equation}
+\mathcal F + {\bf W} {\bf \tau} = 0
+\label{intro:eq4}
+\end{equation}
+avec ${\bf \tau} = (\tau_1, \tau_2, \dots)^T$ le vecteur d'effort et ${\bf W}$ la matrice composée des vecteurs des forces appliquées sur les câbles.
+
+En posant ${\bf J}^{-T} = - {\bf W}$, la relation \ref{intro:eq5} s'écrit encore :
+\begin{equation}
+\mathcal F = {\bf J}^{-T} {\bf \tau}
+\label{intro:eq5}
+\end{equation}
+où $J^{-1}$ est une matrice que l'on appelle {\it jacobienne inverse}.
+
+La détermination des tensions correspondantes à l'équilibre statique correspond à la résolution du système posé par \ref{intro:eq5}.
+
+\subsubsection{Modèle géométrico-statique inverse (ou {\it MGSI})}
+
+Soit $m$ l nombre de câbles et $n$ le nombre de degrés de liberté du robot. Le {\MGSI} est un problème à $2m$ inconnues ($m$ longueurs + $m$ tensions) et à $n+m$ équations (le modèle géométrique indirect en fourni $m$ et l'équilibre statique $n$).
 
 
-
-%\subsubsection{Equilibre statique}
 
 %\subsubsection{Modèle géométrique direct}
 
