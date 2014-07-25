@@ -194,7 +194,7 @@ Enfin, on utilisera la notation $J^{-1}$ pour exprimer la jacobienne inverse, et
 
 \subsubsection{Modèle géométrique indirect}
 
-Le modèle géométrique direct consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie $A_i$ et le point d'attache à la plateforme $B_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance \ref{intro:fig5view0}.\\
+Le modèle géométrique indirect consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie $A_i$ et le point d'attache à la plateforme $B_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance \ref{intro:fig5view0}.\\
 
 \begin{figure}[!ht]
   \centering
@@ -217,7 +217,7 @@ Notons que les câbles peuvent être élastiques : ainsi, lorsqu'ils sont en ten
 $$\tau_i = \kappa(\rho_i - l_i)$$
 où $\kappa$ est un coefficient correspondant à la raideur linéique du câble.
 
-Pour être complet, le modèle géométrique inverse doit donc envisager toutes les configurations possibles de répartition de tension dans les câbles et, le cas échéant, intégrer la modélisation des câbles dans le processus de résolution. Il est donc fondamental de vérifier la tension exercée dan chaque câble, et en avoir une estimation suffisante selon le modèle d'élasticité des câbles choisi. Nous parlerons donc avec \cite{Carricato-2010-06b} de modèle géométrico-statique indirect, requérant que l'étude de l'équilibre statique.
+Pour être complet, le modèle géométrique inverse doit donc envisager toutes les configurations possibles de répartition de tension dans les câbles et, le cas échéant, intégrer la modélisation des câbles dans le processus de résolution. Il est donc fondamental de vérifier la tension exercée dan chaque câble, et en avoir une estimation suffisante selon le modèle d'élasticité des câbles choisi. Nous parlerons donc avec \cite{Carricato-2010-06b} de modèle géométrico-statique indirect, requérant l'étude de l'équilibre statique.
 
 \subsubsection{Equilibre statique}
 
@@ -230,7 +230,7 @@ On dit pour un solide au repos qu'il est en équilibre statique si l'ensemble de
 
 L'hypothèse est émise selon laquelle les forces de frottement, de résistance, \dots sont négligeables. Nous ne prenons en compte dès lors que la force de gravité appliquée sur la plateforme, les efforts exercés sur chacun des câbles, ainsi que les couples qui doivent être nuls.
 
-Soit $W_i$ torseur d'effort correspondant aux efforts et couples exercés sur le câble $i$ :
+Soit $W_i$ le torseur d'efforts correspondant aux efforts et couples exercés sur le câble $i$ :
 \begin{equation}
 W_i = ({\bf u}_i^T, (\mathcal R {\bf b}_i \times {\bf u}_i)^T)^T
 \label{intro:eq3}
@@ -242,7 +242,7 @@ En posant $\mathcal F = [0, 0, -mg, 0, 0, 0]^T$ pour le câble virtuel modélisa
 \mathcal F + {\bf W} {\bf \tau} = 0
 \label{intro:eq4}
 \end{equation}
-avec ${\bf \tau} = (\tau_1, \tau_2, \dots)^T$ le vecteur d'effort et ${\bf W}$ la matrice composée des vecteurs des forces appliquées sur les câbles.
+avec ${\bf \tau} = (\tau_1, \tau_2, \dots)^T$ le vecteur d'efforts et ${\bf W}$ la matrice composée des vecteurs des forces appliquées sur les câbles.
 
 En posant ${\bf J}^{-T} = - {\bf W}$, la relation \ref{intro:eq5} s'écrit encore :
 \begin{equation}
@@ -255,14 +255,13 @@ La détermination des tensions correspondantes à l'équilibre statique correspo
 
 \subsubsection{Modèle géométrico-statique inverse (ou {\it MGSI})}
 
-Soit $m$ l nombre de câbles et $n$ le nombre de degrés de liberté du robot. Le {\it MGSI} est un problème à $2m$ inconnues ($m$ longueurs + $m$ tensions) et à $n+m$ équations (le modèle géométrique indirect en fournit $m$ et l'équilibre statique en donne $n$). Si $m > n$, est système est sous-contraint. La stratégie consiste dans ce cas à considérer tous les $n$-uplets de câbles et vérifier pour chacun la positivité des tensions à l'équilibre statique.
+Soit $m$ le nombre de câbles et $n$ le nombre de degrés de liberté du robot. Le {\it MGSI} est un problème à $2m$ inconnues ($m$ longueurs + $m$ tensions) et à $n+m$ équations (le modèle géométrique indirect en fournit $m$ et l'équilibre statique en donne $n$). Si $m > n$, est système est sous-contraint. La stratégie consiste dans ce cas à considérer tous les $n$-uplets de câbles et vérifier pour chacun la positivité des tensions à l'équilibre statique.
 
 Doivent être considérées également les situations où l'équilibre n'est réalisé qu'avec $m < n$ câbles en tension positive. C'et une situation pour laquelle le système est sur-contraint et peut ne présenter aucune solution. Il peut toutefois être résolu pour un {\it mode degradé du système}, à savoir la perte de contrôle d'un ou plusieurs degrés de liberté. On parlera alors de {\it singularité} pour caractériser le fait que dans cette position, le contrôle de la plateforme n'est plus possible pour l'ensemble des degrés de liberté du robot.
 
-On comprend ici que le choix d'utiliser des câbles redondants peut tout autant être dicté par des stratégies d'optimisation de la répartition des tensions (lorsque c'est possible) que par la volonté de garantir en tout point de l'espace de travail l'existence d'une solution au {\it MGSI} pour laquelle l'ensemble des degrés de liberté de la plateforme sont parfaitement contrôlés.
+On comprend ici que le choix d'utiliser des câbles redondants peut être dicté tout autant par des stratégies d'optimisation de la répartition des tensions (lorsque c'est possible) que par la volonté de garantir en tout point de l'espace de travail l'existence d'une solution au {\it MGSI} pour laquelle l'ensemble des degrés de liberté de la plateforme est parfaitement contrôlé.
 
 On peut remarquer enfin que lorsque la composition des câbles est telle que leur élasticité est négligeable pour un espace de travail donné, ils peuvent être assimilés à des jambes rigides et l'on se retrouve dès lors dans une situation équivalente à la résolution du {\it MGI} classique des robots parallèles rigides dont on retrouvera une étude complète dans \cite{merlet1997robots}.
 
 \subsubsection{Modèle géométrico-statique direct}
-
 
