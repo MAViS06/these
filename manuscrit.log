@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  25 JUL 2014 18:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  25 JUL 2014 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,23 +516,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip53
 )
 (./manuscrit.aux (./titlepage/titlepage.aux) (./preambule/preambule.aux)
-(./intro/intro.aux
-
-LaTeX Warning: Label `intro:fig6view0' multiply defined.
-
-
-LaTeX Warning: Label `sub@intro:fig6view0' multiply defined.
-
-
-LaTeX Warning: Label `intro:fig6view1' multiply defined.
-
-
-LaTeX Warning: Label `sub@intro:fig6view1' multiply defined.
-
-
-LaTeX Warning: Label `intro:fig6' multiply defined.
-
-))
+(./intro/intro.aux))
 \openout1 = `manuscrit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -549,7 +533,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
 \scratchdimen=\dimen133
@@ -812,20 +797,7 @@ Package pdftex.def Info: ./intro/figures/positivetensionwire.png used on input
 line 204.
 (pdftex.def)             Requested size: 155.24895pt x 117.42691pt.
  [9 <./intro/figures/nulltensionwire.png> <./intro/figures/positivetensionwire.
-png>]
-File: ./intro/figures/nulltensionwire.png Graphic file (type png)
-
-<use ./intro/figures/nulltensionwire.png>
-Package pdftex.def Info: ./intro/figures/nulltensionwire.png used on input line
- 225.
-(pdftex.def)             Requested size: 155.24895pt x 121.70477pt.
-File: ./intro/figures/positivetensionwire.png Graphic file (type png)
-
-<use ./intro/figures/positivetensionwire.png>
-Package pdftex.def Info: ./intro/figures/positivetensionwire.png used on input 
-line 227.
-(pdftex.def)             Requested size: 155.24895pt x 117.42691pt.
- [10]) [11] (./manuscrit.bbl
+png>] [10]) [11] (./manuscrit.bbl
 [12
 
 
@@ -839,16 +811,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
 (rerunfilecheck)             Checksum: 5B2FA8569F412BF652CFE7E5A6A9FDD1;240.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7778 strings out of 495028
- 116279 string characters out of 6181498
- 205413 words of memory out of 5000000
+ 7775 strings out of 495028
+ 116236 string characters out of 6181498
+ 205371 words of memory out of 5000000
  10775 multiletter control sequences out of 15000+600000
  11881 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -867,10 +835,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on manuscrit.pdf (14 pages, 4754526 bytes).
+Output written on manuscrit.pdf (14 pages, 4754011 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
  110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
