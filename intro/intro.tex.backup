@@ -265,11 +265,13 @@ La détermination des tensions correspondantes à l'équilibre statique correspo
 
 \subsubsection{Modèle géométrico-statique inverse (ou {\it MGSI})}
 
-Soit $m$ l nombre de câbles et $n$ le nombre de degrés de liberté du robot. Le {\MGSI} est un problème à $2m$ inconnues ($m$ longueurs + $m$ tensions) et à $n+m$ équations (le modèle géométrique indirect en fourni $m$ et l'équilibre statique $n$).
+Soit $m$ l nombre de câbles et $n$ le nombre de degrés de liberté du robot. Le {\it MGSI} est un problème à $2m$ inconnues ($m$ longueurs + $m$ tensions) et à $n+m$ équations (le modèle géométrique indirect en fournit $m$ et l'équilibre statique en donne $n$). Si $m > n$, est système est sous-contraint. La stratégie consiste dans ce cas à considérer tous les $n$-uplets de câbles et vérifier pour chacun la positivité des tensions à l'équilibre statique.
 
+Doivent être considérées également les situations où l'équilibre n'est réalisé qu'avec $m < n$ câbles en tension positive. C'et une situation pour laquelle le système est sur-contraint et peut ne présenter aucune solution. Il peut toutefois être résolu pour un {\it mode degradé du système}, à savoir la perte de contrôle d'un ou plusieurs degrés de liberté. On parlera alors de {\it singularité} pour caractériser le fait que dans cette position, le contrôle de la plateforme n'est plus possible pour l'ensemble des degrés de liberté du robot.
 
+On comprend ici que le choix d'utiliser des câbles redondants peut tout autant être dicté par des stratégies d'optimisation de la répartition des tensions (lorsque c'est possible) que par la volonté de garantir en tout point de l'espace de travail l'existence d'une solution au {\it MGSI} pour laquelle l'ensemble des degrés de liberté de la plateforme sont parfaitement contrôlés.
 
-%\subsubsection{Modèle géométrique direct}
+\subsubsection{Modèle géométrico-statique direct}
 
 %\subsubsection{Modèle cinématique}
 
