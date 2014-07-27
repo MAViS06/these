@@ -13,45 +13,45 @@ I was expecting a `,' or a `}'---line 1625 of file ./biblio/bibliography.bib
  :   pages = {202-207},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You've used 18 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            637 strings with 7353 characters,
-and the built_in function-call counts, 5752 in all, are:
-= -- 576
-> -- 191
+            645 strings with 7605 characters,
+and the built_in function-call counts, 6077 in all, are:
+= -- 608
+> -- 204
 < -- 5
-+ -- 81
-- -- 58
-* -- 353
-:= -- 919
-add.period$ -- 55
-call.type$ -- 18
-change.case$ -- 78
++ -- 86
+- -- 62
+* -- 380
+:= -- 973
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 83
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 250
-empty$ -- 505
-format.name$ -- 58
-if$ -- 1272
+cite$ -- 19
+duplicate$ -- 261
+empty$ -- 532
+format.name$ -- 62
+if$ -- 1340
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 18
-newline$ -- 92
-num.names$ -- 36
-pop$ -- 97
+int.to.str$ -- 19
+missing$ -- 19
+newline$ -- 97
+num.names$ -- 38
+pop$ -- 100
 preamble$ -- 1
-purify$ -- 64
+purify$ -- 68
 quote$ -- 0
-skip$ -- 193
+skip$ -- 201
 stack$ -- 0
-substring$ -- 387
-swap$ -- 66
+substring$ -- 413
+swap$ -- 67
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 70
 warning$ -- 0
-while$ -- 53
-width$ -- 20
-write$ -- 199
+while$ -- 56
+width$ -- 21
+write$ -- 210
 (There was 1 error message)
