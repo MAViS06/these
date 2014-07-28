@@ -357,6 +357,50 @@ Cette matrice est également appelée {\it Jacobienne inverse} du robot, et dép
 
 \subsection{Configurations de câbles et corobots}
 
+Nous avons plusieurs fois évoqué la situation propre aux robots parallèles à câbles pour laquelle un ou plusieurs câbles ne sont pas en tension. Commençons par distinguer deux situations :
+\begin{itemize}
+ \item le robot possède plus de câbles que requis pour le contrôle de l'ensemble des degrés de liberté (soit $m > n+1$ en configuration pleinement contrainte, $m > n$ en configuration suspendue)\footnote{nous faisons ici l'hypothèse que la géométrie du robot permet de contrôler celui-ci avec un nombre minimal de câbles, soit $n+1$ en configuration pleinement contrainte, $n$ en configuration suspendue}. Ce choix peut procéder de deux stratégies :
+ \begin{itemize}
+  \item plus de $n+1$ (ou $n$) câbles peuvent être en tension positive en même temps ; il y a alors redondance et il est possible d'avoir une distribution des tensions sur les câbles permettant de minimiser la force exercée sur chacun d'entre-eux.
+  \item les câbles en excès ont été placés de manière à augmenter l'espace de travail total ; tous ne seront pas (et dans certains cas ne pourront pas) être en tension en même temps.
+ \end{itemize}
+ \item le robot est dans une situation où $m < n-1$ (resp $m < n$) câbles sont en tension dans une configuration pleinement contrainte (resp. suspendue) ; il est alors en mode de fonctionnement degradé et perd le contrôle d'un ou plusieurs degrés de liberté.
+\end{itemize}
+
+Nous appellerons par la suite {\it configuration de câbles} (ou {\it c.c.}) le sous-ensemble des câbles en tension. Ainsi, pour un robot à $4$ câbles, les différentes configurations de câbles correspondront aux sous-ensembles
+\begin{itemize}
+ \item $\{0\},\{1\},\{2\},\{3\}$ pour des configurations à $1$ câble tendu,
+ \item $\{0,1\},\{0,2\},\{0,3\},\{1,2\},\{1,3\},\{2,3\}$ avec $2$ câbles tendus,
+ \item $\{0,1,2\},\{0,1,3\},\{0,2,3\},\{1,2,3\}$ avec $3$ câbles tendus,
+ \item $\{0,1,2,3\}$ avec l'ensemble des $4$ câbles tendus.
+\end{itemize}
+et seront notées respectivement $C_{0}$, $C_{1}$, $C_{2}$, $C_{3}$, $C_{01}$, $C_{02}$, $C_{03}$, $C_{12}$, $C_{13}$, $C_{23}$, $C_{012}$, $C_{013}$, $C_{023}$, $C_{123}$, $C_{0123}$. Ainsi, il existe au plus $2^m-1$ configurations de câbles pour un robot à $m$ câbles.
+
+Pour une configuration de câble donnée, nous appellerons {\it corobot associé à la configuration $C_{ijk\dots}$} le robot virtuel défini sans les câbles qui ne sont pas en tension. Ainsi, une transition entre deux configurations de câbles sera équivalente au passage d'un corobot associé à la première au corobot associé à la seconde. Chaque corobot possède ses propriétés, son espace de travail. Les espaces de travails de plusieurs corobots peuvent évidemment s'intersecter, celui d'un corobot peut inclure celui d'un autre.
+
+En particulier, certains corobots pourront ne pas exister. C'est le cas par exemple lorsque l'ensemble des câbles ne peuvent être en tension en même temps : un robot à $4$ câbles présentant cette propriété ne peut avoir de corobot associé à la configuration de câbles $C_{0123}$. On pourra dès lors procéder de manière inverse : définir dans un premier temps les corobots possibles, puis le {\it robot enveloppant} dans un second temps comme la réunion des corobots possibles.
+
+Cette nomenclature présente différents avantages :
+\begin{itemize}
+ \item le {\it robot enveloppant} enveloppe également l'ensemble des singularités de ses corobots : pour autant, une pose peut correspondre à une singularité pour un corobot, mais pas pour un autre au sein duquel elle est pourtant possible. Lorsqu'un moyen existe de choisir la configuration de câble génératrice d'un corobot, il devient alors possible de choisir une situation avantageuse.
+ \item lorsque l'ensemble d'une trajectoire donnée peut être effectuée au sein d'un seul corobot, il est inutile de considérer l'ensemble des paramètres, et on peut ainsi simplifier les modèles.
+ \item il est permis de définir des relations d'ordre entre les différents corobots à partir de critères correspondant à des propriétés que l'on souhaite favoriser. En nous donnant les moyens de sélectionner la configuration de câbles associée au corobot présentant les meilleures caractéristiques, nous pouvons améliorer les propriétés du robot enveloppant.
+\end{itemize}
 
 
 \subsection{Présentation du {\tt Marionet-Assist}}
+
+
+
+
+%\subsection{L'asservissement visuel}
+
+%\subsubsection{Présentation}
+
+%\subsubsection{Notations}
+
+%\subsection{Présentation des stratégie utilisées}
+
+%\subsection{Comparaisons et justifications}
+
+%\subsection{Problématiques et méthodologies}

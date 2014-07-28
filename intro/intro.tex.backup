@@ -2,9 +2,9 @@
 
 Il s'agit dans ce chapitre d'introduire les problématiques et méthodologies qui nous guideront dans notre étude de l'utilisation de l'asservissement visuel pour les robots parallèles à c\^ables. Notre objectif est double: il s'agit dans un premier temps d'ajouter des fonctionnalités de saisie et manipulation d'objets à nos prototypes existants, et d'améliorer les propriétés de ces mêmes prototypes dans un second temps.
 
-Pour cela, nous  évoquons dans une première section les avantages et inconvénients des structures parallèles comparativement aux structures en série. Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxième section, suivie par un rappel des modèles géométriques et cinématiques des manipulateurs parallèles à c\^ables. Nous présentons dans une troisième section le prototype sur lequel nos expérimentations et validations ont été effectuées, avant d'introduire quelques notions fondamentales pour la suite.
+Pour cela, nous  évoquons dans une première section les avantages et inconvénients des structures parallèles comparativement aux structures en série. Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxième section, suivie par un rappel des modèles géométriques et cinématiques des manipulateurs parallèles à c\^ables, avant d'introduire dans une troisième section quelques notions fondamentales pour la suite. Nous présentons dans une quatrième section le prototype sur lequel nos expérimentations et validations ont été effectuées,
 
-Dans une quatrième section, à la suite d'un rappel des modèles d'asservissement visuel, nous introduirons les spécificités de notre choix de configuration. Nous expliquerons de quelle manière il se démarque des travaux existants dans ce domaine précis. Nous pourrons alors dans une section terminale conclure par l'exposition des problématiques à partir desquelles nous nous sommes proposé de mener cette étude, ainsi que des choix méthodologiques qui en auront guidée la réalisation.
+Dans une cinquième section, à la suite d'un rappel des modèles d'asservissement visuel, nous introduirons les spécificités de notre choix de configuration. Nous expliquerons donc une sixième section de quelle manière il se démarque des travaux existants dans ce domaine précis. Nous pourrons alors dans une section terminale conclure par l'exposition des problématiques à partir desquelles nous nous sommes proposé de mener cette étude, ainsi que des choix méthodologiques qui en auront guidée la réalisation.
 
 \subsection{Manipulateurs série et parallèles}
 
@@ -273,8 +273,8 @@ Le modèle géométrique direct consiste à déterminer les coordonnées opérat
 
 Les choses ne s'arrangent pas avec l'utilisation des câbles. Supposons que notre manipulateur soit en configuration suspendue avec 6 câbles. Nous cherchons à déterminer les paramètres de pose (au nombre de 6) et nous trouvons une solution telle qu'elle nous donne une pose avec les 6 câbles tendus. Si nous lançons la plateforme, avec des longueurs déroulées de câbles correspondant aux données du problème, il est possible que la plateforme arrive à la position calculée, mais il est tout aussi probable qu'elle se retrouve dans une position complètement différente. Deux types de phénomènes peuvent d'être produits :
 \begin{itemize}
- \item il existe, comme pour les robots parallèles rigides, plusieurs solutions au {\it MGD}, parmi lesquelles celle que nous avons calculée.
- \item nous pouvons constater que dans une des poses prise par la plateforme, un ou plusieurs câbles sont mous. Dans cette situation, moins de 6 câbles exercent une force sur la plateforme, et nous perdons le contrôle de degrés de liberté. Néanmoins, ces solutions existent.
+ \item il existe, comme pour les robots parallèles rigides, plusieurs solutions au {\it MGD}, parmi lesquelles celle que nous avons calculée. Chaque équation du {\it MGD} est en effet un polynôme quadratique en ses $6$ variables, soit potentiellement de degré $2^6$. 
+ \item nous pouvons constater que dans une des poses prise par la plateforme, un ou plusieurs câbles sont mous. Dans cette situation, moins de 6 câbles exercent une force sur la plateforme, et nous perdons le contrôle de degrés de liberté. Néanmoins, ces solutions existent et doivent être prises en compte.
 \end{itemize}
 
 Si l'on veut résoudre le {\it MGD} pour un robot à câbles, l'ensemble des situations doit être considéré, à savoir :
@@ -302,3 +302,90 @@ Ce qu'il faut retenir ici, c'est que, en l'absence de stratégie de contrôle de
  \item si l'une de ces poses est instable, le manipulateur peut basculer vers une pose autre que celle que nous désirions
  \item des mouvements perturbateurs peuvent apparaître (moments ?)
 \end{itemize}
+
+Les points que nous venons d'évoquer sont en général considérés comme des inconvénients majeurs à l'utilisation des robots parallèles à câbles. Le premier chapitre de ce travail montrera qu'il est possible d'élaborer une stratégie qui permet au contraire d'en tirer avantage pour améliorer le contrôle et la stabilité du système pour la grande majorité des situations.
+
+\subsubsection{Modèle cinématique}
+
+Le modèle cinématique consiste à établir une relation entre les variations des coordonnées articulaires ${\bf \Theta}$ et celles des coordonnées opérationnelles ${\bf X}$.
+
+Nous avons vu que le vecteur $A_iB_i$ peut être calculé de deux manières différentes :
+\begin{itemize}
+ \item connaissant la pose de la plateforme et sa géométrie, les coordonnées de $B_i$ sont données ; $A_i$ étant connu par la géométrie du robot, on peut définir une fonction $H_1$ dépendante uniquement de la pose telle que :
+\begin{equation}
+{\bf A_iB_i} = H_{1_{|i}}({\bf X})
+\label{intro:eq6}
+\end{equation}
+ \item à partir des coordonnées articulaires (et éventuellement de la pose si l'intervention de l'équilibre statique est requise), le {\it MGSD} permet de définir la relation suivante :
+\begin{equation}
+{\bf A_iB_i} = H_{2_{|i}}({\bf X}, {\bf \Theta})
+\label{intro:eq7}
+\end{equation}
+\end{itemize}
+ 
+Si ${\bf AB}$ est le vecteur composé des différents ${\bf A_iB_i}$, alors on obtient en combinant (Equ.\ref{intro:eq6}) et (Equ.\ref{intro:eq7}) :
+\begin{equation}
+\begin{matrix}
+{\bf AB} &=& H_1({\bf X}) \\
+{\bf AB} &=& H_2({\bf X}, {\bf \Theta}) \\
+\Longrightarrow & & H_1({\bf X}) = H_2({\bf X}, {\bf \Theta})
+\end{matrix}
+\label{intro:eq8}
+\end{equation}
+
+En différentiant (Equ.\ref{intro:eq8}), on obtient :
+\begin{equation}
+\frac{\partial H_1}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial {\bf T}} =  \frac{\partial H_2}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial {\bf T}} + \frac{\partial H_2}{\partial {\bf \Theta}} \frac{\partial {\bf \Theta}}{\partial {\bf T}}
+\label{intro:eq9}
+\end{equation}
+
+soit :
+
+\begin{equation}
+\dot {\bf \Theta} = \left ( \frac{\partial H_2}{\partial {\bf \Theta}} \right )^{-1} \left (\frac{\partial H_1}{\partial {\bf X}} - \frac{\partial H_2}{\partial {\bf X}} \right ) \dot {\bf X}
+\label{intro:eq10}
+\end{equation}
+
+Si $\left ( \frac{\partial H_2}{\partial {\bf \Theta}} \right )$ est bien inversible, nous pouvons définir une matrice $J^{-1}$ de manière à obtenir la relation suivante :
+\begin{equation}
+\dot {\bf \Theta} = J^{-1} \dot {\bf X}
+\label{intro:eq11}
+\end{equation}
+
+Cette matrice est également appelée {\it Jacobienne inverse} du robot, et dépend à la fois des paramètres de pose et des coordonnées articulaires.
+
+
+\subsection{Configurations de câbles et corobots}
+
+Nous avons plusieurs fois évoqué la situation propre aux robots parallèles à câbles pour laquelle un ou plusieurs câbles ne sont pas en tension. Commençons par distinguer deux situations :
+\begin{itemize}
+ \item le robot possède plus de câbles que requis pour le contrôle de l'ensemble des degrés de liberté (soit $m > n+1$ en configuration pleinement contrainte, $m > n$ en configuration suspendue)\footnote{nous faisons ici l'hypothèse que la géométrie du robot permet de contrôler celui-ci avec un nombre minimal de câbles, soit $n+1$ en configuration pleinement contrainte, $n$ en configuration suspendue}. Ce choix peut procéder de deux stratégies :
+ \begin{itemize}
+  \item plus de $n+1$ (ou $n$) câbles peuvent être en tension positive en même temps ; il y a alors redondance et il est possible d'avoir une distribution des tensions sur les câbles permettant de minimiser la force exercée sur chacun d'entre-eux.
+  \item les câbles en excès ont été placés de manière à augmenter l'espace de travail total ; tous ne seront pas (et dans certains cas ne pourront pas) être en tension en même temps.
+ \end{itemize}
+ \item le robot est dans une situation où $m < n-1$ (resp $m < n$) câbles sont en tension dans une configuration pleinement contrainte (resp. suspendue) ; il est alors en mode de fonctionnement degradé et perd le contrôle d'un ou plusieurs degrés de liberté.
+\end{itemize}
+
+Nous appellerons par la suite {\it configuration de câbles} (ou {\it c.c.}) le sous-ensemble des câbles en tension. Ainsi, pour un robot à $4$ câbles, les différentes configurations de câbles correspondront aux sous-ensembles
+\begin{itemize}
+ \item $\{0\},\{1\},\{2\},\{3\}$ pour des configurations à $1$ câble tendu,
+ \item $\{0,1\},\{0,2\},\{0,3\},\{1,2\},\{1,3\},\{2,3\}$ avec $2$ câbles tendus,
+ \item $\{0,1,2\},\{0,1,3\},\{0,2,3\},\{1,2,3\}$ avec $3$ câbles tendus,
+ \item $\{0,1,2,3\}$ avec l'ensemble des $4$ câbles tendus.
+\end{itemize}
+et seront notées respectivement $C_{0}$, $C_{1}$, $C_{2}$, $C_{3}$, $C_{01}$, $C_{02}$, $C_{03}$, $C_{12}$, $C_{13}$, $C_{23}$, $C_{012}$, $C_{013}$, $C_{023}$, $C_{123}$, $C_{0123}$. Ainsi, il existe au plus $2^m-1$ configurations de câbles pour un robot à $m$ câbles.
+
+Pour une configuration de câble donnée, nous appellerons {\it corobot associé à la configuration $C_{ijk\dots}$} le robot virtuel défini sans les câbles qui ne sont pas en tension. Ainsi, une transition entre deux configurations de câbles sera équivalente au passage d'un corobot associé à la première au corobot associé à la seconde. Chaque corobot possède ses propriétés, son espace de travail. Les espaces de travails de plusieurs corobots peuvent évidemment s'intersecter, celui d'un corobot peut inclure celui d'un autre.
+
+En particulier, certains corobots pourront ne pas exister. C'est le cas par exemple lorsque l'ensemble des câbles ne peuvent être en tension en même temps : un robot à $4$ câbles présentant cette propriété ne peut avoir de corobot associé à la configuration de câbles $C_{0123}$. On pourra dès lors procéder de manière inverse : définir dans un premier temps les corobots possibles, puis le {\it robot enveloppant} dans un second temps comme l'ensemble des corobots possibles.
+
+Cette nomenclature présente différents avantages :
+\begin{itemize}
+ \item le {\it robot enveloppant} enveloppe également l'ensemble des singularités de ses corobots : pour autant, une pose peut correspondre à une singularité pour un corobot, mais pas pour un autre au sein duquel elle est pourtant possible. Lorsqu'un moyen existe de choisir la configuration de câble génératrice d'un corobot, il devient alors possible de choisir une situation avantageuse.
+ \item lorsque l'ensemble d'une trajectoire donnée peut être effectuée au sein d'un seul corobot, il est inutile de considérer l'ensemble des paramètres, et on peut ainsi simplifier les modèles.
+ \item il est permis de définir des relations d'ordres entre les différents corobots à partir de critères correspondant à des propriétés que l'on souhaite favoriser. En nous donnant les moyens de sélectionner la configuration de câbles associée au corobot présentant les meilleures caractéristiques, nous pouvons améliorer les propriétés du robot enveloppant.
+\end{itemize}
+
+
+\subsection{Présentation du {\tt Marionet-Assist}}
