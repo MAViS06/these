@@ -399,13 +399,13 @@ Les {\tt Marionet} sont une classe de robots à câbles développés par l'EPI H
 
 \begin{figure}[!ht]
   \centering
-    \subfloat[gg]{\label{intro:fig7view0}
+    \subfloat[{\tt Marionet-Crane} description]{\label{intro:fig7view0}
     \includegraphics[width=.90\linewidth]{./intro/figures/marionet03.jpg}} \\
-    \subfloat[gg]{\label{intro:fig7view1}
-    \includegraphics[width=.49\linewidth]{./intro/figures/marionet01.jpg}} \hfill
-    \subfloat[gg]{\label{intro:fig7view2}
-    \includegraphics[width=.49\linewidth]{./intro/figures/marionet02.jpg}}
-    \caption{\footnotesize{gg}}
+    \subfloat[{\tt Marionet-Rehab} description]{\label{intro:fig7view1}
+    \includegraphics[width=.45\linewidth]{./intro/figures/marionet01.jpg}} \hfill
+    \subfloat[{\tt Marionet-School} description]{\label{intro:fig7view2}
+    \includegraphics[width=.45\linewidth]{./intro/figures/marionet02.jpg}}
+    \caption{\footnotesize{Exemples d'utilisation des robots {\tt Marionet}}}
 \label{intro:fig7}
 \end{figure}
 
@@ -418,13 +418,13 @@ Le {\tt Marionet-Assist} a été développé dans un objectif d'assistance aux p
 
 \begin{figure}[htp]
   \centering
-  \subfloat[Light walking aid]{\label{intro:fig8view0}
+  \subfloat[Simple soutien au déplacement dans une pièce de vie]{\label{intro:fig8view0}
   \includegraphics[width=.2\linewidth]{./intro/figures/case01.jpg}} \hfill
-  \subfloat[Case of an hemiplegic user]{\label{intro:fig8view1}
+  \subfloat[Transfert de position assise/levé]{\label{intro:fig8view1}
   \includegraphics[width=.2\linewidth]{./intro/figures/case02.jpg}} \hfill
-  \subfloat[Case of a paraplegic user]{\label{intro:fig8view2}
+  \subfloat[Déplacement autonome d'un lieu de vie (lit) vers un dispositif de déplacement (fauteuil)]{\label{intro:fig8view2}
   \includegraphics[width=.48\linewidth]{./intro/figures/case03.jpg}} \hfill
-    \caption{\footnotesize{{\tt Marionet-Assist} being used in three different situations of motor skills}}
+    \caption{\footnotesize{Différents types de fragilités motrices dans des situation de la vie quotidienne}}
 \label{intro:fig8}
 \end{figure}
 
@@ -433,17 +433,48 @@ Un dispositif répondant à ces impératifs doit pouvoir présenter les caracté
  \item pouvoir supporter des charges correspondant au poids d'une personne
  \item avoir un espace de travail équivalent à la taille d'une pièce de vie
  \item être léger et suffisamment discret et modulaire pour ne pas bouleverser l'environnement de l'utilisateur
- \item avoir une précision suffisante pour permettre un positionnement garantissant efficacité et aisance des opérations de transfert et d'attachement/détachement de l'utilisateur à la plateforme.
+ \item avoir une précision suffisante pour permettre un positionnement garantissant la sécurité, l'efficacité et le confort des opérations de transfert et d'attachement/détachement de l'utilisateur à la plateforme.
 \end{itemize}
 
+Le choix d'utilisation d'un robot parallèle à câbles semble donc le plus compatible avec l'ensemble de ces exigences. {\tt Marionet-Assist} a ainsi été conçu et déployé dans un appartement-témoin (Fig.\ref{intro:fig10view0},\ref{intro:fig10view1}) situé dans les locaux d'INRIA. Les câbles permettant le contrôle de la plateforme sont fixés sur le plafond de l'appartement. Dans sa configuration actuelle, {\tt Marionet-Assist} est équipé de $4$ câbles, mais peut en contrôler jusqu'à $6$. Plusieurs configurations sont possibles au niveau des points de fixation sur la plateforme :
+\begin{itemize}
+ \item les points d'attaches des câbles sont tous différents, il est alors possible avec $n$ câbles de contrôler $n$ degrés de liberté. Cette configuration sera notée $N-N$ (Fig.\ref{intro:fig9view0}).
+ \item les câbles sont attachés en un même point à la plateforme : il est posible à partir de $3$ câbles de contrôler les déplacement en translation de la plateforme ; l'utilisation de plus de $3$ câbles permet alors d'augmenter la taille de l'espace de travail. On parle dans ce cas de configuration $N-1$ (Fig.\ref{intro:fig9view1}).
+ \item certains câbles seulement sont attachés en un même point sur la plateforme. Dans le cas par exemple d'une disposition pour laquelle $3$ câbles sont atttachés en un même point $B_0$ et un quatrième câble relié à la plateforme en un point $B_1$, cette configuration sera notée $4-3-1$ (Fig.\ref{intro:fig9view2}).
+\end{itemize}
+
+\begin{figure}[htp]
+  \centering
+  \subfloat[Configuration $4-4$ : chaque câble est relié à la plateforme en un point distinct]{\label{intro:fig9view0}
+  \includegraphics[width=.3\linewidth]{./intro/figures/cfg_44.png}} \hfill
+  \subfloat[Configuration 4-1 : Les $4$ câbles sont reliés à la plateforme un un seul point]{\label{intro:fig9view1}
+  \includegraphics[width=.3\linewidth]{./intro/figures/cfg_41.png}}
+  \subfloat[Configuration 4-3-1 : $3$ câbles sont reliés à la plateforme en un même point, le quatrième est relié en un point distinct]{\label{intro:fig9view2}
+  \includegraphics[width=.3\linewidth]{./intro/figures/cfg_431.png}} \hfill
+    \caption{\footnotesize{Exemples de configurations avec $4$ câbles}}
+\label{intro:fig9}
+\end{figure}
+
+Pour l'ensemble des expériences menées dans le cadre de ce travail, nous avons utilisé la configuration $4-1$ (Fig.\ref{intro:fig10view2}) qui nous permet de contrôler les déplacements en translation, le quatrième ayant été ajouté pour augmenter l'espace de travail de manière à pouvoir se déplacer dans la quasi-totalité de l'appartement-témoin.
+
+Les câbles sont en Kevlar, ce qui nous permet de négliger leur élasticité et de pouvoir les modéliser comme des jambes rigides lorsque leur tension est strictement positive. Le contrôle des longueurs se fait à l'aide de poulies actionnées par des moteurs rotatifs (Fig.\ref{intro:fig10view3}). Toutefois, en l'absence de guide pour l'enroulement, il existe des incertitudes sur la longueur déroulée ; afin de pallier à cet inconvénient, des repères ont été disposés sur les câbles à intervalles connus, ce qui permet lors de leur détection de réactualiser la valeur estimée de la longueur déroulée.
+
+\begin{figure}[htp]
+  \centering
+  \subfloat[Vue globale de l'appartement-témoin]{\label{intro:fig10view0}
+  \includegraphics[width=.7\linewidth]{./intro/figures/view_appartment01.jpg}} \\
+  \subfloat[Vue aérienne de l'appartement-témoin]{\label{intro:fig10view1}
+  \includegraphics[width=.7\linewidth]{./intro/figures/view_appartment04.jpg}} \\
+  \subfloat[Plateforme de {\tt Marionet-Assist}]{\label{intro:fig10view2}
+  \includegraphics[width=.7\linewidth]{./intro/figures/view_plateform.jpg}} \\
+  \subfloat[Système d'enroulement et actionneurs pour un câble]{\label{intro:fig10view3}
+  \includegraphics[width=.7\linewidth]{./intro/figures/view_winches02.jpg}}
+    \caption{\footnotesize{{\tt Marionet-Assist}}}
+\label{intro:fig10}
+\end{figure}
 
 
-
-
-
-
-
-
+Dans cette configuration, 
 
 %\subsection{L'asservissement visuel}
 

@@ -394,22 +394,50 @@ Les {\tt Marionet} sont une classe de robots à câbles développés par l'EPI H
 \begin{itemize}
  \item {\tt Marionet-Crane} (Fig.\ref{intro:fig7view0}) : intervention à grande échelle pour des opérations de sauvetage dans des situations de catastrophe naturelle
  \item {\tt Marionet-Rehab} (Fig.\ref{intro:fig7view1}) : rééducation et assistance à la personne ; pouvant atteindre des vitesses allant jusqu'à 100m/s, il est également possible de l'utiliser pour des opérations de transfert ultra-rapides
- \item {\tt Marionet-School} (Fig.\ref{intro:fig7view2}) : pédagogie et diffusion ; ces robots sont utilisés entre autres pour illustrer de manière ludique des propriétés géométriques et mathématiques
+ \item {\tt Marionet-School} (Fig.\ref{intro:fig7view2}) : pédagogie et diffusion ; ces robots sont utilisés entre autres pour illustrer de manière ludique des propriétés géométriques et mathématiques auprès des publics jeunes
 \end{itemize}
 
 \begin{figure}[!ht]
   \centering
-    \subfloat[gg]{\label{intro:fig7view0}
+    \subfloat[{\tt Marionet-Crane} description]{\label{intro:fig7view0}
     \includegraphics[width=.90\linewidth]{./intro/figures/marionet03.jpg}} \\
-    \subfloat[gg]{\label{intro:fig7view1}
+    \subfloat[{\tt Marionet-Rehab} description]{\label{intro:fig7view1}
     \includegraphics[width=.49\linewidth]{./intro/figures/marionet01.jpg}} \hfill
-    \subfloat[gg]{\label{intro:fig7view2}
+    \subfloat{\tt Marionet-School} description]{\label{intro:fig7view2}
     \includegraphics[width=.49\linewidth]{./intro/figures/marionet02.jpg}}
-    \caption{\footnotesize{gg}}
+    \caption{\footnotesize{Exemples d'utilisation des robots {\tt Marionet}}}
 \label{intro:fig7}
 \end{figure}
 
-Le {\tt Marionet-Assist} a été développé dans un objectif d'assistance aux personnes à mobilité réduite. Cela peut donc concerner tout autant une personne âgée expérimentant une fatigue au niveau des articulations et pou
+Le {\tt Marionet-Assist} a été développé dans un objectif d'assistance aux personnes à mobilités réduites, et plus spécifiquement dans une démarche d'amélioration de l'autonomie des publics concernés. Il doit pouvoir répondre à des situations tout aussi diverses que :
+\begin{itemize}
+ \item soutien ponctuelle au déplacement pour une personne âgée expérimentant une fatigue articulaire (par exemple pour la passage de la baignoire) (Fig.\ref{intro:fig8view0})
+ \item aide au transfert d'une position à une autre pour une personne atteinte de paraplégie (des toilettes au fauteuil par exemple) (Fig.\ref{intro:fig8view1})
+ \item soutien des aidants lors du transfert de personnes atteintes de tétraplégie (déplacement du lit vers un fauteuil par exemple) (Fig.\ref{intro:fig8view2})
+\end{itemize}
+
+\begin{figure}[htp]
+  \centering
+  \subfloat[Simple soutien au déplacement dans une pièce de vie]{\label{intro:fig8view0}
+  \includegraphics[width=.2\linewidth]{./intro/figures/case01.jpg}} \hfill
+  \subfloat[Transfert de position assise/levé]{\label{intro:fig8view1}
+  \includegraphics[width=.2\linewidth]{./intro/figures/case02.jpg}} \hfill
+  \subfloat[Déplacement autonome d'un lieu de vie (lit) vers un dispositif de déplacement (fauteuil)]{\label{intro:fig8view2}
+  \includegraphics[width=.48\linewidth]{./intro/figures/case03.jpg}} \hfill
+    \caption{\footnotesize{Différents types de fragilités motrices dans des situation de la vie quotidienne}}
+\label{intro:fig8}
+\end{figure}
+
+Un dispositif répondant à ces impératifs doit pouvoir présenter les caractéristiques suivantes :
+\begin{itemize}
+ \item pouvoir supporter des charges correspondant au poids d'une personne
+ \item avoir un espace de travail équivalent à la taille d'une pièce de vie
+ \item être léger et suffisamment discret et modulaire pour ne pas bouleverser l'environnement de l'utilisateur
+ \item avoir une précision suffisante pour permettre un positionnement garantissant la sécurité, l'efficacité et le confort des opérations de transfert et d'attachement/détachement de l'utilisateur à la plateforme.
+\end{itemize}
+
+Le choix d'utilisation d'un robot parallèle à câbles semble donc le plus compatible avec l'ensemble de ces exigences.
+
 
 
 
