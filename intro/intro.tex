@@ -1,14 +1,14 @@
 \section{Introduction}
 
-Il s'agit dans ce chapitre d'introduire les problématiques et méthodologies qui nous guideront dans notre étude de l'utilisation de l'asservissement visuel pour les robots parallèles à c\^ables. Notre objectif est double: il s'agit dans un premier temps d'ajouter des fonctionnalités de saisie et manipulation d'objets à nos prototypes existants, et d'améliorer les propriétés de ces mêmes prototypes dans un second temps.
+Il s'agit dans ce chapitre d'introduire les problématiques et méthodologies qui nous guideront dans notre étude de l'utilisation de l'asservissement visuel pour une architecture de robot très particulière que nous allons présenter dans ce chapitre. Notre objectif est double: il s'agit dans un premier temps de perfectionner les fonctionnalités de saisie et manipulation d'objets de ces robots, et d'améliorer leurs propriétés dans un second temps.
 
 Pour cela, nous  évoquons dans une première section les avantages et inconvénients des structures parallèles comparativement aux structures en série. Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxième section, suivie par un rappel des modèles géométriques et cinématiques des manipulateurs parallèles à c\^ables, avant d'introduire dans une troisième section quelques notions fondamentales pour la suite. Nous présentons dans une quatrième section le prototype sur lequel nos expérimentations et validations ont été effectuées,
 
-Dans une cinquième section, à la suite d'un rappel des modèles d'asservissement visuel, nous introduirons les spécificités de notre choix de configuration. Nous expliquerons donc une sixième section de quelle manière il se démarque des travaux existants dans ce domaine précis. Nous pourrons alors dans une section terminale conclure par l'exposition des problématiques à partir desquelles nous nous sommes proposé de mener cette étude, ainsi que des choix méthodologiques qui en auront guidée la réalisation.
+Dans une cinquième section, à la suite d'un rappel des modèles d'asservissement visuel, nous introduirons les spécificités de notre choix de configuration. Nous expliquerons donc une sixième section de quelle manière il se démarque des travaux existants dans ce domaine précis. Nous pourrons alors dans une section terminale conclure par l'exposition des problématiques à partir desquelles nous nous sommes proposé de mener cette étude, ainsi que des choix méthodologiques qui en auront guidée la résolution.
 
 \subsection{Manipulateurs série et parallèles}
 
-C'est incontestablement l'industrie qui aura été le principal vecteur de développe\-ment de la robotique ces deux derniers siècles. L'introduction des robots dans les usines s'inscrit dans une démarche d'augmentation de la productivité et d'amélio\-ration de la manufacture. Cela aura permis dès lors de soulager le travailleur humain dans des situations de travail pénible et/ou répétitif, et d'augmenter ses compétences en permettant par exemple une précision qu'il ne saurait fournir seul, ou la possibilité de déplacer des charges élevées. Si la grande diversité que recouvre aujourd'hui le terme de {\it robot} rend extrêmement difficile l'élaboration d'une définition générique, nous pouvons cependant en dériver des sous-catégories plus faciles à appréhender. Parmi celles-ci, nous distinguons en particulier la classe des manipulateurs dont l'objectif sera le déplacement et positionnement d'objets dans l'espace.
+C'est incontestablement l'industrie qui aura été le principal vecteur de développe\-ment de la robotique ces deux derniers siècles. L'introduction des robots dans les usines s'inscrit dans une démarche d'augmentation de la productivité et d'amélio\-ration des performances. Cela aura permis dès lors de soulager le travailleur humain dans des situations de travail pénible et/ou répétitif, et d'augmenter ses compétences en permettant par exemple une précision qu'il ne saurait fournir seul, ou la possibilité de déplacer des charges élevées. Si la grande diversité que recouvre aujourd'hui le terme de {\it robot} rend extrêmement difficile l'élaboration d'une définition générique, nous pouvons cependant en dériver des sous-catégories plus faciles à appréhender. Parmi celles-ci, nous distinguons en particulier la classe des manipulateurs dont l'objectif sera le déplacement et positionnement d'objets dans l'espace.
 
 \subsubsection{Définitions}
 
@@ -30,9 +30,9 @@ Une chaîne cinématique est caractérisée par une succession de solides relié
 \label{intro:fig0}
 \end{figure}
 
-On appelle {\it coordonnées articulaires} l'ensemble des valeurs prises par les paramètres permettant de décrire l'état des articulations à un instant donné. Les coordonnées articulaires sont exprimées dans un espace articulaire propre à chaque articulation. Les paramètres nécessaires à l'expression des coordonnées articulaires sont généralement au nombre de 3 pour un point (ses coordonnées dans l'espace cartésien) et de 6 pour un solide (position cartésienne complétée par trois angles de rotation). Le nombre de paramètres non fixés par la géométrie du robot et nécessaires à la description exhaustive des coordonnées d'une articulation est appelé {\it degré de liberté}. Lorsque les articulations ne sont pas laissées libres, leur valeur dans l'{\it espace articulaire} sera contr\^olée par des {\it actionneurs} : on distinguera donc les {\it articulations actionnées} des {\it articulations libres}.
+On appelle {\it coordonnées articulaires} l'ensemble des valeurs prises par les paramètres permettant de décrire l'état des articulations à un instant donné. Les coordonnées articulaires sont exprimées dans un espace articulaire propre à chaque articulation. Les paramètres nécessaires à l'expression des coordonnées articulaires sont généralement au nombre de 3 pour un point (ses coordonnées dans l'espace cartésien) et de 6 pour un solide (position cartésienne complétée par trois angles de rotation). Le nombre de paramètres non fixés par la géométrie du robot et nécessaires à la description exhaustive des coordonnées d'une articulation est appelé {\it degré de liberté}. Lorsque les articulations ne sont pas laissées libres, leur valeur dans l'{\it espace articulaire} sera contr\^olée par des {\it actionneurs} : on distinguera donc les {\it articulations actionnées} des {\it articulations passives}.
 
-De la même manière, on parlera des {\it coordonnées opérationnelles} pour définir la position de l'organe terminal, exprimées dans le repère de l'organe terminal. A nouveau, nous pouvons définir les degrés de liberté de l'organe terminal comme le nombre de paramètres contr\^olés pour le déplacer dans l'espace. Cette notion est à distinguer de la mobilité de l'organe terminal, qui correspond aux possibilités de déplacement de l'organe terminal, contrôlées ou laissées libres. Si l'on décide par exemple de contr\^oler les mouvements en translation, de bloquer deux rotations mais d'en laisser libre une, la mobilité sera de 4, mais le nombre de degrés de libertés ne sera que de 3.
+De la même manière, on parlera des {\it coordonnées opérationnelles} pour définir la pose de l'organe terminal, exprimées par rapport à un repère de référence. A nouveau, nous pouvons définir les degrés de liberté de l'organe terminal comme le nombre de paramètres contr\^olés pour le déplacer dans l'espace. Cette notion est à distinguer de la mobilité de l'organe terminal, qui correspond aux possibilités de déplacement de l'organe terminal, contrôlées ou laissées libres. Si l'on décide par exemple de contr\^oler les mouvements en translation, de bloquer deux rotations mais d'en laisser libre une, la mobilité sera de 4, mais le nombre de degrés de libertés ne sera que de 3.
 
 Enfin, on peut définir pour chaque segment son {\it degré de connexion} comme étant le nombre de solides auxquels il est relié par une articulation libre ou actionnée. Lorsque l'ensemble des segments ont un degré de connexion égal à 2 à l'exception de la base et de l'organe terminal qui ont de degré de connexion égal à 1, on parle de {\it cha\^ine cinématique ouverte} (Fig.\ref{intro:fig1view0}). Lorsque l'un des segments au moins (différent de la base) possède un degré de connexion supérieur ou égal à 3, nous avons une {\it cha\^ine cinématique fermée} (Fig.\ref{intro:fig1view1}) \cite{journals/gosselin1989}. Les cha\^ines cinématiques complexes sont constituées de plusieurs cha\^ines fermées et/ou ouvertes.
 
@@ -48,11 +48,7 @@ Enfin, on peut définir pour chaque segment son {\it degré de connexion} comme 
 
 \subsubsection{Architectures séries}
 
-On appelle {\it robot série} un système constitué d'{\bf une chaîne cinématique ouverte dont chaque segment est relié au suivant par une articulation simple} (Fig.\ref{intro:fig2}). Longtemps dominants dans l'industrie, les robots séries ont pu être privilégiés grâce aux deux caractéristiques suivantes :
-\begin{itemize}
- \item sous certaines conditions, le modèle cinématique inverse des robots séries peut être résolu analytiquement \cite{pieper1968kinematics}
- \item leur espace de travail peut rapidement devenir assez conséquent.
-\end{itemize}
+{\it On appelle robot série un système constitué d'une chaîne cinématique ouverte dont chaque segment est relié au suivant par une articulation simple} (Fig.\ref{intro:fig2}). Longtemps dominants dans l'industrie, les robots séries ont été privilégiés grâce à un erelative simplicité de la commande et un espace de travail important.
 
 \begin{figure}[!ht]
   \centering
@@ -66,8 +62,8 @@ On appelle {\it robot série} un système constitué d'{\bf une chaîne cinémat
 
 Une architecture série présente toutefois plusieurs inconvénients non négli\-gea\-bles dans un contexte industriel tels que :
 \begin{itemize}
- \item chaque segment et articulation porte la charge de tous ceux qui leur succèdent dans la chaîne cinématique. En particulier, cela affaiblit la dynamique lors de l'actionnement des articulations : segments et articulations doivent être rigidifiés, ils sont donc plus lourds, 
- \item les erreurs se propagent de segments en segments ; la précision tout comme la répétabilité du manipulateur en sont affectées,
+ \item chaque segment et articulation porte la charge de tous ceux qui leur succèdent dans la chaîne cinématique, ce qui pénalise la dynamique : segments et articulations doivent donc être rigidifiés et deviennent plus lourds, 
+ \item les erreurs de positionnement se propagent de segments en segments ; la précision tout comme la répétabilité du manipulateur en sont affectées,
  \item les charges manipulables ne peuvent être excessives, car elles seront supportées par l'ensemble des segments et articulations.
 \end{itemize}
 
@@ -80,7 +76,7 @@ Une alternative possible consiste en l'utilisation de chaînes cinématiques fer
  \item une plus grand flexibilité des articulations, impliquant une dynamique plus grande.
 \end{itemize}
 
-Les architectures parallèles en particulier présentent une des implémentations possibles de chaînes cinématiques fermées, et leurs caractéristiques -- sur lesquel\-les nous allons nous pencher par la suite -- ont contribué à ce qu'elles s'installent progressivement dans le paysage de la robotique.
+Les architectures parallèles en particulier présentent une des utilisation possibles de chaînes cinématiques fermées, et leurs caractéristiques -- sur lesquel\-les nous allons nous pencher par la suite -- ont contribué à ce qu'elles s'installent progressivement dans le paysage de la robotique.
 
 
 \subsubsection{Architectures parallèles}
@@ -89,11 +85,11 @@ Une définition des robots parallèles est donnée dans \cite{merlet1997robots} 
 {\it Un manipulateur parallèle est constitué d’un organe terminal à $n$ degrés de li\-berté et d’une base fixe, reliés entre eux par au moins deux chaînes
 cinématiques indépendantes, la motorisation s’effectuant par $n$ actionneurs simples.}\\
 
-Parmi les exemples les plus cités dans la littérature, nous trouvons la plateforme de Gough-Stewart \cite{1956:Gough}, \cite{1965:Stewart} et le robot Delta \cite{1988:Clavel}.
+Parmi les exemples les plus cités dans la littérature, nous trouvons la plateforme de Gough-Stewart \cite{1956:Gough}, \cite{1965:Stewart} et le robot Delta \cite{1988:Clavel} (Fig.\ref{intro:fig3}).
 
-Initialement développée pour des applications dans l'industrie automobile (Fig.\ref{intro:fig3view0}), la plateforme de Gough-Stewart a par la suite été utilisée dans des applications diverses au rang desquelles les simulateurs de vols (Fig.\ref{intro:fig3view1}). Sa plateforme mobile peut être déplacée selon 6 degrés de liberté (3 translations $+$ 3 rotations) à l'aide de six jambes indépendantes actionnées par des vérins pneumatiques. Les articulations la reliant à la base (cardan) et à la plateforme (rotule) sont quant à elles laissées libres.
+Initialement développée pour des applications dans l'industrie automobile (Fig.\ref{intro:fig3view0}), la plateforme de Gough-Stewart a par la suite été utilisée dans des applications diverses parmi lesquelles les simulateurs de vols (Fig.\ref{intro:fig3view1}). Sa plateforme mobile peut être déplacée selon 6 degrés de liberté (3 translations $+$ 3 rotations) à l'aide de six jambes indépendantes actionnées par des vérins pneumatiques. Les articulations la reliant à la base (cardan) et à la plateforme (rotule) sont quant à elles laissées libres.
 
-Le robot Delta (Fig.\ref{intro:fig3view2}) permet un déplacement de sa platforme selon les trois degrés de liberté correspondant aux translations. Trois jambes sont utilisées pour cela, chacune étant reliée à la base par une articulation rotoïde à un levier, lui-même relié à un segment parallélogramme par une seconde articulation rotoïde, une troisième articulation rotoïde liant ce segment à l'organe terminal. Il peut atteindre des vitesses allant jusqu'à 10 m/s et des accélérations jusqu'à 20G, ce qui le rend particulièrement adapté pour des tâches de conditionnement. 
+Le robot Delta (Fig.\ref{intro:fig3view2}) permet un déplacement de sa platforme selon les trois degrés de liberté de translation. Trois jambes sont utilisées pour cela, chacune étant reliée à la base par une articulation rotoïde à un levier, lui-même relié à un parallélogramme par une seconde articulation rotoïde, une troisième articulation rotoïde liant ce segment à l'organe terminal. Il peut atteindre des vitesses allant jusqu'à 10 m/s et des accélérations jusqu'à 20G, ce qui le rend particulièrement adapté pour des tâches de conditionnement. 
 
 \begin{figure}[!ht]
   \centering
@@ -109,39 +105,34 @@ Le robot Delta (Fig.\ref{intro:fig3view2}) permet un déplacement de sa platform
 
 De manière générale, les manipulateurs parallèles présentent les caractéristi\-ques sui\-vantes permettant de les comparer avantageusement aux manipulateurs séries :
 \begin{itemize}
- \item une précision accrue par un mécanisme de {\bf compensation} des erreurs entre les différentes chaînes cinématiques (autrement appelées {\it jambes}),
+ \item une précision accrue par un mécanisme de {\bf compensation} des erreurs entre les différentes chaînes cinématiques (parfois appelées {\it jambes}),
  \item une capacité de charge élevée due à la {\bf répartition} de la charge sur les différentes jambes,
- \item une grande rigidité provenant de la taille réduite des chaînes cinématiques,
+ \item une grande rigidité qui peut être élevée car les éléments de chaînes sont sollicités en traction/compression plutôt qu'en flexion.
  \item une dynamique élevée conséquente de la {\bf coopération} des différentes jam\-bes dans le positionnement de l'organe terminal.
 \end{itemize}
 
 Toutefois, les mécanismes parallèles possèdent plusieurs inconvénients qui doivent être pris en compte lors du choix d'une architecture :
 \begin{itemize}
- \item des modèles géométriques directs complexes, dont la résolution algébrique n'est pas toujours possible,
- \item de nouveaux types de singularités par rapport aux robots séries,  pouvant conduire à une perte de contrôle du manipulateur,
- \item la répartition entre les jambes des forces appliquées sur la plateforme n'est qu'en de très rares cas uniforme ; certaines positions peuvent affecter le contrôle, la rigidité et la précision du mécanisme,
+ \item des relations complexes entre entrées et sorties,
+ \item des positions dites {\it singulières} pouvant conduire à une perte de contrôle du manipulateur, et qui limite l'espace de travail.
  \item un espace de travail restreint inférieur à l'intersection des espaces atteignables par chaque jambe.
 \end{itemize}
-
-On peut distinguer deux types de stratégies concernant la résolution des modèles géométriques directs : une première consiste à utiliser des outils numé\-riques tels l'analyse par intervalles \cite{Merlet04solvingthe}, une seconde à choisir une géométrie pour laquelle une résolution algébrique est possible \cite{2003:Krut1}. Concernant les diverses singularités, la difficulté peut être contournée par exemple par l'utilisation de méthodes de planification de trajectoires \cite{2008:Chen.Chi}, \cite{1998:Dasgupta.Mruthyunjaya} ou à nouveau grâce à la détermination de géométries adaptées \cite{w1994:DiCaprioStanisic}.
-
-Il est évidemment possible de renforcer la structure des jambes et des actionneurs pour assurer la rigidité des chaînes cinématiques en toutes circonstances ; il est également possible, lorsque pour une position de l'organe terminal donnée, plusieurs configurations articulaires sont possibles, de choisir celle qui garantit le meilleur fonctionnement du robot \cite{2002:Verhoeven.Miller} : ainsi, l'existence de plusieurs solutions au modèle géométrique direct devient un avantage plus qu'en inconvénient, en ce que cela permet d'optimiser certains critères -- ici la répartition des forces exercées sur la plateforme -- pour un meilleur contrôle du robot.
 
 La problématique d'un espace de travail réduit subsiste et reste une contrainte forte des mécanismes parallèles. Bien qu'ils présentent des spécificités propres pour chacune des caractéristiques déjà évoquées (rigidité, précision, charge nominale, \dots), la classe des robots parallèles à câbles a principalement été développée afin de conserver les propriétés des robots parallèles pour des applications exigeant un mécanisme léger possédant un volume de travail de taille conséquente, par exemple pour intervenir lors de catastrophes naturelles ou dans des environnements toxiques \cite{1992:Albus.Bostelman.ea}. C'est à l'étude et au développement de cette catégorie paticulière de manipulateurs que seront consacrés l'essentiel des travaux présentés dans ce manuscrit et pour laquelle nous emploierons désormais indistinctement les noms de robots, manipulateurs, robots parallèles à câbles ou CDPR (pour {\it cable-driven parallel robot}).
 
 \subsection{Les manipulateurs parallèles à câbles}
 
-Les manipulateurs parallèles à câbles présentent une structure en chaînes cinéma\-tiques fermées, la base et la plateforme étant reliées exclusivement au moyen de câbles. Les actionneurs sont en général positionnés sur la base et leur fonction consiste à contrôler la longueur des câbles. On peut donc les considérer comme des articulations prismatiques dont la course peut s'avérer rapidement atteindre des longueurs remarquables, augmentant considérablement l'espace de travail du manipulateur.
+Les manipulateurs parallèles à câbles présentent une structure en chaînes cinéma\-tiques fermées, la base et la plateforme étant reliées au moyen de câbles. Les actionneurs sont en général positionnés sur la base et leur fonction consiste à contrôler la longueur des câbles.
 
-Afin de contrôler la longueur des câbles, plusieurs types d'articulations peuvent être utilisés, parmi lesquels :
+Afin de contrôler la longueur des câbles, plusieurs types de systèmes peuvent être utilisés, parmi lesquels :
 \begin{itemize}
- \item des poulies actionnées par des moteurs rotatifs autour desquelles s'enrou\-leront ou se dérouleront les câbles (Fig.\ref{intro:fig4view0}) ; cette solution a l'avantage d'être extrêmement légère et aisément déployable, mais présente l'inconvénient du contrôle de la longueur enroulée lorsque le câble n'est pas guidé : il est dès lors impossible d'éviter une superposition lors de l'enroulement, et dès lors de connnaître le diamètre réel pour une couche donnée.
- \item les câbles sont reliés à des plateformes se déplaçant sur des rails, ce qui permet d'en contrôler la longueur \cite{merlet2008} ; la multiplication des plateformes en mouvement permet en théorie un contrôle plus rapide et plus précis (Fig.\ref{intro:fig4view1}). 
+ \item un tambour actionné par un moteur rotatif sur lequel s'enroule ou se déroule le câble (Fig.\ref{intro:fig4view0}). La mesure de la longueur du câble déroulé est obtenue en mesurant la rotation du tambour ; cette mesure est relativement imprécise si l'enroulement n'est pas guidé.
+ \item le câble est attaché au chariot d'un actionneur linéaire, un système de démultiplication à poulies permettant d'amplifier le déplacement du câble (Fig.\ref{intro:fig4view1}). La mesure du déplacement du chariot permet une estimation précise de la longueur du câble \cite{merlet2008}. 
 \end{itemize}
 
 \begin{figure}[!ht]
   \centering
-      \subfloat[L'enroulement et le déroulement des câble sse fait ici par un système de poulie actionnée par un moteur]{\label{intro:fig4view0}
+      \subfloat[L'enroulement et le déroulement des câble se fait ici par un système de poulie actionnée par un moteur]{\label{intro:fig4view0}
     \includegraphics[width=.55\linewidth]{./intro/figures/winchesactuator.jpg}} \hfill
     \subfloat[Les câbles sont fixés à des plateformes pouvant se déplacer linéairement sur des rails, permettant un contrôle de la longueur]{\label{intro:fig4view1}
     \includegraphics[width=.42\linewidth]{./intro/figures/linearactuator.png}}
@@ -149,7 +140,9 @@ Afin de contrôler la longueur des câbles, plusieurs types d'articulations peuv
 \label{intro:fig4}
 \end{figure}
 
-Toutefois, quelque-soit le type d'articulation et d'actionnement choisis, la force que peut exercer un seul câble sur l'organe terminal est nécessairement unilatérale : un câble seul peut tirer, mais ne peut pas pousser la plateforme. Il faut donc, pour pouvoir contrôler le mouvement dans son intégralité, que les câbles travaillent en opposition. Il a ainsi été montré que $n+1$ câbles au minimum sont requis pour assurer le contrôle de $n$ degrés de liberté \cite{1994:Ming.Higuchi}. On peut cependant considérer la gravité comme une force unilatérale et la représenter comme un câble virtuel : il est ainsi possible de n'utiliser que $n$ câbles pour $n$ degrés de liberté.
+Dans tous les cas, ces systèmes permettent d'obtenir une trè large variation sur les longueurs des câbles, solutionnant ainsi le problème de l'espace de travail. On a pu ainsi construire des robots travaillant sur des volumes de $100m\times35m\times35m$ ({\tt Marionet-Crane}, Fig.\ref{intro:fig7view0}).
+
+Toutefois, quelque-soit le type d'articulation et d'actionnement choisis, la force que peut exercer un seul câble sur l'organe terminal est nécessairement unilatérale : {\em un câble seul peut tirer, mais ne peut pas pousser la plateforme}. Il faut donc, pour pouvoir contrôler le mouvement dans son intégralité, que les câbles subissent une opposition. Il a ainsi été montré que $n+1$ câbles au minimum sont requis pour assurer le contrôle de $n$ degrés de liberté \cite{1994:Ming.Higuchi}. On peut cependant considérer la gravité comme une force unilatérale et la représenter comme un câble virtuel jouant le rôle d'opposition : il est ainsi possible de n'utiliser que $n$ câbles pour $n$ degrés de liberté.
 
 On distingue donc deux types de configurations pour un robot parallèle à câbles :
 \begin{itemize}
@@ -167,19 +160,18 @@ On distingue donc deux types de configurations pour un robot parallèle à câbl
 \label{intro:fig5}
 \end{figure}
 
-Une caractéristique sensible des manipulateurs parallèles à câbles qui les différencie des manipulateurs parallèles classiques est la {\bf non-rigidité des jam\-bes}. Sous certaines conditions, un ou plusieurs câbles peuvent être détendus, ce qui a pour effet 1/ de modifier leur géométrie, 2/ ils n'exercent plus de force sur la plateforme. Pour certaines configurations, il peut d'ailleurs être montré qu'il existera toujours au moins un câble détendu quelque-soit la position de l'organe terminal et les forces exercées sur celui-ci \cite{2011:Carricato.Merlet}, \cite{icra2012:merlet}. Le prototype sur lequel nous avons conduit nos expériences présentant cette particularité d'avoir toujours au moins un câble avec une tension nulle, nous reviendrons plusieurs fois largement sur ce point.
-
-Enfin, lorsqu'un câble est sous tension, un modèle complet doit pouvoir prendre en compte son élasticité, sa masse, \dots qui affecteront sa longueur réelle et donc la précision avec laquelle le manipulateur est contrôlé.
+Une caractéristique particulière des manipulateurs parallèles à câbles qui les différencie des manipulateurs parallèles classiques est la {\bf non-rigidité des jam\-bes}. Sous certaines conditions, un ou plusieurs câbles peuvent être détendus, ce qui a pour effet qu'ils n'exercent plus de force sur la plateforme. Nous reviendrons plus loin sur c epoint essentiel.
 
 Comparativement donc aux robots parallèles classiques, les robots parallèles à câbles présentent les caractéristiques suivantes :
 \begin{itemize}
  \item la structure parallèle permet de conserver les propriétés de compensation des erreurs, de répartition des charges et des efforts, de coopération des chaînes cinématique pour l'exécution d'un mouvement
- \item l'espace de travail est considérablement agrandi malgré la conservation de la légèreté du dispositif.
- \item la modélisation des câbles ainsi que le choix des articulations et actionneurs complexifient le modèle du robot ; une simplification du modèle en négligeant certaines de ces caractéristiques est alors source d'imprécisions qui devront être intégrées au schéma de contrôle.
- \item l'unilatéralité des forces suppose que nous puissions nous retrouver dans une situation avec un ou plusieurs câbles détendus. Nous verrons cependant qu'il est possible de prendre avantage de cette situation afin d'amélio\-rer le contrôle de l'organe terminal pour une trajectoire donnée.
+ \item l'espace de travail est considérablement agrandipar rapport aux robots parallèles à jambes rigides
+ \item l'équipage mobile est très léger, ce qui peut favoriser la dynamique
+ \item le comportement des câbles (non-déformables, élastiques, pesants, \dots) peut complexifier le modèle du robot sérieusement
+ \item l'unilatéralité des forces implique que nous puissions nous retrouver dans une situation avec un ou plusieurs câbles détendus, ce qui doit être pris en compte dans le contrôle.
 \end{itemize}
 
-Après avoir introduit quelques notations utiles, nous allons à présent décrire les modèles géométriques direct et inverse, cinématiques ainsi que l'équilibre statique pour les robots parallèles à câble. Ceci nous permettra de lister tant que faire se peut l'ensemble des difficultés posées par ce type de manipulateur et auxquelles nous avons été confrontées dans le cadre de ces recherches.
+Après avoir introduit quelques notations, nous allons à présent décrire les modèles géométriques direct et inverse, cinématiques ainsi que l'équilibre statique pour les robots parallèles à câble. Ceci nous permettra de lister tant que faire se peut l'ensemble des difficultés posées par ce type de manipulateur et auxquelles nous avons été confrontées dans le cadre de nos recherches.
 
 \subsubsection{Notations}
 
@@ -187,8 +179,8 @@ Après avoir introduit quelques notations utiles, nous allons à présent décri
  \item $R_b$ : référentiel de la base
  \item $R_e$ : référentiel de l'organe terminal
  \item $A_i$ : point d'attache du $i^{\hbox{ème}}$ câble à la base ; le terme de {\it point de sortie} sera également utilisé.
- \item $B_i$ : point d'attache du $i^{\hbox{ème}}$ câble à l'effecteur
- \item $C$ : un point arbitraire de l'effecteur utilisé comme référence pour sa position
+ \item $B_i$ : point d'attache du $i^{\hbox{ème}}$ câble à l'organe terminal
+ \item $C$ : un point arbitraire de l'organe terminal utilisé comme référence pour sa position
  \item $\rho_i$ : longueur réelle du câble $i$
  \item $l_i$ : longueur déroulée du câble $i$
  \item $\bf {\mathcal F}$ : vecteur des forces exercées sur l'effecteur
@@ -196,10 +188,14 @@ Après avoir introduit quelques notations utiles, nous allons à présent décri
 \end{itemize}
 Enfin, on utilisera la notation $J^{-1}$ pour exprimer la jacobienne inverse, et $J^{-T}$ sera utilisé comme raccourci de notation pour sa transposée.
 
+Sauf mention du contraire, {\bf nous supposerons dans la suite que les câbles sont non-pesants et non-élastiques}, ce qui est une hypothèse adéquate pour le robot que nous avons utilisé.
+
 \subsubsection{Modèle géométrique inverse}
 
-Le modèle géométrique inverse consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie ${\bf A}_i$ et le point d'attache à la plateforme ${\bf B}_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance (Fig.\ref{intro:fig6view0}).\\
+Le modèle géométrique inverse consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs $\rho$ des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie ${\bf A}_i$ et le point d'attache à la plateforme ${\bf B}_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance (Fig.\ref{intro:fig6view0}).\\
 
+
+%%%%%% une figure différente
 \begin{figure}[!ht]
   \centering
       \subfloat[Forme d'un câble dont la tension serait nulle]{\label{intro:fig6view0}
@@ -217,11 +213,7 @@ Nous partons donc des relations suivantes :
 \label{intro:eq1}
 \end{eqnarray}
 
-Notons que les câbles peuvent être élastiques : ainsi, lorsqu'ils sont en tension, la longueur déroulée pourra être inférieure à la distance $d_i = ||{\bf A}_i {\bf B}_i||$ (Fig.\ref{intro:fig6view1}). Plusieurs modèles de câbles peuvent être utilisés pour estimer le rapport entre la longueur réelle et la longueur déroulée \cite{1974IrvineCaughey}, \cite{2006:Kozak.ea}. A titre d'exemple, le modèle linéaire suivant peut-être utilisé lorsque la masse des câbles est négligeable devant les forces appliquées sur la plateforme :
-$$\tau_i = \kappa(\rho_i - l_i)$$
-où $\kappa$ est un coefficient correspondant à la raideur linéique du câble.
-
-Pour être complet, le modèle géométrique inverse doit donc envisager toutes les configurations possibles de répartition de tension dans les câbles et, le cas échéant, intégrer la modélisation des câbles dans le processus de résolution. Il est donc fondamental de vérifier la tension exercée dan chaque câble, et en avoir une estimation suffisante selon le modèle d'élasticité des câbles choisi. Tout comme dans l'approche développée par \cite{2010:Carricato.Merlet}, nous parlerons donc de modèle géométrico-statique inverse, requérant l'étude de l'équilibre statique.
+Comme on le voit, il n'est pas possible d'obtenir les longueurs $\rho_i$ sont prendre en compte les tensions $\tau_i$. Dès lors, tout comme dans l'approche développée par \cite{2010:Carricato.Merlet}, nous parlerons donc de modèle géométrico-statique inverse, requérant l'étude de l'équilibre statique.
 
 \subsubsection{Equilibre statique}
 
@@ -476,7 +468,19 @@ Les câbles sont en Kevlar, ce qui nous permet de négliger leur élasticité et
 
 Dans cette configuration, 
 
-%\subsection{L'asservissement visuel}
+
+%% MGD MGI
+
+%% MC
+
+%% Corobots
+
+
+
+
+
+
+%\subsection{Asservissement visuel}
 
 %\subsubsection{Présentation}
 

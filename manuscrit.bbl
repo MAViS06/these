@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{1992:Albus.Bostelman.ea}
 J.~Albus, R.~Bostelman, and N.~Dagalakis.
@@ -12,36 +12,11 @@ M.~Carricato and J-P. Merlet.
   robot.
 \newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
 
-\bibitem{2011:Carricato.Merlet}
-M.~Carricato and J-P. Merlet.
-\newblock Direct geometrico-static problem of under-constrained cable-driven
-  parallel robots with three cables.
-\newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
-  3011--3017, Shangai, 9-13 may 2011.
-
-\bibitem{2008:Chen.Chi}
-C-T. Chen and H-W. Chi.
-\newblock Singularity-free trajectory planning of platform-type parallel
-  manipulators for minimum actuating efforts and reactions.
-\newblock {\em Robotica}, 26(3):371--384, may 2008.
-
 \bibitem{1988:Clavel}
 R.~Clavel.
 \newblock Delta, a fast robot with parallel geometry.
 \newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
   Lausanne, 26-28 april 1988.
-
-\bibitem{1998:Dasgupta.Mruthyunjaya}
-B.~Dasgupta and T.S. Mruthyunjaya.
-\newblock Singularity-free path planning for the stewart platform manipulator.
-\newblock {\em Mechanism and Machine Theory}, 33(6):711--725, august 1998.
-
-\bibitem{w1994:DiCaprioStanisic}
-F.~Di~Caprio and M.~M. Stanivsic.
-\newblock The kinematic control equations of a singularity-free
-  six-degree-of-freedom manipulator.
-\newblock {\em Transactions of the ASME, Journal of Mechanical Design},
-  116:17--21, 1994.
 
 \bibitem{journals/gosselin1989}
 C.~Gosselin and J.~Angeles.
@@ -56,42 +31,12 @@ V.E. Gough.
   stability, control and tyre performance, 1956-1957.
 \newblock Proc. Auto Div. Inst. Mech. Eng.
 
-\bibitem{1974IrvineCaughey}
-H.~M. {Irvine} and T.~K. {Caughey}.
-\newblock {The Linear Theory of Free Vibrations of a Suspended Cable}.
-\newblock {\em Royal Society of London Proceedings Series A}, 341:299--315,
-  December 1974.
-
-\bibitem{2006:Kozak.ea}
-K.~Kozak et~al.
-\newblock Static analysis of cable-driven manipulators with non-negligible
-  cable mass.
-\newblock {\em IEEE Trans. on Robotics}, 22(3):425--433, june 2006.
-
-\bibitem{2003:Krut1}
-S.~Krut.
-\newblock {\em Contribution `a l''etude des robots parall`eles l'egers, 3T-1R
-  et 3T-2R, `a forts d'ebattements angulaires}.
-\newblock PhD thesis, Universit'e Montpellier II, Montpellier, 13 november
-  2003.
-
-\bibitem{Merlet04solvingthe}
-J.-P. Merlet.
-\newblock Solving the forward kinematics of a gough-type parallel manipulator
-  with interval analysis, 2004.
-
 \bibitem{merlet2008}
 J.~P Merlet.
 \newblock Kinematics of the wire-driven parallel robot marionet using linear
   actuators.
 \newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
   Conference on}, pages 3857--3862, May 2008.
-
-\bibitem{icra2012:merlet}
-J.~P Merlet.
-\newblock The kinematics of the redundant n--1 wire driven parallel robot.
-\newblock In {\em Robotics and Automation (ICRA), 2012 IEEE International
-  Conference on}, pages 2313--2318, May 2012.
 
 \bibitem{merlet1997robots}
 J.P. Merlet.
@@ -105,22 +50,10 @@ A.~Ming and T.~Higuchi.
   mechanism.
 \newblock {\em Int. J. Japan Soc. Prec. Eng.}, 28(3):235--242, september 1994.
 
-\bibitem{pieper1968kinematics}
-D.L. Pieper.
-\newblock {\em The Kinematics of Manipulators Under Computer Control}.
-\newblock Memo (Stanford artificial intelligence Laboratory). Department of
-  Mechanical Engineering, Stanford University, 1968.
-
 \bibitem{1965:Stewart}
 D.~Stewart.
 \newblock A platform with 6 degrees of freedom.
 \newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
   15):371--386, 1965.
-
-\bibitem{2002:Verhoeven.Miller}
-R.~Verhoeven and M.~Miller.
-\newblock Tension distribution in tendon-based stewart platform.
-\newblock In {\em ARK}, pages 117--124, Caldes de Malavalla, 29 june -- 2 july
-  2002.
 
 \end{thebibliography}
