@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  28 JUL 2014 01:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  29 JUL 2014 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,7 +794,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
-<./intro/figures/nulltensionwire.png, id=166, 319.594pt x 250.536pt>
+<./intro/figures/nulltensionwire.png, id=168, 319.594pt x 250.536pt>
 File: ./intro/figures/nulltensionwire.png Graphic file (type png)
 
 <use ./intro/figures/nulltensionwire.png>
@@ -802,18 +802,24 @@ Package pdftex.def Info: ./intro/figures/nulltensionwire.png used on input line
  206.
 (pdftex.def)             Requested size: 120.7521pt x 94.6618pt.
 
-<./intro/figures/positivetensionwire.png, id=167, 283.459pt x 214.401pt>
+<./intro/figures/positivetensionwire.png, id=169, 283.459pt x 214.401pt>
 File: ./intro/figures/positivetensionwire.png Graphic file (type png)
 
 <use ./intro/figures/positivetensionwire.png>
 Package pdftex.def Info: ./intro/figures/positivetensionwire.png used on input 
 line 208.
 (pdftex.def)             Requested size: 120.7521pt x 91.3335pt.
- [9] [10 <./intro/figures/nulltensionwire.png> <./intro/figures/positivetension
-wire.png>]
-Overfull \hbox (10.30609pt too wide) in paragraph at lines 272--273
-\OT1/cmr/m/n/10 Le mod^^Rele g^^Seom^^Setrique di-rect con-siste ^^Ra d^^Seterm
-iner les co-or-donn^^Sees op^^Serationnelles
+ [9]
+Overfull \hbox (10.25047pt too wide) in paragraph at lines 235--236
+[]\OT1/cmr/m/n/10 Nous sup-posons que les forces de frot-te-ment, de r^^Sesista
+nce, ...sont n^^Segligeables.
+ []
+
+[10 <./intro/figures/nulltensionwire.png> <./intro/figures/positivetensionwire.
+png>]
+Overfull \hbox (35.05618pt too wide) in paragraph at lines 272--273
+\OT1/cmr/m/n/10 Etablir un mod^^Rele g^^Seom^^Setrique di-rect con-siste ^^Ra e
+x-primer les co-or-donn^^Sees op^^Serationnelles
  []
 
 [11]
@@ -829,24 +835,86 @@ Overfull \hbox (2.33385pt too wide) in paragraph at lines 301--302
  []
 
 [12] [13] [14]
-! Undefined control sequence.
-l.400 \subsubsubsection
-                       {dsksdj}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \hbox (7.47205pt too wide) in paragraph at lines 395--396
+[]\OT1/cmtt/m/n/10 Marionet-Crane \OT1/cmr/m/n/10 (Fig.[]8a[]) : in-ter-ven-tio
+n ^^Ra grande ^^Sechelle pour des op^^Serations
+ []
 
-) [15] (./manuscrit.bbl [16
+<./intro/figures/marionet03.jpg, id=246, 1284.8pt x 963.6pt>
+File: ./intro/figures/marionet03.jpg Graphic file (type jpg)
+
+<use ./intro/figures/marionet03.jpg>
+Package pdftex.def Info: ./intro/figures/marionet03.jpg used on input line 403.
+
+(pdftex.def)             Requested size: 310.4979pt x 232.87138pt.
+
+<./intro/figures/marionet01.jpg, id=247, 3083.52pt x 2312.64pt>
+File: ./intro/figures/marionet01.jpg Graphic file (type jpg)
+
+<use ./intro/figures/marionet01.jpg>
+Package pdftex.def Info: ./intro/figures/marionet01.jpg used on input line 405.
+
+(pdftex.def)             Requested size: 169.0519pt x 126.75449pt.
+
+<./intro/figures/marionet02.jpg, id=248, 642.4pt x 481.8pt>
+File: ./intro/figures/marionet02.jpg Graphic file (type jpg)
+
+<use ./intro/figures/marionet02.jpg>
+Package pdftex.def Info: ./intro/figures/marionet02.jpg used on input line 407.
+
+(pdftex.def)             Requested size: 169.0519pt x 126.78683pt.
+
+Overfull \hbox (17.6395pt too wide) in paragraph at lines 412--413
+\OT1/cmr/m/n/10 son-nes ^^Ra mo-bilit^^Ses r^^Seduites, et plus sp^^Secifiqueme
+nt dans une d^^Semarche d'am^^Selioration
+ []
+
+<./intro/figures/case01.jpg, id=252, 1084.05pt x 1927.2pt>
+File: ./intro/figures/case01.jpg Graphic file (type jpg)
+
+<use ./intro/figures/case01.jpg>
+Package pdftex.def Info: ./intro/figures/case01.jpg used on input line 422.
+(pdftex.def)             Requested size: 68.99895pt x 122.6552pt.
+
+Underfull \hbox (badness 2050) in paragraph at lines 422--422
+[]\OT1/cmr/m/n/8 (a) |Light walk-ing
+ []
+
+<./intro/figures/case02.jpg, id=253, 1084.05pt x 1927.2pt>
+File: ./intro/figures/case02.jpg Graphic file (type jpg)
+
+<use ./intro/figures/case02.jpg>
+Package pdftex.def Info: ./intro/figures/case02.jpg used on input line 424.
+(pdftex.def)             Requested size: 68.99895pt x 122.6552pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
+[]\OT1/cmr/m/n/8 (b) |Case of an
+ []
+
+<./intro/figures/case03.jpg, id=254, 1457.445pt x 1069.9975pt>
+File: ./intro/figures/case03.jpg Graphic file (type jpg)
+
+<use ./intro/figures/case03.jpg>
+Package pdftex.def Info: ./intro/figures/case03.jpg used on input line 426.
+(pdftex.def)             Requested size: 165.59853pt x 121.56953pt.
+ [15]
+Overfull \hbox (36.4728pt too wide) in paragraph at lines 436--437
+\OT1/cmr/m/n/10 sant ef-fi-cacit^^Se et ai-sance des op^^Serations de trans-fer
+t (et d'attachement/d^^Setachement
+ []
+
+) [16 <./intro/figures/marionet03.jpg> <./intro/figures/marionet01.jpg> <./intr
+o/figures/marionet02.jpg>] [17 <./intro/figures/case01.jpg> <./intro/figures/ca
+se02.jpg> <./intro/figures/case03.jpg>] (./manuscrit.bbl [18
 
 
-] [17])
+] [19])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
- [18]
+ [20]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
- (./manuscrit.aux
-(./titlepage/titlepage.aux) (./preambule/preambule.aux) (./intro/intro.aux))
+
+(./manuscrit.aux (./titlepage/titlepage.aux) (./preambule/preambule.aux)
+(./intro/intro.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
@@ -854,11 +922,11 @@ Package rerunfilecheck Info: File `manuscrit.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7804 strings out of 495028
- 116604 string characters out of 6181498
- 203723 words of memory out of 5000000
- 10785 multiletter control sequences out of 15000+600000
- 12671 words of font info for 48 fonts, out of 8000000 for 9000
+ 7863 strings out of 495028
+ 117912 string characters out of 6181498
+ 205434 words of memory out of 5000000
+ 10826 multiletter control sequences out of 15000+600000
+ 13007 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,11n,49p,1211b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -879,11 +947,13 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmtt12.pfb>
-Output written on manuscrit.pdf (18 pages, 4813454 bytes).
+/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt8.pfb>
+Output written on manuscrit.pdf (20 pages, 9010407 bytes).
 PDF statistics:
- 345 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 90 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

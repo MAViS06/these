@@ -6,18 +6,18 @@ J.~Albus, R.~Bostelman, and N.~Dagalakis.
 \newblock {\em Journal of research of the National Institute of Standards and
   Technology}, 97(3):373--385, may 1992.
 
+\bibitem{2010:Carricato.Merlet}
+M.~Carricato and J-P. Merlet.
+\newblock Geometrico-static analysis of under-constrained cable-driven parallel
+  robot.
+\newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
+
 \bibitem{2011:Carricato.Merlet}
 M.~Carricato and J-P. Merlet.
 \newblock Direct geometrico-static problem of under-constrained cable-driven
   parallel robots with three cables.
 \newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
   3011--3017, Shangai, 9-13 may 2011.
-
-\bibitem{Carricato-2010-06b}
-Marco Carricato and Jean-Pierre Merlet.
-\newblock {\em Geometrico-static analysis of under-constrained cable-driven
-  parallel robots}, pages 309--319.
-\newblock Springer, 2010.
 
 \bibitem{2008:Chen.Chi}
 C-T. Chen and H-W. Chi.
@@ -86,6 +86,12 @@ J.~P Merlet.
   actuators.
 \newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
   Conference on}, pages 3857--3862, May 2008.
+
+\bibitem{icra2012:merlet}
+J.~P Merlet.
+\newblock The kinematics of the redundant n--1 wire driven parallel robot.
+\newblock In {\em Robotics and Automation (ICRA), 2012 IEEE International
+  Conference on}, pages 2313--2318, May 2012.
 
 \bibitem{merlet1997robots}
 J.P. Merlet.

@@ -7,51 +7,51 @@ A level-1 auxiliary file: intro/intro.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
 Warning--string name "juin" is undefined
---line 1624 of file ./biblio/bibliography.bib
-I was expecting a `,' or a `}'---line 1625 of file ./biblio/bibliography.bib
+--line 1623 of file ./biblio/bibliography.bib
+I was expecting a `,' or a `}'---line 1624 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You've used 19 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            645 strings with 7605 characters,
-and the built_in function-call counts, 6077 in all, are:
-= -- 608
-> -- 204
-< -- 5
-+ -- 86
-- -- 62
-* -- 380
-:= -- 973
-add.period$ -- 58
-call.type$ -- 19
-change.case$ -- 83
+            649 strings with 7689 characters,
+and the built_in function-call counts, 6541 in all, are:
+= -- 658
+> -- 211
+< -- 6
++ -- 90
+- -- 64
+* -- 407
+:= -- 1032
+add.period$ -- 61
+call.type$ -- 20
+change.case$ -- 88
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 261
-empty$ -- 532
-format.name$ -- 62
-if$ -- 1340
+cite$ -- 20
+duplicate$ -- 287
+empty$ -- 577
+format.name$ -- 64
+if$ -- 1453
 int.to.chr$ -- 0
-int.to.str$ -- 19
+int.to.str$ -- 20
 missing$ -- 19
-newline$ -- 97
-num.names$ -- 38
-pop$ -- 100
+newline$ -- 102
+num.names$ -- 40
+pop$ -- 105
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 71
 quote$ -- 0
-skip$ -- 201
+skip$ -- 224
 stack$ -- 0
-substring$ -- 413
-swap$ -- 67
-text.length$ -- 5
+substring$ -- 455
+swap$ -- 80
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
+type$ -- 76
 warning$ -- 0
-while$ -- 56
-width$ -- 21
-write$ -- 210
+while$ -- 60
+width$ -- 22
+write$ -- 222
 (There was 1 error message)
