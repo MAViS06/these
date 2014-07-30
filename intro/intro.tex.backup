@@ -165,32 +165,75 @@ Une caractéristique particulière des manipulateurs parallèles à câbles qui 
 Comparativement donc aux robots parallèles classiques, les robots parallèles à câbles présentent les caractéristiques suivantes :
 \begin{itemize}
  \item la structure parallèle permet de conserver les propriétés de compensation des erreurs, de répartition des charges et des efforts, de coopération des chaînes cinématique pour l'exécution d'un mouvement
- \item l'espace de travail est considérablement agrandi malgré la conservation de la légèreté du dispositif.
- \item la modélisation des câbles ainsi que le choix des articulations et actionneurs complexifient le modèle du robot ; une simplification du modèle en négligeant certaines de ces caractéristiques est alors source d'imprécisions qui devront être intégrées au schéma de contrôle.
- \item l'unilatéralité des forces suppose que nous puissions nous retrouver dans une situation avec un ou plusieurs câbles détendus. Nous verrons cependant qu'il est possible de prendre avantage de cette situation afin d'amélio\-rer le contrôle de l'organe terminal pour une trajectoire donnée.
+ \item l'espace de travail est considérablement agrandipar rapport aux robots parallèles à jambes rigides
+ \item l'équipage mobile est très léger, ce qui peut favoriser la dynamique
+ \item le comportement des câbles (non-déformables, élastiques, pesants, \dots) peut complexifier le modèle du robot sérieusement
+ \item l'unilatéralité des forces implique que nous puissions nous retrouver dans une situation avec un ou plusieurs câbles détendus, ce qui doit être pris en compte dans le contrôle.
 \end{itemize}
 
-Après avoir introduit quelques notations utiles, nous allons à présent décrire les modèles géométriques direct et inverse, cinématiques ainsi que l'équilibre statique pour les robots parallèles à câble. Ceci nous permettra de lister tant que faire se peut l'ensemble des difficultés posées par ce type de manipulateur et auxquelles nous avons été confrontées dans le cadre de ces recherches.
+Après avoir introduit quelques notations, nous allons à présent décrire les modèles géométriques direct et inverse, cinématiques ainsi que l'équilibre statique pour les robots parallèles à câble. Ceci nous permettra de lister tant que faire se peut l'ensemble des difficultés posées par ce type de manipulateur et auxquelles nous avons été confrontées dans le cadre de nos recherches.
 
 \subsubsection{Notations}
+
+\begin{figure}
+\centering
+\def\svgwidth{.85\linewidth}
+\begingroup%
+  \makeatletter%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{.85\linewidth}%
+  \ifx\svgscale\undefined%
+      \relax%
+  \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+   \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.05078424)%
+    \put(0,0){\includegraphics[width=\unitlength]{./intro/figures/notation_schema.pdf}}%
+    \put(0.01378726,0.23709652){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18414974\unitlength}\raggedright $R_b$\end{minipage}}}%
+    \put(0.08235365,0.06274204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.37809467\unitlength}\raggedright $\mathcal O$\end{minipage}}}%
+    \put(0.28217569,1.04617994){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20374016\unitlength}\raggedright $A_i$\end{minipage}}}%
+    \put(0.70924634,1.0148353){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15868214\unitlength}\raggedright $A_j$\end{minipage}}}%
+    \put(0.50731907,0.37551208){\color[rgb]{0,0,0}\rotatebox{-31.78302083}{\makebox(0,0)[lt]{\begin{minipage}{0.19225208\unitlength}\raggedright $R_e$\end{minipage}}}}%
+    \put(0.36249632,0.39773781){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15868218\unitlength}\raggedright $B_i$\end{minipage}}}%
+    \put(0.65439323,0.34484376){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15868222\unitlength}\raggedright $B_j$\end{minipage}}}%
+    \put(0.30568416,0.76016013){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.54265401\unitlength}\raggedright $\rho_i = ||A_iB_i||$\end{minipage}}}%
+    \put(0.30764321,0.66024915){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.37221756\unitlength}\raggedright $(\tau_i 0)$\end{minipage}}}%
+    \put(0.50550624,0.57013331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.5054322\unitlength}\raggedright $\rho_j > ||A_jB_j||$\end{minipage}}}%
+    \put(0.49767007,0.47805841){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.38397177\unitlength}\raggedright $(\tau_j = 0)$\end{minipage}}}%
+  \end{picture}%
+\endgroup%
+
+\end{figure}
+
 
 \begin{itemize}
  \item $R_b$ : référentiel de la base
  \item $R_e$ : référentiel de l'organe terminal
  \item $A_i$ : point d'attache du $i^{\hbox{ème}}$ câble à la base ; le terme de {\it point de sortie} sera également utilisé.
- \item $B_i$ : point d'attache du $i^{\hbox{ème}}$ câble à l'effecteur
- \item $C$ : un point arbitraire de l'effecteur utilisé comme référence pour sa position
+ \item $B_i$ : point d'attache du $i^{\hbox{ème}}$ câble à l'organe terminal
+ \item $C$ : un point arbitraire de l'organe terminal utilisé comme référence pour sa position
  \item $\rho_i$ : longueur réelle du câble $i$
  \item $l_i$ : longueur déroulée du câble $i$
- \item $\bf {\mathcal F}$ : vecteur des forces exercées sur l'effecteur
+ \item $\bf {\mathcal F}$ : vecteur des forces exercées sur l'organe terminal
  \item $\bf J$ : jacobienne du robot
 \end{itemize}
 Enfin, on utilisera la notation $J^{-1}$ pour exprimer la jacobienne inverse, et $J^{-T}$ sera utilisé comme raccourci de notation pour sa transposée.
 
+Sauf mention du contraire, {\bf nous supposerons dans la suite que les câbles sont non-pesants et non-élastiques}, ce qui est une hypothèse adéquate pour le robot que nous avons utilisé.
+
 \subsubsection{Modèle géométrique inverse}
 
-Le modèle géométrique inverse consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie ${\bf A}_i$ et le point d'attache à la plateforme ${\bf B}_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance (Fig.\ref{intro:fig6view0}).\\
+Le modèle géométrique inverse consiste à déterminer les coordonnées articulaires à partir des coordonnées opérationnelles. Dans le cas des robots parallèles à câbles, les coordonnées articulaires correspondent aux longueurs $\rho$ des câbles. Lorsque ceux-ci sont tendus, cette longueur doit être égale à la distance entre les points de sortie ${\bf A}_i$ et le point d'attache à la plateforme ${\bf B}_i$. Dans le cas où le câble est détendu, la longueur sera supérieure à cette distance (Fig.\ref{intro:fig6view0}).\\
 
+
+%%%%%% une figure différente
 \begin{figure}[!ht]
   \centering
       \subfloat[Forme d'un câble dont la tension serait nulle]{\label{intro:fig6view0}
@@ -208,11 +251,7 @@ Nous partons donc des relations suivantes :
 \label{intro:eq1}
 \end{eqnarray}
 
-Notons que les câbles peuvent être élastiques : ainsi, lorsqu'ils sont en tension, la longueur déroulée pourra être inférieure à la distance $d_i = ||{\bf A}_i {\bf B}_i||$ (Fig.\ref{intro:fig6view1}). Plusieurs modèles de câbles peuvent être utilisés pour estimer le rapport entre la longueur réelle et la longueur déroulée \cite{1974IrvineCaughey}, \cite{2006:Kozak.ea}. A titre d'exemple, le modèle linéaire suivant peut-être utilisé lorsque la masse des câbles est négligeable devant les forces appliquées sur la plateforme :
-$$\tau_i = \kappa(\rho_i - l_i)$$
-où $\kappa$ est un coefficient correspondant à la raideur linéique du câble.
-
-Pour être complet, le modèle géométrique inverse doit donc envisager toutes les configurations possibles de répartition de tension dans les câbles et, le cas échéant, intégrer la modélisation des câbles dans le processus de résolution. Il est donc fondamental de vérifier la tension exercée dan chaque câble, et en avoir une estimation suffisante selon le modèle d'élasticité des câbles choisi. Tout comme dans l'approche développée par \cite{2010:Carricato.Merlet}, nous parlerons donc de modèle géométrico-statique inverse, requérant l'étude de l'équilibre statique.
+Comme on le voit, il n'est pas possible d'obtenir les longueurs $\rho_i$ sont prendre en compte les tensions $\tau_i$. Dès lors, tout comme dans l'approche développée par \cite{2010:Carricato.Merlet}, nous parlerons donc de modèle géométrico-statique inverse, requérant l'étude de l'équilibre statique.
 
 \subsubsection{Equilibre statique}
 

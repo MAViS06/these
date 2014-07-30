@@ -4,7 +4,7 @@ Il s'agit dans ce chapitre d'introduire les problématiques et méthodologies qu
 
 Pour cela, nous  évoquons dans une première section les avantages et inconvénients des structures parallèles comparativement aux structures en série. Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxième section, suivie par un rappel des modèles géométriques et cinématiques des manipulateurs parallèles à c\^ables, avant d'introduire dans une troisième section quelques notions fondamentales pour la suite. Nous présentons dans une quatrième section le prototype sur lequel nos expérimentations et validations ont été effectuées,
 
-Dans une cinquième section, à la suite d'un rappel des modèles d'asservissement visuel, nous introduirons les spécificités de notre choix de configuration. Nous expliquerons donc une sixième section de quelle manière il se démarque des travaux existants dans ce domaine précis. Nous pourrons alors dans une section terminale conclure par l'exposition des problématiques à partir desquelles nous nous sommes proposé de mener cette étude, ainsi que des choix méthodologiques qui en auront guidée la résolution.
+Dans une cinquième section, à la suite d'un rappel des modèles d'asservissement visuel, nous introduirons les choix de configuration que nous avons opérés, et de quelles manières ils se démarquent des travaux existants dans ce domaine précis. En particulier, nous montrerons que les robots à câbles peuvent fonctionner selon différents modes et comment nous avons utilisé cette spécificité pour en optimiser la commande. La sixième section présentera les problématiques de l'étude et les choix méthodologiques qui en ont permis la résolution.
 
 \subsection{Manipulateurs série et parallèles}
 
@@ -175,6 +175,14 @@ Après avoir introduit quelques notations, nous allons à présent décrire les 
 
 \subsubsection{Notations}
 
+\begin{figure}
+\centering
+\def\svgwidth{.85\linewidth}
+\input{./intro/figures/notation_schema.pdf_tex}
+
+\end{figure}
+
+
 \begin{itemize}
  \item $R_b$ : référentiel de la base
  \item $R_e$ : référentiel de l'organe terminal
@@ -183,7 +191,7 @@ Après avoir introduit quelques notations, nous allons à présent décrire les 
  \item $C$ : un point arbitraire de l'organe terminal utilisé comme référence pour sa position
  \item $\rho_i$ : longueur réelle du câble $i$
  \item $l_i$ : longueur déroulée du câble $i$
- \item $\bf {\mathcal F}$ : vecteur des forces exercées sur l'effecteur
+ \item $\bf {\mathcal F}$ : vecteur des forces exercées sur l'organe terminal
  \item $\bf J$ : jacobienne du robot
 \end{itemize}
 Enfin, on utilisera la notation $J^{-1}$ pour exprimer la jacobienne inverse, et $J^{-T}$ sera utilisé comme raccourci de notation pour sa transposée.
