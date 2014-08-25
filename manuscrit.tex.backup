@@ -4,6 +4,9 @@
 \documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
 
+%\usepackage[frenchb]{babel}
+
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 
@@ -11,6 +14,8 @@
 
 \usepackage{graphicx}
 \usepackage{subfig}
+\usepackage{color}
+\usepackage{transparent}
 
 \usepackage{tabularx}
 
@@ -31,26 +36,25 @@
 
 \include{intro/intro}
 
-\pagebreak
+%\pagebreak
 
-\include{chapter01/chapter01}
+%\include{chapter01/chapter01}
 
-\pagebreak
+%\pagebreak
 
-\include{chapter02/chapter02}
+%\include{chapter02/chapter02}
 
-\pagebreak
+%\pagebreak
 
-\include{chapter03/chapter03}
+%\include{chapter03/chapter03}
 
-\pagebreak
+%\pagebreak
 
-\include{validations/validations}
+%\include{validations/validations}
 
-\pagebreak
+%\pagebreak
 
-\include{conclusions/conclusions}
-
+%\include{conclusions/conclusions}
 
 \bibliographystyle{plain}
 \bibliography{./biblio/bibliography}

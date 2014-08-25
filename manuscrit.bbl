@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{1992:Albus.Bostelman.ea}
 J.~Albus, R.~Bostelman, and N.~Dagalakis.
@@ -11,6 +11,11 @@ M.~Carricato and J-P. Merlet.
 \newblock Geometrico-static analysis of under-constrained cable-driven parallel
   robot.
 \newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
+
+\bibitem{carricato_merlet2013}
+M.~Carricato and J.P. Merlet.
+\newblock Stability analysis of underconstrained cable-driven parallel robots.
+\newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
 
 \bibitem{1988:Clavel}
 R.~Clavel.
