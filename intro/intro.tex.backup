@@ -454,24 +454,104 @@ Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour
 
  La vision représente pour les humains environ 70\% des données issues des perceptions sensorielles externes \cite{no} : d'une richesse incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La vision artificielle ne déroge pas à ses deux principes, d'où l'importance du traitement du signal d'une part (dans le but de recueillir et interpréter dans cette immensité d'informations ce qui est pertinent pour une tâche prescrite) et d'une stratégie d'asservissement d'autre part (afin de stabiliser une commande de tâche malgré les erreurs et incertitudes sur les données). Nous allons donc dans un premier temps présenter le mode d'acquisition des images, puis nous continuerons sur les modèles de perception utilisés. Une fois que nous aurons détaillé la manière dont une scène est projetée sur une image, nous pourrons distinguer plusieurs topologies et exposer pour chacune d'entre elle différentes stratégies d'asservissement pouvant être utilisées. Nous développerons alors les caractéristiques spécifiques à celle que nous avons sélectionnée pour notre situation.
  
+ \subsection{Modèles de capteurs et projections}
+ 
  \subsubsection{De l'oeil à la caméra}
  
  Sans pour autant chercher à imiter la vision humaine, la vision artificielle s'en inspire néanmoins fortement pour ce qui concerne l'acquisition d'une scène. Ainsi, pour une caméra, le diaphragme joue le rôle de l'iris et de la pupille et détermine la quantité de lumière qui pourra être enregistrée sur un intervalle de temps donné. Par la suite, la lentille joue un rôle équivalent à la cornée et au cristallin, en faisant converger les rayons lumineux vers la rétine sur laquelle sont disséminés environ 125 millions de photorécepteurs : c'est au niveau de ces derniers que l'acquisition est véritablement effectuée. On distingue parmi les photorécepteurs :
+ \begin{figure}[htp]
+  \centering
+  \includegraphics[width=.85\linewidth]{./intro/figures/oeil.png}
+    \caption{\footnotesize{Oeil humain vs vision artificielle}}
+\label{intro:fig11}
+\end{figure}
+
  \begin{itemize}
   \item les cônes, généralement impliqués dans la vision diurne. Les cônes présentent 3 types de pigments leur permettant de réagir à des longueurs d'ondes spécifiques (qui ne recouvrent pas exactement le triplet RGB traditionnellement utilisé traitement d'image)
   \item les bâtonnets, impliqués dans la vision nocturne. Ne possédant d'un seul type de pigments, ils ne peuvent pas discriminer les longueurs d'ondes. En revanche, ils sont en moyenne 1000 fois plus sensibles à la lumière que les cônes, et leur population correspond à 20 fois celle des cônes.
  \end{itemize}
 
- Afin de simuler l'activité des photorécepteurs de l'oeil humain, les dispositifs technologiques les plus récents adoptent l'une des deux stratégies suivantes :
- \begin{itemize}
-  \item des filtres placés en amont de capteurs photosensibles permettent l'acquisition successive de trois niveaux de couleurs. Ce sont par exemple les capteurs 3CCD
- \end{itemize}
+ Afin de simuler l'activité des photorécepteurs de l'oeil humain, les dispositifs technologiques les plus récents adoptent des stratégies basées sur l'utilisation de filtres placés en amont des capteurs photosensibles, permettant ainsi une acquisition en séquence (un même récepteur recevra successivement les réponses des filtres correspondants aux longueurs d'ondes distinguées) ou simultanée (les réponses sont envoyées sur des capteurs photosensibles dédiés).
+  
+ 
+L'information contenue dans les données ainsi recueillies est riche et multiple : elle peut-être de nature colorimétrique, géométrique, elle donne des informations de déplacement, de déformation. Ce qui est vu n'est toutefois qu'une représentation de ce qui est observé, il est donc nécessaire de reconstruire la scène initiale projetée sur les capteurs le plus fidèlement possible.
+ 
+\subsubsection{De la scène à l'image}
+ 
+Nous avons privilégié le modèle {\it pinhole} qui offre une approximation fiable des caméras perspectives (telles que celles que nous avons utilisées) tout en restant formellement simple, \cite{Faugeras:1993} sous les hypothèses du respect des conditions de Gauss (angles de faibles incidences), et -- dans notre cas -- d'une absence de distortion de la caméra.
 
+Soient ${\bf P} = (X_P, Y_P, Z_P)$ les coordonnées 3-D d'un point dans l'espace et ${\bf p} = (x_p, y_p)$ ses coordonnées dans l'image. Le modèle de projection perspective consiste en une projection centrale de centre $\mathcal C$, portée par l'axe ${\bf z}_c$ représentant l'axe optique de la caméra. On appelle {\it plan image} le plan se trouvant à distance focale $f$ de la caméra, soit $Z = f$. On définit également un point de référence ${\bf c}(x_c,y_c)$ dans le plan image comme étant le point d'intersection de l'axe optique et du plan image (Fig.\ref{intro:fig12}).
+
+\begin{figure}[htp]
+  \centering
+  \def\svgwidth{.85\linewidth}
+  \input{./intro/figures/modele_projection.pdf_tex}
+    \caption{\footnotesize{Modèle de projection {\it pinhole}}}
+\label{intro:fig12}
+\end{figure}
+
+En plus du {\it référentiel-base} (noté,pour rappel, $\mathcal R_b$), nous avons donc un {\it référentiel-caméra}, noté$\mathcal R_c$, un {\it référentiel-objet}, noté $\mathcal R_o$, ainsi qu'un {\it référentiel-image}, noté $\mathcal R_c$. Nous avons besoin pour finir des dimensions $l_x$ et $l_y$ d'un pixel.
+
+A partir des coordonnées d'un point ${\bf P}(X_P, Y_P, Z_P)$ exprimées dans le référentiel de la caméra, les coordonnées projetées sur le plan images sont déduites de la manière suivante :
+
+\begin{equation}
+x_p = f \frac{X_P}{Z_P}, y_p = f \frac{Y_P}{Z_P}
+\label{intro:eq12}
+\end{equation}
+
+ou, sous forme matricielle :
+
+\begin{equation}
+Z_P
+\begin{bmatrix}
+x_p \\y_p \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+X_P \\ Y_P \\ Z_P 
+\end{bmatrix}
+\label{intro:eq13}
+\end{equation}
+soit $\tilde {\bf }p = {\bf A}{\bf P}$, avec $\tilde {\bf p} = Z_P {\bf p}$.
+
+La conversion entre les coordonnées en pixels et les coordonnées images exprimées en dimensions homogènes se fait de la manière suivante :
+
+\begin{equation}
+\left \lbrace
+\begin{matrix}
+x_p = x_c + x/l_x \\
+y_p = y_c + y/l_y
+\end{matrix} \right .
+\label{intro:eq14}
+\end{equation}
+
+
+
+
+
+
+
+
+ \subsection{Représentation formelle}
  
+ \subsubsection{Systèmes de coordonnées}
  
+ \subsubsection{Changements de repère en coordonnées homogènes}
  
- \subsubsection{Modèle de projection}
+ \subsubsection{Transformations rigides}
  
+ \subsection{Configurations et stratégies d'assrvissement visuel}
+ 
+ \subsubsection{Placement de la caméra}
+ 
+ \subsubsection{Formalisme}
+ 
+ \subsubsection{Choix de configuration pour notre situation}
+ 
+ \subsection{Présentation du formalisme utilisé}
  
 
  
