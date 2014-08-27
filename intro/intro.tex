@@ -32,7 +32,7 @@ Une chaîne cinématique est caractérisée par une succession de solides relié
 
 On appelle {\it coordonnées articulaires} l'ensemble des valeurs prises par les paramètres permettant de décrire l'état des articulations à un instant donné. Les coordonnées articulaires sont exprimées dans un espace articulaire propre à chaque articulation. Les paramètres nécessaires à l'expression des coordonnées articulaires sont généralement au nombre de 3 pour un point (ses coordonnées dans l'espace cartésien) et de 6 pour un solide (position cartésienne complétée par trois angles de rotation). Le nombre de paramètres non fixés par la géométrie du robot et nécessaires à la description exhaustive des coordonnées d'une articulation est appelé {\it degré de liberté}. Lorsque les articulations ne sont pas laissées libres, leur valeur dans l'{\it espace articulaire} sera contr\^olée par des {\it actionneurs} : on distinguera donc les {\it articulations actionnées} des {\it articulations passives}.
 
-De la même manière, on parlera des {\it coordonnées opérationnelles} pour définir la pose de l'organe terminal, exprimées par rapport à un repère de référence. A nouveau, nous pouvons définir les degrés de liberté de l'organe terminal comme le nombre de paramètres contr\^olés pour le déplacer dans l'espace. Cette notion est à distinguer de la mobilité de l'organe terminal, qui correspond aux possibilités de déplacement de l'organe terminal, contrôlées ou laissées libres. Si l'on décide par exemple de contr\^oler les mouvements en translation, de bloquer deux rotations mais d'en laisser libre une, la mobilité sera de 4, mais le nombre de degrés de libertés ne sera que de 3.
+De la même manière, on parlera des {\it coordonnées opérationnelles} pour définir la pose de l'organe terminal, exprimées par rapport à un référentiel de référence. A nouveau, nous pouvons définir les degrés de liberté de l'organe terminal comme le nombre de paramètres contr\^olés pour le déplacer dans l'espace. Cette notion est à distinguer de la mobilité de l'organe terminal, qui correspond aux possibilités de déplacement de l'organe terminal, contrôlées ou laissées libres. Si l'on décide par exemple de contr\^oler les mouvements en translation, de bloquer deux rotations mais d'en laisser libre une, la mobilité sera de 4, mais le nombre de degrés de libertés ne sera que de 3.
 
 Enfin, on peut définir pour chaque segment son {\it degré de connexion} comme étant le nombre de solides auxquels il est relié par une articulation libre ou actionnée. Lorsque l'ensemble des segments ont un degré de connexion égal à 2 à l'exception de la base et de l'organe terminal qui ont de degré de connexion égal à 1, on parle de {\it cha\^ine cinématique ouverte} (Fig.\ref{intro:fig1view0}). Lorsque l'un des segments au moins (différent de la base) possède un degré de connexion supérieur ou égal à 3, nous avons une {\it cha\^ine cinématique fermée} (Fig.\ref{intro:fig1view1}) \cite{journals/gosselin1989}. Les cha\^ines cinématiques complexes sont constituées de plusieurs cha\^ines fermées et/ou ouvertes.
 
@@ -238,7 +238,7 @@ La direction dans laquelle un câble de longueur $\rho_i$ relié à la base au p
 où $p_i$ est un vecteur allant d'un premier point de référence arbitraire localisé sur la plateforme à un second point placé sur le segment $[A_iB_i]$. La force exercée par le câble sur la plateforme est alors ${\bf W}_i \tau_i$ , où $\tau_i$ est un scalaire positif représentant l'intensité de la tension. De la même manière, en posant 
 
 
-Soit ${\bf W}_g$ le torseur indiquant la direction dans laquelle la gravité est exercée dans le repère choisi, pour $n$ câbles, (Equ.\ref{intro:eq2}) s'écrit pour nous :
+Soit ${\bf W}_g$ le torseur indiquant la direction dans laquelle la gravité est exercée dans le référentiel choisi, pour $n$ câbles, (Equ.\ref{intro:eq2}) s'écrit pour nous :
 \begin{equation}
 \begin{bmatrix}
  {\bf W}_1 & {\bf W}_2 & \dots & {\bf W}_n & {\bf W}_g
@@ -422,7 +422,7 @@ Pour l'ensemble des expériences menées dans le cadre de ce travail, nous avons
 \label{intro:fig11}
 \end{figure}
 
-Les câbles sont en Kevlar, ce qui nous permet de négliger leur élasticité et de pouvoir les modéliser comme des jambes rigides lorsque leur tension est strictement positive. Le contrôle des longueurs se fait à l'aide de poulies actionnées par des moteurs rotatifs (Fig.\ref{intro:fig10view3}). Toutefois, en l'absence de guide pour l'enroulement, il existe des incertitudes sur la longueur déroulée ; afin de pallier à cet inconvénient, des repères ont été disposés sur les câbles à intervalles connus, ce qui permet lors de leur détection de réactualiser la valeur estimée de la longueur déroulée.
+Les câbles sont en Kevlar, ce qui nous permet de négliger leur élasticité et de pouvoir les modéliser comme des jambes rigides lorsque leur tension est strictement positive. Le contrôle des longueurs se fait à l'aide de poulies actionnées par des moteurs rotatifs (Fig.\ref{intro:fig10view3}). Toutefois, en l'absence de guide pour l'enroulement, il existe des incertitudes sur la longueur déroulée ; afin de pallier à cet inconvénient, des référentiels ont été disposés sur les câbles à intervalles connus, ce qui permet lors de leur détection de réactualiser la valeur estimée de la longueur déroulée.
 
 \begin{figure}[htp]
   \centering
@@ -438,7 +438,7 @@ Les câbles sont en Kevlar, ce qui nous permet de négliger leur élasticité et
 \label{intro:fig10}
 \end{figure}
 
-Dans cette configuration, nous ne contrôlons que les trois degrés de liberté correspondant aux translations le long des axes du repère global. Pour un triplet de trois câbles en tension strictement positive, la solution au {\it MGD} est unique et peut être calculée analytiquement. La {\it Jacobienne inverse} possède en outre une forme relativement simple : ses lignes correspondent aux vecteurs $s = A_iB_i$ normalisés par la longueur $\rho_i$
+Dans cette configuration, nous ne contrôlons que les trois degrés de liberté correspondant aux translations le long des axes du référentiel global. Pour un triplet de trois câbles en tension strictement positive, la solution au {\it MGD} est unique et peut être calculée analytiquement. La {\it Jacobienne inverse} possède en outre une forme relativement simple : ses lignes correspondent aux vecteurs $s = A_iB_i$ normalisés par la longueur $\rho_i$
 
 \begin{equation}
 {\bf J}^{-1}_i =
@@ -516,7 +516,7 @@ X \\ Y \\ Z
 \end{equation}
 soit $\widetilde {\bf p} = {\bf A}{\bf P}$, avec $\widetilde {\bf p} = Z {\bf p}$.
 
-Un point dans l'image est généralement exprimé sous la forme de ses coordonnées pixelliques (dont on suppose le repère ayant son origine en haut à gauche de l'image).
+Un point dans l'image est généralement exprimé sous la forme de ses coordonnées pixelliques (dont on suppose le référentiel ayant son origine en haut à gauche de l'image).
 
 La conversion entre les coordonnées métriques $(x, y)$ et les coordonnées pixelliques $(x_p, y_p)$, se fait selon la relation suivante :
 
@@ -570,9 +570,9 @@ y = Y/Z
 \end{equation}
 indépendantes de la focale, et pouvant être déduites des coordonnées pixelliques en utilisant la matrice $K$.
 
-Il nous reste à établir une relation entre le repère-caméra et le repère-objet afin d'établir une correspondance entre les propriétés de la scène réelle et sa projection dans l'image. Pour cela, il suffit de déterminer les paramètres du changement de repère.
+Il nous reste à établir une relation entre le référentiel-caméra et le référentiel-objet afin d'établir une correspondance entre les propriétés de la scène réelle et sa projection dans l'image. Pour cela, il suffit de déterminer les paramètres du changement de référentiel.
 
-Soientt ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ exprimées dans le repère $\mathcal R_c$ et ${}^o{\bf P} = ({}^oX, {}^oY, {}^oZ)$ ses coordonnées dans le repère $\mathcal R_o$. Le passage d'un repère à l'autre est effectué en utilisant la relation ${}^c{\bf P} = {}^c{\bf t}_o + {}^c{\bf R}_o {}^o{\bf P}$, avec ${}^c{\bf t}_o$ le vecteur $3\times 1$ de translation entre les deux repères, ${}^c{\bf R}_o$ la matrice $3\times 3$ de rotation correspondant à la rotation des axes du repère. En utilisant les coordonnées homogènes $\widetilde {\bf P}$ de ${\bf P}$, il est possible de factoriser cette transformation en une seule opération matricielle :
+Soientt ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ exprimées dans le référentiel $\mathcal R_c$ et ${}^o{\bf P} = ({}^oX, {}^oY, {}^oZ)$ ses coordonnées dans le référentiel $\mathcal R_o$. Le passage d'un référentiel à l'autre est effectué en utilisant la relation ${}^c{\bf P} = {}^c{\bf t}_o + {}^c{\bf R}_o {}^o{\bf P}$, avec ${}^c{\bf t}_o$ le vecteur $3\times 1$ de translation entre les deux référentiels, ${}^c{\bf R}_o$ la matrice $3\times 3$ de rotation correspondant à la rotation des axes du référentiel. En utilisant les coordonnées homogènes $\widetilde {\bf P}$ de ${\bf P}$, il est possible de factoriser cette transformation en une seule opération matricielle :
 \begin{equation}
 {}^c \widetilde {\bf P} = {}^c {\bf M}_o {}^o \widetilde {\bf P}
 \label{intro:eq18}
@@ -593,7 +593,7 @@ soit :
 \label{intro:eq19}
 \end{equation}
 
-On appelle ${}^c{\bf}_o$ la {\it matrice homogène de transformation} du repère $\mathcal R_o$ au repère $\mathcal R_c$, dont l'inverse s'exprime simplement sous la forme :
+On appelle ${}^c{\bf}_o$ la {\it matrice homogène de transformation} du référentiel $\mathcal R_o$ au référentiel $\mathcal R_c$, dont l'inverse s'exprime simplement sous la forme :
 \begin{equation}
 {}^o{\bf M}_c = 
 \begin{bmatrix}
@@ -603,47 +603,51 @@ On appelle ${}^c{\bf}_o$ la {\it matrice homogène de transformation} du repère
 \label{intro:eq20}
 \end{equation}
 
-Nous sommes dès lors en mesure d'établir une relation entre les propriétés de la scène observée exprimées dans son repère propre et sa projection dans l'image, exprimée en coordonnées pixelliques, métriques et généralisées. Le lecteur remarquera cependant que, s'il est possible directement, connaissant ${\bf K}$ et ${}^o{\bf M}_c$, de déduire à partir des propriétés de la scène les caractéristiques de sa projection, l'opération inverse est dépendante dans ce modèle d'une estimation pour chaque point de sa coordonnée ${}^cZ$, ce que nous aurons à considérer plus tard.
+Nous sommes dès lors en mesure d'établir une relation entre les propriétés de la scène observée exprimées dans son référentiel propre et sa projection dans l'image, exprimée en coordonnées pixelliques, métriques et généralisées. Le lecteur remarquera cependant que, s'il est possible directement, connaissant ${\bf K}$ et ${}^o{\bf M}_c$, de déduire à partir des propriétés de la scène les caractéristiques de sa projection, l'opération inverse est dépendante dans ce modèle d'une estimation pour chaque point de sa coordonnée ${}^cZ$, ce que nous aurons à considérer plus tard.
 
 \subsection{Configurations et stratégies d'asservissement visuel}
  
-Nous ne considérons dans la suite que l'utilisation d'une caméra unique utilisée dans le cas d'une scène fixe. Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent à nous, que nous allons à présent détailler.
- 
-\subsubsection{Positionnements de la caméra}
+Nous ne considérons dans la suite que l'utilisation d'une caméra unique dans le cas d'une scène fixe. Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent à nous. Une première question à se poser est par exemple le positionnement de la caméra. On distingue ainsi une configuration déportée (Fig.\ref{intro:fig13view0}) d'une configuration embarquée (Fig. \ref{intro:fig13view1}).
+
+\begin{figure}[htp]
+  \centering
+  \subfloat[La caméra est déportée ; la scène comprend l'organe terminal et l'objet-cible]{\label{intro:fig13view0}
+    \def\svgwidth{.45\linewidth}
+  \input{./intro/figures/eye_to_hand.pdf_tex}} \hfill
+    \subfloat[La caéméra est embarquée ; la scène ne comprend que l'objet-cible]{\label{intro:fig13view1}
+    \def\svgwidth{.45\linewidth}
+  \input{./intro/figures/eye_in_hand.pdf_tex}} 
+    \caption{\footnotesize{Positionnements de caméra}}
+\label{intro:fig13}
+\end{figure}
+
+Dans le cas d'une caméra déportée, on connait les transformations permettant de passer du référentiel-base $\mathcal R_b$ au référentiel-caméra $\mathcal R_c$, et du référentiel-caméra au référentiel-objet $\mathcal R_o$. Seul l'organe terminal bouge dans la scène observée. Dans le cas d'une caméra embarquée, la transformation permettant de passer du référentiel de l'organe terminal $\mathcal R_e$ au référentiel-caméra $\mathcal R_c$ est connue. L'ensemble de la scène est affecté lors d'un déplacement de l'organe terminal, et donc de la caméra.
 
 
+De manière générale, une stratégie d'asservissement visuel peut être décomposée de la manière suivante :
+\begin{enumerate}
+ \item on sélectionne dans un premier temps un ensemble ${\bf s}$ de paramètres à partir desquels on peut estimer soit directement la pose de l'organe terminal, soit le déplacement nécessaire à l'obtention de cette pose. L'ensemble des paramètres dépend d'une part de la valeur des primitives extraites de l'image et d'autre part d'un ensemble de connaissances {\it a priori}, telles que les propriétés de la caméra, ou encore un modèle de la cible.
+ \item on définit ensuite la valeur désirée ${\bf s}^*$ des paramètres, correspondant à l'état que l'on souhaite atteindre.
+ \item à partir de données extraites de l'image, on calcule la valeur courante des paramètres
+ \item on calcule alors une erreur ${\bf e} = {\bf s} - {\bf s}^*$, dont on souhaite qu'elle converge vers $0$.
+ \item on établit enfin une relation entre la variation $\dot {\bf e}$ de l'erreur et la commande qui sera ensuite envoyée au manipulateur.
+ \item la commande est effectuée, et l'on boucle les étapes $3$ à $6$ jusqu'à obtention d'une valeur seuil de l'écart entre les valeurs courantes des paramètres et les valeurs désirées.
+\end{enumerate}
+
+\begin{figure}[htp]
+  \centering
+    \def\svgwidth{.95\linewidth}
+  \input{./intro/figures/bloc_commande.pdf_tex}
+    \caption{\footnotesize{Schéma des étapes de l'asservissement visuel}}
+\label{intro:fig13}
+\end{figure}
 
 
+On distingue deux grandes classes de stratégies d'asservissement : le premier est basé sur l'estimation des paramètres de pose de l'organe terminal (PBVS : position-based visual servo), tandis que le second utilise directement les primitives extraites de l'image (IBPS : image-based visual servo). On peut enfin mixer ces deux approches pour obtenir un asservissement hybride.
+
+Dans le cas de l'asservissement en position, une connaissance du modèle 3D de la cible est nécessaire. De l'écart entre les valeurs courantes d'un ensemble de primitives et leurs valeurs estimées pour une pose désirée, on déduira les paramètres de pose de l'organe terminal. Cela revient à faire varier un référentiel courant de l'organe terminal $\mathcal R_e$ vers un référentiel correspondant à la pose prescrite $\mathcal R_e^*$, soit la détermination d'une matrice homogène de transformation ${}^{e^*}{\bf M}_e$. Comme nous l'avons vu, cette matrice est composée d'une translation et d'une rotation, qui peuvent être décrites à l'aide de $6$ paramètres. Dans ce cas, le vecteur ${\bf s}$ est constitué des paramètres permettant de construire cette matrice de transformation de repère. On pourra noter que dans une configuration avec caméra embarquée, le problème est équivalent à la détermination d'une matrice de transformation ${}^{c^*}{\bf M}_c$ entre les référentiels courants et désirés de la caméra.
 
 
-\subsubsection{Stratégies d'asservissement}
- 
- 
-% \subsubsection{Formalisme}
- 
-% \subsubsection{Choix de configuration pour notre situation}
- 
-% \subsection{Présentation du formalisme utilisé}
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- %\subsubsection{Stratégies} x3
-
-
-  %\subsection{interaction blablabla}
-
-    %\subsubsection{Notations} x1
-
-    %\subsubsection{Présentation des stratégie utilisées} x3
-
-    %\section{Comparaisons et justifications} x3
 
     
 %\section{Asservissement visuel des robots parallèles à câbles}
