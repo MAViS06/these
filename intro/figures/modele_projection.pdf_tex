@@ -50,18 +50,18 @@
   \makeatother%
   \begin{picture}(1,1.18491025)%
     \put(0,0){\includegraphics[width=\unitlength]{./intro/figures/modele_projection.pdf}}%
-    \put(0.47447327,1.19438719){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.5364476\unitlength}\raggedright ${\bf P}(X, Y, Z)$\end{minipage}}}%
-    \put(0.33499689,0.67715173){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.48065707\unitlength}\raggedright ${\bf p}(x, y)$\end{minipage}}}%
-    \put(0.18418515,0.79036401){\color[rgb]{0,0,0}\rotatebox{24.21168718}{\makebox(0,0)[lt]{\begin{minipage}{0.24489085\unitlength}\raggedright $(0,0)$\end{minipage}}}}%
-    \put(0.38435007,0.56618981){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.61584179\unitlength}\raggedright ${\bf c}(x_c, y_c)$\end{minipage}}}%
-    \put(0.57138473,0.37631631){\color[rgb]{0,0,0}\rotatebox{-14.81939942}{\makebox(0,0)[lt]{\begin{minipage}{0.29872595\unitlength}\raggedright $Z = f$\end{minipage}}}}%
+    \put(0.44447327,1.22438719){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.5364476\unitlength}\raggedright ${\bf P}(X, Y, Z)$\end{minipage}}}%
+    \put(0.31499689,0.70715173){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.48065707\unitlength}\raggedright ${\bf p}(x, y)$\end{minipage}}}%
+    \put(0.12418515,0.81036401){\color[rgb]{0,0,0}\rotatebox{24.21168718}{\makebox(0,0)[lt]{\begin{minipage}{0.24489085\unitlength}\raggedright $(0,0)$\end{minipage}}}}%
+    \put(0.50435007,0.56618981){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.61584179\unitlength}\raggedright ${\bf c}(x_c, y_c)$\end{minipage}}}%
+    \put(0.72138473,0.36631631){\color[rgb]{0,0,0}\rotatebox{-14.81939942}{\makebox(0,0)[lt]{\begin{minipage}{0.29872595\unitlength}\raggedright $Z = f$\end{minipage}}}}%
     \put(0.43429131,0.26076218){\color[rgb]{0,0,0}\rotatebox{52.28014273}{\makebox(0,0)[lt]{\begin{minipage}{0.25177122\unitlength}\raggedright focale $f$\end{minipage}}}}%
     \put(0.83506906,0.4184822){\color[rgb]{0,0,0}\rotatebox{-14.89672377}{\makebox(0,0)[lt]{\begin{minipage}{0.1650159\unitlength}\raggedright pixel\end{minipage}}}}%
-    \put(0.66558276,0.47918849){\color[rgb]{0,0,0}\rotatebox{-17.32899267}{\makebox(0,0)[lt]{\begin{minipage}{0.20518514\unitlength}\raggedright $l_x$\end{minipage}}}}%
-    \put(0.63540756,0.46821392){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18239217\unitlength}\raggedright $l_y$\end{minipage}}}%
-    \put(0.8092166,1.0926389){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20599584\unitlength}\raggedright $R_b$\end{minipage}}}%
-    \put(-0.00499398,0.7827167){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.17810059\unitlength}\raggedright $R_i$\end{minipage}}}%
-    \put(0.08823097,0.09913788){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.19741272\unitlength}\raggedright $R_c$\end{minipage}}}%
+    \put(0.69558276,0.47918849){\color[rgb]{0,0,0}\rotatebox{-17.32899267}{\makebox(0,0)[lt]{\begin{minipage}{0.20518514\unitlength}\raggedright $l_x$\end{minipage}}}}%
+    \put(0.63040756,0.46421392){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18239217\unitlength}\raggedright $l_y$\end{minipage}}}%
+    \put(0.8292166,1.0826389){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20599584\unitlength}\raggedright $R_b$\end{minipage}}}%
+    \put(0.18499398,0.7827167){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.17810059\unitlength}\raggedright $R_i$\end{minipage}}}%
+    \put(0.16823097,0.09913788){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.19741272\unitlength}\raggedright $R_c$\end{minipage}}}%
     \put(0.40056044,1.07239843){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20599584\unitlength}\raggedright $R_o$\end{minipage}}}%
   \end{picture}%
 \endgroup%

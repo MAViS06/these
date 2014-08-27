@@ -452,7 +452,7 @@ Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour
 
 \section{Asservissement visuel}
 
- La vision représente pour les humains environ 70\% des données issues des perceptions sensorielles externes \cite{no} : d'une richesse incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La vision artificielle ne déroge pas à ses deux principes, d'où l'importance du traitement du signal d'une part (dans le but de recueillir et interpréter dans cette immensité d'informations ce qui est pertinent pour une tâche prescrite) et d'une stratégie d'asservissement d'autre part (afin de stabiliser une commande de tâche malgré les erreurs et incertitudes sur les données). Nous allons donc dans un premier temps présenter le mode d'acquisition des images, puis nous continuerons sur les modèles de perception utilisés. Une fois que nous aurons détaillé la manière dont une scène est projetée sur une image, nous pourrons distinguer plusieurs topologies et exposer pour chacune d'entre elle différentes stratégies d'asservissement pouvant être utilisées. Nous développerons alors les caractéristiques spécifiques à celle que nous avons sélectionnée pour notre situation.
+ La vision représente pour les humains environ 70\% des données issues des perceptions sensorielles externes \cite{no} : d'une richesse incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La vision artificielle ne déroge pas à ses deux principes, d'où l'importance du traitement du signal d'une part (dans le but de recueillir et interpréter dans cette immensité d'informations ce qui est pertinent pour une tâche prescrite) et d'une stratégie d'asservissement d'autre part (afin de stabiliser une commande de tâche malgré les erreurs et incertitudes sur les données). Nous allons donc dans un premier temps présenter le mode d'acquisition des images, puis nous continuerons sur les modèles de perception utilisés. Une fois que nous aurons détaillé la manière dont une scène est projetée sur une image, nous pourrons distinguer plusieurs configurations et exposer pour chacune d'entre elle différentes stratégies d'asservissement pouvant être utilisées. Nous développerons enfin les caractéristiques spécifiques à celle que nous avons sélectionnée dans le contexte de ces travaux.
  
  \subsection{Modèles de capteurs et projections}
  
@@ -473,12 +473,11 @@ Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour
 
  Afin de simuler l'activité des photorécepteurs de l'oeil humain, les dispositifs technologiques les plus récents adoptent des stratégies basées sur l'utilisation de filtres placés en amont des capteurs photosensibles, permettant ainsi une acquisition en séquence (un même récepteur recevra successivement les réponses des filtres correspondants aux longueurs d'ondes distinguées) ou simultanée (les réponses sont envoyées sur des capteurs photosensibles dédiés).
   
- 
 L'information contenue dans les données ainsi recueillies est riche et multiple : elle peut-être de nature colorimétrique, géométrique, elle donne des informations de déplacement, de déformation. Ce qui est vu n'est toutefois qu'une représentation de ce qui est observé, il est donc nécessaire de reconstruire la scène initiale projetée sur les capteurs le plus fidèlement possible.
  
 \subsubsection{De la scène à l'image}
  
-Nous avons privilégié le modèle {\it pinhole} qui offre une approximation fiable des caméras perspectives (telles que celles que nous avons utilisées) tout en restant formellement simple, \cite{Faugeras:1993} sous les hypothèses du respect des conditions de Gauss (angles de faibles incidences), et -- dans notre cas -- d'une absence de distortion de la caméra.
+Nous avons privilégié le modèle {\it pinhole} qui offre une approximation fiable des caméras perspectives (telles que celles que nous avons utilisées) tout en restant formellement simple\cite{Faugeras:1993}, sous les hypothèses du respect des conditions de Gauss (angles de faibles incidences), et -- dans notre cas -- d'une absence de distortion de la caméra.
 
 Soient ${\bf P} = (X, Y, Z)$ les coordonnées 3-D d'un point dans l'espace et ${\bf p} = (x, y)$ ses coordonnées dans l'image. Le modèle de projection perspective consiste en une projection centrale de centre $\mathcal C$, portée par l'axe ${\bf z}_c$ représentant l'axe optique de la caméra. On appelle {\it plan image} le plan se trouvant à distance focale $f$ de la caméra, soit $Z = f$. On définit également un point de référence ${\bf c}(x_c,y_c)$ dans le plan image comme étant le point d'intersection de l'axe optique et du plan image (Fig.\ref{intro:fig12}).
 
@@ -490,7 +489,7 @@ Soient ${\bf P} = (X, Y, Z)$ les coordonnées 3-D d'un point dans l'espace et ${
 \label{intro:fig12}
 \end{figure}
 
-En plus du {\it référentiel-base} (noté,pour rappel, $\mathcal R_b$), nous avons donc un {\it référentiel-caméra}, noté$\mathcal R_c$, un {\it référentiel-objet}, noté $\mathcal R_o$, ainsi qu'un {\it référentiel-image}, noté $\mathcal R_c$. Nous avons besoin pour finir des dimensions $l_x$ et $l_y$ d'un pixel.
+En plus du {\it référentiel-base} (pour rappel, noté, $\mathcal R_b$), nous avons donc un {\it référentiel-caméra} noté$\mathcal R_c$, un {\it référentiel-objet} $\mathcal R_o$, ainsi qu'un {\it référentiel-image} $\mathcal R_i$. Nous avons besoin pour finir des dimensions $l_x$ et $l_y$ d'un pixel.
 
 A partir des coordonnées d'un point ${\bf P}(X, Y, Z)$ exprimées dans le référentiel de la caméra, les coordonnées projetées sur le plan images sont déduites de la manière suivante :
 
@@ -515,11 +514,11 @@ X \\ Y \\ Z
 \end{bmatrix}
 \label{intro:eq13}
 \end{equation}
-soit $\tilde {\bf p} = {\bf A}{\bf P}$, avec $\tilde {\bf p} = Z {\bf p}$.
+soit $\widetilde {\bf p} = {\bf A}{\bf P}$, avec $\widetilde {\bf p} = Z {\bf p}$.
 
 Un point dans l'image est généralement exprimé sous la forme de ses coordonnées pixelliques (dont on suppose le repère ayant son origine en haut à gauche de l'image).
 
-La conversion entre les coordonnées métriques $(x, y)$ et les coordonnées pixelliques $(x_p, y-p)$, se fait selon la relation suivante :
+La conversion entre les coordonnées métriques $(x, y)$ et les coordonnées pixelliques $(x_p, y_p)$, se fait selon la relation suivante :
 
 \begin{equation}
 \left \lbrace
@@ -529,7 +528,7 @@ y_p = y_c + y/l_y
 \end{matrix} \right .
 \label{intro:eq14}
 \end{equation}
-soit, sous une forme matricielle :
+ce qui donne sous une forme matricielle :
 
 \begin{equation}
 \begin{bmatrix}
@@ -544,30 +543,87 @@ x \\ y \\ 1
 \end{bmatrix}
 \label{intro:eq15}
 \end{equation}
+soit ${\bf p}_p = {\bf B} {\bf p}$.
+
+On obtient la relation suivante entre les coordonnées métriques 3-D du point et les coordonnées pixelliques dans l'image :
+\begin{equation}
+Z\begin{bmatrix}
+x_p \\y_p \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\alpha_x & 0 & x_c \\ 0 & \alpha_y & y_c \\ 0 & 0 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+X \\ Y \\ Z
+\end{bmatrix}
+\label{intro:eq16}
+\end{equation}
+avec $\alpha_x = f/l_x$, $\alpha_y = f/l_y$. Les paramètres $(\alpha_x, \alpha_y, x_c, y_x)$ de la matrice $K = AB$ ainsi construite sont généralement obtenus par calibration. Elle nous permet de faire le lien entre les informations géométriques disponibles dans l'image et la projection de la scène observée. En particulier, on appelle coordonnées normalisées les valeurs :
+\begin{equation}
+\left \lbrace
+\begin{matrix}
+x = X/Z \\
+y = Y/Z
+\end{matrix} \right .
+\label{intro:eq17}
+\end{equation}
+indépendantes de la focale, et pouvant être déduites des coordonnées pixelliques en utilisant la matrice $K$.
+
+Il nous reste à établir une relation entre le repère-caméra et le repère-objet afin d'établir une correspondance entre les propriétés de la scène réelle et sa projection dans l'image. Pour cela, il suffit de déterminer les paramètres du changement de repère.
+
+Soientt ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ exprimées dans le repère $\mathcal R_c$ et ${}^o{\bf P} = ({}^oX, {}^oY, {}^oZ)$ ses coordonnées dans le repère $\mathcal R_o$. Le passage d'un repère à l'autre est effectué en utilisant la relation ${}^c{\bf P} = {}^c{\bf t}_o + {}^c{\bf R}_o {}^o{\bf P}$, avec ${}^c{\bf t}_o$ le vecteur $3\times 1$ de translation entre les deux repères, ${}^c{\bf R}_o$ la matrice $3\times 3$ de rotation correspondant à la rotation des axes du repère. En utilisant les coordonnées homogènes $\widetilde {\bf P}$ de ${\bf P}$, il est possible de factoriser cette transformation en une seule opération matricielle :
+\begin{equation}
+{}^c \widetilde {\bf P} = {}^c {\bf M}_o {}^o \widetilde {\bf P}
+\label{intro:eq18}
+\end{equation}
+soit :
+\begin{equation}
+\begin{bmatrix}
+{}^cX \\ {}^cY \\ {}^cZ \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+&  {\bf R} & & {\bf t} \\
+& {\bf 0} & & 1
+\end{bmatrix}
+\begin{bmatrix}
+{}^oX \\ {}^oY \\ {}^oZ \\ 1
+\end{bmatrix}
+\label{intro:eq19}
+\end{equation}
+
+On appelle ${}^c{\bf}_o$ la {\it matrice homogène de transformation} du repère $\mathcal R_o$ au repère $\mathcal R_c$, dont l'inverse s'exprime simplement sous la forme :
+\begin{equation}
+{}^o{\bf M}_c = 
+\begin{bmatrix}
+&  {\bf R}^T & & -{\bf R}^T {\bf t} \\
+& {\bf 0} & & 1
+\end{bmatrix}
+\label{intro:eq20}
+\end{equation}
+
+Nous sommes dès lors en mesure d'établir une relation entre les propriétés de la scène observée exprimées dans son repère propre et sa projection dans l'image, exprimée en coordonnées pixelliques, métriques et généralisées. Le lecteur remarquera cependant que, s'il est possible directement, connaissant ${\bf K}$ et ${}^o{\bf M}_c$, de déduire à partir des propriétés de la scène les caractéristiques de sa projection, l'opération inverse est dépendante dans ce modèle d'une estimation pour chaque point de sa coordonnée ${}^cZ$, ce que nous aurons à considérer plus tard.
+
+\subsection{Configurations et stratégies d'asservissement visuel}
+ 
+Nous ne considérons dans la suite que l'utilisation d'une caméra unique utilisée dans le cas d'une scène fixe. Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent à nous, que nous allons à présent détailler.
+ 
+\subsubsection{Positionnements de la caméra}
 
 
 
 
 
 
-
- \subsection{Représentation formelle}
+\subsubsection{Stratégies d'asservissement}
  
- \subsubsection{Systèmes de coordonnées}
  
- \subsubsection{Changements de repère en coordonnées homogènes}
+% \subsubsection{Formalisme}
  
- \subsubsection{Transformations rigides}
+% \subsubsection{Choix de configuration pour notre situation}
  
- \subsection{Configurations et stratégies d'assrvissement visuel}
- 
- \subsubsection{Placement de la caméra}
- 
- \subsubsection{Formalisme}
- 
- \subsubsection{Choix de configuration pour notre situation}
- 
- \subsection{Présentation du formalisme utilisé}
+% \subsection{Présentation du formalisme utilisé}
  
 
  
