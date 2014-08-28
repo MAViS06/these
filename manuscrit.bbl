@@ -6,6 +6,12 @@ J.~Albus, R.~Bostelman, and N.~Dagalakis.
 \newblock {\em Journal of research of the National Institute of Standards and
   Technology}, 97(3):373--385, may 1992.
 
+\bibitem{andreff2007}
+Nicolas Andreff, Tej Dallej, and Philippe Martinet.
+\newblock Image-based visual servoing of a gough\&\#8212;stewart parallel
+  manipulator using leg observations.
+\newblock {\em Int. J. Rob. Res.}, 26(7):677--687, July 2007.
+
 \bibitem{2010:Carricato.Merlet}
 M.~Carricato and J-P. Merlet.
 \newblock Geometrico-static analysis of under-constrained cable-driven parallel
@@ -17,11 +23,34 @@ M.~Carricato and J.P. Merlet.
 \newblock Stability analysis of underconstrained cable-driven parallel robots.
 \newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
 
+\bibitem{chaumette:tuto01}
+Fran{\c c}ois Chaumette and S.~Hutchinson.
+\newblock {Visual servo control, Part I: Basic approaches}.
+\newblock {\em IEEE Robotics and Automation Magazine}, 13(4):82--90, 2006.
+
+\bibitem{chaumette:tuto02}
+Fran{\c c}ois Chaumette and S.~Hutchinson.
+\newblock {Visual servo control, Part II: Advanced approaches}.
+\newblock {\em IEEE Robotics and Automation Magazine}, 14(1):109--118, 2007.
+
 \bibitem{1988:Clavel}
 R.~Clavel.
 \newblock Delta, a fast robot with parallel geometry.
 \newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
   Lausanne, 26-28 april 1988.
+
+\bibitem{dallej2012}
+T.~Dallej, M.~Gouttefarde, N.~Andreff, R.~Dahmouche, and P.~Martinet.
+\newblock Vision-based modeling and control of large-dimension cable-driven
+  parallel robots.
+\newblock In {\em Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ
+  International Conference on}, pages 1581--1586, Oct 2012.
+
+\bibitem{dallej2011}
+T.~Dallej, M.~Gouttefarde, N.~Andreff, M.~Michelin, and P.~Martinet.
+\newblock Towards vision-based control of cable-driven parallel robots.
+\newblock In {\em Intelligent Robots and Systems (IROS), 2011 IEEE/RSJ
+  International Conference on}, pages 2855--2860, Sept 2011.
 
 \bibitem{Faugeras:1993}
 Olivier Faugeras.
