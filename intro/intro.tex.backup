@@ -473,11 +473,11 @@ Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour
 
  Afin de simuler l'activité des photorécepteurs de l'oeil humain, les dispositifs technologiques les plus récents adoptent des stratégies basées sur l'utilisation de filtres placés en amont des capteurs photosensibles, permettant ainsi une acquisition en séquence (un même récepteur recevra successivement les réponses des filtres correspondants aux longueurs d'ondes distinguées) ou simultanée (les réponses sont envoyées sur des capteurs photosensibles dédiés).
   
-L'information contenue dans les données ainsi recueillies est riche et multiple : elle peut-être de nature colorimétrique, géométrique, elle donne des informations de déplacement, de déformation. Ce qui est vu n'est toutefois qu'une représentation de ce qui est observé, il est donc nécessaire de reconstruire la scène initiale projetée sur les capteurs le plus fidèlement possible.
+L'information contenue dans les données ainsi recueillies est riche et multiple : elle peut-être de nature colorimétrique, géométrique, elle permet de ca\-ractériser des déplacements, des déformations. Toutefois, ce qui est vu n'est jamais qu'une représentation de ce qui est observé : il est donc nécessaire de reconstruire le plus fidèlement possible la scène initiale projetée sur les capteurs.
  
 \subsubsection{De la scène à l'image}
  
-Nous avons privilégié le modèle {\it pinhole} qui offre une approximation fiable des caméras perspectives (telles que celles que nous avons utilisées) tout en restant formellement simple\cite{Faugeras:1993}, sous les hypothèses du respect des conditions de Gauss (angles de faibles incidences), et -- dans notre cas -- d'une absence de distortion de la caméra.
+Nous avons privilégié le modèle {\it pinhole} qui offre une approximation fiable des caméras perspectives (telles que celles que nous avons utilisées) tout en restant formellement simple\cite{Faugeras:1993}, sous les hypothèses du respect des conditions de Gauss (angles de faibles incidences), et -- c'est notre cas -- d'une absence de distorsion de la caméra.
 
 Soient ${\bf P} = (X, Y, Z)$ les coordonnées 3-D d'un point dans l'espace et ${\bf p} = (x, y)$ ses coordonnées dans l'image. Le modèle de projection perspective consiste en une projection centrale de centre $\mathcal C$, portée par l'axe ${\bf z}_c$ représentant l'axe optique de la caméra. On appelle {\it plan image} le plan se trouvant à distance focale $f$ de la caméra, soit $Z = f$. On définit également un point de référence ${\bf c}(x_c,y_c)$ dans le plan image comme étant le point d'intersection de l'axe optique et du plan image (Fig.\ref{intro:fig12}).
 
@@ -489,7 +489,7 @@ Soient ${\bf P} = (X, Y, Z)$ les coordonnées 3-D d'un point dans l'espace et ${
 \label{intro:fig12}
 \end{figure}
 
-En plus du {\it référentiel-base} (pour rappel, noté, $\mathcal R_b$), nous avons donc un {\it référentiel-caméra} noté$\mathcal R_c$, un {\it référentiel-objet} $\mathcal R_o$, ainsi qu'un {\it référentiel-image} $\mathcal R_i$. Nous avons besoin pour finir des dimensions $l_x$ et $l_y$ d'un pixel.
+En plus du {\it référentiel-base} (pour rappel, noté, $\mathcal R_b$), s'ajoutent un {\it référentiel-caméra} noté $\mathcal R_c$, un {\it référentiel-objet} $\mathcal R_o$, ainsi qu'un {\it référentiel-image} $\mathcal R_i$. Nous noterons également $l_x$ et $l_y$ respectivement la longueur et la hauteur d'un pixel dont nous aurons besoin pour la suite.
 
 A partir des coordonnées d'un point ${\bf P}(X, Y, Z)$ exprimées dans le référentiel de la caméra, les coordonnées projetées sur le plan images sont déduites de la manière suivante :
 
@@ -516,7 +516,7 @@ X \\ Y \\ Z
 \end{equation}
 soit $\widetilde {\bf p} = {\bf A}{\bf P}$, avec $\widetilde {\bf p} = Z {\bf p}$.
 
-Un point dans l'image est généralement exprimé sous la forme de ses coordonnées pixelliques (dont on suppose le référentiel ayant son origine en haut à gauche de l'image).
+Un point dans l'image est généralement représenté par ses coordonnées pi\-xelliques (l'origine du référentiel étant supposée localisée en haut à gauche de l'image).
 
 La conversion entre les coordonnées métriques $(x, y)$ et les coordonnées pixelliques $(x_p, y_p)$, se fait selon la relation suivante :
 
@@ -559,7 +559,7 @@ X \\ Y \\ Z
 \end{bmatrix}
 \label{intro:eq16}
 \end{equation}
-avec $\alpha_x = f/l_x$, $\alpha_y = f/l_y$. Les paramètres $(\alpha_x, \alpha_y, x_c, y_x)$ de la matrice $K = AB$ ainsi construite sont généralement obtenus par calibration. Elle nous permet de faire le lien entre les informations géométriques disponibles dans l'image et la projection de la scène observée. En particulier, on appelle coordonnées normalisées les valeurs :
+avec $\alpha_x = f/l_x$ et $\alpha_y = f/l_y$. Les paramètres $(\alpha_x, \alpha_y, x_c, y_x)$ de la matrice $K = AB$ ainsi construite sont généralement obtenus par calibration. La matrice $K$ nous permet de faire le lien entre les informations géométriques disponibles dans l'image et la projection de la scène observée. En particulier, nous pouvons à présent définir les coordonnées normalisées ainsi :
 \begin{equation}
 \left \lbrace
 \begin{matrix}
@@ -572,7 +572,7 @@ indépendantes de la focale, et pouvant être déduites des coordonnées pixelli
 
 Il nous reste à établir une relation entre le référentiel-caméra et le référentiel-objet afin d'établir une correspondance entre les propriétés de la scène réelle et sa projection dans l'image. Pour cela, il suffit de déterminer les paramètres du changement de référentiel.
 
-Soientt ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ exprimées dans le référentiel $\mathcal R_c$ et ${}^o{\bf P} = ({}^oX, {}^oY, {}^oZ)$ ses coordonnées dans le référentiel $\mathcal R_o$. Le passage d'un référentiel à l'autre est effectué en utilisant la relation ${}^c{\bf P} = {}^c{\bf t}_o + {}^c{\bf R}_o {}^o{\bf P}$, avec ${}^c{\bf t}_o$ le vecteur $3\times 1$ de translation entre les deux référentiels, ${}^c{\bf R}_o$ la matrice $3\times 3$ de rotation correspondant à la rotation des axes du référentiel. En utilisant les coordonnées homogènes $\widetilde {\bf P}$ de ${\bf P}$, il est possible de factoriser cette transformation en une seule opération matricielle :
+Soient ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ exprimées dans le référentiel $\mathcal R_c$ et ${}^o{\bf P} = ({}^oX, {}^oY, {}^oZ)$ ses coordonnées dans le référentiel $\mathcal R_o$. Le passage d'un référentiel à l'autre est effectué en utilisant la relation ${}^c{\bf P} = {}^c{\bf t}_o + {}^c{\bf R}_o {}^o{\bf P}$, avec ${}^c{\bf t}_o$ le vecteur $3\times 1$ de translation entre les deux référentiels, ${}^c{\bf R}_o$ la matrice $3\times 3$ de rotation correspondant à la rotation des axes du référentiel. En utilisant les coordonnées homogènes $\widetilde {\bf P}$ de ${\bf P}$, il est possible de factoriser cette transformation en une seule opération matricielle :
 \begin{equation}
 {}^c \widetilde {\bf P} = {}^c {\bf M}_o {}^o \widetilde {\bf P}
 \label{intro:eq18}
@@ -584,7 +584,7 @@ soit :
 \end{bmatrix}
 =
 \begin{bmatrix}
-&  {\bf R} & & {\bf t} \\
+&  {}^c{\bf R}_o & & {}^c{\bf t}_o \\
 & {\bf 0} & & 1
 \end{bmatrix}
 \begin{bmatrix}
@@ -593,11 +593,11 @@ soit :
 \label{intro:eq19}
 \end{equation}
 
-On appelle ${}^c{\bf}_o$ la {\it matrice homogène de transformation} du référentiel $\mathcal R_o$ au référentiel $\mathcal R_c$, dont l'inverse s'exprime simplement sous la forme :
+On appelle ${}^c{\bf M}_o$ la {\it matrice homogène de transformation} du référentiel $\mathcal R_o$ au référentiel $\mathcal R_c$, dont l'inverse s'exprime simplement sous la forme :
 \begin{equation}
 {}^o{\bf M}_c = 
 \begin{bmatrix}
-&  {\bf R}^T & & -{\bf R}^T {\bf t} \\
+&  {}^c{\bf R}_o^T & & -{}^c{\bf R}_o^T {}^c{\bf t}_o \\
 & {\bf 0} & & 1
 \end{bmatrix}
 \label{intro:eq20}
@@ -607,7 +607,9 @@ Nous sommes dès lors en mesure d'établir une relation entre les propriétés d
 
 \subsection{Configurations et stratégies d'asservissement visuel}
 
-Nous ne considérons dans la suite que l'utilisation d'une caméra unique dans le cas d'une scène fixe. Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent à nous. Une première question à se poser est par exemple le positionnement de la caméra. On distingue ainsi une configuration déportée (Fig.\ref{intro:fig13view0}) d'une configuration embarquée (Fig. \ref{intro:fig13view1}).
+\subsubsection{Positionnement de la caméra}
+
+Nous ne considérons dans la suite que l'utilisation d'une caméra unique dans le cas d'une scène fixe. Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent à nous. Une première décision à prendre concerne par exemple le positionnement de la caméra. On distingue ainsi une configuration déportée (Fig.\ref{intro:fig13view0}) d'une configuration embarquée (Fig. \ref{intro:fig13view1}).
 
 \begin{figure}[htp]
   \centering
@@ -621,7 +623,9 @@ Nous ne considérons dans la suite que l'utilisation d'une caméra unique dans l
 \label{intro:fig13}
 \end{figure}
 
-Dans le cas d'une caméra déportée, on connait les transformations permettant de passer du référentiel-base $\mathcal R_b$ au référentiel-caméra $\mathcal R_c$, et du référentiel-caméra au référentiel-objet $\mathcal R_o$. Seul l'organe terminal bouge dans la scène observée. Dans le cas d'une caméra embarquée, la transformation permettant de passer du référentiel de l'organe terminal $\mathcal R_e$ au référentiel-caméra $\mathcal R_c$ est connue. L'ensemble de la scène est affecté lors d'un déplacement de l'organe terminal, et donc de la caméra.
+Dans le cas d'une caméra déportée, on connait les transformations permettant de passer du référentiel-base $\mathcal R_b$ au référentiel-caméra $\mathcal R_c$, et du référentiel-caméra au référentiel-objet $\mathcal R_o$. Seul l'organe terminal bouge dans la scène observée. Dans le cas d'une caméra embarquée, la transformation permettant de passer du référentiel de l'organe terminal $\mathcal R_e$ au référentiel-caméra $\mathcal R_c$ est connue. Toutefois, l'ensemble de la scène est affecté lors d'un déplacement de l'organe terminal (et donc de la caméra).
+
+\subsubsection{Asservissements en position, basés images et hybrides}
 
 De manière générale, une stratégie d'asservissement visuel peut être décomposée de la manière suivante :
 \begin{enumerate}
@@ -643,19 +647,19 @@ De manière générale, une stratégie d'asservissement visuel peut être décom
 
 On distinguera ici deux grandes classes de stratégies d'asservissement : la première est basée sur l'estimation des paramètres de pose de l'organe terminal (PBVS : position-based visual servo), tandis que la seconde utilise directement les primitives extraites de l'image (IBPS : image-based visual servo). Il est également possible de mixer ces deux approches, ce que l'on appellera un asservissement hybride.
 
-Dans le cas de l'asservissement en position, une connaissance du modèle 3D de la cible est nécessaire (on parle parfois d'asservissement 3-D). De l'écart entre les valeurs courantes d'un ensemble de primitives et leurs valeurs estimées pour une pose désirée, on déduira les paramètres de pose de l'organe terminal. Cela revient à faire varier un référentiel courant de l'organe terminal $\mathcal R_e$ vers un référentiel correspondant à la pose prescrite $\mathcal R_e^*$, soit la détermination d'une matrice homogène de transformation ${}^{e^*}{\bf M}_e$. Comme nous l'avons vu, cette matrice est composée d'une translation et d'une rotation, qui peuvent être décrites à l'aide de $6$ paramètres. Dans ce cas, le vecteur ${\bf s}$ est constitué de mesures permettant de construire cette matrice de transformation de repère. On pourra d'ailleurs noter que dans une configuration avec caméra embarquée, le problème est équivalent à la détermination d'une matrice de transformation ${}^{c^*}{\bf M}_c$ entre les référentiels courants et désirés de la caméra.
+Dans le cas de l'asservissement en position, une connaissance du modèle 3-D de la cible est nécessaire (on parle d'ailleurs parfois d'asservissement 3-D). De l'écart entre les valeurs courantes d'un ensemble de primitives et leurs valeurs estimées pour une pose désirée, on déduira les paramètres de pose de l'organe terminal. Cela revient à faire varier un référentiel courant de l'organe terminal $\mathcal R_e$ vers un référentiel correspondant à la pose prescrite $\mathcal R_e^*$, soit la détermination d'une matrice homogène de transformation ${}^{e^*}{\bf M}_e$. Comme nous l'avons vu, cette matrice est composée d'une translation et d'une rotation, qui peuvent être décrites à l'aide de $6$ paramètres. Dans ce cas, le vecteur ${\bf s}$ est constitué de mesures permettant de construire cette matrice de transformation de repère. On pourra d'ailleurs noter que dans une configuration avec caméra embarquée, le problème est équivalent à la détermination d'une matrice de transformation ${}^{c^*}{\bf M}_c$ entre les référentiels courants et désirés de la caméra.
 
-L'asservissement basé-image repose sur l'exploitation direct des informations extraites de l'image pour établir la commande qui sera envoyée au manipulateur. Il ne nécessite pas de connaissance {\it a priori} du modèle 3-D de l'objet, mais exploite des primitives pour lesquelles on possède un modèle de comportement lorsqu'elles évoluent dans l'espace. On parlera dès lors d'asservissement 2-D, ou d'asservissement 2-D 1/2 lorsque une connaissance du modèle 3-D est néanmoins utilisée (approche hybride).
+L'asservissement basé-image repose quant à lui sur l'exploitation direct des informations extraites de l'image pour établir la commande qui sera envoyée au manipulateur. Il ne nécessite pas de connaissance {\it a priori} du modèle 3-D de l'objet, mais exploite des primitives pour lesquelles on possède un modèle de comportement lorsqu'elles évoluent dans l'espace. On parlera dès lors d'asser\-vissement 2-D, ou d'asservissement 2-D 1/2 lorsque une connaissance du modèle 3-D est néanmoins utilisée (approche hybride).
 
 Quelque-soit la situation, l'objectif de l'asservissement visuel est de traduire un ensemble de mesures effectuées dans une série d'image en loi de commande qui sera envoyée au manipulateur.
 
 \subsubsection{Construction d'une loi de commande}
 
-Nous reprenons ici les bases de construction d'une loi de commande. Le lecteur les retrouvera développées par exemple dans \cite{chaumette:tuto01} et \cite{chaumette:tuto02}. Nous nous contentons ici d'exposer les grandes lignes de ce que nous avons utilisé tout au long de nos travaux.
+Nous reprenons ici les bases de construction d'une loi de commande. Le lecteur les retrouvera développées par exemple dans \cite{chaumette:tuto01} et \cite{chaumette:tuto02}. Nous nous contentons ici d'exposer les principes généraux d'outils que nous avons utilisés tout au long de nos travaux.
 
 Soient ${\bf s}$ un ensemble de mesures réalisées au sein de l'image sur des primitives choisies, et ${\bf s}^*$ les valeurs désirées de ces mesures. On construit le vecteur ${\bf e} = {\bf s} - {\bf s}^*$ représentant l'erreur de mesure, soit la différence entre les valeurs courantes et les valeurs désirées.
 
-On choisit ici de construire une loi de commande en vitesse. Soit le torseur cinématique ${\bf v}_c = ({\bf \nu}_c, {\bf \omega}_c)$, avec ${\bf \nu}_c$ et ${\bf \omega}_c)$ les vitesses instantanées respectivement linéaires et angulaires. Il est nécessaire dans un premier temps de déterminer les variations attendues $\dot {\bf s}$ des mesures pour un déplacement ${\bf v}_c$ de caméra donné. Cette relation, lorsqu'elle existe, prend la forme algébrique d'une matrice ${\bf L}_s \in \mathcal M_{k\times 6}$ que l'on appelle {\it matrice d'interaction}, $k$ représentant le nombres de mesures effectuées. A partir de tous ces éléments nous pouvons établir :
+On choisit ici de construire une loi de commande en vitesse. Soit le torseur cinématique ${\bf v}_c = ({\bf \nu}_c, {\bf \omega}_c)$, avec ${\bf \nu}_c$ et ${\bf \omega}_c$ les vitesses instantanées respectivement linéaires et angulaires. Il est nécessaire dans un premier temps de déterminer les variations $\dot {\bf s}$ des mesures pour un déplacement donné ${\bf v}_c$ de la caméra. Cette relation, lorsqu'elle existe, prend la forme algébrique d'une matrice ${\bf L}_s \in \mathcal M_{k\times 6}$ que l'on appelle {\it matrice d'interaction}, $k$ représentant le nombres de mesures effectuées. A partir de tous ces éléments nous pouvons établir :
 
 \begin{equation}
 \dot {\bf s} = {\bf L}_s {\bf v}_c
@@ -698,21 +702,9 @@ De la même manière, les environnements d'utilisation des robots à câbles de 
 \item elle repose généralement sur l'utilisation de plusieurs caméras (ou de capteurs de type RGB-D) pour garantir une mesure fiable des primitives permettant une reconstruction du modèle 3-D de la cible. Or, pour des raisons toujours liées au contexte d'application des robots de la famille {\tt Marionet}, cela ne correspond pas aux choix de capteurs que nous avons effectués
 \end{itemize}
 
-Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une observation des articulations d'un robot parallèle à câbles a été effectué par \cite{andreff2007} pour des robots parallèles classiques, et plus récemment pour des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces études correspondant à ce jour au principal travail effectué dans le domaine de l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès lors dessus à l'occasion de la section suivante au sein de laquelle nous définirons nos problématiques et pistes de travail. Nous pouvons relever toutefois que la démarche développée dans leurs recherches consiste à améliorer le positionnement de l'organe terminal, ce qui suppose que la position de la cible est connue avec suffisamment de précision. Il s'agit donc d'un environnement contrôlé. Or, le contexte d'application de nos robots implique au contraire une incertitude non-négligeable sur les propriétés de la cible. Dès lors, la caméra est tout autant utilisée pour la construction d'une loi de commande que pour la localisation de l'objet et l'actualisation de ses propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix donc d'utilisation des caméras comme capteur extéroceptif s'est imposé dans notre approche.
+Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une observation des articulations d'un robot parallèle à câbles a été effectué par \cite{andreff2007} pour des robots parallèles classiques, et plus récemment pour des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces études correspondant à ce jour au principal travail effectué dans le domaine de l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès lors dessus à l'occasion de la section suivante au sein de laquelle nous définirons nos problématiques et pistes de travail. Nous pouvons relever toutefois que la démarche développée dans leurs recherches consiste à améliorer le positionnement de l'organe terminal, ce qui suppose que la position de la cible est connue avec suffisamment de précision. Il s'agit donc d'un environnement contrôlé. Or, le contexte d'application de nos robots implique au contraire une incertitude non-négligeable sur les propriétés de la cible. Dès lors, la caméra est tout autant utilisée pour la construction d'une loi de commande que pour la localisation de l'objet et l'actualisation de ses propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix d'utilisation des caméras comme capteurs extéroceptifs s'est donc imposé dans notre approche.
 
+La question qui se pose à présent à nous porte sur les avantages et les spécificités d'une utilisation de l'asservissement visuel dans le contexte particulier des robots parallèles à câbles. La section suivante introduira les pistes d'amélioration de contrôle que cela permet, les problématiques auxquelles nous avons été confrontées et les pistes de résolution. Nous évoquerons également de quelle manière les spécificités des robots parallèles nous permettent d'assouplir les contraintes de l'asservissement tout en garantissant un contrôle optimal.
 
+\section{Asservissement visuel des robots parallèles à câbles}
 
-
-%Lorsqu'il est possible de l'établir, une telle relation entre les variations $\dot {\bf s}$ des mesures et la vitesse de déplacement de la caméra  ${\bf v}_c$ prend la forme de ce
-
-
-
-
-    
-%\section{Asservissement visuel des robots parallèles à câbles}
-
-  %\subsection{AV robots parallèles} x2
-
-  %\subsection{AV Dallej} x2
-
-  %\subsection{Problématiques et méthodologies} x1

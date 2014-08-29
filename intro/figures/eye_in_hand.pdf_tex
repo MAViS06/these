@@ -50,7 +50,7 @@
   \makeatother%
   \begin{picture}(1,0.67779263)%
     \put(0,0){\includegraphics[width=\unitlength]{./intro/figures/eye_in_hand.pdf}}%
-    \put(0.57193181,0.33855397){\color[rgb]{0,0,0}\rotatebox{27.0473484}{\makebox(0,0)[lt]{\begin{minipage}{0.1752291\unitlength}\raggedright Caméra\end{minipage}}}}%
-    \put(0.87810573,0.49107712){\color[rgb]{0,0,0}\rotatebox{16.54893421}{\makebox(0,0)[lt]{\begin{minipage}{0.11526157\unitlength}\raggedright Cible\end{minipage}}}}%
+    \put(0.53693181,0.31055397){\color[rgb]{0,0,0}\rotatebox{27.0473484}{\makebox(0,0)[lt]{\begin{minipage}{0.1752291\unitlength}\raggedright Caméra\end{minipage}}}}%
+    \put(0.86810573,0.45107712){\color[rgb]{0,0,0}\rotatebox{16.54893421}{\makebox(0,0)[lt]{\begin{minipage}{0.11526157\unitlength}\raggedright Cible\end{minipage}}}}%
   \end{picture}%
 \endgroup%
