@@ -679,11 +679,17 @@ Nous souhaitons que notre erreur ${\bf e}$ de mesure décroisse de manière expo
 \end{equation}
 où ${\bf L}_e^+ \in \mathcal M_{6 \times k}$ représente la matrice pseudo-inverse de Moore-Penrose, soit ${\bf L}_e^+ = ({\bf L}_e^T {\bf L}_e)^{-1} {\bf L}_e^T$. Lorsque $k = 6$ et que $\det {\bf L}_e \neq 0$, on pourra choisir d'utiliser la loi ${\bf v}_c = - \lambda {\bf L}_e^{-1} {\bf e} $.
 
-En pratique, il est difficile de connaître avec exactitude ${\bf L}_e$, qui peut être dépendante de la pose de la caméra. On utilisera donc une approximation de la matrice d'interaction, la loi de commande finale devenant :
+En pratique, il est difficile de connaître avec exactitude ${\bf L}_e$, qui peut être dépendante de la pose de la caméra. On utilisera dès lors une approximation de la matrice d'interaction, la loi de commande finale devenant :
 \begin{equation}
 {\bf v}_c = - \lambda \widehat {{\bf L}_e^+} {\bf e} 
-\label{intro:eq23}
+\label{intro:eq24}
 \end{equation}
+
+Toutes les fois où cela est possible, on préfèrera utiliser des primitives dont la matrice d'interaction correspondante exhibe des propriétés algébriques inté\-ressantes (triangulaire, inversible, \dots). Le choix préalable des primitives obéit donc à un double impératif :
+\begin{itemize}
+ \item on attend qu'elles soient aisément identifiables dans l'image et que les mesures puissent être réalisées de manière robuste
+ \item les caractéristiques de la matrice d'interaction qu'elles complètent doivent comporter des qualités algébriques qui permettront d'améliorer les calculs tout autant que de ne pas propager les erreurs de mesures sur une primitive particulière aux autres mesures.
+\end{itemize}
 
 
 \subsection{Contexte de l'étude et choix de stratégie pour l'asser\-vissement visuel}
@@ -691,7 +697,7 @@ En pratique, il est difficile de connaître avec exactitude ${\bf L}_e$, qui peu
 Nous avons vu que l'utilisation d'un robot parallèle à câbles nous permet d'évoluer dans un espace de travail conséquent. En particulier, le robot {\tt Marionet-Assist} que nous avons utilisé pour nos expérimentations évolue dans un cube de $4m \times 3m \times 3m$, et le volume atteignable par un robot de type {\tt Marionet-Crane} peut aller jusqu'à $100m \times 35m \times 35m$. Dans ces circonstances, l'utilisation d'une caméra embarquée a été privilégiée pour deux raisons :
 \begin{itemize}
  \item le champs de vision d'une seule caméra fixe déportée pourra se révéler insuffisant pour couvrir l'ensemble de l'espace de travail
- \item le déploiement d'un robot à câble pouvant être effectué dans des milieux nocifs, ou difficilement atteignables (suite par exemple à une catastrope naturelle), l'utilisation d'une caméra déportée est difficilement envisageable.
+ \item le déploiement d'un robot à câble pouvant être effectué dans des milieux nocifs, ou difficilement atteignables (suite par exemple à une catastrope naturelle), l'utilisation d'une caméra déportée est souvent difficilement envisageable.
 \end{itemize}
 
 Ajoutons que le robot {\tt Marionet-Assist} a été pensé pour être utilisé dans des pièces de vie de personnes à la mobilité fragilisée. Dans ce cadre, une caméra déportée peut paraître inutilement intrusive. Le champs de vision d'une caméra embarquée étant limité, cela nous a semblé, conformément à cette application, un choix plus respectueux de l'intimité des personnes. 
@@ -699,12 +705,149 @@ Ajoutons que le robot {\tt Marionet-Assist} a été pensé pour être utilisé d
 De la même manière, les environnements d'utilisation des robots à câbles de la famille {\tt Marionet} sont généralement dynamiques. A ce titre, nous avons privilégié une stratégie d'asservissement basé-image, à nouveau pour deux raisons distinctes :
 \begin{itemize}
 \item elle ne nécessite pas une connaissance complète du modèle 3-D de la cible 
-\item elle repose généralement sur l'utilisation de plusieurs caméras (ou de capteurs de type RGB-D) pour garantir une mesure fiable des primitives permettant une reconstruction du modèle 3-D de la cible. Or, pour des raisons toujours liées au contexte d'application des robots de la famille {\tt Marionet}, cela ne correspond pas aux choix de capteurs que nous avons effectués
+\item l'asservissement en position repose souvent sur l'utilisation de plusieurs caméras (ou de capteurs de type RGB-D) pour garantir une mesure fiable des primitives permettant une reconstruction du modèle 3-D de la cible. Or, pour des raisons toujours liées au contexte d'application des robots de la famille {\tt Marionet}, cela ne correspond pas aux choix de capteurs que nous avons effectués
 \end{itemize}
 
-Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une observation des articulations d'un robot parallèle à câbles a été effectué par \cite{andreff2007} pour des robots parallèles classiques, et plus récemment pour des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces études correspondant à ce jour au principal travail effectué dans le domaine de l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès lors dessus à l'occasion de la section suivante au sein de laquelle nous définirons nos problématiques et pistes de travail. Nous pouvons relever toutefois que la démarche développée dans leurs recherches consiste à améliorer le positionnement de l'organe terminal, ce qui suppose que la position de la cible est connue avec suffisamment de précision. Il s'agit donc d'un environnement contrôlé. Or, le contexte d'application de nos robots implique au contraire une incertitude non-négligeable sur les propriétés de la cible. Dès lors, la caméra est tout autant utilisée pour la construction d'une loi de commande que pour la localisation de l'objet et l'actualisation de ses propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix d'utilisation des caméras comme capteurs extéroceptifs s'est donc imposé dans notre approche.
+Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une observation des articulations d'un robot parallèle à câbles a été effectué par \cite{andreff2007} pour des robots parallèles classiques, et plus récemment pour des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces études correspondant à ce jour au principal travail effectué dans le domaine de l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès lors dessus à l'occasion de la section suivante, au sein de laquelle nous définirons nos problématiques et pistes de travail. Nous pouvons relever toutefois que la démarche développée dans leurs recherches consiste à améliorer le positionnement de l'organe terminal, ce qui suppose que la position de la cible est connue avec suffisamment de précision. Il s'agit donc d'un environnement contrôlé. Or, le contexte d'application de nos robots implique au contraire une incertitude non-négligeable sur les propriétés de la cible. Dès lors, la caméra est tout autant utilisée pour la construction d'une loi de commande que pour la localisation de l'objet et l'actualisation de ses propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix d'utilisation des caméras comme capteurs extéroceptifs s'est donc imposé dans notre approche.
 
-La question qui se pose à présent à nous porte sur les avantages et les spécificités d'une utilisation de l'asservissement visuel dans le contexte particulier des robots parallèles à câbles. La section suivante introduira les pistes d'amélioration de contrôle que cela permet, les problématiques auxquelles nous avons été confrontées et les pistes de résolution. Nous évoquerons également de quelle manière les spécificités des robots parallèles nous permettent d'assouplir les contraintes de l'asservissement tout en garantissant un contrôle optimal.
+Il nous reste en introduction à présenter les avantages et les spécificités d'une utilisation de l'asservissement visuel dans le contexte particulier des robots parallèles à câbles. La section suivante introduira les pistes d'amélioration de contrôle que nous avons repérées, les problématiques auxquelles nous avons été confrontées et la manière dont nous proposons de les résoudre. Nous évoquerons également de quelle manière les spécificités des robots parallèles nous permettent d'assouplir les contraintes de l'asservissement tout en garantissant un contrôle optimal.
 
 \section{Asservissement visuel des robots parallèles à câbles}
+
+Nous avons vu que plusieurs caract\'eristiques des robots parall\`elles
+\`a c\^ables peuvent alt\'erer la qualit\'e de la manipulation. Ainsi, la
+complexit\'e des mod\`eles g\'eom\'etriques et cin\'ematiques par rapport aux
+robots s\'eries et aux robots parall\`eles rigides menace d'une part la
+pr\'ecision des op\'erations de manipulation lors de la r\'esolution
+num\'erique, et d'autre part l'effectuation en temps r\'eel. De plus, la
+n\'ecessaire v\'erification de l\'equilibre statique pour toutes les
+configurations de c\^ables en tension strictement positive impacte \'egalement
+la contrainte de r\'ealisation en temps r\'eel d'une t\^ache ; surtout, il est
+tout autant difficile de pr\'evoir quels c\^ables seront en tension lors d'un
+d\'eplacement prescrit, que de garantir la constance du caract\`ere positif ou
+nul de la tension d'un c\^able sur l'int\'egralit\'e d'un d\'eplacement. Enfin,
+les incertitudes m\'ecaniques -- telles par exemple le diam\`etre r\'eel de la
+couche d'enroulement d'un c\^able autour des tambours -- ont \'egalement une
+influence sur la pr\'ecision du manipulateur.
+
+Il est donc n\'ecessaire, afin de garantir l'efficacit\'e d\'une t\^ache de
+manipulation, de simplifier la r\'esolution num\'erique des mod\`eles, de
+d\'evelopper une strat\'egie de contr\^ole de la tension dans les diff\'erents
+c\^ables, et de corriger enfin la trajectoire du manipulateur lorsque les
+incertitudes et erreurs perturbent celle-ci.
+
+L'utilisation de capteurs suppl\'ementaires a \'et\'e propos\'ee \`a de
+nombreuses reprises afin de r\'esoudre un ou plusieurs des probl\`emes
+\'enonc\'es. Dans le contexte des robots parall\`eles \`a jambes rigides,
+plusieurs suggestions ont \'et\'e faites :
+\begin{itemize}
+ \item mesurer directement la pose de l'organe terminal \`a l'aide de
+syst\'emes de lasers et miroirs \cite{marantette1995machine}, \cite{Heeren:1992}
+ou d'une cam\'era d\'eport\'ee \cite{dallej.2006}, \cite{paccot.2008} : cela
+permet tout autant une simplification des mod\`eles qu'une correction des
+erreurs et impr\'ecisions.
+\item utiliser des capteurs proprioceptifs afin d'obtenir une repr\'esentation
+fid\`ele de l'\'etat des variables articulaires
+\cite{merlet.1993}, \cite{parenti.2000}, ce qui permet \'egalement une
+simplification des mod\`eles pouvant aboutir \`a une ex\'ecution en temps
+r\'eel. 
+\item un contr\^ole r\'ef\'erenc\'e vision bas\'e sur l'exploitation de mesures
+des directions des jambes du robot \cite{andreff2007} : dans cette derni\`ere
+m\'ethode, une strat\'egie IBVS est utilis\'ee pour d\'efinir un contr\^ole
+cin\'ematique. Elle permet de s'affranchir du calcul du MGD, ce qui la rend
+{\it a priori} robuste aux erreurs de mod\`eles et de calibrations.
+\end{itemize}
+
+En particulier, cette derni\`ere m\'ethode a \'et\'e d\'eclin\'ee r\'ecemment
+pour le contr\^ole de robots parall\`eles \`a c\^ables. Elle fait suite \`a
+une premi\`ere approche \cite{conf/iros/DallejGAMM11} consistant \`a mettre dans
+un premier temps en place un asservissement visuel 3-D (PBVS) sur l'organe
+terminal, puis \`a \'elaborer un sch\'ema de contr\^ole dynamique utilisant la
+vision pour estimer la pose et la v\'elocit\'e de la plate-forme. Malgr\'e des
+r\'esultats prometteurs obtenus en simulation, il reste \`a valider cette
+approche sur un prototype r\'eel.
+
+Les m\^emes auteurs ont donc par la suite propos\'e une approche analogue au
+suivi de jambes des robots parall\`eles classiques \cite{dallej2012}, en
+exploitant cette fois-ci les directions de d\'eparts des c\^ables, compl\'etant
+ainsi un syst\`eme de mesures utilisant des capteurs de forces (afin d'estimer
+la tension dans les c\^ables), ainsi que plusieurs cam\'eras d\'eport\'ees pour
+estimer la pose de la plateforme. Le sch\'ema d'ensemble utilise donc un premier
+ensemble de quatre cam\'eras filmant un motif sur l'organe terminal pour
+proposer un asservissement 3-D donnant le torseur cinem\'atique de l'organe
+terminal, puis quatre cam\'eras st\'er\'eos donnant la direction tangente aux
+d\'eparts de c\^ables, permettant ainsi de simplifier le contr\^ole
+cin\'ematique du robot. A nouveau, les r\'esultats pr\'esent\'es en simulation
+nous paraissent tout-\`a-fait prometteurs, mais doivent encore \`a notre
+connaissance \^etre valid\'es exp\'erimentalement.
+
+Nous avons toutefois choisi de ne pas poursuivre dans la m\^eme voie pour
+les trois raisons suivantes :
+\begin{itemize}
+ \item pour des raisons d'intrusivit\'e et de co\^ut propres aux conditions
+d'applications des prototypes sur lesquels nous avons travaill\'e, le
+dispositif de mesure nous a paru trop cons\'equent ; nous avons
+de plus privil\'egi\'e des configurations embarqu\'ees comme mentionn\'e
+pr\'ec\'edemment.
+\item bien qu'ils fassent durant leurs travaux l'hypoth\`ese de c\^ables
+non-\'elastiques, les auteurs supposent une pr\'ecision des mesures de tension
+qui nous semble difficilement atteignable pour des robots de cette envergure. Il
+ne s'agissait \'evidemment pas du sujet de leur \'etude, mais nous pensons
+n\'eanmoins que certaines situations que nous avons rencontr\'ees pourraient
+affecter la qualit\'e des r\'esultats annonc\'es. 
+\item enfin, le sch\'ema de contr\^ole repose sur l'estimation et l'inversion
+de la matrice d'interaction d'une part, et sur l'estimation de la Jacobienne
+inverse d'autre part, se pr\'esentant donc sous la forme :
+\begin{equation}
+\dot {\bf q} = - \lambda \widehat {{\bf J}^{-1}} \widehat{ {\bf L}_e^+} {\bf e} 
+\label{intro:eq25}
+\end{equation}
+Nous pensons qu'il est possible d'unifier ces deux \'etapes \`a la condition
+d'ex\'ecuter un contr\^ole cin\'ematique \`a l'aide d'une cam\'era embarqu\'ee,
+soit une seule matrice :
+\begin{equation}
+\dot {\bf q} = - \lambda \widehat {\bf K} {\bf e} 
+\label{intro:eq26}
+\end{equation}
+ne n\'ecessitant pas plus de connaissance pr\'ecise de la pose $X$ que des
+valeurs des variables articulaires $\rho$.
+\end{itemize}
+
+Bien que nous ne puissions garantir que cette simplification du sch\'ema de
+contr\^ole puisse s'appliquer \`a toutes les configurations de robots \`a
+c\^ables, elle s'av\`ere efficace dans notre contexte, particuli\'erement pour
+les robots $N-1$. Sa mise en place implique toutefois certaines conditions qui
+peuvent se r\'ev\'eler incompatibles avec un ensemble d'applications, ce que
+nous exposerons lors du chapitre qui sera consacr\'e \`a son \'etude.
+
+Le travail qui est pr\'esent\'e ici a pour objectif d'am\'eliorer la qualit\'e
+de manipulation d'un robot parall\`ele \`a c\^ables. Pour cela, nous avons
+distingu\'e quatre crit\`eres qui nous permettront d'\'evaluer notre
+contribution, \'a savoir :
+\begin{enumerate}
+ \item la {\bf stabilit\'e} de la plate-forme lors d'un d\'eplacement
+ \item la {\bf pr\'ecision} de la pose finale
+ \item la {\bf robustesse} aux impr\'ecisions et erreurs de mod\`ele, aux
+erreurs et impr\'ecisions des estimations des param\`etres de contr\^ole
+  \item la {\bf simplicit\'e} du sch\'ema de contr\^ole
+\end{enumerate}
+
+Dans ce but, nos travaux seront pr\'esent\'es de la mani\`ere suivante : 
+\begin{enumerate}
+ \item dans un premier temps, nous pr\'esenterons une strat\'egie de contr\^ole
+des c\^ables en tension, qui nous permettra d'am\'eliorer la stabilit\'e des
+mouvements, ainsi que la pr\'ecision.
+ \item une fois cette stabilit\'e assur\'ee, nous montrerons que l'utilisation
+d'un asservissement visuel am\'eliore la pr\'ecision du positionnement de
+l'organe terminal, mais \'egalement la robustesse du contr\^ole
+ \item enfin, nous utiliserons les sp\'ecificit\'es des architectures
+parall\`eles pour d\'evelopper une loi de contr\^ole simplifi\'ee, ce qui nous
+permettra de gagner ici en robustesse et en simplicit\'e de calcul.
+ \item nous concluerons alors par un chapitre pr\'esentant diff\'erentes
+simulations et exp\'erimentations sur notre prototype afin de valider nos
+diff\'erentes approches.
+\end{enumerate}
+
+
+
 
