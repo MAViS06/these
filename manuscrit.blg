@@ -4,61 +4,67 @@ The top-level auxiliary file: manuscrit.aux
 A level-1 auxiliary file: ./titlepage/titlepage.aux
 A level-1 auxiliary file: preambule/preambule.aux
 A level-1 auxiliary file: intro/intro.aux
+A level-1 auxiliary file: chapter01/chapter01.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
 Warning--string name "juin" is undefined
---line 1747 of file ./biblio/bibliography.bib
-I was expecting a `,' or a `}'---line 1748 of file ./biblio/bibliography.bib
+--line 1716 of file ./biblio/bibliography.bib
+I was expecting a `,' or a `}'---line 1717 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+A bad cross reference---entry "merlet2010"
+refers to entry "DBLP:conf/icra/2010", which doesn't exist
 A bad cross reference---entry "merlet.1993"
 refers to entry "DBLP:conf/icra/1993", which doesn't exist
 A bad cross reference---entry "conf/iros/DallejGAMM11"
 refers to entry "conf/iros/2011", which doesn't exist
-Warning--I didn't find a database entry for "no"
+A bad cross reference---entry "merlet2012"
+refers to entry "conf/icra/2012", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/icra/2010"
 Warning--I didn't find a database entry for "DBLP:conf/icra/1993"
 Warning--I didn't find a database entry for "conf/iros/2011"
-You've used 23 entries,
+Warning--I didn't find a database entry for "conf/icra/2012"
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            663 strings with 8431 characters,
-and the built_in function-call counts, 8364 in all, are:
-= -- 825
-> -- 331
-< -- 8
-+ -- 137
-- -- 108
-* -- 558
-:= -- 1307
-add.period$ -- 71
-call.type$ -- 23
-change.case$ -- 121
+            688 strings with 9159 characters,
+and the built_in function-call counts, 9993 in all, are:
+= -- 994
+> -- 373
+< -- 11
++ -- 156
+- -- 120
+* -- 639
+:= -- 1537
+add.period$ -- 85
+call.type$ -- 27
+change.case$ -- 137
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 349
-empty$ -- 699
-format.name$ -- 108
-if$ -- 1838
+cite$ -- 27
+duplicate$ -- 435
+empty$ -- 851
+format.name$ -- 120
+if$ -- 2225
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 23
-newline$ -- 118
-num.names$ -- 46
-pop$ -- 141
+int.to.str$ -- 27
+missing$ -- 28
+newline$ -- 138
+num.names$ -- 56
+pop$ -- 170
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 113
 quote$ -- 0
-skip$ -- 278
+skip$ -- 349
 stack$ -- 0
-substring$ -- 569
-swap$ -- 109
-text.length$ -- 8
+substring$ -- 696
+swap$ -- 146
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 102
 warning$ -- 0
-while$ -- 74
-width$ -- 25
-write$ -- 255
-(There were 3 error messages)
+while$ -- 90
+width$ -- 29
+write$ -- 300
+(There were 5 error messages)

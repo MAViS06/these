@@ -1,0 +1,144 @@
+\chapter{Contr\^ole des configurations de c\^ables}
+
+Nous proposons dans ce chapitre une m\'ethode permettant de contr\^oler les
+c\^ables qui seront en tension le long d'une trajectoire donn\'ee. Dans une
+premi\`ere section, nous expliquerons les circonstances qui nous ont
+conduits \`a d\'evelopper une m\'ethode de contr\^ole, puis nous introduirons
+les concepts n\'ecessaires \`a son d\'eveloppement. La seconde section de ce
+chapitre sera consacr\'ee \`a l'\'elaboration de crit\`eres qui nous serviront
+\`a s\'electionner les configurations optimisant la stabilit\'e et la
+pr\'ecision d'une trajectoire. Enfin, la troisi\`eme et derni\`ere section de
+ce chapitre introduira dans un premier temps l'analyse par intervalle dont nous
+nous serons servis afin de garantir notre d\'emarche ; puis nous pr\'esenterons
+les principes de l'algorithme d\'evelopp\'e et concluerons par l'exposition des
+r\'esultats th\'eoriques qui seront valid\'es dans le chapitre consacr\'e aux
+simulations et exp\'eri\-mentations.
+
+\section{Notions introductives}
+
+\subsection{Contexte}
+
+Nous avons vu que l'une des sp\'ecificit\'es des manipulateurs parall\`eles \`a
+c\^ables est que -- pour une pose donn\'ee -- l'\'equilibre statique peut
+\^etre obtenu sans que l'ensemble des c\^ables soient en tension. De plus, il
+est possible que dans certaines configurations, il est impossible pour toute
+pose que l'ensemble des c\^ables aient une tension strictement positive : ainsi,
+pour une configuration $N-1$, avec $N> 3$ et des c\^ables non-\'elastiques, il
+est prouv\'e que 3 c\^ables au maximum auront une tension strictement positive,
+les $N-3$ autres \'etant d\'etendus \cite{merlet2012}.
+
+La proc\'edure classique consiste \`a donner aux c\^ables d\'etendus une
+longueur $\rho_i$ \'egale \`a la distance $||A_iB_i||$. Or, le r\'esultat
+peut-\^etre le plus important ici est donn\'e dans \cite{merlet2014} : bien
+qu'il s'agisse d'un travail effectu\'e dans le cas de c\^ables \'elastiques,
+les r\'esultats restent valables dans la situation in\'elastique, et montrent
+qu'il est impossible en pratique de pr\'evoir les modifications du caract\`ere
+strictement positif ou nul de la tension pour l'ensemble des c\^ables lors d'une
+trajectoire donn\'ee. Ainsi, une modification infime de la longueur du c\^able
+en tension nulle dont nous avons r\'egl\'e la longueur de mani\`ere \`a ce que
+$\rho_i = A_iB_i$ pourra changer compl\`etement la nature de la tension dans
+les autres c\^ables et surtout modifier la pose de l'organe terminal.
+
+La cons\'equence de ces ph\'enom\`enes m\'ecaniques est double : d'une part
+nous pouvons nous retrouver dans des configurations sous-contraintes, nous
+perdons alors le contr\^ole d'un ou plusieurs degr\'es de libert\'es et la
+trajectoire n'est plus stable ; d'autre part les modifications soudaines des
+tensions perturbent les mouvements de la plate-forme et la pr\'ecision du
+positionnement est affect\'ee.
+
+En dehors des questions de s\'ecurit\'es soulev\'ees par ces situations, nous
+avons plusieurs fois observ\'e que ces changements subits engendraient des
+mouvements ind\'esirables au niveau de l'organe terminal. Principalement,
+puisque les degr\'es de libert\'es en rotation ne sont pas contraints sur notre
+prototype, des mouvements pendulaires ont parfois \'et\'e g\'en\'er\'es,
+conduisant \`a la perte de la cible dans l'image, et donc l'\'echec de
+l'asservissement.
+
+Il nous a donc paru n\'ecessaire dans un premier temps de mettre en place une
+strat\'egie permettant de garantir la stabilit\'e des d\'eplacements et la
+pr\'ecision des positionnements toutes les fois o\`u cela \'etait possible, et
+de pouvoir identifier les situations pour lesquelles il n'y a d'autre solution
+que d'adopter un mode de fonctionnement d\'egrad\'e.
+
+\subsection{Les configurations de c\^ables}
+
+Nous appelons {\it configuration de c\^ables}, ou $CC$, la donn\'ee de
+l'ensemble des c\^ables qui sont en tension strictement positive. Ainsi, pour
+un robot \`a $n$ c\^ables pour $d$ degr\'es de libert\'e, nous noterons
+$CC_{k_1, k_2, \dots k_m}$ la configuration pour laquelle les c\^ables $k_1,
+k_2, \dots k_m$ sont en tension strictement positive et -- si $m < n$ --  les
+c\^ables $k_{m+1}, \dots k_n$ sont d\'etendus. Si la configuration est telle
+qu'elle permet avec les $m$ c\^ables en tension de contr\^oler les $d$ de
+degr\'es de libert\'es, nous la noterons $\overline{CC}_{k_1, k_2, \dots k_m}$.
+
+Si l'ensemble $k_1, \dots k_p$ est strictement inclus dans l'ensemble $k_1,
+\dots k_m$, on pourra \'ecrire $CC_{k_1, \dots k_p} < CC_{k_1, \dots
+k_m}$.
+
+Prenons l'exemple d'un robot $4-1$ dont les c\^ables $0, 1, 2, 3$ sont
+dispos\'es de mani\`ere \`a ce qu'aucun triplet $A_iA_jA_k$ de points d'attaches
+ne soit align\'e. Les configurations possibles pour un tel robot sont :
+$\overline{CC}_{012}, \overline{CC}_{013}, \overline{CC}_{023},
+\overline{CC}_{123}$, $CC_{01}, CC_{02}, CC_{03}, CC_{12}, CC_{13}, CC_{23},
+CC_{0}, CC_{1}, CC_{2}, CC_{3}$. On notera ici que la configuration
+${CC}_{0123}$ n'a pas de sens sur ce robot particulier.
+
+Nous appelons {\it coordonn\'ees situ\'ees} ${}^s{\bf P}$ d'un point
+${\bf P}$ la donn\'ee de ses param\`etres de pose ${\bf X}$ et de la
+configuration de c\^ables dans laquelle il se trouve :
+
+$${}^s{\bf P} := ({\bf X} ; CC_{k_1, \dots k_m})$$
+
+L'ensemble des points $\bf P$ tels qu'il existe ${}^s {\bf P} :=
+({\bf X} ; CC_{k_1, \dots k_m})$ pour $CC_{k_1, \dots k_m}$ fix\'e est appel\'e
+l'{\it espace l\'egal} de $CC_{k_1, \dots k_m}$, not\'e $El(CC_{k_1, \dots
+k_m})$. Nous noterons de plus $\overline{El}(CC_{k_1, \dots
+k_m})$ la fermeture de ${El}(CC_{k_1, \dots k_m})$, \`a savoir l'ensemble :
+$$\overline{El}(CC_{k_1, \dots k_m}) := \bigcup
+El(CC_{k_1, \dots k_p}), CC_{k_1, \dots k_p} < CC_{k_1, \dots k_m}$$
+
+De la m\^eme mani\`ere, pour un m\^eme point $\bf P$, l'ensemble $Sl$
+correspond \`a l'ensemble des configurations de c\^ables $CC_{k_1, \dots k_m}$
+telles qu'il existe ${}^s{\bf P} \in El(CC_{k_1, \dots k_m})$. Ici,
+$\overline{Sl}$ repr\'esentera l'ensemble des $\overline{CC}_{k_1, \dots k_m}$
+pour lesquelles il existe ${}^s{\bf P} \in El(\overline{CC}_{k_1, \dots k_m})$.
+
+Soit maintenant $\mathcal O({\bf S}, {\bf G})$ l'ensemble des points ${\bf
+P}_i$ qui constituent une trajectoire allant du point ${\bf S}$ au point ${\bf
+G}$. Nous noterons $\mathcal O({\bf S}, {\bf G}) \vartriangleleft \subset
+El(CC_{k_1, \dots k_m})$ la situation pour laquelle $\forall {\bf P_i} \in
+\mathcal O({\bf S}, {\bf G}), \exists {}^s{\bf P}_i \in El(CC_{k_1, \dots
+k_m})$, soit que la trajectoire appartient int\'egralement \`a l'espace l\'egal
+de $CC_{k_1, \dots k_m}$.
+
+Lorsque nous n'avons pas cette relation, nous avons besoin de d\'efinir des
+r\'egions de transferts. Soit deux configurations de c\^ables 
+
+
+\subsection{Robots d\'eriv\'es et robot int\'egral}
+
+\section{Crit\`eres d'optimisation et d'\'evaluation}
+
+\subsection{Am\'elioration de la stabilit\'e}
+
+\subsubsection{Etat de l'art}
+
+\subsubsection{Crit\`ere}
+
+\subsubsection{Illustration}
+
+\subsection{Am\'elioration de la pr\'ecision}
+
+\subsubsection{Etat de l'art}
+
+\subsubsection{Crit\`ere}
+
+\subsubsection{Illustration}
+
+\section{Algorithme de s\'election de configurations de c\^ables}
+
+\subsection{L'analyse par intervalles}
+
+\subsection{Algorithme}
+
+\subsection{R\'esultats th\'eoriques}

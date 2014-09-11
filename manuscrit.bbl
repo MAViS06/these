@@ -2,13 +2,13 @@
 
 \bibitem{1992:Albus.Bostelman.ea}
 J.~Albus, R.~Bostelman, and N.~Dagalakis.
-\newblock The nist spider, a robot crane.
+\newblock The {NIST SPIDER}, a robot crane.
 \newblock {\em Journal of research of the National Institute of Standards and
   Technology}, 97(3):373--385, may 1992.
 
 \bibitem{andreff2007}
 Nicolas Andreff, Tej Dallej, and Philippe Martinet.
-\newblock Image-based visual servoing of a gough\&\#8212;stewart parallel
+\newblock Image-based visual servoing of a {G}ough{-}{S}tewart parallel
   manipulator using leg observations.
 \newblock {\em Int. J. Rob. Res.}, 26(7):677--687, July 2007.
 
@@ -110,6 +110,24 @@ Jean{-}Pierre Merlet.
   Robotics and Automation, Atlanta, Georgia, USA, May 1993}, pages 200--204,
   1993.
 
+\bibitem{merlet2012}
+Jean-Pierre Merlet.
+\newblock The kinematics of the redundant {N-1} wire driven parallel robot.
+\newblock In {\em ICRA}, pages 2313--2318. IEEE, 2012.
+
+\bibitem{merlet2014}
+Jean-Pierre Merlet.
+\newblock The influence of discrete-time control on the kinematico-static
+  behavior of cable-driven parallel robot with elastic cables.
+\newblock In Jadran Lenarčič and Oussama Khatib, editors, {\em Advances in
+  Robot Kinematics}, pages 113--121. Springer International Publishing, 2014.
+
+\bibitem{merlet2010}
+Jean{-}Pierre Merlet and David Daney.
+\newblock A portable, modular parallel wire crane for rescue operations.
+\newblock In {\em {IEEE} International Conference on Robotics and Automation,
+  {ICRA} 2010, Anchorage, Alaska, USA, 3-7 May 2010}, pages 2834--2839, 2010.
+
 \bibitem{merlet1997robots}
 J.P. Merlet.
 \newblock {\em Les robots parall{\`e}les}.
@@ -134,6 +152,11 @@ V.~Parenti-Castelli and R.~Di~Gregorio.
 \newblock A new algorithm based on two extra sensors for real-time computation
   of the actual configuration of the generalized stewart-gough manipulator.
 \newblock {\em ASME J. of Mechanical Design}, 122(3):294--298, september 2000.
+
+\bibitem{purves2004neuroscience}
+D.~Purves.
+\newblock {\em Neuroscience}.
+\newblock Sinauer Associates Incorporated, 2004.
 
 \bibitem{1965:Stewart}
 D.~Stewart.

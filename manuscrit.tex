@@ -4,8 +4,11 @@
 \documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
 
+
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+\usepackage{cite}
 
 \usepackage{graphicx}
 \usepackage{subfig}
@@ -13,11 +16,10 @@
 \usepackage{transparent}
 
 \usepackage{tabularx}
-\usepackage{cite}
+
 \usepackage{hyperref}
 
 \newcommand{\bv}{\hbox{\boldmath $v$}}
-\newcommand{\bnu}{\hbox{\boldmath $\nu$}}
 \newcommand{\bomega}{\hbox{\boldmath $\omega$}}
 
 \begin{document}
@@ -32,9 +34,9 @@
 
 \include{intro/intro}
 
-%\pagebreak
+\pagebreak
 
-%\include{chapter01/chapter01}
+\include{chapter01/chapter01}
 
 %\pagebreak
 
@@ -93,15 +95,4 @@ Cette nomenclature présente différents avantages :
 
 
 
-************************
 
-
-Dans cette configuration, nous ne contrôlons que les trois degrés de liberté correspondant aux translations le long des axes du référentiel global. Pour un triplet de trois câbles en tension strictement positive, la solution au {\it MGD} est unique et peut être calculée analytiquement. La {\it Jacobienne inverse} possède en outre une forme relativement simple : ses lignes correspondent aux vecteurs $s = A_iB_i$ normalisés par la longueur $\rho_i$
-
-\begin{equation}
-{\bf J}^{-1}_i =
-\begin{bmatrix}
- \frac {s_x} {\rho_i} & \frac {s_y} {\rho_i} & \frac {s_z} {\rho_i}
-\end{bmatrix}
-\label{intro:eq11}
-\end{equation}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  9 SEP 2014 00:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  11 SEP 2014 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -309,6 +309,11 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -411,11 +416,6 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@delta=\dimen128
 \TX@cols=\count109
 \TX@ftn=\toks23
-)
-(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 373.
-Package: cite 2010/09/10  v 5.3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -541,24 +541,25 @@ LaTeX Warning: Label `intro:fig11' multiply defined.
 
 LaTeX Warning: Label `intro:fig13' multiply defined.
 
-))
+) (./chapter01/chapter01.aux))
 \openout1 = `manuscrit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
 \scratchdimen=\dimen133
@@ -591,7 +592,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring OFF on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -601,9 +602,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
 
 (./manuscrit.out) (./manuscrit.out)
 \@outlinefile=\write3
@@ -635,7 +636,7 @@ in-ci-pal vecteur de d^^Seveloppe-
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./intro/figures/prismaticJoint.jpg, id=88, 397.485pt x 270.00874pt>
+<./intro/figures/prismaticJoint.jpg, id=136, 397.485pt x 270.00874pt>
 File: ./intro/figures/prismaticJoint.jpg Graphic file (type jpg)
 
 <use ./intro/figures/prismaticJoint.jpg>
@@ -643,7 +644,7 @@ Package pdftex.def Info: ./intro/figures/prismaticJoint.jpg used on input line
 22.
 (pdftex.def)             Requested size: 82.8019pt x 56.24619pt.
 
-<./intro/figures/revoluteJoint.jpg, id=89, 533.995pt x 291.0875pt>
+<./intro/figures/revoluteJoint.jpg, id=137, 533.995pt x 291.0875pt>
 File: ./intro/figures/revoluteJoint.jpg Graphic file (type jpg)
 
 <use ./intro/figures/revoluteJoint.jpg>
@@ -651,7 +652,7 @@ Package pdftex.def Info: ./intro/figures/revoluteJoint.jpg used on input line 2
 4.
 (pdftex.def)             Requested size: 82.8019pt x 45.13585pt.
 
-<./intro/figures/cylindricalJoint.jpg, id=90, 345.29pt x 216.81pt>
+<./intro/figures/cylindricalJoint.jpg, id=138, 345.29pt x 216.81pt>
 File: ./intro/figures/cylindricalJoint.jpg Graphic file (type jpg)
 
 <use ./intro/figures/cylindricalJoint.jpg>
@@ -668,7 +669,7 @@ Underfull \hbox (badness 2351) in paragraph at lines 26--26
 \OT1/cmr/m/n/8 pos^^See de type cylin-
  []
 
-<./intro/figures/sphericalJoint.jpg, id=91, 414.54875pt x 225.84375pt>
+<./intro/figures/sphericalJoint.jpg, id=139, 414.54875pt x 225.84375pt>
 File: ./intro/figures/sphericalJoint.jpg Graphic file (type jpg)
 
 <use ./intro/figures/sphericalJoint.jpg>
@@ -677,14 +678,14 @@ Package pdftex.def Info: ./intro/figures/sphericalJoint.jpg used on input line
 (pdftex.def)             Requested size: 82.8019pt x 45.10936pt.
  [2 <./intro/figures/prismaticJoint.jpg> <./intro/figures/revoluteJoint.jpg> <.
 /intro/figures/cylindricalJoint.jpg> <./intro/figures/sphericalJoint.jpg>]
-<./intro/figures/openchain.png, id=106, 289.883pt x 258.566pt>
+<./intro/figures/openchain.png, id=154, 289.883pt x 258.566pt>
 File: ./intro/figures/openchain.png Graphic file (type png)
 
 <use ./intro/figures/openchain.png>
 Package pdftex.def Info: ./intro/figures/openchain.png used on input line 42.
 (pdftex.def)             Requested size: 165.59853pt x 147.71161pt.
 
-<./intro/figures/closedchain.png, id=108, 326.821pt x 251.339pt>
+<./intro/figures/closedchain.png, id=156, 326.821pt x 251.339pt>
 File: ./intro/figures/closedchain.png Graphic file (type png)
 
 <use ./intro/figures/closedchain.png>
@@ -701,7 +702,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<./intro/figures/serialrobot01.png, id=114, 257.96375pt x 161.60374pt>
+<./intro/figures/serialrobot01.png, id=162, 257.96375pt x 161.60374pt>
 File: ./intro/figures/serialrobot01.png Graphic file (type png)
 
 <use ./intro/figures/serialrobot01.png>
@@ -709,7 +710,7 @@ Package pdftex.def Info: ./intro/figures/serialrobot01.png used on input line 5
 6.
 (pdftex.def)             Requested size: 165.59853pt x 103.74414pt.
 
-<./intro/figures/serialrobot02.png, id=115, 323.2075pt x 206.7725pt>
+<./intro/figures/serialrobot02.png, id=163, 323.2075pt x 206.7725pt>
 File: ./intro/figures/serialrobot02.png Graphic file (type png)
 
 <use ./intro/figures/serialrobot02.png>
@@ -729,7 +730,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--87
  []
 
 [4 <./intro/figures/serialrobot01.png> <./intro/figures/serialrobot02.png>]
-<./intro/figures/parallelrobot01.jpg, id=155, 602.25pt x 803.0pt>
+<./intro/figures/parallelrobot01.jpg, id=204, 602.25pt x 803.0pt>
 File: ./intro/figures/parallelrobot01.jpg Graphic file (type jpg)
 
 <use ./intro/figures/parallelrobot01.jpg>
@@ -737,7 +738,7 @@ Package pdftex.def Info: ./intro/figures/parallelrobot01.jpg used on input line
  97.
 (pdftex.def)             Requested size: 117.29874pt x 156.39445pt.
 
-<./intro/figures/parallelrobot02.jpg, id=156, 489.9661pt x 367.47458pt>
+<./intro/figures/parallelrobot02.jpg, id=205, 489.9661pt x 367.47458pt>
 File: ./intro/figures/parallelrobot02.jpg Graphic file (type jpg)
 
 <use ./intro/figures/parallelrobot02.jpg>
@@ -745,7 +746,7 @@ Package pdftex.def Info: ./intro/figures/parallelrobot02.jpg used on input line
  99.
 (pdftex.def)             Requested size: 207.0021pt x 155.25223pt.
 
-<./intro/figures/parallelrobot03.jpg, id=157, 410.53375pt x 501.875pt>
+<./intro/figures/parallelrobot03.jpg, id=206, 410.53375pt x 501.875pt>
 File: ./intro/figures/parallelrobot03.jpg Graphic file (type jpg)
 
 <use ./intro/figures/parallelrobot03.jpg>
@@ -759,7 +760,7 @@ Overfull \hbox (1.50047pt too wide) in paragraph at lines 125--126
  une struc-ture en cha^^^Pnes cin^^Sema-
  []
 
-<./intro/figures/winchesactuator.jpg, id=167, 803.0pt x 452.69125pt>
+<./intro/figures/winchesactuator.jpg, id=216, 803.0pt x 452.69125pt>
 File: ./intro/figures/winchesactuator.jpg Graphic file (type jpg)
 
 <use ./intro/figures/winchesactuator.jpg>
@@ -767,37 +768,40 @@ Package pdftex.def Info: ./intro/figures/winchesactuator.jpg used on input line
  136.
 (pdftex.def)             Requested size: 189.75105pt x 106.96959pt.
 
-<./intro/figures/linearactuator.png, id=168, 803.0pt x 602.25pt>
+<./intro/figures/linearactuator.png, id=217, 803.0pt x 602.25pt>
 File: ./intro/figures/linearactuator.png Graphic file (type png)
 
 <use ./intro/figures/linearactuator.png>
 Package pdftex.def Info: ./intro/figures/linearactuator.png used on input line 
 138.
 (pdftex.def)             Requested size: 144.89937pt x 108.676pt.
- [6]
-<./intro/figures/robot_cdpr_noncrane.jpg, id=181, 803.0pt x 526.96875pt>
+
+
+LaTeX Warning: Citation `merlet2010' on page 6 undefined on input line 147.
+
+[6] <./intro/figures/robot_cdpr_noncrane.jpg, id=230, 803.0pt x 526.96875pt>
 File: ./intro/figures/robot_cdpr_noncrane.jpg Graphic file (type jpg)
 
 <use ./intro/figures/robot_cdpr_noncrane.jpg>
 Package pdftex.def Info: ./intro/figures/robot_cdpr_noncrane.jpg used on input 
-line 156.
+line 160.
 (pdftex.def)             Requested size: 172.5pt x 113.19957pt.
 
-<./intro/figures/robot_cdpr_crane.jpg, id=182, 469.755pt x 380.42125pt>
+<./intro/figures/robot_cdpr_crane.jpg, id=231, 469.755pt x 380.42125pt>
 File: ./intro/figures/robot_cdpr_crane.jpg Graphic file (type jpg)
 
 <use ./intro/figures/robot_cdpr_crane.jpg>
 Package pdftex.def Info: ./intro/figures/robot_cdpr_crane.jpg used on input lin
-e 158.
+e 162.
 (pdftex.def)             Requested size: 137.9979pt x 111.7531pt.
 
-Underfull \hbox (badness 1953) in paragraph at lines 158--158
+Underfull \hbox (badness 1953) in paragraph at lines 162--162
 []\OT1/cmr/m/n/8 (b) |Ex-em-ple de con-fig-u-ra-tion sus-
  []
 
 [7 <./intro/figures/winchesactuator.jpg> <./intro/figures/linearactuator.png>]
 (./intro/figures/notation_schema.pdf_tex
-<./intro/figures/notation_schema.pdf, id=197, 585.56389pt x 615.30133pt>
+<./intro/figures/notation_schema.pdf, id=245, 585.56389pt x 615.30133pt>
 File: ./intro/figures/notation_schema.pdf Graphic file (type pdf)
 
 <use ./intro/figures/notation_schema.pdf>
@@ -806,127 +810,127 @@ Package pdftex.def Info: ./intro/figures/notation_schema.pdf used on input line
 (pdftex.def)             Requested size: 293.2521pt x 308.1569pt.
 ) [8 <./intro/figures/robot_cdpr_noncrane.jpg> <./intro/figures/robot_cdpr_cran
 e.jpg>]
-Overfull \hbox (5.81291pt too wide) in paragraph at lines 197--198
+Overfull \hbox (5.81291pt too wide) in paragraph at lines 201--202
 \OT1/cmr/bx/n/10 c^ables sont non-pesants et non-^^Selastiques\OT1/cmr/m/n/10 ,
  ce qui est une hy-poth^^Rese ad^^Sequate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
-<./intro/figures/nulltensionwire.png, id=205, 319.594pt x 250.536pt>
+<./intro/figures/nulltensionwire.png, id=253, 319.594pt x 250.536pt>
 File: ./intro/figures/nulltensionwire.png Graphic file (type png)
 
 <use ./intro/figures/nulltensionwire.png>
 Package pdftex.def Info: ./intro/figures/nulltensionwire.png used on input line
- 207.
+ 211.
 (pdftex.def)             Requested size: 120.7521pt x 94.6618pt.
 
-<./intro/figures/positivetensionwire.png, id=206, 283.459pt x 214.401pt>
+<./intro/figures/positivetensionwire.png, id=254, 283.459pt x 214.401pt>
 File: ./intro/figures/positivetensionwire.png Graphic file (type png)
 
 <use ./intro/figures/positivetensionwire.png>
 Package pdftex.def Info: ./intro/figures/positivetensionwire.png used on input 
-line 209.
+line 213.
 (pdftex.def)             Requested size: 120.7521pt x 91.3335pt.
  [9 <./intro/figures/notation_schema.pdf>] [10 <./intro/figures/nulltensionwire
 .png> <./intro/figures/positivetensionwire.png>] [11] [12]
-Overfull \hbox (26.19498pt too wide) in paragraph at lines 354--355
+Overfull \hbox (26.19498pt too wide) in paragraph at lines 358--359
 \OT1/cmr/m/n/10 utilis^^Ses en-tre autres pour il-lus-trer de mani^^Rere ludiqu
 e des pro-pri^^Set^^Ses g^^Seom^^Setriques
  []
 
-<./intro/figures/marionet03.jpg, id=258, 803.0pt x 602.25pt>
+<./intro/figures/marionet03.jpg, id=306, 803.0pt x 602.25pt>
 File: ./intro/figures/marionet03.jpg Graphic file (type jpg)
 
 <use ./intro/figures/marionet03.jpg>
-Package pdftex.def Info: ./intro/figures/marionet03.jpg used on input line 360.
+Package pdftex.def Info: ./intro/figures/marionet03.jpg used on input line 364.
 
 (pdftex.def)             Requested size: 310.4979pt x 232.87321pt.
 
-<./intro/figures/marionet01.jpg, id=259, 803.0pt x 602.25pt>
+<./intro/figures/marionet01.jpg, id=307, 803.0pt x 602.25pt>
 File: ./intro/figures/marionet01.jpg Graphic file (type jpg)
 
 <use ./intro/figures/marionet01.jpg>
-Package pdftex.def Info: ./intro/figures/marionet01.jpg used on input line 362.
+Package pdftex.def Info: ./intro/figures/marionet01.jpg used on input line 366.
 
 (pdftex.def)             Requested size: 155.24895pt x 116.432pt.
 
-<./intro/figures/marionet02.jpg, id=260, 642.4pt x 481.8pt>
+<./intro/figures/marionet02.jpg, id=308, 642.4pt x 481.8pt>
 File: ./intro/figures/marionet02.jpg Graphic file (type jpg)
 
 <use ./intro/figures/marionet02.jpg>
-Package pdftex.def Info: ./intro/figures/marionet02.jpg used on input line 364.
+Package pdftex.def Info: ./intro/figures/marionet02.jpg used on input line 368.
 
 (pdftex.def)             Requested size: 155.24895pt x 116.43568pt.
  [13]
-<./intro/figures/case01.jpg, id=278, 501.875pt x 892.33376pt>
+<./intro/figures/case01.jpg, id=326, 501.875pt x 892.33376pt>
 File: ./intro/figures/case01.jpg Graphic file (type jpg)
 
 <use ./intro/figures/case01.jpg>
-Package pdftex.def Info: ./intro/figures/case01.jpg used on input line 379.
+Package pdftex.def Info: ./intro/figures/case01.jpg used on input line 383.
 (pdftex.def)             Requested size: 68.99895pt x 122.67924pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--379
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
 \OT1/cmr/m/n/8 au d^^Seplacement
  []
 
-<./intro/figures/case02.jpg, id=279, 501.875pt x 892.33376pt>
+<./intro/figures/case02.jpg, id=327, 501.875pt x 892.33376pt>
 File: ./intro/figures/case02.jpg Graphic file (type jpg)
 
 <use ./intro/figures/case02.jpg>
-Package pdftex.def Info: ./intro/figures/case02.jpg used on input line 381.
+Package pdftex.def Info: ./intro/figures/case02.jpg used on input line 385.
 (pdftex.def)             Requested size: 68.99895pt x 122.67924pt.
 
-<./intro/figures/case03.jpg, id=280, 683.55376pt x 501.875pt>
+<./intro/figures/case03.jpg, id=328, 683.55376pt x 501.875pt>
 File: ./intro/figures/case03.jpg Graphic file (type jpg)
 
 <use ./intro/figures/case03.jpg>
-Package pdftex.def Info: ./intro/figures/case03.jpg used on input line 383.
+Package pdftex.def Info: ./intro/figures/case03.jpg used on input line 387.
 (pdftex.def)             Requested size: 165.59853pt x 121.57817pt.
  [14 <./intro/figures/marionet03.jpg> <./intro/figures/marionet01.jpg> <./intro
 /figures/marionet02.jpg>]
-<./intro/figures/cfg_44.png, id=295, 446.468pt x 600.644pt>
+<./intro/figures/cfg_44.png, id=344, 446.468pt x 600.644pt>
 File: ./intro/figures/cfg_44.png Graphic file (type png)
 
 <use ./intro/figures/cfg_44.png>
-Package pdftex.def Info: ./intro/figures/cfg_44.png used on input line 406.
+Package pdftex.def Info: ./intro/figures/cfg_44.png used on input line 410.
 (pdftex.def)             Requested size: 103.50105pt x 139.23586pt.
 
-Underfull \hbox (badness 1521) in paragraph at lines 406--406
+Underfull \hbox (badness 1521) in paragraph at lines 410--410
 []\OT1/cmr/m/n/8 (a) |Con-fig-u-ra-tion $4 \OMS/cmsy/m/n/8 ^^@ \OT1/cmr/m/n/8 4
 $ :
  []
 
-<./intro/figures/cfg_41.png, id=296, 457.71pt x 615.901pt>
+<./intro/figures/cfg_41.png, id=345, 457.71pt x 615.901pt>
 File: ./intro/figures/cfg_41.png Graphic file (type png)
 
 <use ./intro/figures/cfg_41.png>
-Package pdftex.def Info: ./intro/figures/cfg_41.png used on input line 408.
+Package pdftex.def Info: ./intro/figures/cfg_41.png used on input line 412.
 (pdftex.def)             Requested size: 103.50105pt x 139.26718pt.
 
-<./intro/figures/cfg_431.png, id=297, 440.044pt x 618.31pt>
+<./intro/figures/cfg_431.png, id=346, 440.044pt x 618.31pt>
 File: ./intro/figures/cfg_431.png Graphic file (type png)
 
 <use ./intro/figures/cfg_431.png>
-Package pdftex.def Info: ./intro/figures/cfg_431.png used on input line 410.
+Package pdftex.def Info: ./intro/figures/cfg_431.png used on input line 414.
 (pdftex.def)             Requested size: 103.50105pt x 145.42552pt.
 
-Underfull \hbox (badness 1231) in paragraph at lines 410--410
+Underfull \hbox (badness 1231) in paragraph at lines 414--414
 \OT1/cmr/m/n/8 forme en un m^eme point,
  []
 
 
-Overfull \hbox (0.35255pt too wide) in paragraph at lines 415--416
+Overfull \hbox (0.35255pt too wide) in paragraph at lines 419--420
 \OT1/cmr/m/n/10 l'appartement-t^^Semoin. La fig-ure (Fig.[]1.13[]) mon-tre l'es
 pace de tra-vail at-teignable
  []
 
 [15 <./intro/figures/case01.jpg> <./intro/figures/case02.jpg> <./intro/figures/
 case03.jpg>] (./intro/figures/MA_corobots.pdf_tex
-<./intro/figures/MA_corobots.pdf, id=311, 1289.73126pt x 1249.80917pt>
+<./intro/figures/MA_corobots.pdf, id=360, 1289.73126pt x 1249.80917pt>
 File: ./intro/figures/MA_corobots.pdf Graphic file (type pdf)
 
 <use ./intro/figures/MA_corobots.pdf>
@@ -934,63 +938,64 @@ Package pdftex.def Info: ./intro/figures/MA_corobots.pdf used on input line 52.
 
 (pdftex.def)             Requested size: 310.4979pt x 300.87572pt.
 )
-<./intro/figures/view_appartment01.jpg, id=313, 192.72pt x 128.1588pt>
+<./intro/figures/view_appartment01.jpg, id=362, 192.72pt x 128.1588pt>
 File: ./intro/figures/view_appartment01.jpg Graphic file (type jpg)
 
 <use ./intro/figures/view_appartment01.jpg>
 Package pdftex.def Info: ./intro/figures/view_appartment01.jpg used on input li
-ne 430.
+ne 434.
 (pdftex.def)             Requested size: 241.49895pt x 160.59702pt.
 
-<./intro/figures/view_appartment04.jpg, id=314, 192.72pt x 104.7915pt>
+<./intro/figures/view_appartment04.jpg, id=363, 192.72pt x 104.7915pt>
 File: ./intro/figures/view_appartment04.jpg Graphic file (type jpg)
 
 <use ./intro/figures/view_appartment04.jpg>
 Package pdftex.def Info: ./intro/figures/view_appartment04.jpg used on input li
-ne 432.
+ne 436.
 (pdftex.def)             Requested size: 241.49895pt x 131.31525pt.
 
-<./intro/figures/view_plateform.jpg, id=315, 96.36pt x 64.0794pt>
+<./intro/figures/view_plateform.jpg, id=364, 96.36pt x 64.0794pt>
 File: ./intro/figures/view_plateform.jpg Graphic file (type jpg)
 
 <use ./intro/figures/view_plateform.jpg>
 Package pdftex.def Info: ./intro/figures/view_plateform.jpg used on input line 
-434.
+438.
 (pdftex.def)             Requested size: 241.49895pt x 160.59702pt.
 
-<./intro/figures/view_winches02.jpg, id=316, 192.72pt x 93.2283pt>
+<./intro/figures/view_winches02.jpg, id=365, 192.72pt x 93.2283pt>
 File: ./intro/figures/view_winches02.jpg Graphic file (type jpg)
 
 <use ./intro/figures/view_winches02.jpg>
 Package pdftex.def Info: ./intro/figures/view_winches02.jpg used on input line 
-436.
+440.
 (pdftex.def)             Requested size: 241.49895pt x 116.82529pt.
 
 
-LaTeX Warning: Float too large for page by 79.58449pt on input line 439.
+LaTeX Warning: Float too large for page by 79.58449pt on input line 443.
 
 [16 <./intro/figures/cfg_44.png> <./intro/figures/cfg_41.png> <./intro/figures/
 cfg_431.png>]
 
-LaTeX Warning: Citation `no' on page 17 undefined on input line 455.
+LaTeX Warning: Citation `purves2004neuroscience' on page 17 undefined on input 
+line 460.
 
 [17 <./intro/figures/MA_corobots.pdf>] [18 <./intro/figures/view_appartment01.j
 pg> <./intro/figures/view_appartment04.jpg> <./intro/figures/view_plateform.jpg
 > <./intro/figures/view_winches02.jpg>]
-<./intro/figures/oeil.png, id=482, 840.13875pt x 678.535pt>
+<./intro/figures/oeil.png, id=531, 840.13875pt x 678.535pt>
 File: ./intro/figures/oeil.png Graphic file (type png)
 
 <use ./intro/figures/oeil.png>
-Package pdftex.def Info: ./intro/figures/oeil.png used on input line 464.
+Package pdftex.def Info: ./intro/figures/oeil.png used on input line 482.
 (pdftex.def)             Requested size: 293.2521pt x 236.83853pt.
 
-Overfull \hbox (7.46347pt too wide) in paragraph at lines 470--471
+Overfull \hbox (7.46347pt too wide) in paragraph at lines 488--489
 []\OT1/cmr/m/n/10 les c^ones, g^^Sen^^Seralement im-pliqu^^Ses dans la vi-sion 
 di-urne. Les c^ones pr^^Sesentent
  []
 
 [19 <./intro/figures/oeil.png>] (./intro/figures/modele_projection.pdf_tex
-<./intro/figures/modele_projection.pdf, id=493, 534.60152pt x 633.45483pt>
+<./intro/figures/modele_projection.pdf, id=541, 534.60152pt x 633.45483pt>
 File: ./intro/figures/modele_projection.pdf Graphic file (type pdf)
 
 <use ./intro/figures/modele_projection.pdf>
@@ -999,7 +1004,7 @@ ne 52.
 (pdftex.def)             Requested size: 327.74895pt x 388.34969pt.
 ) [20] [21 <./intro/figures/modele_projection.pdf>] [22] (./intro/figures/eye_t
 o_hand.pdf_tex
-<./intro/figures/eye_to_hand.pdf, id=530, 487.0998pt x 345.4506pt>
+<./intro/figures/eye_to_hand.pdf, id=578, 487.0998pt x 345.4506pt>
 File: ./intro/figures/eye_to_hand.pdf Graphic file (type pdf)
 
 <use ./intro/figures/eye_to_hand.pdf>
@@ -1017,7 +1022,7 @@ Overfull \hbox (4.88307pt too wide) in paragraph at lines 54--54
  []
 
 ) (./intro/figures/eye_in_hand.pdf_tex
-<./intro/figures/eye_in_hand.pdf, id=531, 487.0998pt x 330.27391pt>
+<./intro/figures/eye_in_hand.pdf, id=579, 487.0998pt x 330.27391pt>
 File: ./intro/figures/eye_in_hand.pdf Graphic file (type pdf)
 
 <use ./intro/figures/eye_in_hand.pdf>
@@ -1039,7 +1044,7 @@ Overfull \hbox (4.88307pt too wide) in paragraph at lines 54--54
 pdfTeX warning: /usr/bin/pdflatex (file ./intro/figures/eye_in_hand.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
 >] (./intro/figures/bloc_commande.pdf_tex
-<./intro/figures/bloc_commande.pdf, id=557, 471.25514pt x 154.09453pt>
+<./intro/figures/bloc_commande.pdf, id=605, 471.25514pt x 154.09453pt>
 File: ./intro/figures/bloc_commande.pdf Graphic file (type pdf)
 
 <use ./intro/figures/bloc_commande.pdf>
@@ -1047,68 +1052,43 @@ Package pdftex.def Info: ./intro/figures/bloc_commande.pdf used on input line 5
 2.
 (pdftex.def)             Requested size: 327.74895pt x 107.16943pt.
 ) [24 <./intro/figures/bloc_commande.pdf>]
-Overfull \hbox (6.99251pt too wide) in paragraph at lines 669--670
+Overfull \hbox (6.99251pt too wide) in paragraph at lines 687--688
 []\OT1/cmr/m/n/10 Notre cible ^^Setant fixe, nous avons $[] = []$. Nous pou-von
 s d^^Res lors imm^^Sediatement
  []
 
 [25]
-Overfull \hbox (2.61388pt too wide) in paragraph at lines 695--695
+Overfull \hbox (2.61388pt too wide) in paragraph at lines 713--713
 []\OT1/cmr/bx/n/12 Contexte de l'^^Setude et choix de strat^^Segie pour l'asser
 -
  []
 
 
-Overfull \hbox (4.83398pt too wide) in paragraph at lines 697--698
+Overfull \hbox (4.83398pt too wide) in paragraph at lines 715--716
 \OT1/cmr/m/n/10 Nous avons vu que l'utilisation d'un robot par-all^^Rele ^^Ra c
 ^ables nous per-met d'^^Sevoluer
  []
 
 
-Overfull \hbox (2.75061pt too wide) in paragraph at lines 705--706
+Overfull \hbox (2.75061pt too wide) in paragraph at lines 723--724
 \OT1/cmr/m/n/10 privil^^Segi^^Se une strat^^Segie d'asservissement bas^^Se-imag
 e, ^^Ra nou-veau pour deux raisons
  []
 
 [26]
-
-LaTeX Warning: Citation `marantette1995machine' on page 27 undefined on input l
-ine 745.
-
-
-LaTeX Warning: Citation `Heeren:1992' on page 27 undefined on input line 745.
-
-
-LaTeX Warning: Citation `dallej.2006' on page 27 undefined on input line 746.
-
-
-LaTeX Warning: Citation `paccot.2008' on page 27 undefined on input line 746.
-
-
-LaTeX Warning: Citation `merlet.1993' on page 27 undefined on input line 751.
-
-
-LaTeX Warning: Citation `parenti.2000' on page 27 undefined on input line 751.
-
-
 Overfull \hbox (5.45705pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/10 1.5.  ASSERVISSEMENT VISUEL DES ROBOTS PARALL[]ELES []A C[]ABL
 ES \OT1/cmr/m/n/10 27
  []
 
 [27]
-
-LaTeX Warning: Citation `conf/iros/DallejGAMM11' on page 28 undefined on input 
-line 763.
-
-
-Overfull \hbox (9.97287pt too wide) in paragraph at lines 787--792
+Overfull \hbox (9.97287pt too wide) in paragraph at lines 805--810
 []\OT1/cmr/m/n/10 pour des raisons d'intrusivit^^Se et de co^ut pro-pres aux co
 n-di-tions d'applications
  []
 
 
-Overfull \hbox (3.58391pt too wide) in paragraph at lines 792--798
+Overfull \hbox (3.58391pt too wide) in paragraph at lines 810--816
 []\OT1/cmr/m/n/10 bien qu'ils fassent du-rant leurs travaux l'hypoth^^Rese de c
 ^ables non-^^Selastiques,
  []
@@ -1119,19 +1099,55 @@ Overfull \hbox (5.45705pt too wide) has occurred while \output is active
 ES \OT1/cmr/m/n/10 29
  []
 
-[29] (./manuscrit.bbl [30
+[29]
+\openout2 = `chapter01/chapter01.aux'.
+
+ (./chapter01/chapter01.tex [30
 
 
-] [31])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
- [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
- (./manuscrit.aux
-(./titlepage/titlepage.aux) (./preambule/preambule.aux) (./intro/intro.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+
+]
+Chapter 2.
+
+LaTeX Warning: Citation `merlet2012' on page 31 undefined on input line 28.
+
+
+LaTeX Warning: Citation `merlet2014' on page 31 undefined on input line 32.
+
+[31]
+Overfull \hbox (9.83511pt too wide) in paragraph at lines 86--89
+[]\OT1/cmr/m/n/10 Nous ap-pelons \OT1/cmr/m/it/10 co-or-donn^^Sees situ^^Sees $
+[][]\OT1/cmr/bx/n/10 P$ \OT1/cmr/m/n/10 d'un point $\OT1/cmr/bx/n/10 P$ \OT1/cm
+r/m/n/10 la donn^^See de ses param^^Retres
+ []
+
+
+Overfull \hbox (3.35666pt too wide) in paragraph at lines 92--97
+[]\OT1/cmr/m/n/10 L'ensemble des points $\OT1/cmr/bx/n/10 P$ \OT1/cmr/m/n/10 te
+ls qu'il ex-iste $[][]\OT1/cmr/bx/n/10 P \OT1/cmr/m/n/10 := (\OT1/cmr/bx/n/10 X
+\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 CC[]\OT1/cmr/m/n/10 )$ pour $\OML/cmm/m/it/1
+0 CC[]$
+ []
+
+[32]) [33] (./manuscrit.bbl [34
+
+
+] [35]
+Underfull \hbox (badness 1484) in paragraph at lines 119--124
+[]\OT1/cmr/m/n/10 Jean-Pierre Mer-let.  The in-flu-ence of discrete-time con-tr
+ol on the
+ []
+
+[36])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+ [37]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
+ (./manuscrit.aux (./titlepage/titlepage.aux)
+(./preambule/preambule.aux) (./intro/intro.aux) (./chapter01/chapter01.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
-(rerunfilecheck)             Checksum: 088D814B01C644F14DFA0F3DDBF3ADBB;1538.
+(rerunfilecheck)             Checksum: 250E3EC4469E3A45641A1EB8A495EE73;2522.
 
 
 LaTeX Warning: There were undefined references.
@@ -1139,13 +1155,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 8172 strings out of 494999
- 123982 string characters out of 6180228
- 212307 words of memory out of 5000000
- 11035 multiletter control sequences out of 15000+600000
+ 8219 strings out of 494999
+ 124737 string characters out of 6180228
+ 213044 words of memory out of 5000000
+ 11051 multiletter control sequences out of 15000+600000
  14312 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,12n,49p,1488b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1171,11 +1187,12 @@ amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on manuscrit.pdf (32 pages, 6756137 bytes).
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on manuscrit.pdf (37 pages, 6779213 bytes).
 PDF statistics:
- 757 PDF objects out of 1000 (max. 8388607)
- 574 compressed objects within 6 object streams
- 171 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 851 PDF objects out of 1000 (max. 8388607)
+ 661 compressed objects within 7 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 426 words of extra memory for PDF output out of 10000 (max. 10000000)
 

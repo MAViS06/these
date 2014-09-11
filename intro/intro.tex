@@ -140,7 +140,11 @@ Afin de contrôler la longueur des câbles, plusieurs types de systèmes peuvent
 \label{intro:fig4}
 \end{figure}
 
-Dans tous les cas, ces systèmes permettent d'obtenir une trè large variation sur les longueurs des câbles, solutionnant ainsi le problème de l'espace de travail. On a pu ainsi construire des robots travaillant sur des volumes de $100m\times35m\times35m$ ({\tt Marionet-Crane}, Fig.\ref{intro:fig7view0}).
+Dans tous les cas, ces systèmes permettent d'obtenir une trè large variation sur
+les longueurs des câbles, solutionnant ainsi le problème de l'espace de travail.
+On a pu ainsi construire des robots travaillant sur des volumes de
+$100m\times35m\times35m$ ({\tt Marionet-Crane},
+\cite{merlet2010} Fig.\ref{intro:fig7view0}).
 
 Toutefois, quelque-soit le type d'articulation et d'actionnement choisis, la force que peut exercer un seul câble sur l'organe terminal est nécessairement unilatérale : {\em un câble seul peut tirer, mais ne peut pas pousser la plateforme}. Il faut donc, pour pouvoir contrôler le mouvement dans son intégralité, que les câbles subissent une opposition. Il a ainsi été montré que $n+1$ câbles au minimum sont requis pour assurer le contrôle de $n$ degrés de liberté \cite{1994:Ming.Higuchi}. On peut cependant considérer la gravité comme une force unilatérale et la représenter comme un câble virtuel jouant le rôle d'opposition : il est ainsi possible de n'utiliser que $n$ câbles pour $n$ degrés de liberté.
 
@@ -452,7 +456,21 @@ Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour
 
 \section{Asservissement visuel}
 
- La vision représente pour les humains environ 70\% des données issues des perceptions sensorielles externes \cite{no} : d'une richesse incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La vision artificielle ne déroge pas à ses deux principes, d'où l'importance du traitement du signal d'une part (dans le but de recueillir et interpréter dans cette immensité d'informations ce qui est pertinent pour une tâche prescrite) et d'une stratégie d'asservissement d'autre part (afin de stabiliser une commande de tâche malgré les erreurs et incertitudes sur les données). Nous allons donc dans un premier temps présenter le mode d'acquisition des images, puis nous continuerons sur les modèles de perception utilisés. Une fois que nous aurons détaillé la manière dont une scène est projetée sur une image, nous pourrons distinguer plusieurs configurations et exposer différentes stratégies d'asservissement pouvant être utilisées. Nous développerons enfin les caractéristiques spécifiques à celle que nous avons sélectionnée dans le contexte de ces travaux.
+ La vision représente pour les humains environ 70\% des données issues des
+perceptions sensorielles externes \cite{purves2004neuroscience} : d'une richesse
+incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La
+vision artificielle ne déroge pas à ses deux principes, d'où l'importance du
+traitement du signal d'une part (dans le but de recueillir et interpréter dans
+cette immensité d'informations ce qui est pertinent pour une tâche prescrite) et
+d'une stratégie d'asservissement d'autre part (afin de stabiliser une commande
+de tâche malgré les erreurs et incertitudes sur les données). Nous allons donc
+dans un premier temps présenter le mode d'acquisition des images, puis nous
+continuerons sur les modèles de perception utilisés. Une fois que nous aurons
+détaillé la manière dont une scène est projetée sur une image, nous pourrons
+distinguer plusieurs configurations et exposer différentes stratégies
+d'asservissement pouvant être utilisées. Nous développerons enfin les
+caractéristiques spécifiques à celle que nous avons sélectionnée dans le
+contexte de ces travaux.
  
  \subsection{Modèles de capteurs et projections}
  
@@ -823,7 +841,7 @@ nous exposerons lors du chapitre qui sera consacr\'e \`a son \'etude.
 Le travail qui est pr\'esent\'e ici a pour objectif d'am\'eliorer la qualit\'e
 de manipulation d'un robot parall\`ele \`a c\^ables. Pour cela, nous avons
 distingu\'e quatre crit\`eres qui nous permettront d'\'evaluer notre
-contribution, \'a savoir :
+contribution, \`a savoir :
 \begin{enumerate}
  \item la {\bf stabilit\'e} de la plate-forme lors d'un d\'eplacement
  \item la {\bf pr\'ecision} de la pose finale
@@ -833,7 +851,7 @@ erreurs et impr\'ecisions des estimations des param\`etres de contr\^ole
 \end{enumerate}
 
 Dans ce but, nos travaux seront pr\'esent\'es de la mani\`ere suivante : 
-\begin{enumerate}
+\begin{itemize}
  \item dans un premier temps, nous pr\'esenterons une strat\'egie de contr\^ole
 des c\^ables en tension, qui nous permettra d'am\'eliorer la stabilit\'e des
 mouvements, ainsi que la pr\'ecision des d\'eplacements.
@@ -848,7 +866,7 @@ exp\'erimentations sur notre prototype. Ceci nous permettra de valider nos
 diff\'erentes approches, mais \'egalement d'en pr\'esenter les limites, ce qui
 nous permettra en conclusion de faire le point sur les perspectives s'ouvrant
 en continuit\'e de ces travaux.
-\end{enumerate}
+\end{itemize}
 
 
 
