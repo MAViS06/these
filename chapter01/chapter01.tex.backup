@@ -105,14 +105,33 @@ pour lesquelles il existe ${}^s{\bf P} \in El(\overline{CC}_{k_1, \dots k_m})$.
 
 Soit maintenant $\mathcal O({\bf S}, {\bf G})$ l'ensemble des points ${\bf
 P}_i$ qui constituent une trajectoire allant du point ${\bf S}$ au point ${\bf
-G}$. Nous noterons $\mathcal O({\bf S}, {\bf G}) \vartriangleleft \subset
+G}$. Nous noterons $\mathcal O({\bf S}, {\bf G}) \vartriangleleft
 El(CC_{k_1, \dots k_m})$ la situation pour laquelle $\forall {\bf P_i} \in
 \mathcal O({\bf S}, {\bf G}), \exists {}^s{\bf P}_i \in El(CC_{k_1, \dots
 k_m})$, soit que la trajectoire appartient int\'egralement \`a l'espace l\'egal
 de $CC_{k_1, \dots k_m}$.
 
 Lorsque nous n'avons pas cette relation, nous avons besoin de d\'efinir des
-r\'egions de transferts. Soit deux configurations de c\^ables 
+r\'egions de transferts. Soit deux configurations de c\^ables
+$CC_{k_1, \dots k_m}$ et $CC_{k_1, \dots k_p}$, que pour un instant nous
+noterons respectivement $CC_i$ et $CC_j$. Nous d\'efinissons l'ensemble
+$\overset{\circ}{Tr_{ij}} = El(CC_i) \cap El(CC_j)$ comme l'ensemble des points
+${\bf P}$ pour lesquels il existe ${}^sP_i \in El(CC_i)$ et ${}^sP_j \in
+El(CC_j)$. Un changement de coordonn\'ees situ\'ees de ${}^sP_i$ vers ${}^sP_j$
+sera dans ce cas appel\'e un {\it transfert simple}. Lorsque
+$\overset{\circ}{Tr_{ij}} = \emptyset$, mais qu'il existe, pour un point ${\bf
+P}$, ${}^sP_i \in \overline{El}(CC_i)$ et ${}^sP_j \in \overline{El}(CC_j)$, nous
+appelerons $\partial Tr_{ij}$ l'ensemble des points de {\it transfert marginal}
+entre les configurations $CC_i$ et $CC_j$. L'espace de transfert total $Tr_{ij}$
+est alors la r\'eunion des espaces de transferts simple et marginal
+correspondants.
+
+Supposons par exemple que ${\bf S} \in El(CC_1)$, ${\bf G} \in El(CC_2)$ et qu'il existe un point ${\bf M}$ tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
+El(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft El(CC_2)$, alors on pourra écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cap \overset{\circ}{Tr_{12}} \cap El(CC_2)$. De la même manière, si un point ${\bf M}$ est tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
+\overline{El}(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft \overline{El}(CC_2)$, alors nous pourrons écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cap \partial Tr_{12} \cap El(CC_2)$
+
+
+
 
 
 \subsection{Robots d\'eriv\'es et robot int\'egral}

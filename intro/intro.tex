@@ -1,6 +1,6 @@
 \chapter{Introduction}
 
-Il s'agit dans ce chapitre d'introduire les problématiques et méthodologies qui nous guideront dans notre étude de l'utilisation de l'asservissement visuel pour une architecture de robot très particulière que nous allons présenter dans ce chapitre. Notre objectif est double: il s'agit dans un premier temps de perfectionner les fonctionnalités de saisie et manipulation d'objets de ces robots, et d'améliorer leurs propriétés dans un second temps.
+Il s'agit dans ce chapitre d'introduire les problématiques et méthodologies qui nous guideront dans notre étude de l'utilisation de l'asservissement visuel pour une architecture de robot très particulière que nous allons présenter dans ce chapitre. Notre objectif est double : il s'agit dans un premier temps de perfectionner les fonctionnalités de saisie et manipulation d'objets de ces robots, et d'améliorer leurs propriétés dans un second temps.
 
 Pour cela, nous  évoquons dans une première section les avantages et inconvénients des structures parallèles comparativement aux structures en série. Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxième section, suivie par un rappel des modèles géométriques et cinématiques des manipulateurs parallèles à c\^ables. Nous présentons ensuite dans une troisième section le prototype sur lequel nos expérimentations et validations ont été effectuées,
 
@@ -42,7 +42,7 @@ Enfin, on peut définir pour chaque segment son {\it degré de connexion} comme 
     \includegraphics[width=.48\linewidth]{./intro/figures/openchain.png}} \hfill
     \subfloat[Schéma d'une cha\^ine cinématique fermée]{\label{intro:fig1view1}
     \includegraphics[width=.48\linewidth]{./intro/figures/closedchain.png}}
-    \caption{\footnotesize{Exemples de cha\^ines cinématiques ouvertes et fermées : les $S_i$ représentent les différents segments intermédiaires, tandis que les $A_i$ correspondent aux articulations. Dans Fig.\ref{intro:fig1view0}, tous les segments $S_i$ ont un degré de connexion égal à 2 ; seuls la base et l'organe terminal ont un degré de connexion égal à 1. Il est visible dans Fig.\ref{intro:fig1view1} que tous les segments à l'exception de $S_4$ possèdent un degré de connexion ègal à 3.}}
+    \caption{\footnotesize{Exemples de cha\^ines cinématiques ouvertes et fermées : les $S_i$ représentent les différents segments intermédiaires, tandis que les $A_i$ correspondent aux articulations. Dans Fig.\ref{intro:fig1view0}, tous les segments $S_i$ ont un degré de connexion égal à 2 ; seuls la base et l'organe terminal ont un degré de connexion égal à 1. Il est visible dans Fig.\ref{intro:fig1view1} que tous les segments $S_i$ possèdent un degré de connexion ègal à 3.}}
 \label{intro:fig1}
 \end{figure}
 
@@ -456,27 +456,15 @@ Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour
 
 \section{Asservissement visuel}
 
- La vision représente pour les humains environ 70\% des données issues des
-perceptions sensorielles externes \cite{purves2004neuroscience} : d'une richesse
-incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La
-vision artificielle ne déroge pas à ses deux principes, d'où l'importance du
-traitement du signal d'une part (dans le but de recueillir et interpréter dans
-cette immensité d'informations ce qui est pertinent pour une tâche prescrite) et
-d'une stratégie d'asservissement d'autre part (afin de stabiliser une commande
-de tâche malgré les erreurs et incertitudes sur les données). Nous allons donc
-dans un premier temps présenter le mode d'acquisition des images, puis nous
-continuerons sur les modèles de perception utilisés. Une fois que nous aurons
-détaillé la manière dont une scène est projetée sur une image, nous pourrons
-distinguer plusieurs configurations et exposer différentes stratégies
-d'asservissement pouvant être utilisées. Nous développerons enfin les
-caractéristiques spécifiques à celle que nous avons sélectionnée dans le
-contexte de ces travaux.
+La vision représente pour les humains environ 70\% des données issues des perceptions sensorielles externes \cite{purves2004neuroscience} : d'une richesse incroyable, c'est aussi, par conséquent, une source d'erreurs inépuisable. La vision artificielle ne déroge pas à ses deux principes, d'où l'importance du traitement du signal d'une part (dans le but de recueillir et interpréter dans cette grande variété d'informations ce qui est pertinent pour une tâche prescrite) et
+d'une stratégie d'asservissement d'autre part (afin de stabiliser une tâche malgré les erreurs et incertitudes sur les données). Nous allons donc
+dans un premier temps présenter le mode d'acquisition des images, puis nous continuerons sur les modèles de perception utilisés. Une fois que nous aurons détaillé la manière dont une scène est projetée sur une image, nous pourrons distinguer plusieurs configurations et exposer différentes stratégies d'asservissement pouvant être utilisées. Nous développerons enfin les caractéristiques spécifiques à celle que nous avons sélectionnée dans le contexte de ces travaux.
  
  \subsection{Modèles de capteurs et projections}
  
  \subsubsection{De l'oeil à la caméra}
  
- Sans pour autant chercher à imiter la vision humaine, la vision artificielle s'en inspire néanmoins fortement pour ce qui concerne l'acquisition d'une scène. Ainsi, pour une caméra, le diaphragme joue le rôle de l'iris et de la pupille et détermine la quantité de lumière qui pourra être enregistrée sur un intervalle de temps donné. Par la suite, la lentille joue un rôle équivalent à la cornée et au cristallin, en faisant converger les rayons lumineux vers la rétine sur laquelle sont disséminés environ 125 millions de photorécepteurs : c'est au niveau de ces derniers que l'acquisition est véritablement effectuée. On distingue parmi les photorécepteurs :
+ Sans pour autant chercher à imiter la vision humaine, la vision artificielle s'en inspire néanmoins fortement pour ce qui concerne l'acquisition d'une image. Ainsi, pour une caméra, le diaphragme joue le rôle de l'iris et de la pupille et détermine la quantité de lumière qui pourra être enregistrée sur un intervalle de temps donné. Par la suite, la lentille joue un rôle équivalent à la cornée et au cristallin, en faisant converger les rayons lumineux vers la rétine sur laquelle sont disséminés environ 125 millions de photorécepteurs : c'est au niveau de ces derniers que l'acquisition est véritablement effectuée. On distingue parmi les photorécepteurs :
  \begin{figure}[htp]
   \centering
   \includegraphics[width=.85\linewidth]{./intro/figures/oeil.png}
@@ -485,8 +473,8 @@ contexte de ces travaux.
 \end{figure}
 
  \begin{itemize}
-  \item les cônes, généralement impliqués dans la vision diurne. Les cônes présentent 3 types de pigments leur permettant de réagir à des longueurs d'ondes spécifiques (qui ne recouvrent pas exactement le triplet RGB traditionnellement utilisé traitement d'image)
-  \item les bâtonnets, impliqués dans la vision nocturne. Ne possédant d'un seul type de pigments, ils ne peuvent pas discriminer les longueurs d'ondes. En revanche, ils sont en moyenne 1000 fois plus sensibles à la lumière que les cônes, et leur population correspond à 20 fois celle des cônes.
+  \item les cônes, généralement impliqués dans la vision diurne. Les cônes présentent 3 types de pigments leur permettant de réagir à des longueurs d'ondes spécifiques (qui ne recouvrent pas exactement le triplet RGB traditionnellement utilisé en traitement d'image)
+  \item les bâtonnets, impliqués dans la vision nocturne. Ne possédant qu'un seul type de pigments, ils ne peuvent pas discriminer les longueurs d'ondes. En revanche, ils sont en moyenne 1000 fois plus sensibles à la lumière que les cônes, et leur population correspond à 20 fois celle des cônes.
  \end{itemize}
 
  Afin de simuler l'activité des photorécepteurs de l'oeil humain, les dispositifs technologiques les plus récents adoptent des stratégies basées sur l'utilisation de filtres placés en amont des capteurs photosensibles, permettant ainsi une acquisition en séquence (un même récepteur recevra successivement les réponses des filtres correspondants aux longueurs d'ondes distinguées) ou simultanée (les réponses sont envoyées sur des capteurs photosensibles dédiés).
