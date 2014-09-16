@@ -127,14 +127,39 @@ est alors la r\'eunion des espaces de transferts simple et marginal
 correspondants.
 
 Supposons par exemple que ${\bf S} \in El(CC_1)$, ${\bf G} \in El(CC_2)$ et qu'il existe un point ${\bf M}$ tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
-El(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft El(CC_2)$, alors on pourra écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cap \overset{\circ}{Tr_{12}} \cap El(CC_2)$. De la même manière, si un point ${\bf M}$ est tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
-\overline{El}(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft \overline{El}(CC_2)$, alors nous pourrons écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cap \partial Tr_{12} \cap El(CC_2)$
+El(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft El(CC_2)$, alors on pourra écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \overset{\circ}{Tr_{12}} \cup El(CC_2)$. De la même manière, si un point ${\bf M}$ est tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
+\overline{El}(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft \overline{El}(CC_2)$, alors nous pourrons écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \partial Tr_{12} \cup El(CC_2)$. Nous appellerons {\it trajet} l'ensemble des configurations de c\^ables et régions de transferts nécessaires au parcours d'une trajectoire. On distinguera les situations suivantes :
+\begin{itemize}
+ \item {\it trajet trivial} : l'intégralité de la trajectoire peut être réalisée à partir d'une seule configuration de câbles.
+ \item {\it trajet simple} : la trajectoire requiert au moins un transfert ; tous les transferts sont simples.
+ \item {\it trajet partiellement marginal} : la trajectoire requiert au moins un transfert ; il existe au moins un transfert simple et un transfert marginal.
+ \item {\it trajet marginal} : la trajectoire requiert au moins un transfert ; tous les transferts sont marginaux.
+\end{itemize}
 
-
-
-
+Lorsque plusieurs trajets existent, nous essaierons alors de définir des relations d'ordre nous permettant de sélectionner le meilleur trajet possible en fonction d'un ou plusieurs critères préalablement définis : ce sera l'objet de la seconde section de ce chapitre.
 
 \subsection{Robots d\'eriv\'es et robot int\'egral}
+
+Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k$) sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrième (câble $l$) relié à celle-ci en un point ${\bf B}_2 \neq {\bf B}_1$. Il a été montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions nous retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations présentent des différences non négligeables du point de vue des propriétés du robot, tout autant au niveau du contrôle que des différents modèles géométriques et cinématiques. La question se pose alors de savoir s'il est plus pertinent d'adopter une démarche {\it top-down} consistant à rechercher les propriétés du robot $4-3-1$ et les décliner ensuite selon les situations, ou au contraire une démarche {\it bottom-up} qui partirait des propriétés spécifiques à chaque possibilité de configuration pour ensuite construire un fonctionnement global.
+
+Un second argument en faveur de cette interrogation est soulevé dans \cite{merlet2012}. Pour rappel, l'équilibre statique s'exprime par la formule suivante : $\mathcal {\bf F} = {\bf J}^{-T} {\bf \tau}$. Or, afin de déterminer les tensions dans les différents câbles, il faut inverser cette relation. Lorsque la matrice jacobienne n'est pas inversible ({\it a fortiori} lorsqu'elle n'est pas carrée), l'auteur montre que l'utilisation de la matrice pseudo-inverse n'est pas appropriée et donne des résultats qui peuvent être faux. On peut se demander dès lors si l'expression de cette première jacobienne est la plus pertinente, s'il n'existe pas une autre approche de la modélisation du robot qui en permettrait une meilleure intuition et utilisation.
+
+Soit donc un robot parallèle à câbles $A^{n,m}$, où $n$ représente le nombre de degrés de libertés effectivement contrôlés, et $m$ le nombre de câbles. Lorsque -- pour le contrôle des $n$ degrés de libertés -- chacun des $m$ câbles est en tension strictement positive pour l'ensemble des poses de son espace de travail, on parlera de {\it robot concrêt}. On utilisera dans le cas contraire le terme de {\it robot abstrait}. Le couple $n,m$ sera quant à lui appelé la {\it signature} du robot.
+
+Nous définissons à présent les deux opérations suivantes :
+\begin{itemize}
+ \item on parle de {\it dérivation en contrôle} lorsqu'il existe $1 < p < n$
+\end{itemize}
+la dérivation en contrôle, et la dérivation en configuration.
+
+Soit $A^{n-p,m}_i$, avec $1 < p < n$
+
+
+%On appelle {\it robot dérivé} $A^{n-p,m-q}_i$ le robot d'index $i$ pour lequel $n-p$ degrés de libertés sont contrôlés à l'aide de $m-q$ câbles, avec $0 \leq p < n$, $0 \leq q < m$, et $1 < p+q < m+n-1$. Pour un robot $N-1$ par exemple, il existe au plus $C^3_N$ robots dérivés $A^{3,1}_i$, au plus $C$ robots dérivés $A^{2,1}_i$ et $4$ robots dérivés $A^{1,1}_i$. En revanche, il n'existe pas de robot dérivé $A^{3-2}$, pas plus que de robot dérivé $A^{2,1}$.
+
+
+
+
 
 \section{Crit\`eres d'optimisation et d'\'evaluation}
 

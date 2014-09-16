@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  16 SEP 2014 16:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  16 SEP 2014 19:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1121,22 +1121,22 @@ ls qu'il ex-iste $[][]\OT1/cmr/bx/n/10 P \OT1/cmr/m/n/10 := (\OT1/cmr/bx/n/10 X
 0 CC[]$
  []
 
-[32])
+[32] [33])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-[34] (./manuscrit.bbl [35
+ [34]
+[35] (./manuscrit.bbl [36
 
 
-]
-Underfull \hbox (badness 1484) in paragraph at lines 119--124
+] [37]
+Underfull \hbox (badness 1484) in paragraph at lines 125--130
 []\OT1/cmr/m/n/10 Jean-Pierre Mer-let.  The in-flu-ence of discrete-time con-tr
 ol on the
  []
 
-[36])
+[38])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
- [37]
+ [39]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (./manuscrit.aux (./titlepage/titlepage.aux)
 (./preambule/preambule.aux) (./intro/intro.aux) (./chapter01/chapter01.aux))
@@ -1151,10 +1151,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 8219 strings out of 494999
- 124737 string characters out of 6180228
- 213170 words of memory out of 5000000
- 11051 multiletter control sequences out of 15000+600000
+ 8223 strings out of 494999
+ 124786 string characters out of 6180228
+ 213207 words of memory out of 5000000
+ 11052 multiletter control sequences out of 15000+600000
  14312 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,12n,49p,1488b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1182,10 +1182,10 @@ cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on manuscrit.pdf (37 pages, 6784117 bytes).
+Output written on manuscrit.pdf (39 pages, 6789393 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 665 compressed objects within 7 object streams
- 194 named destinations out of 1000 (max. 500000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 674 compressed objects within 7 object streams
+ 197 named destinations out of 1000 (max. 500000)
  426 words of extra memory for PDF output out of 10000 (max. 10000000)
 

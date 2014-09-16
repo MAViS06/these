@@ -140,6 +140,26 @@ Lorsque plusieurs trajets existent, nous essaierons alors de définir des relati
 
 \subsection{Robots d\'eriv\'es et robot int\'egral}
 
+Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k$) sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrième (câble $l$) relié à celle-ci en un point ${\bf B}_2 \neq {\bf B}_1$. Il a été montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions nous retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations présentent des différences non négligeables du point de vue des propriétés du robot, tout autant au niveau du contrôle que des différents modèles géométriques et cinématiques. La question se pose alors de savoir s'il est plus pertinent d'adopter une démarche {\it top-down} consistant à rechercher les propriétés du robot $4-3-1$ et les décliner ensuite selon les situations, ou au contraire une démarche {\it bottom-up} qui partirait des propriétés spécifiques à chaque possibilité de configuration pour ensuite construire un fonctionnement global.
+
+Un second argument en faveur de cette interrogation est soulevé dans \cite{merlet2012}. Pour rappel, l'équilibre statique s'exprime par la formule suivante : $\mathcal {\bf F} = {\bf J}^{-T} {\bf \tau}$. Or, afin de déterminer les tensions dans les différents câbles, il faut inverser cette relation. Lorsque la matrice jacobienne n'est pas inversible ({\it a fortiori} lorsqu'elle n'est pas carrée), l'auteur montre que l'utilisation de la matrice pseudo-inverse n'est pas appropriée et donne des résultats qui peuvent être faux. On peut se demander dès lors si l'expression de cette première jacobienne est la plus pertinente, s'il n'existe pas une autre approche de la modélisation du robot qui en permettrait une meilleure intuition et utilisation.
+
+Soit donc un robot parallèle à câbles $A^{n,m}$, où $n$ représente le nombre de degrés de libertés effectivement contrôlés, et $m$ le nombre de câbles. Lorsque -- pour le contrôle des $n$ degrés de libertés -- chacun des $m$ câbles est en tension strictement positive pour l'ensemble des poses de son espace de travail, on parlera de {\it robot concrêt}. On utilisera dans le cas contraire le terme de {\it robot abstrait}. Le couple $n,m$ sera quant à lui appelé la {\it signature} du robot.
+
+Nous définissons à présent les deux opérations suivantes :
+\begin{itemize}
+ \item on parle de {\it dérivation en contrôle} lorsqu'il existe $1 < p < n$ tel que $A^{n-p,m}$ existe avec l'ensemble des $m$ câbles en tension strictement positive pour au moins une pose de l'espace de travail de $A$. Une réalisation $A^{n-p,m}_i$ associée à une configuration de câbles sera appelée {\it robot dérivé en contrôle}.
+ \item  soit à présent $1 < q < m$, on parlera de {\it dérivation en configuration} la détermination d'un robot $A^{n,m-q}$ dont les $m-q$ câbles peuvent être en tension positive pour au moins une pose de l'espace de travail. Une réalisation $A^{n,m-q}_j$ associée aux degrés de libertés effectivement contrôlés sera appelée {\it robot dérivé en configuration}. Nous réserverons pour ces derniers seulement le raccourci de {\it robot dérivé}. 
+\end{itemize}
+
+
+
+
+
+
+%On appelle {\it robot dérivé} $A^{n-p,m-q}_i$ le robot d'index $i$ pour lequel $n-p$ degrés de libertés sont contrôlés à l'aide de $m-q$ câbles, avec $0 \leq p < n$, $0 \leq q < m$, et $1 < p+q < m+n-1$. Pour un robot $N-1$ par exemple, il existe au plus $C^3_N$ robots dérivés $A^{3,1}_i$, au plus $C$ robots dérivés $A^{2,1}_i$ et $4$ robots dérivés $A^{1,1}_i$. En revanche, il n'existe pas de robot dérivé $A^{3-2}$, pas plus que de robot dérivé $A^{2,1}$.
+
+
 
 
 
