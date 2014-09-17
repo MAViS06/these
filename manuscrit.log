@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  16 SEP 2014 19:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  17 SEP 2014 19:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,20 +544,20 @@ LaTeX Warning: Label `intro:fig13' multiply defined.
 ) (./chapter01/chapter01.aux))
 \openout1 = `manuscrit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -592,7 +592,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -602,9 +602,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (./manuscrit.out) (./manuscrit.out)
 \@outlinefile=\write3
@@ -620,7 +620,7 @@ LaTeX Info: Redefining \nameref on input line 25.
 \openout2 = `intro/intro.aux'.
 
  (./intro/intro.tex
-Chapter 1.
+Chapitre 1.
 
 Overfull \hbox (1.94498pt too wide) in paragraph at lines 11--12
 \OT1/cmr/m/n/10 C'est in-con-testable-ment l'industrie qui aura ^^Set^^Se le pr
@@ -1105,7 +1105,7 @@ ES \OT1/cmr/m/n/10 29
 
 
 ]
-Chapter 2.
+Chapitre 2.
 [31]
 Overfull \hbox (9.83511pt too wide) in paragraph at lines 86--89
 []\OT1/cmr/m/n/10 Nous ap-pelons \OT1/cmr/m/it/10 co-or-donn^^Sees situ^^Sees $
@@ -1121,11 +1121,13 @@ ls qu'il ex-iste $[][]\OT1/cmr/bx/n/10 P \OT1/cmr/m/n/10 := (\OT1/cmr/bx/n/10 X
 0 CC[]$
  []
 
-[32] [33])
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[32] [33]
+Overfull \hbox (2.41321pt too wide) in paragraph at lines 177--183
+[]\OT1/cmr/m/n/10 Pour chaque robot $\OML/cmm/m/it/10 A[]$ \OT1/cmr/m/n/10 d^^S
+eriv^^Se ou int^^Segral, nous pou-vons, lorsqu'il est r^^Sealisable,
+ []
 
- [34]
-[35] (./manuscrit.bbl [36
+) [34] [35] (./manuscrit.bbl [36
 
 
 ] [37]
@@ -1135,25 +1137,25 @@ ol on the
  []
 
 [38])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
  [39]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (./manuscrit.aux (./titlepage/titlepage.aux)
 (./preambule/preambule.aux) (./intro/intro.aux) (./chapter01/chapter01.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
 (rerunfilecheck)             Checksum: 250E3EC4469E3A45641A1EB8A495EE73;2522.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
  8223 strings out of 494999
  124786 string characters out of 6180228
- 213207 words of memory out of 5000000
+ 213208 words of memory out of 5000000
  11052 multiletter control sequences out of 15000+600000
  14312 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1182,7 +1184,7 @@ cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on manuscrit.pdf (39 pages, 6789393 bytes).
+Output written on manuscrit.pdf (39 pages, 6790085 bytes).
 PDF statistics:
  866 PDF objects out of 1000 (max. 8388607)
  674 compressed objects within 7 object streams

@@ -144,20 +144,50 @@ Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k
 
 Un second argument en faveur de cette interrogation est soulevé dans \cite{merlet2012}. Pour rappel, l'équilibre statique s'exprime par la formule suivante : $\mathcal {\bf F} = {\bf J}^{-T} {\bf \tau}$. Or, afin de déterminer les tensions dans les différents câbles, il faut inverser cette relation. Lorsque la matrice jacobienne n'est pas inversible ({\it a fortiori} lorsqu'elle n'est pas carrée), l'auteur montre que l'utilisation de la matrice pseudo-inverse n'est pas appropriée et donne des résultats qui peuvent être faux. On peut se demander dès lors si l'expression de cette première jacobienne est la plus pertinente, s'il n'existe pas une autre approche de la modélisation du robot qui en permettrait une meilleure intuition et utilisation.
 
-Soit donc un robot parallèle à câbles $A^{n,m}$, où $n$ représente le nombre de degrés de libertés effectivement contrôlés, et $m$ le nombre de câbles. Lorsque -- pour le contrôle des $n$ degrés de libertés -- chacun des $m$ câbles est en tension strictement positive pour l'ensemble des poses de son espace de travail, on parlera de {\it robot concrêt}. On utilisera dans le cas contraire le terme de {\it robot abstrait}. Le couple $n,m$ sera quant à lui appelé la {\it signature} du robot.
+Soit $A^{n, m}$ un manipulateur parall\`ele \`a $m$ c\^ables d\'evelopp\'e pour 
+contr\^oler au plus $n$ degr\'es de libert\'es, que nous appellerons {\it 
+robot maximal}. Le couple ${n, m}$ repr\'esente la {\it signature} du robot et 
+sera ici appel\'ee sa {\it signature maximale}.
 
-Nous définissons à présent les deux opérations suivantes :
+Associ\'e à un espace de travail $W$, nous dirons qu'il est
 \begin{itemize}
- \item on parle de {\it dérivation en contrôle} lorsqu'il existe $1 < p < n$ tel que $A^{n-p,m}$ existe avec l'ensemble des $m$ câbles en tension strictement positive pour au moins une pose de l'espace de travail de $A$. Une réalisation $A^{n-p,m}_i$ associée à une configuration de câbles sera appelée {\it robot dérivé en contrôle}.
- \item  soit à présent $1 < q < m$, on parlera de {\it dérivation en configuration} la détermination d'un robot $A^{n,m-q}$ dont les $m-q$ câbles peuvent être en tension positive pour au moins une pose de l'espace de travail. Une réalisation $A^{n,m-q}_j$ associée aux degrés de libertés effectivement contrôlés sera appelée {\it robot dérivé en configuration}. Nous réserverons pour ces derniers seulement le raccourci de {\it robot dérivé}. 
+ \item {r\'ealisable} s'il existe une pose dans $W$ telle que l'ensemble des 
+c\^ables sont en tension
+  \item {\it concr\^et} si pour toute pose de $W$ l'ensemble des c\^ables sont 
+en tension
+  \item {\it abstrait} si il n'existe aucune pose dans $W$ telle que l'ensemble 
+des c\^ables sont en tension
+\end{itemize}
+
+Nous d\'efinissons une première op\'eration appel\'ee {\it concr\^etisation} 
+consistant pour un robot r\'ealisable \`a lui associer le sous-espace de $W_i 
+\subset W$ pour lequel il pourra \^etre dit concr\^et. 
+
+Nous \'etablissons ensuite la liste des sous-configurations de c\^ables 
+possibles. Nous appelons alors {\it sous-robot} $A_i$ associ\'e \`a la 
+configuration de c\^ables $CC_i$ le robot virtuel d\'efini \`a partir des seuls 
+c\^ables correspondant \`a sa configuration de c\^ables. Un tel sous-robot 
+pourra \`a son tour \^etre abstrait, r\'ealisable ou concr\^et.
+
+Lorsque pour deux configurations de c\^ables $CC_i$ et $CC_j$ nous avons $CC_i< 
+CC_j$, alors le sous-robot $A_i$ associ\'e \`a $CC_i$ sera consid\'er\'e comme 
+{\it d\'eriv\'e} de $A_j$ ; on dira de $A_j$ qu'il est un {\it robot 
+int\'egral} de $A_{i}$.
+
+Pour chaque robot $A_i$ d\'eriv\'e ou int\'egral, nous pouvons, lorsqu'il est 
+r\'ealisable, lui associer son sous-espace concr\^etis\'e $W_i$. Notons que 
+si $A_i$ d\'erive de $A_j$, cela ne signifie pas pour autant que $W_i 
+\subset W_j$. Nous adjoindrons \'egalement \`a tout robot $A_i$ une signature 
+$(p,q)$, $q$ repr\'esentant le nombre de degr\'es de libert\'es qu'il est 
+possible de contr\^oler gr\^ace \`a sa configuration de $p$ c\^ables.
+
+Enfin, nous appellerons respectivement
+\begin{itemize}
+ \item {\it d\'erivateur}
+ \item {\it int\'egrateur}
 \end{itemize}
 
 
-
-
-
-
-%On appelle {\it robot dérivé} $A^{n-p,m-q}_i$ le robot d'index $i$ pour lequel $n-p$ degrés de libertés sont contrôlés à l'aide de $m-q$ câbles, avec $0 \leq p < n$, $0 \leq q < m$, et $1 < p+q < m+n-1$. Pour un robot $N-1$ par exemple, il existe au plus $C^3_N$ robots dérivés $A^{3,1}_i$, au plus $C$ robots dérivés $A^{2,1}_i$ et $4$ robots dérivés $A^{1,1}_i$. En revanche, il n'existe pas de robot dérivé $A^{3-2}$, pas plus que de robot dérivé $A^{2,1}$.
 
 
 
