@@ -449,7 +449,7 @@ Dans cette configuration, nous ne contrôlons que les trois degrés de liberté 
 \begin{bmatrix}
  \frac {s_x} {\rho_i} & \frac {s_y} {\rho_i} & \frac {s_z} {\rho_i}
 \end{bmatrix}
-\label{intro:eq11}
+\label{intro:eq11b}
 \end{equation}
 
 Ces propriétés font de {\tt Marionet-Assist} un robot adapté au contexte pour lequel il a été conçu. Nous avons cependant souhaité améliorer ses fonctionnalités de manipulation en lui permettant de ne pas seulement déplacer une personne, mais également des objets de la vie quotidienne. Il peut s'agir par exemple de ramasser un objet tombé au sol, ou d'amener à l'utilisateur un objet (des lunettes par exemple) localisé à un endroit de la pièce éloigné de celui auquel il se trouve. Afin de localiser l'objet, puis de guider le robot dans son déplacement et dans la manipulation de l'objet cible, une caméra a été ajoutée sur la plateforme, de manière à utiliser des techniques d'asservissement visuel. Ce sont ces dernières que nous allons à présent introduire, avant d'indiquer d'une part les problématiques posées par leur utilisation dans ce contexte particulier, et d'autre part les différentes possibilités d'améliorations que cela autorise concernant le contrôle des robots parallèles à câbles.
@@ -469,7 +469,7 @@ dans un premier temps présenter le mode d'acquisition des images, puis nous con
   \centering
   \includegraphics[width=.85\linewidth]{./intro/figures/oeil.png}
     \caption{\footnotesize{Oeil humain vs vision artificielle}}
-\label{intro:fig11}
+\label{intro:fig11b}
 \end{figure}
 
  \begin{itemize}
@@ -648,7 +648,7 @@ De manière générale, une stratégie d'asservissement visuel peut être décom
     \def\svgwidth{.95\linewidth}
   \input{./intro/figures/bloc_commande.pdf_tex}
     \caption{\footnotesize{Schéma des étapes de l'asservissement visuel}}
-\label{intro:fig13}
+\label{intro:fig13b}
 \end{figure}
 
 On distinguera ici deux grandes classes de stratégies d'asservissement : la première est basée sur l'estimation des paramètres de pose de l'organe terminal (PBVS : position-based visual servo), tandis que la seconde utilise directement les primitives extraites de l'image (IBPS : image-based visual servo). Il est également possible de mixer ces deux approches, ce que l'on appellera un asservissement hybride.

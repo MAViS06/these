@@ -1,0 +1,379 @@
+\chapter{Contr\^ole des configurations de c\^ables}
+
+Nous proposons dans ce chapitre une m\'ethode permettant de contr\^oler les
+c\^ables qui seront en tension le long d'une trajectoire donn\'ee. Dans une
+premi\`ere section, nous expliquerons les circonstances qui nous ont
+conduits \`a d\'evelopper une m\'ethode de contr\^ole, puis nous introduirons
+les concepts n\'ecessaires \`a son d\'eveloppement. La seconde section de ce
+chapitre sera consacr\'ee \`a l'\'elaboration de crit\`eres qui nous serviront
+\`a s\'electionner les configurations optimisant la stabilit\'e et la
+pr\'ecision d'une trajectoire. Enfin, la troisi\`eme et derni\`ere section de
+ce chapitre introduira dans un premier temps l'analyse par intervalle dont nous
+nous serons servis afin de garantir notre d\'emarche ; puis nous pr\'esenterons
+les principes de l'algorithme d\'evelopp\'e et concluerons par l'exposition des
+r\'esultats th\'eoriques qui seront valid\'es dans le chapitre consacr\'e aux
+simulations et exp\'eri\-mentations.
+
+\section{Notions introductives}
+
+\subsection{Contexte}
+
+Nous avons vu que l'une des sp\'ecificit\'es des manipulateurs parall\`eles \`a
+c\^ables est que -- pour une pose donn\'ee -- l'\'equilibre statique peut
+\^etre obtenu sans que l'ensemble des c\^ables soient en tension. De plus, il
+est possible que dans certaines configurations, il est impossible pour toute
+pose que l'ensemble des c\^ables aient une tension strictement positive : ainsi,
+pour une configuration $N-1$, avec $N> 3$ et des c\^ables non-\'elastiques, il
+est prouv\'e que 3 c\^ables au maximum auront une tension strictement positive,
+les $N-3$ autres \'etant d\'etendus \cite{merlet2012}.
+
+La proc\'edure classique consiste \`a donner aux c\^ables d\'etendus une
+longueur $\rho_i$ \'egale \`a la distance $||A_iB_i||$. Or, le r\'esultat
+peut-\^etre le plus important ici est donn\'e dans \cite{merlet2014} : bien
+qu'il s'agisse d'un travail effectu\'e dans le cas de c\^ables \'elastiques,
+les r\'esultats restent valables dans la situation in\'elastique, et montrent
+qu'il est impossible en pratique de pr\'evoir les modifications du caract\`ere
+strictement positif ou nul de la tension pour l'ensemble des c\^ables lors d'une
+trajectoire donn\'ee. Ainsi, une modification infime de la longueur du c\^able
+en tension nulle dont nous avons r\'egl\'e la longueur de mani\`ere \`a ce que
+$\rho_i = A_iB_i$ pourra changer compl\`etement la nature de la tension dans
+les autres c\^ables et surtout modifier la pose de l'organe terminal.
+
+La cons\'equence de ces ph\'enom\`enes m\'ecaniques est double : d'une part
+nous pouvons nous retrouver dans des configurations sous-contraintes, nous
+perdons alors le contr\^ole d'un ou plusieurs degr\'es de libert\'es et la
+trajectoire n'est plus stable ; d'autre part les modifications soudaines des
+tensions perturbent les mouvements de la plate-forme et la pr\'ecision du
+positionnement est affect\'ee.
+
+En dehors des questions de s\'ecurit\'es soulev\'ees par ces situations, nous
+avons plusieurs fois observ\'e que ces changements subits engendraient des
+mouvements ind\'esirables au niveau de l'organe terminal. Principalement,
+puisque les degr\'es de libert\'es en rotation ne sont pas contraints sur notre
+prototype, des mouvements pendulaires ont parfois \'et\'e g\'en\'er\'es,
+conduisant \`a la perte de la cible dans l'image, et donc l'\'echec de
+l'asservissement.
+
+Il nous a donc paru n\'ecessaire dans un premier temps de mettre en place une
+strat\'egie permettant de garantir la stabilit\'e des d\'eplacements et la
+pr\'ecision des positionnements toutes les fois o\`u cela \'etait possible, et
+de pouvoir identifier les situations pour lesquelles il n'y a d'autre solution
+que d'adopter un mode de fonctionnement d\'egrad\'e.
+
+\subsection{Les configurations de c\^ables}
+
+Nous appelons {\it configuration de c\^ables}, ou $CC$, la donn\'ee de
+l'ensemble des c\^ables qui sont en tension strictement positive. Ainsi, pour
+un robot \`a $n$ c\^ables pour $d$ degr\'es de libert\'e, nous noterons
+$CC_{k_1, k_2, \dots k_m}$ la configuration pour laquelle les c\^ables $k_1,
+k_2, \dots k_m$ sont en tension strictement positive et -- si $m < n$ --  les
+c\^ables $k_{m+1}, \dots k_n$ sont d\'etendus. Si la configuration est telle
+qu'elle permet avec les $m$ c\^ables en tension de contr\^oler les $d$ de
+degr\'es de libert\'es, nous la noterons $\overline{CC}_{k_1, k_2, \dots k_m}$.
+
+Si l'ensemble $k_1, \dots k_p$ est strictement inclus dans l'ensemble $k_1,
+\dots k_m$, on pourra \'ecrire $CC_{k_1, \dots k_p} < CC_{k_1, \dots
+k_m}$.
+
+Prenons l'exemple d'un robot $4-1$ dont les c\^ables $0, 1, 2, 3$ sont
+dispos\'es de mani\`ere \`a ce qu'aucun triplet $A_iA_jA_k$ de points d'attaches
+ne soit align\'e. Les configurations possibles pour un tel robot sont :
+$\overline{CC}_{012}, \overline{CC}_{013}, \overline{CC}_{023},
+\overline{CC}_{123}$, $CC_{01}, CC_{02}, CC_{03}, CC_{12}, CC_{13}, CC_{23},
+CC_{0}, CC_{1}, CC_{2}, CC_{3}$. On notera ici que la configuration
+${CC}_{0123}$ n'a pas de sens sur ce robot particulier.
+
+Nous appelons {\it coordonn\'ees situ\'ees} ${}^s{\bf P}$ d'un point
+${\bf P}$ la donn\'ee de ses param\`etres de pose ${\bf X}$ et de la
+configuration de c\^ables dans laquelle il se trouve :
+
+$${}^s{\bf P} := ({\bf X} ; CC_{k_1, \dots k_m})$$
+
+L'ensemble des points $\bf P$ tels qu'il existe ${}^s {\bf P} :=
+({\bf X} ; CC_{k_1, \dots k_m})$ pour $CC_{k_1, \dots k_m}$ fix\'e est appel\'e
+l'{\it espace l\'egal} de $CC_{k_1, \dots k_m}$, not\'e $El(CC_{k_1, \dots
+k_m})$. Nous noterons de plus $\overline{El}(CC_{k_1, \dots
+k_m})$ la fermeture de ${El}(CC_{k_1, \dots k_m})$, \`a savoir l'ensemble :
+$$\overline{El}(CC_{k_1, \dots k_m}) := \bigcup
+El(CC_{k_1, \dots k_p}), CC_{k_1, \dots k_p} < CC_{k_1, \dots k_m}$$
+
+De la m\^eme mani\`ere, pour un m\^eme point $\bf P$, l'ensemble $Sl$
+correspond \`a l'ensemble des configurations de c\^ables $CC_{k_1, \dots k_m}$
+telles qu'il existe ${}^s{\bf P} \in El(CC_{k_1, \dots k_m})$. Ici,
+$\overline{Sl}$ repr\'esentera l'ensemble des $\overline{CC}_{k_1, \dots k_m}$
+pour lesquelles il existe ${}^s{\bf P} \in El(\overline{CC}_{k_1, \dots k_m})$.
+
+Soit maintenant $\mathcal O({\bf S}, {\bf G})$ l'ensemble des points ${\bf
+P}_i$ qui constituent une trajectoire allant du point ${\bf S}$ au point ${\bf
+G}$. Nous noterons $\mathcal O({\bf S}, {\bf G}) \vartriangleleft
+El(CC_{k_1, \dots k_m})$ la situation pour laquelle $\forall {\bf P_i} \in
+\mathcal O({\bf S}, {\bf G}), \exists {}^s{\bf P}_i \in El(CC_{k_1, \dots
+k_m})$, soit que la trajectoire appartient int\'egralement \`a l'espace l\'egal
+de $CC_{k_1, \dots k_m}$.
+
+Lorsque nous n'avons pas cette relation, nous avons besoin de d\'efinir des
+r\'egions de transferts. Soit deux configurations de c\^ables
+$CC_{k_1, \dots k_m}$ et $CC_{k_1, \dots k_p}$, que pour un instant nous
+noterons respectivement $CC_i$ et $CC_j$. Nous d\'efinissons l'ensemble
+$\overset{\circ}{Tr_{ij}} = El(CC_i) \cap El(CC_j)$ comme l'ensemble des points
+${\bf P}$ pour lesquels il existe ${}^sP_i \in El(CC_i)$ et ${}^sP_j \in
+El(CC_j)$. Un changement de coordonn\'ees situ\'ees de ${}^sP_i$ vers ${}^sP_j$
+sera dans ce cas appel\'e un {\it transfert simple}. Lorsque
+$\overset{\circ}{Tr_{ij}} = \emptyset$, mais qu'il existe, pour un point ${\bf
+P}$, ${}^sP_i \in \overline{El}(CC_i)$ et ${}^sP_j \in \overline{El}(CC_j)$, nous
+appelerons $\partial Tr_{ij}$ l'ensemble des points de {\it transfert marginal}
+entre les configurations $CC_i$ et $CC_j$. L'espace de transfert total $Tr_{ij}$
+est alors la r\'eunion des espaces de transferts simple et marginal
+correspondants.
+
+Supposons par exemple que ${\bf S} \in El(CC_1)$, ${\bf G} \in El(CC_2)$ et qu'il existe un point ${\bf M}$ tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
+El(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft El(CC_2)$, alors on pourra écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \overset{\circ}{Tr_{12}} \cup El(CC_2)$. De la même manière, si un point ${\bf M}$ est tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
+\overline{El}(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft \overline{El}(CC_2)$, alors nous pourrons écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \partial Tr_{12} \cup El(CC_2)$. Nous appellerons {\it trajet} l'ensemble des configurations de c\^ables et régions de transferts nécessaires au parcours d'une trajectoire. On distinguera les situations suivantes :
+\begin{itemize}
+ \item {\it trajet trivial} : l'intégralité de la trajectoire peut être réalisée à partir d'une seule configuration de câbles.
+ \item {\it trajet simple} : la trajectoire requiert au moins un transfert ; tous les transferts sont simples.
+ \item {\it trajet partiellement marginal} : la trajectoire requiert au moins un transfert ; il existe au moins un transfert simple et un transfert marginal.
+ \item {\it trajet marginal} : la trajectoire requiert au moins un transfert ; tous les transferts sont marginaux.
+\end{itemize}
+
+Lorsque plusieurs trajets existent, nous essaierons alors de définir des relations d'ordre nous permettant de sélectionner le meilleur trajet possible en fonction d'un ou plusieurs critères préalablement définis : ce sera l'objet de la seconde section de ce chapitre.
+
+\subsection{Robots d\'eriv\'es et robot int\'egral}
+
+Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k$) sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrième (câble $l$) relié à celle-ci en un point ${\bf B}_2 \neq {\bf B}_1$. Il a été montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions nous retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations présentent des différences non négligeables du point de vue des propriétés du robot, tout autant au niveau du contrôle que des différents modèles géométriques et cinématiques. La question se pose alors de savoir s'il est plus pertinent d'adopter une démarche {\it top-down} consistant à rechercher les propriétés du robot $4-3-1$ et les décliner ensuite selon les situations, ou au contraire une démarche {\it bottom-up} qui partirait des propriétés spécifiques à chaque possibilité de configuration pour ensuite construire un fonctionnement global.
+
+Un second argument en faveur de cette interrogation est soulevé dans \cite{merlet2012}. Pour rappel, l'équilibre statique s'exprime par la formule suivante : $\mathcal {\bf F} = {\bf J}^{-T} {\bf \tau}$. Or, afin de déterminer les tensions dans les différents câbles, il faut inverser cette relation. Lorsque la matrice jacobienne n'est pas inversible ({\it a fortiori} lorsqu'elle n'est pas carrée), l'auteur montre que l'utilisation de la matrice pseudo-inverse n'est pas appropriée et donne des résultats qui peuvent être faux. On peut se demander dès lors si l'expression de cette première jacobienne est la plus pertinente, s'il n'existe pas une autre approche de la modélisation du robot qui en permettrait une meilleure intuition et utilisation.
+
+Soit $A^{n, m}$ un manipulateur parall\`ele \`a $m$ c\^ables d\'evelopp\'e pour 
+contr\^oler au plus $n$ degr\'es de libert\'es, que nous appellerons {\it 
+robot maximal}. Le couple ${n, m}$ repr\'esente la {\it signature} du robot et 
+sera ici appel\'ee sa {\it signature maximale}.
+
+Associ\'e à un espace de travail $W$, nous dirons qu'il est
+\begin{itemize}
+ \item {r\'ealisable} s'il existe une pose dans $W$ telle que l'ensemble des 
+c\^ables sont en tension
+  \item {\it concr\^et} si pour toute pose de $W$ l'ensemble des c\^ables sont 
+en tension
+  \item {\it abstrait} si il n'existe aucune pose dans $W$ telle que l'ensemble 
+des c\^ables sont en tension
+\end{itemize}
+
+Nous d\'efinissons une première op\'eration appel\'ee {\it concr\^etisation} 
+consistant pour un robot r\'ealisable \`a lui associer le sous-espace de $W_i 
+\subset W$ pour lequel il pourra \^etre dit concr\^et. 
+
+Nous \'etablissons ensuite la liste des sous-configurations de c\^ables 
+possibles. Nous appelons alors {\it sous-robot} $A_i$ associ\'e \`a la 
+configuration de c\^ables $CC_i$ le robot virtuel d\'efini \`a partir des seuls 
+c\^ables correspondant \`a sa configuration de c\^ables. Un tel sous-robot 
+pourra \`a son tour \^etre abstrait, r\'ealisable ou concr\^et.
+
+Lorsque pour deux configurations de c\^ables $CC_i$ et $CC_j$ nous avons $CC_i< 
+CC_j$, alors le sous-robot $A_i$ associ\'e \`a $CC_i$ sera consid\'er\'e comme 
+{\it d\'eriv\'e} de $A_j$. S'il existe un ensemble $CC_\alpha$ et un robot 
+$A_j$ associ\'e \`a la configuration de c\^ables $CC_j$ tels que $\forall CC_i 
+\in CC_alpha, CC_i < CC_j$ et $\forall CC_k \notin CC_alpha, CC_i \nless 
+CC_j$, alors on dira de $A_j$ qu'il est un {\it robot int\'egral} des robots 
+associ\'es aux configurations de c\^ables $CC_i \in CC_\alpha$.
+
+Pour chaque robot $A_i$ d\'eriv\'e ou int\'egral, nous pouvons, lorsqu'il est 
+r\'ealisable, lui associer son sous-espace concr\^etis\'e $W_i$. Notons que 
+si $A_i$ d\'erive de $A_j$, cela ne signifie pas pour autant que $W_i 
+\subset W_j$. Nous adjoindrons \'egalement \`a tout robot $A_i$ une signature 
+$(p,q)$, $q$ repr\'esentant le nombre de degr\'es de libert\'es qu'il est 
+possible de contr\^oler gr\^ace \`a sa configuration de $p$ c\^ables.
+
+Nous partons donc du robot maximal pour en d\'eduire les diff\'erents 
+sous-robots possibles. Parmi ceux-ci, nous distinguons ceux qui entretiennent 
+des relations de d\'erivation et int\'egration tels que nous les avons 
+d\'efinies. Puis il nous faut pour chaque sous-robot \'etudier ses 
+propri\'et\'es propres et s'interroger sur la mani\`ere dont elles \'evoluent 
+entre robots d\'eriv\'es et int\'egraux. Il doit alors \^etre possible en 
+fonction d'une t\^ache prescrite d'obtenir une relation d'ordre entre les 
+sous-robots et de choisir celui qui nous semble le plus appropri\'e \`a la 
+r\'ealisation de cette t\^ache.
+
+Parmi les propri\'et\'es qui peuvent \^etre d\'eduites par relations de 
+d\'erivations et int\'egrations, la d\'etermination de la Jacobienne nous 
+int\'eresse particuli\`erement dans le cadre de ce travail. Nous d\'efinissons 
+d\`es lors les op\'erateurs suivantes :
+
+\begin{itemize}
+ \item {\it d\'erivateur} : soient $A_i$ et $A_j$ tels que le premier d\'erive 
+du second, et ${\bf J}^{-1}_i$, ${\bf J}^{-1}_j$ leurs matrices jacobiennes 
+inverses respectives ; on appelle {\it d\'erivateur} la matrice ${\bf D}$ telle 
+que $ {\bf D} {\bf J}^{-1}_j = {\bf J}^{-1}_i$.
+ \item {\it int\'egrateurs} : soit $A_j$ un robot int\'egral des robots 
+$A_{i_1}, \dots, A_{i_p}$ ; on appelle {\it int\'egrateurs} les matrices 
+${\bf I}_1, \dots {\bf I}_p$ tels que $\sum_{k=1}^p {\bf I}_k {\bf J}^{-1}_k = 
+{\bf J}^{-1}_j$, avec ${\bf J}^{-1}_k$ les matrices jacobiennes inverses 
+respectives des robots $A_{i_k}$.
+\end{itemize}
+
+
+\subsection{Illustration avec le robot {\tt Marionet-Assist}}
+
+\vskip -100pts
+
+\begin{figure}[!ht]
+  \centering
+    \def\svgwidth{.65\linewidth}
+  \input{./chapter01/figures/CC_41.pdf_tex}
+    \caption{\footnotesize{Les diff\'erentes configurations de c\^ables du 
+{\tt Marionet-Assist} : les fl\`eches noires repr\'esentent les inclusions et 
+les lignes en pointill\'es bleus indiquent une r\'egion de transfert simple.}}
+\label{chap01:fig0}
+\end{figure}
+
+Equip\'e de $4$ c\^ables reli\'es en un m\^eme point \`a l'organe 
+terminal (index\'es dans le sens trigonom\'etrique en partant du coin 
+bas-gauche), les diff\'erentes confi\-gurations de c\^ables pouvant \^etre 
+obtenues \`a partir de {\tt Marionet-Assist} sont :
+\begin{itemize}
+ \item $4 CC$ \`a $1$ c\^able : $CC_0, CC_1, CC_2, CC_3$
+  \item $6 CC$ \`a $2$ c\^ables : $CC_{01}, CC_{12}, CC_{23}, CC_{30}, CC_{02}, 
+CC_{13}$, les deux derni\`eres pr\'esentant la caract\'eristique que 
+$El(CC_{02}) \cap El(CC_{13}) \neq \emptyset$ (il existe donc un transfert 
+simple \`a 2 degr\'es de libert\'e entre ces deux configurations).
+  \item $4 CC$ \`a $3$ c\^ables : $\overline{CC}_{012}, \overline{CC}_{013}, 
+\overline{CC}_{023}, \overline{CC}_{123}$. Il existe de plus des r\'egions de 
+transferts simples entre plusieurs de ces configurations de c\^ables.
+\end{itemize}
+
+Ces relations sont reprises dans la Fig.\ref{chap01:fig0}. Le graphe ainsi 
+obtenu permet par exemple de d\'efinir les {\it trajets} possibles pour une 
+s\'equence donn\'ee, et de calculer le {\it trajet} optimisant un crit\`ere en 
+attribuant les poids correspondants aux noeuds et fl\`eches du graphe. On voit 
+par exemple que pour passer de $\overline{CC}_{013}$ \`a $\overline{CC}_{123}$, 
+il est possible d'utiliser une {\it transition marginale} via $CC_{13}$, ou 
+encore deux transitions simples, l'une passant par $\overline{CC}_{012}$ et 
+l'autre par $\overline{CC}_{013}$, ou encore d'autres combinaisons 
+partiellement marginales.
+
+Le robot terminal ainsi que ses sous-robots sont repr\'esent\'es dans la 
+Fig.\ref{chap01:fig1}, ainsi que leurs relations de d\'erivation et 
+d'int\'egration. Dans le cas du robot {\tt Marionet-Assist}, le robot terminal 
+est abstrait, et il existe $4$ robots r\'ealisables dans $A^{3,3}$, $6$ dans 
+$A^{2,2}$ et quatre dans $A^{1,1}$. Pour chacun des robots r\'ealisables, 
+l'espace de concr\^etisation correspond \`a l'ouvert obtenu par projection 
+verticale des droites reliant les points d'attaches correspondant aux 
+configurations de c\^ables associ\'ees. Ainsi, l'espace de concr\^etisation de 
+$A^{3,3}_{012}$ est obtenu par projection verticale du triangle issu des 
+droites ${\bf A}_0{\bf A}_1$, ${\bf A}_1{\bf A}_2$ et ${\bf A}_0{\bf A}_2$, \`a 
+l'exception de la projection verticale de ces m\^emes droites. De la m\^eme 
+mani\`ere, l'espace de concr\^etisation du robot $A^{2,2}_{0,1}$ est obtenu par 
+projection verticale de la droite ${\bf A}_0{\bf A}_1$, \`a l'exception de la 
+projection verticale des points ${\bf A}_0$ et ${\bf A}_1$.
+
+\begin{figure}[htp]
+  \centering
+    \def\svgwidth{.65\linewidth}
+  \input{./chapter01/figures/rbt41.pdf_tex}
+    \caption{\footnotesize{Schéma de d\'erivation/int\'egration du robot {\tt 
+Marionet-Assist} : s'il existe une fl\^eche allant de $CC_i$ \`a $CC_j$, 
+alors $CC_i$ d\'erive de $CC_j$ ; $CC_j$ sera le robot int\'egral de l'ensemble 
+des robots $CC_k$ qui en d\'erivent.}}
+\label{chap01:fig1}
+\end{figure}
+
+Soit ${\bf B}$ le point d'attache des c\^ables \`a la plate-forme, ${\bf 
+A}_0$, ${\bf A}_1$, ${\bf A}_2$ et ${\bf A}_3$ les points de sorties 
+respectifs des $4$ c\^ables, et $\rho_0$, $\rho_1$, $\rho_2$ et $\rho_3$ les 
+longueurs de c\^ables associ\'ees. La jacobienne inverse du robot est donn\'ee 
+par la matrice dont les lignes sont les vecteurs $\frac {{\bf A}_i{\bf 
+B}}{\rho_i}$. La jacobienne compl\`ete est donc :
+\begin{equation}
+{\bf J}^{-1} = 
+\begin{bmatrix}
+\frac {{\bf A}_{0_x}{\bf B}_x} {\rho_0} & \frac {{\bf A}_{0_y}{\bf B}_y} 
+{\rho_0} & \frac {{\bf A}_{0_z}{\bf B}_z} {\rho_0} \\
+\frac {{\bf A}_{1_x}{\bf B}_x} {\rho_1} & \frac {{\bf A}_{1_y}{\bf B}_y} 
+{\rho_1} & \frac {{\bf A}_{1_z}{\bf B}_z} {\rho_1} \\
+\frac {{\bf A}_{2_x}{\bf B}_x} {\rho_2} & \frac {{\bf A}_{2_y}{\bf B}_y} 
+{\rho_2} & \frac {{\bf A}_{2_z}{\bf B}_z} {\rho_2} \\
+\frac {{\bf A}_{3_x}{\bf B}_x} {\rho_3} & \frac {{\bf A}_{3_y}{\bf B}_y} 
+{\rho_3} & \frac {{\bf A}_{3_z}{\bf B}_z} {\rho_3} \\
+\end{bmatrix}
+\label{chap01:eq01}
+\end{equation}
+
+Le d\'erivateur permettant de d\'eduire la jacobienne inverse associ\'ee au 
+robot $A^{3,3}_{0, 1, 2}$ sera la matrice :
+\begin{equation}
+{\bf D}_{012/3} = 
+\begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0
+\end{bmatrix}
+\label{chap01:eq02}
+\end{equation}
+
+Le d\'erivateur permettant de d\'eduire la jacobienne inverse du robot 
+$A^{2,2}_{0, 1}$ \`a partir de $J^{-1}_{012}$ sera :
+\begin{equation}
+{\bf D}_{01/2} = 
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0
+\end{bmatrix}
+\label{chap01:eq03}
+\end{equation}
+
+Les int\'egrateurs permettant par exemple de d\'eduire $A^{3,3}_{0, 1, 2}$ \`a 
+partir de $A^{2,2}_{0, 1}$, $A^{2,2}_{0, 2}$ et $A^{2,2}_{1,2}$ seront 
+respectivement :
+\begin{equation}
+{\bf I}_{01+2} = 1/2
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+0 & 0
+\end{bmatrix}
+\quad
+{\bf I}_{02+1} = 1/2
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+0 & 1
+\end{bmatrix}
+\quad
+{\bf I}_{12+0} = 1/2
+\begin{bmatrix}
+0 & 0 \\
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+\label{chap01:eq04} \quad
+\end{equation}
+ce qui nous donne bien ${\bf J}^{-1}_{012} = {\bf I}_{01+2} {\bf J}^{-1}_{01} + 
+{\bf I}_{02+1} {\bf J}^{-1}_{02} + {\bf I}_{12+0} {\bf J}^{-1}_{12}$.
+
+
+
+\section{Crit\`eres d'optimisation et d'\'evaluation}
+
+\subsection{Am\'elioration de la stabilit\'e}
+
+\subsubsection{Etat de l'art}
+
+\subsubsection{Crit\`ere}
+
+\subsubsection{Illustration}
+
+\subsection{Am\'elioration de la pr\'ecision}
+
+\subsubsection{Etat de l'art}
+
+\subsubsection{Crit\`ere}
+
+\subsubsection{Illustration}
+
+\section{Algorithme de s\'election de configurations de c\^ables}
+
+\subsection{L'analyse par intervalles}
+
+\subsection{Algorithme}
+
+\subsection{R\'esultats th\'eoriques}
