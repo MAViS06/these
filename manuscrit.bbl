@@ -12,6 +12,11 @@ Nicolas Andreff, Tej Dallej, and Philippe Martinet.
   manipulator using leg observations.
 \newblock {\em Int. J. Rob. Res.}, 26(7):677--687, July 2007.
 
+\bibitem{brown71}
+Duane~C. Brown.
+\newblock Close-range camera calibration.
+\newblock {\em PHOTOGRAMMETRIC ENGINEERING}, 37(8):855--866, 1971.
+
 \bibitem{2010:Carricato.Merlet}
 M.~Carricato and J-P. Merlet.
 \newblock Geometrico-static analysis of under-constrained cable-driven parallel
@@ -65,6 +70,19 @@ Tej Dallej, Marc Gouttefarde, Nicolas Andreff, Micaël Michelin, and Philippe
 \newblock Towards vision-based control of cable-driven parallel robots.
 \newblock In {\em IROS}, pages 2855--2860. IEEE, 2011.
 
+\bibitem{espiau1992}
+B.~Espiau, F.~Chaumette, and Patrick Rives.
+\newblock A new approach to visual servoing in robotics.
+\newblock {\em Robotics and Automation, IEEE Transactions on}, 8(3):313--326,
+  Jun 1992.
+
+\bibitem{samson1991}
+P.J. Esrom.
+\newblock Robot control (the task function approach), by c. samson, m. le
+  borgne and b. espiau oxford university press, oxford, 1991, xvii + 364,
+  references and index (£50.00).
+\newblock {\em Robotica}, 9:447--448, 12 1991.
+
 \bibitem{Faugeras:1993}
 Olivier Faugeras.
 \newblock {\em Three-dimensional Computer Vision: A Geometric Viewpoint}.
@@ -82,6 +100,11 @@ V.E. Gough.
 \newblock Contribution to discussion of papers on research in automobile
   stability, control and tyre performance, 1956-1957.
 \newblock Proc. Auto Div. Inst. Mech. Eng.
+
+\bibitem{hartley2004}
+R.~I. Hartley and A.~Zisserman.
+\newblock {\em Multiple View Geometry in Computer Vision}.
+\newblock Cambridge University Press, ISBN: 0521540518, second edition, 2004.
 
 \bibitem{Heeren:1992}
 Theo A.~G. Heeren and Frans~E. Veldpaus.
@@ -164,10 +187,25 @@ D.~Purves.
 \newblock {\em Neuroscience}.
 \newblock Sinauer Associates Incorporated, 2004.
 
+\bibitem{stein1997}
+G.~P. Stein.
+\newblock Lens distortion calibration using point correspondences.
+\newblock In {\em Proceedings of the 1997 Conference on Computer Vision and
+  Pattern Recognition (CVPR '97)}, CVPR '97, pages 602--, Washington, DC, USA,
+  1997. IEEE Computer Society.
+
 \bibitem{1965:Stewart}
 D.~Stewart.
 \newblock A platform with 6 degrees of freedom.
 \newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
   15):371--386, 1965.
+
+\bibitem{tsai1986}
+Roger~Y. Tsai.
+\newblock {An Efficient and Accurate Camera Calibration Technique for 3D
+  Machine Vision}.
+\newblock In {\em Proceedings of IEEE Conference on Computer Vision and Pattern
+  Recognition, Miami Beach, FL}, pages 364--374,
+  http://www-cgi.cs.cmu.edu/afs/cs.cmu.edu/user/rgw/www/TsaiCode.html, 1986.
 
 \end{thebibliography}

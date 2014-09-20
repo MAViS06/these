@@ -247,13 +247,13 @@ s\'equence donn\'ee, et de calculer le {\it trajet} optimisant un crit\`ere en
 attribuant les poids correspondants aux noeuds et fl\`eches du graphe. On voit 
 par exemple que pour passer de $\overline{CC}_{013}$ \`a $\overline{CC}_{123}$, 
 il est possible d'utiliser une {\it transition marginale} via $CC_{13}$, ou 
-encore deux transitions simples, l'une passant par $\overline{CC}_{012}$ et 
-l'autre par $\overline{CC}_{013}$, ou encore d'autres combinaisons 
-partiellement marginales.
+encore deux trajets \`a une transition simple, l'un passant par 
+$\overline{CC}_{012}$ et l'autre par $\overline{CC}_{023}$, ou bien encore 
+d'autres combinaisons marginales et partiellement marginales.
 
-Le robot terminal ainsi que ses sous-robots sont repr\'esent\'es dans la 
+Le robot maximal et ses sous-robots sont repr\'esent\'es dans la 
 Fig.\ref{chap01:fig1}, ainsi que leurs relations de d\'erivation et 
-d'int\'egration. Dans le cas du robot {\tt Marionet-Assist}, le robot terminal 
+d'int\'egration. Dans le cas du robot {\tt Marionet-Assist}, le robot maximal 
 est abstrait, et il existe $4$ robots r\'ealisables dans $A^{3,3}$, $6$ dans 
 $A^{2,2}$ et quatre dans $A^{1,1}$. Pour chacun des robots r\'ealisables, 
 l'espace de concr\^etisation correspond \`a l'ouvert obtenu par projection 
@@ -282,7 +282,7 @@ A}_0$, ${\bf A}_1$, ${\bf A}_2$ et ${\bf A}_3$ les points de sorties
 respectifs des $4$ c\^ables, et $\rho_0$, $\rho_1$, $\rho_2$ et $\rho_3$ les 
 longueurs de c\^ables associ\'ees. La jacobienne inverse du robot est donn\'ee 
 par la matrice dont les lignes sont les vecteurs $\frac {{\bf A}_i{\bf 
-B}}{\rho_i}$. La jacobienne compl\`ete est donc :
+B}}{\rho_i}$. La {\it jacobienne inverse maximale} est donc :
 \begin{equation}
 {\bf J}^{-1} = 
 \begin{bmatrix}
@@ -299,7 +299,8 @@ B}}{\rho_i}$. La jacobienne compl\`ete est donc :
 \end{equation}
 
 Le d\'erivateur permettant de d\'eduire la jacobienne inverse associ\'ee au 
-robot $A^{3,3}_{0, 1, 2}$ sera la matrice :
+robot $A^{3,3}_{0, 1, 2}$ \`a partir de la jacobienne inverse maximale 
+sera la matrice :
 \begin{equation}
 {\bf D}_{012/3} = 
 \begin{bmatrix}
@@ -350,6 +351,16 @@ respectivement :
 ce qui nous donne bien ${\bf J}^{-1}_{012} = {\bf I}_{01+2} {\bf J}^{-1}_{01} + 
 {\bf I}_{02+1} {\bf J}^{-1}_{02} + {\bf I}_{12+0} {\bf J}^{-1}_{12}$.
 
+Nous prenons d\`es lors le parti de n'accorder une pertinence physique qu'aux 
+seules jacobiennes de robots concr\^ets.
+
+Prenons l'exemple d'un robot dont les coordonn\'ees des points d'attaches sont 
+${\bf A}_0 = (0.0, 0.0, 1.0)$, ${\bf A}_1 = (1.0, 0.0, 1.0)$, ${\bf A}_2 = 
+(1.0, 1.0, 1.0)$ et ${\bf A}_3 = (0.0, 1.0, 1.0)$. Soit ${\bf S} = (0.2, 0.3, 
+0.8)$ le point de d\'epart d'une trajectoire et ${\bf G} = (0.8, 0.6, 0.6)$ son 
+point d'arriv\'ee. La projection horizontale de ${\bf S}$ appartient aux 
+triangles dont les sommets respectifs sont ${\bf A}_0{\bf A}_1{\bf A}_3$ et 
+${\bf A}_0{\bf A}_2{\bf A}_3$ ; la projection horizon
 
 
 \section{Crit\`eres d'optimisation et d'\'evaluation}
