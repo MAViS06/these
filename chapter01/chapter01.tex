@@ -388,21 +388,63 @@ plusieurs crit\`eres permettant une optimisation des trajets.
 
 \subsection{Am\'elioration de la stabilit\'e}
 
-\subsubsection{Etat de l'art}
+Au contraire des CDPR pleinement contraints dont la pose est d\'termin\'ee par 
+les longueurs des c\^ables (quand un nombre suffisant de ceux-ci sont en 
+tension), les robots en configuration suspendue utilise la gravit\'e pour 
+contraindre la pose. Ce choix de configuration poss\`ede plusieurs avantage, 
+dont celui d'utiliser un nombre inf\'erieur de c\^ables (ce qui r\'eduit par 
+exemple les possiblit\'es de collision), mais rend le syst\`eme plus sensibles 
+aux perturbations.
 
-\subsubsection{Crit\`ere}
+Une cause de perturbations est le changement de configuration de c\^ables. Nous 
+allons donc proposer une m\'ethode permettant de contr\^oler ces changements, 
+ainsi qu'un crit\`ere qui permettra -- lorsque plusieurs configurations sont 
+possible pour une m\^eme pose -- de s\'electionner la pose la plus stable.
+
+Am\'eliorer la stabilit\'e est en effet primordial pour deux raisons :
+\begin{itemize}
+ \item lorsque le manipulateur est utilis\'e dans son contexte originel d'aide 
+au d\'eplacement des personnes, cela permet d'une part d'assurer la 
+s\'ecurit\'e du processus, en \'evitant la perte de contr\^ole d'un ou 
+plusieurs degr\'es de libert\'e, d'autre part l'aisance de l'utilisation en 
+n\'egociant les changements de configurations de c\^ables de mani\`ere souple
+\item lors d'une op\'eration impliquant un asservissement visuel avec cam\'era 
+embarqu\'ee, la moindre perturbation modifie la situation du r\'ef\'erentiel 
+cam\'era par rapport au r\'ef\'erentiel de l'organe terminal. D\'es lors, la 
+conversion des mesures effectu\'ees sur l'image en commande pour le 
+manipulateur est fauss\'ee et l'asservissement \'echoue. Une perturbation trop 
+forte peut \'egalement faire sortir la cible de l'image, ce qui conduit 
+fatalement \`a l'impossiblit\'e de poursuivre l'utilisation de l'asservissement 
+visuel.
+\end{itemize}
+
+\subsubsection{Travaux pr\'eliminaires}
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Crit\`eres}
 
 \subsubsection{Illustration}
 
 \subsection{Am\'elioration de la pr\'ecision}
 
-\subsubsection{Etat de l'art}
+\subsubsection{Travaux pr\'eliminaires}
 
-\subsubsection{Crit\`ere}
+\subsubsection{Crit\`eres}
 
 \subsubsection{Illustration}
 
 \section{Algorithme de s\'election de configurations de c\^ables}
+
+\cite{ramadour2014}
+
 
 \subsection{L'analyse par intervalles}
 

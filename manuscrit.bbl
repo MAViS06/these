@@ -187,6 +187,13 @@ D.~Purves.
 \newblock {\em Neuroscience}.
 \newblock Sinauer Associates Incorporated, 2004.
 
+\bibitem{ramadour2014}
+R.~Ramadour and J.-P. Merlet.
+\newblock Computing safe trajectories for an assistive cable-driven parallel
+  robot by selecting the cables under tension and using interval analysis.
+\newblock In {\em Advanced Intelligent Mechatronics (AIM), 2014 IEEE/ASME
+  International Conference on}, pages 1349--1354, July 2014.
+
 \bibitem{stein1997}
 G.~P. Stein.
 \newblock Lens distortion calibration using point correspondences.
