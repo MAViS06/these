@@ -466,8 +466,6 @@ d'am\'eliorer la stabilit\'e puis la pr\'ecision du manipulateur.
 
 \subsection{Am\'elioration de la stabilit\'e}
 
-
-
 Am\'eliorer la stabilit\'e est primordial pour deux raisons :
 \begin{itemize}
  \item lorsque le manipulateur est utilis\'e dans son contexte originel d'aide 
@@ -493,24 +491,22 @@ chacune d'entre elles diff\`ereront.
 
 Prenons l'exemple du robot $4-1$ dont les points d'attache sont r\'epartis aux 
 quatre coins les plus hauts d'un cube d'un m\`etre de c\^ot\'e. Fixons un point 
-${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)$.
+${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)^T$ (Fig.\ref{chap01:fig3}).
 
 En ce point, deux configurations de c\^ables sont possibles : 
-$\overline{CC}_{013}$ et $\overline{CC}_{023}$. Ces deux configurations 
+$\overline{CC}_{013}$(Fig.\ref{chap01:fig3view0}) et $\overline{CC}_{023}$(Fig.\ref{chap01:fig3view1}). Ces deux configurations 
 permettent de contr\^oler les trois degr\'es de libert\'es en translation.
 
 \begin{figure}[htp]
   \centering
- \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
-système de poulie actionnée par un moteur]{\label{chap01:fig3view0}
- \def\svgwidth{.35\linewidth}
- \input{./chapter01/figures/tension02.pdf_tex}} 
- \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
-système de poulie actionnée par un moteur]{\label{chap01:fig3view1}
- \def\svgwidth{.35\linewidth}
- \input{./chapter01/figures/tension02.pdf_tex}} 
+ \subfloat[Le robot en configuration de câbles $\overline{CC}_{013}$]{\label{chap01:fig3view0}
+ \def\svgwidth{.45\linewidth}
+ \input{./chapter01/figures/tension02.pdf_tex}} \hfill
+ \subfloat[Le robot en configuration de câbles $\overline{CC}_{023}$]{\label{chap01:fig3view1}
+ \def\svgwidth{.45\linewidth}
+ \input{./chapter01/figures/tension01.pdf_tex}} 
     \caption{\footnotesize{Les deux configurations de c\^ables possibles pour 
-une pose ${\bf B} = (0.2, 0.3, 0.8)$}}
+une pose ${\bf B} = (0.2, 0.3, 0.8)^T$}}
 \label{chap01:fig3}
 \end{figure}
 
@@ -532,14 +528,14 @@ Les jacobiennes inverses respectives sont :
 \label{chap01:eq05}
 \end{equation}
 
-En posant $m = 1/g$, nous avons ${\boldmath {\mathcal F}} = (0, 0, 1)$ ce qui 
+En posant $m = 1/g$, nous avons ${\boldmath {\mathcal F}} = (0, 0, -1)^T$, ce qui 
 nous donne :
 
 \begin{equation}
 {\bf \tau}_{013} = 
 \begin{bmatrix}
-1.0308 \\
-0.8775 \\
+1.0308
+0.8775  
 1.1325
 \end{bmatrix},
 \quad
@@ -556,14 +552,60 @@ Nous pouvons d\'ej\`a v\'erifier qu'un passage non-contr\^ol\'e d'une
 configuration \`a l'autre produit des variations de tensions discontinues, 
 alors m\^eme que les deux configurations ont en commun deux c\^ables sur trois.
 
-De plus, les \'ecarts \`a la tension moyenne sont plus importants pour la 
-configuration $\overline{CC}_{023}$, ce qui suppose une distribution in\'egale.
+De plus, la variance des tensions est plus importante pour la 
+configuration $\overline{CC}_{023}$, ce qui dénote une répartition in\'egale des efforts sur les câbles.
 
 Nous proposons donc de consid\'erer la norme des tensions th\'eoriques 
-obtenues, et de choisir la configuration qui offre ainsi une meilleure 
+obtenues comme critère, et de choisir la configuration qui offre ainsi une meilleure 
 r\'epartition, soit dans ce cas $\overline{CC}_{023}$.
 
+Ainsi, en chaque pose, nous calculons pour toutes les configurations de câbles $\overline{CC}_i$ correspondant à une situation d'équilibre statique la mesure $\mathcal M_{\hbox{stab}_i}$ :
 
+\begin{equation}
+\mathcal M_{\hbox{stab}_i} = ||{\bf J}_i {\boldmath {\mathcal F}}||
+\label{chap01:eq07}
+\end{equation}
+
+Posons à présent ${\bf B} = (0.3,0.3,0.3)^T$. Dans ce cas, les deux configurations de câbles possibles sont $\overline{CC}_{013}$ et $CC_{02}$.
+
+Les jacobiennes inverses correspondantes sont :
+
+\begin{equation}
+{\bf J}^{-1}_{013} = 
+\begin{bmatrix}
+0.3665 & 0.3665 & -0.8552 \\  
+-0.6767 & 0.2900 & -0.6767 \\  
+0.2900 & -0.6767 & -0.6767
+\end{bmatrix},
+{\bf J}^{-1}_{02}
+\begin{bmatrix}
+0.3665 & 0.3665 & -0.8552 \\  
+-0.5774 & -0.5774 & -0.5774
+\end{bmatrix}
+\label{chap01:eq08}
+\end{equation}
+
+En utilisant pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de câbles $CC_{01}$ la pseudo-inverse de Moore-Penrose pour calculer les tensions théoriques correspondantes, nous obtenons :
+
+\begin{equation}
+{\bf \tau}_{013} = 
+\begin{bmatrix}
+0.4677 \\
+0.4433 \\
+0.4433
+\end{bmatrix},
+\quad
+{\bf \tau}_{02}
+\begin{bmatrix}
+0.8185 \\ 
+0.5196 
+\end{bmatrix}
+\label{chap01:eq09}
+\end{equation}
+
+Les mesures respectives sont $\mathcal M_{\hbox {stab}_{013}} = 0.7822$ et $\mathcal M_{\hbox {stab}_{02}} = 0.9695$, soit une sélection de la configuration $\overline{CC}_{013}$.
+
+Toutes ces mesures pouvant être réalisées en amont, elles n'impactent pas le temps de calcul de la commande. Ainsi, pour notre robot $4-1$ cubique, pour une valeur de $Z = 0.5$ fixée, les figures \ref{} et \ref{} nous montrent respectivement quelle configuration de câbles sera privilégiée en tout point de l'espace de travail, et l'évolution du critère sur l'ensemble de celui-ci.
 
 \subsubsection{Illustration}
 
@@ -575,8 +617,6 @@ r\'epartition, soit dans ce cas $\overline{CC}_{023}$.
 \subsubsection{Illustration}
 
 \section{Algorithme de s\'election de configurations de c\^ables}
-
-\cite{ramadour2014}
 
 
 \subsection{L'analyse par intervalles}
