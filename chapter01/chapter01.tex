@@ -386,22 +386,89 @@ plusieurs crit\`eres permettant une optimisation des trajets.
 
 \section{Crit\`eres d'optimisation et d'\'evaluation}
 
-\subsection{Am\'elioration de la stabilit\'e}
+\subsection{Travaux pr\'eliminaires}
 
-Au contraire des CDPR pleinement contraints dont la pose est d\'termin\'ee par 
+Au contraire des CDPR pleinement contraints dont la pose est d\'etermin\'ee par 
 les longueurs des c\^ables (quand un nombre suffisant de ceux-ci sont en 
 tension), les robots en configuration suspendue utilise la gravit\'e pour 
-contraindre la pose. Ce choix de configuration poss\`ede plusieurs avantage, 
+contraindre la pose. Si ce choix de configuration poss\`ede plusieurs avantage, 
 dont celui d'utiliser un nombre inf\'erieur de c\^ables (ce qui r\'eduit par 
-exemple les possiblit\'es de collision), mais rend le syst\`eme plus sensibles 
-aux perturbations.
+exemple les possiblit\'es de collision), il rend cependant le syst\`eme plus 
+sensibles aux perturbations, ce qui affecte la qualit\'e du mouvement du robot.
 
-Une cause de perturbations est le changement de configuration de c\^ables. Nous 
-allons donc proposer une m\'ethode permettant de contr\^oler ces changements, 
-ainsi qu'un crit\`ere qui permettra -- lorsque plusieurs configurations sont 
-possible pour une m\^eme pose -- de s\'electionner la pose la plus stable.
+Le choix d'une configuration de c\^ables peut se faire lorsque plusieurs sont 
+possibles pour une m\^eme pose. Nous partirons donc du postulat que pour une 
+pose ${\bf X}$ il existe un ensemble $CC_\alpha$ de $M$ configurations $CC_{i}$ 
+telles que $\forall i \in [1, N], {\bf X} \in El(CC_i)$. Certaines - voire 
+toutes - de ces configurations supposent qu'un c\^able au moins est en 
+tension nulle.
 
-Am\'eliorer la stabilit\'e est en effet primordial pour deux raisons :
+La strat\'egie g\'en\'eralement utilis\'e dans le contr\^ole des manipulateurs 
+parall\`eles \`a c\^ables consiste \`a leur imposer une longueur la plus proche 
+possible de la distance ${\bf A}_i{\bf B}$. Or, nous avons \'evoqu\'e \`a 
+plusieurs reprises que l'incertitude sur les longueurs ne permettait pas de 
+savoir quelle configuration allait succ\'eder au moment $t+1$ \`a celle prise 
+effectivement par les c\^ables au moment $t$. Il est donc extr\^emement 
+difficile - pour ne pas dire g\'en\'eralement impossible - d'avoir un 
+contr\^ole sur les trajets (successions de configurations). Pour autant, 
+l'analyse des sous-robots correspondants aux diff\'erentes configurations ne 
+manquera pas de r\'ev'eler qu'\`a l'exception de cas rares, les propri\'et\'es 
+du manipulateur ne sont pas \'equivalente pour la pose ${\bf X}$.
+
+D\'es lors, plut\^ot que de tenter de garder les longueurs aussi proches 
+que possible de leur valeurs th\'eoriques, nous avons propos\'e 
+dans \cite{ramadour2014} de forcer la s\'el\'ection d'une configuration en 
+ajoutant volontairement aux c\^ables qu'elle suppose mous une longueur 
+suppl\'ementaire qui assure -- en fonction de l'incertitude sur les longueurs 
+-- qu'il ne changera pas d'\'etat.
+
+La premi\`ere \'etape consiste donc \`a d\'eterminer pour une pose donn\'ee 
+l'ensemble des configurations de c\^ables dans lesquelles elle peut se 
+retrouver. En hi\'erarchisant ensuite ces configurations \`a partir des 
+propri\'et\'es des sous-robots, on en choisit une, puis on ajoute aux 
+c\^ables qui n'interviennent pas dans la d\'efinition du sous-robot une 
+longueur suppl\'ementaire tant que l'on ne souhaite pas modifier la 
+configuration.
+
+L'analyse -- lors d'une trajectoire -- en parall\`ele des propri\'et\'es des 
+sous-robots associ\'ees aux configurations possibles permet de d\'eterminer les 
+poses pour lesquelles il est souhaitable de changer de configuration. Au point 
+de transfert d\'etermin\'e par la comparaison des crit\`eres respectifs, il 
+suffit alors de redonner aux c\^ables impliqu\'ees dans la configuration 
+post\'erieure leur longueur th\'eorique, et d'ajouter \`a ceux dont on ne veut 
+plus se servir une longueur suppl\'ementaire.
+
+Une fa\c con alternative de consid\'erer ce processus consiste \`a envisager 
+que nous utilisons une flotte de robots coop\'erants les uns avec les autres 
+lors d'une trajectoire. On comprend alors que le transfert d'un robot \`a un 
+autre est un moment particulier du contr\^ole. Il implique entre-autres que la 
+vitesse du d\'eplacement soit ralentie en ce point particulier de mani\`ere \`a 
+minimiser l'influence des perturbations.
+
+Si ce ralentissement peut \^etre consid\'er\'e comme un inconv\'enient, 
+il offre toutefois deux avantages majeurs, \`a savoir :
+\begin{itemize}
+ \item l'existence pour une pose de plusieurs configurations de c\^ables 
+possibles devient ici un atout, puisqu'il est permis de choisir celle qui 
+optimisera un crit\`ere pr\'e\'etabli, alors que nous ne pouvions 
+pr\'ec\'edemment que nous r\'ef\'erer au {\it pire des cas}
+  \item en divisant la t\^ache en sous-robots distincts dont nous d\'ecidons 
+lequel prend en charge le d\'eroulement d'un partie de la trajectoire, nous 
+pouvons am\'eliorer les caract\'eristiques du robot global, d\'es lors que 
+celles-ci ne sont plus minor\'ees par la situation la pire sur l'espace de 
+travail, mais uniquement sur le minimum parmi les meilleures situations en 
+chaque point de l'espace.
+\end{itemize}
+
+Nous allons \`a pr\'esent voir successivement comment nous proposons 
+d'am\'eliorer la stabilit\'e puis la pr\'ecision du manipulateur.
+ 
+
+\subsection{Am\'elioration de la stabilit\'e}
+
+
+
+Am\'eliorer la stabilit\'e est primordial pour deux raisons :
 \begin{itemize}
  \item lorsque le manipulateur est utilis\'e dans son contexte originel d'aide 
 au d\'eplacement des personnes, cela permet d'une part d'assurer la 
@@ -416,26 +483,92 @@ manipulateur est fauss\'ee et l'asservissement \'echoue. Une perturbation trop
 forte peut \'egalement faire sortir la cible de l'image, ce qui conduit 
 fatalement \`a l'impossiblit\'e de poursuivre l'utilisation de l'asservissement 
 visuel.
-\end{itemize}
-
-\subsubsection{Travaux pr\'eliminaires}
+\end{itemize} 
 
 
+\subsubsection{Minimiser la tension}
+
+Pour deux configurations donn\'ees, les tensions exerc\'ees sur les c\^ables de 
+chacune d'entre elles diff\`ereront.
+
+Prenons l'exemple du robot $4-1$ dont les points d'attache sont r\'epartis aux 
+quatre coins les plus hauts d'un cube d'un m\`etre de c\^ot\'e. Fixons un point 
+${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)$.
+
+En ce point, deux configurations de c\^ables sont possibles : 
+$\overline{CC}_{013}$ et $\overline{CC}_{023}$. Ces deux configurations 
+permettent de contr\^oler les trois degr\'es de libert\'es en translation.
+
+\begin{figure}[htp]
+  \centering
+ \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
+système de poulie actionnée par un moteur]{\label{chap01:fig3view0}
+ \def\svgwidth{.35\linewidth}
+ \input{./chapter01/figures/tension02.pdf_tex}} 
+ \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
+système de poulie actionnée par un moteur]{\label{chap01:fig3view1}
+ \def\svgwidth{.35\linewidth}
+ \input{./chapter01/figures/tension02.pdf_tex}} 
+    \caption{\footnotesize{Les deux configurations de c\^ables possibles pour 
+une pose ${\bf B} = (0.2, 0.3, 0.8)$}}
+\label{chap01:fig3}
+\end{figure}
+
+Les jacobiennes inverses respectives sont :
+
+\begin{equation}
+{\bf J}^{-1}_{013} = 
+\begin{bmatrix}
+0.4851 & 0.7276 & -0.4851 \\
+-0.9117 & 0.3419 & -0.2279 \\
+0.2649 & -0.9272 & -0.2649
+\end{bmatrix},
+{\bf J}^{-1}_{023}
+\begin{bmatrix}
+0.4851 & 0.7276 & -0.4851 \\
+-0.7396 & -0.6472 & -0.1849 \\
+0.2649 & -0.9272 & -0.2649
+\end{bmatrix}
+\label{chap01:eq05}
+\end{equation}
+
+En posant $m = 1/g$, nous avons ${\boldmath {\mathcal F}} = (0, 0, 1)$ ce qui 
+nous donne :
+
+\begin{equation}
+{\bf \tau}_{013} = 
+\begin{bmatrix}
+1.0308 \\
+0.8775 \\
+1.1325
+\end{bmatrix},
+\quad
+{\bf \tau}_{023}
+\begin{bmatrix}
+1.4431 \\
+1.0817 \\
+0.3775
+\end{bmatrix}
+\label{chap01:eq06}
+\end{equation}
+
+Nous pouvons d\'ej\`a v\'erifier qu'un passage non-contr\^ol\'e d'une 
+configuration \`a l'autre produit des variations de tensions discontinues, 
+alors m\^eme que les deux configurations ont en commun deux c\^ables sur trois.
+
+De plus, les \'ecarts \`a la tension moyenne sont plus importants pour la 
+configuration $\overline{CC}_{023}$, ce qui suppose une distribution in\'egale.
+
+Nous proposons donc de consid\'erer la norme des tensions th\'eoriques 
+obtenues, et de choisir la configuration qui offre ainsi une meilleure 
+r\'epartition, soit dans ce cas $\overline{CC}_{023}$.
 
 
-
-
-
-
-
-
-\subsubsection{Crit\`eres}
 
 \subsubsection{Illustration}
 
 \subsection{Am\'elioration de la pr\'ecision}
 
-\subsubsection{Travaux pr\'eliminaires}
 
 \subsubsection{Crit\`eres}
 
