@@ -25,9 +25,9 @@
 \BOOKMARK [2][-]{subsection.2.1.4}{Illustration avec le robot Marionet-Assist}{section.2.1}% 25
 \BOOKMARK [1][-]{section.2.2}{Crit\350res d'optimisation et d'\351valuation}{chapter.2}% 26
 \BOOKMARK [2][-]{subsection.2.2.1}{Travaux pr\351liminaires}{section.2.2}% 27
-\BOOKMARK [2][-]{subsection.2.2.2}{Am\351lioration de la stabilit\351}{section.2.2}% 28
-\BOOKMARK [2][-]{subsection.2.2.3}{Am\351lioration de la pr\351cision}{section.2.2}% 29
-\BOOKMARK [1][-]{section.2.3}{Algorithme de s\351lection de configurations de c\342bles}{chapter.2}% 30
+\BOOKMARK [2][-]{subsection.2.2.2}{Am\351lioration de la stabilit\351 : minimiser les tensions}{section.2.2}% 28
+\BOOKMARK [2][-]{subsection.2.2.3}{Am\351lioration de la pr\351cision : minimiser l'influence des incertitudes articulaires}{section.2.2}% 29
+\BOOKMARK [1][-]{section.2.3}{Certification de la m\351thode}{chapter.2}% 30
 \BOOKMARK [2][-]{subsection.2.3.1}{L'analyse par intervalles}{section.2.3}% 31
 \BOOKMARK [2][-]{subsection.2.3.2}{Algorithme}{section.2.3}% 32
-\BOOKMARK [2][-]{subsection.2.3.3}{R\351sultats th\351oriques}{section.2.3}% 33
+\BOOKMARK [2][-]{subsection.2.3.3}{Illustrations}{section.2.3}% 33

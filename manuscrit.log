@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  24 SEP 2014 01:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  24 SEP 2014 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,7 +535,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 
 LaTeX Warning: Label `chap0-3' multiply defined.
 
-) (./chapter01/chapter01.aux))
+) (./chapter01/chapter01.aux
+
+LaTeX Warning: Label `chap01:eq11' multiply defined.
+
+))
 \openout1 = `manuscrit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -552,8 +556,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
 \scratchdimen=\dimen133
@@ -1180,7 +1183,7 @@ ls qu'il ex-iste $[][]\OT1/cmr/bx/n/10 P \OT1/cmr/m/n/10 := (\OT1/cmr/bx/n/10 X
  []
 
 [32] [33]
-Overfull \hbox (2.41321pt too wide) in paragraph at lines 180--186
+Overfull \hbox (2.41321pt too wide) in paragraph at lines 218--224
 []\OT1/cmr/m/n/10 Pour chaque robot $\OML/cmm/m/it/10 A[]$ \OT1/cmr/m/n/10 d^^S
 eriv^^Se ou int^^Segral, nous pou-vons, lorsqu'il est r^^Sealisable,
  []
@@ -1193,7 +1196,7 @@ File: ./chapter01/figures/CC_41.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./chapter01/figures/CC_41.pdf used on input line 53.
 (pdftex.def)             Requested size: 224.2479pt x 213.97221pt.
 ) [35 <./chapter01/figures/CC_41.pdf>]
-Overfull \hbox (36.37946pt too wide) in paragraph at lines 254--268
+Overfull \hbox (36.37946pt too wide) in paragraph at lines 292--306
 \OT1/cmr/m/n/10 que leurs re-la-tions de d^^Serivation et d'int^^Segration. Dan
 s le cas du robot \OT1/cmtt/m/n/10 Marionet-Assist\OT1/cmr/m/n/10 ,
  []
@@ -1209,19 +1212,19 @@ Package pdftex.def Info: ./chapter01/figures/rbt41.pdf used on input line 53.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36 <./chapter01/figures/rbt41.pdf>] [37]
-Overfull \hbox (4.38939pt too wide) in paragraph at lines 425--432
+Overfull \hbox (4.38939pt too wide) in paragraph at lines 463--470
 []\OT1/cmr/m/n/10 La premi^^Rere ^^Setape con-siste donc ^^Ra d^^Seterminer pou
 r une pose donn^^See l'ensemble
  []
 
 
-Overfull \hbox (7.0468pt too wide) in paragraph at lines 425--432
+Overfull \hbox (7.0468pt too wide) in paragraph at lines 463--470
 \OT1/cmr/m/n/10 des con-fig-u-ra-tions de c^ables dans lesquelles elle peut se 
 retrou-ver. En hi^^Serarchisant
  []
 
 [38]
-Overfull \hbox (7.58388pt too wide) in paragraph at lines 463--465
+Overfull \hbox (7.58388pt too wide) in paragraph at lines 501--503
 []\OT1/cmr/m/n/10 Nous al-lons ^^Ra pr^^Sesent voir suc-ces-sive-ment com-ment 
 nous pro-posons d'am^^Seliorer
  []
@@ -1243,53 +1246,110 @@ Package pdftex.def Info: ./chapter01/figures/tension01.pdf used on input line 5
 3.
 (pdftex.def)             Requested size: 155.24895pt x 161.28429pt.
 ) [39]
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 531.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 531
-.
-
-
-Overfull \hbox (11.94504pt too wide) in paragraph at lines 558--561
+Overfull \hbox (11.94504pt too wide) in paragraph at lines 600--603
 \OT1/cmr/m/n/10 comme crit^^Rere, et de choisir la con-fig-u-ra-tion qui of-fre
  ainsi une meilleure r^^Separtition,
  []
 
 
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 565.
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 609.
 
 
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 565
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 609
 .
 
 [40 <./chapter01/figures/tension02.pdf> <./chapter01/figures/tension01.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./chapter01/figures/tension01.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
->]
+>] <./chapter01/figures/critstab04.png, id=857, 1612.0225pt x 958.58125pt>
+File: ./chapter01/figures/critstab04.png Graphic file (type png)
 
-LaTeX Warning: Reference `' on page 41 undefined on input line 608.
+<use ./chapter01/figures/critstab04.png>
+Package pdftex.def Info: ./chapter01/figures/critstab04.png used on input line 
+660.
+(pdftex.def)             Requested size: 155.24895pt x 92.30943pt.
 
+<./chapter01/figures/critstab05.png, id=858, 1622.06pt x 987.69pt>
+File: ./chapter01/figures/critstab05.png Graphic file (type png)
 
-LaTeX Warning: Reference `' on page 41 undefined on input line 608.
+<use ./chapter01/figures/critstab05.png>
+Package pdftex.def Info: ./chapter01/figures/critstab05.png used on input line 
+664.
+(pdftex.def)             Requested size: 155.24895pt x 94.52478pt.
 
-)
-Overfull \hbox (7.40144pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10 2.3.  ALGORITHME DE S[]ELECTION DE CONFIGURATIONS DE C[]ABLES 
-\OT1/cmr/m/n/10 41
+<./chapter01/figures/critstab02.png, id=859, 1672.2475pt x 981.6675pt>
+File: ./chapter01/figures/critstab02.png Graphic file (type png)
+
+<use ./chapter01/figures/critstab02.png>
+Package pdftex.def Info: ./chapter01/figures/critstab02.png used on input line 
+668.
+(pdftex.def)             Requested size: 155.24895pt x 91.13235pt.
+
+<./chapter01/figures/critstab03.png, id=860, 1595.9625pt x 972.63374pt>
+File: ./chapter01/figures/critstab03.png Graphic file (type png)
+
+<use ./chapter01/figures/critstab03.png>
+Package pdftex.def Info: ./chapter01/figures/critstab03.png used on input line 
+672.
+(pdftex.def)             Requested size: 155.24895pt x 94.61249pt.
+ [41 <./chapter01/figures/critstab04.png> <./chapter01/figures/critstab05.png> 
+<./chapter01/figures/critstab02.png> <./chapter01/figures/critstab03.png>]
+Overfull \hbox (21.32455pt too wide) in paragraph at lines 699--720
+\OT1/cmr/m/n/10 exp^^Serimentations n'exc^^Rede pas $\OT1/cmr/bx/n/10 0\OML/cmm
+/b/it/10 :\OT1/cmr/bx/n/10 10\OML/cmm/b/it/10 m$ \OT1/cmr/m/n/10 pour un es-pac
+e de tra-vail d'approximativement
  []
 
-[41] (./manuscrit.bbl [42
+[42] <./chapter01/figures/crit_acc04.png, id=891, 1612.0225pt x 974.64125pt>
+File: ./chapter01/figures/crit_acc04.png Graphic file (type png)
+
+<use ./chapter01/figures/crit_acc04.png>
+Package pdftex.def Info: ./chapter01/figures/crit_acc04.png used on input line 
+789.
+(pdftex.def)             Requested size: 155.24895pt x 93.85597pt.
+
+<./chapter01/figures/crit_acc05.png, id=892, 1608.0075pt x 972.63374pt>
+File: ./chapter01/figures/crit_acc05.png Graphic file (type png)
+
+<use ./chapter01/figures/crit_acc05.png>
+Package pdftex.def Info: ./chapter01/figures/crit_acc05.png used on input line 
+793.
+(pdftex.def)             Requested size: 155.24895pt x 93.90012pt.
+
+<./chapter01/figures/crit_acc02.png, id=893, 1589.94pt x 980.66376pt>
+File: ./chapter01/figures/crit_acc02.png Graphic file (type png)
+
+<use ./chapter01/figures/crit_acc02.png>
+Package pdftex.def Info: ./chapter01/figures/crit_acc02.png used on input line 
+796.
+(pdftex.def)             Requested size: 155.24895pt x 95.75275pt.
+
+<./chapter01/figures/crit_acc03.png, id=894, 1724.4425pt x 958.58125pt>
+File: ./chapter01/figures/crit_acc03.png Graphic file (type png)
+
+<use ./chapter01/figures/crit_acc03.png>
+Package pdftex.def Info: ./chapter01/figures/crit_acc03.png used on input line 
+800.
+(pdftex.def)             Requested size: 155.24895pt x 86.29784pt.
+ [43 <./chapter01/figures/crit_acc04.png> <./chapter01/figures/crit_acc05.png> 
+<./chapter01/figures/crit_acc02.png> <./chapter01/figures/crit_acc03.png>] [44]
+
+Overfull \hbox (1.05606pt too wide) in paragraph at lines 884--889
+[]\OT1/cmr/m/n/10 Afin de compl^^Seter la m^^Sethode, nous de-vons donc nous as
+-surer que les r^^Sesultats
+ []
+
+) [45] (./manuscrit.bbl [46
 
 
-] [43]
+] [47]
 Underfull \hbox (badness 1484) in paragraph at lines 148--153
 []\OT1/cmr/m/n/10 Jean-Pierre Mer-let.  The in-flu-ence of discrete-time con-tr
 ol on the
  []
 
-[44]
+[48]
 Underfull \hbox (badness 10000) in paragraph at lines 211--217
 []\OT1/cmr/m/n/10 Roger Y. Tsai.  An Ef-fi-cient and Ac-cu-rate Cam-era Cal-
  []
@@ -1313,21 +1373,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--217
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
- [45]
+ [49]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (./manuscrit.aux (./titlepage/titlepage.aux) (./preambule/preambule.aux) (./in
 tro/intro.aux) (./chapter01/chapter01.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
-(rerunfilecheck)             Checksum: 742F22A2CB515C56209BC0C217B6196B;2757.
+(rerunfilecheck)             Checksum: 6F929126848DBFDC00B3F54EE313E7DD;2796.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1335,47 +1392,54 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 8370 strings out of 494999
- 127187 string characters out of 6180228
- 217982 words of memory out of 5000000
- 11151 multiletter control sequences out of 15000+600000
- 18541 words of font info for 71 fonts, out of 8000000 for 9000
+ 8454 strings out of 494999
+ 129230 string characters out of 6180228
+ 220424 words of memory out of 5000000
+ 11208 multiletter control sequences out of 15000+600000
+ 19769 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,13n,49p,1245b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,20n,49p,1245b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
-mib5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmm
-ib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmu10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on manuscrit.pdf (45 pages, 6954831 bytes).
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmu10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on manuscrit.pdf (49 pages, 7426313 bytes).
 PDF statistics:
- 1039 PDF objects out of 1200 (max. 8388607)
- 805 compressed objects within 9 object streams
- 225 named destinations out of 1000 (max. 500000)
- 470 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1115 PDF objects out of 1200 (max. 8388607)
+ 862 compressed objects within 9 object streams
+ 240 named destinations out of 1000 (max. 500000)
+ 510 words of extra memory for PDF output out of 10000 (max. 10000000)
 

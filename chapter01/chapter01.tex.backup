@@ -126,23 +126,61 @@ entre les configurations $CC_i$ et $CC_j$. L'espace de transfert total $Tr_{ij}$
 est alors la r\'eunion des espaces de transferts simple et marginal
 correspondants.
 
-Supposons par exemple que ${\bf S} \in El(CC_1)$, ${\bf G} \in El(CC_2)$ et qu'il existe un point ${\bf M}$ tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
-El(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft El(CC_2)$, alors on pourra écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \overset{\circ}{Tr_{12}} \cup El(CC_2)$. De la même manière, si un point ${\bf M}$ est tel que $\mathcal O({\bf S}, {\bf M}) \vartriangleleft
-\overline{El}(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) \vartriangleleft \overline{El}(CC_2)$, alors nous pourrons écrire $\mathcal O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \partial Tr_{12} \cup El(CC_2)$. Nous appellerons {\it trajet} l'ensemble des configurations de c\^ables et régions de transferts nécessaires au parcours d'une trajectoire. On distinguera les situations suivantes :
+Supposons par exemple que ${\bf S} \in El(CC_1)$, ${\bf G} \in El(CC_2)$ et 
+qu'il existe un point ${\bf M}$ tel que $\mathcal O({\bf S}, {\bf 
+M}) \vartriangleleft El(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) 
+\vartriangleleft El(CC_2)$, alors on pourra écrire $\mathcal O({\bf S}, {\bf G}) 
+\vartriangleleft El(CC_1) \cup \overset{\circ}{Tr_{12}} \cup El(CC_2)$. De la 
+ même manière, si un point ${\bf M}$ est tel que $\mathcal O({\bf S}, {\bf M}) 
+\vartriangleleft \overline{El}(CC_1)$ et $\mathcal O({\bf M}, {\bf G}) 
+\vartriangleleft \overline{El}(CC_2)$, alors nous pourrons écrire $\mathcal 
+O({\bf S}, {\bf G}) \vartriangleleft El(CC_1) \cup \partial Tr_{12} \cup 
+El(CC_2)$. Nous appellerons {\it trajet} l'ensemble des configurations de 
+c\^ables et régions de transferts nécessaires au parcours d'une trajectoire. On 
+distinguera les situations suivantes :
 \begin{itemize}
- \item {\it trajet trivial} : l'intégralité de la trajectoire peut être réalisée à partir d'une seule configuration de câbles.
- \item {\it trajet simple} : la trajectoire requiert au moins un transfert ; tous les transferts sont simples.
- \item {\it trajet partiellement marginal} : la trajectoire requiert au moins un transfert ; il existe au moins un transfert simple et un transfert marginal.
- \item {\it trajet marginal} : la trajectoire requiert au moins un transfert ; tous les transferts sont marginaux.
+ \item {\it trajet trivial} : l'intégralité de la trajectoire peut être 
+réalisée à partir d'une seule configuration de câbles.
+ \item {\it trajet simple} : la trajectoire requiert au moins un transfert ; 
+tous les transferts sont simples.
+ \item {\it trajet partiellement marginal} : la trajectoire requiert au moins 
+un transfert ; il existe au moins un transfert simple et un transfert marginal.
+ \item {\it trajet marginal} : la trajectoire requiert au moins un transfert 
+; tous les transferts sont marginaux.
 \end{itemize}
 
-Lorsque plusieurs trajets existent, nous essaierons alors de définir des relations d'ordre nous permettant de sélectionner le meilleur trajet possible en fonction d'un ou plusieurs critères préalablement définis : ce sera l'objet de la seconde section de ce chapitre.
+Lorsque plusieurs trajets existent, nous essaierons alors de définir 
+des relations d'ordre nous permettant de sélectionner le meilleur trajet 
+possible en fonction d'un ou plusieurs critères préalablement définis : ce sera 
+l'objet de la seconde section de ce chapitre.
 
 \subsection{Robots d\'eriv\'es et robot int\'egral}
 
-Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k$) sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrième (câble $l$) relié à celle-ci en un point ${\bf B}_2 \neq {\bf B}_1$. Il a été montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions nous retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations présentent des différences non négligeables du point de vue des propriétés du robot, tout autant au niveau du contrôle que des différents modèles géométriques et cinématiques. La question se pose alors de savoir s'il est plus pertinent d'adopter une démarche {\it top-down} consistant à rechercher les propriétés du robot $4-3-1$ et les décliner ensuite selon les situations, ou au contraire une démarche {\it bottom-up} qui partirait des propriétés spécifiques à chaque possibilité de configuration pour ensuite construire un fonctionnement global.
+Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k$) 
+sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrième 
+(câble $l$) relié à celle-ci en un point ${\bf B}_2 \neq {\bf B}_1$. Il a été 
+montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions nous 
+retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est 
+détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le 
+câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations 
+présentent des différences non négligeables du point de vue des propriétés du 
+robot, tout autant au niveau du contrôle que des différents modèles géométriques 
+et cinématiques. La question se pose alors de savoir s'il est plus pertinent 
+d'adopter une démarche {\it top-down} consistant à rechercher les propriétés du 
+robot $4-3-1$ et les décliner ensuite selon les situations, ou au contraire une 
+démarche {\it bottom-up} qui partirait des propriétés spécifiques à chaque 
+possibilité de configuration pour ensuite construire un fonctionnement global.
 
-Un second argument en faveur de cette interrogation est soulevé dans \cite{merlet2012}. Pour rappel, l'équilibre statique s'exprime par la formule suivante : $\mathcal {\bf F} = {\bf J}^{-T} {\bf \tau}$. Or, afin de déterminer les tensions dans les différents câbles, il faut inverser cette relation. Lorsque la matrice jacobienne n'est pas inversible ({\it a fortiori} lorsqu'elle n'est pas carrée), l'auteur montre que l'utilisation de la matrice pseudo-inverse n'est pas appropriée et donne des résultats qui peuvent être faux. On peut se demander dès lors si l'expression de cette première jacobienne est la plus pertinente, s'il n'existe pas une autre approche de la modélisation du robot qui en permettrait une meilleure intuition et utilisation.
+Un second argument en faveur de cette interrogation est soulevé 
+dans \cite{merlet2012}. Pour rappel, l'équilibre statique s'exprime par la 
+formule suivante : $\mathcal {\bf F} = {\bf J}^{-T} {\bf \tau}$. Or, afin de 
+déterminer les tensions dans les différents câbles, il faut inverser cette 
+relation. Lorsque la matrice jacobienne n'est pas inversible ({\it a fortiori} 
+lorsqu'elle n'est pas carrée), l'auteur montre que l'utilisation de la matrice 
+pseudo-inverse n'est pas appropriée et donne des résultats qui peuvent être 
+faux. On peut se demander dès lors si l'expression de cette première jacobienne 
+est la plus pertinente, s'il n'existe pas une autre approche de la modélisation 
+du robot qui en permettrait une meilleure intuition et utilisation.
 
 Soit $A^{n, m}$ un manipulateur parall\`ele \`a $m$ c\^ables d\'evelopp\'e pour 
 contr\^oler au plus $n$ degr\'es de libert\'es, que nous appellerons {\it 
@@ -464,9 +502,7 @@ Nous allons \`a pr\'esent voir successivement comment nous proposons
 d'am\'eliorer la stabilit\'e puis la pr\'ecision du manipulateur.
  
 
-\subsection{Am\'elioration de la stabilit\'e}
-
-
+\subsection{Am\'elioration de la stabilit\'e : minimiser les tensions}
 
 Am\'eliorer la stabilit\'e est primordial pour deux raisons :
 \begin{itemize}
@@ -485,30 +521,28 @@ fatalement \`a l'impossiblit\'e de poursuivre l'utilisation de l'asservissement
 visuel.
 \end{itemize} 
 
-
-\subsubsection{Minimiser la tension}
-
 Pour deux configurations donn\'ees, les tensions exerc\'ees sur les c\^ables de 
 chacune d'entre elles diff\`ereront.
 
 Prenons l'exemple du robot $4-1$ dont les points d'attache sont r\'epartis aux 
 quatre coins les plus hauts d'un cube d'un m\`etre de c\^ot\'e. Fixons un point 
-${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)^T$.
+${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)^T$ (Fig.\ref{chap01:fig3}).
 
 En ce point, deux configurations de c\^ables sont possibles : 
-$\overline{CC}_{013}$ et $\overline{CC}_{023}$. Ces deux configurations 
+$\overline{CC}_{013}$ (Fig.\ref{chap01:fig3view0}) et 
+$\overline{CC}_{023}$ (Fig.\ref{chap01:fig3view1}). Ces deux configurations 
 permettent de contr\^oler les trois degr\'es de libert\'es en translation.
 
 \begin{figure}[htp]
   \centering
- \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
-système de poulie actionnée par un moteur]{\label{chap01:fig3view0}
+ \subfloat[Le robot en configuration de 
+câbles $\overline{CC}_{013}$]{\label{chap01:fig3view0}
+ \def\svgwidth{.45\linewidth}
+ \input{./chapter01/figures/tension02.pdf_tex}} \hfill
+ \subfloat[Le robot en configuration de 
+câbles $\overline{CC}_{023}$]{\label{chap01:fig3view1}
  \def\svgwidth{.45\linewidth}
  \input{./chapter01/figures/tension01.pdf_tex}} 
- \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
-système de poulie actionnée par un moteur]{\label{chap01:fig3view1}
- \def\svgwidth{.45\linewidth}
- \input{./chapter01/figures/tension02.pdf_tex}} 
     \caption{\footnotesize{Les deux configurations de c\^ables possibles pour 
 une pose ${\bf B} = (0.2, 0.3, 0.8)^T$}}
 \label{chap01:fig3}
@@ -517,29 +551,32 @@ une pose ${\bf B} = (0.2, 0.3, 0.8)^T$}}
 Les jacobiennes inverses respectives sont :
 
 \begin{equation}
+\begin{split}
 {\bf J}^{-1}_{013} = 
 \begin{bmatrix}
 0.4851 & 0.7276 & -0.4851 \\
 -0.9117 & 0.3419 & -0.2279 \\
 0.2649 & -0.9272 & -0.2649
-\end{bmatrix},
-{\bf J}^{-1}_{023}
+\end{bmatrix}\\
+{\bf J}^{-1}_{023} = 
 \begin{bmatrix}
 0.4851 & 0.7276 & -0.4851 \\
 -0.7396 & -0.6472 & -0.1849 \\
 0.2649 & -0.9272 & -0.2649
 \end{bmatrix}
+\end{split}
 \label{chap01:eq05}
 \end{equation}
 
-En posant $m = 1/g$, nous avons ${\boldmath {\mathcal F}} = (0, 0, -1)^T$, ce qui 
+En posant $m = 1/g$, nous avons \boldmath ${\mathcal F} = (0, 0, -1)^T$, ce 
+qui 
 nous donne :
 
 \begin{equation}
 {\bf \tau}_{013} = 
 \begin{bmatrix}
-1.0308
-0.8775  
+1.0308 \\
+0.8775 \\
 1.1325
 \end{bmatrix},
 \quad
@@ -557,39 +594,47 @@ configuration \`a l'autre produit des variations de tensions discontinues,
 alors m\^eme que les deux configurations ont en commun deux c\^ables sur trois.
 
 De plus, la variance des tensions est plus importante pour la 
-configuration $\overline{CC}_{023}$, ce qui dénote une répartition in\'egale des efforts sur les câbles.
+configuration $\overline{CC}_{023}$, ce qui dénote une répartition in\'egale 
+des efforts sur les câbles.
 
 Nous proposons donc de consid\'erer la norme des tensions th\'eoriques 
 obtenues comme critère, et de choisir la configuration qui offre ainsi une meilleure 
 r\'epartition, soit dans ce cas $\overline{CC}_{023}$.
 
-Ainsi, en chaque pose, nous calculons pour toutes les configurations de câbles $\overline{CC}_i$ correspondant à une situation d'équilibre statique la mesure $\mathcal M_{\hbox{stab}_i}$ :
+Ainsi, en chaque pose, nous calculons pour toutes les configurations de câbles 
+$\overline{CC}_i$ correspondant à une situation d'équilibre statique la mesure 
+$\mathcal M_{\hbox{stab}_i}$ :
 
 \begin{equation}
-\mathcal M_{\hbox{stab}_i} = ||{\bf J}_i {\boldmath {\mathcal F}}||
+\mathcal M_{\hbox{stab}_i} = ||{\bf J}^T_i {\boldmath {\mathcal F}}||_2
 \label{chap01:eq07}
 \end{equation}
 
-Posons à présent ${\bf B} = (0.3,0.3,0.3)^T$. Dans ce cas, les deux configurations de câbles possibles sont $\overline{CC}_{013}$ et $CC_{02}$.
+Posons à présent ${\bf B} = (0.3,0.3,0.3)^T$. Dans ce cas, les deux 
+configurations de câbles possibles sont $\overline{CC}_{013}$ et $CC_{02}$.
 
 Les jacobiennes inverses correspondantes sont :
 
 \begin{equation}
+\begin{split}
 {\bf J}^{-1}_{013} = 
 \begin{bmatrix}
-0.3665 & 0.3665& & -0.8552 \\  
+0.3665 & 0.3665 & -0.8552 \\  
 -0.6767 & 0.2900 & -0.6767 \\  
 0.2900 & -0.6767 & -0.6767
-\end{bmatrix},
-{\bf J}^{-1}_{02}
+\end{bmatrix} \\
+{\bf J}^{-1}_{02} = 
 \begin{bmatrix}
 0.3665 & 0.3665 & -0.8552 \\  
 -0.5774 & -0.5774 & -0.5774
 \end{bmatrix}
+\end{split}
 \label{chap01:eq08}
 \end{equation}
 
-En utilisant pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de câbles $CC_{01}$ la pseudo-inverse de Moore-Penrose pour calculer les tensions théoriques correspondantes, nous obtenons :
+En utilisant pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de 
+câbles $CC_{01}$ la pseudo-inverse de Moore-Penrose pour calculer les tensions 
+théoriques correspondantes, nous obtenons :
 
 \begin{equation}
 {\bf \tau}_{013} = 
@@ -607,27 +652,247 @@ En utilisant pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de c
 \label{chap01:eq09}
 \end{equation}
 
-Les mesures respectives sont $\mathcal M_{\hbox {stab}_{013}} = 0.7822$ et $\mathcal M_{\hbox {stab}_{02}} = 0.9695$, soit une sélection de la configuration $\overline{CC}_{013}$.
+\begin{figure}[!htp]
+  \centering
+  \centering
+      \subfloat[R\'egions pour lesquelles le crit\`ere 
+prend sa valeur minimale avec $Z = 0.5$ (256 points)]{\label{chap01:fig4view0}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab04.png}} 
+\hfill
+    \subfloat[D\'ecoupage de l'espace de travail en 
+fonction du crit\`ere de stabilit\'e avec $Z = 0.5$]{\label{chap01:fig4view1}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab05.png}} 
+\\
+      \subfloat[Evolution du crit\`ere sur l'espace de 
+travail avec $Z = 0.5$ (vue 3D)]{\label{chap01:fig4view2}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab02.png}} 
+\hfill
+    \subfloat[Evolution du crit\`ere sur l'espace de 
+travail avec $Z = 0.5$ (vue 2D)]{\label{chap01:fig4view3}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab03.png}}
+    \caption{\footnotesize Les deux figures en haut montrent comment (pour 
+$Z = 0.5$) l'espace de travail est r\'eparti entre les sous-robots associ\'es 
+aux configurations de c\^ables $\overline{CC}_i$: en rouge la configuration 
+$\overline{CC}_{012}$, en vert la configuration $\overline{CC}_{013}$, en blue 
+la configuration $\overline{CC}_{023}$ et en jaune la configuration 
+$\overline{CC}_{123}$. Les figures du bas montrent (toujours pour $Z = 0.5$) 
+l'\'evolution du crit\`ere $\mathcal M_{\hbox{stab}}$ sur l'essentiel de 
+l'espace de travail.}
+\label{chap01:fig4}
+\end{figure}
 
-\subsubsection{Illustration}
+Les mesures respectives sont $\mathcal M_{\hbox {stab}_{013}} = 0.7822$ et 
+$\mathcal M_{\hbox {stab}_{02}} = 0.9695$, soit une sélection de la 
+configuration $\overline{CC}_{013}$.
 
-\subsection{Am\'elioration de la pr\'ecision}
+Toutes ces mesures pouvant être réalisées en amont, elles n'impactent pas le 
+temps de calcul de la commande. Ainsi, pour notre robot $4-1$ cubique, pour une 
+valeur de $Z = 0.5$ fixée, les figures (\ref{chap01:fig4view0} et
+\ref{chap01:fig4view1}) montrent quelle configuration de câbles sera 
+privilégiée en tout point de l'espace de travail, et  les figures 
+(\ref{chap01:fig4view2} et \ref{chap01:fig4view3}) l'évolution du critère sur 
+l'ensemble de celui-ci.
 
+\subsection{Am\'elioration de la pr\'ecision : minimiser l'influence des 
+incertitudes articulaires}
 
-\subsubsection{Crit\`eres}
+La pr\'ecision actuelle du {\tt Marionet-Assist} sur lequel nous avons 
+conduits nos exp\'erimentations n'exc\`ede pas $0.10m$ pour 
+un espace de travail d'approximativement $3mx3mx4m$. Nous avons en effet 
+entrepris de placer le manipulateur dans une pose pr\'ealablement d\'ecid\'ee, 
+puis execut\'e deux aller-retours en mesurant les \'ecarts avec la position 
+initiale une fois les retours accomplis. Les r\'esultats -- que l'on peut lire 
+dans le tableau \ref{chap01:tab01} -- montrent que l'on atteint rapidement une 
+erreur dont la norme $L^2$ est de $0.048m$. Rapport\'e \`a la taille de 
+l'espace de travail, une telle pr\'ecision est plut\^ot performante, et 
+satisfait les exigences requises pour l'usage originel du manipulateur. 
+Toutefois, d\`es lors que nous avons entrepris d'ajouter des fonctionnalit\'es 
+de manipulation d'objets du quotidien, la pr\'ecision requise doit \^etre 
+inf\'erieure \`a $0.01cm$. Nous verrons dans le chapitre suivant que 
+l'asservissement visuel permet une telle am\'elioration des performances du 
+robot, mais \'egalement que la qualit\'e de l'asservissement d\'epend de la 
+configuration de c\^ables dans laquelle on se trouve. En effet, une incertitude 
+sur les longueurs et leurs variations aura un effet sur la trajectoire et le 
+positionnement. M\^eme si l'utilisation de l'asservissement en boucle 
+ferm\'ee permettra de corriger ces erreurs, il est \'evidemment souhaitable de 
+pouvoir les minimiser en amont, de mani\`ere \`a ce que l'utilisation de la 
+vision permette des corrections mineures pour des trajectoires stables.  
 
-\subsubsection{Illustration}
+\begin{table}[!h]
+\begin{tabularx}{0.95\linewidth}{|p{0.15\linewidth}|X|X|X|}
+\hline
+& $X-1 $ & $X^-2$ & $X^-3$ \\
+\hline
+position(m) & (1.53,1.00,1.21) & (1.51,1.00,1.23) & (1.57,1.02,1.19)\\
+\hline
+error(m) & (0,0,0) & (-0.02,0.00,0.02) & (0.04,0.02,-0.02) \\
+\hline
+\end{tabularx}
+\caption{La position ${\bf X}_1$ correspond \`a la position initiale, la 
+position ${\bf X}_2$ \`a la position atteinte apr\`es un premier aller-retour 
+(vers un point ${\bf Y} = (2.03,1.00,1.21)$), ${\bf X}_2$ la position apr\`es 
+le second aller-retour.} 
+\label{chap01:tab01}
+\end{table}
 
-\section{Algorithme de s\'election de configurations de c\^ables}
+Pour deux configurations de c\^ables donn\'ees, nous d\'efinissons la 
+pr\'ecision associ\'ee comme l'erreur maximale sur la pose pour une incertitude 
+sur les longueurs des c\^ables donn\'ee. Autrement dit, il s'agit de 
+caract\'eriser l'influence des incertitudes articulaires sur les performances 
+op\'erationnelles.
 
-\cite{ramadour2014}
+Pour cela, nous utilisons la relation suivante :
+\begin{equation}
+\Delta {\bf X} = {\bf J} \Delta {\bf \Theta}
+\label{chap01:eq10}
+\end{equation}
 
+Entre deux configurations de c\^ables, nous souhaitons privil\'egier celle dont 
+l'erreur maximale sur la pose en fonction de l'incertitude sur les longueurs de 
+c\^ables sera inf\'erieure \`a toutes les autres.
+
+Notre second crit\`ere devrait donc \^etre, avec $\delta {\bf \Theta}$ une 
+incertitude maximale fix\'ee sur les coordonn\'ees articulaires :
+\begin{equation}
+\mathcal M_{\hbox{acc}} = ||{\bf J}  \delta {\bf \Theta} ||_{\infty}
+\label{chap01:eq11}
+\end{equation}
+que nous chercherons \`a minimiser
+
+Sinon reprenons l'exemple utilis\'e dans la section pr\'ec\'edente au point 
+${\bf B} = (0.2,0.3,0.8)^T$, et que nous fixons $\delta \Theta$ \`a $0.10$m 
+pour chacun des c\^ables\footnote{en pratique, la valeur de $\delta \Theta$ 
+importe peu et peut-\^etre fix\'ee \`a un scalaire non-nul pr\`es 
+puisque nous n'utilisons la relation que dans un objectif de comparaison.}, 
+nous obtenons pour les configurations $\overline{CC}_{013}$ et 
+$\overline{CC}_{023}$ respectivement :
+$$\mathcal M_{\hbox{acc}_{013}} = ||(-0.0465, -0.0343, -0.3041)^T||_{\max} = 
+0.3041$$ 
+$$\mathcal M_{\hbox{acc}_{023}} = ||(-0.0327,-0.0343,-0.2902)^T||_{\max} = 
+0.2902$$
+
+L'erreur maximale est donc r\'ealis\'ee en profondeur, ce qui s'explique 
+notamment par le fait que nous supposons les oppositions de forces se 
+manifestent dans la jacobienne dans le plan, mais pas en profondeur car c'est la 
+gravit\'e qui agit alors dans ce cas, et elle n'intervient pas dans la 
+d\'efinition de la jacobienne.
+
+D\`es lors, nous nous retrouvons ici avec un biais que nous corrigerons en ne 
+consid\'erant que les erreurs de positionnement dans le plan, \'emettant donc 
+l'hypoth\`ese que les erreurs sur la profondeur leur seront homog\`ene.
+
+\begin{figure}[!htp]
+  \centering
+  \centering
+      \subfloat[R\'egions pour lesquelles le crit\`ere 
+prend sa valeur minimale avec $Z = 0.5$ (256 points)]{\label{chap01:fig5view0}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc04.png}} 
+\hfill
+    \subfloat[D\'ecoupage de l'espace de travail en 
+fonction du crit\`ere de pr\'ecision avec $Z = 0.5$]{\label{chap01:fig5view1}
+\includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc05.png}} \\
+      \subfloat[Evolution du crit\`ere sur l'espace de 
+travail avec $Z = 0.5$ (vue 3D)]{\label{chap01:fig5view2}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc02.png}} 
+\hfill
+    \subfloat[Evolution du crit\`ere sur l'espace de 
+travail avec $Z = 0.5$ (vue 2D)]{\label{chap01:fig5view3}
+    \includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc03.png}}
+    \caption{\footnotesize Les deux figures en haut montrent comment (pour 
+$Z = 0.5$) l'espace de travail est r\'eparti entre les sous-robots associ\'es 
+aux configurations de c\^ables $\overline{CC}_i$: en rouge la configuration 
+$\overline{CC}_{012}$, en vert la configuration $\overline{CC}_{013}$, en blue 
+la configuration $\overline{CC}_{023}$ et en jaune la configuration 
+$\overline{CC}_{123}$. Les figures du bas montrent (toujours pour $Z = 0.5$) 
+l'\'evolution du crit\`ere $\mathcal M_{\hbox{acc}}$ sur l'essentiel de 
+l'espace de travail.}
+\label{chap01:fig5}
+\end{figure}
+
+Le second crit\`ere est alors
+\begin{equation}
+\mathcal M_{\hbox{acc}} = \max_{x,y} |{\bf J} \delta {\bf \Theta}|
+\label{chap01:eq11}
+\end{equation}
+
+Dans ce cadre, $\mathcal M_{\hbox{acc}_{013}} = 0.0465$ et 
+$\mathcal M_{\hbox{acc}_{023}} = 0.0343$, ce qui revient \`a s\'electionner la 
+configuration $\overline{CC}_{023}$ (ce qui \'etait d\'ej\`a le cas lorsque 
+nous consid\'erions les erreurs sur la profondeur \`a partir de la relation 
+\ref{chap01:eq10}).
+
+Pour le point ${\bf B} = (0.3,.3,0.3)^T)$ dont les configurations de c\^ables 
+possibles sont $\overline{CC}_{013}$ et $CC_{02}$, nous avons :
+$$\mathcal M_{\hbox{acc}_{013}} = \max_{x,y} |(-0.0216,-0.0216,-0.1354)^T| = 
+0.0216$$ 
+$$\mathcal M_{\hbox{acc}_{02}} = \max_{x,y} |( -0.0197, -0.0197, -0.1338)^T| 
+= 0.0197$$
+
+Ici, la configuration $CC_{02}$ est pr\'ef\'er\'ee. Il s'agit toutefois d'un 
+crit\`ere \'etabli pour une pose donn\'ee, alors que nous \'evolutons dans le 
+cadre d'une trajectoire. Dans l'algorithme final qui sera pr\'esent\'e et 
+illustr\'e en fin de chapitre, nous ajouterons une p\'enalit\'e \`a tout 
+changement de configuration. Ainsi, si la trajectoire se d\'eroule dans notre 
+cas int\'egralement dans le plan issu de la diagonale ${\bf A}_0{\bf A}_2$, il 
+y aura du sens \`a rester dans certaines situations dans la configuration de 
+c\^ables qui en est issue ; dans le cas contraire la p\'enalit\'e de transfert 
+devrait conduire \`a basculer (ou rester) en configuration 
+$\overline{CC}_{013}$.
+
+Nous pouvons observer en (Fig.\ref{chap01:fig5}) la r\'epartition de l'espace 
+de travail pour chaque sous-robot, ainsi que l'\'evolution du crit\'ere. 
+Contrairement au crit\`ere de stabilit\'e, nous trouvons de nombreux transferts 
+de type marginaux. Les figures (\ref{chap01:fig5view0} et 
+\ref{chap01:fig5view1}) montrent en particulier que la pr\'ecision augmente 
+d'autant plus que nous nous rapprochons du centre de l'espace de travail, ce qui 
+n'\'etait pas le cas dans le cas de la recherche de stabilit\'e. Pour une 
+incertitude de l'ordre de $0.10m$, nous avons mesur\'e sur l'espace de travail 
+une moyenne de $0.0283m$ avec la s\'election de configurations de c\^ables, pour 
+une moyenne de $0.0322m$ en nous basant sur le {\it pire des cas} (\`a savoir la 
+plus mauvaise configuration de c\^ables en chaque point ; 1 chance sur 2 dans le 
+cas du $4-1$ qui poss\`ede en chaque pose deux configurations possibles).
+
+\section{Certification de la m\'ethode}
+
+Nous avons jusqu'ici consid\'er\'e que nous connaissions avec pr\'ecision la 
+pose de l'organe terminal et donc des longueurs de c\^ables associ\'ees. En 
+particulier, m\^eme lorsque nous avons observ\'e les influences des 
+incertitudes sur les coordonn\'ees articulaires sur la pose, les 
+valeurs des jacobiennes utilis\'ees (qui d\'epend \`a la fois de la pose et des 
+longueurs de c\^ables)) supposaient une exactitude parfaite des diff\'erentes 
+coordonn\'ees. Dans le m\^eme temps, nous avons pu observer que cette 
+hypoth\`ese n'\'etait pas tenable pour deux raisons :
+\begin{itemize}
+ \item la pose n'est connue qu'\`a une certaine impr\'ecision pr\`es, que nous 
+pouvons certes am\'eliorer, mais qui implique n\'eanmoins que nous devions la 
+prendre en compte dans l'ensemble des calculs
+\item pr\`es des zones de transferts, une erreur de pose peut conduire \`a un 
+changement de configuration de c\^able ind\'esirable, et nous faire perdre donc 
+les avantages gagn\'es jusqu'ici.
+\end{itemize}
+
+De plus, nous avons consid\'er\'e un robot id\'eal, dont nous connaissons 
+parfaitement les points d'attaches formant un carr\'e parfait. Or, les robots 
+parall\`eles \`a c\^ables et les {\tt Marionet} en particulier pr\'esentent 
+l'avantage de pouvoir \^etre rapidement d\'eploy\'es du fait de la 
+l\'eg\`eret\'e de l'\'equipement -- c'est le cas par exemple des robots con\c 
+cus pour des interventions en situations de catastrophes naturelles -- et donc 
+pouvoir s'adapter \`a leurs environnements. Nous devons donc ajouter des 
+incertitudes sur les points d'attache, sans quoi nous ne serions pas robustes 
+aux variabilit\'es des environnements.
+
+Afin de compl\'eter la m\'ethode, nous devons donc nous assurer que les 
+r\'esultats sont valides malgr\'e les diff\'erentes incertitudes et 
+impr\'ecisions. Il s'agit d\`es lors de {\it garantir} notre algorithme. Nous 
+avons pour cela utilis\'e l'analyse par intervalles dont nous allons pr\'esenter 
+les caract\'eristiques principales.
 
 \subsection{L'analyse par intervalles}
 
+
+
+
+
 \subsection{Algorithme}
 
-\subsection{R\'esultats th\'eoriques}
-
-
-J2 = [0.4851, 0.7276, -0.4851; -0.7396 , -0.6472, -0.1849; 0.2649 , -0.9272 , -0.2649]
+\subsection{Illustrations}
