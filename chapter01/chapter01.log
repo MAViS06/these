@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.9.16)  24 SEP 2014 14:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.9.16)  25 SEP 2014 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8406,7 +8406,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.169 d'adopter une démarche {\it
+l.170 d'adopter une démarche {\it
                                    top-down} consistant à rechercher les pr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8532,7 +8532,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.171 démarche {\it
+l.172 démarche {\it
                      bottom-up} qui partirait des propriétés spécifiques ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8668,117 +8668,117 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 159--173
+Overfull \hbox (20.0pt too wide) in paragraph at lines 159--174
 []
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 4 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 3 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 4$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 3$
  []
 
 
-Overfull \hbox (21.98973pt too wide) in paragraph at lines 159--173
+Overfull \hbox (21.98973pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 i; j; k$
  []
 
 
-Overfull \hbox (12.07121pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.07121pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 B[]$
  []
 
 
-Overfull \hbox (3.18057pt too wide) in paragraph at lines 159--173
+Overfull \hbox (3.18057pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 l$
  []
 
 
-Overfull \hbox (22.62672pt too wide) in paragraph at lines 159--173
+Overfull \hbox (22.62672pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 6\/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (12.07121pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.07121pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 B[]$
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 159--174
 []
  []
 
 
-Overfull \hbox (12.58003pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.58003pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 i; j$
  []
 
 
-Overfull \hbox (5.52084pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.52084pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 k$
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 3 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 2 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (3.18057pt too wide) in paragraph at lines 159--173
+Overfull \hbox (3.18057pt too wide) in paragraph at lines 159--174
 \OML/cmm/m/it/10 l$
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 3 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 4 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--173
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 3 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--173
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 159--174
 \/cmr/m/n/10 1$
  []
 
@@ -8846,7 +8846,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.175 dans \cite{merlet2012}
+l.176 dans \cite{merlet2012}
                             . Pour rappel, l'équilibre statique s'exprime p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8855,7 +8855,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `merlet2012' on page  undefined on input line 175.
+LaTeX Warning: Citation `merlet2012' on page  undefined on input line 176.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -8923,7 +8923,7 @@ Missing character: There is no : in font nullfont!
 ! Undefined control sequence.
 <argument> \bf 
                F
-l.176 formule suivante : $\mathcal {\bf F}
+l.177 formule suivante : $\mathcal {\bf F}
                                            = {\bf J}^{-T} {\bf \tau}$. Or, a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8932,7 +8932,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.176 formule suivante : $\mathcal {\bf F} = {\bf
+l.177 formule suivante : $\mathcal {\bf F} = {\bf
                                                   J}^{-T} {\bf \tau}$. Or, a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8941,7 +8941,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.176 ...e : $\mathcal {\bf F} = {\bf J}^{-T} {\bf
+l.177 ...e : $\mathcal {\bf F} = {\bf J}^{-T} {\bf
                                                    \tau}$. Or, afin de
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9081,7 +9081,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
-l.178 ...ice jacobienne n'est pas inversible ({\it
+l.179 ...ice jacobienne n'est pas inversible ({\it
                                                    a fortiori}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9431,22 +9431,22 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 174--184
+Overfull \hbox (20.0pt too wide) in paragraph at lines 175--185
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 174--184
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 175--185
 []
  []
 
 
-Overfull \hbox (18.73604pt too wide) in paragraph at lines 174--184
+Overfull \hbox (18.73604pt too wide) in paragraph at lines 175--185
 \OMS/cmsy/m/n/10 F \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (24.56009pt too wide) in paragraph at lines 174--184
+Overfull \hbox (24.56009pt too wide) in paragraph at lines 175--185
 \OML/cmm/m/it/10 J[]^^\$
  []
 
@@ -9540,7 +9540,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.186 ... de libert\'es, que nous appellerons {\it
+l.187 ... de libert\'es, que nous appellerons {\it
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9581,7 +9581,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no a in font nullfont!
 ! Undefined control sequence.
-l.187 .... Le couple ${n, m}$ repr\'esente la {\it
+l.188 .... Le couple ${n, m}$ repr\'esente la {\it
                                                    signature} du robot et
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9623,7 +9623,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
 ! Undefined control sequence.
-l.188 sera ici appel\'ee sa {\it
+l.189 sera ici appel\'ee sa {\it
                                  signature maximale}.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9650,72 +9650,72 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 185--189
+Overfull \hbox (20.0pt too wide) in paragraph at lines 186--190
 []
  []
 
 
-Overfull \hbox (22.41446pt too wide) in paragraph at lines 185--189
+Overfull \hbox (22.41446pt too wide) in paragraph at lines 186--190
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 185--189
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Re
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 185--189
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (8.78014pt too wide) in paragraph at lines 185--189
+Overfull \hbox (8.78014pt too wide) in paragraph at lines 186--190
 \OML/cmm/m/it/10 m$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 185--189
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 185--189
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 185--189
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^o
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 185--189
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 186--190
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 185--189
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 185--189
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (19.2269pt too wide) in paragraph at lines 185--189
+Overfull \hbox (19.2269pt too wide) in paragraph at lines 186--190
 []$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 185--189
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 185--189
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 186--190
 \/cmr/m/n/10 ^^Se
  []
 
@@ -9764,12 +9764,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (24.44444pt too wide) in paragraph at lines 190--191
+Overfull \hbox (24.44444pt too wide) in paragraph at lines 191--192
 []\/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (10.83334pt too wide) in paragraph at lines 190--191
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 191--192
 \OML/cmm/m/it/10 W$
  []
 
@@ -9843,22 +9843,22 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 192--194
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 193--195
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (10.83334pt too wide) in paragraph at lines 192--194
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 193--195
 \OML/cmm/m/it/10 W$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 192--194
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 193--195
 \/cmr/m/n/10 ^a
  []
 
 ! Undefined control sequence.
-l.194   \item {\it
+l.195   \item {\it
                    concr\^et} si pour toute pose de $W$ l'ensemble des c\^ab...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9921,22 +9921,22 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 194--196
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 195--197
 \/cmr/m/n/10 ^e
  []
 
 
-Overfull \hbox (10.83334pt too wide) in paragraph at lines 194--196
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 195--197
 \OML/cmm/m/it/10 W$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 194--196
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 195--197
 \/cmr/m/n/10 ^a
  []
 
 ! Undefined control sequence.
-l.196   \item {\it
+l.197   \item {\it
                    abstrait} si il n'existe aucune pose dans $W$ telle que l...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10018,12 +10018,12 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 
-Overfull \hbox (10.83334pt too wide) in paragraph at lines 196--198
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 197--199
 \OML/cmm/m/it/10 W$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 196--198
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 197--199
 \/cmr/m/n/10 ^a
  []
 
@@ -10068,7 +10068,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.200 ... une première op\'eration appel\'ee {\it
+l.201 ... une première op\'eration appel\'ee {\it
                                                    concr\^etisation}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10177,57 +10177,57 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 200--203
+Overfull \hbox (20.0pt too wide) in paragraph at lines 201--204
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^e
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 200--203
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (23.32924pt too wide) in paragraph at lines 200--203
+Overfull \hbox (23.32924pt too wide) in paragraph at lines 201--204
 \OML/cmm/m/it/10 W[] \OMS/cmsy/m/n/10 ^^Z
  []
 
 
-Overfull \hbox (10.83334pt too wide) in paragraph at lines 200--203
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 201--204
 \OML/cmm/m/it/10 W$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^e
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 200--203
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 201--204
 \/cmr/m/n/10 ^e 
  []
 
@@ -10316,7 +10316,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.205 possibles. Nous appelons alors {\it
+l.206 possibles. Nous appelons alors {\it
                                           sous-robot} $A_i$ associ\'e \`a la
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10495,87 +10495,87 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 204--209
+Overfull \hbox (20.0pt too wide) in paragraph at lines 205--210
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 204--209
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (10.8293pt too wide) in paragraph at lines 204--209
+Overfull \hbox (10.8293pt too wide) in paragraph at lines 205--210
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 204--209
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (18.33899pt too wide) in paragraph at lines 204--209
+Overfull \hbox (18.33899pt too wide) in paragraph at lines 205--210
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 204--209
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 204--209
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 204--209
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^e
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 204--209
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 204--209
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 205--210
 \/cmr/m/n/10 ^e 
  []
 
@@ -10667,7 +10667,7 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.212 {\it
+l.213 {\it
            d\'eriv\'e} de $A_j$. S'il existe un ensemble $CC_\alpha$ et un r...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10749,7 +10749,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.214 ...\forall CC_k \notin CC_alpha, CC_i \nless
+l.215 ...\forall CC_k \notin CC_alpha, CC_i \nless
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10782,7 +10782,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.215 ... alors on dira de $A_j$ qu'il est un {\it
+l.216 ... alors on dira de $A_j$ qu'il est un {\it
                                                    robot int\'egral} des robots
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10844,152 +10844,152 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 210--217
+Overfull \hbox (20.0pt too wide) in paragraph at lines 211--218
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 210--217
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (18.33899pt too wide) in paragraph at lines 210--217
+Overfull \hbox (18.33899pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (19.22327pt too wide) in paragraph at lines 210--217
+Overfull \hbox (19.22327pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (28.8945pt too wide) in paragraph at lines 210--217
+Overfull \hbox (28.8945pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[] <
  []
 
 
-Overfull \hbox (19.22327pt too wide) in paragraph at lines 210--217
+Overfull \hbox (19.22327pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (10.8293pt too wide) in paragraph at lines 210--217
+Overfull \hbox (10.8293pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 210--217
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 210--217
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (18.33899pt too wide) in paragraph at lines 210--217
+Overfull \hbox (18.33899pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 210--217
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 210--217
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (11.71358pt too wide) in paragraph at lines 210--217
+Overfull \hbox (11.71358pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (20.70847pt too wide) in paragraph at lines 210--217
+Overfull \hbox (20.70847pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (11.71358pt too wide) in paragraph at lines 210--217
+Overfull \hbox (11.71358pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 210--217
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 210--217
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 210--217
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (19.22327pt too wide) in paragraph at lines 210--217
+Overfull \hbox (19.22327pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (33.33896pt too wide) in paragraph at lines 210--217
+Overfull \hbox (33.33896pt too wide) in paragraph at lines 211--218
 \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 CC[] \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (72.44556pt too wide) in paragraph at lines 210--217
+Overfull \hbox (72.44556pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]lpha; CC[] <
  []
 
 
-Overfull \hbox (19.22327pt too wide) in paragraph at lines 210--217
+Overfull \hbox (19.22327pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$
  []
 
 
-Overfull \hbox (34.92984pt too wide) in paragraph at lines 210--217
+Overfull \hbox (34.92984pt too wide) in paragraph at lines 211--218
 \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 CC[] []
  []
 
 
-Overfull \hbox (81.11331pt too wide) in paragraph at lines 210--217
+Overfull \hbox (81.11331pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]lpha; CC[]CC[]$
  []
 
 
-Overfull \hbox (11.71358pt too wide) in paragraph at lines 210--217
+Overfull \hbox (11.71358pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 210--217
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 210--217
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 210--217
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 211--218
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (27.78339pt too wide) in paragraph at lines 210--217
+Overfull \hbox (27.78339pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[] \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (20.70847pt too wide) in paragraph at lines 210--217
+Overfull \hbox (20.70847pt too wide) in paragraph at lines 211--218
 \OML/cmm/m/it/10 CC[]$ 
  []
 
@@ -11274,127 +11274,127 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 218--224
+Overfull \hbox (20.0pt too wide) in paragraph at lines 219--225
 []
  []
 
 
-Overfull \hbox (10.8293pt too wide) in paragraph at lines 218--224
+Overfull \hbox (10.8293pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 218--224
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 218--224
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^e^^Se
  []
 
 
-Overfull \hbox (12.77373pt too wide) in paragraph at lines 218--224
+Overfull \hbox (12.77373pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 W[]$
  []
 
 
-Overfull \hbox (10.8293pt too wide) in paragraph at lines 218--224
+Overfull \hbox (10.8293pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (11.71358pt too wide) in paragraph at lines 218--224
+Overfull \hbox (11.71358pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (23.32924pt too wide) in paragraph at lines 218--224
+Overfull \hbox (23.32924pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 W[] \OMS/cmsy/m/n/10 ^^Z
  []
 
 
-Overfull \hbox (13.658pt too wide) in paragraph at lines 218--224
+Overfull \hbox (13.658pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 W[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 218--224
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (10.8293pt too wide) in paragraph at lines 218--224
+Overfull \hbox (10.8293pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (22.07637pt too wide) in paragraph at lines 218--224
+Overfull \hbox (22.07637pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 (\OML/cmm/m/it/10 p; q\/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (4.8229pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.8229pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 q$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 218--224
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 218--224
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^o
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 218--224
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 218--224
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (5.03125pt too wide) in paragraph at lines 218--224
+Overfull \hbox (5.03125pt too wide) in paragraph at lines 219--225
 \OML/cmm/m/it/10 p$
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 218--224
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 219--225
 \/cmr/m/n/10 ^a 
  []
 
@@ -11872,92 +11872,92 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 225--234
+Overfull \hbox (20.0pt too wide) in paragraph at lines 226--235
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 225--234
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Re
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 225--234
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^e
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 225--234
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 225--234
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Ra
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 225--234
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 225--234
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 226--235
 \/cmr/m/n/10 ^a 
  []
 
@@ -12156,72 +12156,72 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 235--239
+Overfull \hbox (20.0pt too wide) in paragraph at lines 236--240
 []
  []
 
 
-Overfull \hbox (8.88889pt too wide) in paragraph at lines 235--239
+Overfull \hbox (8.88889pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^e
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Re
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Re
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 235--239
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 236--240
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 240--240
+Overfull \hbox (20.0pt too wide) in paragraph at lines 241--241
 [] 
  []
 
 ! Undefined control sequence.
-l.241  \item {\it
+l.242  \item {\it
                   d\'erivateur} : soient $A_i$ et $A_j$ tels que le premier ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12280,7 +12280,7 @@ Missing character: There is no , in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.242 du second, et ${\bf
+l.243 du second, et ${\bf
                           J}^{-1}_i$, ${\bf J}^{-1}_j$ leurs matrices jacobi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12290,7 +12290,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.242 du second, et ${\bf J}^{-1}_i$, ${\bf
+l.243 du second, et ${\bf J}^{-1}_i$, ${\bf
                                             J}^{-1}_j$ leurs matrices jacobi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12352,7 +12352,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.243 inverses respectives ; on appelle {\it
+l.244 inverses respectives ; on appelle {\it
                                              d\'erivateur} la matrice ${\bf ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12379,7 +12379,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.243 ...pelle {\it d\'erivateur} la matrice ${\bf
+l.244 ...pelle {\it d\'erivateur} la matrice ${\bf
                                                    D}$ telle
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12396,7 +12396,7 @@ Missing character: There is no q in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.244 que $ {\bf
+l.245 que $ {\bf
                  D} {\bf J}^{-1}_j = {\bf J}^{-1}_i$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12405,7 +12405,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 que $ {\bf D} {\bf
+l.245 que $ {\bf D} {\bf
                          J}^{-1}_j = {\bf J}^{-1}_i$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12414,7 +12414,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.244 que $ {\bf D} {\bf J}^{-1}_j = {\bf
+l.245 que $ {\bf D} {\bf J}^{-1}_j = {\bf
                                           J}^{-1}_i$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12424,57 +12424,57 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 241--245
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 242--246
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (10.8293pt too wide) in paragraph at lines 241--245
+Overfull \hbox (10.8293pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (11.71358pt too wide) in paragraph at lines 241--245
+Overfull \hbox (11.71358pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 241--245
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 242--246
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (17.24309pt too wide) in paragraph at lines 241--245
+Overfull \hbox (17.24309pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 J[]$
  []
 
 
-Overfull \hbox (17.24309pt too wide) in paragraph at lines 241--245
+Overfull \hbox (17.24309pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 J[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 241--245
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 242--246
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (8.55695pt too wide) in paragraph at lines 241--245
+Overfull \hbox (8.55695pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 D$
  []
 
 
-Overfull \hbox (36.35555pt too wide) in paragraph at lines 241--245
+Overfull \hbox (36.35555pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 DJ[] \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (17.24309pt too wide) in paragraph at lines 241--245
+Overfull \hbox (17.24309pt too wide) in paragraph at lines 242--246
 \OML/cmm/m/it/10 J[]$ 
  []
 
 ! Undefined control sequence.
-l.245  \item {\it
+l.246  \item {\it
                   int\'egrateurs} : soit $A_j$ un robot int\'egral des robots
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12532,7 +12532,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.246 $A_{i_1}, \dots, A_{i_p}$ ; on appelle {\it
+l.247 $A_{i_1}, \dots, A_{i_p}$ ; on appelle {\it
                                                   int\'egrateurs} les matrices
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12563,7 +12563,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.247 ${\bf
+l.248 ${\bf
             I}_1, \dots {\bf I}_p$ tels que $\sum_{k=1}^p {\bf I}_k {\bf J}^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12572,7 +12572,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.247 ${\bf I}_1, \dots {\bf
+l.248 ${\bf I}_1, \dots {\bf
                              I}_p$ tels que $\sum_{k=1}^p {\bf I}_k {\bf J}^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12588,7 +12588,7 @@ Missing character: There is no q in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.247 ...ts {\bf I}_p$ tels que $\sum_{k=1}^p {\bf
+l.248 ...ts {\bf I}_p$ tels que $\sum_{k=1}^p {\bf
                                                    I}_k {\bf J}^{-1}_k =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12597,7 +12597,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.247 ..._p$ tels que $\sum_{k=1}^p {\bf I}_k {\bf
+l.248 ..._p$ tels que $\sum_{k=1}^p {\bf I}_k {\bf
                                                    J}^{-1}_k =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12606,7 +12606,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.248 {\bf
+l.249 {\bf
            J}^{-1}_j$, avec ${\bf J}^{-1}_k$ les matrices jacobiennes inverses
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12620,7 +12620,7 @@ Missing character: There is no v in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no c in font nullfont!
 ! Undefined control sequence.
-l.248 {\bf J}^{-1}_j$, avec ${\bf
+l.249 {\bf J}^{-1}_j$, avec ${\bf
                                   J}^{-1}_k$ les matrices jacobiennes inverses
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12680,57 +12680,57 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 245--250
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 246--251
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (11.71358pt too wide) in paragraph at lines 245--250
+Overfull \hbox (11.71358pt too wide) in paragraph at lines 246--251
 \OML/cmm/m/it/10 A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 245--250
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 246--251
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (51.98204pt too wide) in paragraph at lines 245--250
+Overfull \hbox (51.98204pt too wide) in paragraph at lines 246--251
 \OML/cmm/m/it/10 A[]; [] ; A[]$
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 245--250
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 246--251
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (35.67781pt too wide) in paragraph at lines 245--250
+Overfull \hbox (35.67781pt too wide) in paragraph at lines 246--251
 \OML/cmm/m/it/10 I[]; [] I[]$
  []
 
 
-Overfull \hbox (64.38203pt too wide) in paragraph at lines 245--250
+Overfull \hbox (64.38203pt too wide) in paragraph at lines 246--251
 [][] \OML/cmm/m/it/10 I[]J[] \/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (17.24309pt too wide) in paragraph at lines 245--250
+Overfull \hbox (17.24309pt too wide) in paragraph at lines 246--251
 \OML/cmm/m/it/10 J[]$
  []
 
 
-Overfull \hbox (17.24309pt too wide) in paragraph at lines 245--250
+Overfull \hbox (17.24309pt too wide) in paragraph at lines 246--251
 \OML/cmm/m/it/10 J[]$
  []
 
 
-Overfull \hbox (15.20087pt too wide) in paragraph at lines 245--250
+Overfull \hbox (15.20087pt too wide) in paragraph at lines 246--251
 \OML/cmm/m/it/10 A[]$ 
  []
 
 ! Undefined control sequence.
-l.253 \subsection
+l.254 \subsection
                  {Illustration avec le robot {\tt Marionet-Assist}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12762,7 +12762,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.253 \subsection{Illustration avec le robot {\tt
+l.254 \subsection{Illustration avec le robot {\tt
                                                   Marionet-Assist}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12786,13 +12786,13 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 253--254
+Overfull \hbox (20.0pt too wide) in paragraph at lines 254--255
 []
  []
 
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 255--256
+Overfull \hbox (20.0pt too wide) in paragraph at lines 256--257
 [] 
  []
 
@@ -12803,7 +12803,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.257 \begin{figure}
+l.258 \begin{figure}
                     [!ht]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12824,7 +12824,7 @@ Enter file name:
 ! Emergency stop.
 <read *> 
          
-l.260   \input{./chapter01/figures/CC_41.pdf_tex}
+l.261   \input{./chapter01/figures/CC_41.pdf_tex}
                                                  ^^M
 *** (cannot \read from terminal in nonstop modes)
 

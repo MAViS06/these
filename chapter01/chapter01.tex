@@ -159,7 +159,8 @@ l'objet de la seconde section de ce chapitre.
 Soit un robot $4-3-1$, contrôlé par $4$ câbles dont $3$ (les câbles $i, j, k$) 
 sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrième 
 (câble $l$) relié à celle-ci en un point ${\bf B}_2 \neq {\bf B}_1$. Il a été 
-montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions nous 
+montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions 
+nous 
 retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est 
 détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le 
 câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations 
@@ -857,7 +858,7 @@ pose de l'organe terminal et donc des longueurs de c\^ables associ\'ees. En
 particulier, m\^eme lorsque nous avons observ\'e les influences des 
 incertitudes sur les coordonn\'ees articulaires sur la pose, les 
 valeurs des jacobiennes utilis\'ees (qui d\'epend \`a la fois de la pose et des 
-longueurs de c\^ables)) supposaient une exactitude parfaite des diff\'erentes 
+longueurs de c\^ables) supposaient une exactitude parfaite des diff\'erentes 
 coordonn\'ees. Dans le m\^eme temps, nous avons pu observer que cette 
 hypoth\`ese n'\'etait pas tenable pour deux raisons :
 \begin{itemize}
@@ -887,33 +888,346 @@ les caract\'eristiques principales.
 
 \subsection{L'analyse par intervalles}
 
+L'analyse par intervalles a \'et\'e propos\'ee par \cite{moore1968} afin de 
+prendre en compte les incertitudes dans les calculs. L'encadrement des variables 
+et param\`etres permet ainsi de propager les incertitudes et d'obtenir ainsi 
+des r\'esultats certifi\'es. L'analyse par intervalle a r\'ecemment \'et\'e 
+utilis\'ee pour de l\'etalonnage de robots \`a c\^ables \cite{sandretto2012}, 
+pour le calcul de l'espace de travail de robots parall\`elles \`a c\^ables 
+\cite{gouttefarde2011}, pour la r\'esolution du MGD des robots parall\`eles 
+\cite{merlet2004solving} ou encore l'\'etalonnage de robots parall\`eles \`a 
+l'aide de la vision \cite{daney2006interval}. Les algorithmes utilisant des 
+intervalles pr\'esentent de plus l'avantage d'\^etre g\'en\'eralement 
+parall\'elisables et donc d'exploiter pleinement les possibilit\'es du calcul 
+distribu\'e.
+
+On d\'efinit un intervalle $[x] = [\underline{x},\overline{x}]$ comme \'etant 
+l'ensemble des r\'eels $x$ tels que $\underline{x} < x < \overline{x}$.
+On utilisera les notations suivantes :
+\begin{itemize}
+ \item $\hbox{Min}([x]) = \underline{x}$
+  \item $\hbox{Max}([x]) = \overline{x}$
+  \item $\hbox{Mid}([x]) = (\overline{x} + \underline{x})/2$
+   \item $\hbox{Diam}([x]) = \overline{x} + \underline{x}$
+    \item $\hbox{Rad}([x]) = (\overline{x} + \underline{x})/2$
+\end{itemize}
+
+L'ensemble des intervalles \`a valeurs r\'eelles est not\'e $\mathbb I \mathbb 
+R$.
+
+Les op\'erations arithm\'etiques usuelles sont d\'efinies de la mani\`ere 
+suivante :
+\begin{itemize}
+ \item addition : $[x]+[y] = [\underline{x},\overline{x}] + 
+[\underline{y},\overline{y}] = [\underline{x} + 
+\underline{y},\overline{x}+\overline{x}]$
+\item soustraction : $[x]-[y] = [\underline{x},\overline{x}] - 
+[\underline{y},\overline{y}] 
+= [\underline{x} - \overline{y},\overline{x}-\underline{x}]$
+\item multiplication : $[x]*[y] = [\underline{x},\overline{x}] * 
+[\underline{y},\overline{y}] 
+= [\min(\underline{x}\underline{y}, 
+\underline{x}\overline{y},\overline{x}\underline{y},\overline{x}\overline{y}),
+\max(\underline{x}\underline{y}, 
+\underline{x}\overline{y},\overline{x}\underline{y},\overline{x}\overline{y})]$
+\item division : if $0 \notin [y]$, $x/y = [\underline{x}, 
+\overline{x}]*[1/\overline{y},1/\underline{y}]$ 
+\end{itemize}
+
+Un vecteur d'intervalles sera appel\'e une {\it bo\^ite} :
+\begin{equation}
+[x] \in \mathbb I \mathbb R^n, [x] = \begin{pmatrix}
+                                      [x_1]\\
+				      \dots \\
+				      [x_n]
+                                     \end{pmatrix}
+\label{chap01:eq12}
+\end{equation}
+
+On dit de $[f]$ qu'elle est une {\it extension de $f$ aux intervalles} 
+de la fonction $f$ si :
+\begin{equation}
+\begin{array}{ll}
+\forall [x] \in \mathbb I \mathbb R, & \left \lbrace f(x), x \in [x] \right 
+\rbrace \subseteq [f]([x]) \\
+\forall x \in \mathbb R^n, & f(x) = [f](x) 
+\end{array}
+\label{chap01:eq13}
+\end{equation}
+
+Une extension aux intervalles conduit de mani\`ere g\'en\'erale \`a une 
+surestimation de son co-domaine. Une telle surestimation sera not\'ee $\Box f = 
+[f][x]$. Afin de diminuer cette surestimation, de nombreuses m\'ethodes ont 
+\'et\'e d\'evelopp\'ees parmi lesquels les algorithmes de branchement et de 
+contraction utilis\'es respectivement pour tester la pr\'esence de solutions 
+dans un ensemble possible et r\'eduire la taille de cet ensemble possible.
+
+Il est ainsi possible de red\'efinir toutes les fonctions \`a valeurs 
+r\'eelles. En particulier, puisque nous souhaitons utiliser les intervalles 
+sur l'\'equilibre statique (crit\`ere de stabilit\'e) et les \'equations de la 
+cin\'ematique (crit\`ere de pr\'ecision), nous sommes int\'eress\'es par 
+l'extension aux intervalles de la r\'esolutions des syst\`emes lin\'eaires 
+\cite{hansen1980}.
+
+Soit $[A]x = [b]$ un syst\`eme lin\'eaire dont les valeurs de $[A]$ et $[b]$ 
+sont des intervalles. On cherche alors un intervalle $[x]$, mais 
+qui peut \^etre de diff\'erentes natures selon le contexte dans lequel est 
+pos\'e le syst\`eme :
+\begin{itemize}
+ \item $[x]_{\exists \exists} := \left \lbrace x ; \exists A \in [A], \exists b 
+\in [b], Ax = b \right \rbrace$
+ \item $[x]_{\exists \forall} := \left \lbrace x ; \exists A \in [A], \forall b 
+\in [b], Ax = b \right \rbrace$
+ \item $[x]_{\forall \forall} := \left \lbrace x ; \forall A \in [A], \forall b 
+\in [b], Ax = b \right \rbrace$
+ \item $[x]_{\forall \exists} := \left \lbrace x ; \forall A \in [A], \exists b 
+\in [b], Ax = b \right \rbrace $
+\end{itemize}
+
+Afin de faire converger le plus possible la surestimation du domaine de 
+r\'esolution $\Box x$ vers $[x]$, plusieurs m\'ethodes ont \'et\'e utilis\'ees 
+dans le cadre de travail :
+\begin{itemize}
+ \item {\it Branch and Prune} (branchement)) : une premi\`ere bo\^ite globale 
+$B_0$ est initialis\'ee sur l'ensemble de recherche. Cette bo\^ite est ensuite 
+divis\'ee en plusieurs sous-bo\^ites. On teste la pr\'esence de solution dans 
+chacune des sous-bo\^ites : si la solution n'y figure pas, la bo\^ite est 
+rejet\'ee. Sinon, elle est \`a son tour divis\'ee en plusieurs bo\^ites sur 
+lesquelles on testera la pr\'esence de solutions. L'algorithme est r\'ep\'et\'e 
+jusqu'\`a ce quela taille des bo\^ites soit inf\'erieure \`a un certain seuil. 
+On obtient ainsi un encadrement fin des solutions d'un syst\`eme.
+  \item {\it redondance des variables} (contraction) : lorsqu'une m\^eme 
+variable est utilis\'ee plusieurs fois, l'analyse par intervalle la consid\`ere 
+cependant comme une variable ind\'ependante et surestime d\`es lors la 
+propagation des incertitudes sur cette variable. Ainsi, pour $[x] = [-1,1]$, le 
+calcul de $[x]*[x]$ donnera $[-1,1]$ alors que le co-domaine est $[0,1]$. 
+Une analyse plus fine du syst\`eme prenant en compte la pr\'esence 
+redondante d'une variable peut rapidement permettre de r\'eduire la taille 
+de l'espace des solutions. Nous reviendrons d'ailleurs sp\'ecifiquement dans la 
+section suivante sur deux utilisations particuli\`eres de la redondance des 
+variables dans notre algorithme.  
+\end{itemize}
+
+En utilisant l'analyse par intervalle, nous assurons une robustesse aux erreurs 
+et incertitudes, mais c'est au prix parfois d'une surestimation de leurs 
+influences sur le mod\`ele et la commande. L'algorithme que nous allons 
+exposer constitue l'\'equilibre que nous avons trouv\'e entre garantie maximale 
+des r\'esultats et estimation la plus fid\`ele possible des espaces solutions.
+
+\subsection{Algorithme utilisant l'analyse par intervalle}
+
+Soit un robot $4-1$. Nous d\'efinissons les incertitudes suivantes : $\delta A$ 
+repr\'esente l'incertitude sur la position des points de sortie des c\^ables, 
+$\delta \rho$ d\'enote l'incertitude sur les longueurs de c\^ables et $\delta 
+B$ correspond \`a l'incertitude sur la pose. Nous formons donc les intervalles 
+suivants :
+\begin{itemize}
+ \item $[A_i] = [{\bf A}_i - \delta A/2,{\bf A}_i + \delta A/2]$ l'intervalle 
+des localisations possibles du point de sortie du c\^able $i$
+  \item $[\rho_i] = [\rho_i - \delta \rho /2,\rho_i + \delta \rho/2]$ 
+l'intervalle des longueurs possibles pour le c\^able $i$
+  \item $[B] = [{\bf B}_i - \delta B /2,{\bf B} + \delta B/2]$ l'intervalle 
+des poses possibles de l'organe terminal.
+\end{itemize}
+
+Nous noterons de plus ${\bf \sharp B}$ la projection verticale de $\bf B$ sur 
+le plan g\'en\'er\'e par les points ${\bf A_i}$ (suppos\'e horizontal). De la 
+m\^eme mani\`ere, ${\bf \sharp A}_i$ correspondra en ces points aux seules 
+coordonn\'ees dans le plan.
+
+Une ligne de la jacobienne inverse correspondante devient :
+
+\begin{equation}
+[J^{-1}]_i = \left ( \frac {[B] - [A_i]}{[\rho_i]} \right )^T
+\label{chap01:eq14}
+\end{equation}
+
+Soient $\mathcal O({\bf S}{\bf G})$ une s\'equence \`a r\'ealiser.
+
+\subsubsection{D\'etermination des sites l\'egaux}
+
+Dans un premier temps, nous cherchons \`a d\'eterminer les ensembles $Sl(S)$ et 
+$Sl(G)$, \`a savoir l'ensemble des configurations de c\^ables possibles pour 
+chacun de ces points, en prenant en compte les diff\'erentes incertitudes.
+
+Dans le cas du robot $4-1$, trois situations sont possibles : \\
+
+{\bf Configuration \`a 1 c\^able :}\\
+
+Pour chaque c\^able, nous testons si $0 \in [\sharp B] - [\sharp A_i]$. Si 
+c'est le cas, la configuration de c\^ables est conserv\'ee dans l'ensemble des 
+configurations possibles.\\
+
+{\bf Configuration \`a 2 c\^ables :}\\
+
+Si ${\bf B}$ se trouve sur le segment de droite issu des points ${\bf 
+\sharp A}_i$ et ${\bf \sharp A_j}$, alors il existe $\lambda \in ]0,1[$ tel que 
+${\bf \sharp B} = {\bf \sharp A}_i + \lambda {\bf \sharp 
+A}_i{\bf \sharp A}_j$.
+L'extension de cette relation aux intervalles est alors :
+\begin{equation}
+\left \lbrace
+\begin{matrix}
+[B_x] = [A_{i_x}] + \lambda ([A_{j_x}] - [A_{i_x}]) \\
+[B_y] = [A_{i_y}] + \lambda ([A_{j_y}] - [A_{i_y}])
+\end{matrix}
+\right .
+\label{chap01:eq15}
+\end{equation}
+
+soit :
+
+\begin{equation}
+\left \lbrace
+\begin{matrix}
+\lambda_1 = \frac {[B_x] - [A_{i_x}]} {[A_{j_x}] - [A_{i_x}]}\\
+\lambda_2 = \frac {[B_y] - [A_{i_y}]} {[A_{j_y}] - [A_{i_y}]}
+\end{matrix}
+\right .
+\label{chap01:eq16}
+\end{equation}
+
+On peut remarquer que chaque ligne de l'\'equation est redondante concernant 
+respectivement $[A_{i_x}]$ et $[A_{i_y}]$. Il est alors possible de 
+r\'e\'ecrire le syst\`eme diff\'eremment, par exemple :
+\begin{equation}
+\left \lbrace
+\begin{matrix}
+\lambda_1 = \frac {[B_x] + [A_{j_x}]} {[A_{j_x}] - [A_{i_x}]} - 1\\
+\lambda_2 = \frac {[B_y] + [A_{j_y}]} {[A_{j_y}] - [A_{i_y}]} - 1
+\end{matrix}
+\right .
+\label{chap01:eq16}
+\end{equation}
+et de consid\'erer l'intersection des intervalles de solutions trouv\'ees.
+
+Nous obtenons donc deux intervalles $[\lambda_1]$ et $[\lambda_2]$, dont nous 
+allons prendre l'intersection $[\lambda = [\lambda_1] \cap [\lambda_2]$. Nous 
+testons ensuite si $0 < \overline{\lambda}$ et $\underline{\lambda} < 1$. Si 
+c'est le cas, alors il existe dans notre intervalle une valeur pour laquelle le 
+syst\`eme est v\'erif\'e. Potentiellement, ${\bf B} \in El(CC_{ij})$. Nous 
+retenons donc la configuration. Dans le cas contraire, elle sera rejet\'ee.
+
+Nous pouvons noter que dans le cas o\`u nous aurions $0 \in ([A_{j_x}] - 
+[A_{i_x}])$ (ceci vaudra \'egalement pour $0 \in ([A_{j_y}] - [A_{i_y}])$), le 
+test deviendra :
+\begin{equation}
+\begin{matrix}
+\max(\overline{A_{i_x}},\overline{A_{j_x}}) > \overline{[B_x]},\\
+\min(\underline{A_{i_x}},\underline{A_{j_x}}) < \underline{[B_x]}
+\end{matrix}
+\label{chap01:eq17}
+\end{equation}
+afin de nous assurer que ${\bf \sharp B}$ est potentiellement sur le segment 
+${\bf \sharp A}_i{\bf \sharp A}_j$ mais bien dans les strictes limites de 
+l'espace de travail.\\
+
+{\bf Configuration \`a 3 c\^ables :}\\
+
+Dans ce cas, nous devons v\'erifier que le point $\bf \sharp B$ se situe bien 
+dans le triangle issu des points ${\bf \sharp A}_i$, ${\bf \sharp A}_j$ et 
+${\bf \sharp A}_k$.
+
+La relation que nous utilisons est la suivante : si $\bf \sharp B \in 
+\widehat{{\bf \sharp A}_i{\bf \sharp A}_j{\bf \sharp A}_k}$, alors nous avons 
+$(\lambda, \mu)$ tels que $0 < \lambda$, $0 < \mu$ et $\lambda + \mu < 1$ et :
+\begin{equation}
+{\bf A}_i {\bf B} = {\bf A}_i + \lambda {\bf A}_i{\bf A}_j + \mu {\bf A}_i{\bf 
+A}_k  
+\label{chap01:eq17}
+\end{equation}
+(\`a l'inversion pr\`es du r\^ole jou\'e par les points, ce que nous 
+utiliserons entre autre pour contourner la redondance des variables dans 
+l'\'equation).
+
+Nous d\'eclinons cette relation pour chacune des coordonn\'ees, et nous 
+obtenons ainsi le syst\`eme suivant :
+
+\begin{equation}
+\begin{bmatrix}
+{\bf B}_{x} - {\bf A}_{i_x} \\
+{\bf B}_{y} - {\bf A}_{i_y}
+\end{bmatrix} =
+\begin{bmatrix}
+({\bf A}_{j_x} - {\bf A}_{i_x}) & ({\bf A}_{k_x} - {\bf A}_{i_x}) \\
+({\bf A}_{j_y} - {\bf A}_{i_y}) & ({\bf A}_{k_y} - {\bf A}_{i_y})
+\end{bmatrix}
+\begin{bmatrix}
+\lambda \\
+\mu
+\end{bmatrix}
+\label{chap01:eq18}
+\end{equation}
+
+Un premier test \`a op\'erer est le calcul du d\'eterminant de la matrice du 
+syst\`eme. Pour cela, nous faisons une \'evaluation par intervalles : si $0 \in 
+[\hbox{Det}A]$, alors nous intervertissons les r\^oles jou\'es par les points, 
+et si la situation se reproduit, alors nous rejetons la configuration.
+
+Dans le cas d'un d\'eterminant non-nul, nous inversons le syst\`eme :
+
+\begin{equation}
+\begin{bmatrix}
+\lambda \\
+\mu
+\end{bmatrix} = \frac 1 {\hbox{Det A}}
+\begin{bmatrix}
+({\bf A}_{k_y} - {\bf A}_{i_y}) & -({\bf A}_{k_x} 
+- {\bf A}_{i_x}) \\
+-({\bf A}_{j_y} - {\bf A}_{i_y}) & ({\bf A}_{j_x} - {\bf A}_{i_x}) 
+\end{bmatrix}
+\begin{bmatrix}
+{\bf B}_{x} - {\bf A}_{i_x} \\
+{\bf B}_{y} - {\bf A}_{i_y}
+\end{bmatrix}
+\label{chap01:eq19}
+\end{equation}
+
+\subsubsection{Hi\'erarchisation des s\'equences}
+
 \begin{figure}[!htp]
   \centering
- \subfloat[bla]{\label{chap01:fig06view0}
+ \subfloat[Cas 01 : $\forall x \in \hbox{[}X\hbox{]}, f(x) \in 
+I$]{\label{chap01:fig06view0}
  \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_in.png}}
- \subfloat[bla]{\label{chap01:fig06view1}
- \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_inout.png}} \\
-  \subfloat[bla]{\label{chap01:fig06view2}
+ \subfloat[Cas 02 : $\exists (x,y) \in \hbox{[}X\hbox{]}^2, f(x) 
+\in I, f(y) \notin I$]{\label{chap01:fig06view1}
+ \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_inout.png}} 
+\\
+  \subfloat[Cas 03 : $\forall x \in \hbox{[}X\hbox{]}, f(x) \notin I$] 
+{\label{chap01:fig06view2}
  \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_out.png}}
-    \caption{\footnotesize{blabla}}
+    \caption{\footnotesize{Trois situations de test d'hypoth\`ese en analyse 
+par intervalles : inclusion totale, inclusion partielle, exclusion totale.}}
 \label{chap01:fig06}
 \end{figure}
 
 
 
-
-\subsection{Algorithme}
-
 \subsection{Illustrations}
 
 \begin{figure}[!htp]
   \centering
- \subfloat[bla]{\label{chap01:fig10view0}
- \def\svgwidth{.95\linewidth}
+ \subfloat[En bas \`a gauche : les deux c\^ables mous se succ\`edent, la zone 
+verte correspond alors \`a la r\'egion qui n'est plus atteignable ; en haut \`a 
+droite : l'un des c\^ables mous n'a pas de voisin imm\'ediat qui soit lui aussi 
+mous, la zone en bleu correspond \`a la r\'egion qui n'est plus atteignable. 
+]{\label{chap01:fig10view0}
+ \def\svgwidth{.45\linewidth}
  \input{./chapter01/figures/drawing_robot86.pdf_tex}} \hfill
- \subfloat[bla]{\label{chap01:fig10view1}
- \def\svgwidth{.95\linewidth}
+ \subfloat[L'octogone au centre de la figure 
+correspond \`a la r\'egion de l'espace de travail 
+pouvant \^etre atteinte par l'ensemble des 28 
+configurations de 6 c\^ables.]{\label{chap01:fig10view1}
+ \def\svgwidth{.45\linewidth}
  \input{./chapter01/figures/drawing_robot86bis.pdf_tex}} 
-    \caption{\footnotesize{blabla}}
+    \caption{\footnotesize{Robot \`a 8 c\^ables in\'elastiques dont les points 
+d'attache sont dispos\'es en octogone. En haut, sont montr\'ees les r\'egions 
+inatteignables de l'espace de travail lorsque les c\^ables 0 et 7 sont mous 
+(r\'egion verte en bas \`a gauche), ou lorsque le c\^able 3 est mou 
+(r\'egion bleue en haut \`a droite). La figure du bas montre ainsi la r\'egion 
+de l'espace de travail qui peut \^etre atteinte par l'ensemble des 
+configurations de 6 c\^ables en tension, soit $28$ sous-robots $A^{6,6}$}}
+
 \label{chap01:fig10}
 \end{figure}

@@ -8,8 +8,8 @@ A level-1 auxiliary file: chapter01/chapter01.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
 Warning--string name "juin" is undefined
---line 1851 of file ./biblio/bibliography.bib
-I was expecting a `,' or a `}'---line 1852 of file ./biblio/bibliography.bib
+--line 1919 of file ./biblio/bibliography.bib
+I was expecting a `,' or a `}'---line 1920 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
@@ -26,45 +26,47 @@ Warning--I didn't find a database entry for "DBLP:conf/icra/2010"
 Warning--I didn't find a database entry for "DBLP:conf/icra/1993"
 Warning--I didn't find a database entry for "conf/iros/2011"
 Warning--I didn't find a database entry for "conf/icra/2012"
-You've used 35 entries,
+Warning--empty title in moore1968
+Warning--empty journal in sandretto2012
+You've used 41 entries,
             2118 wiz_defined-function locations,
-            740 strings with 10684 characters,
-and the built_in function-call counts, 12950 in all, are:
-= -- 1306
-> -- 452
+            774 strings with 11609 characters,
+and the built_in function-call counts, 14805 in all, are:
+= -- 1481
+> -- 542
 < -- 15
-+ -- 189
-- -- 144
-* -- 819
-:= -- 1974
-add.period$ -- 110
-call.type$ -- 35
-change.case$ -- 173
++ -- 225
+- -- 174
+* -- 962
+:= -- 2290
+add.period$ -- 126
+call.type$ -- 41
+change.case$ -- 204
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 576
-empty$ -- 1116
-format.name$ -- 144
-if$ -- 2897
+cite$ -- 43
+duplicate$ -- 637
+empty$ -- 1264
+format.name$ -- 174
+if$ -- 3275
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 37
-newline$ -- 178
-num.names$ -- 72
-pop$ -- 212
+int.to.str$ -- 41
+missing$ -- 42
+newline$ -- 206
+num.names$ -- 84
+pop$ -- 245
 preamble$ -- 1
-purify$ -- 141
+purify$ -- 167
 quote$ -- 0
-skip$ -- 461
+skip$ -- 504
 stack$ -- 0
-substring$ -- 935
-swap$ -- 196
+substring$ -- 1056
+swap$ -- 201
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
-warning$ -- 0
-while$ -- 121
-width$ -- 37
-write$ -- 392
+type$ -- 156
+warning$ -- 2
+while$ -- 138
+width$ -- 43
+write$ -- 451
 (There were 5 error messages)

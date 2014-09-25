@@ -70,6 +70,12 @@ Tej Dallej, Marc Gouttefarde, Nicolas Andreff, Micaël Michelin, and Philippe
 \newblock Towards vision-based control of cable-driven parallel robots.
 \newblock In {\em IROS}, pages 2855--2860. IEEE, 2011.
 
+\bibitem{daney2006interval}
+David Daney, Nicolas Andreff, Gilles Chabert, and Yves Papegay.
+\newblock Interval method for calibration of parallel robots: Vision-based
+  experiments.
+\newblock {\em Mechanism and Machine Theory}, 41(8):929--944, 2006.
+
 \bibitem{espiau1992}
 B.~Espiau, F.~Chaumette, and Patrick Rives.
 \newblock A new approach to visual servoing in robotics.
@@ -101,6 +107,18 @@ V.E. Gough.
   stability, control and tyre performance, 1956-1957.
 \newblock Proc. Auto Div. Inst. Mech. Eng.
 
+\bibitem{gouttefarde2011}
+M.~Gouttefarde, D.~Daney, and J.~P Merlet.
+\newblock Interval-analysis-based determination of the wrench-feasible
+  workspace of parallel cable-driven robots.
+\newblock {\em Robotics, IEEE Transactions on}, 27(1):1--13, Feb 2011.
+
+\bibitem{hansen1980}
+Eldon Hansen.
+\newblock Global optimization using interval analysis — the multi-dimensional
+  case.
+\newblock {\em Numerische Mathematik}, 34(3):247--270, 1980.
+
 \bibitem{hartley2004}
 R.~I. Hartley and A.~Zisserman.
 \newblock {\em Multiple View Geometry in Computer Vision}.
@@ -117,6 +135,11 @@ W.F. Marantette.
 \newblock Machine tool position measurement employing multiple laser distance
   measurements, February~7 1995.
 \newblock US Patent 5,387,969.
+
+\bibitem{merlet2004solving}
+J.-P. Merlet.
+\newblock Solving the forward kinematics of a gough-type parallel manipulator
+  with interval analysis, 2004.
 
 \bibitem{merlet2008}
 J.~P Merlet.
@@ -193,6 +216,16 @@ R.~Ramadour and J.-P. Merlet.
   robot by selecting the cables under tension and using interval analysis.
 \newblock In {\em Advanced Intelligent Mechatronics (AIM), 2014 IEEE/ASME
   International Conference on}, pages 1349--1354, July 2014.
+
+\bibitem{moore1968}
+R.~D. Richtmyer.
+\newblock {\em Mathematics of Computation}, 22(101):pp. 219--222, 1968.
+
+\bibitem{sandretto2012}
+Julien Alexandre~Dit Sandretto, David Daney, Marc Gouttefarde, C{\'e}dric
+  Baradat, et~al.
+\newblock Calibration of a fully-constrained parallel cable-driven robot.
+\newblock 2012.
 
 \bibitem{stein1997}
 G.~P. Stein.
