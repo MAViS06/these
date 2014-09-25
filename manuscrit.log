@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  24 SEP 2014 19:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  25 SEP 2014 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1267,7 +1267,7 @@ File: ./chapter01/figures/critstab04.png Graphic file (type png)
 
 <use ./chapter01/figures/critstab04.png>
 Package pdftex.def Info: ./chapter01/figures/critstab04.png used on input line 
-660.
+659.
 (pdftex.def)             Requested size: 155.24895pt x 92.30943pt.
 
 <./chapter01/figures/critstab05.png, id=858, 1622.06pt x 987.69pt>
@@ -1275,7 +1275,7 @@ File: ./chapter01/figures/critstab05.png Graphic file (type png)
 
 <use ./chapter01/figures/critstab05.png>
 Package pdftex.def Info: ./chapter01/figures/critstab05.png used on input line 
-664.
+663.
 (pdftex.def)             Requested size: 155.24895pt x 94.52478pt.
 
 <./chapter01/figures/critstab02.png, id=859, 1672.2475pt x 981.6675pt>
@@ -1283,7 +1283,7 @@ File: ./chapter01/figures/critstab02.png Graphic file (type png)
 
 <use ./chapter01/figures/critstab02.png>
 Package pdftex.def Info: ./chapter01/figures/critstab02.png used on input line 
-668.
+667.
 (pdftex.def)             Requested size: 155.24895pt x 91.13235pt.
 
 <./chapter01/figures/critstab03.png, id=860, 1595.9625pt x 972.63374pt>
@@ -1291,11 +1291,11 @@ File: ./chapter01/figures/critstab03.png Graphic file (type png)
 
 <use ./chapter01/figures/critstab03.png>
 Package pdftex.def Info: ./chapter01/figures/critstab03.png used on input line 
-672.
+671.
 (pdftex.def)             Requested size: 155.24895pt x 94.61249pt.
  [41 <./chapter01/figures/critstab04.png> <./chapter01/figures/critstab05.png> 
 <./chapter01/figures/critstab02.png> <./chapter01/figures/critstab03.png>]
-Overfull \hbox (21.32455pt too wide) in paragraph at lines 699--720
+Overfull \hbox (21.32455pt too wide) in paragraph at lines 698--719
 \OT1/cmr/m/n/10 exp^^Serimentations n'exc^^Rede pas $\OT1/cmr/bx/n/10 0\OML/cmm
 /b/it/10 :\OT1/cmr/bx/n/10 10\OML/cmm/b/it/10 m$ \OT1/cmr/m/n/10 pour un es-pac
 e de tra-vail d'approximativement
@@ -1306,7 +1306,7 @@ File: ./chapter01/figures/crit_acc04.png Graphic file (type png)
 
 <use ./chapter01/figures/crit_acc04.png>
 Package pdftex.def Info: ./chapter01/figures/crit_acc04.png used on input line 
-789.
+787.
 (pdftex.def)             Requested size: 155.24895pt x 93.85597pt.
 
 <./chapter01/figures/crit_acc05.png, id=892, 1608.0075pt x 972.63374pt>
@@ -1314,7 +1314,7 @@ File: ./chapter01/figures/crit_acc05.png Graphic file (type png)
 
 <use ./chapter01/figures/crit_acc05.png>
 Package pdftex.def Info: ./chapter01/figures/crit_acc05.png used on input line 
-793.
+791.
 (pdftex.def)             Requested size: 155.24895pt x 93.90012pt.
 
 <./chapter01/figures/crit_acc02.png, id=893, 1589.94pt x 980.66376pt>
@@ -1322,7 +1322,7 @@ File: ./chapter01/figures/crit_acc02.png Graphic file (type png)
 
 <use ./chapter01/figures/crit_acc02.png>
 Package pdftex.def Info: ./chapter01/figures/crit_acc02.png used on input line 
-796.
+794.
 (pdftex.def)             Requested size: 155.24895pt x 95.75275pt.
 
 <./chapter01/figures/crit_acc03.png, id=894, 1724.4425pt x 958.58125pt>
@@ -1330,20 +1330,71 @@ File: ./chapter01/figures/crit_acc03.png Graphic file (type png)
 
 <use ./chapter01/figures/crit_acc03.png>
 Package pdftex.def Info: ./chapter01/figures/crit_acc03.png used on input line 
-800.
+798.
 (pdftex.def)             Requested size: 155.24895pt x 86.29784pt.
  [43 <./chapter01/figures/crit_acc04.png> <./chapter01/figures/crit_acc05.png> 
 <./chapter01/figures/crit_acc02.png> <./chapter01/figures/crit_acc03.png>] [44]
 
-Overfull \hbox (1.05606pt too wide) in paragraph at lines 884--889
+Overfull \hbox (1.05606pt too wide) in paragraph at lines 882--887
 []\OT1/cmr/m/n/10 Afin de compl^^Seter la m^^Sethode, nous de-vons donc nous as
 -surer que les r^^Sesultats
  []
 
-) [45] (./manuscrit.bbl [46
+<./chapter01/figures/interval_in.png, id=915, 450.2421pt x 271.0125pt>
+File: ./chapter01/figures/interval_in.png Graphic file (type png)
+
+<use ./chapter01/figures/interval_in.png>
+Package pdftex.def Info: ./chapter01/figures/interval_in.png used on input line
+ 893.
+(pdftex.def)             Requested size: 155.24895pt x 93.44565pt.
+
+<./chapter01/figures/interval_inout.png, id=916, 470.4777pt x 367.1316pt>
+File: ./chapter01/figures/interval_inout.png Graphic file (type png)
+
+<use ./chapter01/figures/interval_inout.png>
+Package pdftex.def Info: ./chapter01/figures/interval_inout.png used on input l
+ine 895.
+(pdftex.def)             Requested size: 155.24895pt x 121.1482pt.
+
+<./chapter01/figures/interval_out.png, id=917, 479.1501pt x 413.3844pt>
+File: ./chapter01/figures/interval_out.png Graphic file (type png)
+
+<use ./chapter01/figures/interval_out.png>
+Package pdftex.def Info: ./chapter01/figures/interval_out.png used on input lin
+e 897.
+(pdftex.def)             Requested size: 155.24895pt x 133.93832pt.
+
+(./chapter01/figures/drawing_robot86.pdf_tex
+<./chapter01/figures/drawing_robot86.pdf, id=918, 600.5637pt x 568.76491pt>
+File: ./chapter01/figures/drawing_robot86.pdf Graphic file (type pdf)
+
+<use ./chapter01/figures/drawing_robot86.pdf>
+Package pdftex.def Info: ./chapter01/figures/drawing_robot86.pdf used on input 
+line 52.
+(pdftex.def)             Requested size: 327.74895pt x 310.409pt.
+)
+(./chapter01/figures/drawing_robot86bis.pdf_tex
+<./chapter01/figures/drawing_robot86bis.pdf, id=919, 600.5637pt x 568.76491pt>
+File: ./chapter01/figures/drawing_robot86bis.pdf Graphic file (type pdf)
+
+<use ./chapter01/figures/drawing_robot86bis.pdf>
+Package pdftex.def Info: ./chapter01/figures/drawing_robot86bis.pdf used on inp
+ut line 52.
+(pdftex.def)             Requested size: 327.74895pt x 310.409pt.
+)
+
+LaTeX Warning: Float too large for page by 81.61043pt on input line 919.
+
+) [45 <./chapter01/figures/interval_in.png> <./chapter01/figures/interval_inout
+.png> <./chapter01/figures/interval_out.png>] [46 <./chapter01/figures/drawing_
+robot86.pdf> <./chapter01/figures/drawing_robot86bis.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./chapter01/figures/drawing_robot86bis.
+pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./manuscrit.bbl [47
 
 
-] [47]
+]
 Underfull \hbox (badness 1484) in paragraph at lines 148--153
 []\OT1/cmr/m/n/10 Jean-Pierre Mer-let.  The in-flu-ence of discrete-time con-tr
 ol on the
@@ -1392,10 +1443,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 8454 strings out of 494999
- 129230 string characters out of 6180228
- 220424 words of memory out of 5000000
- 11208 multiletter control sequences out of 15000+600000
+ 8502 strings out of 494999
+ 130700 string characters out of 6180228
+ 220997 words of memory out of 5000000
+ 11240 multiletter control sequences out of 15000+600000
  19769 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,20n,49p,1245b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1436,10 +1487,10 @@ pe1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmu10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on manuscrit.pdf (49 pages, 7426313 bytes).
+Output written on manuscrit.pdf (49 pages, 7654368 bytes).
 PDF statistics:
- 1115 PDF objects out of 1200 (max. 8388607)
- 862 compressed objects within 9 object streams
- 240 named destinations out of 1000 (max. 500000)
- 510 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1145 PDF objects out of 1200 (max. 8388607)
+ 880 compressed objects within 9 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 535 words of extra memory for PDF output out of 10000 (max. 10000000)
 
