@@ -154,6 +154,13 @@ J.-P. Merlet.
 \newblock In {\em Robotics and Automation (ICRA), 2013 IEEE International
   Conference on}, pages 4635--4640, May 2013.
 
+\bibitem{merlet2014check}
+J-P. Merlet.
+\newblock Checking the cable configuration of cable-driven parallel robots on a
+  trajectory.
+\newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
+  1586--1591, Hong-Kong, 2014.
+
 \bibitem{merlet.1993}
 Jean{-}Pierre Merlet.
 \newblock Closed-form resolution of the direct kinematics of parallel
@@ -166,13 +173,6 @@ Jean{-}Pierre Merlet.
 Jean-Pierre Merlet.
 \newblock The kinematics of the redundant {N-1} wire driven parallel robot.
 \newblock In {\em ICRA}, pages 2313--2318. IEEE, 2012.
-
-\bibitem{merlet2014}
-Jean-Pierre Merlet.
-\newblock The influence of discrete-time control on the kinematico-static
-  behavior of cable-driven parallel robot with elastic cables.
-\newblock In Jadran Lenarčič and Oussama Khatib, editors, {\em Advances in
-  Robot Kinematics}, pages 113--121. Springer International Publishing, 2014.
 
 \bibitem{merlet2010}
 Jean{-}Pierre Merlet and David Daney.

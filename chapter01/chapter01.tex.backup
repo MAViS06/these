@@ -2,14 +2,14 @@
 
 Nous proposons dans ce chapitre une m\'ethode permettant de contr\^oler les
 c\^ables qui seront en tension le long d'une trajectoire donn\'ee. Dans une
-premi\`ere section, nous expliquerons les circonstances qui nous ont
-conduits \`a d\'evelopper une m\'ethode de contr\^ole, puis nous introduirons
+premi\`ere section, nous expliquerons les motivations qui nous ont
+conduits \`a d\'evelopper une telle m\'ethode de contr\^ole, puis nous introduirons
 les concepts n\'ecessaires \`a son d\'eveloppement. La seconde section de ce
-chapitre sera consacr\'ee \`a l'\'elaboration de crit\`eres qui nous serviront
+chapitre est consacr\'ee \`a l'\'elaboration de crit\`eres qui nous serviront
 \`a s\'electionner les configurations optimisant la stabilit\'e et la
 pr\'ecision d'une trajectoire. Enfin, la troisi\`eme et derni\`ere section de
 ce chapitre introduira dans un premier temps l'analyse par intervalle dont nous
-nous serons servis afin de garantir notre d\'emarche ; puis nous pr\'esenterons
+nous sommes servis afin de garantir notre d\'emarche ; puis nous pr\'esenterons
 les principes de l'algorithme d\'evelopp\'e et concluerons par l'exposition des
 r\'esultats th\'eoriques qui seront valid\'es dans le chapitre consacr\'e aux
 simulations et exp\'eri\-mentations.
@@ -21,23 +21,20 @@ simulations et exp\'eri\-mentations.
 Nous avons vu que l'une des sp\'ecificit\'es des manipulateurs parall\`eles \`a
 c\^ables est que -- pour une pose donn\'ee -- l'\'equilibre statique peut
 \^etre obtenu sans que l'ensemble des c\^ables soient en tension. De plus, il
-est possible que dans certaines configurations, il est impossible pour toute
-pose que l'ensemble des c\^ables aient une tension strictement positive : ainsi,
-pour une configuration $N-1$, avec $N> 3$ et des c\^ables non-\'elastiques, il
+arrive dans certains cas qu'il soit impossible, quelle que soit la pose du robot, que l'ensemble des c\^ables aient une tension strictement positive : ainsi,
+pour une configuration N-1 ($N$ câbles distincts reliés en un seul point $B$ à la plateforme), avec $N> 3$ et des c\^ables non-\'elastiques, il
 est prouv\'e que 3 c\^ables au maximum auront une tension strictement positive,
 les $N-3$ autres \'etant d\'etendus \cite{merlet2012}.
 
-La proc\'edure classique consiste \`a donner aux c\^ables d\'etendus une
-longueur $\rho_i$ \'egale \`a la distance $||A_iB_i||$. Or, le r\'esultat
-peut-\^etre le plus important ici est donn\'e dans \cite{merlet2014} : bien
-qu'il s'agisse d'un travail effectu\'e dans le cas de c\^ables \'elastiques,
-les r\'esultats restent valables dans la situation in\'elastique, et montrent
-qu'il est impossible en pratique de pr\'evoir les modifications du caract\`ere
-strictement positif ou nul de la tension pour l'ensemble des c\^ables lors d'une
-trajectoire donn\'ee. Ainsi, une modification infime de la longueur du c\^able
-en tension nulle dont nous avons r\'egl\'e la longueur de mani\`ere \`a ce que
-$\rho_i = A_iB_i$ pourra changer compl\`etement la nature de la tension dans
-les autres c\^ables et surtout modifier la pose de l'organe terminal.
+Pour l'ensemble des contrôleurs proposés dans la littérature, ce phénomène est ignoré : soit le contrôle est positionnel, auquel cas les $\rho_i$ sont ajustés sur la distance $||{\bf A}_i {\bf B}||$, soit il s'agit d'un contrôle en force sans trop se soucier de savoir si toutes les tensions sont commandables, soit éventuellement un contrôleur hybride/position sous les mêmes hypothèses. Or, le r\'esultat
+peut-\^etre le plus important ici est donn\'e dans \cite{merlet2014check}, l'auteur 
+montrant qu'il est impossible en pratique de pr\'evoir les modifications du 
+caract\`ere strictement positif ou nul de la tension pour l'ensemble des 
+c\^ables lors d'une trajectoire donn\'ee. Ainsi, une modification infime de la 
+longueur du c\^able en tension nulle dont nous avons r\'egl\'e la longueur de 
+mani\`ere \`a ce que $\rho_i = A_iB_i$ pourra changer compl\`etement la nature 
+de la tension dans les autres c\^ables et surtout modifier la pose de l'organe 
+terminal.
 
 La cons\'equence de ces ph\'enom\`enes m\'ecaniques est double : d'une part
 nous pouvons nous retrouver dans des configurations sous-contraintes, nous
@@ -46,8 +43,53 @@ trajectoire n'est plus stable ; d'autre part les modifications soudaines des
 tensions perturbent les mouvements de la plate-forme et la pr\'ecision du
 positionnement est affect\'ee.
 
-En dehors des questions de s\'ecurit\'es soulev\'ees par ces situations, nous
-avons plusieurs fois observ\'e que ces changements subits engendraient des
+Dans le cas du robot $4-1$, la figure \ref{chap01:fig0000} permet de comprendre pourquoi l'équilibre statique n'est possible avec trois câbles en tension que si le point ${\bf B}$ correspondant à la pose de la plate-forme appartient à la projection verticale du triangle formé par les points de sortie des trois câbles. En effet, si ce n'est pas le cas, que le point est en dehors du triangle, on voit bien que les forces ne s'opposent pas dans au moins une direction, rompant ainsi l'équilibre statique.
+
+La démonstration de l'impossibilité d'avoir plus de $3$ câbles en tension simultanée repose également sur l'équilibre statique. Dans \cite{merlet2012}, ceci est démontré pour toute configuration à $N > 3$ câbles. Le cas à quatre câbles est relativement simple et peut être exposé ainsi :
+\begin{enumerate}
+ \item bla
+\end{enumerate}
+
+\begin{figure}[!ht]
+  \centering
+    \def\svgwidth{.65\linewidth}
+  \input{./chapter01/figures/ws__out.pdf_tex}
+    \caption{\footnotesize{Lorsque le point sort des limites du triangle généré par les droites reliant les sorties de câbles, les tensions ne sont plus en opposition dans toutes les directions : l'équilibre statique ne peut dès lors être maintenu.}}
+\label{chap01:fig0000}
+\end{figure}
+
+Il existe donc pour un robot $4-1$ quatre ensembles distincts de 3 câbles en tension strictement posisitives, et dans aucune de ces situations les trois câbles ne permettent d'atteindre l'intégralité de l'espace de travail en maintenant l'équilibre statique.
+
+A titre d'exemple, la figure \ref{chap01:fig000} montre qu'il existe des trajectoires qui peuvent être effectuées sans que l'on n'ait besoin de changer la nature de la tension dans les câbles, mais qu'il en existe également pour lesquelles nous n'aurons d'autres choix que de modifier les câbles en tension. Dans cet exemple, le point ${\bf P}_1$
+
+
+\begin{figure}[!ht]
+  \centering
+    \def\svgwidth{.65\linewidth}
+  \input{./chapter01/figures/traj_N1.pdf_tex}
+    \caption{\footnotesize{Exemples de trajectoires réalisables avec une seule configuration de câbles (lignes bleues pleines) et nécessitant un changement de configuration de câbles (ligne rouge en pointillés)}}
+\label{chap01:fig000}
+\end{figure}
+
+Les comportements décrits correspondent toutefois à une situation idéale. Dans les faits, l'utilisation d'un contrôleur discret basé sur une loi de commande voulant imposer une valeur $\rho_i = ||{\bf A}_i{\bf B}||$ ne permet pas de prédire ce qui se déroulera durant la période d'échantillonnage, durant laquelle le système est libre et n'obéit qu'à ses propres lois mécaniques.
+
+\begin{figure}[!htp]
+  \centering
+    \includegraphics[width=.75\linewidth]{./chapter01/figures/controleur_discret.png}
+    \caption{\footnotesize Comportement des tensions dans un câble pour une durée d'échantillonnage de $0.2$ secondes}
+\label{chap01:fig00}
+\end{figure}
+
+
+La figure \ref{chap01:fig00} montre ce qu'il se passe durant la période d'échantillonnage de $0.2$ secondes d'un contrôleur discret. Si la trajectoire était parfaitement suivie, nous devrions avoir une valeur te $\tau_n$ nulle sur l'ensemble de la période. Or, la trajectoire réelle ne suit pas eaxctement la trajectoire théorique. Dès lors, même avec des mesures de longueurs parfaites,le système passe immanquablement de poses pour lesquelles la tension est nulle à des poses pour lesquelles la tension devient strictement positive. Il faut alors en tier les conclusions suivantes :
+\begin{itemize}
+ \item si $\tau_n \neq 0$ alors qu'il devait être nul, les valeurs des autres tensions sont différentes des prédictions
+ \item les câbles étant soumis à des alternances entre tension nulle et tension positive, ils s'usent plus rapidement
+ \item les variabilités de tensions affectent la précision du manipulateur ; l'erreur reste cependant assez faible.
+ \item un contrôleur en tension ne prenant pas en compte ces propriétés ne peut pas vraiment fonctionner.
+\end{itemize}
+
+Nous avons de plus plusieurs fois constat\'e que ces changements subits engendraient des
 mouvements ind\'esirables au niveau de l'organe terminal. Principalement,
 puisque les degr\'es de libert\'es en rotation ne sont pas contraints sur notre
 prototype, des mouvements pendulaires ont parfois \'et\'e g\'en\'er\'es,
@@ -95,7 +137,7 @@ l'{\it espace l\'egal} de $CC_{k_1, \dots k_m}$, not\'e $El(CC_{k_1, \dots
 k_m})$. Nous noterons de plus $\overline{El}(CC_{k_1, \dots
 k_m})$ la fermeture de ${El}(CC_{k_1, \dots k_m})$, \`a savoir l'ensemble :
 $$\overline{El}(CC_{k_1, \dots k_m}) := \bigcup
-El(CC_{k_1, \dots k_p}), CC_{k_1, \dots k_p} < CC_{k_1, \dots k_m}$$
+El(CC_{k_1, \dots k_p}), \quad CC_{k_1, \dots k_p} < CC_{k_1, \dots k_m}$$
 
 De la m\^eme mani\`ere, pour un m\^eme point $\bf P$, l'ensemble $Sl$
 correspond \`a l'ensemble des configurations de c\^ables $CC_{k_1, \dots k_m}$
@@ -113,7 +155,7 @@ de $CC_{k_1, \dots k_m}$.
 
 Lorsque nous n'avons pas cette relation, nous avons besoin de d\'efinir des
 r\'egions de transferts. Soit deux configurations de c\^ables
-$CC_{k_1, \dots k_m}$ et $CC_{k_1, \dots k_p}$, que pour un instant nous
+$CC_{k_1, \dots k_m}$ et $CC_{l_1, \dots l_p}$, que pour un instant nous
 noterons respectivement $CC_i$ et $CC_j$. Nous d\'efinissons l'ensemble
 $\overset{\circ}{Tr_{ij}} = El(CC_i) \cap El(CC_j)$ comme l'ensemble des points
 ${\bf P}$ pour lesquels il existe ${}^sP_i \in El(CC_i)$ et ${}^sP_j \in
@@ -162,13 +204,13 @@ sont attachés au même point ${\bf B}_1$ sur l'organe terminal, et un quatrièm
 montré dans \cite{merlet2013-431} que pour une pose donnée, nous pouvions 
 nous 
 retrouver dans des configurations telles que l'un des câbles $i, j$ ou $k$ est 
-détendu -- auquel cas l'auteur parle de configuration $3-2-1$) -- ou encore le 
-câble $l$ -- il s'agira alors d'une configuration $3-1$). Ces deux situations 
+détendu -- auquel cas l'auteur parle de configuration 3-2-1 -- ou encore le 
+câble $l$ -- il s'agira alors d'une configuration 3-1. Ces deux situations 
 présentent des différences non négligeables du point de vue des propriétés du 
 robot, tout autant au niveau du contrôle que des différents modèles géométriques 
 et cinématiques. La question se pose alors de savoir s'il est plus pertinent 
 d'adopter une démarche {\it top-down} consistant à rechercher les propriétés du 
-robot $4-3-1$ et les décliner ensuite selon les situations, ou au contraire une 
+robot 4-3-1 et les décliner ensuite selon les situations, ou au contraire une 
 démarche {\it bottom-up} qui partirait des propriétés spécifiques à chaque 
 possibilité de configuration pour ensuite construire un fonctionnement global.
 
@@ -212,7 +254,7 @@ Lorsque pour deux configurations de c\^ables $CC_i$ et $CC_j$ nous avons $CC_i<
 CC_j$, alors le sous-robot $A_i$ associ\'e \`a $CC_i$ sera consid\'er\'e comme 
 {\it d\'eriv\'e} de $A_j$. S'il existe un ensemble $CC_\alpha$ et un robot 
 $A_j$ associ\'e \`a la configuration de c\^ables $CC_j$ tels que $\forall CC_i 
-\in CC_alpha, CC_i < CC_j$ et $\forall CC_k \notin CC_alpha, CC_i \nless 
+\in CC_\alpha, CC_i < CC_j$ et $\forall CC_k \notin CC_\alpha, CC_i \nless 
 CC_j$, alors on dira de $A_j$ qu'il est un {\it robot int\'egral} des robots 
 associ\'es aux configurations de c\^ables $CC_i \in CC_\alpha$.
 
@@ -253,8 +295,6 @@ respectives des robots $A_{i_k}$.
 
 \subsection{Illustration avec le robot {\tt Marionet-Assist}}
 
-\vskip -100pts
-
 \begin{figure}[!ht]
   \centering
     \def\svgwidth{.65\linewidth}
@@ -270,12 +310,13 @@ terminal (index\'es dans le sens trigonom\'etrique en partant du coin
 bas-gauche), les diff\'erentes confi\-gurations de c\^ables pouvant \^etre 
 obtenues \`a partir de {\tt Marionet-Assist} sont :
 \begin{itemize}
- \item $4 CC$ \`a $1$ c\^able : $CC_0, CC_1, CC_2, CC_3$
-  \item $6 CC$ \`a $2$ c\^ables : $CC_{01}, CC_{12}, CC_{23}, CC_{30}, CC_{02}, 
+ \item $4$ CC \`a $1$ c\^able : $CC_0, CC_1, CC_2, CC_3$
+  \item $6$ CC \`a $2$ c\^ables : $CC_{01}, CC_{12}, CC_{23}, CC_{30}, 
+CC_{02}, 
 CC_{13}$, les deux derni\`eres pr\'esentant la caract\'eristique que 
 $El(CC_{02}) \cap El(CC_{13}) \neq \emptyset$ (il existe donc un transfert 
 simple \`a 2 degr\'es de libert\'e entre ces deux configurations).
-  \item $4 CC$ \`a $3$ c\^ables : $\overline{CC}_{012}, \overline{CC}_{013}, 
+  \item $4$ CC \`a $3$ c\^ables : $\overline{CC}_{012}, \overline{CC}_{013}, 
 \overline{CC}_{023}, \overline{CC}_{123}$. Il existe de plus des r\'egions de 
 transferts simples entre plusieurs de ces configurations de c\^ables.
 \end{itemize}
@@ -285,14 +326,15 @@ obtenu permet par exemple de d\'efinir les {\it trajets} possibles pour une
 s\'equence donn\'ee, et de calculer le {\it trajet} optimisant un crit\`ere en 
 attribuant les poids correspondants aux noeuds et fl\`eches du graphe. On voit 
 par exemple que pour passer de $\overline{CC}_{013}$ \`a $\overline{CC}_{123}$, 
-il est possible d'utiliser une {\it transition marginale} via $CC_{13}$, ou 
-encore deux trajets \`a une transition simple, l'un passant par 
+il est possible d'utiliser un trajet \`a une {\it transition marginale} via 
+$CC_{13}$, ou encore deux trajets \`a une transition simple, l'un passant par 
 $\overline{CC}_{012}$ et l'autre par $\overline{CC}_{023}$, ou bien encore 
 d'autres combinaisons marginales et partiellement marginales.
 
 Le robot maximal et ses sous-robots sont repr\'esent\'es dans la 
 Fig.\ref{chap01:fig1}, ainsi que leurs relations de d\'erivation et 
-d'int\'egration. Dans le cas du robot {\tt Marionet-Assist}, le robot maximal 
+d'int\'egration. Dans le cas du robot {\tt Mario\-net-As\-sist}, le robot 
+maximal 
 est abstrait, et il existe $4$ robots r\'ealisables dans $A^{3,3}$, $6$ dans 
 $A^{2,2}$ et quatre dans $A^{1,1}$. Pour chacun des robots r\'ealisables, 
 l'espace de concr\^etisation correspond \`a l'ouvert obtenu par projection 
@@ -301,7 +343,7 @@ configurations de c\^ables associ\'ees. Ainsi, l'espace de concr\^etisation de
 $A^{3,3}_{012}$ est obtenu par projection verticale du triangle issu des 
 droites ${\bf A}_0{\bf A}_1$, ${\bf A}_1{\bf A}_2$ et ${\bf A}_0{\bf A}_2$, \`a 
 l'exception de la projection verticale de ces m\^emes droites. De la m\^eme 
-mani\`ere, l'espace de concr\^etisation du robot $A^{2,2}_{0,1}$ est obtenu par 
+mani\`ere, l'espace de concr\^etisation du robot $A^{2,2}_{01}$ est obtenu par 
 projection verticale de la droite ${\bf A}_0{\bf A}_1$, \`a l'exception de la 
 projection verticale des points ${\bf A}_0$ et ${\bf A}_1$.
 
@@ -402,13 +444,14 @@ triangles dont les sommets respectifs sont ${\bf A}_0{\bf A}_1{\bf A}_3$ et
 ${\bf A}_0{\bf A}_2{\bf A}_3$ ; la projection horizontale de ${\bf G}$ 
 appartient quant \`a elle aux triangles dont les sommets respectifs sont ${\bf 
 A}_1{\bf A}_2{\bf A}_3$ et ${\bf A}_0{\bf A}_1{\bf A}_2$. Supposons que pour 
-${\bf S}$ nous partions de $CC_{013}$. Une premi\`ere solution visible 
-dans \ref{chap01:fig0} pourrait \^etre de passer par une transition marginale 
-correspondant \`a $CC_{13}$ de mani\`ere \`a continuer avec $CC_{123}$. Une 
-autre possibilit\'e consiste \`a se mettre en configuration $CC_{023}$ 
-(tranfert simple) puis d'utiliser un transfert simple de $CC_{023}$ vers 
-$CC_{123}$. Une troisi\`eme enfin propose un seul transfert simple de 
-$CC_{013}$ vers $CC_{012}$, mais ne peut \^etre parcourue en ligne droite. Deux 
+${\bf S}$ nous partions de $\overline{CC}_{013}$. Une premi\`ere solution 
+visible  dans (Fig.\ref{chap01:fig0}) pourrait \^etre de passer par une 
+transition marginale correspondant \`a $CC_{13}$ de mani\`ere \`a continuer 
+avec $\overline{CC}_{123}$. Une autre possibilit\'e consiste \`a se mettre en 
+configuration $\overline{CC}_{023}$ (tranfert simple) puis d'utiliser un 
+transfert simple de $\overline{CC}_{023}$ vers $\overline{CC}_{123}$. Une 
+troisi\`eme enfin propose un seul transfert simple de $\overline{CC}_{013}$ 
+vers $\overline{CC}_{012}$, mais ne peut \^etre parcourue en ligne droite. Deux 
 questions se posent alors :
 \begin{itemize}
  \item \`a quel point de la trajectoire op\'erer le transfert ?
@@ -429,30 +472,31 @@ plusieurs crit\`eres permettant une optimisation des trajets.
 
 Au contraire des CDPR pleinement contraints dont la pose est d\'etermin\'ee par 
 les longueurs des c\^ables (quand un nombre suffisant de ceux-ci sont en 
-tension), les robots en configuration suspendue utilise la gravit\'e pour 
-contraindre la pose. Si ce choix de configuration poss\`ede plusieurs avantage, 
-dont celui d'utiliser un nombre inf\'erieur de c\^ables (ce qui r\'eduit par 
-exemple les possiblit\'es de collision), il rend cependant le syst\`eme plus 
-sensibles aux perturbations, ce qui affecte la qualit\'e du mouvement du robot.
+tension), les robots en configuration suspendue utilisent la gravit\'e pour 
+contraindre la pose. Si ce choix de configuration poss\`ede plusieurs 
+avantages, dont celui d'utiliser un nombre inf\'erieur de c\^ables (ce qui 
+r\'eduit par exemple les possiblit\'es de collision), il rend cependant le 
+syst\`eme plus sensible aux perturbations, ce qui affecte la qualit\'e du 
+mouvement du robot.
 
-Le choix d'une configuration de c\^ables peut se faire lorsque plusieurs sont 
-possibles pour une m\^eme pose. Nous partirons donc du postulat que pour une 
-pose ${\bf X}$ il existe un ensemble $CC_\alpha$ de $M$ configurations $CC_{i}$ 
-telles que $\forall i \in [1, N], {\bf X} \in El(CC_i)$. Certaines - voire 
-toutes - de ces configurations supposent qu'un c\^able au moins est en 
-tension nulle.
+Le choix d'une configuration de c\^ables peut se faire lorsque plusieurs 
+d'entre-elles sont possibles pour une m\^eme pose. Nous partirons donc du 
+postulat que pour une pose ${\bf X}$ il existe un ensemble $CC_\alpha$ de $p$ 
+configurations $CC_{i}$ telles que $\forall i \in [1, pN], {\bf X} \in 
+El(CC_i)$. Certaines - voire toutes - parmi ces configurations supposent qu'un 
+c\^able au moins est en tension nulle.
 
 La strat\'egie g\'en\'eralement utilis\'e dans le contr\^ole des manipulateurs 
 parall\`eles \`a c\^ables consiste \`a leur imposer une longueur la plus proche 
-possible de la distance ${\bf A}_i{\bf B}$. Or, nous avons \'evoqu\'e \`a 
+possible de la distance $||{\bf A}_i{\bf B}||$. Or, nous avons \'evoqu\'e \`a 
 plusieurs reprises que l'incertitude sur les longueurs ne permettait pas de 
 savoir quelle configuration allait succ\'eder au moment $t+1$ \`a celle prise 
 effectivement par les c\^ables au moment $t$. Il est donc extr\^emement 
 difficile - pour ne pas dire g\'en\'eralement impossible - d'avoir un 
 contr\^ole sur les trajets (successions de configurations). Pour autant, 
 l'analyse des sous-robots correspondants aux diff\'erentes configurations ne 
-manquera pas de r\'ev'eler qu'\`a l'exception de cas rares, les propri\'et\'es 
-du manipulateur ne sont pas \'equivalente pour la pose ${\bf X}$.
+manquera pas de r\'ev\'eler qu'\`a l'exception de cas rares, les propri\'et\'es 
+du manipulateur ne sont pas \'equivalentes pour la pose ${\bf X}$.
 
 D\'es lors, plut\^ot que de tenter de garder les longueurs aussi proches 
 que possible de leur valeurs th\'eoriques, nous avons propos\'e 
@@ -462,18 +506,18 @@ suppl\'ementaire qui assure -- en fonction de l'incertitude sur les longueurs
 -- qu'il ne changera pas d'\'etat.
 
 La premi\`ere \'etape consiste donc \`a d\'eterminer pour une pose donn\'ee 
-l'ensemble des configurations de c\^ables dans lesquelles elle peut se 
-retrouver. En hi\'erarchisant ensuite ces configurations \`a partir des 
+l'en\-semble des configurations de c\^ables dans lesquelles elle peut se 
+retrouver. En hi\'erar\-chisant ensuite ces configurations \`a partir des 
 propri\'et\'es des sous-robots, on en choisit une, puis on ajoute aux 
 c\^ables qui n'interviennent pas dans la d\'efinition du sous-robot une 
-longueur suppl\'ementaire tant que l'on ne souhaite pas modifier la 
+longueur suppl\'ementaire, ceci tant que l'on ne souhaite pas modifier la 
 configuration.
 
 L'analyse -- lors d'une trajectoire -- en parall\`ele des propri\'et\'es des 
-sous-robots associ\'ees aux configurations possibles permet de d\'eterminer les 
+sous-robots associ\'es aux configurations possibles permet de d\'eterminer les 
 poses pour lesquelles il est souhaitable de changer de configuration. Au point 
 de transfert d\'etermin\'e par la comparaison des crit\`eres respectifs, il 
-suffit alors de redonner aux c\^ables impliqu\'ees dans la configuration 
+suffit alors de redonner aux c\^ables impliqu\'es dans la configuration 
 post\'erieure leur longueur th\'eorique, et d'ajouter \`a ceux dont on ne veut 
 plus se servir une longueur suppl\'ementaire.
 
@@ -493,7 +537,7 @@ optimisera un crit\`ere pr\'e\'etabli, alors que nous ne pouvions
 pr\'ec\'edemment que nous r\'ef\'erer au {\it pire des cas}
   \item en divisant la t\^ache en sous-robots distincts dont nous d\'ecidons 
 lequel prend en charge le d\'eroulement d'un partie de la trajectoire, nous 
-pouvons am\'eliorer les caract\'eristiques du robot global, d\'es lors que 
+pouvons am\'eliorer les caract\'eristiques du robot global, d\`es lors que 
 celles-ci ne sont plus minor\'ees par la situation la pire sur l'espace de 
 travail, mais uniquement sur le minimum parmi les meilleures situations en 
 chaque point de l'espace.
@@ -514,7 +558,7 @@ plusieurs degr\'es de libert\'e, d'autre part l'aisance de l'utilisation en
 n\'egociant les changements de configurations de c\^ables de mani\`ere souple
 \item lors d'une op\'eration impliquant un asservissement visuel avec cam\'era 
 embarqu\'ee, la moindre perturbation modifie la situation du r\'ef\'erentiel 
-cam\'era par rapport au r\'ef\'erentiel de l'organe terminal. D\'es lors, la 
+cam\'era par rapport au r\'ef\'erentiel de l'organe terminal. D\`es lors, la 
 conversion des mesures effectu\'ees sur l'image en commande pour le 
 manipulateur est fauss\'ee et l'asservissement \'echoue. Une perturbation trop 
 forte peut \'egalement faire sortir la cible de l'image, ce qui conduit 
@@ -570,8 +614,7 @@ Les jacobiennes inverses respectives sont :
 \end{equation}
 
 En posant $m = 1/g$, nous avons \boldmath ${\mathcal F} = (0, 0, -1)^T$, ce 
-qui 
-nous donne :
+qui nous donne :
 
 \begin{equation}
 {\bf \tau}_{013} = 
@@ -633,8 +676,8 @@ Les jacobiennes inverses correspondantes sont :
 \label{chap01:eq08}
 \end{equation}
 
-En utilisant pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de 
-câbles $CC_{01}$ la pseudo-inverse de Moore-Penrose pour calculer les tensions 
+En utilisant, pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de 
+câbles $CC_{01}$, la pseudo-inverse de Moore-Penrose pour calculer les tensions 
 théoriques correspondantes, nous obtenons :
 
 \begin{equation}
@@ -673,7 +716,7 @@ travail avec $Z = 0.5$ (vue 2D)]{\label{chap01:fig4view3}
     \caption{\footnotesize Les deux figures en haut montrent comment (pour 
 $Z = 0.5$) l'espace de travail est r\'eparti entre les sous-robots associ\'es 
 aux configurations de c\^ables $\overline{CC}_i$: en rouge la configuration 
-$\overline{CC}_{012}$, en vert la configuration $\overline{CC}_{013}$, en blue 
+$\overline{CC}_{012}$, en vert la configuration $\overline{CC}_{013}$, en bleu 
 la configuration $\overline{CC}_{023}$ et en jaune la configuration 
 $\overline{CC}_{123}$. Les figures du bas montrent (toujours pour $Z = 0.5$) 
 l'\'evolution du crit\`ere $\mathcal M_{\hbox{stab}}$ sur l'essentiel de 
@@ -698,17 +741,18 @@ incertitudes articulaires}
 
 La pr\'ecision actuelle du {\tt Marionet-Assist} sur lequel nous avons 
 conduits nos exp\'erimentations n'exc\`ede pas $0.10m$ pour 
-un espace de travail d'approximativement $3mx3mx4m$. Nous avons en effet 
+un espace de travail d'approximati\-vement $3mx3mx4m$. Nous avons en effet 
 entrepris de placer le manipulateur dans une pose pr\'ealablement d\'ecid\'ee, 
-puis execut\'e deux aller-retours en mesurant les \'ecarts avec la position 
+puis ex\'ecut\'e deux aller-retours en mesurant les \'ecarts avec la position 
 initiale une fois les retours accomplis. Les r\'esultats -- que l'on peut lire 
-dans le tableau \ref{chap01:tab01} -- montrent que l'on atteint rapidement une 
+dans le tableau (\ref{chap01:tab01}) -- montrent que l'on atteint rapidement 
+une 
 erreur dont la norme $L^2$ est de $0.048m$. Rapport\'e \`a la taille de 
 l'espace de travail, une telle pr\'ecision est plut\^ot performante, et 
 satisfait les exigences requises pour l'usage originel du manipulateur. 
 Toutefois, d\`es lors que nous avons entrepris d'ajouter des fonctionnalit\'es 
 de manipulation d'objets du quotidien, la pr\'ecision requise doit \^etre 
-inf\'erieure \`a $0.01cm$. Nous verrons dans le chapitre suivant que 
+inf\'erieure \`a $0.01m$. Nous verrons dans le chapitre suivant que 
 l'asservissement visuel permet une telle am\'elioration des performances du 
 robot, mais \'egalement que la qualit\'e de l'asservissement d\'epend de la 
 configuration de c\^ables dans laquelle on se trouve. En effet, une incertitude 
@@ -721,7 +765,7 @@ vision permette des corrections mineures pour des trajectoires stables.
 \begin{table}[!h]
 \begin{tabularx}{0.95\linewidth}{|p{0.15\linewidth}|X|X|X|}
 \hline
-& $X-1 $ & $X^-2$ & $X^-3$ \\
+& $X_1 $ & $X_2$ & $X_3$ \\
 \hline
 position(m) & (1.53,1.00,1.21) & (1.51,1.00,1.23) & (1.57,1.02,1.19)\\
 \hline
@@ -779,7 +823,7 @@ d\'efinition de la jacobienne.
 
 D\`es lors, nous nous retrouvons ici avec un biais que nous corrigerons en ne 
 consid\'erant que les erreurs de positionnement dans le plan, \'emettant donc 
-l'hypoth\`ese que les erreurs sur la profondeur leur seront homog\`ene.
+l'hypoth\`ese que les erreurs sur la profondeur leur seront homog\`enes.
 
 \begin{figure}[!htp]
   \centering
@@ -800,7 +844,7 @@ travail avec $Z = 0.5$ (vue 2D)]{\label{chap01:fig5view3}
     \caption{\footnotesize Les deux figures en haut montrent comment (pour 
 $Z = 0.5$) l'espace de travail est r\'eparti entre les sous-robots associ\'es 
 aux configurations de c\^ables $\overline{CC}_i$: en rouge la configuration 
-$\overline{CC}_{012}$, en vert la configuration $\overline{CC}_{013}$, en blue 
+$\overline{CC}_{012}$, en vert la configuration $\overline{CC}_{013}$, en bleu 
 la configuration $\overline{CC}_{023}$ et en jaune la configuration 
 $\overline{CC}_{123}$. Les figures du bas montrent (toujours pour $Z = 0.5$) 
 l'\'evolution du crit\`ere $\mathcal M_{\hbox{acc}}$ sur l'essentiel de 
@@ -828,7 +872,7 @@ $$\mathcal M_{\hbox{acc}_{02}} = \max_{x,y} |( -0.0197, -0.0197, -0.1338)^T|
 = 0.0197$$
 
 Ici, la configuration $CC_{02}$ est pr\'ef\'er\'ee. Il s'agit toutefois d'un 
-crit\`ere \'etabli pour une pose donn\'ee, alors que nous \'evolutons dans le 
+crit\`ere \'etabli pour une pose donn\'ee, alors que nous \'evoluons dans le 
 cadre d'une trajectoire. Dans l'algorithme final qui sera pr\'esent\'e et 
 illustr\'e en fin de chapitre, nous ajouterons une p\'enalit\'e \`a tout 
 changement de configuration. Ainsi, si la trajectoire se d\'eroule dans notre 
@@ -839,17 +883,18 @@ devrait conduire \`a basculer (ou rester) en configuration
 $\overline{CC}_{013}$.
 
 Nous pouvons observer en (Fig.\ref{chap01:fig5}) la r\'epartition de l'espace 
-de travail pour chaque sous-robot, ainsi que l'\'evolution du crit\'ere. 
+de travail pour chaque sous-robot, ainsi que l'\'evolution du crit\`ere. 
 Contrairement au crit\`ere de stabilit\'e, nous trouvons de nombreux transferts 
 de type marginaux. Les figures (\ref{chap01:fig5view0} et 
 \ref{chap01:fig5view1}) montrent en particulier que la pr\'ecision augmente 
 d'autant plus que nous nous rapprochons du centre de l'espace de travail, ce qui 
 n'\'etait pas le cas dans le cas de la recherche de stabilit\'e. Pour une 
 incertitude de l'ordre de $0.10m$, nous avons mesur\'e sur l'espace de travail 
-une moyenne de $0.0283m$ avec la s\'election de configurations de c\^ables, pour 
-une moyenne de $0.0322m$ en nous basant sur le {\it pire des cas} (\`a savoir la 
-plus mauvaise configuration de c\^ables en chaque point ; 1 chance sur 2 dans le 
-cas du $4-1$ qui poss\`ede en chaque pose deux configurations possibles).
+une moyenne d'incertitude de la pose \'egale \`a $0.0283m$ avec la s\'election 
+de configurations de c\^ables, pour une moyenne de $0.0322m$ en nous basant sur 
+le {\it pire des cas} (\`a savoir la plus mauvaise configuration de c\^ables en 
+chaque point ; 1 chance sur 2 dans le cas du 4-1 qui poss\`ede en chaque pose 
+deux configurations possibles).
 
 \section{Certification de la m\'ethode}
 
@@ -866,7 +911,8 @@ hypoth\`ese n'\'etait pas tenable pour deux raisons :
 pouvons certes am\'eliorer, mais qui implique n\'eanmoins que nous devions la 
 prendre en compte dans l'ensemble des calculs
 \item pr\`es des zones de transferts, une erreur de pose peut conduire \`a un 
-changement de configuration de c\^able ind\'esirable, et nous faire perdre donc 
+changement de configuration de c\^ables ind\'esirable, et nous faire perdre 
+donc 
 les avantages gagn\'es jusqu'ici.
 \end{itemize}
 
@@ -890,10 +936,10 @@ les caract\'eristiques principales.
 
 L'analyse par intervalles a \'et\'e propos\'ee par \cite{moore1968} afin de 
 prendre en compte les incertitudes dans les calculs. L'encadrement des variables 
-et param\`etres permet ainsi de propager les incertitudes et d'obtenir ainsi 
+et param\`etres permet de propager les incertitudes et d'obtenir ainsi 
 des r\'esultats certifi\'es. L'analyse par intervalle a r\'ecemment \'et\'e 
-utilis\'ee pour de l\'etalonnage de robots \`a c\^ables \cite{sandretto2012}, 
-pour le calcul de l'espace de travail de robots parall\`elles \`a c\^ables 
+utilis\'ee pour de l'\'etalonnage de robots \`a c\^ables \cite{sandretto2012}, 
+pour le calcul de l'espace de travail de robots parall\`eles \`a c\^ables 
 \cite{gouttefarde2011}, pour la r\'esolution du MGD des robots parall\`eles 
 \cite{merlet2004solving} ou encore l'\'etalonnage de robots parall\`eles \`a 
 l'aide de la vision \cite{daney2006interval}. Les algorithmes utilisant des 
@@ -902,7 +948,7 @@ parall\'elisables et donc d'exploiter pleinement les possibilit\'es du calcul
 distribu\'e.
 
 On d\'efinit un intervalle $[x] = [\underline{x},\overline{x}]$ comme \'etant 
-l'ensemble des r\'eels $x$ tels que $\underline{x} < x < \overline{x}$.
+l'ensemble des r\'eels $x$ tels que $\underline{x} \leq x \leq \overline{x}$.
 On utilisera les notations suivantes :
 \begin{itemize}
  \item $\hbox{Min}([x]) = \underline{x}$
@@ -962,7 +1008,7 @@ surestimation de son co-domaine. Une telle surestimation sera not\'ee $\Box f =
 contraction utilis\'es respectivement pour tester la pr\'esence de solutions 
 dans un ensemble possible et r\'eduire la taille de cet ensemble possible.
 
-Il est ainsi possible de red\'efinir toutes les fonctions \`a valeurs 
+Il est possible de red\'efinir toutes les fonctions \`a valeurs 
 r\'eelles. En particulier, puisque nous souhaitons utiliser les intervalles 
 sur l'\'equilibre statique (crit\`ere de stabilit\'e) et les \'equations de la 
 cin\'ematique (crit\`ere de pr\'ecision), nous sommes int\'eress\'es par 
@@ -970,9 +1016,9 @@ l'extension aux intervalles de la r\'esolutions des syst\`emes lin\'eaires
 \cite{hansen1980}.
 
 Soit $[A]x = [b]$ un syst\`eme lin\'eaire dont les valeurs de $[A]$ et $[b]$ 
-sont des intervalles. On cherche alors un intervalle $[x]$, mais 
-qui peut \^etre de diff\'erentes natures selon le contexte dans lequel est 
-pos\'e le syst\`eme :
+sont des intervalles. La solution prend la forme d'un intervalle $[x]$ pouvant 
+\^etre de diff\'erentes natures selon le contexte dans lequel est pos\'e le 
+syst\`eme :
 \begin{itemize}
  \item $[x]_{\exists \exists} := \left \lbrace x ; \exists A \in [A], \exists b 
 \in [b], Ax = b \right \rbrace$
@@ -994,13 +1040,13 @@ divis\'ee en plusieurs sous-bo\^ites. On teste la pr\'esence de solution dans
 chacune des sous-bo\^ites : si la solution n'y figure pas, la bo\^ite est 
 rejet\'ee. Sinon, elle est \`a son tour divis\'ee en plusieurs bo\^ites sur 
 lesquelles on testera la pr\'esence de solutions. L'algorithme est r\'ep\'et\'e 
-jusqu'\`a ce quela taille des bo\^ites soit inf\'erieure \`a un certain seuil. 
+jusqu'\`a ce que la taille des bo\^ites soit inf\'erieure \`a un certain seuil. 
 On obtient ainsi un encadrement fin des solutions d'un syst\`eme.
   \item {\it redondance des variables} (contraction) : lorsqu'une m\^eme 
 variable est utilis\'ee plusieurs fois, l'analyse par intervalle la consid\`ere 
 cependant comme une variable ind\'ependante et surestime d\`es lors la 
 propagation des incertitudes sur cette variable. Ainsi, pour $[x] = [-1,1]$, le 
-calcul de $[x]*[x]$ donnera $[-1,1]$ alors que le co-domaine est $[0,1]$. 
+calcul de $[x]*[x]$ donnera $[-1,1]$ alors que son co-domaine est $[0,1]$. 
 Une analyse plus fine du syst\`eme prenant en compte la pr\'esence 
 redondante d'une variable peut rapidement permettre de r\'eduire la taille 
 de l'espace des solutions. Nous reviendrons d'ailleurs sp\'ecifiquement dans la 
@@ -1008,9 +1054,9 @@ section suivante sur deux utilisations particuli\`eres de la redondance des
 variables dans notre algorithme.  
 \end{itemize}
 
-En utilisant l'analyse par intervalle, nous assurons une robustesse aux erreurs 
-et incertitudes, mais c'est au prix parfois d'une surestimation de leurs 
-influences sur le mod\`ele et la commande. L'algorithme que nous allons 
+En utilisant l'analyse par intervalles, nous assurons une robustesse aux 
+erreurs et incertitudes, mais c'est au prix parfois d'une surestimation de 
+leurs influences sur le mod\`ele et la commande. L'algorithme que nous allons 
 exposer constitue l'\'equilibre que nous avons trouv\'e entre garantie maximale 
 des r\'esultats et estimation la plus fid\`ele possible des espaces solutions.
 
@@ -1042,9 +1088,9 @@ Une ligne de la jacobienne inverse correspondante devient :
 \label{chap01:eq14}
 \end{equation}
 
-Soient $\mathcal O({\bf S}{\bf G})$ une s\'equence \`a r\'ealiser.
-
 \subsubsection{D\'etermination des sites l\'egaux}
+
+Soient $\mathcal O({\bf S}{\bf G})$ une s\'equence \`a r\'ealiser.
 
 Dans un premier temps, nous cherchons \`a d\'eterminer les ensembles $Sl(S)$ et 
 $Sl(G)$, \`a savoir l'ensemble des configurations de c\^ables possibles pour 
@@ -1102,11 +1148,11 @@ r\'e\'ecrire le syst\`eme diff\'eremment, par exemple :
 et de consid\'erer l'intersection des intervalles de solutions trouv\'ees.
 
 Nous obtenons donc deux intervalles $[\lambda_1]$ et $[\lambda_2]$, dont nous 
-allons prendre l'intersection $[\lambda = [\lambda_1] \cap [\lambda_2]$. Nous 
+allons prendre l'intersection $[\lambda] = [\lambda_1] \cap [\lambda_2]$. Nous 
 testons ensuite si $0 < \overline{\lambda}$ et $\underline{\lambda} < 1$. Si 
 c'est le cas, alors il existe dans notre intervalle une valeur pour laquelle le 
-syst\`eme est v\'erif\'e. Potentiellement, ${\bf B} \in El(CC_{ij})$. Nous 
-retenons donc la configuration. Dans le cas contraire, elle sera rejet\'ee.
+syst\`eme est v\'erif\'e ; potentiellement, ${\bf B} \in El(CC_{ij})$, et nous 
+retenons la configuration. Dans le cas contraire, elle sera rejet\'ee.
 
 Nous pouvons noter que dans le cas o\`u nous aurions $0 \in ([A_{j_x}] - 
 [A_{i_x}])$ (ceci vaudra \'egalement pour $0 \in ([A_{j_y}] - [A_{i_y}])$), le 
@@ -1153,61 +1199,169 @@ obtenons ainsi le syst\`eme suivant :
 ({\bf A}_{j_y} - {\bf A}_{i_y}) & ({\bf A}_{k_y} - {\bf A}_{i_y})
 \end{bmatrix}
 \begin{bmatrix}
-\lambda
+\lambda \\
 \mu
 \end{bmatrix}
 \label{chap01:eq18}
 \end{equation}
 
+Un premier test \`a op\'erer est le calcul du d\'eterminant de la matrice du 
+syst\`eme. Pour cela, nous faisons une \'evaluation par intervalles : si $0 \in 
+[\hbox{Det}A]$, alors nous intervertissons les r\^oles jou\'es par les points, 
+et si la situation se reproduit, alors nous rejetons la configuration.
 
+Dans le cas d'un d\'eterminant non-nul, nous inversons le syst\`eme :
 
+\begin{equation}
+\begin{bmatrix}
+\lambda \\
+\mu
+\end{bmatrix} = \frac 1 {\hbox{Det A}}
+\begin{bmatrix}
+({\bf A}_{k_y} - {\bf A}_{i_y}) & -({\bf A}_{k_x} 
+- {\bf A}_{i_x}) \\
+-({\bf A}_{j_y} - {\bf A}_{i_y}) & ({\bf A}_{j_x} - {\bf A}_{i_x}) 
+\end{bmatrix}
+\begin{bmatrix}
+{\bf B}_{x} - {\bf A}_{i_x} \\
+{\bf B}_{y} - {\bf A}_{i_y}
+\end{bmatrix}
+\label{chap01:eq19}
+\end{equation}
 
-
-\subsubsection{Hi\'erarchisation des s\'equences}
+Nous obtenons alors $[\lambda, \mu]$ sur lesquelles nous op\'erons deux types 
+de tests :
+\begin{itemize}
+ \item si $0 < \underline{\lambda}, \underline{\mu}$ et $\overline{\lambda} + 
+\overline{\mu} < 1$, alors $\bf B$ appartient avec certitude \`a l'espace 
+l\'egal de la configuration de c\^ables test\'ee.
+ \item si $0 < \overline{\lambda}, \overline{\mu}$ et $\underline{\lambda} + 
+\underline{\mu} < 1$, alors il existe des couples $(\lambda, \mu) \in 
+[\lambda]\times[\mu]$ qui v\'erifient les conditions d'appartenance. D\`es 
+lors, nous ne pouvons exclure la possibilit\'e que le robot puisse utiliser la 
+configuration de c\^ables test\'ee en cette pose aux incertitudes pr\`es. La 
+configuration de c\^ables est donc conserv\'ee.
+\end{itemize}
 
 \begin{figure}[!htp]
   \centering
- \subfloat[Cas 01 : $\forall x \in \hbox{[}X\hbox{]}, f(x) \in 
+ \subfloat[Cas 01 : $\forall x \in \hbox{[}X\hbox{]},  F(x) \in 
 I$]{\label{chap01:fig06view0}
- \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_in.png}}
- \subfloat[Cas 02 : $\exists (x,y) \in \hbox{[}X\hbox{]}^2, f(x) 
-\in I, f(y) \notin I$]{\label{chap01:fig06view1}
- \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_inout.png}} 
-\\
-  \subfloat[Cas 03 : $\forall x \in \hbox{[}X\hbox{]}, f(x) \notin I$] 
+ \includegraphics[width=.33\linewidth]{./chapter01/figures/interval_in.png}} 
+\hfill
+ \subfloat[Cas 02 : $\exists (x,y) \in \hbox{[}X\hbox{]}^2,  
+F(x) 
+\in I,  F(y) \notin I$]{\label{chap01:fig06view1}
+ \includegraphics[width=.33\linewidth]{./chapter01/figures/interval_inout.png}} 
+\hfill
+  \subfloat[Cas 03 : $\forall x \in \hbox{[}X\hbox{]},F(x) 
+\notin I$] 
 {\label{chap01:fig06view2}
- \includegraphics[width=.45\linewidth]{./chapter01/figures/interval_out.png}}
-    \caption{\footnotesize{Trois situations de test d'hypoth\`ese en analyse 
-par intervalles : inclusion totale, inclusion partielle, exclusion totale.}}
+ \includegraphics[width=.33\linewidth]{./chapter01/figures/interval_out.png}}
+    \caption{\footnotesize{Trois situations de test d'appartenance : dans les 
+cas $a$ et $b$, l'image par $[f]$ de $[x]$ permet de d\'ecider en toute 
+certitude ; le cas $c$ ne permet pas de conclure : aux incertitudes s'ajoutent 
+la surestimation \'eventuelle de l'image de $[X]$}}
 \label{chap01:fig06}
 \end{figure}
 
+Nous nous trouvons \`a la fin de cette \'etape avec $3$ types de situations : 
+des configurations de c\^ables possibles sous-contraintes, des configurations 
+de $3$ c\^ables possibles, et des configurations de $3$ c\^ables certaines.
 
+Nous attribuons un score \`a chacune de ces situations, que nous notons 
+$\mathcal M_{CC}$.
 
-\subsection{Illustrations}
+\subsubsection{Mesure des crit\`eres}
 
-\begin{figure}[!htp]
-  \centering
- \subfloat[En bas \`a gauche : les deux c\^ables mous se succ\`edent, la zone 
-verte correspond alors \`a la r\'egion qui n'est plus atteignable ; en haut \`a 
-droite : l'un des c\^ables mous n'a pas de voisin imm\'ediat qui soit lui aussi 
-mous, la zone en bleu correspond \`a la r\'egion qui n'est plus atteignable. 
-]{\label{chap01:fig10view0}
- \def\svgwidth{.45\linewidth}
- \input{./chapter01/figures/drawing_robot86.pdf_tex}} \hfill
- \subfloat[L'octogone au centre de la figure 
-correspond \`a la r\'egion de l'espace de travail 
-pouvant \^etre atteinte par l'ensemble des 28 
-configurations de 6 c\^ables.]{\label{chap01:fig10view1}
- \def\svgwidth{.45\linewidth}
- \input{./chapter01/figures/drawing_robot86bis.pdf_tex}} 
-    \caption{\footnotesize{Robot \`a 8 c\^ables in\'elastiques dont les points 
-d'attache sont dispos\'es en octogone. En haut, sont montr\'ees les r\'egions 
-inatteignables de l'espace de travail lorsque les c\^ables 0 et 7 sont mous 
-(r\'egion verte en bas \`a gauche), ou lorsque le c\^able 3 est mou 
-(r\'egion bleue en haut \`a droite). La figure du bas montre ainsi la r\'egion 
-de l'espace de travail qui peut \^etre atteinte par l'ensemble des 
-configurations de 6 c\^ables en tension, soit $28$ sous-robots $A^{6,6}$}}
+{\bf Stabilit\'e :}\\
 
-\label{chap01:fig10}
-\end{figure}
+La relation utilis\'ee est ${\bf \tau} = {\bf J}^{T} {\boldmath \mathcal F}$. 
+Nous consid\'erons ${\boldmath \mathcal F}$ comme un intervalle 
+d\'eg\'en\'er\'e ($\underline{x} = \overline{x}$), et utilisons la jacobienne 
+inverse \'etendue aux intervalles. Dans le cas des configurations de $3$ 
+c\^ables, la formule d'inversion est connue et nous utilisons la redondance des 
+variables pour contracter le vecteur d'intervalles solution pour les tensions. 
+Le score calcul\'e pour une configuration de c\^ables est alors :
+
+\begin{equation}
+\mathcal M_{\hbox{stab}} = \sqrt{\sum_i \overline{\tau_i}^2}
+\label{chap01:eq20}
+\end{equation}\\
+
+\noindent {\bf Pr\'ecision :}\\
+
+Nous utilisons pour $\Delta \Theta$ la bo\^ite $[-\delta \rho/2, \delta 
+\rho/2]^3$ ainsi que la jacobienne inverse \'etendue aux intervalles. Le 
+r\'esultat obtenu est une bo\^ite $[\Delta X]$, \`a partir de laquelle nous 
+d\'eduisons le score :
+
+\begin{equation}
+\mathcal M_{\hbox{acc}} = \max_{x,y}{\hbox{Abs}([|Delta X])}
+\label{chap01:eq21}
+\end{equation}
+o\`u $\hbox{Abs}([X])$ est la fonction {\it valeur absolue} \'etendue aux 
+intervalles.
+
+\subsubsection{Hi\'erarchisation des s\'equences}
+
+{\bf Optimisation globale :}\\
+
+Nous n'avons consid\'er\'e ici que les s\'equences en ligne droite. Partant de 
+${\bf S}$, nous recherchons l'ensemble des points ${\bf M}_i$ interm\'ediaires 
+constituant la trajectoire aboutissant \`a $\bf G$. Si l'ensemble de la 
+trajectoire ne peut \^etre r\'ealis\'ee avec une unique configuration de 
+c\^ables, nous cherchons le meilleur point ${\bf M}_i$ pour r\'ealiser le 
+transfert (ce point est unique dans le cadre d'un transfert marginal), et nous 
+r\'eit\'erons l'op\'eration jusqu'\`a la r\'ealisation de la trajectoire. 
+Plusieurs trajets sont alors obtenus, dont les scores respectifs sont :
+\begin{equation}
+\mathcal M_{\hbox{traj}} = \left (\sum_{i=1}^p \alpha \mathcal M_{CC_i} + \beta 
+\mathcal M_{\hbox{stab}_i} + \gamma M_{\hbox{acc}_i} \right ) + \sum_{j = 
+0}^{p-1} \mathcal M_{\hbox{trans}_j} 
+\label{chap01:eq22}
+\end{equation}
+avec $\mathcal M_{\hbox{trans}_j}$ le score du transfert entre deux 
+configurations de c\^ables donn\'ees, et $\alpha, \beta, \gamma$ des poids 
+pond\'erant l'influence des diff\'erents crit\`eres.\\
+
+\noindent {\bf Optimisation locale :}\\
+
+Chaque point de la trajectoire est consid\'er\'e ind\'ependemment des autres ; 
+on cherche alors \`a minimiser les crit\`eres s\'el\'ectionn\'es localement, ce 
+qui peut aboutir \`a plus de changements de configurations (contr\^ol\'es par 
+l'ajout artificiel de longueurs suppl\'ementaires pour les c\^ables que nous 
+souhaitons disqualifier), mais \`a la s\'election de la configuration optimale 
+\`a chaque moment. Il n'y a plus d\`es lors de calcul pr\'ealable du trajet, 
+mais une adaptation \`a chaque instant de la trajectoire. Cette approche est 
+particuli\`erement adapt\'ee aux asservissements en boucle ferm\'ee dont la 
+trajectoire \'evolue en fonction des mesures effectu\'ees \`a chaque 
+it\'eration. 
+
+\section{Conclusions}
+
+Lors de nos premi\`eres exp\'erimentations utilisant l'asservissement visuel 
+pour des robots parall\`eles \`a c\^ables, nous avons rapidement r\'ealis\'e 
+que les changements de configurations de c\^ables en affectait la qualit\'e, 
+parfois jusqu'\`a en compromettre la r\'eussite lorsque les perturbations 
+g\'en\'er\'ees par les changements nous faisaient perdre la cible dans l'image.
+
+Nous avons d\`es lors entrepris de construire une strat\'egie nous permettant 
+de choisir une configuration de c\^ables parmi toutes celles possibles en une 
+pose donn\'ee, puis de d\'efinir des crit\`eres de comparaisons entre chacune 
+d'entre-elles.
+
+Dans ce but, nous avons commenc\'e par \'elaborer un formalisme propre aux 
+configurations de c\^ables. Nous avons ensuite d\'efini une m\'ethode de 
+d\'etermination des propri\'et\'es d'un syst\`eme en favorisant une approche 
+{\it bottom-up} : le robot dit {\it maximal} est construit comme un syst\`eme 
+collaboratif de plusieurs unit\'es pouvant se relayer une t\^ache dans des
+conditions d\'etermin\'ees. Nous avons alors propos\'e des crit\`eres 
+autorisant la hi\'erarchisation des trajets, compos\'es de trajectoires et de 
+transferts.
+
+Toutefois, afin d'assurer la robustesse de notre d\'emarche aux incertitudes, 
+nous avons compl\'et\'e l'approche par l'utilisation de l'analyse par 
+intervalles. Nous enfin enfin pr'esent\'e les grandes lignes de l'algorithme 
+final. Les simulations et exp\'erimentations seront pr\'esent\'es dans le 
+dernier chapitre de cette \'etude.

@@ -1,15 +1,14 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manuscrit.aux
-A level-1 auxiliary file: ./titlepage/titlepage.aux
-A level-1 auxiliary file: preambule/preambule.aux
 A level-1 auxiliary file: intro/intro.aux
 A level-1 auxiliary file: chapter01/chapter01.aux
+A level-1 auxiliary file: chapter02/chapter02.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
 Warning--string name "juin" is undefined
---line 1919 of file ./biblio/bibliography.bib
-I was expecting a `,' or a `}'---line 1920 of file ./biblio/bibliography.bib
+--line 1929 of file ./biblio/bibliography.bib
+I was expecting a `,' or a `}'---line 1930 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
@@ -30,43 +29,43 @@ Warning--empty title in moore1968
 Warning--empty journal in sandretto2012
 You've used 41 entries,
             2118 wiz_defined-function locations,
-            774 strings with 11609 characters,
-and the built_in function-call counts, 14805 in all, are:
-= -- 1481
-> -- 542
+            774 strings with 11522 characters,
+and the built_in function-call counts, 14787 in all, are:
+= -- 1483
+> -- 534
 < -- 15
-+ -- 225
-- -- 174
-* -- 962
-:= -- 2290
-add.period$ -- 126
++ -- 222
+- -- 172
+* -- 959
+:= -- 2281
+add.period$ -- 125
 call.type$ -- 41
 change.case$ -- 204
 chr.to.int$ -- 0
 cite$ -- 43
-duplicate$ -- 637
+duplicate$ -- 638
 empty$ -- 1264
-format.name$ -- 174
-if$ -- 3275
+format.name$ -- 172
+if$ -- 3274
 int.to.chr$ -- 0
 int.to.str$ -- 41
 missing$ -- 42
 newline$ -- 206
-num.names$ -- 84
+num.names$ -- 82
 pop$ -- 245
 preamble$ -- 1
 purify$ -- 167
 quote$ -- 0
-skip$ -- 504
+skip$ -- 506
 stack$ -- 0
-substring$ -- 1056
-swap$ -- 201
+substring$ -- 1063
+swap$ -- 203
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 156
 warning$ -- 2
-while$ -- 138
+while$ -- 137
 width$ -- 43
 write$ -- 451
 (There were 5 error messages)
