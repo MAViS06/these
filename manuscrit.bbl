@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{1992:Albus.Bostelman.ea}
-J.~Albus, R.~Bostelman, and N.~Dagalakis.
-\newblock The {NIST SPIDER}, a robot crane.
-\newblock {\em Journal of research of the National Institute of Standards and
-  Technology}, 97(3):373--385, may 1992.
-
 \bibitem{andreff2007}
 Nicolas Andreff, Tej Dallej, and Philippe Martinet.
 \newblock Image-based visual servoing of a {G}ough{-}{S}tewart parallel
@@ -17,17 +11,6 @@ Duane~C. Brown.
 \newblock Close-range camera calibration.
 \newblock {\em PHOTOGRAMMETRIC ENGINEERING}, 37(8):855--866, 1971.
 
-\bibitem{2010:Carricato.Merlet}
-M.~Carricato and J-P. Merlet.
-\newblock Geometrico-static analysis of under-constrained cable-driven parallel
-  robot.
-\newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
-
-\bibitem{carricato_merlet2013}
-M.~Carricato and J.P. Merlet.
-\newblock Stability analysis of underconstrained cable-driven parallel robots.
-\newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
-
 \bibitem{chaumette:tuto01}
 Fran{\c c}ois Chaumette and S.~Hutchinson.
 \newblock {Visual servo control, Part I: Basic approaches}.
@@ -37,12 +20,6 @@ Fran{\c c}ois Chaumette and S.~Hutchinson.
 Fran{\c c}ois Chaumette and S.~Hutchinson.
 \newblock {Visual servo control, Part II: Advanced approaches}.
 \newblock {\em IEEE Robotics and Automation Magazine}, 14(1):109--118, 2007.
-
-\bibitem{1988:Clavel}
-R.~Clavel.
-\newblock Delta, a fast robot with parallel geometry.
-\newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
-  Lausanne, 26-28 april 1988.
 
 \bibitem{dallej.2006}
 T.~Dallej, N.~Andreff, Y.~Mezouar, and P.~Martinet.
@@ -70,12 +47,6 @@ Tej Dallej, Marc Gouttefarde, Nicolas Andreff, Micaël Michelin, and Philippe
 \newblock Towards vision-based control of cable-driven parallel robots.
 \newblock In {\em IROS}, pages 2855--2860. IEEE, 2011.
 
-\bibitem{daney2006interval}
-David Daney, Nicolas Andreff, Gilles Chabert, and Yves Papegay.
-\newblock Interval method for calibration of parallel robots: Vision-based
-  experiments.
-\newblock {\em Mechanism and Machine Theory}, 41(8):929--944, 2006.
-
 \bibitem{espiau1992}
 B.~Espiau, F.~Chaumette, and Patrick Rives.
 \newblock A new approach to visual servoing in robotics.
@@ -94,31 +65,6 @@ Olivier Faugeras.
 \newblock {\em Three-dimensional Computer Vision: A Geometric Viewpoint}.
 \newblock MIT Press, Cambridge, MA, USA, 1993.
 
-\bibitem{journals/gosselin1989}
-C.~Gosselin and J.~Angeles.
-\newblock The optimum kinematic design of a spherical three-degree-of-freedom
-  parallel manipulator.
-\newblock {\em J. of Mechanisms, Transmissions and Automation in De- sign},
-  1989.
-
-\bibitem{1956:Gough}
-V.E. Gough.
-\newblock Contribution to discussion of papers on research in automobile
-  stability, control and tyre performance, 1956-1957.
-\newblock Proc. Auto Div. Inst. Mech. Eng.
-
-\bibitem{gouttefarde2011}
-M.~Gouttefarde, D.~Daney, and J.~P Merlet.
-\newblock Interval-analysis-based determination of the wrench-feasible
-  workspace of parallel cable-driven robots.
-\newblock {\em Robotics, IEEE Transactions on}, 27(1):1--13, Feb 2011.
-
-\bibitem{hansen1980}
-Eldon Hansen.
-\newblock Global optimization using interval analysis — the multi-dimensional
-  case.
-\newblock {\em Numerische Mathematik}, 34(3):247--270, 1980.
-
 \bibitem{hartley2004}
 R.~I. Hartley and A.~Zisserman.
 \newblock {\em Multiple View Geometry in Computer Vision}.
@@ -136,31 +82,6 @@ W.F. Marantette.
   measurements, February~7 1995.
 \newblock US Patent 5,387,969.
 
-\bibitem{merlet2004solving}
-J.-P. Merlet.
-\newblock Solving the forward kinematics of a gough-type parallel manipulator
-  with interval analysis, 2004.
-
-\bibitem{merlet2008}
-J.~P Merlet.
-\newblock Kinematics of the wire-driven parallel robot marionet using linear
-  actuators.
-\newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
-  Conference on}, pages 3857--3862, May 2008.
-
-\bibitem{merlet2013-431}
-J.-P. Merlet.
-\newblock Kinematic analysis of the 4-3-1 and 3-2-1 wire-driven parallel crane.
-\newblock In {\em Robotics and Automation (ICRA), 2013 IEEE International
-  Conference on}, pages 4635--4640, May 2013.
-
-\bibitem{merlet2014check}
-J-P. Merlet.
-\newblock Checking the cable configuration of cable-driven parallel robots on a
-  trajectory.
-\newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
-  1586--1591, Hong-Kong, 2014.
-
 \bibitem{merlet.1993}
 Jean{-}Pierre Merlet.
 \newblock Closed-form resolution of the direct kinematics of parallel
@@ -168,29 +89,6 @@ Jean{-}Pierre Merlet.
 \newblock In {\em Proceedings of the 1993 {IEEE} International Conference on
   Robotics and Automation, Atlanta, Georgia, USA, May 1993}, pages 200--204,
   1993.
-
-\bibitem{merlet2012}
-Jean-Pierre Merlet.
-\newblock The kinematics of the redundant {N-1} wire driven parallel robot.
-\newblock In {\em ICRA}, pages 2313--2318. IEEE, 2012.
-
-\bibitem{merlet2010}
-Jean{-}Pierre Merlet and David Daney.
-\newblock A portable, modular parallel wire crane for rescue operations.
-\newblock In {\em {IEEE} International Conference on Robotics and Automation,
-  {ICRA} 2010, Anchorage, Alaska, USA, 3-7 May 2010}, pages 2834--2839, 2010.
-
-\bibitem{merlet1997robots}
-J.P. Merlet.
-\newblock {\em Les robots parall{\`e}les}.
-\newblock Collection robotique. Hermes, 1997.
-
-\bibitem{1994:Ming.Higuchi}
-A.~Ming and T.~Higuchi.
-\newblock Study on multiple degree of freedom positioning mechanisms using
-  wires, part 2, development of a planar completely restrained positioning
-  mechanism.
-\newblock {\em Int. J. Japan Soc. Prec. Eng.}, 28(3):235--242, september 1994.
 
 \bibitem{paccot.2008}
 Flavien Paccot, Philippe Lemoine, Nicolas Andreff, Damien Chablat, and Philippe
@@ -210,35 +108,12 @@ D.~Purves.
 \newblock {\em Neuroscience}.
 \newblock Sinauer Associates Incorporated, 2004.
 
-\bibitem{ramadour2014}
-R.~Ramadour and J.-P. Merlet.
-\newblock Computing safe trajectories for an assistive cable-driven parallel
-  robot by selecting the cables under tension and using interval analysis.
-\newblock In {\em Advanced Intelligent Mechatronics (AIM), 2014 IEEE/ASME
-  International Conference on}, pages 1349--1354, July 2014.
-
-\bibitem{moore1968}
-R.~D. Richtmyer.
-\newblock {\em Mathematics of Computation}, 22(101):pp. 219--222, 1968.
-
-\bibitem{sandretto2012}
-Julien Alexandre~Dit Sandretto, David Daney, Marc Gouttefarde, C{\'e}dric
-  Baradat, et~al.
-\newblock Calibration of a fully-constrained parallel cable-driven robot.
-\newblock 2012.
-
 \bibitem{stein1997}
 G.~P. Stein.
 \newblock Lens distortion calibration using point correspondences.
 \newblock In {\em Proceedings of the 1997 Conference on Computer Vision and
   Pattern Recognition (CVPR '97)}, CVPR '97, pages 602--, Washington, DC, USA,
   1997. IEEE Computer Society.
-
-\bibitem{1965:Stewart}
-D.~Stewart.
-\newblock A platform with 6 degrees of freedom.
-\newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
-  15):371--386, 1965.
 
 \bibitem{tsai1986}
 Roger~Y. Tsai.

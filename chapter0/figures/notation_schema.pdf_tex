@@ -1,0 +1,66 @@
+%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'notation_schema.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{583.3762207bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.05078424)%
+\put(0,0){\includegraphics[width=\unitlength]
+{./chapter0/figures/notation_schema.pdf}}%
+    \put(0.10378726,0.19709652){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18414974\unitlength}\raggedright $R_b$\end{minipage}}}%
+    \put(0.08235365,0.06274204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.37809467\unitlength}\raggedright $\mathcal O$\end{minipage}}}%
+    \put(0.30217569,0.98617994){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20374016\unitlength}\raggedright $A_i$\end{minipage}}}%
+    \put(0.72924634,0.9648353){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15868214\unitlength}\raggedright $A_j$\end{minipage}}}%
+    \put(0.54731907,0.30551208){\color[rgb]{0,0,0}\rotatebox{-20.78302083}{\makebox(0,0)[lt]{\begin{minipage}{0.19225208\unitlength}\raggedright $R_e$\end{minipage}}}}%
+    \put(0.42249632,0.36773781){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15868218\unitlength}\raggedright $B_i$\end{minipage}}}%
+    \put(0.64439323,0.25484376){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.15868222\unitlength}\raggedright $B_j$\end{minipage}}}%
+    \put(0.30568416,0.76016013){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.54265401\unitlength}\raggedright $\rho_i = ||A_iB_i||$\end{minipage}}}%
+    \put(0.32764321,0.71024915){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.37221756\unitlength}\raggedright $(\tau_i > 0)$\end{minipage}}}%
+    \put(0.60550624,0.57013331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.5054322\unitlength}\raggedright $\rho_j > ||A_jB_j||$\end{minipage}}}%
+    \put(0.62767007,0.52805841){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.38397177\unitlength}\raggedright $(\tau_j = 0)$\end{minipage}}}%
+  \end{picture}%
+\endgroup%

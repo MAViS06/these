@@ -1,0 +1,72 @@
+\chapter{Asservissement visuel d'un robot parall\`ele \`a c\^ables}
+
+Dans un objectif de manipulation d'objets du quotidien dans des environnements 
+dynamiques (lieux de vie des personnes) ou inconnus (lieux de catastrophes 
+naturelles ou industrielles), la question se pose des divers avantages que 
+peuvent offrir l'utilisation de la vision. Une cam\'era peut-\^etre utilis\'ee 
+pour :
+\begin{itemize}
+  \item mesurer des propri\'et\'es articulaires (ex : longueur, direction de 
+d\'epart des c\^ables)
+  \item mesurer des propri\'et\'es op\'erationnelles (ex : pose de l'organe 
+terminal)
+  \item confirmer la pr\'esence d'un objet (ex : une mire pour \'etalonnage, 
+une cible \`a saisir)
+  \item mesurer les caract\'eristiques de cet objet (ex : aire, orientation, 
+g\'eom\'etrie)
+  \item $\cdots$
+\end{itemize}
+
+Afin de d\'etecter la pr\'esence d'un objet, on peut soit utiliser une ou 
+plusieurs cam\'eras d\'eport\'ees couvrant l'ensemble de l'espace de travail du 
+robot, soit une cam\'era embarqu\'ee. Or, ce qui d\'etermine souvent le choix 
+d'utilisation d'un robot parall\`ele \`a c\^ables est la possibilit\'e 
+d'\'evoluer dans un large espace de travail, qui n\'ecessiterait dans le 
+cas d'un choix de cam\'eras d\'eport\'ees plusieurs dispositifs de r\'esolution 
+respectable. Au contraire, une cam\'era embarqu\'ee  permet \`a elle seule de 
+couvrir l'ensemble de l'espace, et ses limites  \'eventuelles de r\'esolution 
+peuvent \^etre contourn\'es par la diminution de la distance entre son support 
+et sa cible. Lorsqu'il est question donc de manipulation dans en environnement 
+dynamique pour un robot \`a c\^ables, le choix d'une cam\'era embarqu\'ee 
+s'impose. La question se pose alors de l'utiliser seule ou de multiplier les 
+dispositifs afin de multiplier les mesures. Le pr\'esent chapitre est consacr\'e 
+\`a montrer qu'une seule cam\'era embarqu\'ee est suffisante pour obtenir la 
+pr\'ecision requise aux op\'erations de manipulation et garantir une robustesse 
+aux incertitudes diverses.
+
+Pour cela, plusieurs d\'ecisions s'imposent dans l'\'elaboration du sch\'ema de 
+contr\^ole utilis\'e, pr\'esent'ees dans une premi\`ere section. Nous nous 
+attacherons dans une deuxi\`eme section \`a explorer plusieurs types 
+d'informations visuelles \`a exploiter, pour finir dans une troisi\`eme section 
+par pr'esenter les am\'elioration de pr\'ecision et robustesse qui sont ainsi 
+permises.
+
+\section{Elaboration du sch\'ema de contr\^ole}
+
+\section{Primitives et matrices d'interaction associ\'ees}
+
+Nous nous attachons dans cette section \`a pr\'esenter plusieurs informations 
+visuelles exploitables dans notre situation. Le suivi de points que nous 
+analyserons en premier peut \^etre utilis\'e par exemple lorsque nous suivons 
+une mire ou lorsque nous exploitons les points d'int\'er\^et d'un objet. Les 
+droites sont des primitives visuelles qui ont par exemple \'et\'e utilis\'ees 
+dans le cadre de l'asservissement des jambes rigides des manipulateurs 
+parall\`eles ou pour la d\'etermination des directions de sortie des c\^ables 
+dans les travaux cit\'es en introduction. Ce type d'information peut 
+\'egalement \^etre utilis\'e lorsque la g\'eom\'etrie de l'objet le permet, en 
+compl\'ement d'autres primitives. Enfin, nous nous attacherons 
+particuli\`erement \`a l'utilisation des moments d'un objet dans une image, 
+tels que l'aire ou le centre de gravit\'e de la cible. Ce dernier type de 
+primitive permet d'obtenir une loi de commande simplifi\'ee, tout en restant 
+pertinent pour les applications vis\'ees par le contexte dans lequel s'est 
+d\'eroul\'e ce travail.
+
+\subsubsection{Le point}
+
+
+\subsection{bla}
+
+\subsection{bla}
+
+
+ 

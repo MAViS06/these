@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  29 SEP 2014 13:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.30)  1 OCT 2014 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -530,21 +530,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip53
 )
-(./manuscrit.aux (./intro/intro.aux
-
-LaTeX Warning: Label `chap0-3' multiply defined.
-
-) (./chapter01/chapter01.aux
-
-LaTeX Warning: Label `chap01:eq11' multiply defined.
-
-
-LaTeX Warning: Label `chap01:eq16' multiply defined.
-
-
-LaTeX Warning: Label `chap01:eq17' multiply defined.
-
-) (./chapter02/chapter02.aux))
+(./manuscrit.aux (./chapter01/chapter01.aux))
 \openout1 = `manuscrit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -613,980 +599,226 @@ LaTeX Info: Redefining \nameref on input line 27.
 \@outlinefile=\write3
 \openout3 = `manuscrit.out'.
 
-\openout2 = `intro/intro.aux'.
+\openout2 = `chapter01/chapter01.aux'.
 
- (./intro/intro.tex
+ (./chapter01/chapter01.tex
 Chapitre 1.
+<./chapter01/figures/oeil.png, id=45, 840.13875pt x 678.535pt>
+File: ./chapter01/figures/oeil.png Graphic file (type png)
 
-Overfull \hbox (1.94498pt too wide) in paragraph at lines 31--32
-\OT1/cmr/m/n/10 C'est in-con-testable-ment l'industrie qui aura ^^Set^^Se le pr
-in-ci-pal vecteur de d^^Seveloppe-
- []
+<use ./chapter01/figures/oeil.png>
+Package pdftex.def Info: ./chapter01/figures/oeil.png used on input line 41.
+(pdftex.def)             Requested size: 293.2521pt x 236.83853pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
 
-[1
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
+ [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./intro/figures/prismaticJoint.jpg, id=168, 397.485pt x 270.00874pt>
-File: ./intro/figures/prismaticJoint.jpg Graphic file (type jpg)
-
-<use ./intro/figures/prismaticJoint.jpg>
-Package pdftex.def Info: ./intro/figures/prismaticJoint.jpg used on input line 
-42.
-(pdftex.def)             Requested size: 82.8019pt x 56.24619pt.
-
-<./intro/figures/revoluteJoint.jpg, id=169, 533.995pt x 291.0875pt>
-File: ./intro/figures/revoluteJoint.jpg Graphic file (type jpg)
-
-<use ./intro/figures/revoluteJoint.jpg>
-Package pdftex.def Info: ./intro/figures/revoluteJoint.jpg used on input line 4
-4.
-(pdftex.def)             Requested size: 82.8019pt x 45.13585pt.
-
-<./intro/figures/cylindricalJoint.jpg, id=170, 345.29pt x 216.81pt>
-File: ./intro/figures/cylindricalJoint.jpg Graphic file (type jpg)
-
-<use ./intro/figures/cylindricalJoint.jpg>
-Package pdftex.def Info: ./intro/figures/cylindricalJoint.jpg used on input lin
-e 46.
-(pdftex.def)             Requested size: 82.8019pt x 51.98914pt.
-
-Underfull \hbox (badness 1527) in paragraph at lines 46--46
-[]\OT1/cmr/m/n/8 (c) |Ar-tic-u-la-tion com-
+Overfull \hbox (1.80597pt too wide) in paragraph at lines 73--92
+[]\OT1/cmr/m/n/10 Une premi^^Rere op-tion serait de ten-ter de re-con-stru-ire 
+la sc^^Rene le plus fid^^Relement
  []
 
-
-Underfull \hbox (badness 2351) in paragraph at lines 46--46
-\OT1/cmr/m/n/8 pos^^See de type cylin-
- []
-
-<./intro/figures/sphericalJoint.jpg, id=171, 414.54875pt x 225.84375pt>
-File: ./intro/figures/sphericalJoint.jpg Graphic file (type jpg)
-
-<use ./intro/figures/sphericalJoint.jpg>
-Package pdftex.def Info: ./intro/figures/sphericalJoint.jpg used on input line 
-48.
-(pdftex.def)             Requested size: 82.8019pt x 45.10936pt.
- [2 <./intro/figures/prismaticJoint.jpg> <./intro/figures/revoluteJoint.jpg> <.
-/intro/figures/cylindricalJoint.jpg> <./intro/figures/sphericalJoint.jpg>]
-<./intro/figures/openchain.png, id=186, 289.883pt x 258.566pt>
-File: ./intro/figures/openchain.png Graphic file (type png)
-
-<use ./intro/figures/openchain.png>
-Package pdftex.def Info: ./intro/figures/openchain.png used on input line 62.
-(pdftex.def)             Requested size: 165.59853pt x 147.71161pt.
-
-<./intro/figures/closedchain.png, id=188, 482.603pt x 316.382pt>
-File: ./intro/figures/closedchain.png Graphic file (type png)
-
-<use ./intro/figures/closedchain.png>
-Package pdftex.def Info: ./intro/figures/closedchain.png used on input line 64.
-
-(pdftex.def)             Requested size: 165.59853pt x 108.56294pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+[2 <./chapter01/figures/oeil.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 65.
+LaTeX Font Info:    Try loading font information for U+msb on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<./intro/figures/serialrobot01.png, id=194, 257.96375pt x 161.60374pt>
-File: ./intro/figures/serialrobot01.png Graphic file (type png)
-
-<use ./intro/figures/serialrobot01.png>
-Package pdftex.def Info: ./intro/figures/serialrobot01.png used on input line 7
-6.
-(pdftex.def)             Requested size: 165.59853pt x 103.74414pt.
-
-<./intro/figures/serialrobot02.png, id=195, 323.2075pt x 206.7725pt>
-File: ./intro/figures/serialrobot02.png Graphic file (type png)
-
-<use ./intro/figures/serialrobot02.png>
-Package pdftex.def Info: ./intro/figures/serialrobot02.png used on input line 7
-8.
-(pdftex.def)             Requested size: 165.59853pt x 105.9416pt.
- [3 <./intro/figures/openchain.png> <./intro/figures/closedchain.png> <./intro/
-figures/serialrobot01.png> <./intro/figures/serialrobot02.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
-
- []
-
-<./intro/figures/parallelrobot01.jpg, id=222, 602.25pt x 803.0pt>
-File: ./intro/figures/parallelrobot01.jpg Graphic file (type jpg)
-
-<use ./intro/figures/parallelrobot01.jpg>
-Package pdftex.def Info: ./intro/figures/parallelrobot01.jpg used on input line
- 135.
-(pdftex.def)             Requested size: 117.29874pt x 156.39445pt.
-
-<./intro/figures/parallelrobot02.jpg, id=223, 489.9661pt x 367.47458pt>
-File: ./intro/figures/parallelrobot02.jpg Graphic file (type jpg)
-
-<use ./intro/figures/parallelrobot02.jpg>
-Package pdftex.def Info: ./intro/figures/parallelrobot02.jpg used on input line
- 139.
-(pdftex.def)             Requested size: 207.0021pt x 155.25223pt.
-
-<./intro/figures/parallelrobot03.jpg, id=224, 410.53375pt x 501.875pt>
-File: ./intro/figures/parallelrobot03.jpg Graphic file (type jpg)
-
-<use ./intro/figures/parallelrobot03.jpg>
-Package pdftex.def Info: ./intro/figures/parallelrobot03.jpg used on input line
- 143.
-(pdftex.def)             Requested size: 155.24895pt x 189.78786pt.
- [4] [5 <./intro/figures/parallelrobot01.jpg> <./intro/figures/parallelrobot02.
-jpg> <./intro/figures/parallelrobot03.jpg>]
-Overfull \hbox (1.50047pt too wide) in paragraph at lines 185--189
-\OT1/cmr/m/n/10 Les ma-nip-u-la-teurs par-all^^Reles ^^Ra c^ables pr^^Sesentent
- une struc-ture en cha^^^Pnes cin^^Sema-
- []
-
-<./intro/figures/winchesactuator.jpg, id=247, 803.0pt x 452.69125pt>
-File: ./intro/figures/winchesactuator.jpg Graphic file (type jpg)
-
-<use ./intro/figures/winchesactuator.jpg>
-Package pdftex.def Info: ./intro/figures/winchesactuator.jpg used on input line
- 207.
-(pdftex.def)             Requested size: 189.75105pt x 106.96959pt.
-
-<./intro/figures/linearactuator.png, id=248, 803.0pt x 602.25pt>
-File: ./intro/figures/linearactuator.png Graphic file (type png)
-
-<use ./intro/figures/linearactuator.png>
-Package pdftex.def Info: ./intro/figures/linearactuator.png used on input line 
-212.
-(pdftex.def)             Requested size: 144.89937pt x 108.676pt.
- [6]
-<./intro/figures/robot_cdpr_noncrane.jpg, id=266, 803.0pt x 526.96875pt>
-File: ./intro/figures/robot_cdpr_noncrane.jpg Graphic file (type jpg)
-
-<use ./intro/figures/robot_cdpr_noncrane.jpg>
-Package pdftex.def Info: ./intro/figures/robot_cdpr_noncrane.jpg used on input 
-line 254.
-(pdftex.def)             Requested size: 172.5pt x 113.19957pt.
-
-<./intro/figures/robot_cdpr_crane.jpg, id=267, 469.755pt x 380.42125pt>
-File: ./intro/figures/robot_cdpr_crane.jpg Graphic file (type jpg)
-
-<use ./intro/figures/robot_cdpr_crane.jpg>
-Package pdftex.def Info: ./intro/figures/robot_cdpr_crane.jpg used on input lin
-e 257.
-(pdftex.def)             Requested size: 137.9979pt x 111.7531pt.
-
-Underfull \hbox (badness 1953) in paragraph at lines 257--257
-[]\OT1/cmr/m/n/8 (b) |Ex-em-ple de con-fig-u-ra-tion sus-
- []
-
-[7 <./intro/figures/winchesactuator.jpg> <./intro/figures/linearactuator.png> <
-./intro/figures/robot_cdpr_noncrane.jpg> <./intro/figures/robot_cdpr_crane.jpg>
-] (./intro/figures/notation_schema.pdf_tex
-<./intro/figures/notation_schema.pdf, id=279, 585.56389pt x 615.30133pt>
-File: ./intro/figures/notation_schema.pdf Graphic file (type pdf)
-
-<use ./intro/figures/notation_schema.pdf>
-Package pdftex.def Info: ./intro/figures/notation_schema.pdf used on input line
- 52.
-(pdftex.def)             Requested size: 293.2521pt x 308.1569pt.
-) [8 <./intro/figures/notation_schema.pdf>]
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 309.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 309
-.
-
-
-Overfull \hbox (5.81291pt too wide) in paragraph at lines 317--320
-\OT1/cmr/bx/n/10 c^ables sont non-pesants et non-^^Selastiques\OT1/cmr/m/n/10 ,
- ce qui est une hy-poth^^Rese ad^^Sequate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--330
-
- []
-
-<./intro/figures/nulltensionwire.png, id=289, 319.594pt x 250.536pt>
-File: ./intro/figures/nulltensionwire.png Graphic file (type png)
-
-<use ./intro/figures/nulltensionwire.png>
-Package pdftex.def Info: ./intro/figures/nulltensionwire.png used on input line
- 336.
-(pdftex.def)             Requested size: 120.7521pt x 94.6618pt.
-
-<./intro/figures/positivetensionwire.png, id=290, 283.459pt x 214.401pt>
-File: ./intro/figures/positivetensionwire.png Graphic file (type png)
-
-<use ./intro/figures/positivetensionwire.png>
-Package pdftex.def Info: ./intro/figures/positivetensionwire.png used on input 
-line 341.
-(pdftex.def)             Requested size: 120.7521pt x 91.3335pt.
-
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 371.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 371
-.
-
-LaTeX Font Info:    Calculating math sizes for size <> on input line 373.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 373.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 373.
-
-[9] [10 <./intro/figures/nulltensionwire.png> <./intro/figures/positivetensionw
-ire.png>] [11] [12]
-Overfull \hbox (26.19498pt too wide) in paragraph at lines 592--595
-\OT1/cmr/m/n/10 utilis^^Ses en-tre autres pour il-lus-trer de mani^^Rere ludiqu
-e des pro-pri^^Set^^Ses g^^Seom^^Setriques
- []
-
-<./intro/figures/marionet03.jpg, id=345, 803.0pt x 602.25pt>
-File: ./intro/figures/marionet03.jpg Graphic file (type jpg)
-
-<use ./intro/figures/marionet03.jpg>
-Package pdftex.def Info: ./intro/figures/marionet03.jpg used on input line 600.
-
-(pdftex.def)             Requested size: 310.4979pt x 232.87321pt.
-
-<./intro/figures/marionet01.jpg, id=346, 803.0pt x 602.25pt>
-File: ./intro/figures/marionet01.jpg Graphic file (type jpg)
-
-<use ./intro/figures/marionet01.jpg>
-Package pdftex.def Info: ./intro/figures/marionet01.jpg used on input line 602.
-
-(pdftex.def)             Requested size: 155.24895pt x 116.432pt.
-
-<./intro/figures/marionet02.jpg, id=347, 642.4pt x 481.8pt>
-File: ./intro/figures/marionet02.jpg Graphic file (type jpg)
-
-<use ./intro/figures/marionet02.jpg>
-Package pdftex.def Info: ./intro/figures/marionet02.jpg used on input line 605.
-
-(pdftex.def)             Requested size: 155.24895pt x 116.43568pt.
-
-<./intro/figures/case01.jpg, id=351, 501.875pt x 892.33376pt>
-File: ./intro/figures/case01.jpg Graphic file (type jpg)
-
-<use ./intro/figures/case01.jpg>
-Package pdftex.def Info: ./intro/figures/case01.jpg used on input line 630.
-(pdftex.def)             Requested size: 68.99895pt x 122.67924pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 630--630
-\OT1/cmr/m/n/8 au d^^Seplacement
- []
-
-<./intro/figures/case02.jpg, id=352, 501.875pt x 892.33376pt>
-File: ./intro/figures/case02.jpg Graphic file (type jpg)
-
-<use ./intro/figures/case02.jpg>
-Package pdftex.def Info: ./intro/figures/case02.jpg used on input line 632.
-(pdftex.def)             Requested size: 68.99895pt x 122.67924pt.
-
-<./intro/figures/case03.jpg, id=353, 683.55376pt x 501.875pt>
-File: ./intro/figures/case03.jpg Graphic file (type jpg)
-
-<use ./intro/figures/case03.jpg>
-Package pdftex.def Info: ./intro/figures/case03.jpg used on input line 635.
-(pdftex.def)             Requested size: 165.59853pt x 121.57817pt.
- [13] [14 <./intro/figures/marionet03.jpg> <./intro/figures/marionet01.jpg> <./
-intro/figures/marionet02.jpg>]
-<./intro/figures/cfg_44.png, id=382, 446.468pt x 600.644pt>
-File: ./intro/figures/cfg_44.png Graphic file (type png)
-
-<use ./intro/figures/cfg_44.png>
-Package pdftex.def Info: ./intro/figures/cfg_44.png used on input line 682.
-(pdftex.def)             Requested size: 103.50105pt x 139.23586pt.
-
-Underfull \hbox (badness 1521) in paragraph at lines 682--682
-[]\OT1/cmr/m/n/8 (a) |Con-fig-u-ra-tion $4 \OMS/cmsy/m/n/8 ^^@ \OT1/cmr/m/n/8 4
-$ :
- []
-
-<./intro/figures/cfg_41.png, id=383, 457.71pt x 615.901pt>
-File: ./intro/figures/cfg_41.png Graphic file (type png)
-
-<use ./intro/figures/cfg_41.png>
-Package pdftex.def Info: ./intro/figures/cfg_41.png used on input line 685.
-(pdftex.def)             Requested size: 103.50105pt x 139.26718pt.
-
-<./intro/figures/cfg_431.png, id=384, 440.044pt x 618.31pt>
-File: ./intro/figures/cfg_431.png Graphic file (type png)
-
-<use ./intro/figures/cfg_431.png>
-Package pdftex.def Info: ./intro/figures/cfg_431.png used on input line 688.
-(pdftex.def)             Requested size: 103.50105pt x 145.42552pt.
-
-Underfull \hbox (badness 1231) in paragraph at lines 688--688
-\OT1/cmr/m/n/8 forme en un m^eme point,
- []
-
-
-Overfull \hbox (0.35255pt too wide) in paragraph at lines 693--704
-\OT1/cmr/m/n/10 l'appartement-t^^Semoin. La fig-ure (Fig.[]1.11[]) mon-tre l'es
-pace de tra-vail at-teignable
- []
-
-(./intro/figures/MA_corobots.pdf_tex
-<./intro/figures/MA_corobots.pdf, id=387, 1289.73126pt x 1249.80917pt>
-File: ./intro/figures/MA_corobots.pdf Graphic file (type pdf)
-
-<use ./intro/figures/MA_corobots.pdf>
-Package pdftex.def Info: ./intro/figures/MA_corobots.pdf used on input line 52.
-
-(pdftex.def)             Requested size: 310.4979pt x 300.87572pt.
-)
-<./intro/figures/view_appartment01.jpg, id=389, 192.72pt x 128.1588pt>
-File: ./intro/figures/view_appartment01.jpg Graphic file (type jpg)
-
-<use ./intro/figures/view_appartment01.jpg>
-Package pdftex.def Info: ./intro/figures/view_appartment01.jpg used on input li
-ne 732.
-(pdftex.def)             Requested size: 241.49895pt x 160.59702pt.
-
-<./intro/figures/view_appartment04.jpg, id=390, 192.72pt x 104.7915pt>
-File: ./intro/figures/view_appartment04.jpg Graphic file (type jpg)
-
-<use ./intro/figures/view_appartment04.jpg>
-Package pdftex.def Info: ./intro/figures/view_appartment04.jpg used on input li
-ne 735.
-(pdftex.def)             Requested size: 241.49895pt x 131.31525pt.
-
-<./intro/figures/view_plateform.jpg, id=391, 96.36pt x 64.0794pt>
-File: ./intro/figures/view_plateform.jpg Graphic file (type jpg)
-
-<use ./intro/figures/view_plateform.jpg>
-Package pdftex.def Info: ./intro/figures/view_plateform.jpg used on input line 
-738.
-(pdftex.def)             Requested size: 241.49895pt x 160.59702pt.
-
-<./intro/figures/view_winches02.jpg, id=392, 192.72pt x 93.2283pt>
-File: ./intro/figures/view_winches02.jpg Graphic file (type jpg)
-
-<use ./intro/figures/view_winches02.jpg>
-Package pdftex.def Info: ./intro/figures/view_winches02.jpg used on input line 
-741.
-(pdftex.def)             Requested size: 241.49895pt x 116.82529pt.
-
-
-LaTeX Warning: Float too large for page by 79.58449pt on input line 744.
-
-[15 <./intro/figures/case01.jpg> <./intro/figures/case02.jpg> <./intro/figures/
-case03.jpg>]
-Overfull \hbox (19.75047pt too wide) in paragraph at lines 778--794
-\OT1/cmr/m/n/10 d^^Sevelopperons en-fin les car-act^^Seristiques sp^^Secifiques
- ^^Ra celle que nous avons s^^Selectionn^^See
- []
-
-[16 <./intro/figures/cfg_44.png> <./intro/figures/cfg_41.png> <./intro/figures/
-cfg_431.png>] <./intro/figures/oeil.png, id=416, 840.13875pt x 678.535pt>
-File: ./intro/figures/oeil.png Graphic file (type png)
-
-<use ./intro/figures/oeil.png>
-Package pdftex.def Info: ./intro/figures/oeil.png used on input line 810.
-(pdftex.def)             Requested size: 293.2521pt x 236.83853pt.
- [17 <./intro/figures/MA_corobots.pdf>] [18 <./intro/figures/view_appartment01.
-jpg> <./intro/figures/view_appartment04.jpg> <./intro/figures/view_plateform.jp
-g> <./intro/figures/view_winches02.jpg>]
-Overfull \hbox (7.46347pt too wide) in paragraph at lines 816--820
-[]\OT1/cmr/m/n/10 les c^ones, g^^Sen^^Seralement im-pliqu^^Ses dans la vi-sion 
-di-urne. Les c^ones pr^^Sesentent
- []
-
-[19 <./intro/figures/oeil.png>] (./intro/figures/modele_projection.pdf_tex
-<./intro/figures/modele_projection.pdf, id=581, 534.60152pt x 633.45483pt>
-File: ./intro/figures/modele_projection.pdf Graphic file (type pdf)
-
-<use ./intro/figures/modele_projection.pdf>
-Package pdftex.def Info: ./intro/figures/modele_projection.pdf used on input li
-ne 52.
+(./chapter01/figures/modele_projection.pdf_tex
+<./chapter01/figures/modele_projection.pdf, id=67, 534.60152pt x 633.45483pt>
+File: ./chapter01/figures/modele_projection.pdf Graphic file (type pdf)
+
+<use ./chapter01/figures/modele_projection.pdf>
+Package pdftex.def Info: ./chapter01/figures/modele_projection.pdf used on inpu
+t line 53.
 (pdftex.def)             Requested size: 327.74895pt x 388.34969pt.
-) [20] [21 <./intro/figures/modele_projection.pdf>] [22] (./intro/figures/eye_t
-o_hand.pdf_tex
-<./intro/figures/eye_to_hand.pdf, id=626, 487.0998pt x 345.4506pt>
-File: ./intro/figures/eye_to_hand.pdf Graphic file (type pdf)
+)
 
-<use ./intro/figures/eye_to_hand.pdf>
-Package pdftex.def Info: ./intro/figures/eye_to_hand.pdf used on input line 52.
+LaTeX Warning: Reference `' on page 3 undefined on input line 126.
 
+[3] [4 <./chapter01/figures/modele_projection.pdf>] [5]
+Overfull \hbox (4.4547pt too wide) in paragraph at lines 283--283
+[]\OT1/cmr/bx/n/14.4 Configurations et strat^^Segies d'asservissement
+ []
+
+(./chapter01/figures/eye_to_hand.pdf_tex
+<./chapter01/figures/eye_to_hand.pdf, id=117, 487.0998pt x 345.4506pt>
+File: ./chapter01/figures/eye_to_hand.pdf Graphic file (type pdf)
+
+<use ./chapter01/figures/eye_to_hand.pdf>
+Package pdftex.def Info: ./chapter01/figures/eye_to_hand.pdf used on input line
+ 54.
 (pdftex.def)             Requested size: 155.24895pt x 110.09839pt.
 
-Overfull \hbox (6.97748pt too wide) in paragraph at lines 53--53
+Overfull \hbox (6.97748pt too wide) in paragraph at lines 55--55
 []\OT1/cmr/m/n/10 Cam^^Sera  
  []
 
 
-Overfull \hbox (4.88307pt too wide) in paragraph at lines 54--54
+Overfull \hbox (4.88307pt too wide) in paragraph at lines 56--56
 []\OT1/cmr/m/n/10 Cible  
  []
 
-) (./intro/figures/eye_in_hand.pdf_tex
-<./intro/figures/eye_in_hand.pdf, id=627, 487.0998pt x 330.27391pt>
-File: ./intro/figures/eye_in_hand.pdf Graphic file (type pdf)
+) (./chapter01/figures/eye_in_hand.pdf_tex
+<./chapter01/figures/eye_in_hand.pdf, id=118, 487.0998pt x 330.27391pt>
+File: ./chapter01/figures/eye_in_hand.pdf Graphic file (type pdf)
 
-<use ./intro/figures/eye_in_hand.pdf>
-Package pdftex.def Info: ./intro/figures/eye_in_hand.pdf used on input line 52.
-
+<use ./chapter01/figures/eye_in_hand.pdf>
+Package pdftex.def Info: ./chapter01/figures/eye_in_hand.pdf used on input line
+ 53.
 (pdftex.def)             Requested size: 155.24895pt x 105.26143pt.
 
-Overfull \hbox (6.71217pt too wide) in paragraph at lines 53--53
+Overfull \hbox (6.71217pt too wide) in paragraph at lines 54--54
 []\OT1/cmr/m/n/10 Cam^^Sera  
  []
 
 
-Overfull \hbox (4.88307pt too wide) in paragraph at lines 54--54
+Overfull \hbox (4.88307pt too wide) in paragraph at lines 55--55
 []\OT1/cmr/m/n/10 Cible  
  []
 
-) [23 <./intro/figures/eye_to_hand.pdf> <./intro/figures/eye_in_hand.pdf
+) [6 <./chapter01/figures/eye_to_hand.pdf> <./chapter01/figures/eye_in_hand.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./intro/figures/eye_in_hand.pdf): PDF i
-nclusion: multiple pdfs with page group included in a single page
->] (./intro/figures/bloc_commande.pdf_tex
-<./intro/figures/bloc_commande.pdf, id=657, 471.25514pt x 154.09453pt>
-File: ./intro/figures/bloc_commande.pdf Graphic file (type pdf)
 
-<use ./intro/figures/bloc_commande.pdf>
-Package pdftex.def Info: ./intro/figures/bloc_commande.pdf used on input line 5
-2.
+pdfTeX warning: /usr/bin/pdflatex (file ./chapter01/figures/eye_in_hand.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+>] (./chapter01/figures/bloc_commande.pdf_tex
+<./chapter01/figures/bloc_commande.pdf, id=142, 471.25514pt x 154.09453pt>
+File: ./chapter01/figures/bloc_commande.pdf Graphic file (type pdf)
+
+<use ./chapter01/figures/bloc_commande.pdf>
+Package pdftex.def Info: ./chapter01/figures/bloc_commande.pdf used on input li
+ne 53.
 (pdftex.def)             Requested size: 327.74895pt x 107.16943pt.
-) [24 <./intro/figures/bloc_commande.pdf>]
-Overfull \hbox (6.99251pt too wide) in paragraph at lines 1156--1158
+)
+Overfull \hbox (2.12584pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10 1.2.  CONFIGURATIONS ET STRAT[]EGIES D'ASSERVISSEMENT VISUEL \
+OT1/cmr/m/n/10 7
+ []
+
+[7 <./chapter01/figures/bloc_commande.pdf>]
+Overfull \hbox (6.99251pt too wide) in paragraph at lines 420--422
 []\OT1/cmr/m/n/10 Notre cible ^^Setant fixe, nous avons $[] = []$. Nous pou-von
 s d^^Res lors imm^^Sediatement
  []
 
-
-Overfull \hbox (2.61388pt too wide) in paragraph at lines 1200--1200
-[]\OT1/cmr/bx/n/12 Contexte de l'^^Setude et choix de strat^^Segie pour l'asser
--
- []
-
-
-Overfull \hbox (4.83398pt too wide) in paragraph at lines 1202--1209
+[8]
+Overfull \hbox (4.83398pt too wide) in paragraph at lines 469--477
 \OT1/cmr/m/n/10 Nous avons vu que l'utilisation d'un robot par-all^^Rele ^^Ra c
 ^ables nous per-met d'^^Sevoluer
  []
 
-[25]
-Overfull \hbox (2.75061pt too wide) in paragraph at lines 1224--1228
+
+Overfull \hbox (2.75061pt too wide) in paragraph at lines 492--496
 \OT1/cmr/m/n/10 privil^^Segi^^Se une strat^^Segie d'asservissement bas^^Se-imag
 e, ^^Ra nou-veau pour deux raisons
  []
 
-[26]
-Overfull \hbox (5.45705pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10 1.6.  ASSERVISSEMENT VISUEL DES ROBOTS PARALL[]ELES []A C[]ABL
-ES \OT1/cmr/m/n/10 27
+
+Overfull \hbox (108.71774pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10 1.3.  CONTEXTE DE L'[]ETUDE ET CHOIX DE STRAT[]EGIE POUR L'ASS
+ER-VISSEMENT VISUEL \OT1/cmr/m/n/10 9
  []
 
-[27]
-Overfull \hbox (9.97287pt too wide) in paragraph at lines 1340--1345
+[9] [10]
+Overfull \hbox (9.97287pt too wide) in paragraph at lines 611--616
 []\OT1/cmr/m/n/10 pour des raisons d'intrusivit^^Se et de co^ut pro-pres aux co
 n-di-tions d'applications
  []
 
 
-Overfull \hbox (3.58391pt too wide) in paragraph at lines 1345--1351
+Overfull \hbox (3.58391pt too wide) in paragraph at lines 616--622
 []\OT1/cmr/m/n/10 bien qu'ils fassent du-rant leurs travaux l'hypoth^^Rese de c
 ^ables non-^^Selastiques,
  []
 
-[28])
+
 Overfull \hbox (5.45705pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/10 1.6.  ASSERVISSEMENT VISUEL DES ROBOTS PARALL[]ELES []A C[]ABL
-ES \OT1/cmr/m/n/10 29
+\OT1/cmr/m/sl/10 1.4.  ASSERVISSEMENT VISUEL DES ROBOTS PARALL[]ELES []A C[]ABL
+ES \OT1/cmr/m/n/10 11
  []
 
-[29]
-\openout2 = `chapter01/chapter01.aux'.
-
- (./chapter01/chapter01.tex [30
-
+[11]) [12] (./manuscrit.bbl [13
 
 
 ]
-Chapitre 2.
-[31] (./chapter01/figures/ws__out.pdf_tex
-<./chapter01/figures/ws__out.pdf, id=745, 470.4777pt x 602.73178pt>
-File: ./chapter01/figures/ws__out.pdf Graphic file (type pdf)
-
-<use ./chapter01/figures/ws__out.pdf>
-Package pdftex.def Info: ./chapter01/figures/ws__out.pdf used on input line 52.
-
-(pdftex.def)             Requested size: 224.2479pt x 287.28464pt.
-) (./chapter01/figures/traj_N1.pdf_tex
-<./chapter01/figures/traj_N1.pdf, id=747, 518.06647pt x 328.86064pt>
-File: ./chapter01/figures/traj_N1.pdf Graphic file (type pdf)
-
-<use ./chapter01/figures/traj_N1.pdf>
-Package pdftex.def Info: ./chapter01/figures/traj_N1.pdf used on input line 52.
-
-(pdftex.def)             Requested size: 224.2479pt x 142.34567pt.
-)
-<./chapter01/figures/controleur_discret.png, id=748, 255.1131pt x 106.9596pt>
-File: ./chapter01/figures/controleur_discret.png Graphic file (type png)
-
-<use ./chapter01/figures/controleur_discret.png>
-Package pdftex.def Info: ./chapter01/figures/controleur_discret.png used on inp
-ut line 78.
-(pdftex.def)             Requested size: 258.75pt x 108.49182pt.
- [32] [33 <./chapter01/figures/ws__out.pdf> <./chapter01/figures/traj_N1.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./chapter01/figures/traj_N1.pdf): PDF i
-nclusion: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (9.83511pt too wide) in paragraph at lines 127--130
-[]\OT1/cmr/m/n/10 Nous ap-pelons \OT1/cmr/m/it/10 co-or-donn^^Sees situ^^Sees $
-[][]\OT1/cmr/bx/n/10 P$ \OT1/cmr/m/n/10 d'un point $\OT1/cmr/bx/n/10 P$ \OT1/cm
-r/m/n/10 la donn^^See de ses param^^Retres
- []
-
-
-Overfull \hbox (3.35666pt too wide) in paragraph at lines 133--138
-[]\OT1/cmr/m/n/10 L'ensemble des points $\OT1/cmr/bx/n/10 P$ \OT1/cmr/m/n/10 te
-ls qu'il ex-iste $[][]\OT1/cmr/bx/n/10 P \OT1/cmr/m/n/10 := (\OT1/cmr/bx/n/10 X
-\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 CC[]\OT1/cmr/m/n/10 )$ pour $\OML/cmm/m/it/1
-0 CC[]$
- []
-
-[34 <./chapter01/figures/controleur_discret.png>] [35]
-Overfull \hbox (2.41321pt too wide) in paragraph at lines 260--266
-[]\OT1/cmr/m/n/10 Pour chaque robot $\OML/cmm/m/it/10 A[]$ \OT1/cmr/m/n/10 d^^S
-eriv^^Se ou int^^Segral, nous pou-vons, lorsqu'il est r^^Sealisable,
- []
-
-[36] (./chapter01/figures/CC_41.pdf_tex
-<./chapter01/figures/CC_41.pdf, id=788, 597.50786pt x 570.13pt>
-File: ./chapter01/figures/CC_41.pdf Graphic file (type pdf)
-
-<use ./chapter01/figures/CC_41.pdf>
-Package pdftex.def Info: ./chapter01/figures/CC_41.pdf used on input line 53.
-(pdftex.def)             Requested size: 224.2479pt x 213.97221pt.
-) [37] (./chapter01/figures/rbt41.pdf_tex
-<./chapter01/figures/rbt41.pdf, id=799, 594.09766pt x 562.10007pt>
-File: ./chapter01/figures/rbt41.pdf Graphic file (type pdf)
-
-<use ./chapter01/figures/rbt41.pdf>
-Package pdftex.def Info: ./chapter01/figures/rbt41.pdf used on input line 53.
-(pdftex.def)             Requested size: 224.2479pt x 212.1679pt.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38 <./chapter01/figures/CC_41.pdf>] [39 <./chapter01/figures/rbt41.pdf>] [40]
-
-Overfull \hbox (7.58388pt too wide) in paragraph at lines 545--547
-[]\OT1/cmr/m/n/10 Nous al-lons ^^Ra pr^^Sesent voir suc-ces-sive-ment com-ment 
-nous pro-posons d'am^^Seliorer
- []
-
-[41] (./chapter01/figures/tension02.pdf_tex
-<./chapter01/figures/tension02.pdf, id=830, 477.14124pt x 504.20334pt>
-File: ./chapter01/figures/tension02.pdf Graphic file (type pdf)
-
-<use ./chapter01/figures/tension02.pdf>
-Package pdftex.def Info: ./chapter01/figures/tension02.pdf used on input line 5
-4.
-(pdftex.def)             Requested size: 155.24895pt x 164.05647pt.
-) (./chapter01/figures/tension01.pdf_tex <./chapter01/figures/tension01.pdf, id
-=831, 520.34402pt x 540.5796pt>
-File: ./chapter01/figures/tension01.pdf Graphic file (type pdf)
-
-<use ./chapter01/figures/tension01.pdf>
-Package pdftex.def Info: ./chapter01/figures/tension01.pdf used on input line 5
-3.
-(pdftex.def)             Requested size: 155.24895pt x 161.28429pt.
-) [42 <./chapter01/figures/tension02.pdf> <./chapter01/figures/tension01.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./chapter01/figures/tension01.pdf): PDF
- inclusion: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (11.94504pt too wide) in paragraph at lines 643--646
-\OT1/cmr/m/n/10 comme crit^^Rere, et de choisir la con-fig-u-ra-tion qui of-fre
- ainsi une meilleure r^^Separtition,
- []
-
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 652.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 652
-.
-
-<./chapter01/figures/critstab04.png, id=903, 1612.0225pt x 958.58125pt>
-File: ./chapter01/figures/critstab04.png Graphic file (type png)
-
-<use ./chapter01/figures/critstab04.png>
-Package pdftex.def Info: ./chapter01/figures/critstab04.png used on input line 
-702.
-(pdftex.def)             Requested size: 155.24895pt x 92.30943pt.
-
-<./chapter01/figures/critstab05.png, id=904, 1622.06pt x 987.69pt>
-File: ./chapter01/figures/critstab05.png Graphic file (type png)
-
-<use ./chapter01/figures/critstab05.png>
-Package pdftex.def Info: ./chapter01/figures/critstab05.png used on input line 
-706.
-(pdftex.def)             Requested size: 155.24895pt x 94.52478pt.
-
-<./chapter01/figures/critstab02.png, id=905, 1672.2475pt x 981.6675pt>
-File: ./chapter01/figures/critstab02.png Graphic file (type png)
-
-<use ./chapter01/figures/critstab02.png>
-Package pdftex.def Info: ./chapter01/figures/critstab02.png used on input line 
-710.
-(pdftex.def)             Requested size: 155.24895pt x 91.13235pt.
-
-<./chapter01/figures/critstab03.png, id=906, 1595.9625pt x 972.63374pt>
-File: ./chapter01/figures/critstab03.png Graphic file (type png)
-
-<use ./chapter01/figures/critstab03.png>
-Package pdftex.def Info: ./chapter01/figures/critstab03.png used on input line 
-714.
-(pdftex.def)             Requested size: 155.24895pt x 94.61249pt.
- [43] [44 <./chapter01/figures/critstab04.png> <./chapter01/figures/critstab05.
-png> <./chapter01/figures/critstab02.png> <./chapter01/figures/critstab03.png>]
- [45]
-<./chapter01/figures/crit_acc04.png, id=946, 1612.0225pt x 974.64125pt>
-File: ./chapter01/figures/crit_acc04.png Graphic file (type png)
-
-<use ./chapter01/figures/crit_acc04.png>
-Package pdftex.def Info: ./chapter01/figures/crit_acc04.png used on input line 
-831.
-(pdftex.def)             Requested size: 155.24895pt x 93.85597pt.
-
-<./chapter01/figures/crit_acc05.png, id=947, 1608.0075pt x 972.63374pt>
-File: ./chapter01/figures/crit_acc05.png Graphic file (type png)
-
-<use ./chapter01/figures/crit_acc05.png>
-Package pdftex.def Info: ./chapter01/figures/crit_acc05.png used on input line 
-835.
-(pdftex.def)             Requested size: 155.24895pt x 93.90012pt.
-
-<./chapter01/figures/crit_acc02.png, id=948, 1589.94pt x 980.66376pt>
-File: ./chapter01/figures/crit_acc02.png Graphic file (type png)
-
-<use ./chapter01/figures/crit_acc02.png>
-Package pdftex.def Info: ./chapter01/figures/crit_acc02.png used on input line 
-838.
-(pdftex.def)             Requested size: 155.24895pt x 95.75275pt.
-
-<./chapter01/figures/crit_acc03.png, id=949, 1724.4425pt x 958.58125pt>
-File: ./chapter01/figures/crit_acc03.png Graphic file (type png)
-
-<use ./chapter01/figures/crit_acc03.png>
-Package pdftex.def Info: ./chapter01/figures/crit_acc03.png used on input line 
-842.
-(pdftex.def)             Requested size: 155.24895pt x 86.29784pt.
- [46 <./chapter01/figures/crit_acc04.png> <./chapter01/figures/crit_acc05.png> 
-<./chapter01/figures/crit_acc02.png> <./chapter01/figures/crit_acc03.png>]
-Overfull \hbox (1.05606pt too wide) in paragraph at lines 928--933
-[]\OT1/cmr/m/n/10 Afin de compl^^Seter la m^^Sethode, nous de-vons donc nous as
--surer que les r^^Sesultats
- []
-
-[47]
-Overfull \hbox (69.6286pt too wide) in paragraph at lines 972--978
-[]\OT1/cmr/m/n/10 multiplication : $\OT1/cmr/bx/n/10 [\OML/cmm/b/it/10 x\OT1/cm
-r/bx/n/10 ] \OMS/cmsy/b/n/10 ^^C \OT1/cmr/bx/n/10 [\OML/cmm/b/it/10 y\OT1/cmr/b
-x/n/10 ] = [[]\OML/cmm/b/it/10 ; []\OT1/cmr/bx/n/10 ] \OMS/cmsy/b/n/10 ^^C \OT1
-/cmr/bx/n/10 [[]\OML/cmm/b/it/10 ; []\OT1/cmr/bx/n/10 ] = [[]([][]\OML/cmm/b/it
-/10 ; [][]; [][]; [][]\OT1/cmr/bx/n/10 )\OML/cmm/b/it/10 ; []\OT1/cmr/bx/n/10 (
-[][]\OML/cmm/b/it/10 ; [][]; [][]; [][]\OT1/cmr/bx/n/10 )]$ 
- []
-
-[48]
-Overfull \hbox (1.77835pt too wide) in paragraph at lines 1044--1054
-\OT1/cmr/m/n/10 utilis^^See plusieurs fois, l'analyse par in-ter-valle la con-s
-id^^Rere cepen-dant comme
- []
-
-
-Overfull \hbox (1.61156pt too wide) in paragraph at lines 1064--1069
-\OT1/cmr/m/n/10 l'incertitude sur la po-si-tion des points de sor-tie des c^abl
-es, $\OML/cmm/b/it/10 ^^N^^Z$ \OT1/cmr/m/n/10 d^^Senote l'incertitude
- []
-
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 1098--1099
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1100--1101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1102--1105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
-
- []
-
-[50]
-Underfull \hbox (badness 10000) in paragraph at lines 1165--1169
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1170--1171
-
- []
-
-
-Overfull \hbox (1.19498pt too wide) in paragraph at lines 1188--1190
-[]\OT1/cmr/m/n/10 Nous d^^Seclinons cette re-la-tion pour cha-cune des co-or-do
-nn^^Sees, et nous obtenons
- []
-
-<./chapter01/figures/interval_in.png, id=1000, 450.2421pt x 271.0125pt>
-File: ./chapter01/figures/interval_in.png Graphic file (type png)
-
-<use ./chapter01/figures/interval_in.png>
-Package pdftex.def Info: ./chapter01/figures/interval_in.png used on input line
- 1249.
-(pdftex.def)             Requested size: 113.85063pt x 68.53038pt.
-
-<./chapter01/figures/interval_inout.png, id=1001, 470.4777pt x 367.1316pt>
-File: ./chapter01/figures/interval_inout.png Graphic file (type png)
-
-<use ./chapter01/figures/interval_inout.png>
-Package pdftex.def Info: ./chapter01/figures/interval_inout.png used on input l
-ine 1254.
-(pdftex.def)             Requested size: 113.85063pt x 88.84163pt.
-
-Underfull \hbox (badness 3260) in paragraph at lines 1254--1254
-[]\OT1/cmr/m/n/8 (b) |Cas 02 : $\OMS/cmsy/b/n/8 9\OT1/cmr/bx/n/8 (\OML/cmm/b/it
-/8 x; y\OT1/cmr/bx/n/8 ) \OMS/cmsy/b/n/8 2
- []
-
-<./chapter01/figures/interval_out.png, id=1002, 479.1501pt x 413.3844pt>
-File: ./chapter01/figures/interval_out.png Graphic file (type png)
-
-<use ./chapter01/figures/interval_out.png>
-Package pdftex.def Info: ./chapter01/figures/interval_out.png used on input lin
-e 1259.
-(pdftex.def)             Requested size: 113.85063pt x 98.22395pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1277
-
- []
-
-[51]
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 1278.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 127
-8.
-
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 1279.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 127
-9.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1289--1290
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1291--1292
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
-
- []
-
-[52 <./chapter01/figures/interval_in.png> <./chapter01/figures/interval_inout.p
-ng> <./chapter01/figures/interval_out.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1322--1326
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1328
-
- []
-
-
-Overfull \hbox (4.13026pt too wide) in paragraph at lines 1353--1361
-\OT1/cmr/m/n/10 con-fig-u-ra-tions de c^ables. Nous avons en-suite d^^Sefini un
-e m^^Sethode de d^^Setermination
- []
-
-) [53] [54]
-\openout2 = `chapter02/chapter02.aux'.
-
- (./chapter02/chapter02.tex
-Chapitre 3.
-) [55
-
-
-
-]
-Overfull \hbox (48.23485pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10 56 \OT1/cmr/m/sl/10 CHAPITRE 3.  ASSERVISSEMENT VISUEL D'UN ROB
-OT PARALL[]ELE []A C[]ABLES
- []
-
-[56] (./manuscrit.bbl [57
-
-
-] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 244--250
+Underfull \hbox (badness 10000) in paragraph at lines 119--125
 []\OT1/cmr/m/n/10 Roger Y. Tsai.  An Ef-fi-cient and Ac-cu-rate Cam-era Cal-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--250
+Underfull \hbox (badness 10000) in paragraph at lines 119--125
 \OT1/cmr/m/n/10 i-bra-tion Tech-nique for 3D Ma-chine Vi-sion.  In \OT1/cmr/m/i
 t/10 Pro-ceed-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--250
+Underfull \hbox (badness 10000) in paragraph at lines 119--125
 \OT1/cmr/m/it/10 ings of IEEE Con-fer-ence on Com-puter Vi-sion and Pat-tern
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--250
+Underfull \hbox (badness 10000) in paragraph at lines 119--125
 \OT1/cmr/m/it/10 Recog-ni-tion, Mi-ami Beach, FL\OT1/cmr/m/n/10 , pages 364--37
 4, http://www-
  []
 
-[59])
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
- [60]
+ [14]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
- (./manuscrit.aux (./intro/intro.aux) (./chapter01/chapter01.aux)
-(./chapter02/chapter02.aux))
+ (./manuscrit.aux (./chapter01/chapter01.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
-(rerunfilecheck)             Checksum: 48CE5393CCDD29D6FD6283AE7BFFEECA;3175.
+(rerunfilecheck)             Checksum: EE33CBEBC6CF67F0D9DB7FB71F02962A;909.
 
 
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 4.5pt have occurred.
-
-
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 8558 strings out of 494999
- 131346 string characters out of 6180228
- 223060 words of memory out of 5000000
- 11263 multiletter control sequences out of 15000+600000
- 19769 words of font info for 75 fonts, out of 8000000 for 9000
+ 7784 strings out of 494999
+ 115203 string characters out of 6180228
+ 205811 words of memory out of 5000000
+ 10803 multiletter control sequences out of 15000+600000
+ 10501 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,20n,49p,1245b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmu10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb>
-Output written on manuscrit.pdf (60 pages, 7590743 bytes).
+ 44i,12n,49p,665b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmu10.pfb>
+Output written on manuscrit.pdf (14 pages, 711096 bytes).
 PDF statistics:
- 1248 PDF objects out of 1440 (max. 8388607)
- 971 compressed objects within 10 object streams
- 286 named destinations out of 1000 (max. 500000)
- 580 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

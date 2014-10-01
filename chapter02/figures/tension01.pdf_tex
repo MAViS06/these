@@ -1,0 +1,60 @@
+%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'tension01.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{15.68787231bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.4142857)%
+\put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/tension01.pdf}
+} % 
+\put(-0.0159,0.679){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.22071083\unitlength}\raggedright $A_0$\end{minipage}}}%
+\put(0.76763,0.66434){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29893745\unitlength}\raggedright $A_1$\end{minipage}}}%       
+\put(0.848,1.035){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.23747369\unitlength}\raggedright $A_2$\end{minipage}}}%
+\put(0.15,1.0){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29878125\unitlength}\raggedright $A_3$\end{minipage}}}%
+\put(.29557,0.3047){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.1603099\unitlength}\raggedright $B$\end{minipage}}}%
+\end{picture}%
+\endgroup%
