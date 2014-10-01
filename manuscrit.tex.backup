@@ -34,32 +34,26 @@
 
 %\pagebreak
 
-%% CDPR
 %\include{chapter0/chapter0}
 
 %\pagebreak
 
-%% AV
 \include{chapter01/chapter01}
 
 %\pagebreak
 
-%% AV CDPR
 %\include{chapter02/chapter02}
 
 %\pagebreak
 
-%% CC
 %\include{chapter03/chapter03}
 
 %\pagebreak
 
-%% EXPES
 %\include{validations/validations}
 
 %\pagebreak
 
-%% CONCLU
 %\include{conclusions/conclusions}
 
 \bibliographystyle{plain}

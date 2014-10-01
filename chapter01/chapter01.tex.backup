@@ -40,7 +40,7 @@ On distingue parmi les photorécepteurs :
   \centering
   \includegraphics[width=.85\linewidth]{./chapter01/figures/oeil.png}
     \caption{\footnotesize{Oeil humain vs vision artificielle}}
-\label{intro:fig11b}
+\label{chap01:fig01}
 \end{figure}
 
  \begin{itemize}
@@ -72,8 +72,7 @@ capteurs.
 
 Une premi\`ere option serait de tenter de reconstruire la sc\`ene le plus 
 fid\`element possible. On pourra dans ce cas privil\'egier l'utilisation de 
-cam\'eras st\'er\'eos, ou encore de capteurs RGB-D. A l'aide de cam'eras 
-st\'er\'eos, nous pouvons percevoir la sc\`ene selon plusieurs perspectives, 
+cam\'eras st\'er\'eos (Fig.\ref{chap01:fig02view0})\cite{brandou2006}, ou encore de capteurs RGB-D (Fig.\ref{chap01:fig02view1})\cite{siradjuddin2012}. A l'aide de cam'eras st\'er\'eos, nous pouvons percevoir la sc\`ene selon plusieurs perspectives, 
 tout comme avec la vision binoculaire. En croisant les donn\'ees obtenues \`a 
 partir des diff\'erents points de vue, il est possible d'approcher une 
 repr\'esentation tri-dimensionnelle de la sc\`ene acquise au sein de l'image. 
@@ -85,17 +84,36 @@ tridimensionnelle de points permet une reconstruction 3D de la sc\'ene
 observable. En multipliant les points de vue (soit par le mouvement, soit en 
 utilisant plusieurs dispositifs), ou en exploitant un mod\`ele connu de la 
 sc\`ene observ\'e, on sera en mesure d'obtenir une repr\'esentation fid\`ele 
-d'un environnement.
+d'un environnement. Ce sont toutefois des dispositifs on\'ereux, qui peuvent 
+sembler inutilement intrusifs selon le contexte d'utilisation, et requ\'erant 
+bien souvent une puissance de calcul d\'emesur\'ee par rapport aux informations 
+dont on a besoin.
 
+\begin{figure}[!ht]
+  \centering
+      \subfloat[Jean-Luc Godard exp\'erimentant avec la st\'er\'eographie pour tourner {\it Adieu au langage 3D}]{\label{chap01:fig02view0}
+    \includegraphics[width=.54\linewidth]{./chapter01/figures/stereo_godard.jpg}} 
+\hfill
+    \subfloat[La Kinect de @Microsoft qui a permis la d\'emocratisation de l'utilisation des capteurs RGB-D]{\label{chap01:fig02view1}
+    \includegraphics[width=.44\linewidth]{./chapter01/figures/kinect.png}}
+    \caption{\footnotesize{Exemples de cam\'eras st\'er\'eo et de capteurs RGB-D.}}
+\label{chap01:fig02}
+\end{figure}
 
- 
+Une seconde option est de d\'eterminer les transformations g\'eom\'etriques d'objets dans le plan image g\'en\'er\'ees par une modification soit d'une partie de la sc\`ene (objet en mouvement), soit de la pose de la cam\'era elle-m\^eme, voire des deux simultan\'ement. Ceci permet entre autres de s'abstraire en partie au moins de la repr\'esentation tridimensionnelle de la sc\`ene projet\'ee sur l'image, en utilisant par exemple la g\'eom\'etrie pl\"uckerienne \cite{andreff:inria-00072393}, des descripteurs locaux ou globaux \cite{latuan2010}, des repr\'esentations fr\'equentielles (Fourier \cite{chari2008}, ondelettes \cite{ramosvelasco2012}), $\cdots$ (on pourra retrouver les principales techniques dans \cite{marchand2005}).
+
+Le choix d'un type de capteur n'est donc pas anodin, il d\'epend de param\`etres aussi divers que la quantit\'e et la densit\'e des informations, les connaissances pr\'ealables que l'on peut avoir d'une sc\`ene ou d'un objet, du type d'informations disponibles dans l'images et pertinentes par rapport au contexte (sc\`enes homog\`enes ou textur\'ees, mobiles ou statiques, diurnes ou nocturnes, $\cdots$).
+
+Nous partirons du principe que nous utilisons une seule cam\'era simple, ce choix \'etant justifi\'e dans la derni\`ere section de ce chapitre. L'objectif est \`a pr\'esent de d\'efinir le mod\`ele de repr\'esentation que nous avons utilis\'e, soit la mani\`ere dont la sc\`ene est projet\'ee dans l'image.
+
 \subsection{De la scène à l'image} \label{chap1-0-1}
+
+\subsubsection{Mod\`ele de projection} \label{chap1-0-1-0}
 
 Nous avons privilégié le modèle {\it pinhole} qui offre une approximation 
 fiable des caméras perspectives (telles que celles que nous avons utilisées) 
-tout en restant formellement simple\cite{Faugeras:1993} \cite{hartley2004}, 
-sous 
-les hypothèses du respect des conditions de Gauss (angles de faibles 
+tout en restant formellement simple \cite{Faugeras:1993} \cite{hartley2004}, 
+sous les hypothèses du respect des conditions de Gauss (angles de faibles 
 incidences), et -- c'est notre cas -- d'une absence de distorsion de la caméra.
 
 Soient ${\bf P} = (X, Y, Z)$ les coordonnées 3-D d'un point dans l'espace et 
@@ -111,7 +129,7 @@ image (Fig.\ref{intro:fig12}).
 
 \begin{figure}[h!tp]
   \centering
-  \def\svgwidth{.95\linewidth}
+  \def\svgwidth{.85\linewidth}
   \input{./chapter01/figures/modele_projection.pdf_tex}
     \caption{\footnotesize{Modèle de projection {\it pinhole}}}
 \label{intro:fig12}
@@ -216,21 +234,19 @@ y = Y/Z
 \label{intro:eq17}
 \end{equation}
 indépendantes de la focale, et pouvant être déduites des coordonnées 
-pixelliques 
-en utilisant la matrice $K$.
+pixelliques en utilisant la matrice $\bf K$.
 
-Il nous reste à établir une relation entre le référentiel-caméra et le 
-référentiel-objet afin d'établir une correspondance entre la scène réelle et sa 
-projection dans l'image. Pour cela, il suffit de déterminer les paramètres du 
-changement de référentiel.
+Enfin, les coordonn\'ees 3D du point \'etant exprim\'ees dans le rep\`ere cam\'era, nous voulons pouvoir les traduire dans le r\'ef\'erentiel propre de l'objet.
 
-Soient ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ 
+\subsubsection{Changements de rep\`ere} \label{chap1-0-1-1}
+
+Soient \`a pr\'esent ${}^c{\bf P} = ({}^cX, {}^cY, {}^cZ)$ les coordonnées du point ${\bf P}$ 
 exprimées dans le référentiel $\mathcal R_c$ et ${}^o{\bf P} = ({}^oX, {}^oY, 
 {}^oZ)$ ses coordonnées dans le référentiel $\mathcal R_o$. Le passage d'un 
 référentiel à l'autre est effectué en utilisant la relation ${}^c{\bf P} = 
 {}^c{\bf t}_o + {}^c{\bf R}_o {}^o{\bf P}$, avec ${}^c{\bf t}_o$ le vecteur 
 $3\times 1$ de translation entre les deux référentiels, ${}^c{\bf R}_o$ la 
-matrice $3\times 3$ de rotation correspondant à la rotation des axes du 
+matrice $3\times 3$ de rotation correspondant à la rotation autour des axes du 
 référentiel. En utilisant les coordonnées homogènes $\widetilde {\bf P}$ de 
 ${\bf P}$, il est possible de factoriser cette transformation en une seule 
 opération matricielle :
@@ -267,22 +283,18 @@ s'exprime simplement sous la forme :
 \end{equation}
 
 Nous sommes dès lors en mesure d'établir une relation entre la scène observée 
-exprimées dans son référentiel propre et sa projection dans l'image, exprimée 
-en coordonnées pixelliques, métriques et normalisées. Le lecteur 
+dans son référentiel propre, dans le r\'ef\'erentiel de la cam\'era (et par extension dans chacun des r\'ef\'erentiels du manipulateur) et sa projection dans l'image, exprimée en coordonnées pixelliques, métriques et normalisées. Le lecteur 
 remarquera cependant que, s'il est possible directement, connaissant ${\bf K}$ 
 et ${}^o{\bf M}_c$, de déduire à partir des propriétés de la scène les 
 caractéristiques de sa projection, l'opération inverse est dépendante dans ce 
-modèle d'une estimation pour chaque point de sa coordonnée ${}^cZ$, ce que nous 
-aurons à considérer plus tard.
+modèle d'une estimation pour chaque point de sa profondeur (coordonnée ${}^cZ$), ce dont nous aurons \`a tenir compte lorsqu'il s'agira de d\'eterminer le type de mesure que nous utiliserons pour d\'eduire les consignes donn\'ees au manipulateur.
 
 \section{Configurations et stratégies d'asservissement visuel} 
 \label{chap1-1}
 
 \subsection{Positionnement de la caméra} \label{chap1-1-0}
 
-Nous ne considérons dans la suite que l'utilisation d'une caméra unique dans le 
-cas d'une scène fixe. Le contexte étant celui d'un manipulateur dont on veut 
-asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent 
+Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent 
 à nous. Une première décision à prendre concerne par exemple le positionnement 
 de la caméra. On distingue ainsi une configuration déportée 
 (Fig.\ref{intro:fig13view0}) d'une configuration embarquée (Fig. 
@@ -464,8 +476,7 @@ visuel}\label{chap1-2}
 Nous avons vu que l'utilisation d'un robot parallèle à câbles nous permet 
 d'évoluer dans un espace de travail conséquent. En particulier, le robot {\tt 
 Marionet-Assist} que nous avons utilisé pour nos expérimentations évolue dans 
-un 
-cube de $4m \times 3m \times 3m$, et le volume atteignable par un robot de type 
+un cube de $4m \times 3m \times 3m$, et le volume atteignable par un robot de type 
 {\tt Marionet-Crane} peut aller jusqu'à $100m \times 35m \times 35m$. Dans ces 
 circonstances, l'utilisation d'une caméra embarquée a été privilégiée pour deux 
 raisons :

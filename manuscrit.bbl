@@ -6,10 +6,34 @@ Nicolas Andreff, Tej Dallej, and Philippe Martinet.
   manipulator using leg observations.
 \newblock {\em Int. J. Rob. Res.}, 26(7):677--687, July 2007.
 
+\bibitem{andreff:inria-00072393}
+Nicolas Andreff, Bernard Espiau, and Radu Horaud.
+\newblock {Visual Servoing from Lines}.
+\newblock Research Report RR-4226, INRIA, 2001.
+
+\bibitem{latuan2010}
+La~Tuan Anh and Jae-Bok Song.
+\newblock Object tracking and visual servoing using features computed from
+  local feature descriptor.
+\newblock In {\em Control Automation and Systems (ICCAS), 2010 International
+  Conference on}, pages 1044--1048, Oct 2010.
+
+\bibitem{brandou2006}
+V.~Brandou, E.~Malis, Patrick Rives, A-G Allais, and M.~Perrier.
+\newblock Active stereovision using invariant visual servoing.
+\newblock In {\em Intelligent Robots and Systems, 2006 IEEE/RSJ International
+  Conference on}, pages 2326--2331, Oct 2006.
+
 \bibitem{brown71}
 Duane~C. Brown.
 \newblock Close-range camera calibration.
 \newblock {\em PHOTOGRAMMETRIC ENGINEERING}, 37(8):855--866, 1971.
+
+\bibitem{chari2008}
+V.~Chari, A~Sharma, A~Namboodiri, and C.V. Jawahar.
+\newblock Frequency domain visual servoing using planar contours.
+\newblock In {\em Computer Vision, Graphics Image Processing, 2008. ICVGIP '08.
+  Sixth Indian Conference on}, pages 87--94, Dec 2008.
 
 \bibitem{chaumette:tuto01}
 Fran{\c c}ois Chaumette and S.~Hutchinson.
@@ -82,6 +106,11 @@ W.F. Marantette.
   measurements, February~7 1995.
 \newblock US Patent 5,387,969.
 
+\bibitem{marchand2005}
+E.~Marchand and F.~Chaumette.
+\newblock Feature tracking for visual servoing purposes.
+\newblock {\em Robotics and Autonomous Systems}, 52(1):53--70, July 2005.
+
 \bibitem{merlet.1993}
 Jean{-}Pierre Merlet.
 \newblock Closed-form resolution of the direct kinematics of parallel
@@ -107,6 +136,19 @@ V.~Parenti-Castelli and R.~Di~Gregorio.
 D.~Purves.
 \newblock {\em Neuroscience}.
 \newblock Sinauer Associates Incorporated, 2004.
+
+\bibitem{ramosvelasco2012}
+Luis~E. Ramos-Velasco.
+\newblock Visual servoing using discrete wavelet transform.
+\newblock In {\em World Automation Congress (WAC), 2012}, pages 1--6, June
+  2012.
+
+\bibitem{siradjuddin2012}
+I~Siradjuddin, L.~Behera, T.M. McGinnity, and S.~Coleman.
+\newblock A position based visual tracking system for a 7 dof robot manipulator
+  using a kinect camera.
+\newblock In {\em Neural Networks (IJCNN), The 2012 International Joint
+  Conference on}, pages 1--7, June 2012.
 
 \bibitem{stein1997}
 G.~P. Stein.

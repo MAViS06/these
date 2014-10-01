@@ -1,10 +1,10 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manuscrit.aux
 A level-1 auxiliary file: chapter01/chapter01.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
-I was expecting a `,' or a `}'---line 2016 of file ./biblio/bibliography.bib
+I was expecting a `,' or a `}'---line 2074 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
@@ -15,45 +15,45 @@ A bad cross reference---entry "conf/iros/DallejGAMM11"
 refers to entry "conf/iros/2011", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/icra/1993"
 Warning--I didn't find a database entry for "conf/iros/2011"
-You've used 20 entries,
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            635 strings with 7819 characters,
-and the built_in function-call counts, 7366 in all, are:
-= -- 736
-> -- 292
-< -- 7
-+ -- 120
-- -- 96
-* -- 492
-:= -- 1153
-add.period$ -- 62
-call.type$ -- 20
-change.case$ -- 106
+            676 strings with 9035 characters,
+and the built_in function-call counts, 10236 in all, are:
+= -- 1011
+> -- 417
+< -- 13
++ -- 170
+- -- 138
+* -- 682
+:= -- 1585
+add.period$ -- 83
+call.type$ -- 27
+change.case$ -- 148
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 310
-empty$ -- 609
-format.name$ -- 96
-if$ -- 1610
+cite$ -- 27
+duplicate$ -- 439
+empty$ -- 845
+format.name$ -- 138
+if$ -- 2254
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 22
-newline$ -- 103
-num.names$ -- 40
-pop$ -- 122
+int.to.str$ -- 27
+missing$ -- 28
+newline$ -- 138
+num.names$ -- 54
+pop$ -- 176
 preamble$ -- 1
-purify$ -- 88
+purify$ -- 123
 quote$ -- 0
-skip$ -- 241
+skip$ -- 346
 stack$ -- 0
-substring$ -- 507
-swap$ -- 96
-text.length$ -- 7
+substring$ -- 678
+swap$ -- 147
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
+type$ -- 102
 warning$ -- 0
-while$ -- 69
-width$ -- 22
-write$ -- 225
+while$ -- 95
+width$ -- 29
+write$ -- 302
 (There were 3 error messages)
