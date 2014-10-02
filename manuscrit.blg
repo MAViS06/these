@@ -1,59 +1,65 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manuscrit.aux
+A level-1 auxiliary file: chapter0/chapter0.aux
 A level-1 auxiliary file: chapter01/chapter01.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
-I was expecting a `,' or a `}'---line 2074 of file ./biblio/bibliography.bib
+Warning--string name "juin" is undefined
+--line 2106 of file ./biblio/bibliography.bib
+I was expecting a `,' or a `}'---line 2107 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+A bad cross reference---entry "merlet2010"
+refers to entry "DBLP:conf/icra/2010", which doesn't exist
 A bad cross reference---entry "merlet.1993"
 refers to entry "DBLP:conf/icra/1993", which doesn't exist
 A bad cross reference---entry "conf/iros/DallejGAMM11"
 refers to entry "conf/iros/2011", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/icra/2010"
 Warning--I didn't find a database entry for "DBLP:conf/icra/1993"
 Warning--I didn't find a database entry for "conf/iros/2011"
-You've used 27 entries,
+You've used 43 entries,
             2118 wiz_defined-function locations,
-            676 strings with 9035 characters,
-and the built_in function-call counts, 10236 in all, are:
-= -- 1011
-> -- 417
-< -- 13
-+ -- 170
-- -- 138
-* -- 682
-:= -- 1585
-add.period$ -- 83
-call.type$ -- 27
-change.case$ -- 148
+            794 strings with 11991 characters,
+and the built_in function-call counts, 15997 in all, are:
+= -- 1593
+> -- 620
+< -- 22
++ -- 254
+- -- 200
+* -- 1042
+:= -- 2473
+add.period$ -- 134
+call.type$ -- 43
+change.case$ -- 224
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 439
-empty$ -- 845
-format.name$ -- 138
-if$ -- 2254
+cite$ -- 43
+duplicate$ -- 696
+empty$ -- 1342
+format.name$ -- 200
+if$ -- 3545
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 28
-newline$ -- 138
-num.names$ -- 54
-pop$ -- 176
+int.to.str$ -- 43
+missing$ -- 43
+newline$ -- 218
+num.names$ -- 90
+pop$ -- 270
 preamble$ -- 1
-purify$ -- 123
+purify$ -- 184
 quote$ -- 0
-skip$ -- 346
+skip$ -- 545
 stack$ -- 0
-substring$ -- 678
-swap$ -- 147
-text.length$ -- 13
+substring$ -- 1080
+swap$ -- 229
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 102
+type$ -- 164
 warning$ -- 0
-while$ -- 95
-width$ -- 29
-write$ -- 302
-(There were 3 error messages)
+while$ -- 151
+width$ -- 45
+write$ -- 481
+(There were 4 error messages)

@@ -1,5 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{1992:Albus.Bostelman.ea}
+J.~Albus, R.~Bostelman, and N.~Dagalakis.
+\newblock The {NIST SPIDER}, a robot crane.
+\newblock {\em Journal of research of the National Institute of Standards and
+  Technology}, 97(3):373--385, may 1992.
+
+\bibitem{journals/jfr/AlbusBD93}
+James~S. Albus, Roger Bostelman, and Nicholas~G. Dagalakis.
+\newblock The {NIST} robocrane.
+\newblock {\em J. Field Robotics}, 10(5):709--724, 1993.
+
 \bibitem{andreff2007}
 Nicolas Andreff, Tej Dallej, and Philippe Martinet.
 \newblock Image-based visual servoing of a {G}ough{-}{S}tewart parallel
@@ -29,21 +40,39 @@ Duane~C. Brown.
 \newblock Close-range camera calibration.
 \newblock {\em PHOTOGRAMMETRIC ENGINEERING}, 37(8):855--866, 1971.
 
+\bibitem{2010:Carricato.Merlet}
+M.~Carricato and J-P. Merlet.
+\newblock Geometrico-static analysis of under-constrained cable-driven parallel
+  robot.
+\newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
+
+\bibitem{carricato_merlet2013}
+M.~Carricato and J.P. Merlet.
+\newblock Stability analysis of underconstrained cable-driven parallel robots.
+\newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
+
 \bibitem{chari2008}
 V.~Chari, A~Sharma, A~Namboodiri, and C.V. Jawahar.
 \newblock Frequency domain visual servoing using planar contours.
 \newblock In {\em Computer Vision, Graphics Image Processing, 2008. ICVGIP '08.
   Sixth Indian Conference on}, pages 87--94, Dec 2008.
 
+\bibitem{chaumette2008handbook}
+F.~Chaumette and S.~Hutchinson.
+\newblock Visual servoing and visual tracking.
+\newblock In B.~Siciliano and O.~Khatib, editors, {\em Handbook of Robotics},
+  chapter~24, pages 563--583. Springer, 2008.
+
 \bibitem{chaumette:tuto01}
 Fran{\c c}ois Chaumette and S.~Hutchinson.
 \newblock {Visual servo control, Part I: Basic approaches}.
 \newblock {\em IEEE Robotics and Automation Magazine}, 13(4):82--90, 2006.
 
-\bibitem{chaumette:tuto02}
-Fran{\c c}ois Chaumette and S.~Hutchinson.
-\newblock {Visual servo control, Part II: Advanced approaches}.
-\newblock {\em IEEE Robotics and Automation Magazine}, 14(1):109--118, 2007.
+\bibitem{1988:Clavel}
+R.~Clavel.
+\newblock Delta, a fast robot with parallel geometry.
+\newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
+  Lausanne, 26-28 april 1988.
 
 \bibitem{dallej.2006}
 T.~Dallej, N.~Andreff, Y.~Mezouar, and P.~Martinet.
@@ -89,6 +118,19 @@ Olivier Faugeras.
 \newblock {\em Three-dimensional Computer Vision: A Geometric Viewpoint}.
 \newblock MIT Press, Cambridge, MA, USA, 1993.
 
+\bibitem{journals/gosselin1989}
+C.~Gosselin and J.~Angeles.
+\newblock The optimum kinematic design of a spherical three-degree-of-freedom
+  parallel manipulator.
+\newblock {\em J. of Mechanisms, Transmissions and Automation in De- sign},
+  1989.
+
+\bibitem{1956:Gough}
+V.E. Gough.
+\newblock Contribution to discussion of papers on research in automobile
+  stability, control and tyre performance, 1956-1957.
+\newblock Proc. Auto Div. Inst. Mech. Eng.
+
 \bibitem{hartley2004}
 R.~I. Hartley and A.~Zisserman.
 \newblock {\em Multiple View Geometry in Computer Vision}.
@@ -99,6 +141,17 @@ Theo A.~G. Heeren and Frans~E. Veldpaus.
 \newblock An optical system to measure the end effector position for on-line
   control purposes.
 \newblock {\em Int. J. Rob. Res.}, 11(1):53--63, February 1992.
+
+\bibitem{1985:Landsberger.Sheridan*1}
+S.E. Landsberger and T.B. Sheridan.
+\newblock A new design for parallel link manipulator.
+\newblock In {\em Proc. Systems, Man and Cybernetics Conf.}, pages 812--814,
+  Tucson, 1985.
+
+\bibitem{malis1999}
+Ezio Malis, Fran{\c{c}}ois Chaumette, and Sylvie Boudet.
+\newblock 2 1/2 d visual servoing.
+\newblock {\em {IEEE} T. Robotics and Automation}, 15(2):238--250, 1999.
 
 \bibitem{marantette1995machine}
 W.F. Marantette.
@@ -111,6 +164,20 @@ E.~Marchand and F.~Chaumette.
 \newblock Feature tracking for visual servoing purposes.
 \newblock {\em Robotics and Autonomous Systems}, 52(1):53--70, July 2005.
 
+\bibitem{merlet2008}
+J.~P Merlet.
+\newblock Kinematics of the wire-driven parallel robot marionet using linear
+  actuators.
+\newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
+  Conference on}, pages 3857--3862, May 2008.
+
+\bibitem{merlet2010marionet}
+J.-P. Merlet.
+\newblock Marionet, a family of modular wire-driven parallel robots.
+\newblock In Jadran Lenarcic and Michael~M. Stanisic, editors, {\em Advances in
+  Robot Kinematics: Motion in Man and Machine}, pages 53--61. Springer
+  Netherlands, 2010.
+
 \bibitem{merlet.1993}
 Jean{-}Pierre Merlet.
 \newblock Closed-form resolution of the direct kinematics of parallel
@@ -118,6 +185,30 @@ Jean{-}Pierre Merlet.
 \newblock In {\em Proceedings of the 1993 {IEEE} International Conference on
   Robotics and Automation, Atlanta, Georgia, USA, May 1993}, pages 200--204,
   1993.
+
+\bibitem{merlet2010}
+Jean{-}Pierre Merlet and David Daney.
+\newblock A portable, modular parallel wire crane for rescue operations.
+\newblock In {\em {IEEE} International Conference on Robotics and Automation,
+  {ICRA} 2010, Anchorage, Alaska, USA, 3-7 May 2010}, pages 2834--2839, 2010.
+
+\bibitem{merlet1997robots}
+J.P. Merlet.
+\newblock {\em Les robots parall{\`e}les}.
+\newblock Collection robotique. Hermes, 1997.
+
+\bibitem{michel1993}
+Henri Michel and Patrick Rives.
+\newblock {Singularities in the determination of the situation of a robot
+  effector from the perspective view of 3 points}.
+\newblock Rapport de recherche RR-1850, INRIA, 1993.
+
+\bibitem{1994:Ming.Higuchi}
+A.~Ming and T.~Higuchi.
+\newblock Study on multiple degree of freedom positioning mechanisms using
+  wires, part 2, development of a planar completely restrained positioning
+  mechanism.
+\newblock {\em Int. J. Japan Soc. Prec. Eng.}, 28(3):235--242, september 1994.
 
 \bibitem{paccot.2008}
 Flavien Paccot, Philippe Lemoine, Nicolas Andreff, Damien Chablat, and Philippe
@@ -156,6 +247,12 @@ G.~P. Stein.
 \newblock In {\em Proceedings of the 1997 Conference on Computer Vision and
   Pattern Recognition (CVPR '97)}, CVPR '97, pages 602--, Washington, DC, USA,
   1997. IEEE Computer Society.
+
+\bibitem{1965:Stewart}
+D.~Stewart.
+\newblock A platform with 6 degrees of freedom.
+\newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
+  15):371--386, 1965.
 
 \bibitem{tsai1986}
 Roger~Y. Tsai.
