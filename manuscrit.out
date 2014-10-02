@@ -2,9 +2,9 @@
 \BOOKMARK [1][-]{section.1.1}{Mod\350les de capteurs et projections}{chapter.1}% 2
 \BOOKMARK [2][-]{subsection.1.1.1}{De l'oeil \340 la cam\351ra}{section.1.1}% 3
 \BOOKMARK [2][-]{subsection.1.1.2}{De la sc\350ne \340 l'image}{section.1.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Configurations et strat\351gies d'asservissement visuel}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Modalit\351s d'asservissement visuel}{chapter.1}% 5
 \BOOKMARK [2][-]{subsection.1.2.1}{Positionnement de la cam\351ra}{section.1.2}% 6
 \BOOKMARK [2][-]{subsection.1.2.2}{Asservissements en position, bas\351s images et hybrides}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.3}{Construction d'une loi de commande}{section.1.2}% 8
-\BOOKMARK [1][-]{section.1.3}{Contexte de l'\351tude et choix de strat\351gie pour l'asservissement visuel}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.2.3}{Justification des choix de configuration dans le cadre de notre \351tude}{section.1.2}% 8
+\BOOKMARK [1][-]{section.1.3}{Construction d'une loi de commande}{chapter.1}% 9
 \BOOKMARK [1][-]{section.1.4}{Asservissement visuel des robots parall\350les \340 c\342bles}{chapter.1}% 10

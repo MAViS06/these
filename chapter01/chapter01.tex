@@ -100,7 +100,7 @@ dont on a besoin.
 \label{chap01:fig02}
 \end{figure}
 
-Une seconde option est de d\'eterminer les transformations g\'eom\'etriques d'objets dans le plan image g\'en\'er\'ees par une modification soit d'une partie de la sc\`ene (objet en mouvement), soit de la pose de la cam\'era elle-m\^eme, voire des deux simultan\'ement. Ceci permet entre autres de s'abstraire en partie au moins de la repr\'esentation tridimensionnelle de la sc\`ene projet\'ee sur l'image, en utilisant par exemple la g\'eom\'etrie pl\"uckerienne \cite{andreff:inria-00072393}, des descripteurs locaux ou globaux \cite{latuan2010}, des repr\'esentations fr\'equentielles (Fourier \cite{chari2008}, ondelettes \cite{ramosvelasco2012}), $\cdots$ (on pourra retrouver les principales techniques dans \cite{marchand2005}).
+Une seconde option consiste \`a d\'eterminer les transformations g\'eom\'etriques d'ob\-jets dans le plan image g\'en\'er\'ees par une modification soit d'une partie de la sc\`ene (objet en mouvement), soit de la pose de la cam\'era elle-m\^eme, voire des deux simultan\'ement. Ceci permet entre autres de s'abstraire en partie au moins de la repr\'esentation tridimensionnelle de la sc\`ene projet\'ee sur l'image, en utilisant par exemple la g\'eom\'etrie pl\"uckerienne \cite{andreff:inria-00072393}, des descripteurs locaux ou globaux \cite{latuan2010}, ou encore des repr\'esentations fr\'equentielles (Fourier \cite{chari2008}, ondelettes \cite{ramosvelasco2012}). Le lecteur pourra retrouver les principales techniques dans \cite{marchand2005}.
 
 Le choix d'un type de capteur n'est donc pas anodin, il d\'epend de param\`etres aussi divers que la quantit\'e et la densit\'e des informations, les connaissances pr\'ealables que l'on peut avoir d'une sc\`ene ou d'un objet, du type d'informations disponibles dans l'images et pertinentes par rapport au contexte (sc\`enes homog\`enes ou textur\'ees, mobiles ou statiques, diurnes ou nocturnes, $\cdots$).
 
@@ -121,18 +121,16 @@ ${\bf p} = (x_m, y_m)$ ses coordonnées m\'etriques dans l'image. Le modèle de
 projection perspective consiste en une projection centrale de centre $\mathcal 
 C$, portée par l'axe ${\bf z}_c$ représentant l'axe optique de la caméra. On 
 appelle {\it plan image} le plan se trouvant à distance focale $f$ de la 
-caméra, 
-soit $Z = f$. On définit également un point de référence ${\bf c}(x_c,y_c)$ 
-dans 
-le plan image comme étant le point d'intersection de l'axe optique et du plan 
-image (Fig.\ref{intro:fig12}).
+caméra, soit $Z = f$. On définit également un point de référence ${\bf c}(x_c,y_c)$ 
+dans le plan image comme étant le point d'intersection de l'axe optique et du plan 
+image (Fig.\ref{chap01:fig03}).\\
 
 \begin{figure}[h!tp]
   \centering
   \def\svgwidth{.85\linewidth}
   \input{./chapter01/figures/modele_projection.pdf_tex}
     \caption{\footnotesize{Modèle de projection {\it pinhole}}}
-\label{intro:fig12}
+\label{chap01:fig03}
 \end{figure}
 
 En plus du {\it référentiel-base} $\mathcal R_b$ et du r\'ef\'erentiel de 
@@ -149,7 +147,7 @@ déduites de la manière suivante :
 
 \begin{equation}
 x_m = f \frac{X}{Z}, y_m = f \frac{Y}{Z}
-\label{intro:eq12}
+\label{chap01:eq01}
 \end{equation}
 
 ou, sous forme matricielle :
@@ -166,7 +164,7 @@ f & 0 & 0 \\ 0 & f & 0 \\ 0 & 0 & 1
 \begin{bmatrix}
 X \\ Y \\ Z 
 \end{bmatrix}
-\label{intro:eq13}
+\label{chap01:eq02}
 \end{equation}
 soit $\widetilde {\bf p} = {\bf A}{\bf P}$, avec $\widetilde {\bf p} = Z {\bf 
 p}$.
@@ -184,7 +182,7 @@ pixelliques $(x_p, y_p)$, se fait selon la relation suivante :
 x_p = x_c + x_m/l_x \\
 y_p = y_c + y_m/l_y
 \end{matrix} \right .
-\label{intro:eq14}
+\label{chap01:eq03}
 \end{equation}
 ce qui donne sous une forme matricielle :
 
@@ -199,7 +197,7 @@ x_p \\y_p \\ 1
 \begin{bmatrix}
 x \\ y \\ 1
 \end{bmatrix}
-\label{intro:eq15}
+\label{chap01:eq04}
 \end{equation}
 soit ${\bf p}_p = {\bf B} {\bf p}$.
 
@@ -216,7 +214,7 @@ x_p \\y_p \\ 1
 \begin{bmatrix}
 X \\ Y \\ Z
 \end{bmatrix}
-\label{intro:eq16}
+\label{chap01:eq05}
 \end{equation}
 avec $\alpha_x = f/l_x$ et $\alpha_y = f/l_y$. Les paramètres $(\alpha_x, 
 \alpha_y, x_c, y_c)$ de la matrice ${\bf K} = {\bf A}{\bf B}$ ainsi construite 
@@ -231,7 +229,7 @@ coordonnées normalisées ainsi :
 x = X/Z \\
 y = Y/Z
 \end{matrix} \right .
-\label{intro:eq17}
+\label{chap01:eq06}
 \end{equation}
 indépendantes de la focale, et pouvant être déduites des coordonnées 
 pixelliques en utilisant la matrice $\bf K$.
@@ -252,7 +250,7 @@ ${\bf P}$, il est possible de factoriser cette transformation en une seule
 opération matricielle :
 \begin{equation}
 {}^c \widetilde {\bf P} = {}^c {\bf M}_o {}^o \widetilde {\bf P}
-\label{intro:eq18}
+\label{chap01:eq07}
 \end{equation}
 soit :
 \begin{equation}
@@ -267,7 +265,7 @@ soit :
 \begin{bmatrix}
 {}^oX \\ {}^oY \\ {}^oZ \\ 1
 \end{bmatrix}
-\label{intro:eq19}
+\label{chap01:eq08}
 \end{equation}
 
 On appelle ${}^c{\bf M}_o$ la {\it matrice homogène de transformation} du 
@@ -279,126 +277,167 @@ s'exprime simplement sous la forme :
 &  {}^c{\bf R}_o^T & & -{}^c{\bf R}_o^T {}^c{\bf t}_o \\
 & {\bf 0} & & 1
 \end{bmatrix}
-\label{intro:eq20}
+\label{chap01:eq09}
 \end{equation}
 
-Nous sommes dès lors en mesure d'établir une relation entre la scène observée 
+En pratique, il suffit de $6$ param\`etres pour d\'ecrire enti\`erement la matrice homog\`ene : $3$ pour la translation et $3$ pour la rotation. Si l'on utilise par exemple une repr\'esentation des rotations sous la forme ${\bf r} = (\theta {\bf u})$, avec $\bf u$ un vecteur unitaire et $\theta$ l'angle de rotation autour de ce vecteur, une matrice homog\`ene ${\bf M}$ peut \^etre repr\'esent\'ee par le vecteur suivant :
+
+\begin{equation}
+{\bf m} = ({\bf t}, \theta {\bf u})  
+\label{chap01:eq10}
+\end{equation}
+
+Nous sommes \`a pr\'esent en mesure d'établir une relation entre la scène observée 
 dans son référentiel propre, dans le r\'ef\'erentiel de la cam\'era (et par extension dans chacun des r\'ef\'erentiels du manipulateur) et sa projection dans l'image, exprimée en coordonnées pixelliques, métriques et normalisées. Le lecteur 
 remarquera cependant que, s'il est possible directement, connaissant ${\bf K}$ 
 et ${}^o{\bf M}_c$, de déduire à partir des propriétés de la scène les 
 caractéristiques de sa projection, l'opération inverse est dépendante dans ce 
-modèle d'une estimation pour chaque point de sa profondeur (coordonnée ${}^cZ$), ce dont nous aurons \`a tenir compte lorsqu'il s'agira de d\'eterminer le type de mesure que nous utiliserons pour d\'eduire les consignes donn\'ees au manipulateur.
+modèle d'une estimation pour chaque point de sa profondeur (coordonnée ${}^cZ$), ce dont nous aurons \`a tenir compte lorsqu'il s'agira de d\'eterminer le type de mesures que nous utiliserons pour d\'eduire les consignes \`a donner au manipulateur.
 
 \section{Modalit\'es d'asservissement visuel} 
 \label{chap1-1}
 
-
+Selon la nature du manipulateur et le contexte dans lequel celui-ci est utilis\'e, plusieurs strat\'egies d'asservissement visuel peuvent \^etre utilis\'ees. Nous distinguons en particulier les modalit\'es architecturales (positionnement de la cam\'era par rapport au robot et \`a la sc\`ene) et les modalit\'es m\'ethodologiques (espace de r\'egulation).
 
 \subsection{Positionnement de la caméra} \label{chap1-1-0}
 
-Le contexte étant celui d'un manipulateur dont on veut asservir la saisie et le déplacement d'un objet, plusieurs stratégies s'offrent 
-à nous. Une première décision à prendre concerne par exemple le positionnement 
-de la caméra. On distingue ainsi une configuration déportée 
-(Fig.\ref{intro:fig13view0}) d'une configuration embarquée (Fig. 
-\ref{intro:fig13view1}).
+Lorsque la cam\'era est plac\'ee en dehors de la partie mobile du manipulateur, on parlera de configuration déportée 
+(Fig.\ref{chap01:fig04view0}). Une cam\'era d\'eport\'ee peut \^etre fixe ou mobile, et permet g\'en\'eralement d\'appr\'ehender une sc\`ene d'une mani\`ere globale : elle comporte dans son plan image une repr\'esentation de l'organe terminal du robot, et le cas \'ech\'eant de l'objet \`a manipuler. L'utilisation d'une cam\'era d\'eport\'ee se justifie en particulier lorsque l'on souhaite estimer la pose de l'organe terminal par rapport \`a un r\'ef\'erentiel fixe. Toutefois, l'utilisation d'une cam\'era d\'eport\'ee -- particuli\`erement si elle est fixe -- suppose une sc\`ene relativement d\'egag\'ee et un espace de travail compatible avec son champs de vision et sa r\'esolution (il est toujours possible cependant de multiplier les dispositifs).
+
+Dans le cas contraire o\`u la cam\'era se trouverait li\'ee \`a l'organe terminal d'un manipulateur, on parle en toute logique d'une configuration embarquée (Fig.\ref{chap01:fig04view1}). Une cam\'era embarqu\'ee pr\'esente l'avantage de pouvoir couvrir l'ensemble de l'espace de travail accessible au manipulateur et de compenser les limites de sa r\'esolution par sa mobilit\'e.
 
 \begin{figure}[htp]
   \centering
   \subfloat[La caméra est déportée ; la scène comprend l'organe terminal et 
-l'objet-cible]{\label{intro:fig13view0}
+l'objet-cible]{\label{chap01:fig04view0}
     \def\svgwidth{.45\linewidth}
   \input{./chapter01/figures/eye_to_hand.pdf_tex}} \hfill
     \subfloat[La caméra est embarquée ; la scène ne comprend que 
-l'objet-cible]{\label{intro:fig13view1}
+l'objet-cible]{\label{chap01:fig04view1}
     \def\svgwidth{.45\linewidth}
   \input{./chapter01/figures/eye_in_hand.pdf_tex}} 
     \caption{\footnotesize{Positionnements de caméra}}
-\label{intro:fig13}
+\label{chap01:fig04}
 \end{figure}
-
-Dans le cas d'une caméra déportée fixe, il est possible d'avoir une approximation des transformations permettant de 
-passer du référentiel-base $\mathcal R_b$ au référentiel-caméra $\mathcal R_c$, 
-et du référentiel-caméra au référentiel-objet $\mathcal R_o$. Seul l'organe 
-terminal bouge dans la scène observée. Dans le cas d'une caméra embarquée, la 
-transformation permettant de passer du référentiel de l'organe terminal 
-$\mathcal R_e$ au référentiel-caméra $\mathcal R_c$ est connue. Toutefois, 
-l'ensemble de la scène est affecté lors d'un déplacement de l'organe terminal 
-(et donc de la caméra).
 
 \subsection{Asservissements en position, basés images et hybrides} 
 \label{chap1-1-1}
 
-De manière générale, une stratégie d'asservissement visuel peut être décomposée 
-de la manière suivante :
-\begin{enumerate}
- \item on sélectionne dans un premier temps un ensemble ${\bf s}$ de paramètres 
-à partir desquels on peut estimer soit directement la pose de l'organe 
-terminal, 
-soit le déplacement nécessaire à l'obtention de cette pose. L'ensemble des 
-paramètres dépend d'une part de la valeur des primitives extraites de l'image 
-et 
-d'autre part d'un ensemble de connaissances {\it a priori}, telles que les 
-propriétés de la caméra, ou encore un modèle de la cible.
- \item on définit ensuite la valeur désirée ${\bf s}^*$ des paramètres, 
-correspondant à l'état que l'on souhaite atteindre.
- \item à partir de données extraites de l'image, on calcule la valeur courante 
-des paramètres
- \item on calcule alors une erreur ${\bf e} = {\bf s} - {\bf s}^*$, dont on 
-souhaite qu'elle converge vers $0$.
- \item on établit enfin une relation entre la variation $\dot {\bf e}$ de 
-l'erreur et la commande qui sera ensuite envoyée au manipulateur.
- \item la commande est effectuée, et l'on boucle les étapes $3$ à $6$ jusqu'à 
-obtention d'une valeur seuil de l'écart entre les valeurs courantes des 
-paramètres et les valeurs désirées.
-\end{enumerate}
+L'asservissement visuel consiste \`a exploiter les informations visuelles situ\'ees dans une image, puis d'en d\'eduire des mesures ${\bf s}$ dont on souhaitent qu'elles convergent vers un ensemble de valeurs ${\bf s}^*$ correspondant \`a un r\'esultat pr\'edetermin\'e. L'\'ecart entre les valeurs mesur\'ees et l'objectif constitue l'erreur ${\bf e}$ de consigne. Cette erreur de consigne est alors utilis\'ee pour construire une commande de d\'eplacement pour le robot (Fig.\ref{chap01:fig05}). On parle de {\it boucle ouverte} lorsque une seule it\'eration est effectu\'ee et suffit \`a produire une consigne convergent vers le r\'esultat escompt\'e. On utilise cependant g\'en\'eralement un sch\'ema en boucle ferm\'ee consistant \`a mesurer dans chaque nouvelle image acquise une correction de la commande. Un sch\'ema en boucle ferm\'e permet de prendre en compte les diff\'erentes incertitudes li\'ees \`a la r\'ealit\'e d'un d\'eplacement du robot par rapport \`a son mouvement th\'eorique, et permet entre autres une robustesse aux erreurs de mesures dans l'image, qui peuvent provenir par exemple de la r\'esolution limit\'ee du capteur, ou encore de la pr\'esence d'artefacts (ombres, occlusions, $\cdots$).
 
 \begin{figure}[htp]
   \centering
     \def\svgwidth{.95\linewidth}
   \input{./chapter01/figures/bloc_commande.pdf_tex}
     \caption{\footnotesize{Schéma des étapes de l'asservissement visuel}}
-\label{intro:fig13b}
+\label{chap01:fig05}
 \end{figure}
 
-On distinguera ici deux grandes classes de stratégies d'asservissement : la 
-première est basée sur l'estimation des paramètres de pose de l'organe terminal 
-(PBVS : position-based visual servo), tandis que la seconde utilise directement 
-les primitives extraites de l'image (IBPS : image-based visual servo). Il est 
-également possible de mixer ces deux approches, ce que l'on appellera un 
-asservissement hybride.
+Les informations visuelles \`a partir desquelles sera construite la consigne (d\'eplacement exprim\'e dans l'espace op\'erationnel)-- dont on d\'eduira une {\it loi de commande} (d\'eplacement exprim\'e dans l'espace articulaire)-- sont appel\'ees {\it primitives}. Selon la nature des primitives, on distingue plusieurs types d'asservissement visuels.\\
 
-Dans le cas de l'asservissement en position, une connaissance du modèle 3-D de 
-la cible est nécessaire (on parle d'ailleurs parfois d'asservissement 3-D). De 
-l'écart entre les valeurs courantes d'un ensemble de primitives et leurs 
-valeurs 
-estimées pour une pose désirée, on déduira les paramètres de pose de l'organe 
-terminal. Cela revient à faire varier un référentiel courant de l'organe 
-terminal $\mathcal R_e$ vers un référentiel correspondant à la pose prescrite 
-$\mathcal R_e^*$, soit la détermination d'une matrice homogène de 
-transformation 
-${}^{e^*}{\bf M}_e$. Comme nous l'avons vu, cette matrice est composée d'une 
-translation et d'une rotation, qui peuvent être décrites à l'aide de $6$ 
-paramètres. Dans ce cas, le vecteur ${\bf s}$ est constitué de mesures 
-permettant de construire cette matrice de transformation de repère. On pourra 
-d'ailleurs noter que dans une configuration avec caméra embarquée, le problème 
-est équivalent à la détermination d'une matrice de transformation ${}^{c^*}{\bf 
-M}_c$ entre les référentiels courants et désirés de la caméra.
+{\bf asservissement 3D :}\\
 
-L'asservissement basé-image repose quant à lui sur l'exploitation direct des 
-informations extraites de l'image pour établir la commande qui sera envoyée au 
-manipulateur. Il ne nécessite pas de connaissance {\it a priori} du modèle 3-D 
-de l'objet, mais exploite des primitives pour lesquelles on possède un modèle 
-de 
-comportement lorsqu'elles évoluent dans l'espace. On parlera dès lors 
-d'asser\-vissement 2-D, ou d'asservissement 2-D 1/2 lorsque une connaissance du 
-modèle 3-D est néanmoins utilisée (approche hybride).
+A partir d'un mod\`ele 3D d'un objet (qui peut-\^etre l'organe terminal) et d'une strat\'egie de reconstruction, on cherche \`a estimer la pose courante de l'objet par rapport \`a la cam\'era et de la faire converger vers une pose d\'esir\'ee, ce que l'on pourra obtenir soit par un mouvement de la cam\'era, soit par un d\'eplacement de l'objet. Dans ce cas, ${\bf s}$ correspondra aux param\`etres de pose de la cam\'era. On d\'efinit $\mathcal R_c$ et $\mathcal R_{c^*}$ comme \'etant respectivement les r\'ef\'erentiels courant et d\'esir\'e de la cam\'era, et $\mathcal R_o$ le r\'ef\'erentiel objet. Deux strat\'egies peuvent alors \^etre utilis\'ees :
+\begin{itemize}
+ \item si ${}^c{\bf t}_o$ et ${}^{c^*}{\bf t}_o$ sont les coordonn\'ees de l'objet exprim\'ees respectivement dans le r\'ef\'erentiel courant de la cam\'era et dans le r\'ef\'erentiel d\'esir\'e, et ${}^{c^o}{\bf R}_c$ la matrice de rotation donnant le r\'ef\'erentiel courant par rapport au r\'ef\'erentiel d\'esir\'e, alors on a :
+ \begin{equation}
+ \left \lbrace
+ \begin{matrix}
+  {\bf s} &=& ({}^c{\bf t}_o,& \theta {\bf u}) \\
+  {\bf s}^* &=& ({}^{c^*}{\bf t}_o,& {\bf 0}) \\
+  {\bf e} &=& ({}^c{\bf t}_o - {}^{c^*}{\bf t}_o,& \theta {\bf u})
+ \end{matrix}
+  \right .
+\label{chap01:eq11}
+\end{equation}
+$\theta {\bf u}$ param\'etrisant la matrice de rotation ${}^{c^o}{\bf R}_c$. La consigne g\'en\'er\'ee \`a partir de cette repr\'esentation de l'erreur (dont on peut trouver le d\'etail dans \cite{chaumette:tuto01}) correspondont \`a une trajectoire en ligne droite dans l'image, mais pas pour la cam\'era.
+\item au contraire, si on utilise :
+\begin{equation}
+ \left \lbrace
+ \begin{matrix}
+  {\bf s} &=& ({}^{c^*}{\bf t}_c,& \theta {\bf u}) \\
+  {\bf s}^* &=& (0,& {\bf 0}) \\
+  {\bf e} &=& ({}^c{\bf t}_c,& \theta {\bf u})
+ \end{matrix}
+  \right .
+\label{chap01:eq12}
+\end{equation}
+${}^{c^*}{\bf t}_c$ correspondant ici aux coordonn\'ees du rep\`ere cam\'era courant par rapport au rep\`ere cam\'era d\'esir\'e, alors nous obtenons en th\'eorie une trajectoire en ligne droite pour la cam\'era, mais pas dans l'image. 
+\end{itemize}
 
-Quelque-soit la situation, l'objectif de l'asservissement visuel est de 
-traduire 
-un ensemble de mesures effectuées dans une série d'image en loi de commande qui 
-sera envoyée au manipulateur.
+Ainsi, dans le premier cas, on prend le risque de g\'en\'erer une trajectoire pour la cam\'era qui sorte des limites de l'espace de travail, et dans le deuxi\`eme cas de voir sortir l'objet de l'image. L'utilisation de l'une ou de l'autre m\'ethode impose donc des v\'erifications suppl\'ementaires afin de garantir la r\'ealisation de la t\^ache. Aucune des deux solutions ne pr\'esentant un clair avantage sur l'autre, le choix d\'ependra du contexte et des strat\'egies algorithmiques mises en place.\\
 
-\subsection{Construction d'une loi de commande}\label{chap1-1-2}
+{\bf asservissement 2D :} \\
+
+Au contraire de l'asservissement 3D, l'asservissement 2D que l'on retrouve \'egalement sous l'acronyme {\it IBVS} (pour {\it Image-based visual servoing}, l'asservissement 3D relevant du {\it Position-based visual servoing}) exploite directement les primitives extraites des informations visuelles sans passer ni par un mod\`ele de la sc\`ene ou de l'objet, ni par une reconstruction quelconque. Lorsque la cam\'era se d\'eplace, cela implique variations des propri\'et\'es mesurables dans l'image. Si l'on est en capacit\'e d\'etablir une relation entre les variations des propri\'et\'es dans l'image et les mouvements du capteur, alors il est possible d'obtenir un contr\^oleur qui ne repose que sur la r\'egulation des valeurs des primitives. A titre d'exemple, sur lequel nous reviendrons dans le prochain chapitre, la mesure de l'aire d'une surface et la d\'etermination de son centre de gravit\'e suffisent \`a contr\^oler la position d'un manipulateur.
+
+Si un asservissement 2D pr\'esente le clair avantage de proposer une consigne d\'etermin\'ee uniquement \`a partir de l'espace du capteur, la construction m\^eme de la consigne d\'epend souvent d'estimations suppl\'ementaires telles que la profondeur en chaque point. La qualit\'e de l'estimation affectera d\`es lors celle de la consigne. Une solution sera par exemple de recourir \`a d'autres capteurs pour obtenir ces estimations. 
+
+{\bf asservissement 2D 1/2 :}\\
+
+
+
+
+\subsection{Justification des choix de configuration dans le cadre de notre \'etude}\label{chap1-1-2}
+
+Nous avons vu que l'utilisation d'un robot parallèle à câbles nous permet 
+d'évoluer dans un espace de travail conséquent. En particulier, le robot {\tt 
+Marionet-Assist} que nous avons utilisé pour nos expérimentations évolue dans 
+un cube de $4m \times 3m \times 3m$, et le volume atteignable par un robot de type 
+{\tt Marionet-Crane} peut aller jusqu'à $100m \times 35m \times 35m$. Dans ces 
+circonstances, l'utilisation d'une caméra embarquée a été privilégiée pour deux 
+raisons :
+\begin{itemize}
+ \item le champs de vision d'une seule caméra fixe déportée pourra se révéler 
+insuffisant pour couvrir l'ensemble de l'espace de travail
+ \item le déploiement d'un robot à câble pouvant être effectué dans des milieux 
+nocifs, ou difficilement atteignables (suite par exemple à une catastrope 
+naturelle), l'utilisation d'une caméra déportée est souvent difficilement 
+envisageable.
+\end{itemize}
+
+Ajoutons que le robot {\tt Marionet-Assist} a été pensé pour être utilisé dans 
+des pièces de vie de personnes à la mobilité fragilisée. Dans ce cadre, une 
+caméra déportée peut paraître inutilement intrusive. Le champs de vision d'une 
+caméra embarquée étant limité, cela nous a semblé, conformément à cette 
+application, un choix plus respectueux de l'intimité des personnes. 
+
+De la même manière, les environnements d'utilisation des robots à câbles de la 
+famille {\tt Marionet} sont généralement dynamiques. A ce titre, nous avons 
+privilégié une stratégie d'asservissement basé-image, à nouveau pour deux 
+raisons distinctes :
+\begin{itemize}
+\item elle ne nécessite pas une connaissance complète du modèle 3-D de la cible 
+\item l'asservissement en position repose souvent sur l'utilisation de 
+plusieurs 
+caméras (ou de capteurs de type RGB-D) pour garantir une mesure fiable des 
+primitives permettant une reconstruction du modèle 3-D de la cible. Or, pour 
+des 
+raisons toujours liées au contexte d'application des robots de la famille {\tt 
+Marionet}, cela ne correspond pas aux choix de capteurs que nous avons effectués
+\end{itemize}
+
+Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme 
+capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une 
+observation des articulations d'un robot parallèle à câbles a été effectué par 
+\cite{andreff2007} pour des robots parallèles classiques, et plus récemment 
+pour des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces études 
+correspondant à ce jour au principal travail effectué dans le domaine de 
+l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès 
+lors dessus à l'occasion de la section suivante, au sein de laquelle nous 
+définirons nos problématiques et pistes de travail. Nous pouvons relever 
+toutefois que la démarche développée dans leurs recherches consiste à améliorer 
+le positionnement de l'organe terminal, ce qui suppose que la position de la 
+cible est connue avec suffisamment de précision. Il s'agit donc d'un 
+environnement contrôlé. Or, le contexte d'application de nos robots implique au 
+contraire une incertitude non-négligeable sur les propriétés de la cible. Dès 
+lors, la caméra est tout autant utilisée pour la construction d'une loi de 
+commande que pour la localisation de l'objet et l'actualisation de ses 
+propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix 
+d'utilisation des caméras comme capteurs extéroceptifs s'est donc imposé dans 
+notre approche.
+
+\section{Construction d'une loi de commande}\label{chap1-1-2}
 
 Nous reprenons ici les bases de construction d'une loi de commande 
 \cite{samson1991}. Le lecteur les retrouvera développées par exemple dans 
@@ -472,75 +511,6 @@ primitive particulière aux autres mesures.
 \end{itemize}
 
 
-\section{Contexte de l'étude et choix de stratégie pour l'asser\-vissement 
-visuel}\label{chap1-2}
-
-Nous avons vu que l'utilisation d'un robot parallèle à câbles nous permet 
-d'évoluer dans un espace de travail conséquent. En particulier, le robot {\tt 
-Marionet-Assist} que nous avons utilisé pour nos expérimentations évolue dans 
-un cube de $4m \times 3m \times 3m$, et le volume atteignable par un robot de type 
-{\tt Marionet-Crane} peut aller jusqu'à $100m \times 35m \times 35m$. Dans ces 
-circonstances, l'utilisation d'une caméra embarquée a été privilégiée pour deux 
-raisons :
-\begin{itemize}
- \item le champs de vision d'une seule caméra fixe déportée pourra se révéler 
-insuffisant pour couvrir l'ensemble de l'espace de travail
- \item le déploiement d'un robot à câble pouvant être effectué dans des milieux 
-nocifs, ou difficilement atteignables (suite par exemple à une catastrope 
-naturelle), l'utilisation d'une caméra déportée est souvent difficilement 
-envisageable.
-\end{itemize}
-
-Ajoutons que le robot {\tt Marionet-Assist} a été pensé pour être utilisé dans 
-des pièces de vie de personnes à la mobilité fragilisée. Dans ce cadre, une 
-caméra déportée peut paraître inutilement intrusive. Le champs de vision d'une 
-caméra embarquée étant limité, cela nous a semblé, conformément à cette 
-application, un choix plus respectueux de l'intimité des personnes. 
-
-De la même manière, les environnements d'utilisation des robots à câbles de la 
-famille {\tt Marionet} sont généralement dynamiques. A ce titre, nous avons 
-privilégié une stratégie d'asservissement basé-image, à nouveau pour deux 
-raisons distinctes :
-\begin{itemize}
-\item elle ne nécessite pas une connaissance complète du modèle 3-D de la cible 
-\item l'asservissement en position repose souvent sur l'utilisation de 
-plusieurs 
-caméras (ou de capteurs de type RGB-D) pour garantir une mesure fiable des 
-primitives permettant une reconstruction du modèle 3-D de la cible. Or, pour 
-des 
-raisons toujours liées au contexte d'application des robots de la famille {\tt 
-Marionet}, cela ne correspond pas aux choix de capteurs que nous avons effectués
-\end{itemize}
-
-Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme 
-capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une 
-observation des articulations d'un robot parallèle à câbles a été effectué par 
-\cite{andreff2007} pour des robots parallèles classiques, et plus récemment 
-pour 
-des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces études 
-correspondant à ce jour au principal travail effectué dans le domaine de 
-l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès 
-lors dessus à l'occasion de la section suivante, au sein de laquelle nous 
-définirons nos problématiques et pistes de travail. Nous pouvons relever 
-toutefois que la démarche développée dans leurs recherches consiste à améliorer 
-le positionnement de l'organe terminal, ce qui suppose que la position de la 
-cible est connue avec suffisamment de précision. Il s'agit donc d'un 
-environnement contrôlé. Or, le contexte d'application de nos robots implique au 
-contraire une incertitude non-négligeable sur les propriétés de la cible. Dès 
-lors, la caméra est tout autant utilisée pour la construction d'une loi de 
-commande que pour la localisation de l'objet et l'actualisation de ses 
-propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix 
-d'utilisation des caméras comme capteurs extéroceptifs s'est donc imposé dans 
-notre approche.
-
-Il nous reste en introduction à présenter les avantages et les spécificités 
-d'une utilisation de l'asservissement visuel dans le contexte particulier des 
-robots parallèles à câbles. La section suivante introduira les pistes 
-d'amélioration de contrôle que nous avons repérées, les problématiques 
-auxquelles nous avons été confrontées et la manière dont nous proposons de les 
-résoudre. Nous évoquerons également de quelle manière les spécificités des 
-robots parallèles nous permettent d'assouplir les contraintes de 
-l'asservissement tout en garantissant un contrôle optimal.
 
 \section{Asservissement visuel des robots parallèles à 
 câbles}\label{chap1-3}
