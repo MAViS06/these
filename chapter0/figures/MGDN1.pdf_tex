@@ -49,22 +49,21 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,1.4142857)%
-    
 \put(0,0){\includegraphics[width=\unitlength]{./chapter0/figures/MGDN1.pdf}}%
-\put(0.10774193,0.69737327){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
-{ 0.17640554\unitlength}\raggedright $A_i$\end{minipage}}}%
-\put(0.69841598,0.69776159){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
-{0.17640554\unitlength}\raggedright $A_j$\end{minipage}}}%
-\put(0.24201047,0.98997357){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
-{ 0.17640554\unitlength}\raggedright $A_k$\end{minipage}}}%
-\put(0.24261631,0.58255363){\color[rgb]{0,0,0}\rotatebox{-66.77749817}{
-\makebox(0 ,0)[lt]{\begin{minipage}{0.11086891\unitlength}\raggedright 
+\put(0.08774193,0.70737327){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{0.17640554\unitlength}\raggedright $A_i$\end{minipage}}}%
+\put(0.71841598,0.70776159){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{ 0.17640554\unitlength}\raggedright $A_j$\end{minipage}}}%
+\put(0.24201047,0.99997357){\color[rgb]{0,0,0}\makebox(0,0)[lt]
+{\begin{minipage} { 0.17640554\unitlength}\raggedright $A_k$\end{minipage}}}%   
+\put(0.15969027,0.92071963){\color[rgb]{0,0,0}\rotatebox{-75.68870517}
+{\makebox(0 ,0)[lt]{\begin{minipage}{0.07466376\unitlength}\raggedright 
 $\rho_i$\end{minipage}}}}%
-\put(0.60848003,0.85791626){\color[rgb]{0,0,0}\rotatebox{-60.22016092}{
-\makebox(0,0)[lt]{\begin{minipage}{0.12247489\unitlength}\raggedright 
-$\rho_j$\end{minipage}}}}%
-\put(0.32070834,1.10833284){\color[rgb]{0,0,0}\rotatebox{71.56136338}{\makebox(0
-, 0)[lt]{\begin{minipage}{0.10147729\unitlength}\raggedright 
+\put(0.61748003,0.82691626){\color[rgb]{0,0,0}\rotatebox{-54.22016092}
+{\makebox(0,0)[lt]{\begin{minipage}{0.12247489\unitlength}\raggedright 
+$\rho_j$\end{minipage}}}}%    
+\put(0.30570834,1.08333284){\color[rgb]{0,0,0}\rotatebox{71.56136338}
+{\makebox(0,0)[lt]{\begin{minipage}{0.10147729\unitlength}\raggedright 
 $\rho_k$\end{minipage}}}}%
   \end{picture}%
 \endgroup%

@@ -756,12 +756,12 @@ nous recourrons donc \`a une approximation.
 \subsection{Choix d'approximation de la matrice d'interaction et crit\`ere de
 convergence}
 
-En pratique, il est difficile de connaître avec exactitude ${\bf L}_e$, qui 
-peut être dépendante de la pose de la caméra. On utilisera dès lors une 
-approximation de la matrice d'interaction, la loi de commande finale devenant :
+Devant la difficult\'e en pratique de connaître avec exactitude ${\bf 
+L}_e$, on utilisera plut\^ot une approximation de la matrice d'interaction, la 
+loi de commande finale devenant :
 \begin{equation}
 {\bf v}_c = - \lambda \widehat {{\bf L}_e^+} {\bf e} 
-\label{chap01:eq40}
+\label{chap01:eq23}
 \end{equation}
 
 

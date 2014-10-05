@@ -2,7 +2,6 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manuscrit.aux
 A level-1 auxiliary file: chapter0/chapter0.aux
-A level-1 auxiliary file: chapter01/chapter01.aux
 The style file: plain.bst
 Database file #1: ./biblio/bibliography.bib
 Warning--string name "juin" is undefined
@@ -14,52 +13,46 @@ I was expecting a `,' or a `}'---line 2107 of file ./biblio/bibliography.bib
 I'm skipping whatever remains of this entry
 A bad cross reference---entry "merlet2010"
 refers to entry "DBLP:conf/icra/2010", which doesn't exist
-A bad cross reference---entry "merlet.1993"
-refers to entry "DBLP:conf/icra/1993", which doesn't exist
-A bad cross reference---entry "conf/iros/DallejGAMM11"
-refers to entry "conf/iros/2011", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/icra/2010"
-Warning--I didn't find a database entry for "DBLP:conf/icra/1993"
-Warning--I didn't find a database entry for "conf/iros/2011"
-You've used 43 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            794 strings with 11991 characters,
-and the built_in function-call counts, 15997 in all, are:
-= -- 1593
-> -- 620
-< -- 22
-+ -- 254
-- -- 200
-* -- 1042
-:= -- 2473
-add.period$ -- 134
-call.type$ -- 43
-change.case$ -- 224
+            605 strings with 6604 characters,
+and the built_in function-call counts, 4983 in all, are:
+= -- 500
+> -- 164
+< -- 6
++ -- 70
+- -- 50
+* -- 309
+:= -- 771
+add.period$ -- 44
+call.type$ -- 14
+change.case$ -- 65
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 696
-empty$ -- 1342
-format.name$ -- 200
-if$ -- 3545
+cite$ -- 14
+duplicate$ -- 223
+empty$ -- 439
+format.name$ -- 50
+if$ -- 1119
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 43
-newline$ -- 218
-num.names$ -- 90
-pop$ -- 270
+int.to.str$ -- 14
+missing$ -- 14
+newline$ -- 73
+num.names$ -- 30
+pop$ -- 81
 preamble$ -- 1
-purify$ -- 184
+purify$ -- 52
 quote$ -- 0
-skip$ -- 545
+skip$ -- 173
 stack$ -- 0
-substring$ -- 1080
-swap$ -- 229
-text.length$ -- 22
+substring$ -- 356
+swap$ -- 70
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 164
+type$ -- 54
 warning$ -- 0
-while$ -- 151
-width$ -- 45
-write$ -- 481
-(There were 4 error messages)
+while$ -- 47
+width$ -- 16
+write$ -- 158
+(There were 2 error messages)

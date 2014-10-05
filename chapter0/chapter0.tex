@@ -13,7 +13,7 @@ Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxi
 section, suivie d'un rappel de leurs modèles géométriques et cinématiques. 
 Nous présentons ensuite dans une troisième section la classe des manipulateurs 
 de type N-1, \`a laquelle appartient le prototype sur lequel nous avons 
-effectu\'e nos expérimentations et validations , et dont nous donnerons 
+effectu\'e nos expérimentations et validations, et dont nous donnerons 
 les principales propri\'et\'es.
 
 %Dans une quatrième section, à la suite d'un rappel des modèles 
@@ -63,18 +63,15 @@ combinera quant à elle trois rotations.
 \begin{figure}[!ht]
   \centering
       \subfloat[Articulation simple de type prismatique]{\label{intro:fig0view0}
-    
 \includegraphics[width=.24\linewidth]{./chapter0/figures/prismaticJoint.jpg}} 
 \hfill
     \subfloat[Articulation simple de type rotoïde]{\label{intro:fig0view1}
     \includegraphics[width=.24\linewidth]{./chapter0/figures/revoluteJoint.jpg}} 
 \hfill
   \subfloat[Articulation composée de type cylindrique]{\label{intro:fig0view2}
-    
 \includegraphics[width=.24\linewidth]{./chapter0/figures/cylindricalJoint.jpg}} 
 \hfill
-  \subfloat[Articulation composée de type sphérique]{\label{intro:fig0view3}
-    
+  \subfloat[Articulation composée de type sphérique]{\label{intro:fig0view3}   
 \includegraphics[width=.24\linewidth]{./chapter0/figures/sphericalJoint.jpg}}
     \caption{\footnotesize{Différents exemples d'articulations.}}
 \label{intro:fig0}
@@ -220,18 +217,15 @@ tâches de conditionnement.
   \centering
       \subfloat[Plateforme de Gough utilisée dans une usine de 
 pneumatiques]{\label{intro:fig3view0}
-    
 \includegraphics[width=.34\linewidth]{./chapter0/figures/parallelrobot01.jpg}} 
 \hfill
-    \subfloat[Plateforme de Gouch-Stewart utilisée pour des simulateurs de 
-vols]{\label{intro:fig3view1}
-    
+    \subfloat[Plateforme de Gough-Stewart utilisée pour des simulateurs de 
+vols]{\label{intro:fig3view1} 
 \includegraphics[width=.60\linewidth]{./chapter0/figures/parallelrobot02.jpg}} 
 \\
     \subfloat[Robot Delta, particulièrement adapté aux tâches de 
 conditionnement 
-ou de ``pick and place'']{\label{intro:fig3view2}
-    
+ou de ``pick and place'']{\label{intro:fig3view2}  
 \includegraphics[width=.45\linewidth]{./chapter0/figures/parallelrobot03.jpg}}
     \caption{\footnotesize{Exemples de robots parallèles}}
 \label{intro:fig3}
@@ -298,14 +292,12 @@ estimation précise de la longueur du câble \cite{merlet2008}.
 \begin{figure}[!ht]
   \centering
       \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
-système de poulie actionnée par un moteur]{\label{intro:fig4view0}
-    
+système de poulie actionnée par un moteur]{\label{intro:fig4view0}   
 \includegraphics[width=.55\linewidth]{./chapter0/figures/winchesactuator.jpg}} 
 \hfill
     \subfloat[Les câbles sont fixés à des plate-formes pouvant se déplacer 
 linéairement sur des rails, permettant un contrôle de la 
-longueur]{\label{intro:fig4view1}
-    
+longueur]{\label{intro:fig4view1}   
 \includegraphics[width=.42\linewidth]{./chapter0/figures/linearactuator.png}}
     \caption{\footnotesize Deux types d'articulations et d'actionnement pour un 
 robot à câble}
@@ -352,8 +344,7 @@ contrainte]{\label{intro:fig5view0}
 \includegraphics[width=.50\linewidth]
 {./chapter0/figures/robot_cdpr_noncrane.jpg}} 
 \hfill
-    \subfloat[Exemple de configuration suspendue]{\label{intro:fig5view1}
-    
+    \subfloat[Exemple de configuration suspendue]{\label{intro:fig5view1}   
 \includegraphics[width=.40\linewidth]{./chapter0/figures/robot_cdpr_crane.jpg}}
     \caption{\footnotesize Deux configurations possibles pour un robot 
 parallèle 
@@ -438,21 +429,21 @@ supérieure à cette distance (Fig.\ref{intro:fig6view0}).\\
   \centering
       \subfloat[Forme d'un câble dont la tension serait 
 nulle]{\label{intro:fig6view0}
-    
-\includegraphics[width=.35\linewidth]{./chapter0/figures/nulltensionwire.png}} 
+\def\svgwidth{.45\linewidth}
+\input{./chapter0/figures/nulltensionwire.pdf_tex}} 
 \hfill
-    \subfloat[Câble élastique sur lequel est appliquée une tension positive : 
-la 
-longueur réelle diffère de la longueur déroulée]{\label{intro:fig6view1}
-\includegraphics[width=.35\linewidth]
-{./chapter0/figures/positivetensionwire.png}}
+\subfloat[Câble élastique sur lequel est appliquée une tension positive : 
+la longueur réelle diffère de la longueur déroulée]{\label{intro:fig6view1}
+\def\svgwidth{.45\linewidth}
+\input{./chapter0/figures/positivetensionwire.pdf_tex}}
     \caption{\footnotesize{Dans le cas d'un câble détendu (tension nulle), la 
-longueur déroulée sera supérieure à la distance entre les deux points d'attache 
-; de plus, la forme du câble sera telle qu'il y a risque d'intersection avec 
-d'autres câbles, l'environnement, \dots. Dans le cas d'un câble élastique tendu 
-(tension strictement positive), la longueur déroulée $l_i$ sera inférieure à la 
+longueur déroulée (en bleu pointill\'e) sera supérieure à la distance entre les 
+deux points d'attache (en rouge plein) ; de plus, la forme du câble sera telle 
+qu'il y a risque d'intersection avec d'autres câbles, l'environnement, \dots. 
+Dans le cas d'un câble élastique tendu (tension strictement positive), la 
+longueur déroulée $l_i$ (en bleu pointill\'e) sera inférieure à la 
 distance entre les points d'attache correspondant à la longueur réelle du 
-câble $\rho_i$}}
+câble $\rho_i$ (en rouge plein)}}
 \label{intro:fig6}
 \end{figure}
 
@@ -597,7 +588,7 @@ parall\`eles \`a c\^ables, contre $5$ pour les robots parall\`eles rigides.
 Toutefois, le syst\`eme de $n+6$ \'equations \`a $n+6$ inconnues ainsi obtenu 
 n'est valide qu'`a la condition que tous les c\^ables soient tendus, soit que 
 $\forall i \in [0,m], \rho_i = ||{\bf A}_i{\bf B}_i||$. On ne peut jamais 
-exclure que la plate-forme soit dans une pose pour laquelle $\exists i \in 
+exclure que la plate-forme soit dans une pose pour la\-quelle $\exists i \in 
 [1,m], \rho_i > ||{\bf A}_i{\bf B}_i||$. Dans ce cas, une des \'equations du 
 mod\`ele g\'eom\'etrique ne sera plus valide. Il faut donc consid\'erer tous 
 les cas avec $6+m-p$ \'equations ($p \in [1, m-1]$) et v\'erifier $p$ fois la 
@@ -654,10 +645,10 @@ on obtient en combinant (Equ.\ref{intro:eq6}) et (Equ.\ref{intro:eq7}) :
 
 En différentiant (Equ.\ref{intro:eq8}), on obtient :
 \begin{equation}
-\frac{\partial H_1}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial {\bf t}} 
-=  \frac{\partial H_2}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial {\bf 
-t}} + \frac{\partial H_2}{\partial {\bf \Theta}} \frac{\partial {\bf 
-\Theta}}{\partial {\bf t}}
+\frac{\partial H_1}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial t} 
+=  \frac{\partial H_2}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial t} + 
+\frac{\partial H_2}{\partial {\bf \Theta}} \frac{\partial {\bf 
+\Theta}}{\partial t}
 \label{intro:eq9}
 \end{equation}
 
@@ -671,10 +662,11 @@ H_2}{\partial {\bf X}} \right ) \dot {\bf X}
 \end{equation}
 
 Si $\left ( \frac{\partial H_2}{\partial {\bf \Theta}} \right )$ est bien 
-inversible, nous pouvons définir une matrice $J^{-1}$ de manière à obtenir la 
+inversible, nous pouvons définir une matrice ${\bf J}^{-1}$ de manière à 
+obtenir la 
 relation suivante :
 \begin{equation}
-\dot {\bf \Theta} = J^{-1} \dot {\bf X}
+\dot {\bf \Theta} = {\bf J}^{-1} \dot {\bf X}
 \label{intro:eq11}
 \end{equation}
 
@@ -685,15 +677,15 @@ l'orientation de la plate-forme, nous pouvons exprimer la v\'elocit\'e d'un
 point ${\bf B}$ en fonction de la vitesse d'un point ${\bf C}$ de r\'ef\'erence 
 de la plate-forme avec la relation suivante :
 \begin{equation}
-{\bf v_B} = {\bf v_C} + {\bf BC} \times {\bf \omega_c}
+{\bf v_B} = {\bf v_C} + {\bf BC} \times {\bomega_c}
 \label{intro:eq11b}
 \end{equation}
 o\`u $\bf V_C$ d\'enote la v\'elocit\'e de la plate-forme au point ${\bf C}$, 
-et ${\bf \omega_C}$ le vecteur des v\'elocit\'es angulaires.
+et ${\bomega_C}$ le vecteur des v\'elocit\'es angulaires.
 
 Ainsi, comme ${\bf A}_i$ est fix\'e, nous avons pour le c\^able $i$ :
 \begin{equation}
-\dot { {\bf A}_i{\bf B}_i } = {\bf v_C} + {\bf B}_i{\bf C} \times {\bf \omega_c}
+\dot { {\bf A}_i{\bf B}_i } = {\bf v_C} + {\bf B}_i{\bf C} \times {\bomega_c}
 \label{intro:eq11c}
 \end{equation}
 
@@ -701,7 +693,7 @@ En posant :
 \begin{equation}
 \dot {\bf X} = \begin{matrix}
                 {\bf V_C} \\
-		{\bf \omega_C}
+		{\bomega_C}
                \end{matrix}
 \label{intro:eq11d}
 \end{equation}
@@ -709,7 +701,7 @@ nous construisons ainsi une relation entre les vitesses articulaires et les
 vitesses de translation et d'orientation, ces derni\`eres param\'etr\'ees par 
 les angles d'Euler.
 
-La matrice $J^{-1}$ ainsi construite est appelée {\it Jacobienne 
+La matrice ${\bf J}^{-1}$ ainsi construite est appelée {\it Jacobienne 
 inverse param\'etr\'e} par les angles d'Euler. On notera qu'elle dépend à la 
 fois des paramètres de pose et des coordonnées articulaires : il requiert d\`es 
 lors la r\'esolution des mod\`ele g\'eom\'etriques direct et inverse.
@@ -814,7 +806,7 @@ D\`es lors, on obtient :
 \end{equation}
 
 On en d\'eduira pour le c\^able $i$ la ligne correspondante de la 
-Jacobienne inverse :
+matrice Jaco\-bienne inverse :
 \begin{equation}
 {\bf J}^{-1}_i = 
 \begin{bmatrix}
@@ -1008,11 +1000,9 @@ estimée de la longueur déroulée.
 \begin{figure}[htp]
   \centering
   \subfloat[Vue globale de l'appartement-témoin]{\label{intro:fig10view0}
-  
 \includegraphics[width=.6\linewidth]{./chapter0/figures/view_appartment01.jpg}} 
 \\
-  \subfloat[Vue aérienne de l'appartement-témoin]{\label{intro:fig10view1}
-  
+  \subfloat[Vue aérienne de l'appartement-témoin]{\label{intro:fig10view1} 
 \includegraphics[width=.6\linewidth]{./chapter0/figures/view_appartment04.jpg}} 
 \\
   \subfloat[Plateforme de {\tt Marionet-Assist}]{\label{intro:fig10view2}

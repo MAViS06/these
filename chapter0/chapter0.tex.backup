@@ -13,7 +13,7 @@ Les spécificités des manipulateurs à c\^ables sont introduites dans une deuxi
 section, suivie d'un rappel de leurs modèles géométriques et cinématiques. 
 Nous présentons ensuite dans une troisième section la classe des manipulateurs 
 de type N-1, \`a laquelle appartient le prototype sur lequel nous avons 
-effectu\'e nos expérimentations et validations ; dont nous donnerons 
+effectu\'e nos expérimentations et validations, et dont nous donnerons 
 les principales propri\'et\'es.
 
 %Dans une quatrième section, à la suite d'un rappel des modèles 
@@ -63,18 +63,15 @@ combinera quant à elle trois rotations.
 \begin{figure}[!ht]
   \centering
       \subfloat[Articulation simple de type prismatique]{\label{intro:fig0view0}
-    
 \includegraphics[width=.24\linewidth]{./chapter0/figures/prismaticJoint.jpg}} 
 \hfill
     \subfloat[Articulation simple de type rotoïde]{\label{intro:fig0view1}
     \includegraphics[width=.24\linewidth]{./chapter0/figures/revoluteJoint.jpg}} 
 \hfill
   \subfloat[Articulation composée de type cylindrique]{\label{intro:fig0view2}
-    
 \includegraphics[width=.24\linewidth]{./chapter0/figures/cylindricalJoint.jpg}} 
 \hfill
-  \subfloat[Articulation composée de type sphérique]{\label{intro:fig0view3}
-    
+  \subfloat[Articulation composée de type sphérique]{\label{intro:fig0view3}   
 \includegraphics[width=.24\linewidth]{./chapter0/figures/sphericalJoint.jpg}}
     \caption{\footnotesize{Différents exemples d'articulations.}}
 \label{intro:fig0}
@@ -131,7 +128,7 @@ tous les segments $S_i$ ont un degré de connexion égal à 2 ; seuls la base et
 l'organe terminal ont un degré de connexion égal à 1. On peut voir au 
 contraire dans Fig.\ref{intro:fig1view1} que tous les segments $S_i$ -- \`a 
 l'exception donc de la base et de l'organe terminal -- possèdent un degré de 
-connexion ègal à 3.}}
+connexion \'egal à 3.}}
 \label{intro:fig1}
 \end{figure}
 
@@ -220,18 +217,15 @@ tâches de conditionnement.
   \centering
       \subfloat[Plateforme de Gough utilisée dans une usine de 
 pneumatiques]{\label{intro:fig3view0}
-    
 \includegraphics[width=.34\linewidth]{./chapter0/figures/parallelrobot01.jpg}} 
 \hfill
-    \subfloat[Plateforme de Gouch-Stewart utilisée pour des simulateurs de 
-vols]{\label{intro:fig3view1}
-    
+    \subfloat[Plateforme de Gough-Stewart utilisée pour des simulateurs de 
+vols]{\label{intro:fig3view1} 
 \includegraphics[width=.60\linewidth]{./chapter0/figures/parallelrobot02.jpg}} 
 \\
     \subfloat[Robot Delta, particulièrement adapté aux tâches de 
 conditionnement 
-ou de ``pick and place'']{\label{intro:fig3view2}
-    
+ou de ``pick and place'']{\label{intro:fig3view2}  
 \includegraphics[width=.45\linewidth]{./chapter0/figures/parallelrobot03.jpg}}
     \caption{\footnotesize{Exemples de robots parallèles}}
 \label{intro:fig3}
@@ -298,14 +292,12 @@ estimation précise de la longueur du câble \cite{merlet2008}.
 \begin{figure}[!ht]
   \centering
       \subfloat[L'enroulement et le déroulement des câble se fait ici par un 
-système de poulie actionnée par un moteur]{\label{intro:fig4view0}
-    
+système de poulie actionnée par un moteur]{\label{intro:fig4view0}   
 \includegraphics[width=.55\linewidth]{./chapter0/figures/winchesactuator.jpg}} 
 \hfill
     \subfloat[Les câbles sont fixés à des plate-formes pouvant se déplacer 
 linéairement sur des rails, permettant un contrôle de la 
-longueur]{\label{intro:fig4view1}
-    
+longueur]{\label{intro:fig4view1}   
 \includegraphics[width=.42\linewidth]{./chapter0/figures/linearactuator.png}}
     \caption{\footnotesize Deux types d'articulations et d'actionnement pour un 
 robot à câble}
@@ -352,8 +344,7 @@ contrainte]{\label{intro:fig5view0}
 \includegraphics[width=.50\linewidth]
 {./chapter0/figures/robot_cdpr_noncrane.jpg}} 
 \hfill
-    \subfloat[Exemple de configuration suspendue]{\label{intro:fig5view1}
-    
+    \subfloat[Exemple de configuration suspendue]{\label{intro:fig5view1}   
 \includegraphics[width=.40\linewidth]{./chapter0/figures/robot_cdpr_crane.jpg}}
     \caption{\footnotesize Deux configurations possibles pour un robot 
 parallèle 
@@ -438,21 +429,21 @@ supérieure à cette distance (Fig.\ref{intro:fig6view0}).\\
   \centering
       \subfloat[Forme d'un câble dont la tension serait 
 nulle]{\label{intro:fig6view0}
-    
-\includegraphics[width=.35\linewidth]{./chapter0/figures/nulltensionwire.png}} 
+\def\svgwidth{.45\linewidth}
+\input{./chapter0/figures/nulltensionwire.pdf_tex}} 
 \hfill
-    \subfloat[Câble élastique sur lequel est appliquée une tension positive : 
-la 
-longueur réelle diffère de la longueur déroulée]{\label{intro:fig6view1}
-\includegraphics[width=.35\linewidth]
-{./chapter0/figures/positivetensionwire.png}}
+\subfloat[Câble élastique sur lequel est appliquée une tension positive : 
+la longueur réelle diffère de la longueur déroulée]{\label{intro:fig6view1}
+\def\svgwidth{.45\linewidth}
+\input{./chapter0/figures/positivetensionwire.pdf_tex}}
     \caption{\footnotesize{Dans le cas d'un câble détendu (tension nulle), la 
-longueur déroulée sera supérieure à la distance entre les deux points d'attache 
-; de plus, la forme du câble sera telle qu'il y a risque d'intersection avec 
-d'autres câbles, l'environnement, \dots. Dans le cas d'un câble élastique tendu 
-(tension strictement positive), la longueur déroulée $l_i$ sera inférieure à la 
+longueur déroulée (en bleu pointill\'e) sera supérieure à la distance entre les 
+deux points d'attache (en rouge plein) ; de plus, la forme du câble sera telle 
+qu'il y a risque d'intersection avec d'autres câbles, l'environnement, \dots. 
+Dans le cas d'un câble élastique tendu (tension strictement positive), la 
+longueur déroulée $l_i$ (en bleu pointill\'e) sera inférieure à la 
 distance entre les points d'attache correspondant à la longueur réelle du 
-câble $\rho_i$}}
+câble $\rho_i$ (en rouge plein)}}
 \label{intro:fig6}
 \end{figure}
 
@@ -931,25 +922,24 @@ plate-forme :
 \begin{itemize}
  \item les points d'attaches des câbles sont tous différents, il est alors 
 possible avec $n$ câbles de contrôler $n$ degrés de liberté. Cette 
-configuration 
+configuration.
 sera notée $N-N$ (Fig.\ref{intro:fig9view0}).
  \item les câbles sont attachés en un même point à la plate-forme : il est 
 posible à partir de $3$ câbles de contrôler les déplacement en translation de 
-la 
-plate-forme, mais plus son orientation ; l'utilisation de plus de $3$ câbles 
+la plate-forme, mais plus son orientation ; l'utilisation de plus de $3$ câbles 
 permet alors d'augmenter la taille de l'espace de travail. On parle dans ce cas 
-de configuration $N-1$ 
+de configuration N-1. 
 (Fig.\ref{intro:fig9view1}).
  \item certains câbles seulement sont attachés en un même point sur la 
 plate-forme. Dans le cas par exemple d'une disposition pour laquelle $3$ câbles 
 sont atttachés en un même point $B_0$ et un quatrième câble relié à la 
-plate-forme en un point $B_1$, cette configuration sera notée $4-3-1$ 
+plate-forme en un point $B_1$, cette configuration sera notée 4-3-1 
 (Fig.\ref{intro:fig9view2}).
 \end{itemize}
 
 \begin{figure}[htp]
   \centering
-  \subfloat[Configuration $4-4$ : chaque câble est relié à la plate-forme en un 
+  \subfloat[Configuration 4-4 : chaque câble est relié à la plate-forme en un 
 point distinct]{\label{intro:fig9view0}
   \includegraphics[width=.3\linewidth]{./chapter0/figures/cfg_44.png}} \hfill
   \subfloat[Configuration 4-1 : Les $4$ câbles sont reliés à la plate-forme un 
@@ -1009,11 +999,9 @@ estimée de la longueur déroulée.
 \begin{figure}[htp]
   \centering
   \subfloat[Vue globale de l'appartement-témoin]{\label{intro:fig10view0}
-  
 \includegraphics[width=.6\linewidth]{./chapter0/figures/view_appartment01.jpg}} 
 \\
-  \subfloat[Vue aérienne de l'appartement-témoin]{\label{intro:fig10view1}
-  
+  \subfloat[Vue aérienne de l'appartement-témoin]{\label{intro:fig10view1} 
 \includegraphics[width=.6\linewidth]{./chapter0/figures/view_appartment04.jpg}} 
 \\
   \subfloat[Plateforme de {\tt Marionet-Assist}]{\label{intro:fig10view2}
@@ -1039,11 +1027,30 @@ d'asservissement visuel. Ce sont ces dernières que nous allons à présent
 introduire, avant d'indiquer d'une part les problématiques posées par leur 
 utilisation dans ce contexte particulier, et d'autre part les différentes 
 possibilités d'améliorations que cela autorise concernant le contrôle des 
-robots 
-parallèles à câbles.
+robots parallèles à câbles.
 
 \section{Conclusion}
 
+Apr\`es avoir mis en avant les inconv\'enients des architectures s\'eries pour 
+certaines t\^aches, nous avons pr\'esent\'e dans un premier temps les 
+architectures parall\`eles. Ces derni\`eres permettent en particulier de 
+supporter de plus lourdes charges avec une pr\'ecision accrue, pour une taille 
+du disposotif moindre. Les robots parall\`eles pr\'esentent cependant 
+l'inconv\'enient d'\'evoluer dans un espace de travail restreint. Pour cette 
+raison, l'utilisation de c\^ables a \'et\'e propos\'ee \`a la place de jambes 
+rigides. Nous avons donc pr\'esent\'e les principales caract\'eristiques des 
+robots parall\`eles \`a c\^ables, et identifi\'e les probl\'ematiques 
+qu'entra\^inait le choix d'une telle architecture, au rang desquelles la 
+complexit\'e accrue des mod\`eles g\'eom\'etriques et cin\'ematiques, ainsi que 
+la difficult\'e \`a g\'erer la nature des tensions (nulles ou strictement 
+positives) pour chaque c\^able. Enfin, nous avons introduit les 
+sp\'ecificit\'es d'une clase particuli\`ere de manipulateurs \`a c\^ables : les 
+robots N-1, dont fait parti le prototype que nous avons utilis\'e dans 
+le cadre de ce travail, le robot {\tt Marionet-Assist}. Dans le chapitre 
+suivant, nous introduirons les principales notions d'asservissement 
+visuel, avant de nous pencher sur les specificit\'es d'une utilisation dans le 
+contexte de robots parall\`eles \`a c\^ables. Nous pourrons d\`es lors 
+clairement identifier les pistes d'am\'elioration de manipulation que 
+association de ces deux technologies permet.
+
 \vfill
-
-
