@@ -38,7 +38,7 @@ c'est au niveau de ces derniers que l'acquisition est véritablement effectuée.
 On distingue parmi les photorécepteurs :
  \begin{figure}[htp]
   \centering
-  \includegraphics[width=.85\linewidth]{./chapter01/figures/oeil.png}
+  \includegraphics[width=.95\linewidth]{./chapter01/figures/oeil.png}
     \caption{\footnotesize{Oeil humain vs vision artificielle}}
 \label{chap01:fig01}
 \end{figure}
@@ -341,35 +341,49 @@ modalit\'es m\'ethodologiques (espace de r\'egulation).
 Lorsque la cam\'era est plac\'ee en dehors de la partie mobile du manipulateur, 
 on parlera de configuration déportée (Fig.\ref{chap01:fig04view0}). Une cam\'era 
 d\'eport\'ee peut \^etre fixe ou mobile, et permet g\'en\'eralement 
-d\'appr\'ehender une sc\`ene d'une mani\`ere globale : elle comporte dans son 
+d'\'appr\'ehender une sc\`ene d'une mani\`ere globale : elle comporte dans son 
 plan image une repr\'esentation de l'organe terminal du robot, et le cas 
-\'ech\'eant de l'objet \`a manipuler. L'utilisation d'une cam\'era d\'eport\'ee 
-se justifie en particulier lorsque l'on souhaite estimer la pose de l'organe 
-terminal par rapport \`a un r\'ef\'erentiel fixe. Toutefois, l'utilisation d'une 
-cam\'era d\'eport\'ee -- particuli\`erement si elle est fixe -- suppose une 
-sc\`ene relativement d\'egag\'ee et un espace de travail compatible avec son 
-champs de vision et sa r\'esolution (il est toujours possible cependant de 
-multiplier les dispositifs).
+\'ech\'eant d'un objet d'int\'er\^et, qu ipeut tout autant \^etre l'organe 
+terminal, que l'une des articulations ou encore un objet cible que l'on suite 
+manipuler. L'utilisation d'une cam\'era d\'eport\'ee se justifie en particulier 
+lorsque l'on souhaite estimer la pose de l'organe terminal par rapport \`a un 
+r\'ef\'erentiel fixe. Toutefois, l'utilisation d'une cam\'era d\'eport\'ee -- 
+particuli\`erement si elle est fixe -- suppose une sc\`ene relativement 
+d\'egag\'ee et un espace de travail compatible avec son champs de vision et sa 
+r\'esolution. Il est toujours possible cependant de multiplier les 
+dispositifs.
 
 Dans le cas contraire o\`u la cam\'era se trouverait li\'ee \`a l'organe 
 terminal d'un manipulateur, on parle en toute logique d'une configuration 
 embarquée (Fig.\ref{chap01:fig04view1}). Une cam\'era embarqu\'ee pr\'esente 
 l'avantage de pouvoir couvrir l'en\-semble de l'espace de travail accessible au 
 manipulateur et de compenser les limites de sa r\'esolution par sa mobilit\'e.
+La transformation permettant de passer du r\'ef\'erentiel de l'organe terminal 
+au r\'ef\'erentiel de la cam\'era est dans ce cas connue avec une pr\'ecision 
+suffisante, et sera g\'en\'eralement fixe.
 
 \begin{figure}[htp]
   \centering
   \subfloat[La caméra est déportée ; la scène comprend l'organe terminal et 
 l'objet-cible]{\label{chap01:fig04view0}
-    \def\svgwidth{.45\linewidth}
+    \def\svgwidth{.47\linewidth}
   \input{./chapter01/figures/eye_to_hand.pdf_tex}} \hfill
     \subfloat[La caméra est embarquée ; la scène ne comprend que 
 l'objet-cible]{\label{chap01:fig04view1}
-    \def\svgwidth{.45\linewidth}
+    \def\svgwidth{.47\linewidth}
   \input{./chapter01/figures/eye_in_hand.pdf_tex}} 
     \caption{\footnotesize{Positionnements de caméra}}
 \label{chap01:fig04}
 \end{figure}
+
+L'utilisation d'une cam\'era embarqu\'ee est particuli\`erement adapt\'ee aux 
+t\^aches de suivi et de manipulation d'objets. On la pr\'ef\`era par exemple 
+dans le cadre de la robotique mobile, ou encore lorsque l'espace de travail d'un 
+syst\`eme robotique ne permet pas l'utilisation de cam\'eras d\'eport\'ees, soit 
+en raison de sa nature (robotique mobile a\`erienne, robotique sous-marine par 
+exemple), soit de sa taille (robots parall\'eles \`a c\^ables de grande 
+envergure).
+
 
 \subsection{Asservissements en position, basés images et hybrides} 
 \label{chap1-1-1}
@@ -382,14 +396,15 @@ mesur\'ees et l'objectif constitue l'erreur ${\bf e}$ de consigne. Cette erreur
 de consigne est alors utilis\'ee pour construire une commande de d\'eplacement 
 pour le robot (Fig.\ref{chap01:fig05}). On parle de {\it boucle ouverte} lorsque 
 une seule it\'eration est effectu\'ee et suffit \`a produire une consigne 
-convergent vers le r\'esultat escompt\'e. On utilise cependant g\'en\'eralement 
-un sch\'ema en boucle ferm\'ee consistant \`a mesurer dans chaque nouvelle image 
-acquise une correction de la commande. Un sch\'ema en boucle ferm\'e permet de 
-prendre en compte les diff\'erentes incertitudes li\'ees \`a la r\'ealit\'e d'un 
-d\'eplacement du robot par rapport \`a son mouvement th\'eorique, et permet 
-entre autres une robustesse aux erreurs de mesures dans l'image, qui peuvent 
-provenir par exemple de la r\'esolution limit\'ee du capteur, ou encore de la 
-pr\'esence d'artefacts (ombres, occlusions, $\cdots$).
+convergeant vers le r\'esultat escompt\'e. On utilise cependant 
+g\'en\'eralement un sch\'ema en boucle ferm\'ee consistant \`a mesurer dans 
+chaque nouvelle image acquise une correction de la commande. Un sch\'ema en 
+boucle ferm\'e permet de prendre en compte les diff\'erentes incertitudes 
+li\'ees \`a la r\'ealit\'e d'un d\'eplacement du robot par rapport \`a son 
+mouvement th\'eorique, et permet entre autres une robustesse aux erreurs de 
+mesures dans l'image, qui peuvent provenir par exemple de la r\'esolution 
+limit\'ee du capteur, ou encore de la pr\'esence d'artefacts (ombres, 
+occlusions, $\cdots$).
 
 \begin{figure}[htp]
   \centering
@@ -414,8 +429,8 @@ d\'esir\'ee, ce que l'on pourra obtenir soit par un mouvement de la cam\'era,
 soit par un d\'eplacement de l'objet. Dans ce cas, ${\bf s}$ correspondra aux 
 param\`etres de pose de la cam\'era. On d\'efinit $\mathcal R_c$ et $\mathcal 
 R_{c^*}$ comme \'etant respectivement les r\'ef\'erentiels courant et d\'esir\'e 
-de la cam\'era, et $\mathcal R_o$ le r\'ef\'erentiel objet. Deux strat\'egies 
-peuvent alors \^etre utilis\'ees :
+de la cam\'era, et $\mathcal R_o$ le r\'ef\'erentiel objet. Les 
+deux strat\'egies suivantes peuvent par exemple \^etre utilis\'ees :
 \begin{itemize}
  \item si ${}^c{\bf t}_o$ et ${}^{c^*}{\bf t}_o$ sont les coordonn\'ees de 
 l'objet exprim\'ees respectivement dans le r\'ef\'erentiel courant de la 
@@ -449,15 +464,15 @@ trajectoire en ligne droite dans l'image, mais pas pour la cam\'era.
 \end{equation}
 ${}^{c^*}{\bf t}_c$ correspondant ici aux coordonn\'ees du rep\`ere cam\'era 
 courant par rapport au rep\`ere cam\'era d\'esir\'e, alors nous obtenons en 
-th\'eorie une trajectoire en ligne droite pour la cam\'era, mais pas dans 
-l'image. 
+th\'eorie une trajectoire en ligne droite pour le d\'eplacement de la cam\'era, 
+mais ça ne sera plus le cas pour la trajectoire r\'ealis\'ee dans l'image. 
 \end{itemize}
 
 Ainsi, dans le premier cas, on prend le risque de g\'en\'erer une trajectoire 
 pour la cam\'era qui sorte des limites de l'espace de travail, et dans le 
-deuxi\`eme cas de voir sortir l'objet de l'image. L'utilisation de l'une ou de 
-l'autre m\'ethode impose donc des v\'erifications suppl\'ementaires afin de 
-garantir la r\'ealisation de la t\^ache. Aucune des deux solutions ne 
+deuxi\`eme cas de voir sortir l'objet d'int\^eret de l'image. L'utilisation de 
+l'une ou de l'autre m\'ethode impose donc des v\'erifications suppl\'ementaires 
+afin de garantir la r\'ealisation de la t\^ache. Aucune des deux solutions ne 
 pr\'esentant un clair avantage sur l'autre, le choix d\'ependra du contexte et 
 des strat\'egies algorithmiques mises en place.\\
 
@@ -467,14 +482,14 @@ Au contraire de l'asservissement 3D, l'asservissement 2D que l'on retrouve
 \'egalement sous l'acronyme {\it IBVS} (pour {\it Image-based visual servoing}, 
 l'asser\-vissement 3D relevant du {\it Position-based visual servoing}) 
 exploite directement les primitives extraites des informations visuelles sans 
-passer ni par un mod\`ele de la sc\`ene ou de l'objet, ni par une 
-reconstruction quelconque. Lorsque la cam\'era se d\'eplace, cela implique 
-variations des propri\'et\'es mesurables dans l'image. Si l'on est en capacit\'e 
-d\'etablir une relation entre les variations des propri\'et\'es dans l'image et 
-les mouvements du capteur, alors il est possible d'obtenir un contr\^oleur qui 
-ne repose que sur la r\'egulation des valeurs des primitives. A titre d'exemple, 
-sur lequel nous reviendrons dans le prochain chapitre, la mesure de l'aire d'une 
-surface et la d\'etermination de son centre de gravit\'e suffisent \`a 
+passer ni par un mod\`ele de la sc\`ene ou de l'objet, ni par une reconstruction 
+quelconque. Lorsque la cam\'era se d\'eplace, cela implique variations des 
+propri\'et\'es mesurables dans l'image. Si l'on est en capacit\'e d\'etablir 
+une relation entre les variations des propri\'et\'es dans l'image et les 
+mouvements du capteur, alors il est possible d'obtenir un contr\^oleur qui ne 
+repose que sur la r\'egulation des valeurs des primitives. A titre d'exemple, 
+sur lequel nous reviendrons dans le prochain chapitre, la mesure de l'aire 
+d'une surface et la d\'etermination de son centre de gravit\'e suffisent \`a 
 contr\^oler la position d'un manipulateur.
 
 Si un asservissement 2D pr\'esente le clair avantage de proposer une consigne 
@@ -605,7 +620,7 @@ Nous reprenons ici les bases de construction d'une loi de commande
 \cite{chaumette2008handbook}. Nous nous contentons ici d'exposer les principes 
 généraux d'outils que nous avons utilisés tout au long de nos travaux.
 
-\subsection{Construction de la loi de commande}
+\subsection{Construction de la loi de commande} \label{chap1-2-0}
 
 Soient ${\bf s}(m(t), a)$ un vecteur comprenant de mesures $m(t)$ réalisées au 
 sein de l'image sur des primitives choisies et $a$ la param\'etrisation de 
@@ -667,8 +682,66 @@ ${\bf L}_e$, soit ${\bf L}^+_e = ({\bf L}_e^T{\bf L}_e)^{-1}{\bf L}_e^T$.
 non-nul, on pourra \'ecrire $\dot {\bv}_c = - \lambda {\bf L}^{-1}_e {\bf e}$.
 \end{itemize}
 
+Devant la difficult\'e en pratique de connaître avec exactitude ${\bf 
+L}_e$, on utilisera plut\^ot une approximation de la matrice d'interaction, la 
+loi de commande finale devenant :
+\begin{equation}
+{\bf v}_c = - \lambda \widehat {{\bf L}_e^+} {\bf e} 
+\label{chap01:eq18}
+\end{equation}
 
-\subsection{Exemple de construction d'une matrice d'interaction : le point}
+Cette estimation d\'epend \`a la fois de la qualit\'e des mesures effectu\'ees 
+dans l'image, des hypoth\`eses de mod\'elisation, de l'estimation de 
+param\`etres supplementaires, ou encore de la calibration de la cam\'era.
+
+Le choix d'une m\'ethode d'estimation particuli\`ere d\'epend \'evidemment des 
+conditions dans lesquelles se d\'eroulent l'asservissement, et affectera 
+n\'ecessairement la qualit\'e de celui-ci. Il est usuel d'utiliser ${{\bf 
+L}_e^+} = {{\bf L}_{e_*}^+}$ \cite{espiau1992}, soit de prendre pour matrice 
+d'interaction celle qui correspond aux valeurs th\'eoriques qui seraient prises 
+une fois l'objectif atteint. La matrice est alors constante, mais -- en 
+particulier pour de grand d\'eplacements --, il s'agit d'une estimation 
+grossi\`ere, notamment lorsqu'un eestimation de la profondeur est requise. Afin 
+de trouver un \`equilibre entre qualit\'e des approximations et robustesse aux 
+impr\'ecisions, le choix de ${{\bf L}_e^+} = \left ( {{\bf L}_{e}^+} + {{\bf 
+L}_{e_*}^+} \right )$ \cite{malis2004} peut se r\'ev\'eler \^etre un bon 
+compromis, et offre de meilleures propri\'et\'es de convergence.
+
+La stabilit\'e d'un sch\'ema de consigne peut \^etre \'evalu\'ee gr\^ace au 
+crit\`ere de stabilit\'e asymptotique de Lyapunov. On d\'efinit pour cela une 
+fonction $\mathcal L = \frac 1 2 ||{\bf }e(t)||^2$, dont la d\'eriv\'ee est 
+donn\'ee par :
+\begin{equation}
+\dot {\mathcal L} = {\bf e}^T {\bf \dot e} 
+\label{chap01:eq18b}
+\end{equation}
+soit :
+\begin{equation}
+\dot {\mathcal L} = -\lambda {\bf e}^T {\bf L}_e \widehat {{\bf L}^+_e} {\bf e} 
+\label{chap01:eq18c}
+\end{equation}
+
+Une condition suffisante de stabilit\'e asymptotique au sens de Lyapunov est 
+donn\'ee par :
+\begin{equation}
+{\bf L}_e \widehat {{\bf L}^+_e} > 0
+\label{chap01:eq18d}
+\end{equation}
+
+Lorsque la matrice ${\bf L}_e$ est carr\'ee (le nombre de mesures 
+ind\'ependantes \'etant \'egal au nombre de degr\'es de libert\'e 
+contr\^ol\'es, id\'ealement 6) et de rang plein, la stabilit\'e est assur\'ee 
+en th\'eorie, puisque l'on aura :
+\begin{equation}
+{\bf L}_e {{\bf L}^{-1}_e} = \mathbb I_k > 0
+\label{chap01:eq18e}
+\end{equation}
+
+En pratique, si la matrice $\widehat {{\bf L}^+_e}$ est suffisamment proche de 
+${\bf L}^+_e$, la stabilit\'e est assur\'ee.
+
+
+\subsection{Exemple de matrice d'interaction : le point} \label{chap1-2-1}
 
 Pour rappel, un point dans l'espace ${\bf P} = (X, Y, Z)$ se projette dans 
 l'image de la mani\`ere suivante :
@@ -680,7 +753,7 @@ x = X/Z \\
 y = Y/Z 
 \end{matrix}
 \right .
-\label{chap01:eq17}
+\label{chap01:eq19}
 \end{equation}
 o\`u $(x,y)$ sont les coordonn\'ees g\'en\'eralis\'ees du point dans l'image.
 
@@ -692,7 +765,7 @@ En d\'erivant cette relation, nous obtenons :
 \dot y = \dot Y/Z - Y \dot Z/Z^2  = (\dot Y - y \dot Z)/Z 
 \end{matrix}
 \right .
-\label{chap01:eq18}
+\label{chap01:eq20}
 \end{equation}
 
 Soit $\bv = (\bnu, \bomega)$ le torseur cin\'ematique de la cam\'era, la 
@@ -712,7 +785,7 @@ soit :
 \dot X = -\bnu_z - \bomega_x Y + \bomega_y X \\
 \end{matrix}
 \right .
-\label{chap01:eq20}
+\label{chap01:eq21}
 \end{equation}
 
 D\`es lors, en combinant (Eq.\ref{chap01:eq18}) et (Eq.\ref{chap01:eq20}), on 
@@ -724,7 +797,7 @@ obtient :
 \dot y &=& -\bnu_y/Z +y\bnu_z/Z + (1+y^2)\bomega_x -xy\bomega_y - x \bomega_z
 \end{matrix}
 \right .
-\label{chap01:eq21}
+\label{chap01:eq22}
 \end{equation}
 
 La matrice d'interaction ${\bf L}_x$ reliant la vitesse du point ${\bf x} = 
@@ -736,13 +809,13 @@ La matrice d'interaction ${\bf L}_x$ reliant la vitesse du point ${\bf x} =
 \frac {-1} Z & 0 & \frac x Z & xy & -(1+x^2) & y \\
 0 & \frac {-1} Z & \frac y Z & 1+y^2 & -xy & -x
 \end{bmatrix}
-\label{chap01:eq22}
+\label{chap01:eq23}
 \end{equation}
 soit bien $\dot {\bf x} = {\bf L}_x \bv$.
 
 Afin de contr\^oler $6$ degr\'es de libert\'e, $3$ points au minimum sont 
 n\'ecessaires, mais la matrice pourra alors en certaines poses se r\'ev\'eler 
-singuli\`ere \cite{michel1993}. il existe de plus plusieurs minima locaux 
+singuli\`ere \cite{michel1993}. Il existe de plus plusieurs minima locaux 
 conduisant \`a ${\bf e} = 0$. Pour ces deux raisons, on utilisera $4$ points au 
 moins pour contr\^oler le manipulateur.\\
 
@@ -751,28 +824,8 @@ g\'en\'eralis\'ees, elle d\'epend des param\`etres de la cam\'era. Elle
 n\'ecessite enfin une approximation de $Z$, et ceci pour chaque point 
 permettant de construire la matrice d'interaction. En cons\'equence, la matrice 
 th\'eorique que nous venons d'expliciter ne peut \^etre utilis\'ee en l'\'etat, 
-nous recourrons donc \`a une approximation.
-
-\subsection{Choix d'approximation de la matrice d'interaction et crit\`ere de
-convergence}
-
-Devant la difficult\'e en pratique de connaître avec exactitude ${\bf 
-L}_e$, on utilisera plut\^ot une approximation de la matrice d'interaction, la 
-loi de commande finale devenant :
-\begin{equation}
-{\bf v}_c = - \lambda \widehat {{\bf L}_e^+} {\bf e} 
-\label{chap01:eq23}
-\end{equation}
-
-
-
-
-
-
-
-
-
-
+nous recourrons donc \`a une approximation, comme vu dans la sous-section 
+pr\'ec\'edente (\ref{chap1-2-0}).
 
 \section{Asservissement visuel des robots parallèles à 
 câbles}\label{chap1-3}
@@ -810,7 +863,7 @@ ou d'une cam\'era d\'eport\'ee \cite{dallej.2006}, \cite{paccot.2008} : cela
 permet tout autant une simplification des mod\`eles qu'une correction des
 erreurs et impr\'ecisions.
 \item utiliser des capteurs proprioceptifs afin d'obtenir une repr\'esentation
-fid\`ele de l'\'etat des variables articulaires
+fid\`ele de l'\'etat des variables articulaires.
 \cite{merlet.1993}, \cite{parenti.2000}, ce qui permet \'egalement une
 simplification des mod\`eles pouvant aboutir \`a une ex\'ecution en temps
 r\'eel. 
@@ -836,9 +889,8 @@ exploitant cette fois-ci les directions de d\'eparts des c\^ables, compl\'etant
 ainsi un syst\`eme de mesures utilisant des capteurs de forces (afin d'estimer
 la tension dans les c\^ables), ainsi que plusieurs cam\'eras d\'eport\'ees pour
 estimer la pose de la plate-forme. Le sch\'ema d'ensemble utilise donc un 
-premier
-ensemble de quatre cam\'eras filmant un motif sur l'organe terminal pour
-proposer un asservissement 3-D donnant le torseur cinem\'atique de l'organe
+premier ensemble de quatre cam\'eras filmant un motif sur l'organe terminal pour
+proposer un asservissement 3D donnant le torseur cinem\'atique de l'organe
 terminal, puis quatre cam\'eras st\'er\'eos donnant la direction tangente aux
 d\'eparts de c\^ables, permettant ainsi de simplifier le contr\^ole
 cin\'ematique du robot. A nouveau, les r\'esultats pr\'esent\'es en simulation
@@ -851,8 +903,11 @@ les trois raisons suivantes :
  \item pour des raisons d'intrusivit\'e et de co\^ut propres aux conditions
 d'applications des prototypes sur lesquels nous avons travaill\'e, le
 dispositif de mesure nous a paru trop cons\'equent ; nous avons
-de plus privil\'egi\'e des configurations embarqu\'ees comme mentionn\'e
-pr\'ec\'edemment.
+de plus privil\'egi\'e des configurations embarqu\'ees pour des 
+raisons mentionn\'e pr\'ec\'edemment, \`a savoir le type d'applications 
+correspondant aux robots {\tt Marionet} (particuli\`erement les robots {\tt 
+marionet-Assist} et {\tt Marionet-Crane}), mais \'egalemtn afin de fournir un 
+compl\'ement \`a ce que ces auteurs ont d\'evelopp\'e.
 \item bien qu'ils fassent durant leurs travaux l'hypoth\`ese de c\^ables
 non-\'elastiques, les auteurs supposent une pr\'ecision des mesures de tension
 qui nous semble difficilement atteignable pour des robots de cette envergure. Il
@@ -866,15 +921,20 @@ inverse d'autre part, se pr\'esentant donc sous la forme :
 \dot {\bf q} = - \lambda \widehat {{\bf J}^{-1}} \widehat{ {\bf L}_e^+} {\bf e} 
 \label{intro:eq25}
 \end{equation}
-Nous pensons qu'il est possible d'unifier ces deux \'etapes \`a la condition
+Certes, l'estimation des valeurs de la Jacobienne inverse ets 
+consid\'erablement simplifi\'ee par l'utilisation de la vision, mais nous 
+pensons qu'il est possible d'unifier ces deux \'etapes \`a la condition
 d'ex\'ecuter un contr\^ole cin\'ematique \`a l'aide d'une cam\'era embarqu\'ee,
 soit une seule matrice :
 \begin{equation}
 \dot {\bf q} = - \lambda \widehat {\bf K} {\bf e} 
 \label{intro:eq26}
 \end{equation}
-ne n\'ecessitant pas plus de connaissance pr\'ecise de la pose $X$ que des
-valeurs des variables articulaires $\rho$.
+ne n\'ecessitant pas plus de connaissance pr\'ecise de la pose ${\bf X}$ que des
+valeurs des variables articulaires $\rho$. Ceci permet en particulier de 
+d\'efinir un asservissement exploitant les mesures r\'ealis\'ees dans l'image 
+pour obtenir un contr\^ole simplifi\'e exprim\'e directement dans l'espace 
+articulaire.
 \end{itemize}
 
 Bien que nous ne puissions garantir que cette simplification du sch\'ema de
@@ -882,7 +942,24 @@ contr\^ole puisse s'appliquer \`a toutes les configurations de robots \`a
 c\^ables, elle s'av\`ere efficace dans notre contexte, particuli\'erement pour
 les robots $N-1$. Sa mise en place implique toutefois certaines conditions qui
 peuvent se r\'ev\'eler incompatibles avec un ensemble d'applications, ce que
-nous exposerons lors du chapitre qui sera consacr\'e \`a son \'etude.
+nous exposerons lors du chapitre suivant.
+
+\section{Conclusions}
+
+L'objectif de ce chapitre \'etait de pr\'esenter les principaux \'el\'ements 
+d'asservissement visuel que nous avons utilis\'e dans le cadre de ce travail. 
+Nous avons pour cela commenc\'e par expliciter le mod\`ele de projection 
+utilis\'e afin de d\'efinir les diff\'erents syst\`emes de coordonn\'ees 
+utilis\'ees et leurs relations. Nous avons ensuite expos\'e plusieurs 
+strat\'egies possibles d'asservissement visuel pouvant \^etre exploit\'ees dans 
+notre contexte, et pr\'esnt\'e les raisons qui nous ont men\'e \`a faire le 
+choix d'un dispositif n'utilisant qu'une cam\'era embarqu\'ee avec une 
+strat\'egie bas\'ee image. Dans la troisi\`eme section de ce chapitre, nous 
+avons d\'etaill\'e la construction d'un sch\'ema de consigne prenant la forme 
+${\bv} = -\lambda \widehat {\bf L}^*_e e$, aboutissant \`a une loi de commande 
+pour un robot : 
+
+
 
 Le travail qui est pr\'esent\'e ici a pour objectif d'am\'eliorer la qualit\'e
 de manipulation d'un robot parall\`ele \`a c\^ables. Pour cela, nous avons
@@ -913,8 +990,6 @@ diff\'erentes approches, mais \'egalement d'en pr\'esenter les limites, ce qui
 nous permettra en conclusion de faire le point sur les perspectives s'ouvrant
 en continuit\'e de ces travaux.
 \end{itemize}
-
-
 
 
 Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme 
