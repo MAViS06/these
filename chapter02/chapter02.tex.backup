@@ -25,18 +25,77 @@ L'asservissement visuel a donc été proposée à plusieurs reprises afin de ré
 
 Pour autant, utilisées ensemble, ces deux stratégies devraient pouvoir permettre d'assurer la manipulation dans la plupart des cas, sans pour autant le garantir.
 
-Notre objectif ici est donc double : construire dans un premier temps une loi de commande qui soit aussi indépendante que possible des paramètres de pose et des coordonnées articulaires, contrôler dans un deuxième temps les câbles qui seront en tension pour une trajectoire donnée. Dès lors que nous connaissons les câbles qui sont en tension, nous obtenons le rang de la Jacobienne correspondante. Nous pouvons ainsi affiner la commande. Nous pouvons en effet cesser de considérer le robot global, pour ne plus prendre en compte que la partie correspondant réellement aux câbles qui agissent sur le déplacement. Nous utiliserons alors ce que nous définirons plus 
+Notre objectif ici est donc double : construire dans un premier temps une loi de commande qui soit aussi indépendante que possible des paramètres de pose et des coordonnées articulaires, contrôler dans un deuxième temps les câbles qui seront en tension pour une trajectoire donnée. En effet, dès lors que nous connaissons les câbles qui sont en tension, nous obtenons le rang de la Jacobienne correspondante. Nous pouvons ainsi affiner la commande en cessant de considérer le robot global, pour ne plus prendre en compte que la partie correspondant réellement aux câbles qui agissent sur le déplacement. Nous utiliserons alors ce que nous définirons plus tard comme étant la {\it Jacobienne du sous-robot associe à une configuration de câbles}. L'utilisation d'une loi de commande articulaire exploitant des informations visuelles adaptées permettra de s'abstraire lors d'une commande cinématique à la fois des incertitudes liées à la commande du robot, mais également aux problèmes soulevés dans le chapitre précédent concernant l'estimation de la matrice d'interaction.
 
-
-
-
-
-
-
+Ce chapitre est consacré à l'élaboration d'une telle loi de commande. Pour cela, nous présenterons dans un premier temps les spécificités d'un asservissement visuel classique de robots parallèles à câbles. Dans une seconde section, nous montrerons dans quelle mesure nous pouvons y trouver des améliorations concernant la précision du manipulateur et la robustesse aux erreurs et incertitudes diverses. La troisième section développera les conditions d'une loi de commande articulaire reposant sur une première estimation de la matrice d'interaction articulaire et un schéma itératif assurant la convergence vers une trajectoire linéaire. Enfin, une quatrième section présentera les conclusions de ce premier volet de notre étude. L'ensemble des simulations et validations expérimentales se trouveront dans le chapitre final.
 
 \section{Elaboration d'un asservissement visuel des robots à c\^ables}
 
-\subsection{Construction de la loi de commande}
+Cette première section est consacrée à l'élaboration d'une loi de commande classique adaptée aux robots parallèles à câbles. Ceci nous permettra de montrer les améliorations apportées par l'asservissement visuel (seconde section du chapitre) et servira de support de comparaison pour la loi simplifiée que nous proposerons en troisième section.
+
+\subsection{Construction de la loi de commande classique}
+
+Soit un robot parallèle à $m$ câbles contrôlant $n$ degrés de liberté. Pour rappel, la pose ${\bf X}$ de la plate-forme est la donnée des paramètres de pose donnant la position de la plate-forme dans l'espace ainsi que son orientation. Afin de commander la pose de la plate-forme, on contrôle les longueurs $\rho_i$ des câbles. Les câbles sont reliés au bâti en un point ${\bf A}_i$ que nous appelons {\it sortie de câble} et à l'organe terminal en un point ${\bf B}_i$ que nous appelons {\it point d'attache}. En l'absence d'élasticité, de modèle de pesance, et en supposant une tension strictement positive, la longueur d'un câble sera égale à $||{\bf A}_i{\bf B}_i||$. Si la tension est nulle, sa longueur déroulée sera supérieure à la distance entre son point de sortie et son point d'attache.
+
+Les équations de la cinématique inverse permettent de construire la relation suivante entre les variations de la pose de l'organe terminal ${\bf \dot X}$ et les variations des coordonnées articulaires ${\dot \brho}$ :
+\begin{equation}
+  \dot {\brho} = {\bf J}^{-1} {\bf \dot X} 
+ \label{chap02:eq0}
+\end{equation}
+
+La matrice ${\bf J}^{-1}$ dépend tout autant de la pose de l'effecteur que des longueurs de câbles. Ses lignes sont données par :
+\begin{equation}
+  {\bf J}^{-1}_i = \begin{bmatrix}
+                   \frac {{\bf A}_i {\bf B}_i} \rho & \frac {{\bf C}{\bf B}_i \times {\bf A}_i {\bf B}_i} \rho
+                   \end{bmatrix}
+ \label{chap02:eq1}
+\end{equation}
+${\bf C}$ étant un point de la plate-forme préalablement choisi.
+
+Ainsi, un déplacement pratique s'éloigne nécessairement de la trajectoire théorique, la convergence étant assurée par un schéma itératif permettant de corriger la commande cinématique.
+
+Supposons le cas simple d'un robot 3-1 dont nous ne contrôlons que la position. Soit alors $\Delta {\bf X} = (\Delta x, \Delta y, \Delta z)$ la commande envoyée au manipulateur.  Nous avons alors :
+\begin{equation}
+  \Delta \rho_i = \frac {x \Delta x} \rho + \frac {y \Delta y} \rho + \frac {z \Delta z} \rho  
+ \label{chap02:eq2}
+\end{equation}
+
+Dès lors, la longueur déroulée $(\rho_i + \Delta \rho_i)^2$ du câble $i$ après réalisation de la commande cinématique est égale à :
+\begin{equation}
+  (\rho_i + \Delta \rho_i)^2 = \begin{matrix}
+                                & x^2 + y^2 + z^2 \\
+                                + & 2 (x \Delta x + y \Delta y + z \Delta z)\\
+                                + &  \frac 1 {\rho^2} (x \Delta x + y \Delta y + z \Delta z)^2
+                               \end{matrix}
+ \label{chap02:eq3}
+\end{equation}
+
+Or, si le déplacement avait correctement été effectué, nous aurions la relation suivante :
+\begin{equation}
+  (\rho_i + \Delta \rho_i)^2 = (x + \Delta x)^2 + (z + \Delta z)^2 + (z + \Delta z)^2 
+ \label{chap02:eq4}
+\end{equation}
+
+En soustrayant \ref{chap02:eq4} à \ref{chap02:eq3}, nous avons :
+\begin{equation}
+ \rho^2  e(\rho_i) = \begin{matrix}
+             & (x^2 - \rho^2) (\Delta x)^2 &+& (y^2 - \rho^2)  (\Delta y)^2 &+& (z^2 - \rho^2)  (\Delta z)^2\\
+             +& 2xy \Delta x \Delta y &+& 2yz \Delta y \Delta z &+& 2zx \Delta z \Delta x
+              \end{matrix}
+ \label{chap02:eq5}
+\end{equation}
+
+En supposant pour simplifier $\Delta y = \Delta z = 0$ et $\Delta x > 0$, nous avons :
+\begin{equation}
+|e(\rho_i)| = \frac {y^2 + z^2} {\rho^2} (\Delta x)^2 > 0
+ \label{chap02:eq6}
+\end{equation}
+
+Cette erreur sera d'autant plus faible ici que la fréquence de la commande sera élevée, permettant des déplacements plus petits et donc une dérive moins importante. On notera également dès \ref{chap02:eq5} que l'erreur est moindre lorsque la longueur du câble est la plus grande.
+
+
+
+
 
 \subsection{Utilisation des moments 2D}
 
