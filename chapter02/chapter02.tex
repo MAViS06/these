@@ -1,0 +1,66 @@
+\chapter{Asservissement visuel des robots à c\^ables}
+
+Les manipulateurs parallèles à câbles peuvent s'avérer un choix pertinent d'architecture dès lors que tâche requiert tout ou partie des propriétés suivantes :
+\begin{itemize}
+ \item pouvoir être effectuée dans un large espace de travail
+ \item pouvoir manipuler des charges importantes
+ \item pouvoir être déployée rapidement
+ \item garantir une précision et une dynamique suffisantes
+\end{itemize}
+
+Toutefois, nous avons vu que le contrôle de tels robots posait plusieurs problèmes, parmi lesquels :
+\begin{itemize}
+ \item des modèles géométriques et cinématiques plus complexes que pour les robots séries
+ \item un câble ne pouvant exercer qu'une force unilatérale, il est possible qu'il se retrouve avec une tension nulle ; cela peut donner lieu à des changements discontinus des valeurs de tension pour chaque c\^able, voire la perte d'un ou plusieurs degrés de liberté
+ \item des incertitudes mécaniques, particulièrement sur la longueur réelle de déploiement d'un c\^able si nous utilisons un moteur rotatif comme actionneur (le diamètre d'enroulement n'étant alors qu'une approximation).
+\end{itemize}
+
+Pour ces raisons, la précision d'une pose dépendra à la fois de son histoire (selon la trajectoire qui y a conduit et l'ensemble des câbles qui auront contribué à son obtention, le positionnement final pourra différer) et de sa robustesse aux incertitudes mécaniques, méthodologiques (simplification des modèles d'élasticité et de pesance des câbles par exemple) et de la précision des calculs.
+
+L'asservissement visuel a donc été proposée à plusieurs reprises afin de résoudre tout ou partie de ces inconvénients. Les stratégies suivantes ont par exemple été mises en place :
+\begin{itemize}
+ \item une caméra déportée filme l'organe terminal, et par un asservissement en position, entreprend de corriger les erreurs de pose de celui-ci. Sont requis ici que la scène soit dégagée, que la caméra ait un champs de vision suffisamment grand pour pouvoir appréhender l'ensemble de l'espace de travail. Pour autant, une telle méthode ne permet pas de gérer les questions de tensions positives ou nulles dans les câbles.
+ \item plusieurs caméras sont utilisées pour filmer les départs des câbles. En utilisant la géométrie plückerienne, ceci permet d'obtenir une estimation précise de la Jacobienne inverse. Pour autant, la question de la répartition des forces dans les câbles n'est là non plus pas considérée. Une telle stratégie suppose que tous les câbles soient en tension, ce qui est par exemple dans certaines architectures impossible, et peut donc conduire à une commande erronée. 
+\end{itemize}
+
+Pour autant, utilisées ensemble, ces deux stratégies devraient pouvoir permettre d'assurer la manipulation dans la plupart des cas, sans pour autant le garantir.
+
+Notre objectif ici est donc double : construire dans un premier temps une loi de commande qui soit aussi indépendante que possible des paramètres de pose et des coordonnées articulaires, contrôler dans un deuxième temps les câbles qui seront en tension pour une trajectoire donnée. En effet, dès lors que nous connaissons les câbles qui sont en tension, nous obtenons le rang de la Jacobienne correspondante. Nous pouvons ainsi affiner la commande en cessant de considérer le robot global, pour ne plus prendre en compte que la partie correspondant réellement aux câbles qui agissent sur le déplacement. Nous utiliserons alors ce que nous définirons plus tard comme étant la {\it Jacobienne du sous-robot associe à une configuration de câbles}. L'utilisation d'une loi de commande articulaire exploitant des informations visuelles adaptées permettra de s'abstraire lors d'une commande cinématique à la fois des incertitudes liées à la commande du robot, mais également aux problèmes soulevés dans le chapitre précédent concernant l'estimation de la matrice d'interaction.
+
+Ce chapitre est consacré à l'élaboration d'une telle loi de commande. Pour cela, nous présenterons dans un premier temps les spécificités d'un asservissement visuel classique de robots parallèles à câbles. Dans une seconde section, nous montrerons dans quelle mesure nous pouvons y trouver des améliorations concernant la précision du manipulateur et la robustesse aux erreurs et incertitudes diverses. La troisième section développera les conditions d'une loi de commande articulaire reposant sur une première estimation de la matrice d'interaction articulaire et un schéma itératif assurant la convergence vers une trajectoire linéaire. Enfin, une quatrième section présentera les conclusions de ce premier volet de notre étude. L'ensemble des simulations et validations expérimentales se trouveront dans le chapitre final.
+
+\section{Elaboration d'un asservissement visuel des robots à c\^ables}
+
+Cette première section est consacrée à l'élaboration d'une loi de commande classique adaptée aux robots parallèles à câbles. Ceci nous permettra de montrer les améliorations apportées par l'asservissement visuel (seconde section du chapitre) et servira de support de comparaison pour la loi simplifiée qui sera élaborée en troisième section.
+
+\subsection{Construction de la loi de commande classique}
+
+
+
+
+
+
+\subsection{Utilisation des moments 2D}
+
+\subsection{Cas du robot N-1}
+
+\section{Amélioration de la robustesse et de la précision}
+
+\subsection{Robustesse aux incertitudes de modèle}
+
+\subsection{Amélioration de la précision}
+
+\subsection{Illustration des limites avec le cas N-1}
+
+
+\section{Asservissement simplifié : commande articulaire}
+
+\subsection{Motivations}
+
+\subsection{Le schéma de Broyden}
+
+\subsection{Commande simplifiée}
+
+\subsection{Cas N-1}
+
+\section{Conclusions}

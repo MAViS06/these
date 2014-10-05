@@ -51,7 +51,7 @@
   \begin{picture}(1,0.87215121)%
     
 \put(0,0){\includegraphics[width=\unitlength]
-{./chapter01/figures/configonly3.pdf}}
+{./chapter03/figures/configonly3.pdf}}
 \put(0.30072857,0.79369199){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
 {0.12310032\unitlength}\raggedright $A_3$\end{minipage}}}% 
 \put(0.06100467,0.87647528){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage} 

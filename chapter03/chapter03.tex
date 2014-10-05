@@ -51,7 +51,7 @@ trajectoire n'est plus stable ; d'autre part les modifications soudaines des
 tensions perturbent les mouvements de la plate-forme et la pr\'ecision du
 positionnement est affect\'ee.
 
-Dans le cas du robot $4-1$, la figure \ref{chap01:fig0000} permet de 
+Dans le cas du robot $4-1$, la figure \ref{chap03:fig0000} permet de 
 comprendre pourquoi l'équilibre statique n'est possible avec trois câbles en 
 tension que si le point ${\bf B}$ correspondant à la pose de la plate-forme 
 appartient à la projection verticale du triangle formé par les points de sortie 
@@ -62,7 +62,7 @@ direction, rompant ainsi l'équilibre statique.
 \begin{figure}[!ht]
   \centering
     \def\svgwidth{.65\linewidth}
-  \input{./chapter01/figures/configonly3.pdf_tex}
+  \input{./chapter03/figures/configonly3.pdf_tex}
     \caption{\footnotesize{En haut \`a gauche, la pose initiale avec les 
 c\^ables 1, 2 et 3 en tension. En haut \`a droite, la diminution de la 
 longueur $\rho_3$ implique va d\'acer la masse autour de l'axe ${\bf 
@@ -71,14 +71,14 @@ d\'eplacement du point $\bf B$ modifie les distances $||{\bf A}_i{\bf B}||$. En
 particulier, nous avons ici $\rho_j > ||{\bf A}_j{\bf B}||$, et donc le c\^able 
 devient mou. En bas \`a droite, nouvelle pose, avec les c\^ables $i, k$ et $3$ 
 en tension.}}
-\label{chap01:fig0001}
+\label{chap03:fig0001}
 \end{figure}
 
 La démonstration de l'impossibilité d'avoir plus de $3$ câbles en tension 
 simultanée repose également sur l'équilibre statique. Dans \cite{merlet2012}, 
 ceci est démontré pour toute configuration à $N > 3$ câbles. Le cas à quatre 
 câbles est relativement simple et peut être exposé ainsi (cf. 
-Fig. \ref{chap01:fig0001}) :
+Fig. \ref{chap03:fig0001}) :
 \begin{enumerate}
  \item soit ${\bf B}$ une pose atteinte \`a l'aide des c\^ables $0,1,2$, pour 
 laquelle nous avons l'\'equilibre statique. Alors la projection de ${\bf B}$ 
@@ -101,12 +101,12 @@ ${\bf A}_3$.
 \begin{figure}[!ht]
   \centering
     \def\svgwidth{.65\linewidth}
-  \input{./chapter01/figures/ws__out.pdf_tex}
+  \input{./chapter03/figures/ws__out.pdf_tex}
     \caption{\footnotesize{Lorsque le point sort des limites du triangle généré 
 par les droites reliant les sorties de câbles, les tensions ne sont plus en 
 opposition dans toutes les directions : l'équilibre statique ne peut dès lors 
 être maintenu.}}
-\label{chap01:fig0000}
+\label{chap03:fig0000}
 \end{figure}
 
 Il existe donc pour un robot $4-1$ quatre ensembles distincts de 3 câbles en 
@@ -114,7 +114,7 @@ tension strictement positives, et dans aucune de ces situations les trois
 câbles ne permettent d'atteindre l'intégralité de l'espace de travail en 
 maintenant l'équilibre statique.
 
-A titre d'exemple, la figure \ref{chap01:fig000} montre qu'il existe des 
+A titre d'exemple, la figure \ref{chap03:fig000} montre qu'il existe des 
 trajectoires qui peuvent être effectuées sans que l'on n'ait besoin de changer 
 la nature de la tension dans les câbles, mais qu'il en existe également pour 
 lesquelles nous n'aurons d'autres choix que de modifier les câbles en tension. 
@@ -133,11 +133,11 @@ ${\bf P}_3$ sans changer la nature de la tension des câbles.
 \begin{figure}[!ht]
   \centering
     \def\svgwidth{.65\linewidth}
-  \input{./chapter01/figures/traj_N1.pdf_tex}
+  \input{./chapter03/figures/traj_N1.pdf_tex}
     \caption{\footnotesize{Exemples de trajectoires réalisables avec une seule 
 configuration de câbles (lignes bleues pleines) et nécessitant un changement de 
 configuration de câbles (ligne rouge en pointillés)}}
-\label{chap01:fig000}
+\label{chap03:fig000}
 \end{figure}
 
 Les comportements décrits correspondent toutefois à une situation idéale. Dans 
@@ -148,13 +148,13 @@ le système est libre et n'obéit qu'à ses propres lois mécaniques.
 
 \begin{figure}[!htp]
   \centering
-    \includegraphics[width=.75\linewidth]{./chapter01/figures/controleur_discret.png}
+    \includegraphics[width=.75\linewidth]{./chapter03/figures/controleur_discret.png}
     \caption{\footnotesize Comportement des tensions dans un câble pour une 
 durée d'échantillonnage de $0.2$ secondes}
-\label{chap01:fig00}
+\label{chap03:fig00}
 \end{figure}
 
-La figure \ref{chap01:fig00} montre ce qu'il se passe durant la période 
+La figure \ref{chap03:fig00} montre ce qu'il se passe durant la période 
 d'échantillonnage de $0.2$ secondes d'un contrôleur discret. Si la trajectoire 
 était parfaitement suivie, nous devrions avoir une valeur te $\tau_n$ nulle sur 
 l'ensemble de la période. Or, la trajectoire réelle ne suit pas eaxctement la 
@@ -382,11 +382,11 @@ respectives des robots $A_{i_k}$.
 \begin{figure}[!ht]
   \centering
     \def\svgwidth{.65\linewidth}
-  \input{./chapter01/figures/CC_41.pdf_tex}
+  \input{./chapter03/figures/CC_41.pdf_tex}
     \caption{\footnotesize{Les diff\'erentes configurations de c\^ables du 
 {\tt Marionet-Assist} : les fl\`eches noires repr\'esentent les inclusions et 
 les lignes en pointill\'es bleus indiquent une r\'egion de transfert simple.}}
-\label{chap01:fig0}
+\label{chap03:fig0}
 \end{figure}
 
 Equip\'e de $4$ c\^ables reli\'es en un m\^eme point \`a l'organe 
@@ -405,7 +405,7 @@ simple \`a 2 degr\'es de libert\'e entre ces deux configurations).
 transferts simples entre plusieurs de ces configurations de c\^ables.
 \end{itemize}
 
-Ces relations sont reprises dans la Fig.\ref{chap01:fig0}. Le graphe ainsi 
+Ces relations sont reprises dans la Fig.\ref{chap03:fig0}. Le graphe ainsi 
 obtenu permet par exemple de d\'efinir les {\it trajets} possibles pour une 
 s\'equence donn\'ee, et de calculer le {\it trajet} optimisant un crit\`ere en 
 attribuant les poids correspondants aux noeuds et fl\`eches du graphe. On voit 
@@ -416,7 +416,7 @@ $\overline{CC}_{012}$ et l'autre par $\overline{CC}_{023}$, ou bien encore
 d'autres combinaisons marginales et partiellement marginales.
 
 Le robot maximal et ses sous-robots sont repr\'esent\'es dans la 
-Fig.\ref{chap01:fig1}, ainsi que leurs relations de d\'erivation et 
+Fig.\ref{chap03:fig1}, ainsi que leurs relations de d\'erivation et 
 d'int\'egration. Dans le cas du robot {\tt Mario\-net-As\-sist}, le robot 
 maximal 
 est abstrait, et il existe $4$ robots r\'ealisables dans $A^{3,3}$, $6$ dans 
@@ -434,12 +434,12 @@ projection verticale des points ${\bf A}_0$ et ${\bf A}_1$.
 \begin{figure}[htp]
   \centering
     \def\svgwidth{.65\linewidth}
-  \input{./chapter01/figures/rbt41.pdf_tex}
+  \input{./chapter03/figures/rbt41.pdf_tex}
     \caption{\footnotesize{Schéma de d\'erivation/int\'egration du robot {\tt 
 Marionet-Assist} : s'il existe une fl\^eche allant de $CC_i$ \`a $CC_j$, 
 alors $CC_i$ d\'erive de $CC_j$ ; $CC_j$ sera le robot int\'egral de l'ensemble 
 des robots $CC_k$ qui en d\'erivent.}}
-\label{chap01:fig1}
+\label{chap03:fig1}
 \end{figure}
 
 Soit ${\bf B}$ le point d'attache des c\^ables \`a la plate-forme, ${\bf 
@@ -460,7 +460,7 @@ B}}{\rho_i}$. La {\it jacobienne inverse maximale} est donc :
 \frac {{\bf A}_{3_x}{\bf B}_x} {\rho_3} & \frac {{\bf A}_{3_y}{\bf B}_y} 
 {\rho_3} & \frac {{\bf A}_{3_z}{\bf B}_z} {\rho_3} \\
 \end{bmatrix}
-\label{chap01:eq01}
+\label{chap03:eq01}
 \end{equation}
 
 Le d\'erivateur permettant de d\'eduire la jacobienne inverse associ\'ee au 
@@ -473,7 +473,7 @@ sera la matrice :
 0 & 1 & 0 & 0\\
 0 & 0 & 1 & 0
 \end{bmatrix}
-\label{chap01:eq02}
+\label{chap03:eq02}
 \end{equation}
 
 Le d\'erivateur permettant de d\'eduire la jacobienne inverse du robot 
@@ -484,7 +484,7 @@ $A^{2,2}_{0, 1}$ \`a partir de $J^{-1}_{012}$ sera :
 1 & 0 & 0\\
 0 & 1 & 0
 \end{bmatrix}
-\label{chap01:eq03}
+\label{chap03:eq03}
 \end{equation}
 
 Les int\'egrateurs permettant par exemple de d\'eduire $A^{3,3}_{0, 1, 2}$ \`a 
@@ -511,7 +511,7 @@ respectivement :
 1 & 0 \\
 0 & 1
 \end{bmatrix}
-\label{chap01:eq04} \quad
+\label{chap03:eq04} \quad
 \end{equation}
 ce qui nous donne bien ${\bf J}^{-1}_{012} = {\bf I}_{01+2} {\bf J}^{-1}_{01} + 
 {\bf I}_{02+1} {\bf J}^{-1}_{02} + {\bf I}_{12+0} {\bf J}^{-1}_{12}$.
@@ -529,7 +529,7 @@ ${\bf A}_0{\bf A}_2{\bf A}_3$ ; la projection horizontale de ${\bf G}$
 appartient quant \`a elle aux triangles dont les sommets respectifs sont ${\bf 
 A}_1{\bf A}_2{\bf A}_3$ et ${\bf A}_0{\bf A}_1{\bf A}_2$. Supposons que pour 
 ${\bf S}$ nous partions de $\overline{CC}_{013}$. Une premi\`ere solution 
-visible  dans (Fig.\ref{chap01:fig0}) pourrait \^etre de passer par une 
+visible  dans (Fig.\ref{chap03:fig0}) pourrait \^etre de passer par une 
 transition marginale correspondant \`a $CC_{13}$ de mani\`ere \`a continuer 
 avec $\overline{CC}_{123}$. Une autre possibilit\'e consiste \`a se mettre en 
 configuration $\overline{CC}_{023}$ (tranfert simple) puis d'utiliser un 
@@ -655,26 +655,26 @@ chacune d'entre elles diff\`ereront.
 
 Prenons l'exemple du robot $4-1$ dont les points d'attache sont r\'epartis aux 
 quatre coins les plus hauts d'un cube d'un m\`etre de c\^ot\'e. Fixons un point 
-${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)^T$ (Fig.\ref{chap01:fig3}).
+${\bf B}$ de coordonn\'ees $(0.20, 0.30, 0.80)^T$ (Fig.\ref{chap03:fig3}).
 
 En ce point, deux configurations de c\^ables sont possibles : 
-$\overline{CC}_{013}$ (Fig.\ref{chap01:fig3view0}) et 
-$\overline{CC}_{023}$ (Fig.\ref{chap01:fig3view1}). Ces deux configurations 
+$\overline{CC}_{013}$ (Fig.\ref{chap03:fig3view0}) et 
+$\overline{CC}_{023}$ (Fig.\ref{chap03:fig3view1}). Ces deux configurations 
 permettent de contr\^oler les trois degr\'es de libert\'es en translation.
 
 \begin{figure}[htp]
   \centering
  \subfloat[Le robot en configuration de 
-câbles $\overline{CC}_{013}$]{\label{chap01:fig3view0}
+câbles $\overline{CC}_{013}$]{\label{chap03:fig3view0}
  \def\svgwidth{.45\linewidth}
- \input{./chapter01/figures/tension02.pdf_tex}} \hfill
+ \input{./chapter03/figures/tension02.pdf_tex}} \hfill
  \subfloat[Le robot en configuration de 
-câbles $\overline{CC}_{023}$]{\label{chap01:fig3view1}
+câbles $\overline{CC}_{023}$]{\label{chap03:fig3view1}
  \def\svgwidth{.45\linewidth}
- \input{./chapter01/figures/tension01.pdf_tex}} 
+ \input{./chapter03/figures/tension01.pdf_tex}} 
     \caption{\footnotesize{Les deux configurations de c\^ables possibles pour 
 une pose ${\bf B} = (0.2, 0.3, 0.8)^T$}}
-\label{chap01:fig3}
+\label{chap03:fig3}
 \end{figure}
 
 Les jacobiennes inverses respectives sont :
@@ -694,7 +694,7 @@ Les jacobiennes inverses respectives sont :
 0.2649 & -0.9272 & -0.2649
 \end{bmatrix}
 \end{split}
-\label{chap01:eq05}
+\label{chap03:eq05}
 \end{equation}
 
 En posant $m = 1/g$, nous avons \boldmath ${\mathcal F} = (0, 0, -1)^T$, ce 
@@ -714,7 +714,7 @@ qui nous donne :
 1.0817 \\
 0.3775
 \end{bmatrix}
-\label{chap01:eq06}
+\label{chap03:eq06}
 \end{equation}
 
 Nous pouvons d\'ej\`a v\'erifier qu'un passage non-contr\^ol\'e d'une 
@@ -735,7 +735,7 @@ $\mathcal M_{\hbox{stab}_i}$ :
 
 \begin{equation}
 \mathcal M_{\hbox{stab}_i} = ||{\bf J}^T_i {\boldmath {\mathcal F}}||_2
-\label{chap01:eq07}
+\label{chap03:eq07}
 \end{equation}
 
 Posons à présent ${\bf B} = (0.3,0.3,0.3)^T$. Dans ce cas, les deux 
@@ -757,7 +757,7 @@ Les jacobiennes inverses correspondantes sont :
 -0.5774 & -0.5774 & -0.5774
 \end{bmatrix}
 \end{split}
-\label{chap01:eq08}
+\label{chap03:eq08}
 \end{equation}
 
 En utilisant, pour $A^{2,2}_{02}$ le sous-robot associé à la configuration de 
@@ -777,26 +777,26 @@ théoriques correspondantes, nous obtenons :
 0.8185 \\ 
 0.5196 
 \end{bmatrix}
-\label{chap01:eq09}
+\label{chap03:eq09}
 \end{equation}
 
 \begin{figure}[!htp]
   \centering
       \subfloat[R\'egions pour lesquelles le crit\`ere 
-prend sa valeur minimale avec $Z = 0.5$ (256 points)]{\label{chap01:fig4view0}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab04.png}} 
+prend sa valeur minimale avec $Z = 0.5$ (256 points)]{\label{chap03:fig4view0}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/critstab04.png}} 
 \hfill
     \subfloat[D\'ecoupage de l'espace de travail en 
-fonction du crit\`ere de stabilit\'e avec $Z = 0.5$]{\label{chap01:fig4view1}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab05.png}} 
+fonction du crit\`ere de stabilit\'e avec $Z = 0.5$]{\label{chap03:fig4view1}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/critstab05.png}} 
 \\
       \subfloat[Evolution du crit\`ere sur l'espace de 
-travail avec $Z = 0.5$ (vue 3D)]{\label{chap01:fig4view2}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab02.png}} 
+travail avec $Z = 0.5$ (vue 3D)]{\label{chap03:fig4view2}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/critstab02.png}} 
 \hfill
     \subfloat[Evolution du crit\`ere sur l'espace de 
-travail avec $Z = 0.5$ (vue 2D)]{\label{chap01:fig4view3}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/critstab03.png}}
+travail avec $Z = 0.5$ (vue 2D)]{\label{chap03:fig4view3}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/critstab03.png}}
     \caption{\footnotesize Les deux figures en haut montrent comment (pour 
 $Z = 0.5$) l'espace de travail est r\'eparti entre les sous-robots associ\'es 
 aux configurations de c\^ables $\overline{CC}_i$: en rouge la configuration 
@@ -805,7 +805,7 @@ la configuration $\overline{CC}_{023}$ et en jaune la configuration
 $\overline{CC}_{123}$. Les figures du bas montrent (toujours pour $Z = 0.5$) 
 l'\'evolution du crit\`ere $\mathcal M_{\hbox{stab}}$ sur l'essentiel de 
 l'espace de travail.}
-\label{chap01:fig4}
+\label{chap03:fig4}
 \end{figure}
 
 Les mesures respectives sont $\mathcal M_{\hbox {stab}_{013}} = 0.7822$ et 
@@ -814,10 +814,10 @@ configuration $\overline{CC}_{013}$.
 
 Toutes ces mesures pouvant être réalisées en amont, elles n'impactent pas le 
 temps de calcul de la commande. Ainsi, pour notre robot $4-1$ cubique, pour une 
-valeur de $Z = 0.5$ fixée, les figures (\ref{chap01:fig4view0} et
-\ref{chap01:fig4view1}) montrent quelle configuration de câbles sera 
+valeur de $Z = 0.5$ fixée, les figures (\ref{chap03:fig4view0} et
+\ref{chap03:fig4view1}) montrent quelle configuration de câbles sera 
 privilégiée en tout point de l'espace de travail, et  les figures 
-(\ref{chap01:fig4view2} et \ref{chap01:fig4view3}) l'évolution du critère sur 
+(\ref{chap03:fig4view2} et \ref{chap03:fig4view3}) l'évolution du critère sur 
 l'ensemble de celui-ci.
 
 \subsection{Am\'elioration de la pr\'ecision : minimiser l'influence des 
@@ -829,7 +829,7 @@ un espace de travail d'approximati\-vement $3mx3mx4m$. Nous avons en effet
 entrepris de placer le manipulateur dans une pose pr\'ealablement d\'ecid\'ee, 
 puis ex\'ecut\'e deux aller-retours en mesurant les \'ecarts avec la position 
 initiale une fois les retours accomplis. Les r\'esultats -- que l'on peut lire 
-dans le tableau (\ref{chap01:tab01}) -- montrent que l'on atteint rapidement 
+dans le tableau (\ref{chap03:tab01}) -- montrent que l'on atteint rapidement 
 une 
 erreur dont la norme $L^2$ est de $0.048m$. Rapport\'e \`a la taille de 
 l'espace de travail, une telle pr\'ecision est plut\^ot performante, et 
@@ -860,7 +860,7 @@ error(m) & (0,0,0) & (-0.02,0.00,0.02) & (0.04,0.02,-0.02) \\
 position ${\bf X}_2$ \`a la position atteinte apr\`es un premier aller-retour 
 (vers un point ${\bf Y} = (2.03,1.00,1.21)$), ${\bf X}_2$ la position apr\`es 
 le second aller-retour.} 
-\label{chap01:tab01}
+\label{chap03:tab01}
 \end{table}
 
 Pour deux configurations de c\^ables donn\'ees, nous d\'efinissons la 
@@ -872,7 +872,7 @@ op\'erationnelles.
 Pour cela, nous utilisons la relation suivante :
 \begin{equation}
 \Delta {\bf X} = {\bf J} \Delta {\bf \Theta}
-\label{chap01:eq10}
+\label{chap03:eq10}
 \end{equation}
 
 Entre deux configurations de c\^ables, nous souhaitons privil\'egier celle dont 
@@ -883,7 +883,7 @@ Notre second crit\`ere devrait donc \^etre, avec $\delta {\bf \Theta}$ une
 incertitude maximale fix\'ee sur les coordonn\'ees articulaires :
 \begin{equation}
 \mathcal M_{\hbox{acc}} = ||{\bf J}  \delta {\bf \Theta} ||_{\infty}
-\label{chap01:eq11}
+\label{chap03:eq11}
 \end{equation}
 que nous chercherons \`a minimiser
 
@@ -912,19 +912,19 @@ l'hypoth\`ese que les erreurs sur la profondeur leur seront homog\`enes.
 \begin{figure}[!htp]
   \centering
       \subfloat[R\'egions pour lesquelles le crit\`ere 
-prend sa valeur minimale avec $Z = 0.5$ (256 points)]{\label{chap01:fig5view0}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc04.png}} 
+prend sa valeur minimale avec $Z = 0.5$ (256 points)]{\label{chap03:fig5view0}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/crit_acc04.png}} 
 \hfill
     \subfloat[D\'ecoupage de l'espace de travail en 
-fonction du crit\`ere de pr\'ecision avec $Z = 0.5$]{\label{chap01:fig5view1}
-\includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc05.png}} \\
+fonction du crit\`ere de pr\'ecision avec $Z = 0.5$]{\label{chap03:fig5view1}
+\includegraphics[width=.45\linewidth]{./chapter03/figures/crit_acc05.png}} \\
       \subfloat[Evolution du crit\`ere sur l'espace de 
-travail avec $Z = 0.5$ (vue 3D)]{\label{chap01:fig5view2}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc02.png}} 
+travail avec $Z = 0.5$ (vue 3D)]{\label{chap03:fig5view2}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/crit_acc02.png}} 
 \hfill
     \subfloat[Evolution du crit\`ere sur l'espace de 
-travail avec $Z = 0.5$ (vue 2D)]{\label{chap01:fig5view3}
-    \includegraphics[width=.45\linewidth]{./chapter01/figures/crit_acc03.png}}
+travail avec $Z = 0.5$ (vue 2D)]{\label{chap03:fig5view3}
+    \includegraphics[width=.45\linewidth]{./chapter03/figures/crit_acc03.png}}
     \caption{\footnotesize Les deux figures en haut montrent comment (pour 
 $Z = 0.5$) l'espace de travail est r\'eparti entre les sous-robots associ\'es 
 aux configurations de c\^ables $\overline{CC}_i$: en rouge la configuration 
@@ -933,20 +933,20 @@ la configuration $\overline{CC}_{023}$ et en jaune la configuration
 $\overline{CC}_{123}$. Les figures du bas montrent (toujours pour $Z = 0.5$) 
 l'\'evolution du crit\`ere $\mathcal M_{\hbox{acc}}$ sur l'essentiel de 
 l'espace de travail.}
-\label{chap01:fig5}
+\label{chap03:fig5}
 \end{figure}
 
 Le second crit\`ere est alors
 \begin{equation}
 \mathcal M_{\hbox{acc}} = \max_{x,y} |{\bf J} \delta {\bf \Theta}|
-\label{chap01:eq11}
+\label{chap03:eq11}
 \end{equation}
 
 Dans ce cadre, $\mathcal M_{\hbox{acc}_{013}} = 0.0465$ et 
 $\mathcal M_{\hbox{acc}_{023}} = 0.0343$, ce qui revient \`a s\'electionner la 
 configuration $\overline{CC}_{023}$ (ce qui \'etait d\'ej\`a le cas lorsque 
 nous consid\'erions les erreurs sur la profondeur \`a partir de la relation 
-\ref{chap01:eq10}).
+\ref{chap03:eq10}).
 
 Pour le point ${\bf B} = (0.3,.3,0.3)^T)$ dont les configurations de c\^ables 
 possibles sont $\overline{CC}_{013}$ et $CC_{02}$, nous avons :
@@ -966,11 +966,11 @@ c\^ables qui en est issue ; dans le cas contraire la p\'enalit\'e de transfert
 devrait conduire \`a basculer (ou rester) en configuration 
 $\overline{CC}_{013}$.
 
-Nous pouvons observer en (Fig.\ref{chap01:fig5}) la r\'epartition de l'espace 
+Nous pouvons observer en (Fig.\ref{chap03:fig5}) la r\'epartition de l'espace 
 de travail pour chaque sous-robot, ainsi que l'\'evolution du crit\`ere. 
 Contrairement au crit\`ere de stabilit\'e, nous trouvons de nombreux transferts 
-de type marginaux. Les figures (\ref{chap01:fig5view0} et 
-\ref{chap01:fig5view1}) montrent en particulier que la pr\'ecision augmente 
+de type marginaux. Les figures (\ref{chap03:fig5view0} et 
+\ref{chap03:fig5view1}) montrent en particulier que la pr\'ecision augmente 
 d'autant plus que nous nous rapprochons du centre de l'espace de travail, ce qui 
 n'\'etait pas le cas dans le cas de la recherche de stabilit\'e. Pour une 
 incertitude de l'ordre de $0.10m$, nous avons mesur\'e sur l'espace de travail 
@@ -1071,7 +1071,7 @@ Un vecteur d'intervalles sera appel\'e une {\it bo\^ite} :
 				      \dots \\
 				      [x_n]
                                      \end{pmatrix}
-\label{chap01:eq12}
+\label{chap03:eq12}
 \end{equation}
 
 On dit de $[f]$ qu'elle est une {\it extension de $f$ aux intervalles} 
@@ -1082,7 +1082,7 @@ de la fonction $f$ si :
 \rbrace \subseteq [f]([x]) \\
 \forall x \in \mathbb R^n, & f(x) = [f](x) 
 \end{array}
-\label{chap01:eq13}
+\label{chap03:eq13}
 \end{equation}
 
 Une extension aux intervalles conduit de mani\`ere g\'en\'erale \`a une 
@@ -1169,7 +1169,7 @@ Une ligne de la jacobienne inverse correspondante devient :
 
 \begin{equation}
 [J^{-1}]_i = \left ( \frac {[B] - [A_i]}{[\rho_i]} \right )^T
-\label{chap01:eq14}
+\label{chap03:eq14}
 \end{equation}
 
 \subsubsection{D\'etermination des sites l\'egaux}
@@ -1202,7 +1202,7 @@ L'extension de cette relation aux intervalles est alors :
 [B_y] = [A_{i_y}] + \lambda ([A_{j_y}] - [A_{i_y}])
 \end{matrix}
 \right .
-\label{chap01:eq15}
+\label{chap03:eq15}
 \end{equation}
 
 soit :
@@ -1214,7 +1214,7 @@ soit :
 \lambda_2 = \frac {[B_y] - [A_{i_y}]} {[A_{j_y}] - [A_{i_y}]}
 \end{matrix}
 \right .
-\label{chap01:eq16}
+\label{chap03:eq16}
 \end{equation}
 
 On peut remarquer que chaque ligne de l'\'equation est redondante concernant 
@@ -1227,7 +1227,7 @@ r\'e\'ecrire le syst\`eme diff\'eremment, par exemple :
 \lambda_2 = \frac {[B_y] + [A_{j_y}]} {[A_{j_y}] - [A_{i_y}]} - 1
 \end{matrix}
 \right .
-\label{chap01:eq16}
+\label{chap03:eq16}
 \end{equation}
 et de consid\'erer l'intersection des intervalles de solutions trouv\'ees.
 
@@ -1246,7 +1246,7 @@ test deviendra :
 \max(\overline{A_{i_x}},\overline{A_{j_x}}) > \overline{[B_x]},\\
 \min(\underline{A_{i_x}},\underline{A_{j_x}}) < \underline{[B_x]}
 \end{matrix}
-\label{chap01:eq17}
+\label{chap03:eq17}
 \end{equation}
 afin de nous assurer que ${\bf \sharp B}$ est potentiellement sur le segment 
 ${\bf \sharp A}_i{\bf \sharp A}_j$ mais bien dans les strictes limites de 
@@ -1264,7 +1264,7 @@ $(\lambda, \mu)$ tels que $0 < \lambda$, $0 < \mu$ et $\lambda + \mu < 1$ et :
 \begin{equation}
 {\bf A}_i {\bf B} = {\bf A}_i + \lambda {\bf A}_i{\bf A}_j + \mu {\bf A}_i{\bf 
 A}_k  
-\label{chap01:eq17}
+\label{chap03:eq17}
 \end{equation}
 (\`a l'inversion pr\`es du r\^ole jou\'e par les points, ce que nous 
 utiliserons entre autre pour contourner la redondance des variables dans 
@@ -1286,7 +1286,7 @@ obtenons ainsi le syst\`eme suivant :
 \lambda \\
 \mu
 \end{bmatrix}
-\label{chap01:eq18}
+\label{chap03:eq18}
 \end{equation}
 
 Un premier test \`a op\'erer est le calcul du d\'eterminant de la matrice du 
@@ -1310,7 +1310,7 @@ Dans le cas d'un d\'eterminant non-nul, nous inversons le syst\`eme :
 {\bf B}_{x} - {\bf A}_{i_x} \\
 {\bf B}_{y} - {\bf A}_{i_y}
 \end{bmatrix}
-\label{chap01:eq19}
+\label{chap03:eq19}
 \end{equation}
 
 Nous obtenons alors $[\lambda, \mu]$ sur lesquelles nous op\'erons deux types 
@@ -1330,23 +1330,23 @@ configuration de c\^ables est donc conserv\'ee.
 \begin{figure}[!htp]
   \centering
  \subfloat[Cas 01 : $\forall x \in \hbox{[}X\hbox{]},  F(x) \in 
-I$]{\label{chap01:fig06view0}
- \includegraphics[width=.33\linewidth]{./chapter01/figures/interval_in.png}} 
+I$]{\label{chap03:fig06view0}
+ \includegraphics[width=.33\linewidth]{./chapter03/figures/interval_in.png}} 
 \hfill
  \subfloat[Cas 02 : $\exists (x,y) \in \hbox{[}X\hbox{]}^2,  
 F(x) 
-\in I,  F(y) \notin I$]{\label{chap01:fig06view1}
- \includegraphics[width=.33\linewidth]{./chapter01/figures/interval_inout.png}} 
+\in I,  F(y) \notin I$]{\label{chap03:fig06view1}
+ \includegraphics[width=.33\linewidth]{./chapter03/figures/interval_inout.png}} 
 \hfill
   \subfloat[Cas 03 : $\forall x \in \hbox{[}X\hbox{]},F(x) 
 \notin I$] 
-{\label{chap01:fig06view2}
- \includegraphics[width=.33\linewidth]{./chapter01/figures/interval_out.png}}
+{\label{chap03:fig06view2}
+ \includegraphics[width=.33\linewidth]{./chapter03/figures/interval_out.png}}
     \caption{\footnotesize{Trois situations de test d'appartenance : dans les 
 cas $a$ et $b$, l'image par $[f]$ de $[x]$ permet de d\'ecider en toute 
 certitude ; le cas $c$ ne permet pas de conclure : aux incertitudes s'ajoutent 
 la surestimation \'eventuelle de l'image de $[X]$}}
-\label{chap01:fig06}
+\label{chap03:fig06}
 \end{figure}
 
 Nous nous trouvons \`a la fin de cette \'etape avec $3$ types de situations : 
@@ -1370,7 +1370,7 @@ Le score calcul\'e pour une configuration de c\^ables est alors :
 
 \begin{equation}
 \mathcal M_{\hbox{stab}} = \sqrt{\sum_i \overline{\tau_i}^2}
-\label{chap01:eq20}
+\label{chap03:eq20}
 \end{equation}\\
 
 \noindent {\bf Pr\'ecision :}\\
@@ -1382,7 +1382,7 @@ d\'eduisons le score :
 
 \begin{equation}
 \mathcal M_{\hbox{acc}} = \max_{x,y}{\hbox{Abs}([|Delta X])}
-\label{chap01:eq21}
+\label{chap03:eq21}
 \end{equation}
 o\`u $\hbox{Abs}([X])$ est la fonction {\it valeur absolue} \'etendue aux 
 intervalles.
@@ -1403,7 +1403,7 @@ Plusieurs trajets sont alors obtenus, dont les scores respectifs sont :
 \mathcal M_{\hbox{traj}} = \left (\sum_{i=1}^p \alpha \mathcal M_{CC_i} + \beta 
 \mathcal M_{\hbox{stab}_i} + \gamma M_{\hbox{acc}_i} \right ) + \sum_{j = 
 0}^{p-1} \mathcal M_{\hbox{trans}_j} 
-\label{chap01:eq22}
+\label{chap03:eq22}
 \end{equation}
 avec $\mathcal M_{\hbox{trans}_j}$ le score du transfert entre deux 
 configurations de c\^ables donn\'ees, et $\alpha, \beta, \gamma$ des poids 

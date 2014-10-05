@@ -49,7 +49,7 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.94639704)%
-    \put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/drawing_robot86.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength]{./chapter03/figures/drawing_robot86.pdf}}%
     \put(0.27288467,0.0666812){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.17749349\unitlength}\raggedright $A_0$\end{minipage}}}%
     \put(0.60627652,0.06587339){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.17749349\unitlength}\raggedright $A_1$\end{minipage}}}%
     \put(0.81621505,0.30253137){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.17749349\unitlength}\raggedright $A_2$\end{minipage}}}%

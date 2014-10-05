@@ -620,6 +620,15 @@ Nous reprenons ici les bases de construction d'une loi de commande
 \cite{chaumette2008handbook}. Nous nous contentons ici d'exposer les principes 
 généraux d'outils que nous avons utilisés tout au long de nos travaux.
 
+\begin{figure}[htp]
+  \centering
+    \def\svgwidth{.95\linewidth}
+  \input{./chapter01/figures/av_schema.pdf_tex}
+    \caption{\footnotesize{Schéma des étapes de l'asservissement visuel}}
+\label{chap01:fig05b}
+\end{figure}
+
+
 \subsection{Construction de la loi de commande} \label{chap1-2-0}
 
 Soient ${\bf s}(m(t), a)$ un vecteur comprenant de mesures $m(t)$ réalisées au 
@@ -696,7 +705,7 @@ param\`etres supplementaires, ou encore de la calibration de la cam\'era.
 
 Le choix d'une m\'ethode d'estimation particuli\`ere d\'epend \'evidemment des 
 conditions dans lesquelles se d\'eroulent l'asservissement, et affectera 
-n\'ecessairement la qualit\'e de celui-ci. Il est usuel d'utiliser ${{\bf 
+n\'ecessai\-rement la qualit\'e de celui-ci. Il est usuel d'utiliser ${{\bf 
 L}_e^+} = {{\bf L}_{e_*}^+}$ \cite{espiau1992}, soit de prendre pour matrice 
 d'interaction celle qui correspond aux valeurs th\'eoriques qui seraient prises 
 une fois l'objectif atteint. La matrice est alors constante, mais -- en 
@@ -901,13 +910,13 @@ Nous avons toutefois choisi de ne pas poursuivre dans la m\^eme voie pour
 les trois raisons suivantes :
 \begin{itemize}
  \item pour des raisons d'intrusivit\'e et de co\^ut propres aux conditions
-d'applications des prototypes sur lesquels nous avons travaill\'e, le
+d'applica\-tions des prototypes sur lesquels nous avons travaill\'e, le
 dispositif de mesure nous a paru trop cons\'equent ; nous avons
 de plus privil\'egi\'e des configurations embarqu\'ees pour des 
 raisons mentionn\'e pr\'ec\'edemment, \`a savoir le type d'applications 
 correspondant aux robots {\tt Marionet} (particuli\`erement les robots {\tt 
-marionet-Assist} et {\tt Marionet-Crane}), mais \'egalemtn afin de fournir un 
-compl\'ement \`a ce que ces auteurs ont d\'evelopp\'e.
+Marionet-Assist} et {\tt Marionet-Crane}), mais \'egale\-ment afin de fournir 
+un compl\'ement \`a ce que ces auteurs ont d\'evelopp\'e.
 \item bien qu'ils fassent durant leurs travaux l'hypoth\`ese de c\^ables
 non-\'elastiques, les auteurs supposent une pr\'ecision des mesures de tension
 qui nous semble difficilement atteignable pour des robots de cette envergure. Il
@@ -939,15 +948,15 @@ articulaire.
 
 Bien que nous ne puissions garantir que cette simplification du sch\'ema de
 contr\^ole puisse s'appliquer \`a toutes les configurations de robots \`a
-c\^ables, elle s'av\`ere efficace dans notre contexte, particuli\'erement pour
-les robots $N-1$. Sa mise en place implique toutefois certaines conditions qui
+c\^ables, elle s'av\`ere efficace dans notre contexte, particuli\`erement pour
+les robots N-1. Sa mise en place implique toutefois certaines conditions qui
 peuvent se r\'ev\'eler incompatibles avec un ensemble d'applications, ce que
 nous exposerons lors du chapitre suivant.
 
 \section{Conclusions}
 
 L'objectif de ce chapitre \'etait de pr\'esenter les principaux \'el\'ements 
-d'asservissement visuel que nous avons utilis\'e dans le cadre de ce travail. 
+d'asservisse\-ment visuel que nous avons utilis\'e dans le cadre de ce travail. 
 Nous avons pour cela commenc\'e par expliciter le mod\`ele de projection 
 utilis\'e afin de d\'efinir les diff\'erents syst\`emes de coordonn\'ees 
 utilis\'ees et leurs relations. Nous avons ensuite expos\'e plusieurs 
@@ -957,63 +966,55 @@ choix d'un dispositif n'utilisant qu'une cam\'era embarqu\'ee avec une
 strat\'egie bas\'ee image. Dans la troisi\`eme section de ce chapitre, nous 
 avons d\'etaill\'e la construction d'un sch\'ema de consigne prenant la forme 
 ${\bv} = -\lambda \widehat {\bf L}^*_e e$, aboutissant \`a une loi de commande 
-pour un robot : 
+pour un robot : $\dot {\bf q} = -\lambda \widehat {{\bf J}^{-1}} \widehat {\bf 
+L}^*_e e$. Apr\`es en avoir discut\'e les conditions de convergence et de 
+stabilit\'e, nous avons donn\'e un exemple de construction d'une matrice 
+d'interaction, coeur du sch\'ema de consigne.
 
+Nous avons enfin pr\'esent\'e les travaux nous semblant les plus pertinents 
+dans le domaine de l'asservissement visuel des robots parall\`eles \`a 
+c\^able\cite{dallej2011}. Toutefois, nous souhaitons nous en distinguer pour des 
+raisons qui tiennent tout \`a la fois \`a la lourdeur du dispositif impliqu\'e, 
+mais \'egalement aux strat\'egies utilis\'ees (principalement l'approche PBVS 
+pour estimer la pose), qui ne nous semblent pas compatible avec les applications 
+de nos robots.
 
-
-Le travail qui est pr\'esent\'e ici a pour objectif d'am\'eliorer la qualit\'e
-de manipulation d'un robot parall\`ele \`a c\^ables. Pour cela, nous avons
-distingu\'e quatre crit\`eres qui nous permettront d'\'evaluer notre
+Le travail que nous avons effectu\'e, pr\'esent\'e dans les chapitres suivants, 
+a pour objectif d'am\'eliorer la qualit\'e de manipulation d'un robot 
+parall\`ele \`a c\^ables. Pour cela, nous avons distingu\'e quatre crit\`eres 
+qui nous permettront d'\'evaluer notre
 contribution, \`a savoir :
 \begin{enumerate}
  \item la {\bf stabilit\'e} de la plate-forme lors d'un d\'eplacement
  \item la {\bf pr\'ecision} de la pose finale
  \item la {\bf robustesse} aux impr\'ecisions et erreurs de mod\`ele, aux
 erreurs et impr\'ecisions des estimations des param\`etres de contr\^ole
-  \item la {\bf simplicit\'e} du sch\'ema de contr\^ole
+  \item la {\bf simplicit\'e} de la loi de commande
 \end{enumerate}
 
-Dans ce but, nos travaux seront pr\'esent\'es de la mani\`ere suivante : 
+Dans ce but, la suite de nos travaux se d\'ecoupent de la mani\`ere 
+suivante :
 \begin{itemize}
- \item dans un premier temps, nous pr\'esenterons une strat\'egie de contr\^ole
-des c\^ables en tension, qui nous permettra d'am\'eliorer la stabilit\'e des
-mouvements, ainsi que la pr\'ecision des d\'eplacements.
- \item une fois cette stabilit\'e assur\'ee, nous montrerons que l'utilisation
-d'un asservissement visuel am\'eliore la pr\'ecision du positionnement de
-l'organe terminal, mais \'egalement la robustesse du contr\^ole
- \item nous utiliserons ensuite les sp\'ecificit\'es des architectures
-parall\`eles pour d\'evelopper une loi de contr\^ole simplifi\'ee, ce qui nous
-permettra de gagner ici en robustesse et en simplicit\'e de calcul.
- \item enfin, un chapitre pr\'esentera plusieurs simulations et
-exp\'erimentations sur notre prototype. Ceci nous permettra de valider nos
-diff\'erentes approches, mais \'egalement d'en pr\'esenter les limites, ce qui
-nous permettra en conclusion de faire le point sur les perspectives s'ouvrant
-en continuit\'e de ces travaux.
+ \item dans le chapitre suivant, nous pr\'esenterons dans un premier temps les 
+principes d'un asservissement visuel de robots \`a c\^ables dans les conditions 
+pratiques que nous avons d\'etaill\'ees pr\'ec\'edemment, ainsi que le choix 
+de primitives particulier que nous avons op\'er\'e.
+\item nous montrerons ensuite quelles am\'eliorations sont ainsi permises 
+concernant la pr\'ecision et la robustesse d'une commande de d\'eplacement et de 
+manipulation.
+\item enfin, nous concluerons ce chapitre en proposant une loi de commande 
+simplifi\'ee permettant d'obtenir directement des images une commande 
+articulaire. Nous utiliserons pour cela une premi\`ere estimation de la matrice 
+$\bf K$ reliant les coordonn\'ees articulaires aux mesures effectu\'ees dans 
+l'image, que nous actualiseront gr\`ace \`a la m\'ethode de Broyden permettant 
+de converger rapidement vers une trajectoire lin\'eaire.
+\item l'efficacit\'e de cette derni\`ere \'etape n'est cependant garantie 
+qu'\`a la condition que nous sachions quels sont les c\^ables qui contr\^olent 
+effectivement les d\'eplacements de la plate-forme. Nous proposerons alors dans 
+un quatri\`eme chapitre une m\'ethode permettant de s\'electionner la 
+configuration que nous d\'esirons en fonctions de crit\`eres que nous 
+discuterons.
+\item simulations, exp\'erimentations et r\'esultats seront propos\'es dans le 
+dernier chapitre de cette \'etude.
 \end{itemize}
-
-
-Enfin, il était envisageable dans cette étude d'utiliser les caméras soit comme 
-capteur intéroceptif, soit comme capteur extéroceptif. Le choix d'une 
-observation des articulations d'un robot parallèle à câbles a été effectué par 
-\cite{andreff2007} pour des robots parallèles classiques, et plus récemment 
-pour des robots parallèles à câble \cite{dallej2011}, \cite{dallej2012}. Ces 
-études 
-correspondant à ce jour au principal travail effectué dans le domaine de 
-l'asservissement visuel des robots parallèles à câbles, nous reviendrons dès 
-lors dessus à l'occasion de la section suivante, au sein de laquelle nous 
-définirons nos problématiques et pistes de travail. Nous pouvons relever 
-toutefois que la démarche développée dans leurs recherches consiste à améliorer 
-le positionnement de l'organe terminal, ce qui suppose que la position de la 
-cible est connue avec suffisamment de précision. Il s'agit donc d'un 
-environnement contrôlé. Or, le contexte d'application de nos robots implique au 
-contraire une incertitude non-négligeable sur les propriétés de la cible. Dès 
-lors, la caméra est tout autant utilisée pour la construction d'une loi de 
-commande que pour la localisation de l'objet et l'actualisation de ses 
-propriétés lorsque celles-ci diffèrent d'une première estimation. Le choix 
-d'utilisation des caméras comme capteurs extéroceptifs s'est donc imposé dans 
-notre approche.
-
-
-
-
 

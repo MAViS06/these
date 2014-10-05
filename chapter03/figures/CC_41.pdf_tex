@@ -50,7 +50,7 @@
   \makeatother%
   \begin{picture}(1,1.4142857)%
     
-\put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/CC_41.pdf}}%
+\put(0,0){\includegraphics[width=\unitlength]{./chapter03/figures/CC_41.pdf}}%
     
 \put(0.20992464,0.21078511){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
 {0.15204666\unitlength}\raggedright $CC_{0}$\end{minipage}}}%
@@ -63,16 +63,32 @@
    
 \put(0.10290674,0.54783152){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
 {0.16290713\unitlength}\raggedright $CC_{03}$\end{minipage}}}%
-    \put(0.48383566,0.22201724){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.16290713\unitlength}\raggedright $CC_{01}$\end{minipage}}}%
+   
+\put(0.47383566,0.21001724){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{0.16290713\unitlength}\raggedright $CC_{01}$\end{minipage}}}%
     
 \put(0.81915287,0.54276468){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
 { 0.16290713\unitlength}\raggedright $CC_{12}$\end{minipage}}}%
-    \put(0.47433275,0.89536677){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.16290713\unitlength}\raggedright $CC_{23}$\end{minipage}}}%
-    \put(0.37387333,0.52068033){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.16290713\unitlength}\raggedright $CC_{02}$\end{minipage}}}%
-    \put(0.58701018,0.5953461){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.16290713\unitlength}\raggedright $CC_{13}$\end{minipage}}}%
-    \put(0.29785002,0.73653229){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18191298\unitlength}\raggedright $CC_{023}$\end{minipage}}}%
-    \put(0.32594716,0.36320343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18191298\unitlength}\raggedright $CC_{013}$\end{minipage}}}%
-    \put(0.61103467,0.36320343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18191298\unitlength}\raggedright $CC_{012}$\end{minipage}}}%
-    \put(0.6232527,0.74060498){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.18191298\unitlength}\raggedright $CC_{123}$\end{minipage}}}%
+    
+\put(0.47433275,0.88636677){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{0.16290713\unitlength}\raggedright $CC_{23}$\end{minipage}}}%
+    
+\put(0.35387333,0.58568033){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{ 0.16290713\unitlength}\raggedright $CC_{02}$\end{minipage}}}%
+    
+\put(0.58701018,0.5853461){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{
+0.16290713\unitlength}\raggedright $CC_{13}$\end{minipage}}}%
+
+\put(0.29085002,0.73653229){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{0.18191298\unitlength}\raggedright $CC_{023}$\end{minipage}}}%
+    
+\put(0.29094716,0.36320343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{ 0.18191298\unitlength}\raggedright $CC_{013}$\end{minipage}}}%
+    
+\put(0.62103467,0.36320343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+{ 0.18191298\unitlength}\raggedright $CC_{012}$\end{minipage}}}%
+    
+\put(0.6212527,0.73660498){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{
+0.18191298\unitlength}\raggedright $CC_{123}$\end{minipage}}}%
   \end{picture}%
 \endgroup%

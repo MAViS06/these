@@ -1,0 +1,72 @@
+%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'av_schema.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{2560bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.9375)%
+    \put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/av_schema.pdf}}%
+    \put(0.0796542,0.86555153){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12622236\unitlength}\raggedright $A_3$\end{minipage}}}%
+    \put(0.33185091,0.86547104){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10032253\unitlength}\raggedright $A_2$\end{minipage}}}%
+    \put(0.02306354,0.72874632){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09324093\unitlength}\raggedright $A_0$\end{minipage}}}%
+    \put(0.29618974,0.72621631){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12628835\unitlength}\raggedright $A_1$\end{minipage}}}%
+    \put(0.54272354,0.85418872){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12622236\unitlength}\raggedright $A_3$\end{minipage}}}%
+    \put(0.79492025,0.85410823){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10032253\unitlength}\raggedright $A_2$\end{minipage}}}%
+    \put(0.48613289,0.71738351){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.09324093\unitlength}\raggedright $A_0$\end{minipage}}}%
+    \put(0.75925907,0.7148535){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.12628835\unitlength}\raggedright $A_1$\end{minipage}}}%
+    \put(0.46729168,0.19270836){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.028125\unitlength}\raggedright I*\end{minipage}}}%
+    \put(0.02653484,0.19678886){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.01458332\unitlength}\raggedright I\end{minipage}}}%
+    \put(0.19270833,0.678125){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.13854164\unitlength}\raggedright ${\bf X}_t$\end{minipage}}}%
+    \put(0.67620201,0.61045262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.146875\unitlength}\raggedright ${\bf X}^*$\end{minipage}}}%
+    \put(0.20004382,0.74698703){\color[rgb]{0,0,0}\rotatebox{38.28678288}{\makebox(0,0)[lt]{\begin{minipage}{0.14153286\unitlength}\raggedright $\rho_{2_t}$\end{minipage}}}}%
+    \put(0.69865636,0.73469464){\color[rgb]{0,0,0}\rotatebox{52.6411332}{\makebox(0,0)[lt]{\begin{minipage}{0.11862856\unitlength}\raggedright $\rho_2^*$\end{minipage}}}}%
+    \put(0.3925,0.46554168){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.02708332\unitlength}\raggedright -\end{minipage}}}%
+    \put(0.38090864,0.50357513){\color[rgb]{0,0,0}\rotatebox{28.15981131}{\makebox(0,0)[lt]{\begin{minipage}{0.18895283\unitlength}\raggedright ${\bf L}_e, \bv, {\bf J}^{-1}$\end{minipage}}}}%
+    \put(0.48090864,0.40357513){\color[rgb]{0,0,0}\rotatebox{-28.15981131}{\makebox(0,0)[lt]{\begin{minipage}{0.18895283\unitlength}\raggedright ${\bf s}^*$\end{minipage}}}}%
+    \put(0.31090864,0.38357513){\color[rgb]{0,0,0}\rotatebox{28.15981131}{\makebox(0,0)[lt]{\begin{minipage}{0.18895283\unitlength}\raggedright ${\bf s}(t)$\end{minipage}}}}%
+    \end{picture}%
+\endgroup%

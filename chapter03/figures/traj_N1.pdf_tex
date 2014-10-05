@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'tension02.pdf' (pdf, eps, ps)
+%% Accompanies image file 'traj_N1.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{595.27558594bp}%
+    \setlength{\unitlength}{516.13095703bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,14 +48,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.4142857)%
-    
-\put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/tension02.pdf}
-} %
-\put(-0.0159,0.779){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.22071083\unitlength}\raggedright $A_0$\end{minipage}}}%
-\put(0.76763,0.76434){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29893745\unitlength}\raggedright $A_1$\end{minipage}}}%       
-\put(0.842,1.14){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.23747369\unitlength}\raggedright $A_2$\end{minipage}}}%
-\put(0.15,1.1){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29878125\unitlength}\raggedright $A_3$\end{minipage}}}%
-\put(.30257,0.4047){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.1603099\unitlength}\raggedright $B$\end{minipage}}}%
+  \begin{picture}(1,0.63478469)%
+    \put(0,0){\includegraphics[width=\unitlength]{./chapter03/figures/traj_N1.pdf}}%
+    \put(-0.00513096,0.03383552){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $A_0$\end{minipage}}}%
+    \put(0.87085462,0.03341548){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $A_1$\end{minipage}}}%
+    \put(0.87338047,0.63047289){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $A_2$\end{minipage}}}%
+    \put(-0.00536518,0.63090716){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $A_3$\end{minipage}}}%
+    \put(0.10410451,0.29405203){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $P_1$\end{minipage}}}%
+    \put(0.35462139,0.55527794){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $P_2$\end{minipage}}}%
+    \put(0.76342484,0.29092057){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20041353\unitlength}\raggedright $P_3$\end{minipage}}}%
   \end{picture}%
 \endgroup%

@@ -50,7 +50,7 @@
   \makeatother%
   \begin{picture}(1,1.4142857)%
     
-\put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/tension02.pdf}
+\put(0,0){\includegraphics[width=\unitlength]{./chapter03/figures/tension02.pdf}
 } %
 \put(-0.0159,0.779){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.22071083\unitlength}\raggedright $A_0$\end{minipage}}}%
 \put(0.76763,0.76434){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.29893745\unitlength}\raggedright $A_1$\end{minipage}}}%       

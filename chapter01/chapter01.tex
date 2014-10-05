@@ -620,6 +620,16 @@ Nous reprenons ici les bases de construction d'une loi de commande
 \cite{chaumette2008handbook}. Nous nous contentons ici d'exposer les principes 
 généraux d'outils que nous avons utilisés tout au long de nos travaux.
 
+\begin{figure}[htp]
+  \centering
+    \def\svgwidth{.95\linewidth}
+  \input{./chapter01/figures/av_schema.pdf_tex}
+  \vspace{-15mm}
+    \caption{\footnotesize{A l'instant $t$, le robot se trouve dans une pose ${\bf X}_t$ correspondant aux coordonnées articulaires ${\bf \rho}_t$. A l'aide d'une caméra embarquée, il prend des mesures dans l'image $I$. L'objectif de l'asservissement est de déplacer le robot de manière à ce que les valeurs des mesures correspondent à celles de l'image $I^*$, correspondant à une pose ${\bf X}^*$ et à des coordonnées articulaires ${\bf \rho}^*$. Les mesures effectuées dans l'image $I$ sont notées ${\bf s}(t)$, celles de $I^*$ sont notées ${\bf s}^*$. L'écart entre ces valeurs est noté ${\bf e}(t)$. L'élaboration d'une {\it consigne} de déplacement se faire par l'intermédaire d'une matrice d'interaction ${\bf L}_e$ traduisant les variations de l'erreur en ordre de vitesse pour la caméra. La Jacobienne du robot permet alors de transcrire ce déplacement en commande articulaire. La totalité du processus représente la {\it loi de commande}.}}
+\label{chap01:fig05b}
+\end{figure}
+
+
 \subsection{Construction de la loi de commande} \label{chap1-2-0}
 
 Soient ${\bf s}(m(t), a)$ un vecteur comprenant de mesures $m(t)$ réalisées au 

@@ -50,7 +50,7 @@
   \makeatother%
   \begin{picture}(1,0.94614081)%
     
-\put(0,0){\includegraphics[width=\unitlength]{./chapter01/figures/rbt41.pdf}}%
+\put(0,0){\includegraphics[width=\unitlength]{./chapter03/figures/rbt41.pdf}}%
     \put(0.06218961,0.09403218){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.14336197\unitlength}\raggedright $A_{0}$\end{minipage}}}%
     \put(0.23790146,0.09403218){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.14336139\unitlength}\raggedright $A_{1}$\end{minipage}}}%
     \put(0.41361331,0.09403218){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.14336139\unitlength}\raggedright $A_{2}$\end{minipage}}}%
@@ -86,7 +86,7 @@
 \put(0.66690662,0.63468402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
 { 0.18705376\unitlength}\raggedright $A_{123}$\end{minipage}}}%
     
-\put(0.41423528,0.90227923){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
+\put(0.43423528,0.90227923){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
 { 0.2116301\unitlength}\raggedright $A_{0123}$\end{minipage}}}%
     
 \put(0.86911287,0.09169958){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}
