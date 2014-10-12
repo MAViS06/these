@@ -60,6 +60,6 @@
 $||A_iB_i||$\end{minipage}}} }%    
 \put(0.28628583,0.34097661){\color[rgb]{0,0,0}\rotatebox{-44.90995141}{
 \makebox(0,0)[lt]{\begin{minipage}{0.1760974\unitlength}\raggedright 
-$l_i$\end{minipage}}}}%
+$\rho_i$\end{minipage}}}}%
   \end{picture}%
 \endgroup%

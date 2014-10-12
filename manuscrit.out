@@ -1,15 +1,17 @@
-\BOOKMARK [0][-]{chapter.1}{Asservissement visuel des robots \340 c\342bles}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Elaboration d'un asservissement visuel des robots \340 c\342bles}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Construction de la loi de commande classique}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Utilisation des moments 2D}{section.1.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.3}{Cas du robot N-1}{section.1.1}% 5
-\BOOKMARK [1][-]{section.1.2}{Am\351lioration de la robustesse et de la pr\351cision}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.2.1}{Robustesse aux incertitudes de mod\350le}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.2}{Am\351lioration de la pr\351cision}{section.1.2}% 8
-\BOOKMARK [2][-]{subsection.1.2.3}{Illustration des limites avec le cas N-1}{section.1.2}% 9
-\BOOKMARK [1][-]{section.1.3}{Asservissement simplifi\351 : commande articulaire}{chapter.1}% 10
-\BOOKMARK [2][-]{subsection.1.3.1}{Motivations}{section.1.3}% 11
-\BOOKMARK [2][-]{subsection.1.3.2}{Le sch\351ma de Broyden}{section.1.3}% 12
-\BOOKMARK [2][-]{subsection.1.3.3}{Commande simplifi\351e}{section.1.3}% 13
-\BOOKMARK [2][-]{subsection.1.3.4}{Cas N-1}{section.1.3}% 14
-\BOOKMARK [1][-]{section.1.4}{Conclusions}{chapter.1}% 15
+\BOOKMARK [0][-]{chapter.1}{Les robots parall\350les \340 c\342bles}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Manipulateurs s\351rie et parall\350les}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{D\351finitions}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Architectures s\351ries}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Architectures parall\350les}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Les manipulateurs parall\350les \340 c\342bles}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Robots parall\350les \340 c\342bles repr\351sentatifs}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Marionet-Assist}{section.1.2}% 8
+\BOOKMARK [1][-]{section.1.3}{Mod\350les g\351motriques et cin\351matiques des robots parall\350les \340 c\342bles}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.3.1}{Notations}{section.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.3.2}{Mod\350le g\351om\351trique inverse}{section.1.3}% 11
+\BOOKMARK [2][-]{subsection.1.3.3}{Equilibre statique}{section.1.3}% 12
+\BOOKMARK [2][-]{subsection.1.3.4}{Mod\350le g\351om\351trico-statique inverse \(MGSI\)}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.5}{Mod\350le g\351om\351trico-statique direct}{section.1.3}% 14
+\BOOKMARK [2][-]{subsection.1.3.6}{Mod\350le cin\351matique}{section.1.3}% 15
+\BOOKMARK [1][-]{section.1.4}{Les robots N-1}{chapter.1}% 16
+\BOOKMARK [2][-]{subsection.1.4.1}{Mod\350les g\351om\351triques et cin\351matiques}{section.1.4}% 17

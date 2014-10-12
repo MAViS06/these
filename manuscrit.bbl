@@ -1,3 +1,88 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{1992:Albus.Bostelman.ea}
+J.~Albus, R.~Bostelman, and N.~Dagalakis.
+\newblock The {NIST SPIDER}, a robot crane.
+\newblock {\em Journal of research of the National Institute of Standards and
+  Technology}, 97(3):373--385, may 1992.
+
+\bibitem{journals/jfr/AlbusBD93}
+James~S. Albus, Roger Bostelman, and Nicholas~G. Dagalakis.
+\newblock The {NIST} robocrane.
+\newblock {\em J. Field Robotics}, 10(5):709--724, 1993.
+
+\bibitem{2010:Carricato.Merlet}
+M.~Carricato and J-P. Merlet.
+\newblock Geometrico-static analysis of under-constrained cable-driven parallel
+  robot.
+\newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
+
+\bibitem{carricato_merlet2013}
+M.~Carricato and J.P. Merlet.
+\newblock Stability analysis of underconstrained cable-driven parallel robots.
+\newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
+
+\bibitem{1988:Clavel}
+R.~Clavel.
+\newblock Delta, a fast robot with parallel geometry.
+\newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
+  Lausanne, 26-28 april 1988.
+
+\bibitem{journals/gosselin1989}
+C.~Gosselin and J.~Angeles.
+\newblock The optimum kinematic design of a spherical three-degree-of-freedom
+  parallel manipulator.
+\newblock {\em J. of Mechanisms, Transmissions and Automation in De- sign},
+  1989.
+
+\bibitem{1956:Gough}
+V.E. Gough.
+\newblock Contribution to discussion of papers on research in automobile
+  stability, control and tyre performance, 1956-1957.
+\newblock Proc. Auto Div. Inst. Mech. Eng.
+
+\bibitem{1985:Landsberger.Sheridan*1}
+S.E. Landsberger and T.B. Sheridan.
+\newblock A new design for parallel link manipulator.
+\newblock In {\em Proc. Systems, Man and Cybernetics Conf.}, pages 812--814,
+  Tucson, 1985.
+
+\bibitem{merlet2008}
+J.~P Merlet.
+\newblock Kinematics of the wire-driven parallel robot marionet using linear
+  actuators.
+\newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
+  Conference on}, pages 3857--3862, May 2008.
+
+\bibitem{merlet2010marionet}
+J.-P. Merlet.
+\newblock Marionet, a family of modular wire-driven parallel robots.
+\newblock In Jadran Lenarcic and Michael~M. Stanisic, editors, {\em Advances in
+  Robot Kinematics: Motion in Man and Machine}, pages 53--61. Springer
+  Netherlands, 2010.
+
+\bibitem{merlet2010}
+Jean{-}Pierre Merlet and David Daney.
+\newblock A portable, modular parallel wire crane for rescue operations.
+\newblock In {\em {IEEE} International Conference on Robotics and Automation,
+  {ICRA} 2010, Anchorage, Alaska, USA, 3-7 May 2010}, pages 2834--2839, 2010.
+
+\bibitem{merlet1997robots}
+J.P. Merlet.
+\newblock {\em Les robots parall{\`e}les}.
+\newblock Collection robotique. Hermes, 1997.
+
+\bibitem{1994:Ming.Higuchi}
+A.~Ming and T.~Higuchi.
+\newblock Study on multiple degree of freedom positioning mechanisms using
+  wires, part 2, development of a planar completely restrained positioning
+  mechanism.
+\newblock {\em Int. J. Japan Soc. Prec. Eng.}, 28(3):235--242, september 1994.
+
+\bibitem{1965:Stewart}
+D.~Stewart.
+\newblock A platform with 6 degrees of freedom.
+\newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
+  15):371--386, 1965.
 
 \end{thebibliography}

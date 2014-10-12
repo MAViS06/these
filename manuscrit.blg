@@ -1,54 +1,58 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: manuscrit.aux
-A level-1 auxiliary file: chapter02/chapter02.aux
+A level-1 auxiliary file: chapter0/chapter0.aux
 The style file: plain.bst
-I found no \citation commands---while reading file manuscrit.aux
 Database file #1: ./biblio/bibliography.bib
+Warning--string name "juin" is undefined
+--line 2092 of file ./biblio/bibliography.bib
 I was expecting a `,' or a `}'---line 2093 of file ./biblio/bibliography.bib
  :   
  :   pages = {202-207},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You've used 0 entries,
+A bad cross reference---entry "merlet2010"
+refers to entry "DBLP:conf/icra/2010", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/icra/2010"
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            498 strings with 4035 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            605 strings with 6604 characters,
+and the built_in function-call counts, 4983 in all, are:
+= -- 500
+> -- 164
+< -- 6
++ -- 70
+- -- 50
+* -- 309
+:= -- 771
+add.period$ -- 44
+call.type$ -- 14
+change.case$ -- 65
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 14
+duplicate$ -- 223
+empty$ -- 439
+format.name$ -- 50
+if$ -- 1119
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 14
+missing$ -- 14
+newline$ -- 73
+num.names$ -- 30
+pop$ -- 81
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 52
 quote$ -- 0
-skip$ -- 1
+skip$ -- 173
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 356
+swap$ -- 70
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 54
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
+while$ -- 47
+width$ -- 16
+write$ -- 158
 (There were 2 error messages)
