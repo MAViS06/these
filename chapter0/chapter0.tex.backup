@@ -24,16 +24,16 @@ expérimentations et validations.
 Incontestablement, l'industrie aura été le principal vecteur de développe\-ment 
 de la robotique ces deux derniers siècles. L'introduction des robots dans les 
 usines s'inscrit dans une démarche d'augmentation de la productivité et 
-d'amélio\-ration des performances. Cela aura permis dès lors de soulager le 
+d'amélio\-ration des performances, permettant dès lors de soulager le 
 travailleur humain dans des situations de travail pénible et/ou répétitif, et 
-d'augmenter ses compétences en permettant par exemple une précision qu'il ne 
-saurait fournir seul, ou la possibilité de déplacer des charges élevées. Si la 
-grande diversité que recouvre aujourd'hui le terme de {\it robot} rend 
-extrêmement difficile l'élaboration d'une définition générique, nous pouvons 
-cependant en dériver des sous-catégories plus faciles à appréhender. Parmi 
-celles-ci, nous distinguons en particulier la classe des manipulateurs dont 
-la principale fonctionnalité sera le déplacement et positionnement d'objets 
-dans l'espace.
+d'augmenter ses compétences en autorisant des performances de précision qu'il 
+ne saurait fournir seul, ou en rendant possible le déplacement de charges 
+élevées. Si la grande diversité que recouvre aujourd'hui le terme de {\it robot} 
+rend extrêmement difficile l'élaboration d'une définition générique, nous 
+pouvons cependant en dériver des sous-catégories plus faciles à appréhender. 
+Parmi celles-ci, nous distinguons en particulier la classe des manipulateurs 
+dont la principale fonctionnalité sera le déplacement et positionnement 
+d'objets dans l'espace.
 
 \subsection{Définitions} \label{chap0-0-0}
 
@@ -155,20 +155,18 @@ succèdent dans la chaîne cinématique : segments et articulations doivent donc
 raison des effets de bras de levier ; la précision tout comme la répétabilité du 
 manipulateur en sont affectées.
  \item les charges manipulables ne peuvent être \'elev\'ees, en raison des 
-sollicitations en flexion sur les segments et de l'effet de bras de levier sur 
-les segments.
+sollicitations en flexion et de l'effet de bras de levier sur les segments.
 \end{itemize}
 
-Ainsi, une architecture série impose souvent un dispositif imposant, dont la 
-précision, la dynamique et la faible capacité de charges se révèleront 
+Ainsi, une architecture série am\`ene souvent \`a un dispositif imposant, dont 
+la précision, la dynamique et la faible capacité de charges se révèleront 
 insuffisants pour certaines tâches.
 
 Grâce à leurs structures en cha\^ine cin\'ematique ferm\'ee, les 
-architectures parallèles pr\'esentent une alternative efficace aux limites des 
-robots s\'eries.  Leurs caractéristiques, sur lesquel\-les nous allons \`a 
+architectures parallèles pr\'esentent une alternative efficace aux robots 
+s\'eries.  Leurs caractéristiques, sur lesquel\-les nous allons \`a 
 pr\'esent nous pencher, ont contribué à ce qu'elles s'installent 
-progressivement 
-dans le paysage de la robotique.
+progressivement dans le paysage de la robotique.
 
 \subsection{Architectures parallèles} \label{chap0-0-2}
 
@@ -193,9 +191,18 @@ automobile (Fig.\ref{intro:fig3view0}), la plate-forme de Gough-Stewart a par
 la suite été utilisée dans des applications diverses parmi lesquelles les 
 simulateurs de vols (Fig.\ref{intro:fig3view1}). Sa plate-forme mobile peut 
 être déplacée selon 6 degrés de liberté (3 translations $+$ 3 rotations) à 
-l'aide de six jambes indépendantes actionnées par des vérins. Les 
-articulations la reliant à la base (cardan) et à la plate-forme (rotule) sont 
-quant à elles laissées libres.
+l'aide de six jambes indépendantes constitu\'ees en partant de la 
+base d'un cardan passif suivie dune articulation prismatique 
+actionn\'ee dont l'extr\'emit\'e est connect\'ee \`a la plate-forme 
+par une rotule passive.
+
+\begin{figure}[!ht]
+  \centering
+\def\svgwidth{.85\linewidth}
+\input{./chapter0/figures/gough.pdf_tex}
+    \caption{\footnotesize{Sch\'ema d'une plate-forme de Gough-Stewart}}
+\label{intro:fig2b}
+\end{figure}
 
 Le robot Delta (Fig.\ref{intro:fig3view2}) permet un déplacement de sa 
 platforme selon les trois degrés de liberté de translation. Trois jambes sont 
@@ -203,7 +210,8 @@ utilisées pour cela, chacune étant reliée à la base par une articulation rot
 à un levier, ce levier étant lui-même relié à un parallélogramme par une 
 seconde articulation rotoïde, une troisième articulation rotoïde liant ce 
 segment à l'organe terminal. Le robot Delta peut atteindre des vitesses allant 
-jusqu'à 10 m/s et supporter des accélérations jusqu'à 20G, ce qui le rend 
+jusqu'à 10 m/s et supporter des accélérations jusqu'à 15G \cite{park2013}, ce 
+qui le rend 
 particulièrement adapté pour des tâches de conditionnement.
 
 \begin{figure}[!ht]
@@ -218,7 +226,7 @@ vols]{\label{intro:fig3view1}
 \\
     \subfloat[Robot Delta, particulièrement adapté aux tâches de 
 conditionnement ou de ``pick and place'']{\label{intro:fig3view2}  
-\includegraphics[width=.45\linewidth]{./chapter0/figures/parallelrobot03.jpg}}
+\includegraphics[width=.50\linewidth]{./chapter0/figures/parallelrobot03.jpg}}
     \caption{\footnotesize{Exemples de robots parallèles}}
 \label{intro:fig3}
 \end{figure}
@@ -240,9 +248,11 @@ jam\-bes dans le positionnement de l'organe terminal.
 Toutefois, les mécanismes parallèles possèdent plusieurs inconvénients qui 
 doivent être pris en compte lors du choix d'une architecture :
 \begin{itemize}
- \item des relations complexes entre entrées et sorties,
+ \item des relations complexes entre entrées et sorties, soit les coordonn\'ees 
+articulaires et la position de l'organe terminal
  \item des positions dites {\it singulières} pouvant conduire à une perte de 
-contrôle du manipulateur, et qui limite l'espace de travail.
+contrôle du manipulateur, et qui limitent l'espace de travail 
+\cite{merlet89singular}, \cite{park1998}.
  \item un espace de travail restreint par les limites de variation des 
 variables articulaires (Fig.\ref{intro:fig3b}). A titre d'exemple, la variation 
 d'altitude d'une plate-forme de Gough-Stewart ne peut excéder la course des 
@@ -276,7 +286,7 @@ désigner les noms de robots, manipulateurs, robots parallèles à câbles ou CD
 Les manipulateurs parallèles à câbles présentent une structure en chaînes 
 cinéma\-tiques fermées, la base et la plate-forme étant reliées au moyen de 
 câbles. Les actionneurs sont en général positionnés sur la base et leur 
-fonction consiste à contrôler la longueur des câbles.
+fonction permettent de contrôler la longueur des câbles.
 
 Afin de contrôler la longueur des câbles, plusieurs types de systèmes peuvent 
 être utilisés, parmi lesquels :
@@ -284,7 +294,7 @@ Afin de contrôler la longueur des câbles, plusieurs types de systèmes peuvent
  \item un tambour actionné par un moteur rotatif sur lequel s'enroule ou se 
 déroule le câble (Fig.\ref{intro:fig4view0}). La mesure de la longueur du câble 
 déroulé est obtenue en mesurant la rotation du tambour ; cette mesure est 
-relativement imprécise si l'enroulement n'est pas guidé.
+relativement imprécise si l'enroulement n'est pas guidé \cite{merlet2008}.
  \item le câble est attaché au chariot d'un actionneur linéaire, un système de 
 démultiplication à poulies permettant d'amplifier le déplacement du câble 
 (Fig.\ref{intro:fig4view1}). La mesure du déplacement du chariot permet une 
@@ -308,9 +318,21 @@ robot à câble}
 
 Dans tous les cas, ces systèmes permettent d'obtenir une très large variation 
 sur les longueurs des câbles, solutionnant ainsi le problème de l'espace de 
-travail. On a pu ainsi construire des robots travaillant sur des volumes de
-$100m\times35m\times35m$ ({\tt Marionet-Crane}, \cite{merlet2010} 
-Fig.\ref{intro:fig4b}).
+travail. On a pu ainsi construire des robots travaillant sur des volumes 
+importants, pour des applications aussi diverses que de la surveillance 
+environnementale \cite{jordan2007}\cite{borgstrom2009}, des op\'erations de 
+sauvetage \cite{merlet2010}\cite{satoshi2002}\cite{bosscher2005}, 
+del'inspection de fa\c cades de b\^atiments \cite{izard2013}, de la photographie 
+3D de grande échelle \cite{deschenes2007} ou encore de l'impression de 
+b\^atiments \cite{bosscher2007cc}. A titre d'exemple, le volume de travail du 
+robot \`a c\^ables d\'evelopp\'e dans le cadre du projet CoGiRo 
+\footnote{
+http://www.agence-nationale-recherche.fr/Colloques/RencontresduNumerique2013/fic
+hiers/posters/v3/COGIRO.pdf} (Fig.\ref{intro:fig5bview2}) est de $15m \times 
+11m\times 6m$ \cite{sandretto2015}, tandis que le {\tt Marionet-Crane} 
+Fig.\ref{intro:fig4b} con\c cu pour des opérations de sauvetage peut \^etre 
+d\'eploy\'e sur un volume de $75m\times45m\times30m$ 
+\footnote{http://www-sop.inria.fr/coprin/prototypes/main.html}.
 
 Toutefois, quelque-soit le type d'articulation et d'actionnement choisis, la 
 force que peut exercer un seul câble sur l'organe terminal est nécessairement 
@@ -325,7 +347,7 @@ degrés de liberté.
 
 \begin{figure}[!ht]
   \centering
-\includegraphics[width=.95\linewidth]{./chapter0/figures/marionet_crane.jpg}
+\includegraphics[width=.98\linewidth]{./chapter0/figures/marionet_crane.jpg}
     \caption{\footnotesize Le robot de sauvetage {\tt Marionet-Crane} 
 d\'eploy\'e dans les locaux d'INRIA}
 \label{intro:fig4b}
@@ -337,7 +359,8 @@ On distingue donc deux types de configurations pour un robot parallèle à câbl
  \item en {\it configuration suspendue} (Fig.\ref{intro:fig5view1}), la gravité 
 agit comme un câble virtuel : les actionneurs sont fixés généralement au point 
 le plus haut du dispositif, et $n$ suffisent pour déplacer et orienter l'organe 
-terminal selon $n$ degrés de liberté. On retrouve parfois ce type de 
+terminal selon $n$ degrés de liberté, sous l'hypoth\`ese toutefois que les $n$ 
+c\^ables sont bien en tension. On retrouve parfois ce type de 
 configuration dans la littérature sous le nom de {\it grue}/{\it crane}. A 
 titre d'exemple, le manipulateur {\it Nist Spider} 
 \cite{1992:Albus.Bostelman.ea} présente une configuration suspendue.
@@ -364,8 +387,7 @@ parallèle
 
 Une caractéristique particulière des manipulateurs parallèles à câbles qui les 
 différencie des manipulateurs parallèles classiques est la {\bf non-rigidité 
-des 
-jam\-bes}. Sous certaines conditions, un ou plusieurs câbles peuvent être 
+des jam\-bes}. Sous certaines conditions, un ou plusieurs câbles peuvent être 
 détendus, ce qui a pour effet qu'ils n'exercent plus de force sur la 
 plate-forme. Nous reviendrons plus loin sur ce point essentiel.
 
@@ -376,17 +398,25 @@ câbles présentent les caractéristiques suivantes :
 compensation des erreurs, de répartition des charges et des efforts, de coopération des 
 chaînes cinématique pour l'exécution d'un mouvement
  \item l'espace de travail est considérablement agrandi par rapport aux robots 
-parallèles à jambes rigides, les longueurs de câbles pouvant atteindre des variations très supérieures à ce qu'il est possible de réaliser avec des jambes rigides. 
- \item l'équipage mobile est très léger, ce qui favorise la dynamique
+parallèles à jambes rigides, les variations des longueurs de câbles pouvant 
+atteindre des valeurs très supérieures à ce qu'il est possible de réaliser 
+avec des actionneurs prismatiques rigides \cite{riehl2010}.
+ \item l'équipage mobile est très léger, ce qui favorise la dynamique 
+\cite{kawamura1995}.
  \item le comportement des câbles (non-déformables, élastiques, pesants, \dots) 
-peut complexifier s\'erieusement le modèle du robot
+peut complexifier s\'erieusement le modèle du robot \cite{riehl2009} 
+\cite{merlet2004interferences} \cite{lolo2014}
  \item l'unilatéralité des forces implique que nous puissions nous retrouver 
 dans une situation avec un ou plusieurs câbles détendus, ce qui doit être pris 
-en compte dans le contrôle.
+en compte dans le contrôle \cite{merlet2013openissues}.
 \end{itemize}
 
 
 \subsection{Robots parall\`eles à c\^ables repr\'esentatifs} \label{chap0-1-0}
+
+Parmi les nombreux prototypes de CDPR ayant \'et\'e r\'ealis\'es 
+\cite{kawamura1995}\cite{}\cite{}, nous nous contenterons de citer quelques 
+exemples repr\'esentatifs.\\
 
 \begin{figure}[!ht]
   \centering
@@ -401,23 +431,45 @@ projet CoGiRo]{\label{intro:fig5bview2}
 \label{intro:fig5b}
 \end{figure}
 
-
 \noindent {\bf NIST Robocrane} :\\
 
-blabla \\
+D\'ev\'elopp\'e dans le d\'ebut des ann\'ees 90, {\tt Robocrane} 
+\cite{journals/jfr/AlbusBD93} (Fig.\ref{intro:fig5bview0}) s'inspire de la 
+g\'eom\'trie de la plate-forme de Gough-Stewart : il s'agit de fait d'une d'une 
+architecture Gough-Stewart invers\'ee, dont les jambes rigides sont remplac\'ees 
+par des c\^ables. Le robot {\tt NIST Robocrane} entre donc dans la 
+cat\'egorie des manipulateurs en configuration suspendue. Mesurant un peu 
+plus de 6 m\`etres, ce robot peut supporter des charges de l'ordre de plusieurs 
+centaines de kilos (entre 800 et 900 kg), pour une vitesse maximale de $3cm/s$. 
+Ses applications sont nombreuses et vont de la maintenance industrielle 
+(particuli\`erement pour l'aviation) \`a l'intervention à grande \'echelle lors 
+d'incendies en zones d'extraction p\'etrolières 
+\cite{bostelman1994}\cite{bostelman1997emma}. \\
 
 \noindent {\bf SEGESTA} :\\
 
-blabla \\
+D\'eploy\'e dans les locaux de l'universit\'e de Duisburg dans l'objectif de 
+tester des algorithmes de contr\^oles rapides et de planification de 
+trajectoire \cite{hiller2005}, le prototype {\tt SEGESTA} 
+(Fig.\ref{intro:fig5bview1}) est un robot parall\`ele actionn\'e par 7 
+ou 8 c\^ables \'elastiques dans une configuration pleinement contrainte. Il 
+peut atteindre des vitesses de $7m/s$ et supporter des acc\'el\'erations de 
+l'ordre de $100m/s^2$ \cite{bruckmann2006modular}. \\
 
 \noindent {\bf CoGiRo} :\\
 
-blabla \\
+Actionn\'e par 8 c\^ables en configuration pleinement contrainte pour 
+contr\^oler 6 degr\'es de libert\'e, le robot d\'evelopp\'ee dans le cadre du 
+projet CoGiRo (Fig.\ref{intro:fig5bview2}) \cite{alexandre2012}, 
+\cite{dallej2012} par le LIRMM et Tecnalia peut \'evoluer dans 
+un espace de travail de $15m \times 11m \times 6m$ et manipuler des charges de 
+l'ordre de 500kg, ce qui le qualifie notamment pour des applications 
+industrielles de manipulations lourdes. \\
 
 
 \subsection{{\tt Marionet-Assist}} \label{chap0-1-1}
 
-Les {\tt Marionet} sont une classe de robots à câbles développés par l'EPI 
+Les {\tt Marionet} sont une famille de robots à câbles développés par l'EPI 
 Hephaistos pour des applications diverses \cite{merlet2010marionet} :
 \begin{itemize}
  \item {\tt Marionet-Crane} (Fig.\ref{intro:fig7view0}) : intervention à grande 
@@ -433,7 +485,7 @@ il est également possible de l'utiliser pour des opérations de transfert
 ultra-rapides
  \item {\tt Marionet-School} (Fig.\ref{intro:fig7view3}) : pédagogie et 
 diffusion ; ces robots sont utilisés entre autres pour illustrer de manière 
-ludique des propriétés géométriques et mathématiques auprès des publics jeunes
+ludique des propriétés géomé\-triques et mathématiques auprès des publics jeunes
 \end{itemize}
 
 \begin{figure}[!ht]
@@ -463,20 +515,19 @@ p\'edagogiques]{\label{intro:fig7view3}
 \end{figure}
 
 Le robot {\tt Marionet-Assist} a été développé dans un objectif d'assistance 
-aux 
-personnes à mobilités réduites, et plus spécifiquement dans une démarche 
-d'amélio\-ration de l'autonomie des publics concernés. Il doit pouvoir répondre 
+aux personnes à mobilités réduites, et plus spécifiquement dans une démarche 
+d'amélio\-ration de l'autonomie des personnes. Il doit pouvoir répondre 
 à des situations tout aussi diverses que :
 \begin{itemize}
  \item soutien ponctuelle au déplacement pour une personne âgée expérimentant 
 une fatigue articulaire (par exemple pour la passage de la baignoire) 
 (Fig.\ref{intro:fig8view0})
- \item aide au transfert d'une position à une autre pour une personne (des 
-toilettes au fauteuil par exemple) 
+ \item aide au transfert d'une position à une autre (couché-assise, 
+assise-debout, $\dots$) pour une personne (des toilettes au fauteuil par 
+exemple) 
 (Fig.\ref{intro:fig8view1})
- \item aide aux aidants pour le transfert de personnes atteintes de 
-tétraplégie (déplacement du lit vers un fauteuil par exemple) afin de r\'eduire 
-la p\'enibilit\'e de leur t\^ache. 
+ \item aide aux aidants pour le transfert de personnes (déplacement du lit vers 
+un fauteuil par exemple) afin de r\'eduire la p\'enibilit\'e de leur t\^ache. 
 (Fig.\ref{intro:fig8view2})
 \end{itemize}
 
@@ -519,19 +570,19 @@ stratégies sont envisageables au niveau des points de fixation sur la
 plate-forme :
 \begin{itemize}
  \item les points d'attaches des câbles sont tous différents, il est alors 
-possible avec $n$ câbles de contrôler $n$ degrés de liberté. Cette 
-configuration.
-sera notée $N-N$ (Fig.\ref{intro:fig9view0}).
- \item les câbles sont attachés en un même point à la plate-forme : il est 
-posible à partir de $3$ câbles de contrôler les déplacement en translation de 
-la plate-forme, mais plus son orientation ; l'utilisation de plus de $3$ câbles 
-permet alors d'augmenter la taille de l'espace de travail. On parle dans ce cas 
-de configuration N-1. 
-(Fig.\ref{intro:fig9view1}).
+possible avec $N$ câbles de contrôler $N$ degrés de liberté. Cette 
+configuration sera notée $N-N$ (Fig.\ref{intro:fig9view0}).
+ \item les câbles sont attachés en un même point à la plate-forme : c'est la 
+configuration N-1 sur laquelle nous reviendrons plus en d\'etails dans la 
+section finale de ce chapitre (Fig.\ref{intro:fig9view1}).
  \item certains câbles seulement sont attachés en un même point sur la 
-plate-forme. Dans le cas par exemple d'une disposition pour laquelle $3$ câbles 
-sont atttachés en un même point $B_0$ et un quatrième câble relié à la 
-plate-forme en un point $B_1$, cette configuration sera notée 4-3-1 
+plate-forme. Cette disposition permet souvent de découpler les modèles 
+géomé\-triques, ce qui simplifie leur résolution. Dans le cas par exemple d'une 
+disposition pour laquelle $3$ câbles sont atttachés en un même point $B_0$ et un 
+quatrième câble relié à la 
+plate-forme en un point $B_1$, notée 4-3-1, le contrôle des trois câbles $0, 1, 
+2$ permet le contrôle de la position du point ${\bf B}_0$, le dernier câble 
+permettant le contrôle d'une orientation. 
 (Fig.\ref{intro:fig9view2}).
 \end{itemize}
 
@@ -542,56 +593,31 @@ point distinct]{\label{intro:fig9view0}
   \includegraphics[width=.3\linewidth]{./chapter0/figures/cfg_44.png}} \hfill
   \subfloat[Configuration 4-1 : Les $4$ câbles sont reliés à la plate-forme un 
 un seul point]{\label{intro:fig9view1}
-  \includegraphics[width=.3\linewidth]{./chapter0/figures/cfg_41.png}}
+  \includegraphics[width=.3\linewidth]{./chapter0/figures/cfg_41.png}}  \hfill
   \subfloat[Configuration 4-3-1 : $3$ câbles sont reliés à la plate-forme en un 
 même point, le quatrième est relié en un point distinct]{\label{intro:fig9view2}
-  \includegraphics[width=.3\linewidth]{./chapter0/figures/cfg_431.png}} \hfill
+  \includegraphics[width=.3\linewidth]{./chapter0/figures/cfg_431.png}}
     \caption{\footnotesize{Exemples de configurations avec $4$ câbles}}
 \label{intro:fig9}
 \end{figure}
 
 Pour l'ensemble des expériences menées dans le cadre de ce travail, nous avons 
-utilisé la configuration $4-1$ (Fig.\ref{intro:fig10view2}) qui nous permet de 
+utilisé la configuration $4-1$ (Fig.\ref{intro:fig9view1}) qui nous permet de 
 contrôler les déplacements en translation, le quatrième c\^able ayant été 
 ajouté pour augmenter la taille l'espace de travail de manière à pouvoir se 
-déplacer dans la quasi-totalité de l'appartement-témoin. Pour un triplet de 
-c\^ables en tension, il est facile de montrer que l'\'equilibre statique est 
-satisfait si le point ${\bf B}$ \`a sa projection dans le plan des ${\bf 
-A}_i,{\bf A}_j,{\bf A}_k$ \`a l'int\'erieur du triangle constitu\'e par ces 
-trois points. La figure (Fig.\ref{intro:fig11}) montre alors l'espace de 
-travail 
-atteignable pour chaque triplet de câbles en tension : on note qu'en tout point 
-dont la projection verticale ne se trouve pas sur l'une des deux diagonales 
-définies par les points $(A_0-A_2)$ et $(A_1-A_3)$, il existe pour chaque pose 
-deux configurations possibles avec trois câbles en tension. Si la projection se 
-trouve sur une diagonale, i lexiste une configuration qui a deux c\^ables en 
-tension, \`a l'exception de l'intersection des diagonales pour laquelle nous 
-avons deux configurations avec seulement deux c\^ables avec des $\tau > 0$.
+déplacer dans la quasi-totalité de l'appartement-témoin. 
 
-\begin{figure}[!ht]
-\centering
-\def\svgwidth{.90\linewidth}
-\input{./chapter0/figures/MA_corobots.pdf_tex}
-\caption{\footnotesize{La figure au centre représente le robot {\tt 
-Marionet-Assist} ; en bas à gauche est représenté l'espace de travail 
-atteignable lorsque les câbles attachés aux points $A_0$, $A_1$, $A_3$ sont en 
-tension, en bas à droite l'espace de travail atteignable pour les câbles reliés 
-aux points $A_0$, $A_1$, $A_2$. En haut à gauche, nous avons l'espace de 
-travail 
-correspondant aux câbles $A_0$, $A_2$, $A_3$ en tension, et en haut à droite 
-l'espace de travail atteignable pour les câbles attachés aux points $A_1$, 
-$A_2$, $A_3$.}}
-\label{intro:fig11}
-\end{figure}
-
-Les câbles sont en Kevlar, ce qui nous permet de négliger leur élasticité et de 
-pouvoir les modéliser comme des jambes rigides lorsque leur tension est 
-strictement positive. Le contrôle des longueurs se fait à l'aide de tambours 
-actionnées par des moteurs rotatifs (Fig.\ref{intro:fig10view3}). Toutefois, en 
-l'absence de guide pour l'enroulement, il existe des incertitudes sur la 
-longueur déroulée ; afin de pallier à cet inconvénient, des rep\`eres en 
+Les câbles de ce robot sont en Kevlar, ce qui nous permet de négliger leur 
+élasticité et de pouvoir les modéliser comme des jambes rigides lorsque leur 
+tension est strictement positive. Le contrôle des longueurs se fait à l'aide de 
+tambours actionnées par des moteurs rotatifs (Fig.\ref{intro:fig10view3}). 
+Toutefois, en l'absence de guide pour l'enroulement et en raison de l'existence 
+possible de plusieurs couches de câble sur le tambour, la simple mesure de la 
+rotation du tambour ne permet pas de connaître avec exactitude la longueur 
+déroulée des câbles ; afin de pallier à cet inconvénient, des rep\`eres en 
 aluminium ont été disposés sur les câbles à des longueurs connues, ce qui 
-permet lors de leur détection au point ${\bf A}_i$ de réactualiser la valeur 
+permet lors de leur détection, par simple contact \'electrique, au point ${\bf 
+A}_i$ de réactualiser la valeur 
 estimée de la longueur déroulée.
 
 \begin{figure}[htp]
@@ -623,15 +649,16 @@ dans son déplacement et dans la manipulation de l'objet cible, une caméra a é
 ajoutée sur la plate-forme, de manière à utiliser des techniques 
 d'asservissement visuel.
 
-\section{Mod\`eles g\'emotriques et cin\'ematiques des robots parall\`eles \`a 
-c\^ables}
+\section{Mod\`eles g\'eom\'etriques et cin\'ematiques des robots parall\`eles 
+\`a c\^ables} \label{chap0-2}
 
 Après avoir introduit quelques notations, nous allons à présent décrire les 
 modèles géométriques direct et inverse, cinématiques ainsi que l'équilibre 
-statique des robots parallèles à câbles. Ceci nous permettra de lister les difficultés posées par ce type de manipulateur 
-et auxquelles nous avons été confrontés dans le cadre de nos recherches.
+statique des robots parallèles à câbles. Ceci nous permettra de lister 
+les difficultés posées par ce type de manipulateur et auxquelles nous avons été 
+confrontés dans le cadre de nos recherches.
 
-\subsection{Notations} \label{chap0-1-0}
+\subsection{Notations} \label{chap0-2-0}
 
 \begin{figure}[!ht]
 \centering
@@ -650,7 +677,7 @@ est fixe.
 pour sa position
  \item $\rho_i$ : longueur réelle du câble $i$
  \item $l_i$ : longueur déroulée du câble $i$
- \item $\boldmath {\mathcal F}$ : vecteur des forces exercées sur l'organe 
+ \item $\bf{\hbox{$\mathcal F$}}$ : vecteur des forces exercées sur l'organe 
 terminal
   \item $\tau_i$ : tension exerc\'ee sur l'organe terminal par le c\^able $i$
  \item $\bf J$ : jacobienne du robot (d\'efinie ult\'erieurement)
@@ -663,7 +690,7 @@ Sauf mention du contraire, {\bf nous supposerons dans la suite que les câbles
 sont non-pesants et non-élastiques}, ce qui est une hypothèse adéquate pour le 
 robot que nous avons utilisé. Dans ce cas, nous avons $\rho_i = l_i$.
 
-\subsection{Modèle géométrique inverse} \label{chap0-1-1}
+\subsection{Modèle géométrique inverse} \label{chap0-2-1}
 
 Le modèle géométrique inverse consiste à déterminer les coordonnées 
 articulaires à partir des coordonnées opérationnelles. Dans le cas des robots 
@@ -709,20 +736,20 @@ dans l'approche développée par \cite{2010:Carricato.Merlet}, nous parlerons do
 de modèle géométrico-statique inverse, requérant l'étude de l'équilibre 
 statique.
 
-\subsection{Equilibre statique} \label{chap0-1-2}
+\subsection{Equilibre statique} \label{chap0-2-2}
 
 On dit d'un solide au repos qu'il est en équilibre statique lorsque l'ensemble 
 des forces $\mathcal {\bf F}_{\hbox{ext}_i}$ qui s'exercent sur lui 
 s'annulent, ce qui se traduit par la relation suivante :
 \begin{equation}
-\sum_i \boldmath {\mathcal F}_{\hbox{ext}_i} = {\bf 0}
+\sum_i \bf{\hbox{$\mathcal F$}}_{\hbox{ext}_i} = {\bf 0}
 \label{intro:eq2}
 \end{equation}
 
 Sous l'hypothèse que les forces mécaniques de frottement et de résistance 
 peuvent être ici négligées, nous considérons que les forces appliqu\'ees sur la 
 plate-forme sont la gravit\'e et les efforts exercés par chacun des câbles au 
-points ${\bf B}_i$.
+point ${\bf B}_i$.
 
 La direction dans laquelle un câble de longueur $\rho_i$ relié à la base au 
 point ${\bf A}_i$ et à la plate-forme au point ${\bf B}_i$ exerce une force sur 
@@ -733,12 +760,15 @@ B}_i}{\rho_i}$. Soit le vecteur ${\bf W}_i$
 \label{intro:eq3}
 \end{equation}
 avec $p_i$ un vecteur allant d'un premier point de référence arbitraire 
-$C$ localisé sur la plate-forme au point ${\bf B}_i$. La force exercée par le 
-câble sur la plate-forme est représentée par le torseur $ \tau_i {\bf W}_i$ , où $\tau_i$ est un 
-scalaire positif représentant l'intensité de la tension.
+$C$ localisé sur la plate-forme au point ${\bf B}_i$. L'action m\'ecanique 
+exercée par le câble sur la plate-forme est représentée par le torseur $ \tau_i 
+{\bf W}_i$ , où $\tau_i$ est un scalaire positif représentant l'intensité de la 
+tension.
 
 Soit ${\bf W}_g$ le vecteur indiquant la direction dans laquelle la gravité est 
-exercée dans le référentiel choisi, pour $n$ câbles. Le torseur des efforts dus à la gravité est alors donné par $\hbox{mg} {\bf W}_g$, et nous pouvons réécrire (Eq.\ref{intro:eq2}) de la manière suivante :
+exercée dans le référentiel choisi, pour $n$ câbles. Le torseur des efforts dus 
+à la gravité, d'intensit\'e $g$, est alors donné par $\hbox{mg} {\bf W}_g$, et 
+nous pouvons réécrire (\ref{intro:eq2}) de la manière suivante :
 \begin{equation}
 \begin{bmatrix}
  {\bf W}_1 & {\bf W}_2 & \dots & {\bf W}_n & {\bf W}_g
@@ -752,8 +782,8 @@ exercée dans le référentiel choisi, pour $n$ câbles. Le torseur des efforts 
 
 En posant ${\bf \tau} = (\tau_1, \tau_2, \dots, \tau_n)^T$, ${\bf W}$ la 
 matrice $6 \times n$ dont les colonnes sont les $n$ vecteurs ${\bf W}_i$, et 
-en isolant $\mathcal {\bf F} = \hbox{mg} {\bf W}_g$, la relation (Eq.\ref{intro:eq4}) s'écrit 
-également :
+en isolant $\mathcal {\bf F} = \hbox{mg} {\bf W}_g$, la relation 
+(\ref{intro:eq4}) s'écrit également :
 \begin{equation}
 \mathcal {\bf F} + {\bf W} \tau = {\bf 0}
 \label{intro:eq5a}
@@ -768,7 +798,7 @@ où ${\bf J}^{-1} = - {\bf W}^T$ est une matrice que l'on appelle {\it
 jacobienne cin\'ematique inverse}.
 
 \subsection{Modèle géométrico-statique inverse ({\it MGSI})} 
-\label{chap0-1-3}
+\label{chap0-2-3}
 
 Connaissant les paramètres de pose de la plate-forme, on veut en déduire les 
 longueurs $\rho_i$ des câbles : c'est le modèle géométrique inverse. 
@@ -779,8 +809,8 @@ $\tau_i$ sont tous positifs, alors le MGI a une solution unique.
 Si $m > 6$, l'\'equilibre statique possède en théorie une infinité de solutions 
 (nous ne devons toutefois consid\'erer que les ensembles de solutions pour 
 lesquelles les $\tau_i$ sont tous strictement positifs). Toutefois, 
-l'applicabilit\'e de ces solutions revient \`a supposer un contr\^ole parfaitd 
-es $\rho_i$ : si la longueur $\rho_i$ r\'eelle est inf\'erieure \`a la valeur 
+l'applicabilit\'e de ces solutions revient \`a supposer un contr\^ole parfait 
+des $\rho_i$ : si la longueur $\rho_i$ r\'eelle est inf\'erieure \`a la valeur 
 calcul\'ee et que la tension dans ce c\^able est non-nulle, alors la 
 plate-forme ne sera pas dans la pose souhait\'ee. A l'inverse, si la 
 longueur r\'eelle $\rho_i$ est sup\'erieure \`a la valeur calcul\'ee, alors la 
@@ -803,7 +833,7 @@ mais correspondant à un mode dégradé du système.
 \end{itemize}
 
 
-\subsection{Modèle géométrico-statique direct}\label{chap0-1-4}
+\subsection{Modèle géométrico-statique direct}\label{chap0-2-4}
 
 Résoudre le modèle géométrique direct consiste à calculer les coordonnées 
 opéra\-tionnelles à partir de la donnée des coordonnées articulaires 
@@ -857,7 +887,7 @@ ce travail montrera qu'il est toutefois possible d'élaborer une stratégie
 prenant ce problème en compte pour améliorer le contrôle et la stabilité du 
 système pour la grande majorité des situations.
 
-\subsection{Modèle cinématique}\label{chap0-1-5}
+\subsection{Modèle cinématique}\label{chap0-2-5}
 
 Le modèle cinématique consiste à établir une relation entre les 
 vitesses articulaires ${\bf \dot \Theta}$ et la vitesse (translation et 
@@ -923,16 +953,19 @@ relation suivante :
 \end{equation}
 
 Toutefois, le vecteur $\dot {\bf X}$ ainsi d\'etermin\'e ne correspond pas \`a 
-$\bf \Omega$, car il n'existe pas de paramétrisation de l'orientation de la plate-forme telle que les dérivées en temps des paramètres puissent constituer la vitesse angulaire. Nous définissons dès lors le vecteur :
+$\bf \Omega$, car il n'existe pas de paramétrisation de l'orientation de la 
+plate-forme telle que les dérivées en temps des paramètres puissent constituer 
+la vitesse angulaire. Nous définissons dès lors le vecteur :
 \begin{equation}
 \bomega_C = \left ( \begin{matrix}
                 \dot \psi \\
                 \dot \theta \\
                 \dot \phi       
                \end{matrix} \right )
-\label{intro:eq11d}
+\label{intro:eq11c}
 \end{equation}
-correspondant à une paramétrisation de l'orientation par les angles d'Euler $(\psi, \theta, \phi)$.
+correspondant à une paramétrisation de l'orientation par les angles d'Euler 
+$(\psi, \theta, \phi)$.
 
 Dès lors, nous pouvons définir le torseur cinématique suivant :
 \begin{equation}
@@ -945,30 +978,45 @@ Dès lors, nous pouvons définir le torseur cinématique suivant :
 avec ${\bf V}_C$ dénotant la vélocité de la plate-forme au point $\bf C$.
 
 La matrice ${\bf J}^{-1}$ ainsi construite est alors appelée {\it Jacobienne 
-inverse param\'etr\'e} par les angles d'Euler. On notera qu'elle dépend des paramètres de pose alors que seules les coordonnées articulaires sont mesurées. Il est donc nécessaire pour l'obtenir de résoudre le {\it MGD}.
+inverse para\-m\'etr\'ee} par les angles d'Euler. On notera qu'elle dépend des 
+paramètres de pose alors que seules les coordonnées articulaires sont mesurées. 
+Il est donc nécessaire pour l'obtenir de résoudre le {\it MGD}.
 
-\section{Les robots N-1} \label{chap0-2}
+\section{Les robots N-1} \label{chap0-3}
 
 On parle de configuration N-1 pour un robot parall\`ele \`a $N$ c\^ables en 
 configuration suspendue lorsque l'ensemble des c\^ables sont reli\'es \`a la 
-plate-forme en un m\^eme point ${\bf B}$. L'ensemble des points ${\bf B}_i$ étant confondus, le contr\^ole 
-en orientation n'est alors plus possible : c'est donc une architecture de robot à 3 degrés de liberté d\'edi\'ee aux 
+plate-forme en un m\^eme point ${\bf B}$. L'ensemble des points ${\bf B}_i$ 
+étant confondus, le contr\^ole en orientation n'est alors plus possible : c'est 
+donc une architecture de robot à 3 degrés de liberté d\'edi\'ee aux 
 d\'eplacements en translation. Entre autres avantages, nous n'avons plus \`a 
 nous pr\'eoccuper des interf\'erences entre c\^ables.
 
-Une caractéristique importante de cette configuration particulière est que, lorsque $N > 3$, seuls trois c\^ables au plus seront en tension positive et 
-permettront de contr\^oler les d\'eplacements de la plate-forme \cite{merlet2012} (le cas 4-1 sera expliqu\'e plus en d\'etails \`a l'occasion du chapitre consacr\'e aux configurations de c\^ables). Il est facile dans cette configuration de calculer l'espace de travail du robot pour un triplet de câbles en tensions strictement positives. L'ajout dès lors de câbles supplémentaires permet sous certaines conditions d'augmenter le volume de l'espace de travail.
+Une caractéristique importante de cette configuration particulière est 
+que, lorsque $N > 3$, seuls trois c\^ables au plus seront en tension positive 
+et permettront de contr\^oler les d\'eplacements de la plate-forme 
+\cite{merlet2012} (le cas 4-1 sera expliqu\'e plus en d\'etails \`a l'occasion 
+du chapitre consacr\'e aux configurations de c\^ables). Il est facile dans 
+cette configuration de calculer l'espace de travail du robot pour un triplet de 
+câbles en tensions strictement positives. L'ajout dès lors de câbles 
+supplémentaires permet sous certaines conditions d'augmenter le volume de 
+l'espace de travail.
 
-Avec cette propriété, nous voyons qu'avoir plus de trois câbles permettra éventuellement de disposer de différents jeux de trois câbles en tension pour une pose donnée. Ces jeux de trois câbles présentant chacun des performances différentes (répartition des tensions dans les câbles, précision du positionnement, $\dots$), nous voyons ici une possibilité d'amélioration des performances qui fera l'objet du chapitre \ref{chap03}.
+Avec cette propriété, nous voyons qu'avoir plus de trois câbles permettra 
+éventuellement de disposer de différents jeux de trois câbles en tension pour 
+une pose donnée. Ces jeux de trois câbles présentant chacun des performances 
+différentes (répartition des tensions dans les câbles, précision du 
+positionnement, $\dots$), nous voyons ici une possibilité d'amélioration des 
+performances qui fera l'objet du chapitre \ref{chap03}.
 
-\subsection{Mod\`eles g\'eom\'etriques et cin\'ematiques}
+\subsection{Mod\`eles g\'eom\'etriques et cin\'ematiques} \label{chap0-3-0}
 
 {\bf MGSD :}\\
 
 \begin{figure}[!ht]
   \centering
-    \def\svgwidth{.85\linewidth}
-      \input{./chapter0/figures/MGDN1.pdf_tex}
+    \def\svgwidth{.95\linewidth}
+      \input{./chapter0/figures/spheres.pdf_tex}
     \caption{\footnotesize{Repr\'esentation des points d'intersection des 
 trois sph\`eres de centre ${\bf A}_i$ (resp. ${\bf A}_j$, ${\bf A}_k$) et de 
 rayon $\rho_i$ (resp. $\rho_j$, $\rho_k$). Dans ce cas pr\'ecis, la solution la 
@@ -984,11 +1032,21 @@ Soient $N$ c\^ables dont nous connaissons les longueurs $\rho_0, \cdots,
 commen\c cons par r\'esoudre le mod\`ele g\'eom\'etrique pour chaque 
 triplet de c\^ables. Ne contr\^olant pas les rotations, les param\`etres de 
 pose sont uniquementles coordonn\'ees dans l'espace. D\`es lors, nous avons $3$ 
-inconnues, et $3$ \'equations qui indiquent que le point $\bf C$ est à l'intersection de trois sph\`eres de centre ${\bf A}_i$ 
-et de rayon $\rho_i$ \ref{intro:fig6b}. Ce problème est trivial : le système admet deux solutions symétriques par rappor au plan passant par les trois points ${\bf A}_i$. La solution au-dessus de ce plan imposerait des tensions strictement négatives, donc seule la solution se trouvant en-dessous du plan est valide. Si cette pose se trouve bien dans l'espace de travail, nous avons alors $\btau > 0$.
+inconnues, et $3$ \'equations qui indiquent que le point $\bf C$ est 
+à l'intersection de trois sph\`eres de centre ${\bf A}_i$ et de rayon $\rho_i$ 
+\ref{intro:fig6b}. Ce problème est trivial : le système admet deux solutions 
+symétriques par rappor au plan passant par les trois points ${\bf A}_i$. La 
+solution au-dessus de ce plan imposerait des tensions strictement négatives, 
+donc seule la solution se trouvant en-dessous du plan est valide. Si cette pose 
+se trouve bien dans l'espace de travail, nous avons alors $\btau > 0$.
 
 Il faut cependant v\'erifier que nous n'ayons pas une pose valide avec moins de 
-$3$ c\^ables en tension. Dans le cas où deux câbles seulement sont en tension, le point $\bf C$ soit se trouver dans le plan vertical contenant les deux points ${\bf A}_i$. On se ramène donc à un problème plan trivial. Enfin, lorsque un seul câble est en tension strictement positive, le point ${\bf C}$ se trouve sur la droite verticale prolongeant le point ${\bf A}_i$, ce qui ne pose aucun problème de résolution.
+$3$ c\^ables en tension. Dans le cas où deux câbles seulement sont en tension, 
+le point $\bf C$ soit se trouver dans le plan vertical contenant les deux 
+points ${\bf A}_i$. On se ramène donc à un problème plan trivial. Enfin, lorsque 
+un seul câble est en tension strictement positive, le point ${\bf C}$ se trouve 
+sur la droite verticale prolongeant le point ${\bf A}_i$, ce qui ne pose aucun 
+problème de résolution.\\
 
 {\bf MGSI :}\\
 
@@ -1031,7 +1089,6 @@ matrice Jaco\-bienne inverse :
 \end{bmatrix}
 \label{intro:eq11a4}
 \end{equation}
-
 
 
 

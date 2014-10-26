@@ -16,11 +16,11 @@ nous pourrons dans une seconde section distinguer plusieurs configurations et
 exposer différentes stratégies d'asservissement pouvant être utilisées. Une 
 troisi\`eme section sera consacr\'ee \`a la construction des lois de 
 commandes, dont nous fournirons quelques exemples. La quatri\`eme section de ce 
-chapitre pr\`esentera les sp\'ecificit\'es d'une utilisation de 
-l'asservissement visuel dans le contexte des maipulateurs parall\`eles \`a 
+chapitre pr\'esentera les sp\'ecificit\'es d'une utilisation de 
+l'asservissement visuel dans le contexte des manipulateurs parall\`eles \`a 
 c\^ables : apr\`es avoir pr\'esent\'e les principaux travaux ayant \'et\'e 
 effectu\'es dans ce domaine, nous pourrons indiquer les angles d'\'etudes que 
-nous avons privil\'egi\'es, les probl\'ematiques aui en \'emergent, et les 
+nous avons privil\'egi\'es, les probl\'ematiques qui en \'emergent, et les 
 pistes de r\'esolution que nous avons emprunt\'ees.
  
 \section{Modèles de capteurs et projections} \label{chap1-0}
@@ -29,7 +29,8 @@ pistes de r\'esolution que nous avons emprunt\'ees.
  
 Sans pour autant chercher à imiter la vision humaine, la vision artificielle 
 s'en inspire néanmoins fortement pour ce qui concerne l'acquisition d'une 
-image. Ainsi, pour une caméra, le diaphragme joue le rôle de l'iris et de la 
+image (Fig.\ref{chap01:fig01}). Ainsi, pour une caméra, le diaphragme joue le 
+rôle de l'iris et de la 
 pupille et détermine la quantité de lumière qui pourra être enregistrée sur un 
 intervalle de temps donné. Par la suite, la lentille joue un rôle équivalent à 
 la cornée et au cristallin, en faisant converger les rayons lumineux vers la 
@@ -74,7 +75,7 @@ Une premi\`ere option serait de tenter de reconstruire la sc\`ene le plus
 fid\`element possible. On pourra dans ce cas privil\'egier l'utilisation de 
 cam\'eras st\'er\'eos (Fig.\ref{chap01:fig02view0})\cite{brandou2006}, ou 
 encore de capteurs RGB-D (Fig.\ref{chap01:fig02view1})\cite{siradjuddin2012}. A 
-l'aide de cam'eras st\'er\'eos, nous pouvons percevoir la sc\`ene selon 
+l'aide de cam\'eras st\'er\'eos, nous pouvons percevoir la sc\`ene selon 
 plusieurs perspectives, tout comme avec la vision binoculaire. En croisant les 
 donn\'ees obtenues \`a partir des diff\'erents points de vue, il est possible 
 d'approcher une repr\'esentation tri-dimensionnelle de la sc\`ene acquise au 
@@ -95,11 +96,11 @@ dont on a besoin.
   \centering
       \subfloat[Jean-Luc Godard exp\'erimentant avec la st\'er\'eographie pour 
 tourner {\it Adieu au langage 3D}]{\label{chap01:fig02view0}
-    \includegraphics[width=.54\linewidth]{./chapter01/figures/stereo_godard.jpg}} 
+\includegraphics[width=.53\linewidth]{./chapter01/figures/stereo_godard.jpg}} 
 \hfill
     \subfloat[La Kinect de @Microsoft qui a permis la d\'emocratisation de 
 l'utilisation des capteurs RGB-D]{\label{chap01:fig02view1}
-    \includegraphics[width=.44\linewidth]{./chapter01/figures/kinect.png}}
+    \includegraphics[width=.43\linewidth]{./chapter01/figures/kinect.png}}
     \caption{\footnotesize{Exemples de cam\'eras st\'er\'eo et de capteurs RGB-D.}}
 \label{chap01:fig02}
 \end{figure}
@@ -109,11 +110,9 @@ g\'eom\'etriques d'ob\-jets dans le plan image g\'en\'er\'ees par une
 modification soit d'une partie de la sc\`ene (objet en mouvement), soit de la 
 pose de la cam\'era elle-m\^eme, voire des deux simultan\'ement. Ceci permet 
 entre autres de s'abstraire en partie au moins de la repr\'esentation 
-tridimensionnelle de la sc\`ene projet\'ee sur l'image, en utilisant par exemple 
-la g\'eom\'etrie pl\"uckerienne \cite{andreff:inria-00072393}, des descripteurs 
-locaux ou globaux \cite{latuan2010}, ou encore des repr\'esentations 
-fr\'equentielles (Fourier \cite{chari2008}, ondelettes \cite{ramosvelasco2012}). 
-Le lecteur pourra retrouver les principales techniques dans \cite{marchand2005}.
+tridimensionnelle de la sc\`ene projet\'ee sur l'image, en utilisant des 
+descriptions alternatives (domaine fr\'equentiel, g\'eom\'etries alg\'ebriques, 
+points d'int'er\^ets, descripteurs s\'emantiques, $cdots$).
 
 Le choix d'un type de capteur n'est donc pas anodin, il d\'epend de 
 param\`etres aussi divers que la quantit\'e et la densit\'e des informations, 
@@ -239,11 +238,10 @@ X \\ Y \\ Z
 \end{equation}
 avec $\alpha_x = f/l_x$ et $\alpha_y = f/l_y$. Les paramètres $(\alpha_x, 
 \alpha_y, x_c, y_c)$ de la matrice ${\bf K} = {\bf A}{\bf B}$ ainsi construite 
-sont généralement obtenus par calibration \cite{brown71}, \cite{tsai1986}, 
-\cite{stein1997}. La matrice ${\bf K}$ nous permet de faire le lien entre les 
-informations géométriques disponibles dans l'image et la projection de la scène 
-observée. En particulier, nous pouvons à présent définir les 
-coordonnées normalisées ainsi :
+sont généralement obtenus par calibration \cite{brown71}, \cite{tsai1986}. La 
+matrice ${\bf K}$ nous permet de faire le lien entre les informations 
+géométriques disponibles dans l'image et la projection de la scène observée. En 
+particulier, nous pouvons à présent définir les coordonnées normalisées ainsi :
 \begin{equation}
 \left \lbrace
 \begin{matrix}
@@ -253,7 +251,7 @@ y = Y/Z
 \label{chap01:eq06}
 \end{equation}
 indépendantes de la focale, et pouvant être déduites des coordonnées 
-pixelliques en utilisant la matrice $\bf K$.
+pixelliques en utilisant la matrice ${\bf K}^{-1}$.
 
 Enfin, les coordonn\'ees 3D du point \'etant exprim\'ees dans le rep\`ere 
 cam\'era, nous voulons pouvoir les traduire dans le r\'ef\'erentiel propre de 
@@ -341,16 +339,16 @@ modalit\'es m\'ethodologiques (espace de r\'egulation).
 Lorsque la cam\'era est plac\'ee en dehors de la partie mobile du manipulateur, 
 on parlera de configuration déportée (Fig.\ref{chap01:fig04view0}). Une cam\'era 
 d\'eport\'ee peut \^etre fixe ou mobile, et permet g\'en\'eralement 
-d'\'appr\'ehender une sc\`ene d'une mani\`ere globale : elle comporte dans son 
+d'appr\'ehender une sc\`ene d'une mani\`ere globale : elle comporte dans son 
 plan image une repr\'esentation de l'organe terminal du robot, et le cas 
-\'ech\'eant d'un objet d'int\'er\^et, qu ipeut tout autant \^etre l'organe 
-terminal, que l'une des articulations ou encore un objet cible que l'on suite 
-manipuler. L'utilisation d'une cam\'era d\'eport\'ee se justifie en particulier 
-lorsque l'on souhaite estimer la pose de l'organe terminal par rapport \`a un 
-r\'ef\'erentiel fixe. Toutefois, l'utilisation d'une cam\'era d\'eport\'ee -- 
-particuli\`erement si elle est fixe -- suppose une sc\`ene relativement 
-d\'egag\'ee et un espace de travail compatible avec son champs de vision et sa 
-r\'esolution. Il est toujours possible cependant de multiplier les 
+\'ech\'eant d'un objet d'int\'er\^et, qui peut tout autant \^etre l'organe 
+terminal, que l'une des articulations ou encore un objet cible que l'on 
+souhaite manipuler. L'utilisation d'une cam\'era d\'eport\'ee se justifie en 
+particulier lorsque l'on souhaite estimer la pose de l'organe terminal par 
+rapport \`a un r\'ef\'erentiel fixe. Toutefois, l'utilisation d'une cam\'era 
+d\'eport\'ee -- particuli\`erement si elle est fixe -- suppose une sc\`ene 
+relativement d\'egag\'ee et un espace de travail compatible avec son champs de 
+vision et sa r\'esolution. Il est toujours possible cependant de multiplier les 
 dispositifs.
 
 Dans le cas contraire o\`u la cam\'era se trouverait li\'ee \`a l'organe 
@@ -377,34 +375,35 @@ l'objet-cible]{\label{chap01:fig04view1}
 \end{figure}
 
 L'utilisation d'une cam\'era embarqu\'ee est particuli\`erement adapt\'ee aux 
-t\^aches de suivi et de manipulation d'objets. On la pr\'ef\`era par exemple 
+t\^aches de suivi et de manipulation d'objets. On la pr\'ef\`erera par exemple 
 dans le cadre de la robotique mobile, ou encore lorsque l'espace de travail d'un 
 syst\`eme robotique ne permet pas l'utilisation de cam\'eras d\'eport\'ees, soit 
-en raison de sa nature (robotique mobile a\`erienne, robotique sous-marine par 
-exemple), soit de sa taille (robots parall\'eles \`a c\^ables de grande 
+en raison de sa nature (robotique mobile a\'erienne, robotique sous-marine par 
+exemple), soit de sa taille (robots parall\`eles \`a c\^ables de grande 
 envergure).
 
 
 \subsection{Asservissements en position, basés images et hybrides} 
 \label{chap1-1-1}
 
-L'asservissement visuel consiste \`a exploiter les informations visuelles 
-situ\'ees dans une image, puis d'en d\'eduire des mesures ${\bf s}$ dont on 
+L'asservissement visuel consiste \`a exploiter les mesures situ\'ees dans une 
+image, puis d'en d\'eduire des informations visuelles ${\bf s}$ dont on 
 souhaitent qu'elles convergent vers un ensemble de valeurs ${\bf s}^*$ 
-correspondant \`a un r\'esultat pr\'edetermin\'e. L'\'ecart entre les valeurs 
+correspondant \`a un r\'esultat pr\'e-determin\'e. L'\'ecart entre les valeurs 
 mesur\'ees et l'objectif constitue l'erreur ${\bf e}$ de consigne. Cette erreur 
 de consigne est alors utilis\'ee pour construire une commande de d\'eplacement 
 pour le robot (Fig.\ref{chap01:fig05}). On parle de {\it boucle ouverte} lorsque 
-une seule it\'eration est effectu\'ee et suffit \`a produire une consigne 
+une seule it\'eration est effectu\'ee et suffit \`a produire une commande 
 convergeant vers le r\'esultat escompt\'e. On utilise cependant 
-g\'en\'eralement un sch\'ema en boucle ferm\'ee consistant \`a mesurer dans 
-chaque nouvelle image acquise une correction de la commande. Un sch\'ema en 
-boucle ferm\'e permet de prendre en compte les diff\'erentes incertitudes 
-li\'ees \`a la r\'ealit\'e d'un d\'eplacement du robot par rapport \`a son 
-mouvement th\'eorique, et permet entre autres une robustesse aux erreurs de 
-mesures dans l'image, qui peuvent provenir par exemple de la r\'esolution 
-limit\'ee du capteur, ou encore de la pr\'esence d'artefacts (ombres, 
-occlusions, $\cdots$).
+g\'en\'eralement un sch\'ema en boucle ferm\'ee consistant \`a déduire 
+des mesures effectu\'ees au sein de chaque nouvelle image acquise une 
+nouvelle commande, ce qui permettra d'affiner, voire de corriger, les 
+trajectoires r\'ealis\'ees par le robot. Un sch\'ema en boucle ferm\'e permet 
+ainsi de prendre en compte les diff\'erentes incertitudes li\'ees \`a la 
+r\'ealit\'e d'un d\'eplacement du robot par rapport \`a son mouvement 
+th\'eorique, et surtout une robustesse aux erreurs de 
+mod\`eles : calibration de la cam\'era, estimation de la profondeur, 
+incertitude sur la g\'eom\'etrie de l'objet observ\'e.
 
 \begin{figure}[htp]
   \centering
@@ -414,11 +413,8 @@ occlusions, $\cdots$).
 \label{chap01:fig05}
 \end{figure}
 
-Les informations visuelles \`a partir desquelles sera construite la consigne 
-(d\'eplacement exprim\'e dans l'espace op\'erationnel)-- dont on d\'eduira une 
-{\it loi de commande} (d\'eplacement exprim\'e dans l'espace articulaire)-- sont 
-appel\'ees {\it pri\-mitives}. Selon la nature des primitives, on distingue 
-plusieurs types d'asservis\-sement visuels.\\
+Selon la nature des informations visuelles exploit\'ees, on distingue plusieurs 
+types d'asservissement visuel.\\
 
 \noindent {\bf Asservissement 3D :}\\
 
@@ -430,7 +426,8 @@ soit par un d\'eplacement de l'objet. Dans ce cas, ${\bf s}$ correspondra aux
 param\`etres de pose de la cam\'era. On d\'efinit $\mathcal R_c$ et $\mathcal 
 R_{c^*}$ comme \'etant respectivement les r\'ef\'erentiels courant et d\'esir\'e 
 de la cam\'era, et $\mathcal R_o$ le r\'ef\'erentiel objet. Les 
-deux strat\'egies suivantes peuvent par exemple \^etre utilis\'ees :
+deux strat\'egies suivantes peuvent par exemple \^etre utilis\'ees 
+\cite{samson1991} :
 \begin{itemize}
  \item si ${}^c{\bf t}_o$ et ${}^{c^*}{\bf t}_o$ sont les coordonn\'ees de 
 l'objet exprim\'ees respectivement dans le r\'ef\'erentiel courant de la 
@@ -448,9 +445,9 @@ r\'ef\'erentiel d\'esir\'e, alors on a :
 \label{chap01:eq11}
 \end{equation}
 $\theta {\bf u}$ param\'etrisant la matrice de rotation ${}^{c^o}{\bf R}_c$. La 
-consigne g\'en\'er\'ee \`a partir de cette repr\'esentation de l'erreur (dont on 
-peut trouver le d\'etail dans \cite{chaumette:tuto01}) correspondont \`a une 
-trajectoire en ligne droite dans l'image, mais pas pour la cam\'era.
+commande g\'en\'er\'ee \`a partir de cette repr\'esentation de 
+l'erreur correspondont \`a une trajectoire en ligne droite dans l'image, mais 
+pas pour la cam\'era.
 \item au contraire, si on utilise :
 \begin{equation}
  \left \lbrace
@@ -462,10 +459,11 @@ trajectoire en ligne droite dans l'image, mais pas pour la cam\'era.
   \right .
 \label{chap01:eq12}
 \end{equation}
-${}^{c^*}{\bf t}_c$ correspondant ici aux coordonn\'ees du rep\`ere cam\'era 
-courant par rapport au rep\`ere cam\'era d\'esir\'e, alors nous obtenons en 
-th\'eorie une trajectoire en ligne droite pour le d\'eplacement de la cam\'era, 
-mais ça ne sera plus le cas pour la trajectoire r\'ealis\'ee dans l'image. 
+${}^{c^*}{\bf t}_c$ correspondant ici aux coordonn\'ees de l'origine du 
+rep\`ere cam\'era courant par rapport au rep\`ere cam\'era d\'esir\'e, alors 
+nous obtenons en th\'eorie une trajectoire en ligne droite pour le d\'eplacement 
+de la cam\'era, mais ça ne sera plus le cas pour la trajectoire r\'ealis\'ee 
+dans l'image.
 \end{itemize}
 
 Ainsi, dans le premier cas, on prend le risque de g\'en\'erer une trajectoire 
@@ -481,29 +479,30 @@ des strat\'egies algorithmiques mises en place.\\
 Au contraire de l'asservissement 3D, l'asservissement 2D que l'on retrouve 
 \'egalement sous l'acronyme {\it IBVS} (pour {\it Image-based visual servoing}, 
 l'asser\-vissement 3D relevant du {\it Position-based visual servoing}) 
-exploite directement les primitives extraites des informations visuelles sans 
+exploite directement les informations visuelles extraites des primitives sans 
 passer ni par un mod\`ele de la sc\`ene ou de l'objet, ni par une reconstruction 
-quelconque. Lorsque la cam\'era se d\'eplace, cela implique variations des 
-propri\'et\'es mesurables dans l'image. Si l'on est en capacit\'e d\'etablir 
-une relation entre les variations des propri\'et\'es dans l'image et les 
-mouvements du capteur, alors il est possible d'obtenir un contr\^oleur qui ne 
-repose que sur la r\'egulation des valeurs des primitives. A titre d'exemple, 
-sur lequel nous reviendrons dans le prochain chapitre, la mesure de l'aire 
-d'une surface et la d\'etermination de son centre de gravit\'e suffisent \`a 
-contr\^oler la position d'un manipulateur.
+quelconque. Lorsque la cam\'era se d\'eplace, cela implique des variations des 
+informations visuelles mesurables dans l'image. Si l'on est en capacit\'e 
+d'\'etablir une relation entre les variations des informations visuelles et 
+les mouvements du capteur, alors il est possible d'obtenir un contr\^oleur qui 
+ne repose que sur la r\'egulation des valeurs des primitives. A titre 
+d'exemple, sur lequel nous reviendrons dans le prochain chapitre, la mesure de 
+l'aire d'une surface et la d\'etermination de son centre de gravit\'e suffisent 
+\`a contr\^oler la position d'un manipulateur.
 
 Si un asservissement 2D pr\'esente le clair avantage de proposer une consigne 
 d\'etermin\'ee uniquement \`a partir de l'espace du capteur, la construction 
-m\^eme de la consigne d\'epend souvent d'estimations suppl\'ementaires telles 
+m\^eme de la commande d\'epend souvent d'estimations suppl\'ementaires telles 
 que la profondeur en chaque point. La qualit\'e de l'estimation affectera d\`es 
-lors celle de la consigne. Une solution sera par exemple de recourir \`a 
+lors celle de la commande. Une solution sera par exemple de recourir \`a 
 des capteurs suppl\'ementaires pour obtenir ces estimations. 
 
 De mani\`ere g\'en\'erale, le choix d'une primitive visuelle pourra \^etre 
-d\'etermin\'e \` partir de quatre crit\`eres :
+d\'etermin\'e \`a partir de quatre crit\`eres :
 \begin{itemize}
  \item sa disponibilit\'e dans l'image, sa facilit\'e d'extraction et sa 
-robustesse aux variations de l'environnement (luminosit\'e, occlusion, $\cdots$)
+robustesse aux variations de l'environnement (luminosit\'e, occultation, 
+$\cdots$)
   \item son d\'ecouplage par rapport aux degr\'es de libert\'e contr\^ol\'es : 
 on souhaite en effet qu'une primitive puisse avoir une r\'eponse forte \`a la 
 variation d'un des degr\'es de libert\'e, mais faible aux variations des autres.
@@ -827,7 +826,7 @@ Afin de contr\^oler $6$ degr\'es de libert\'e, $3$ points au minimum sont
 n\'ecessaires, mais la matrice pourra alors en certaines poses se r\'ev\'eler 
 singuli\`ere \cite{michel1993}. Il existe de plus plusieurs minima locaux 
 conduisant \`a ${\bf e} = 0$. Pour ces deux raisons, on utilisera $4$ points au 
-moins pour contr\^oler le manipulateur.\\
+moins pour contr\^oler le manipulateur.
 
 De plus, la matrice \'etant exprim\'ee dans les coordonn\'ees 
 g\'en\'eralis\'ees, elle d\'epend des param\`etres de la cam\'era. Elle 
