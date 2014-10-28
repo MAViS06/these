@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{kumar2011}
+{\em {Kinematics and Statics of Cooperative Multi-Robot Aerial Manipulation
+  with Cables}}, San Diego, CA, 2009.
+
+\bibitem{carricato2014cables5}
+Ghasem Abbasnejad and Marco Carricato.
+\newblock Direct geometrico-static problem of underconstrained cable-driven
+  parallel robots with five cables.
+\newblock In Federico Thomas and Alba Perez~Gracia, editors, {\em Computational
+  Kinematics}, volume~15 of {\em Mechanisms and Machine Science}, pages 59--66.
+  Springer Netherlands, 2014.
+
 \bibitem{1992:Albus.Bostelman.ea}
 J.~Albus, R.~Bostelman, and N.~Dagalakis.
 \newblock The {NIST SPIDER}, a robot crane.
@@ -63,10 +75,25 @@ M.~Carricato and J-P. Merlet.
   robot.
 \newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
 
+\bibitem{2011:Carricato.Merlet}
+M.~Carricato and J-P. Merlet.
+\newblock Direct geometrico-static problem of under-constrained cable-driven
+  parallel robots with three cables.
+\newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
+  3011--3017, Shangai, 9-13 may 2011.
+
 \bibitem{carricato_merlet2013}
 M.~Carricato and J.P. Merlet.
 \newblock Stability analysis of underconstrained cable-driven parallel robots.
 \newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
+
+\bibitem{carricato2013cables4}
+Marco Carricato and Ghasem Abbasnejad.
+\newblock Direct geometrico-static analysis of under-constrained cable-driven
+  parallel robots with 4 cables.
+\newblock In Tobias Bruckmann and Andreas Pott, editors, {\em Cable-Driven
+  Parallel Robots}, volume~12 of {\em Mechanisms and Machine Science}, pages
+  269--285. Springer Berlin Heidelberg, 2013.
 
 \bibitem{1988:Clavel}
 R.~Clavel.
@@ -89,6 +116,12 @@ J.-D. Deschenes, P.~Lambert, S.~Perreault, N.~Martel-Brisson, N.~Zoso,
 \newblock In {\em 3-D Digital Imaging and Modeling, 2007. 3DIM '07. Sixth
   International Conference on}, pages 367--374, Aug 2007.
 
+\bibitem{agrawal2005}
+A.~Fattah and S.K. Agrawal.
+\newblock On the design of cable-suspended planar parallel robots.
+\newblock {\em ASME J. of Mechanical Design}, 127(5):1021--1028, september
+  2005.
+
 \bibitem{journals/gosselin1989}
 C.~Gosselin and J.~Angeles.
 \newblock The optimum kinematic design of a spherical three-degree-of-freedom
@@ -102,12 +135,11 @@ V.E. Gough.
   stability, control and tyre performance, 1956-1957.
 \newblock Proc. Auto Div. Inst. Mech. Eng.
 
-\bibitem{hiller2005}
-Manfred Hiller, Shiqing Fang, Sonja Mielczarek, Richard Verhoeven, and Daniel
-  Franitza.
-\newblock Design, analysis and realization of tendon-based parallel
-  manipulators.
-\newblock {\em Mechanism and Machine Theory}, 40(4):429 -- 445, 2005.
+\bibitem{husty94}
+Manfred~L. Husty.
+\newblock An algorithm for solving the direct kinematic of stewart-gough-type
+  platforms.
+\newblock In {\em MECHANISM AND MACHINE THEORY}, pages 1994--94, 1994.
 
 \bibitem{izard2013}
 Jean-Baptiste Izard, Marc Gouttefarde, C{\'e}dric Baradat, David Culla, and
@@ -137,19 +169,19 @@ S.E. Landsberger and T.B. Sheridan.
 \newblock In {\em Proc. Systems, Man and Cybernetics Conf.}, pages 812--814,
   Tucson, 1985.
 
-\bibitem{}
-CARRICATO Marco.
-\newblock Inverse geometrico-static problem of underconstrained cable-driven
-  parallel robots with three cables.
-\newblock {\em Journal of mechanisms and robotics (Print)}, 5(3), 2013.
-\newblock eng.
-
 \bibitem{merlet2004interferences}
 J-P. Merlet.
 \newblock Analysis of the influence of wires interference on the workspace of
   wire robots.
 \newblock In J.~Lenarčič and C.~Galletti, editors, {\em On Advances in Robot
   Kinematics}, pages 211--218. Springer Netherlands, 2004.
+
+\bibitem{merlet2004solving}
+J.~P. Merlet.
+\newblock Solving the forward kinematics of a gough-type parallel manipulator
+  with interval analysis.
+\newblock {\em The International Journal of Robotics Research}, 23(3):221--235,
+  2004.
 
 \bibitem{merlet2008}
 J.~P Merlet.
@@ -210,6 +242,12 @@ A.~Ming and T.~Higuchi.
   mechanism.
 \newblock {\em Int. J. Japan Soc. Prec. Eng.}, 28(3):235--242, september 1994.
 
+\bibitem{fast2011}
+R.~{Nan}, D.~{Li}, C.~{Jin}, Q.~{Wang}, L.~{Zhu}, W.~{Zhu}, H.~{Zhang},
+  Y.~{Yue}, and L.~{Qian}.
+\newblock {The Five-Hundred Aperture Spherical Radio Telescope (fast) Project}.
+\newblock {\em International Journal of Modern Physics D}, 20:989--1024, 2011.
+
 \bibitem{nzue2010}
 R.-M.A. Nzue, J.F. Brethe, E.~Vasselin, and D.~Lefebvre.
 \newblock Comparative analysis of the repeatability performance of a serial and
@@ -231,7 +269,7 @@ Shi~Baek Park, Han~Sung Kim, Changyong Song, and Kyunghwan Kim.
   1--5, Oct 2013.
 
 \bibitem{bosscher2007cc}
-BOSSCHER Paul, WILLIAMS~Robert L., BRYSON~L. Sebastian, and CASTRO-LACOUTURE
+Bosscher Paul, Williams~Robert L., Bryson~L. Sebastian, and Castro-Lacouture
   Daniel.
 \newblock Cable-suspended robotic contour crafting system.
 \newblock {\em Automation in construction}, 17(1):45--55, 2007.
@@ -251,6 +289,13 @@ N.~Riehl, M.~Gouttefarde, Sebastien Krut, Cedric Baradat, and F.~Pierrot.
 \newblock In {\em Robotics and Automation, 2009. ICRA '09. IEEE International
   Conference on}, pages 2193--2198, May 2009.
 
+\bibitem{rouillier95}
+Fabrice Rouillier.
+\newblock Real root counting for some robotics problems.
+\newblock In Jean-Pierre Merlet and Bahram Ravani, editors, {\em Computational
+  Kinematics ’95}, volume~40 of {\em Solid Mechanics and Its Applications},
+  pages 73--82. Springer Netherlands, 1995.
+
 \bibitem{1965:Stewart}
 D.~Stewart.
 \newblock A platform with 6 degrees of freedom.
@@ -262,5 +307,11 @@ Satoshi Tadokoro and Shigeru Kobayashi.
 \newblock A portable parallel motion platform for urban search and surveillance
   in disasters.
 \newblock pages 537--540, 2002.
+
+\bibitem{wampler96}
+Charles~W. Wampler.
+\newblock Forward displacement analysis of general six-inparallel sps (stewart)
+  platform manipulators using soma coordinates.
+\newblock In {\em Mechanism and Machine Theory}, pages 331--337, 1996.
 
 \end{thebibliography}

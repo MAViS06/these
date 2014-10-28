@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.9.16)  23 OCT 2014 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  28 OCT 2014 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **manuscrit.tex
 (./manuscrit.tex
-LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 2 languages loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
@@ -25,7 +25,7 @@ File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
@@ -315,10 +315,10 @@ LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -380,12 +380,12 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \sf@bottom=\skip50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 137.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/transparent.sty
 Package: transparent 2007/01/08 v1.0 Transparency via pdfTeX's color stack (HO)
@@ -399,7 +399,7 @@ Package ifpdf Info: pdfTeX in PDF mode is detected.
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
@@ -495,7 +495,7 @@ Package hyperref Info: Bookmarks ON on input line 4688.
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen130
@@ -610,7 +610,7 @@ Underfull \vbox (badness 3049) has occurred while \output is active []
 
 
 
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 <./chapter0/figures/prismaticJoint.jpg, id=84, 397.485pt x 270.00874pt>
 File: ./chapter0/figures/prismaticJoint.jpg Graphic file (type jpg)
 
@@ -716,8 +716,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--178
 
 
 Overfull \hbox (1.12572pt too wide) in paragraph at lines 179--183
-\OT1/cmr/m/n/10 forme de Gough-Stewart [[]17[]], [[]40[]] (Fig.[]1.5a[],[]1.5b[
-]) et le robot Delta [[]13[]] (Fig.[]1.5c[]). 
+\OT1/cmr/m/n/10 forme de Gough-Stewart [[]22[]], [[]47[]] (Fig.[]1.5a[],[]1.5b[
+]) et le robot Delta [[]17[]] (Fig.[]1.5c[]). 
  []
 
 (./chapter0/figures/gough.pdf_tex
@@ -831,14 +831,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 414--417
 
  []
 
-<./chapter0/figures/nist.jpg, id=310, 358.33875pt x 346.29375pt>
+<./chapter0/figures/nist.jpg, id=312, 358.33875pt x 346.29375pt>
 File: ./chapter0/figures/nist.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/nist.jpg>
 Package pdftex.def Info: ./chapter0/figures/nist.jpg used on input line 421.
 (pdftex.def)             Requested size: 172.5pt x 166.70523pt.
 
-<./chapter0/figures/segesta.png, id=311, 290.08376pt x 362.35374pt>
+<./chapter0/figures/segesta.png, id=313, 290.08376pt x 362.35374pt>
 File: ./chapter0/figures/segesta.png Graphic file (type png)
 
 <use ./chapter0/figures/segesta.png>
@@ -846,7 +846,7 @@ Package pdftex.def Info: ./chapter0/figures/segesta.png used on input line 423.
 
 (pdftex.def)             Requested size: 137.9979pt x 172.37968pt.
 
-<./chapter0/figures/cablebot.png, id=312, 73.02875pt x 26.17653pt>
+<./chapter0/figures/cablebot.png, id=314, 73.02875pt x 26.17653pt>
 File: ./chapter0/figures/cablebot.png Graphic file (type png)
 
 <use ./chapter0/figures/cablebot.png>
@@ -869,6 +869,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 446--447
  []
 
 
+LaTeX Warning: Citation `hiller2005' on page 9 undefined on input line 450.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 448--455
 
  []
@@ -884,12 +887,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--465
 
  []
 
-
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
- [10 <./chapter0/figures/nist.jpg> <./chapter0/figures/segesta.png> <./chapter0
-/figures/cablebot.png>] <./chapter0/figures/marionet03.jpg, id=356, 803.0pt x 6
-02.25pt>
+[10 <./chapter0/figures/nist.jpg> <./chapter0/figures/segesta.png> <./chapter0/
+figures/cablebot.png>]
+<./chapter0/figures/marionet03.jpg, id=358, 803.0pt x 602.25pt>
 File: ./chapter0/figures/marionet03.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/marionet03.jpg>
@@ -897,7 +897,7 @@ Package pdftex.def Info: ./chapter0/figures/marionet03.jpg used on input line 4
 94.
 (pdftex.def)             Requested size: 144.89937pt x 108.676pt.
 
-<./chapter0/figures/marionet05.jpg, id=357, 534.99875pt x 346.29375pt>
+<./chapter0/figures/marionet05.jpg, id=359, 534.99875pt x 346.29375pt>
 File: ./chapter0/figures/marionet05.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/marionet05.jpg>
@@ -910,7 +910,7 @@ Underfull \hbox (badness 1552) in paragraph at lines 500--500
 ac-tion-neurs
  []
 
-<./chapter0/figures/marionet01.jpg, id=358, 803.0pt x 602.25pt>
+<./chapter0/figures/marionet01.jpg, id=360, 803.0pt x 602.25pt>
 File: ./chapter0/figures/marionet01.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/marionet01.jpg>
@@ -918,7 +918,7 @@ Package pdftex.def Info: ./chapter0/figures/marionet01.jpg used on input line 5
 04.
 (pdftex.def)             Requested size: 155.24895pt x 116.432pt.
 
-<./chapter0/figures/marionet02.jpg, id=359, 642.4pt x 481.8pt>
+<./chapter0/figures/marionet02.jpg, id=361, 642.4pt x 481.8pt>
 File: ./chapter0/figures/marionet02.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/marionet02.jpg>
@@ -927,7 +927,7 @@ Package pdftex.def Info: ./chapter0/figures/marionet02.jpg used on input line 5
 (pdftex.def)             Requested size: 155.24895pt x 116.43568pt.
  [11 <./chapter0/figures/marionet03.jpg> <./chapter0/figures/marionet05.jpg> <.
 /chapter0/figures/marionet01.jpg> <./chapter0/figures/marionet02.jpg>]
-<./chapter0/figures/case01.jpg, id=373, 501.875pt x 892.33376pt>
+<./chapter0/figures/case01.jpg, id=375, 501.875pt x 892.33376pt>
 File: ./chapter0/figures/case01.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/case01.jpg>
@@ -938,14 +938,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 535--535
 \OT1/cmr/m/n/8 au d^^Seplacement
  []
 
-<./chapter0/figures/case02.jpg, id=374, 501.875pt x 892.33376pt>
+<./chapter0/figures/case02.jpg, id=376, 501.875pt x 892.33376pt>
 File: ./chapter0/figures/case02.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/case02.jpg>
 Package pdftex.def Info: ./chapter0/figures/case02.jpg used on input line 537.
 (pdftex.def)             Requested size: 68.99895pt x 122.67924pt.
 
-<./chapter0/figures/case03.jpg, id=375, 683.55376pt x 501.875pt>
+<./chapter0/figures/case03.jpg, id=377, 683.55376pt x 501.875pt>
 File: ./chapter0/figures/case03.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/case03.jpg>
@@ -953,7 +953,7 @@ Package pdftex.def Info: ./chapter0/figures/case03.jpg used on input line 540.
 (pdftex.def)             Requested size: 165.59853pt x 121.57817pt.
  [12 <./chapter0/figures/case01.jpg> <./chapter0/figures/case02.jpg> <./chapter
 0/figures/case03.jpg>]
-<./chapter0/figures/cfg_44.png, id=392, 446.468pt x 600.644pt>
+<./chapter0/figures/cfg_44.png, id=394, 446.468pt x 600.644pt>
 File: ./chapter0/figures/cfg_44.png Graphic file (type png)
 
 <use ./chapter0/figures/cfg_44.png>
@@ -969,14 +969,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 590--590
 \OT1/cmr/m/n/8 plate-forme en un point
  []
 
-<./chapter0/figures/cfg_41.png, id=393, 457.71pt x 615.901pt>
+<./chapter0/figures/cfg_41.png, id=395, 457.71pt x 615.901pt>
 File: ./chapter0/figures/cfg_41.png Graphic file (type png)
 
 <use ./chapter0/figures/cfg_41.png>
 Package pdftex.def Info: ./chapter0/figures/cfg_41.png used on input line 593.
 (pdftex.def)             Requested size: 103.50105pt x 139.26718pt.
 
-<./chapter0/figures/cfg_431.png, id=394, 440.044pt x 618.31pt>
+<./chapter0/figures/cfg_431.png, id=396, 440.044pt x 618.31pt>
 File: ./chapter0/figures/cfg_431.png Graphic file (type png)
 
 <use ./chapter0/figures/cfg_431.png>
@@ -988,7 +988,7 @@ Underfull \hbox (badness 1231) in paragraph at lines 596--596
 \OT1/cmr/m/n/8 forme en un m^eme point,
  []
 
-<./chapter0/figures/view_appartment01.jpg, id=397, 192.72pt x 128.1588pt>
+<./chapter0/figures/view_appartment01.jpg, id=399, 192.72pt x 128.1588pt>
 File: ./chapter0/figures/view_appartment01.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/view_appartment01.jpg>
@@ -996,7 +996,7 @@ Package pdftex.def Info: ./chapter0/figures/view_appartment01.jpg used on input
  line 623.
 (pdftex.def)             Requested size: 148.34747pt x 98.65128pt.
 
-<./chapter0/figures/view_appartment04.jpg, id=398, 192.72pt x 104.7915pt>
+<./chapter0/figures/view_appartment04.jpg, id=400, 192.72pt x 104.7915pt>
 File: ./chapter0/figures/view_appartment04.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/view_appartment04.jpg>
@@ -1004,7 +1004,7 @@ Package pdftex.def Info: ./chapter0/figures/view_appartment04.jpg used on input
  line 626.
 (pdftex.def)             Requested size: 179.40147pt x 97.54942pt.
 
-<./chapter0/figures/view_plateform.jpg, id=399, 96.36pt x 64.0794pt>
+<./chapter0/figures/view_plateform.jpg, id=401, 96.36pt x 64.0794pt>
 File: ./chapter0/figures/view_plateform.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/view_plateform.jpg>
@@ -1012,7 +1012,7 @@ Package pdftex.def Info: ./chapter0/figures/view_plateform.jpg used on input li
 ne 629.
 (pdftex.def)             Requested size: 141.45126pt x 94.06456pt.
 
-<./chapter0/figures/view_winches02.jpg, id=400, 192.72pt x 93.2283pt>
+<./chapter0/figures/view_winches02.jpg, id=402, 192.72pt x 93.2283pt>
 File: ./chapter0/figures/view_winches02.jpg Graphic file (type jpg)
 
 <use ./chapter0/figures/view_winches02.jpg>
@@ -1027,7 +1027,7 @@ Overfull \hbox (3.0561pt too wide) in paragraph at lines 652--657
  []
 
 (./chapter0/figures/notation_schema.pdf_tex
-<./chapter0/figures/notation_schema.pdf, id=414, 585.56389pt x 615.30133pt>
+<./chapter0/figures/notation_schema.pdf, id=416, 585.56389pt x 615.30133pt>
 File: ./chapter0/figures/notation_schema.pdf Graphic file (type pdf)
 
 <use ./chapter0/figures/notation_schema.pdf>
@@ -1055,7 +1055,7 @@ PARALL[]ELES []A C[]ABLES \OT1/cmr/m/n/10 15
 
 [15 <./chapter0/figures/notation_schema.pdf>]
 (./chapter0/figures/nulltensionwire.pdf_tex
-<./chapter0/figures/nulltensionwire.pdf, id=430, 299.77808pt x 237.82707pt>
+<./chapter0/figures/nulltensionwire.pdf, id=432, 299.77808pt x 237.82707pt>
 File: ./chapter0/figures/nulltensionwire.pdf Graphic file (type pdf)
 
 <use ./chapter0/figures/nulltensionwire.pdf>
@@ -1064,7 +1064,7 @@ ine 53.
 (pdftex.def)             Requested size: 155.24895pt x 123.16998pt.
 )
 (./chapter0/figures/positivetensionwire.pdf_tex
-<./chapter0/figures/positivetensionwire.pdf, id=431, 299.77808pt x 237.82707pt>
+<./chapter0/figures/positivetensionwire.pdf, id=433, 299.77808pt x 237.82707pt>
 File: ./chapter0/figures/positivetensionwire.pdf Graphic file (type pdf)
 <use ./chapter0/figures/positivetensionwire.pdf>
 Package pdftex.def Info: ./chapter0/figures/positivetensionwire.pdf used on inp
@@ -1089,49 +1089,52 @@ PARALL[]ELES []A C[]ABLES \OT1/cmr/m/n/10 19
 
 [19]
 
-LaTeX Warning: Reference `chap03' on page 20 undefined on input line 1007.
+LaTeX Warning: Reference `chap03' on page 20 undefined on input line 1018.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
 
  []
 
 (./chapter0/figures/spheres.pdf_tex
-<./chapter0/figures/spheres.pdf, id=489, 553.64029pt x 570.6269pt>
+<./chapter0/figures/spheres.pdf, id=508, 553.64029pt x 570.6269pt>
 File: ./chapter0/figures/spheres.pdf Graphic file (type pdf)
 
 <use ./chapter0/figures/spheres.pdf>
 Package pdftex.def Info: ./chapter0/figures/spheres.pdf used on input line 53.
 (pdftex.def)             Requested size: 327.74895pt x 337.80759pt.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 1040--1047
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1049
+) [20]
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1059
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1059--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1064
+Underfull \vbox (badness 1540) has occurred while \output is active []
+
+ [21 <./chapter0/figures/spheres.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1074
 
  []
 
-[21 <./chapter0/figures/spheres.pdf>]) [22] (./manuscrit.bbl [23
+
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1076
+
+ []
+
+) [22] (./manuscrit.bbl [23
 
 
-] [24] [25])
+] [24] [25] [26])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
-
-[26]
+ [27]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
- (./manuscrit.aux (./chapter0/chapter0.aux))
+ (./manuscrit.aux
+(./chapter0/chapter0.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
 Package rerunfilecheck Info: File `manuscrit.out' has not changed.
@@ -1143,10 +1146,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 8197 strings out of 495035
- 125024 string characters out of 6181702
- 210583 words of memory out of 5000000
- 11069 multiletter control sequences out of 15000+600000
+ 8220 strings out of 494992
+ 125449 string characters out of 6180074
+ 211514 words of memory out of 5000000
+ 11098 multiletter control sequences out of 15000+600000
  15790 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,12n,49p,1259b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1175,10 +1178,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on manuscrit.pdf (26 pages, 9452150 bytes).
+Output written on manuscrit.pdf (27 pages, 9461210 bytes).
 PDF statistics:
- 680 PDF objects out of 1000 (max. 8388607)
- 544 compressed objects within 6 object streams
- 159 named destinations out of 1000 (max. 500000)
+ 706 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
+ 169 named destinations out of 1000 (max. 500000)
  337 words of extra memory for PDF output out of 10000 (max. 10000000)
 

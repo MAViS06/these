@@ -412,8 +412,8 @@ en compte dans le contrôle \cite{merlet2013openissues}.
 \subsection{Robots parall\`eles à c\^ables repr\'esentatifs} \label{chap0-1-0}
 
 Parmi les nombreux prototypes de CDPR ayant \'et\'e r\'ealis\'es 
-\cite{kawamura1995}\cite{}\cite{}, nous nous contenterons de citer quelques 
-exemples repr\'esentatifs.\\
+\cite{kawamura1995} \cite{agrawal2005} \cite{fast2011}, nous nous contenterons 
+de citer quelques exemples repr\'esentatifs.\\
 
 \begin{figure}[!ht]
   \centering
@@ -821,12 +821,13 @@ Plusieurs m\'ethodes s'offrent \`a nous, dont :
 \begin{itemize}
  \item par r\'esolution inverse de l'\'equilibre statique, on \'elimine les 
 $\tau$ correspondant aux c\^ables mous, puis on reporte dans les \'equations du 
-mod\`ele g\'eom\'etrique inverse, ce qui nous donne $6-m$ \'equations.
-\item L'équilibre statique est vérifié 
-uniquement si l'ensemble des déterminants $(m+1) \times (m+1)$ de la matrice 
-${\bf W}$ sont nuls \cite{carricato_merlet2013}. Si tous les $\tau_i$ sont 
-strictement positifs, le modèle géométrico-statique possède alors une solution, 
-mais correspondant à un mode dégradé du système.
+mod\`ele g\'eom\'etrique inverse, ce qui nous donne $6-m$ \'equations 
+\cite{2010:Carricato.Merlet}.
+\item L'équilibre statique est vérifié uniquement si l'ensemble des déterminants 
+$(m+1) \times (m+1)$ de la matrice ${\bf W}$ sont nuls 
+\cite{carricato_merlet2013}. Si tous les $\tau_i$ sont strictement positifs, le 
+modèle géométrico-statique possède alors une solution, mais correspondant à un 
+mode dégradé du système.
 \end{itemize}
 
 
@@ -850,7 +851,8 @@ syst\`eme surcontraint qui n'admet en g\'en\'eral pas de solutions. Il est
 alors n\'ecessaire de supposer qu'au moins $m-6$ c\^ables sont non-tendus.
   \item $m = 6$ : dans ce cas, les \'equations g\'eom\'etriques et celles de la 
 statique sont d\'ecoupl\'ees : cette situation peut \^etre ramen\'ee \`a son 
-\'equivalent pour les robots parall\`eles classiques. La g\'eom\'etrie 
+\'equivalent pour les robots parall\`eles classiques \cite{husty94} 
+\cite{wampler96} \cite{rouillier95} \cite{merlet2004solving}. La g\'eom\'etrie 
 nous donne les poses $\bf X$, et on v\'erifie la validit\'e de celles-ci avec 
 la statique.
   \item $m < 6$ : ici, nous avons $6$ inconnues (les param\`etres de 
@@ -871,7 +873,10 @@ mod\`ele g\'eom\'etrique ne sera plus valide. Il faut donc consid\'erer la
 combinatoire des syst\`emes carr\'es avec $6+m-p$ \'equations ($p \in [1, 
 m-1]$) et v\'erifier la validit\'e de leurs solutions, c'est-\`a-dire des 
 r\'esultats $\tau_i > 0$ et $\rho_i > ||{\bf A}_i{\bf B}_i||$ pour les 
-c\^ables non-tendus. 
+c\^ables non-tendus. La r\'esolution de ces cas est encore un probl\`eme 
+ouvert, m\^eme si des r\'esultats sont disponibles 
+\cite{carricato2014cables5} \cite{carricato2013cables4} 
+\cite{2011:Carricato.Merlet} \cite{kumar2011}.
 \end{itemize}
 
 Ce qui doit \^etre retenu ici est qu'il est difficile lors d'un déplacement de 
@@ -888,7 +893,8 @@ système pour la grande majorité des situations.
 
 Le modèle cinématique consiste à établir une relation entre les 
 vitesses articulaires ${\bf \dot \Theta}$ et la vitesse (translation et 
-angulaire) de la plate-forme $\bf \Omega$.
+angulaire) de la plate-forme ${\bf V} = (\bv, {bf \Omega}$ o\`u $\bv$ d\'enote 
+la vitesse de translation et $\bf \Omega$ les vitesses angulaires.
 
 Nous avons vu que le vecteur ${\bf A}_i{\bf B}_i$ peut être calculé de deux 
 manières différentes :
@@ -912,7 +918,7 @@ définir la relation suivante :
 \end{itemize}
  
 Si ${\bf AB}$ est le vecteur composé des différents ${\bf A}_i{\bf B}_i$, alors 
-on obtient en combinant (Equ.\ref{intro:eq6}) et (Equ.\ref{intro:eq7}) :
+on obtient en combinant (\ref{intro:eq6}) et (\ref{intro:eq7}) :
 \begin{equation}
 \begin{matrix}
 {\bf AB} &=& H_1({\bf X}) \\
@@ -922,7 +928,7 @@ on obtient en combinant (Equ.\ref{intro:eq6}) et (Equ.\ref{intro:eq7}) :
 \label{intro:eq8}
 \end{equation}
 
-En différentiant (Equ.\ref{intro:eq8}), on obtient :
+En différentiant (\ref{intro:eq8}), on obtient :
 \begin{equation}
 \frac{\partial H_1}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial t} 
 =  \frac{\partial H_2}{\partial {\bf X}} \frac{\partial {\bf X}}{\partial t} + 
@@ -941,18 +947,17 @@ H_2}{\partial {\bf X}} \right ) \dot {\bf X}
 \end{equation}
 
 Si $\left ( \frac{\partial H_2}{\partial {\bf \Theta}} \right )$ est bien 
-inversible, nous pouvons définir une matrice ${\bf J}^{-1}$ de manière à 
-obtenir la 
-relation suivante :
+inversible, nous pouvons définir une matrice ${\bf H}$ de manière à 
+obtenir la relation suivante :
 \begin{equation}
-\dot {\bf \Theta} = {\bf J}^{-1} \dot {\bf X}
+\dot {\bf \Theta} = {\bf H} \dot {\bf X}
 \label{intro:eq11}
 \end{equation}
 
 Toutefois, le vecteur $\dot {\bf X}$ ainsi d\'etermin\'e ne correspond pas \`a 
-$\bf \Omega$, car il n'existe pas de paramétrisation de l'orientation de la 
+$\bf V$, car il n'existe pas de paramétrisation de l'orientation de la 
 plate-forme telle que les dérivées en temps des paramètres puissent constituer 
-la vitesse angulaire. Nous définissons dès lors le vecteur :
+la vitesse angulaire. Nous définissons toutefois le vecteur :
 \begin{equation}
 \bomega_C = \left ( \begin{matrix}
                 \dot \psi \\
@@ -961,23 +966,29 @@ la vitesse angulaire. Nous définissons dès lors le vecteur :
                \end{matrix} \right )
 \label{intro:eq11c}
 \end{equation}
-correspondant à une paramétrisation de l'orientation par les angles d'Euler 
-$(\psi, \theta, \phi)$.
+qui correspond à une paramétrisation de l'orientation par les angles d'Euler 
+$(\psi, \theta, \phi)$. Il existe donc une matrice $\bf U$ telle que ${\bf 
+\Omega} = {\bf U} {\bomega}_C$.
 
-Dès lors, nous pouvons définir le torseur cinématique suivant :
+On a donc :
 \begin{equation}
 \dot {\bf X} = \left ( \begin{matrix}
-                {\bf V_C} \\
-		{\bomega_C}
-               \end{matrix} \right )
+                1 & 0 \\
+                0 & {\bf U}^{-1}
+               \end{matrix} \right ) {\bf V} = {\bf H}' {\bf V}
+\label{intro:eq11c2}
+\end{equation}
+
+ce qui nous permet d'\'ecrire :
+\begin{equation}
+\dot {\bf \Theta} = {\bf H} {\bf H}' {\bf V}
 \label{intro:eq11d}
 \end{equation}
-avec ${\bf V}_C$ dénotant la vélocité de la plate-forme au point $\bf C$.
-
-La matrice ${\bf J}^{-1}$ ainsi construite est alors appelée {\it Jacobienne 
-inverse para\-m\'etr\'ee} par les angles d'Euler. On notera qu'elle dépend des 
-paramètres de pose alors que seules les coordonnées articulaires sont mesurées. 
-Il est donc nécessaire pour l'obtenir de résoudre le {\it MGD}.
+et l'on peut montrer que ${\bf H}{\bf H}' = {\bf J}^{-1}$, o\`u $\bf J$ est la 
+m\^eme matrice que celle intervenant dans les \'equations de la statique 
+(\ref{intro:eq5b}). On notera qu'elle dépend des paramètres de pose alors que 
+seules les coordonnées articulaires sont mesurées. Il est donc nécessaire pour 
+l'obtenir de résoudre le {\it MGD}.
 
 \section{Les robots N-1} \label{chap0-3}
 
@@ -1024,18 +1035,19 @@ gravit\'e.}}
 \label{intro:fig6b}
 \end{figure}
 
-Soient $N$ c\^ables dont nous connaissons les longueurs $\rho_0, \cdots, 
-\rho_{N-1}$. Puisque nous n'avons que $3$ c\^ables au plus en tension, nous 
+Soient $N$ c\^ables dont nous connaissons les longueurs $\rho_1, \cdots, 
+\rho_{N}$. Puisque nous n'avons que $3$ c\^ables au plus en tension, nous 
 commen\c cons par r\'esoudre le mod\`ele g\'eom\'etrique pour chaque 
 triplet de c\^ables. Ne contr\^olant pas les rotations, les param\`etres de 
 pose sont uniquementles coordonn\'ees dans l'espace. D\`es lors, nous avons $3$ 
 inconnues, et $3$ \'equations qui indiquent que le point $\bf C$ est 
 à l'intersection de trois sph\`eres de centre ${\bf A}_i$ et de rayon $\rho_i$ 
-\ref{intro:fig6b}. Ce problème est trivial : le système admet deux solutions 
-symétriques par rappor au plan passant par les trois points ${\bf A}_i$. La 
-solution au-dessus de ce plan imposerait des tensions strictement négatives, 
-donc seule la solution se trouvant en-dessous du plan est valide. Si cette pose 
-se trouve bien dans l'espace de travail, nous avons alors $\btau > 0$.
+(Fig.\ref{intro:fig6b}). Ce problème est trivial : le système admet deux 
+solutions symétriques par rappor au plan passant par les trois points ${\bf 
+A}_i$. La solution au-dessus de ce plan imposerait des tensions strictement 
+négatives, donc seule la solution se trouvant en-dessous du plan est valide. Si 
+cette pose se trouve bien dans l'espace de travail, nous avons alors $\btau > 
+0$.
 
 Il faut cependant v\'erifier que nous n'ayons pas une pose valide avec moins de 
 $3$ c\^ables en tension. Dans le cas où deux câbles seulement sont en tension, 
@@ -1052,7 +1064,7 @@ contexte. Connaissant les param\`etres de pose, les longueurs de c\^ables
 peuvent \^etre imm\'ediatement d\'eduite \`a partir de la relation 
 
 \begin{equation}
-\rho_i = ||{\bf A}_iB||^2
+\rho_i = ||{\bf A}_i{\bf B}||^2
 \label{intro:eq11a}
 \end{equation}
 
