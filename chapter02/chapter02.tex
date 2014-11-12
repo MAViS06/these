@@ -1,113 +1,140 @@
-\chapter{Asservissement visuel des robots à c\^ables}
+\chapter{Asservissement visuel des robots parall\`eles à c\^ables}
 
-Les manipulateurs parallèles à câbles peuvent s'avérer un choix pertinent d'architecture dès lors que tâche requiert tout ou partie des propriétés suivantes :
-\begin{itemize}
- \item pouvoir être effectuée dans un large espace de travail
- \item pouvoir manipuler des charges importantes
- \item pouvoir être déployée rapidement
- \item garantir une précision et une dynamique suffisantes
-\end{itemize}
+% introduction et motivations
+Parmi les nombreuses applications des robots parall\`eles \`a c\^ables, la plus 
+m\'ediatis\'ee est probablement la Skycam (ou Cablecam)\cite{skycam}. 
+Exploitant les performances dynamiques ainsi que la taille de l'espace de 
+travail des robots \`a c\^ables, la Skycam est principalement utilis\'ee pour 
+couvrir des \'ev\'enements sportifs : en installant une cam\'era sur l'organe 
+terminal d'un robot en configuration suspendue, il est possible de parcourir 
+l'int\'egralit\'e d'un stade \`a des vitesses permettant de suivre et rendre 
+compte de l'action en temps r\'eel (Fig.\ref{chapter02:fig0}).
 
-Toutefois, nous avons vu que le contrôle de tels robots posait plusieurs problèmes, parmi lesquels :
-\begin{itemize}
- \item des modèles géométriques et cinématiques plus complexes que pour les robots séries
- \item un câble ne pouvant exercer qu'une force unilatérale, il est possible qu'il se retrouve avec une tension nulle ; cela peut donner lieu à des changements discontinus des valeurs de tension pour chaque c\^able, voire la perte d'un ou plusieurs degrés de liberté
- \item des incertitudes mécaniques, particulièrement sur la longueur réelle de déploiement d'un c\^able si nous utilisons un moteur rotatif comme actionneur (le diamètre d'enroulement n'étant alors qu'une approximation).
-\end{itemize}
+\begin{figure}[!ht]
+  \centering
+      \subfloat[la cam\'era peut suivre et se 
+retrouver au coeur de l'action sportive]{\label{chapter2:fig0view0}
+\includegraphics[width=.36\linewidth]{./chapter02/figures/skycam01.jpg}} 
+\hfill
+    \subfloat[Les c\^ables permettant le contr\^ole du positionnement de la 
+cam\'era sont dispos\'es aux quatre coins du stade]{\label{chapter02:fig0view1} 
+\includegraphics[width=.58\linewidth]{./chapter02/figures/skycam02.jpg}} 
+    \caption{\footnotesize{Illustrations de la Skycam}}
+\label{chapter02:fig0}
+\end{figure}
 
-Pour ces raisons, la précision d'une pose dépendra à la fois de son histoire (selon la trajectoire qui y a conduit et l'ensemble des câbles qui auront contribué à son obtention, le positionnement final pourra différer) et de sa robustesse aux incertitudes mécaniques, méthodologiques (simplification des modèles d'élasticité et de pesance des câbles par exemple) et de la précision des calculs.
+L'utilisation d'une cam\'era embarqu\'ee sur un manipulateur \`a c\^ables peut 
+s'av\'erer pertinente dans un grand nombre de cas : afin d'explorer 
+l'environnement dans des op\'erations de sauvetage par exemple, pour d\'etecter 
+et suivre des objets sur de longues distances, ou simplement pour rendre le 
+contr\^ole robuste aux variations des conditions de manipulation.
 
-L'asservissement visuel a donc été proposée à plusieurs reprises afin de résoudre tout ou partie de ces inconvénients. Les stratégies suivantes ont par exemple été mises en place :
-\begin{itemize}
- \item une caméra déportée filme l'organe terminal, et par un asservissement en position, entreprend de corriger les erreurs de pose de celui-ci. Sont requis ici que la scène soit dégagée, que la caméra ait un champs de vision suffisamment grand pour pouvoir appréhender l'ensemble de l'espace de travail. Pour autant, une telle méthode ne permet pas de gérer les questions de tensions positives ou nulles dans les câbles.
- \item plusieurs caméras sont utilisées pour filmer les départs des câbles. En utilisant la géométrie plückerienne, ceci permet d'obtenir une estimation précise de la Jacobienne inverse. Pour autant, la question de la répartition des forces dans les câbles n'est là non plus pas considérée. Une telle stratégie suppose que tous les câbles soient en tension, ce qui est par exemple dans certaines architectures impossible, et peut donc conduire à une commande erronée. 
-\end{itemize}
+Dans le m\^eme temps, nous avons vu que le contr\^ole des robots parall\`eles 
+\`a c\^ables pr\'esentait des difficult\'es suppl\'ementaires par rapport aux 
+robots parall\`eles classiques et aux robots s\'eries. L'utilisation de 
+capteurs int\'eroceptifs et ext\'eroceptifs devrait par exemple permettre de 
+corriger des d\'eviations d'estimations (concernant par exemple l'incertitude 
+sur la longueur enroul\'ee d'un c\^able sur une poulie) ou des erreurs de 
+mod\'elisation (hypoth\`eses sur l'\'elasticit\'e r\'eelle des c\^ables) et 
+ainsi am\'eliorer la qualit\'e de contr\^ole. A nouveau, l'ajout d'une ou de 
+plusieurs cam\'eras para\^it ici pertinent : on peut ainsi imaginer qu'une 
+cam\'era d\'eport\'ee pourrait nous donner la position de l'organe terminal - 
+r\'esolvant ainsi le {\it MGD} - ou des mesures sur les articulations 
+simplifiant le {\it MGI}. Nous verrons dans la section suivante que ces deux 
+strat\'egies ont \'et\'e \'etudi\'ees et fournissent des r\'esultats 
+int\'eressants.
 
-Pour autant, utilisées ensemble, ces deux stratégies devraient pouvoir permettre d'assurer la manipulation dans la plupart des cas, sans pour autant le garantir.
+Deux questions se posent cependant ici, \`a savoir la lourdeur et la pertinence 
+du dispositif de capteurs que nous pouvons utiliser pour am\'eliorer les 
+performances d'un manipulateur. Cela d\'epend \'evidemment du contexte de 
+l'op\'eration de manipulation : si une cam\'era d\'eport\'ee unique peut 
+suffire dans un espace de travail restreint, c'est une solution beaucoup moins 
+\'evidente lorsque celui-ci devient v\'eritablement cons\'equent. Lorsque des 
+questions d'\'ethique et d'intimit\'e se posent, cela devient m\^eme 
+carr\'ement inenvisageable. La multiplication des dispositifs pose quant \`a 
+elle la question d'un double co\^ut : co\^ut financier du dispositif, co\^ut en 
+temps de calcul du traitement des informations. En particulier, ce dernier est 
+\`a comparer au co\^ut des calculs n\'ecessaires au contr\^ole du manipulateur 
+sans information suppl\'ementaire pour une performance donn\'ee.
 
-Notre objectif ici est donc double : construire dans un premier temps une loi de commande qui soit aussi indépendante que possible des paramètres de pose et des coordonnées articulaires, contrôler dans un deuxième temps les câbles qui seront en tension pour une trajectoire donnée. En effet, dès lors que nous connaissons les câbles qui sont en tension, nous obtenons le rang de la Jacobienne correspondante. Nous pouvons ainsi affiner la commande en cessant de considérer le robot global, pour ne plus prendre en compte que la partie correspondant réellement aux câbles qui agissent sur le déplacement. Nous utiliserons alors ce que nous définirons plus tard comme étant la {\it Jacobienne du sous-robot associe à une configuration de câbles}. L'utilisation d'une loi de commande articulaire exploitant des informations visuelles adaptées permettra de s'abstraire lors d'une commande cinématique à la fois des incertitudes liées à la commande du robot, mais également aux problèmes soulevés dans le chapitre précédent concernant l'estimation de la matrice d'interaction.
+Apr\`es avoir, dans la premi\`ere section de chapitre explor\'e les travaux 
+ayant \'et\'e r\'ealis\'es dans le domaine de l'asservissement visuel des 
+robots parall\`eles \`a c\^ables, nous indiquerons les raisons pour lesquelles 
+nous avons d\'ecid\'e dans ce travail de nous int\'eresser sp\'ecifiquement \`a 
+l'utilisation d'une cam\'era embarqu\'ee unique. Dans une seconde section, nous 
+pr\'esenterons un sch\'ema d'asservissement simple permettant d'augmenter la 
+pr\'ecision et d'am\'eliorer la robustesse d'une op\'eration de manipulation. En 
+troisi\`eme section, nous pr\'esenterons un sch\'ema de contr\^ole exploitant 
+les informations visuelles pour corriger une commande articulaire. Nous en 
+explorerons les avantages et les limites, et d\'eterminerons les conditions de 
+son utilisation. La derni\`ere section sera consacr\'ee \`a l'illustration de 
+cette loi de commande articulaire.
 
-Ce chapitre est consacré à l'élaboration d'une telle loi de commande. Pour cela, nous présenterons dans un premier temps les spécificités d'un asservissement visuel classique de robots parallèles à câbles. Dans une seconde section, nous montrerons dans quelle mesure nous pouvons y trouver des améliorations concernant la précision du manipulateur et la robustesse aux erreurs et incertitudes diverses. La troisième section développera les conditions d'une loi de commande articulaire reposant sur une première estimation de la matrice d'interaction articulaire et un schéma itératif assurant la convergence vers une trajectoire linéaire. Enfin, une quatrième section présentera les conclusions de ce premier volet de notre étude. L'ensemble des simulations et validations expérimentales se trouveront dans le chapitre final.
+\section{Travaux pr\'eliminaires}
 
-\section{Elaboration d'un asservissement visuel des robots à c\^ables}
+\subsection{Asservissements en position}
 
-Cette première section est consacrée à l'élaboration d'une loi de commande classique adaptée aux robots parallèles à câbles. Ceci nous permettra de montrer les améliorations apportées par l'asservissement visuel (seconde section du chapitre) et servira de support de comparaison pour la loi simplifiée que nous proposerons en troisième section.
+D'abord propos\'e pour le contr\^ole de robots parall\`eles classiques 
+\cite{dallej.2006}, l'asservissement visuel en position a par la suite \'et\'e 
+adapt\'e aux robots parall\`eles \`a c\^ables afin d'\'eviter l'utilisation de 
+capteurs articulaires \cite{dallej2012} \cite{dallej2011}. La m\'ethode 
+pr\'esente en particulier deux avantages : d'une part elle devrait \^etre moins 
+sensible aux bruits de mesures, et d'autre part le nombre de capteurs utilis\'es 
+devrait \^etre moindre.
 
-\subsection{Construction de la loi de commande classique}
+Au sein de ces travaux, les auteurs proposent tout \`a tour un contr\^ole 
+cin\'ematique puis un contr\^ole dynamique. Pour autant -- et bien que la 
+question soit mentionn\'ee -- l'impasse est faite sur la gestion de la 
+r\'epartiton des tensions dans les diff\'erents c\^ables, et particuli\`erement 
+sur l'\'eventuelle absence de tension dans un ou plusieurs c\^ables. C'est en 
+effet une limite du seul contr\^ole en position de ne pas \^etre en mesure 
+d'indiquer quels sont les c\^ables contr\^olant les d\'eplacements de la 
+plate-forme et dans quelle mesure.
 
-Soit un robot parallèle à $m$ câbles contrôlant $n$ degrés de liberté. Pour rappel, la pose ${\bf X}$ de la plate-forme est la donnée des paramètres de pose donnant la position de la plate-forme dans l'espace ainsi que son orientation. Afin de commander la pose de la plate-forme, on contrôle les longueurs $\rho_i$ des câbles. Les câbles sont reliés au bâti en un point ${\bf A}_i$ que nous appelons {\it sortie de câble} et à l'organe terminal en un point ${\bf B}_i$ que nous appelons {\it point d'attache}. En l'absence d'élasticité, de modèle de pesance, et en supposant une tension strictement positive, la longueur d'un câble sera égale à $||{\bf A}_i{\bf B}_i||$. Si la tension est nulle, sa longueur déroulée sera supérieure à la distance entre son point de sortie et son point d'attache.
-
-Les équations de la cinématique inverse permettent de construire la relation suivante entre les variations de la pose de l'organe terminal ${\bf \dot X}$ et les variations des coordonnées articulaires ${\dot \brho}$ :
-\begin{equation}
-  \dot {\brho} = {\bf J}^{-1} {\bf \dot X} 
- \label{chap02:eq0}
-\end{equation}
-
-La matrice ${\bf J}^{-1}$ dépend tout autant de la pose de l'effecteur que des longueurs de câbles. Ses lignes sont données par :
-\begin{equation}
-  {\bf J}^{-1}_i = \begin{bmatrix}
-                   \frac {{\bf A}_i {\bf B}_i} \rho & \frac {{\bf C}{\bf B}_i \times {\bf A}_i {\bf B}_i} \rho
-                   \end{bmatrix}
- \label{chap02:eq1}
-\end{equation}
-${\bf C}$ étant un point de la plate-forme préalablement choisi.
-
-Ainsi, un déplacement pratique s'éloigne nécessairement de la trajectoire 
-théorique, la convergence étant assurée par un schéma itératif permettant de 
-corriger la commande cinématique. L'erreur sera d'autant plus faible que la 
-fréquence de la commande sera élevée, permettant des déplacements plus petits et 
-donc un écart moins important.
-
-A l'itération suivante, la Jacobienne est calculée à partir de la pose et des 
-coordonnées articulaires théoriques, qui peuvent différer de la pose et des 
-longueurs de câbles réelles. Dès lors, la dérive risque de se propager. Sans 
-stratégie de relecture des variables articulaires ou d'estimation de la pose 
-(par le biais en particulier de capteurs supplémentaires), un contrôle 
-cinématique risque d'échouer sur une trajectoire suffisamment grande. Sa 
-précision en tous les cas n'est pas garantie et deviendra problématique sur une 
-trajectoire suffisamment longue.
-
-Une manière alternative de corriger cette dérive consiste en l'utilisation de 
-l'asservissement visuel. Si l'évolution de l'erreur entre les mesures effectuées 
-dans l'image courante et les mesures désirées donne une indication du 
-déplacement à effectuer pour converger vers l'objectif, elle reflète également 
-les conséquences de la dérive du manipulateur et la correction sera alors 
-intégrée à sa consigne.
-
-La loi de commande finale est donn\'ee par la relation :
-\begin{equation}
- \dot \brho = -\lambda {\bf J}^{-1}  {}^e \mathcal R_c \widehat {{\bf L}^*_e} 
-{\bf e}
-\label{chap02:eq2}
-\end{equation}
-o\`u ${}^e \mathcal R_c$ d\'enote la matrice permettant de passer du 
-r\'ef\'erentiel de la cam\'era au r\'ef\'erentiel de l'organe terminal.
-
-
-
-
-
-\subsection{Utilisation des moments 2D}
-
-\subsection{Cas du robot N-1}
-
-\section{Amélioration de la robustesse et de la précision}
-
-\subsection{Robustesse aux incertitudes de modèle}
-
-\subsection{Amélioration de la précision}
-
-\subsection{Illustration des limites avec le cas N-1}
+Pour le contr\^ole en position, une cam\'era rapide (75Hz) est utilis\'e pour 
+d\'etecter et suivre un motif dispos\'e sur l'organe terminal, \`a partir duquel 
+les informations visuelles n\'ecessaires \`a l'\'elaboration de la loi de 
+commande sont d\'eduites. 
 
 
-\section{Asservissement simplifié : commande articulaire}
+\subsection{Asservissements articulaires}
 
-\subsection{Motivations}
 
-\subsection{Le schéma de Broyden}
+\section{Sch\'ema classique}
 
-\subsection{Commande simplifiée}
+\subsection{Choix de primitives}
+
+\subsection{Cas g\'en\'erique}
 
 \subsection{Cas N-1}
 
-\section{Conclusions}
+
+\section{Asservissement visuel dans l'espace articulaire}
+
+\subsection{Formalisation}
+
+\section{Illustrations}
+
+\subsection{${\bf J}_{4 \times 3}$ vs ${\bf J}_{3 \times 3}$}
+
+\subsection{Initialisation}
+
+\subsection{Exemples}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

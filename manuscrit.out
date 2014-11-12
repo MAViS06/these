@@ -1,17 +1,14 @@
-\BOOKMARK [0][-]{chapter.1}{Les robots parall\350les \340 c\342bles}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Manipulateurs s\351rie et parall\350les}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{D\351finitions}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Architectures s\351ries}{section.1.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.3}{Architectures parall\350les}{section.1.1}% 5
-\BOOKMARK [1][-]{section.1.2}{Les manipulateurs parall\350les \340 c\342bles}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.2.1}{Robots parall\350les \340 c\342bles repr\351sentatifs}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.2}{Marionet-Assist}{section.1.2}% 8
-\BOOKMARK [1][-]{section.1.3}{Mod\350les g\351om\351triques et cin\351matiques des robots parall\350les \340 c\342bles}{chapter.1}% 9
-\BOOKMARK [2][-]{subsection.1.3.1}{Notations}{section.1.3}% 10
-\BOOKMARK [2][-]{subsection.1.3.2}{Mod\350le g\351om\351trique inverse}{section.1.3}% 11
-\BOOKMARK [2][-]{subsection.1.3.3}{Equilibre statique}{section.1.3}% 12
-\BOOKMARK [2][-]{subsection.1.3.4}{Mod\350le g\351om\351trico-statique inverse \(MGSI\)}{section.1.3}% 13
-\BOOKMARK [2][-]{subsection.1.3.5}{Mod\350le g\351om\351trico-statique direct}{section.1.3}% 14
-\BOOKMARK [2][-]{subsection.1.3.6}{Mod\350le cin\351matique}{section.1.3}% 15
-\BOOKMARK [1][-]{section.1.4}{Les robots N-1}{chapter.1}% 16
-\BOOKMARK [2][-]{subsection.1.4.1}{Mod\350les g\351om\351triques et cin\351matiques}{section.1.4}% 17
+\BOOKMARK [0][-]{chapter.1}{Asservissement visuel des robots parall\350les \340 c\342bles}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Travaux pr\351liminaires}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Asservissements en position}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Asservissements articulaires}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Sch\351ma classique}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{Choix de primitives}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.2}{Cas g\351n\351rique}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.3}{Cas N-1}{section.1.2}% 8
+\BOOKMARK [1][-]{section.1.3}{Asservissement visuel dans l'espace articulaire}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.3.1}{Formalisation}{section.1.3}% 10
+\BOOKMARK [1][-]{section.1.4}{Illustrations}{chapter.1}% 11
+\BOOKMARK [2][-]{subsection.1.4.1}{J4 3 vs J3 3}{section.1.4}% 12
+\BOOKMARK [2][-]{subsection.1.4.2}{Initialisation}{section.1.4}% 13
+\BOOKMARK [2][-]{subsection.1.4.3}{Exemples}{section.1.4}% 14

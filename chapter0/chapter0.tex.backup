@@ -19,27 +19,29 @@ ensuite dans une troisième section la classe des manipulateurs de type N-1, \`a
 laquelle appartient le prototype sur lequel nous avons effectu\'e nos 
 expérimentations et validations.
 
-\section{Manipulateurs série et parallèles} \label{chap0-0}
+\section{Manipulateurs séries et parallèles} \label{chap0-0}
 
 Incontestablement, l'industrie aura été le principal vecteur de développe\-ment 
 de la robotique ces deux derniers siècles. L'introduction des robots dans les 
 usines s'inscrit dans une démarche d'augmentation de la productivité et 
 d'amélio\-ration des performances, permettant dès lors de soulager le 
 travailleur humain dans des situations de travail pénible et/ou répétitif, et 
-d'augmenter ses compétences en autorisant des performances de précision qu'il 
-ne saurait fournir seul, ou en rendant possible le déplacement de charges 
-élevées. Si la grande diversité que recouvre aujourd'hui le terme de {\it robot} 
-rend extrêmement difficile l'élaboration d'une définition générique, nous 
-pouvons cependant en dériver des sous-catégories plus faciles à appréhender. 
-Parmi celles-ci, nous distinguons en particulier la classe des manipulateurs 
-dont la principale fonctionnalité sera le déplacement et positionnement 
-d'objets dans l'espace.
+d'augmenter ses compétences, en autorisant par exemple des performances de 
+précision qu'il ne saurait fournir seul, ou en rendant possible le déplacement 
+de charges élevées.
+
+Si la grande diversité que recouvre aujourd'hui le terme de {\it robot} rend 
+extrêmement difficile l'élaboration d'une définition générique, nous pouvons 
+cependant en dériver des sous-catégories plus faciles à appréhender. Parmi 
+celles-ci, nous distinguons en particulier la classe des {\it manipulateurs} 
+dont la principale fonctionnalité est le déplacement et positionnement d'objets 
+dans l'espace.
 
 \subsection{Définitions} \label{chap0-0-0}
 
-Un manipulateur est constitué de manière générale d'une base et d'un organe 
-terminal, reliés par une ou plusieurs chaînes cinématiques plus ou moins 
-élaborées.
+Un manipulateur est constitué de manière générale d'une {\it base} et d'un 
+{\it organe terminal}, reliés par une ou plusieurs {\it chaînes cinématiques} 
+plus ou moins élaborées.
 
 Une chaîne cinématique est caractérisée par une succession de solides reliés 
 par des articulations simples ou complexes. Les articulations simples peuvent 
@@ -49,9 +51,9 @@ translation d'un solide par rapport à l'autre -- ou {\it rotoïdes}
 axe donné. Des articulations complexes sont obtenues à partir de la combinaison 
 de mouvements prismatiques et/ou rotoïdes : une articulation cylindrique 
 (Fig.\ref{intro:fig0view2}) permet par exemple la combinaison d'un mouvement de 
-translation selon un axe donné et d'un mouvement de rotation autour de ce même 
-axe ; autre exemple, une articulation sphérique (Fig.\ref{intro:fig0view3}) 
-combinera quant à elle trois rotations.
+translation le long d'un axe donné et d'un mouvement de rotation autour de ce 
+même axe ; autre exemple, une articulation sphérique 
+(Fig.\ref{intro:fig0view3}) combinera quant à elle trois rotations.
 
 \begin{figure}[!ht]
   \centering
@@ -159,8 +161,8 @@ sollicitations en flexion et de l'effet de bras de levier sur les segments.
 \end{itemize}
 
 Ainsi, une architecture série am\`ene souvent \`a un dispositif imposant, dont 
-la précision, la dynamique et la faible capacité de charges se révèleront 
-insuffisants pour certaines tâches.
+la précision, la dynamique et la faible capacité de charges peuvent se 
+r\'ev\'eler insuffisants pour certaines tâches.
 
 Grâce à leurs structures en cha\^ine cin\'ematique ferm\'ee, les 
 architectures parallèles pr\'esentent une alternative efficace aux robots 
@@ -188,7 +190,7 @@ simulateurs de vols (Fig.\ref{intro:fig3view1}). Sa plate-forme mobile peut
 être déplacée selon 6 degrés de liberté (3 translations $+$ 3 rotations) à 
 l'aide de six jambes indépendantes constitu\'ees en partant de la 
 base d'un cardan passif suivie d'une articulation prismatique 
-actionn\'ee dont l'extr\'emit\'e est connect\'ee \`a la plate-forme 
+actionn\'ee, dont l'extr\'emit\'e est connect\'ee \`a la plate-forme 
 par une rotule passive.
 
 \begin{figure}[!ht]
@@ -245,8 +247,8 @@ jam\-bes dans le positionnement de l'organe terminal.
 Toutefois, les mécanismes parallèles possèdent plusieurs inconvénients qui 
 doivent être pris en compte lors du choix d'une architecture :
 \begin{itemize}
- \item des relations complexes entre entrées et sorties, soit les coordonn\'ees 
-articulaires et la position de l'organe terminal
+ \item des relations complexes entre entrées et sorties (les coordonn\'ees 
+articulaires et la position de l'organe terminal)
  \item des positions dites {\it singulières} pouvant conduire à une perte de 
 contrôle du manipulateur, et qui limitent l'espace de travail 
 \cite{merlet89singular}, \cite{park1998}.
@@ -269,14 +271,13 @@ d'un robot parall\`ele (\`a droite) pour des limites articulaires \'egales.}}
 \end{figure}
 
 L'architecture des robots parallèles à c\^ables que nous allons présenter dans 
-la section suivante a été proposée dans le but de s'affranchir de la contrainte 
-de limitation de l'espace de travail, qui est une contrainte forte des 
-mécanismes parallèles \cite{journals/jfr/AlbusBD93}, 
-\cite{1985:Landsberger.Sheridan*1}. L'intégralité des travaux présentés 
-dans ce manuscrit étant consacré à l'étude et au développement de cette 
-catégorie particulière de manipulateurs, nous utiliserons dorénavant pour les 
-désigner les noms de robots, manipulateurs, robots parallèles à câbles ou CDPR 
-(pour {\it cable-driven parallel robot}).
+la section suivante a été proposée dans le but de s'affranchir de la limitation 
+de l'espace de travail, qui est une contrainte forte des mécanismes parallèles 
+\cite{journals/jfr/AlbusBD93}, \cite{1985:Landsberger.Sheridan*1}. L'intégralité 
+des travaux présentés dans ce manuscrit étant consacré à l'étude et au 
+développement de cette catégorie particulière de manipulateurs, nous utiliserons 
+dorénavant pour les désigner les noms de robots, manipulateurs, robots 
+parallèles à câbles ou CDPR (pour {\it cable-driven parallel robot}).
 
 \section{Les manipulateurs parallèles à câbles} \label{chap0-1}
 
@@ -1064,7 +1065,7 @@ contexte. Connaissant les param\`etres de pose, les longueurs de c\^ables
 peuvent \^etre imm\'ediatement d\'eduite \`a partir de la relation 
 
 \begin{equation}
-\rho_i = ||{\bf A}_iB||^2
+\rho_i = ||{\bf A}_i{\bf B}||^2
 \label{intro:eq11a}
 \end{equation}
 
