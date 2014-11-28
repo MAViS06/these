@@ -1,16 +1,106 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{skycam}
-L.~L. Cone.
-\newblock {Skycam: An Aerial Robotic Camera System}.
-\newblock 1985.
+\bibitem{carricato2014cables5}
+G.~Abbasnejad and M.~Carricato.
+\newblock Direct geometrico-static problem of underconstrained cable-driven
+  parallel robots with five cables.
+\newblock In Federico Thomas and Alba Perez~Gracia, editors, {\em Computational
+  Kinematics}, volume~15 of {\em Mechanisms and Machine Science}, pages 59--66.
+  Springer Netherlands, 2014.
 
-\bibitem{dallej.2006}
-T.~Dallej, N.~Andreff, Y.~Mezouar, and P.~Martinet.
-\newblock 3d pose visual servoing relieves parallel robot control from joint
-  sensing.
-\newblock In {\em Intelligent Robots and Systems, 2006 IEEE/RSJ International
-  Conference on}, pages 4291--4296, Oct 2006.
+\bibitem{1992:Albus.Bostelman.ea}
+J.~Albus, R.~Bostelman, and N.~Dagalakis.
+\newblock The {NIST SPIDER}, a robot crane.
+\newblock {\em Journal of research of the National Institute of Standards and
+  Technology}, 97(3):373--385, may 1992.
+
+\bibitem{journals/jfr/AlbusBD93}
+J.~S. Albus, R.~Bostelman, and N.~G. Dagalakis.
+\newblock The {NIST} robocrane.
+\newblock {\em J. Field Robotics}, 10(5):709--724, 1993.
+
+\bibitem{alexandre2012}
+J.~Alexandre Dit~Sandretto, D.~Daney, M.~Gouttefarde, and C.~Baradat.
+\newblock {Calibration of a fully-constrained parallel cable-driven robot}.
+\newblock Rapport de recherche RR-7879, INRIA, February 2012.
+
+\bibitem{lolo2014}
+L.~Blanchet and J{-}P. Merlet.
+\newblock Interference detection for cable-driven parallel robots ({CDPR}s).
+\newblock In {\em Advanced Intelligent Mechatronics (AIM), 2014 IEEE/ASME
+  International Conference on}, pages 1413--1418, July 2014.
+
+\bibitem{borgstrom2009}
+P.~H. Borgstrom, B.~L. Jordan, B.~J. Borgstrom, M.~J. Stealey, G.~Sukhatme,
+  M.~A. Batalin, and W.~J. Kaiser.
+\newblock {NIMS-PL}: A cable-driven robot with self-calibration capabilities.
+\newblock {\em Robotics, IEEE Transactions on}, 25(5):1005--1015, Oct 2009.
+
+\bibitem{bosscher2007cc}
+P.~Bosscher, R.~L. Williams, S.~L. Bryson, and D.~Castro-Lacouture.
+\newblock Cable-suspended robotic contour crafting system.
+\newblock {\em Automation in construction}, 17(1):45--55, 2007.
+\newblock eng.
+
+\bibitem{bosscher2005}
+P.~Bosscher, R.~L. Williams, and M.~Tummino.
+\newblock A concept for rapidly-deployable cable robot search and rescue
+  systems.
+\newblock {\em ASME 2005 International Design Engineering Technical Conferences
+  and Computers and Information in Engineering Conference}, 7, 20058.
+
+\bibitem{bostelman1994}
+R.~Bostelman, J.~Albus, N.~Dagalakis, A.~Jacoff, and J.~Gross.
+\newblock Applications of the {NIST} robocrane.
+
+\bibitem{bostelman1997emma}
+Roger~V. Bostelman and J.~S. Albus.
+\newblock {RoboCrane} and {EMMA} applied to waste storage tank remediation.
+\newblock In {\em Proc. American Nuclear Society Seventh Topical Meeting on
+  Robotics and Remote Systems}, 1997.
+
+\bibitem{briot2007}
+S.~Briot and I.~Bonev.
+\newblock {Are Parallel Robots More Accurate than Serial Robots?}
+\newblock {\em {CSME Transactions}}, 31(4):445--456, November 2007.
+
+\bibitem{bruckmann2006modular}
+T.~Bruckmann, A.~Pott, D.~Franitza, and M.~Hiller.
+\newblock A modular controller for redundantly actuated tendon-based {S}tewart
+  platforms.
+\newblock {\em EuCoMeS, Obergurgl, Austria, In}, 2006.
+
+\bibitem{carricato2013cables4}
+M.~Carricato and G.~Abbasnejad.
+\newblock Direct geometrico-static analysis of under-constrained cable-driven
+  parallel robots with 4 cables.
+\newblock In T.~Bruckmann and A.~Pott, editors, {\em Cable-Driven Parallel
+  Robots}, volume~12 of {\em Mechanisms and Machine Science}, pages 269--285.
+  Springer Berlin Heidelberg, 2013.
+
+\bibitem{2010:Carricato.Merlet}
+M.~Carricato and J{-}P. Merlet.
+\newblock Geometrico-static analysis of under-constrained cable-driven parallel
+  robot.
+\newblock In {\em ARK}, pages 309--320, Piran, 28 june -- 1 july 2010.
+
+\bibitem{2011:Carricato.Merlet}
+M.~Carricato and J{-}P. Merlet.
+\newblock Direct geometrico-static problem of under-constrained cable-driven
+  parallel robots with three cables.
+\newblock In {\em IEEE Int. Conf. on Robotics and Automation}, pages
+  3011--3017, Shangai, 9-13 may 2011.
+
+\bibitem{carricato_merlet2013}
+M.~Carricato and J{-}P. Merlet.
+\newblock Stability analysis of underconstrained cable-driven parallel robots.
+\newblock {\em Robotics, IEEE Transactions on}, 29(1):288--296, Feb 2013.
+
+\bibitem{1988:Clavel}
+R.~Clavel.
+\newblock {Delta}, a fast robot with parallel geometry.
+\newblock In {\em 18th Int. Symp. on Industrial Robots (ISIR)}, pages 91--100,
+  Lausanne, 26-28 april 1988.
 
 \bibitem{dallej2012}
 T.~Dallej, M.~Gouttefarde, N.~Andreff, R.~Dahmouche, and P.~Martinet.
@@ -19,10 +109,223 @@ T.~Dallej, M.~Gouttefarde, N.~Andreff, R.~Dahmouche, and P.~Martinet.
 \newblock In {\em Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ
   International Conference on}, pages 1581--1586, Oct 2012.
 
-\bibitem{dallej2011}
-T.~Dallej, M.~Gouttefarde, N.~Andreff, M.~Michelin, and P.~Martinet.
-\newblock Towards vision-based control of cable-driven parallel robots.
-\newblock In {\em Intelligent Robots and Systems (IROS), 2011 IEEE/RSJ
-  International Conference on}, pages 2855--2860, Sept 2011.
+\bibitem{deschenes2007}
+J{-}D. Deschenes, P.~Lambert, S.~Perreault, N.~Martel-Brisson, N.~Zoso,
+  A.~Zaccarin, P.~Hebert, S.~Bouchard, and C.~M. Gosselin.
+\newblock A cable-driven parallel mechanism for capturing object appearance
+  from multiple viewpoints.
+\newblock In {\em 3{D} Digital Imaging and Modeling, 2007. 3DIM '07. Sixth
+  International Conference on}, pages 367--374, Aug 2007.
+
+\bibitem{agrawal2005}
+A.~Fattah and S.K. Agrawal.
+\newblock On the design of cable-suspended planar parallel robots.
+\newblock {\em ASME J. of Mechanical Design}, 127(5):1021--1028, september
+  2005.
+
+\bibitem{journals/gosselin1989}
+C.~Gosselin and J.~Angeles.
+\newblock The optimum kinematic design of a spherical three-degree-of-freedom
+  parallel manipulator.
+\newblock {\em J. of Mechanisms, Transmissions and Automation in De- sign},
+  1989.
+
+\bibitem{1956:Gough}
+V.~E. Gough.
+\newblock Contribution to discussion of papers on research in automobile
+  stability, control and tyre performance, 1956-1957.
+\newblock Proc. Auto Div. Inst. Mech. Eng.
+
+\bibitem{hiller2005}
+M.~Hiller, S.~Fang, S.~Mielczarek, R.~Verhoeven, and D.~Franitza.
+\newblock Design, analysis and realization of tendon-based parallel
+  manipulators.
+\newblock {\em Mechanism and Machine Theory}, 40(4):429 -- 445, 2005.
+
+\bibitem{husty94}
+M.~L. Husty.
+\newblock An algorithm for solving the direct kinematic of
+  {S}tewart-{G}ough-type platforms.
+\newblock In {\em Mechanism and machine theory}, pages 1994--94, 1994.
+
+\bibitem{izard2013}
+M.~Izard, J{-}B.~Gouttefarde, C.~Baradat, D.~Culla, and D.~Sall{\'e}.
+\newblock {Integration of a parallel cable-driven robot on an existing building
+  fa{\c c}ade}.
+\newblock In {\em {First international conference on cable-driven parallel
+  robots}}, Cable-Driven Parallel Robots, pages 149--164, Stuttgart, Germany.
+  {Springer}.
+
+\bibitem{jordan2007}
+B.~L. Jordan, M.~A. Batalin, and W.~J. Kaiser.
+\newblock {NIMS RD}: A rapidly deployable cable based robot.
+\newblock In {\em Robotics and Automation, 2007 IEEE International Conference
+  on}, pages 144--150, April 2007.
+
+\bibitem{kawamura1995}
+S.~Kawamura, W.~Choe, S.~Tanaka, and S.~R. Pandian.
+\newblock Development of an ultrahigh speed robot {FALCON} using wire drive
+  system.
+\newblock In {\em Robotics and Automation, 1995. Proceedings., 1995 IEEE
+  International Conference on}, volume~1, pages 215--220 vol.1, May 1995.
+
+\bibitem{1985:Landsberger.Sheridan*1}
+S.~E. Landsberger and T.~B. Sheridan.
+\newblock A new design for parallel link manipulator.
+\newblock In {\em Proc. Systems, Man and Cybernetics Conf.}, pages 812--814,
+  Tucson, 1985.
+
+\bibitem{merlet89singular}
+J{-}P. Merlet.
+\newblock Singular configurations of parallel manipulators and {G}rassmann
+  geometry.
+\newblock {\em I. J. Robotic Res.}, 8(5):45--56, 1989.
+
+\bibitem{merlet1997robots}
+J{-}P. Merlet.
+\newblock {\em Les robots parall{\`e}les}.
+\newblock Collection robotique. Hermes, 1997.
+
+\bibitem{merlet2004interferences}
+J{-}P. Merlet.
+\newblock Analysis of the influence of wires interference on the workspace of
+  wire robots.
+\newblock In J.~Lenarčič and C.~Galletti, editors, {\em On Advances in Robot
+  Kinematics}, pages 211--218. Springer Netherlands, 2004.
+
+\bibitem{merlet2004solving}
+J{-}P. Merlet.
+\newblock Solving the forward kinematics of a {G}ough-type parallel manipulator
+  with interval analysis.
+\newblock {\em The International Journal of Robotics Research}, 23(3):221--235,
+  2004.
+
+\bibitem{merlet2007jacobian}
+J{-}P. Merlet.
+\newblock Jacobian, manipulability, condition number and accuracy of parallel
+  robots.
+\newblock In Sebastian Thrun, Rodney Brooks, and Hugh Durrant-Whyte, editors,
+  {\em Robotics Research}, volume~28 of {\em Springer Tracts in Advanced
+  Robotics}, pages 175--184. Springer Berlin Heidelberg, 2007.
+
+\bibitem{merlet2008}
+J{-}P. Merlet.
+\newblock Kinematics of the wire-driven parallel robot {\tt marionet} using
+  linear actuators.
+\newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
+  Conference on}, pages 3857--3862, May 2008.
+
+\bibitem{merlet2010marionet}
+J{-}P. Merlet.
+\newblock {\tt MARIONET}, a family of modular wire-driven parallel robots.
+\newblock In Jadran Lenarcic and Michael~M. Stanisic, editors, {\em Advances in
+  Robot Kinematics: Motion in Man and Machine}, pages 53--61. Springer
+  Netherlands, 2010.
+
+\bibitem{merlet2012}
+J{-}P. Merlet.
+\newblock The kinematics of the redundant {N-1} wire driven parallel robot.
+\newblock In {\em ICRA}, pages 2313--2318. IEEE, 2012.
+
+\bibitem{merlet2013openissues}
+J{-}P. Merlet.
+\newblock Wire-driven parallel robot: Open issues.
+\newblock In Vincent Padois, Philippe Bidaud, and Oussama Khatib, editors, {\em
+  Romansy 19 – Robot Design, Dynamics and Control}, volume 544 of {\em CISM
+  International Centre for Mechanical Sciences}, pages 3--10. Springer Vienna,
+  2013.
+
+\bibitem{sandretto2015}
+J{-}P. Merlet and J.~Alexandre~dit Sandretto.
+\newblock The forward kinematics of cable-driven parallel robots with sagging
+  cables.
+\newblock In Andreas Pott and Tobias Bruckmann, editors, {\em Cable-Driven
+  Parallel Robots}, volume~32 of {\em Mechanisms and Machine Science}, pages
+  3--15. Springer International Publishing, 2015.
+
+\bibitem{merlet2010}
+J{-}P. Merlet and Daney D.
+\newblock A portable, modular parallel wire crane for rescue operations.
+\newblock In {\em {IEEE} International Conference on Robotics and Automation,
+  {ICRA} 2010, Anchorage, Alaska, USA, 3-7 May 2010}, pages 2834--2839, 2010.
+
+\bibitem{kumar2011}
+N.~Michael, S.~Kim, J.~Fink, and V.~Kumar.
+\newblock {Kinematics and Statics of Cooperative Multi-Robot Aerial
+  Manipulation with Cables}.
+\newblock In {\em ASME International Design Engineering Technical Conference
+  (DETC 2009)}, San Diego, CA, 2009.
+
+\bibitem{1994:Ming.Higuchi}
+A.~Ming and T.~Higuchi.
+\newblock Study on multiple degree of freedom positioning mechanisms using
+  wires, {P}art {II}: {D}evelopment of a planar completely restrained
+  positioning mechanism.
+\newblock {\em Int. J. Japan Soc. Prec. Eng.}, 28(3):235--242, september 1994.
+
+\bibitem{fast2011}
+R.~{Nan}, D.~{Li}, C.~{Jin}, Q.~{Wang}, L.~{Zhu}, W.~{Zhu}, H.~{Zhang},
+  Y.~{Yue}, and L.~{Qian}.
+\newblock The five-hundred aperture spherical radio telescope ({FAST}) project.
+\newblock {\em International Journal of Modern Physics D}, 20:989--1024, 2011.
+
+\bibitem{nzue2010}
+R{-}M.A. Nzue, J{-}F. Brethe, E.~Vasselin, and D.~Lefebvre.
+\newblock Comparative analysis of the repeatability performance of a serial and
+  parallel robot.
+\newblock In {\em Intelligent Robots and Systems (IROS), 2010 IEEE/RSJ
+  International Conference on}, pages 63--68, Oct 2010.
+
+\bibitem{park1998}
+F.~C. Park and J.~W. Kim.
+\newblock A singularity classification for closed chains.
+\newblock In Jadran Lenarvcivc and Manfred Husty, editors, {\em Advances in
+  Robot Kinematics: Analysis and Control}, pages 483--492, Strobl, Austria,
+  1998. Kluwer Academic Publishers.
+
+\bibitem{park2013}
+Shi~Baek Park, Han~Sung Kim, Changyong Song, and Kyunghwan Kim.
+\newblock Dynamics modeling of a {D}elta-type parallel robot.
+\newblock In {\em Robotics (ISR), 2013 44th International Symposium on}, pages
+  1--5, Oct 2013.
+
+\bibitem{riehl2010}
+N.~Riehl, M.~Gouttefarde, C.~Baradat, and F.~Pierrot.
+\newblock On the determination of cable characteristics for large dimension
+  cable-driven parallel mechanisms.
+\newblock In {\em Robotics and Automation (ICRA), 2010 IEEE International
+  Conference on}, pages 4709--4714, May 2010.
+
+\bibitem{riehl2009}
+N.~Riehl, M.~Gouttefarde, S.~Krut, C.~Baradat, and F.~Pierrot.
+\newblock Effects of non-negligible cable mass on the static behavior of large
+  workspace cable-driven parallel mechanisms.
+\newblock In {\em Robotics and Automation, 2009. ICRA '09. IEEE International
+  Conference on}, pages 2193--2198, May 2009.
+
+\bibitem{rouillier95}
+F.~Rouillier.
+\newblock Real root counting for some robotics problems.
+\newblock In Jean-Pierre Merlet and Bahram Ravani, editors, {\em Computational
+  Kinematics ’95}, volume~40 of {\em Solid Mechanics and Its Applications},
+  pages 73--82. Springer Netherlands, 1995.
+
+\bibitem{satoshi2002}
+T.~Satoshi and K.~Shigeru.
+\newblock A portable parallel motion platform for urban search and surveillance
+  in disasters.
+\newblock pages 537--540, 2002.
+
+\bibitem{1965:Stewart}
+D.~Stewart.
+\newblock A platform with 6 degrees of freedom.
+\newblock {\em Proc. of the Institution of mechanical engineers}, 180(Part 1,
+  15):371--386, 1965.
+
+\bibitem{wampler96}
+C.~W. Wampler.
+\newblock Forward displacement analysis of general six-inparallel {SPS}
+  ({S}tewart) platform manipulators using soma coordinates.
+\newblock In {\em Mechanism and Machine Theory}, pages 331--337, 1996.
 
 \end{thebibliography}

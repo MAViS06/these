@@ -23,7 +23,7 @@ cam\'era sont dispos\'es aux quatre coins du stade]{\label{chapter02:fig0view1}
 \label{chapter02:fig0}
 \end{figure}
 
-L'utilisation d'une cam\'era embarqu\'ee sur un manipulateur \`a c\^ables peut 
+L'utilisation d'une cam\'era embarqu\'ee sur un manipulateur \`a c\^ables peut ainsi
 s'av\'erer pertinente dans un grand nombre de cas : afin d'explorer 
 l'environnement dans des op\'erations de sauvetage par exemple, pour d\'etecter 
 et suivre des objets sur de longues distances, ou simplement pour rendre le 
@@ -52,8 +52,8 @@ suffire dans un espace de travail restreint, c'est une solution beaucoup moins
 \'evidente lorsque celui-ci devient v\'eritablement cons\'equent. Lorsque des 
 questions d'\'ethique et d'intimit\'e se posent, cela devient m\^eme 
 carr\'ement inenvisageable. La multiplication des dispositifs pose quant \`a 
-elle la question d'un double co\^ut : co\^ut financier du dispositif, co\^ut en 
-temps de calcul du traitement des informations. En particulier, ce dernier est 
+elle la question d'un double co\^ut : co\^ut financier du dispositif d'une part, co\^ut en 
+temps de calcul du traitement des informations d'autre part. En particulier, ce dernier est 
 \`a comparer au co\^ut des calculs n\'ecessaires au contr\^ole du manipulateur 
 sans information suppl\'ementaire pour une performance donn\'ee.
 
@@ -74,30 +74,25 @@ cette loi de commande articulaire.
 
 \subsection{Asservissements en position}
 
-D'abord propos\'e pour le contr\^ole de robots parall\`eles classiques 
-\cite{dallej.2006}, l'asservissement visuel en position a par la suite \'et\'e 
-adapt\'e aux robots parall\`eles \`a c\^ables afin d'\'eviter l'utilisation de 
-capteurs articulaires \cite{dallej2012} \cite{dallej2011}. La m\'ethode 
-pr\'esente en particulier deux avantages : d'une part elle devrait \^etre moins 
-sensible aux bruits de mesures, et d'autre part le nombre de capteurs utilis\'es 
-devrait \^etre moindre.
+D'abord propos\'e pour le contr\^ole de robots parall\`eles classiques \cite{dallej.2006}, l'asservissement visuel en position a par la suite \'et\'e adapt\'e aux robots parall\`eles \`a c\^ables afin d'\'eviter l'utilisation de capteurs articulaires \cite{dallej2012} \cite{dallej2011}. La m\'ethode pr\'esente en particulier deux avantages : d'une part elle devrait \^etre moins sensible aux bruits de mesures, et d'autre part le nombre de capteurs utilis\'es devrait \^etre moindre.
 
-Au sein de ces travaux, les auteurs proposent tout \`a tour un contr\^ole 
-cin\'ematique puis un contr\^ole dynamique. Pour autant -- et bien que la 
-question soit mentionn\'ee -- l'impasse est faite sur la gestion de la 
-r\'epartiton des tensions dans les diff\'erents c\^ables, et particuli\`erement 
-sur l'\'eventuelle absence de tension dans un ou plusieurs c\^ables. C'est en 
-effet une limite du seul contr\^ole en position de ne pas \^etre en mesure 
-d'indiquer quels sont les c\^ables contr\^olant les d\'eplacements de la 
-plate-forme et dans quelle mesure.
+Au sein de ces travaux, les auteurs proposent tout \`a tour un contr\^ole cin\'ematique puis un contr\^ole dynamique. Pour autant -- et bien que la question soit mentionn\'ee -- l'impasse est faite sur la gestion de la r\'epartiton des tensions dans les diff\'erents c\^ables, et particuli\`erement sur l'\'eventuelle absence de tension dans un ou plusieurs c\^ables. C'est en effet une limite du seul contr\^ole en position de ne pas \^etre en mesure d'indiquer quels sont les c\^ables contr\^olant les d\'eplacements de la plate-forme et dans quelle mesure.
 
-Pour le contr\^ole en position, une cam\'era rapide (75Hz) est utilis\'e pour 
-d\'etecter et suivre un motif dispos\'e sur l'organe terminal, \`a partir duquel 
-les informations visuelles n\'ecessaires \`a l'\'elaboration de la loi de 
-commande sont d\'eduites. 
+Pour le contr\^ole en position, une cam\'era rapide (75Hz) est utilis\'e pour d\'etecter et suivre un motif dispos\'e sur l'organe terminal, \`a partir duquel les informations visuelles n\'ecessaires \`a l'\'elaboration de la loi de commande sont d\'eduites, à savoir dans ce cas la position et l'orientation de la plate-forme.
 
+Le contrôle dynamique utilisé repose sur les équations de l'équilibre statique. Dans ce second cas, les informations visuelles sont utilisées pour calculer les valeurs de la matrice liant les tensions dans chacun des câbles aux actions mécaniques externes et inertielles. Un simple contrôle PD en boucle fermé assure la convergence de l'algorithme.
+
+Pour ces deux méthodes, des simulations et expérimentations ont été présentées et ont donné les résultats suivants :
+\begin{itemize}
+ \item sur un ReelAx8 : la démarche est validée et semble robuste aux incertitudes dans la mesure du bruit ajouté au modèle ($0.2$mm et $2$mm/s respectivement pour la position et la vitesse en translation, $0.01^{\circ}$ et $0.1^{\circ}$/s respectivement pour l'orientation et la vitesse angulaire) pour des déplacements pouvant aller jusqu'à $0.6$m et $0.6^{\circ}$, le tout étant supposé se dérouler selon les données du simulateur dans un intervalle de $[10,12]$ secondes.
+  \item sur une simulation du robot CoGiRo (8 câbles) dont l'espace de travail est défini comme étant $10.8 \times 14 \times 5.5$m. Dans cette deuxième situation, le modèle de câbles a été modifié (pesance et élasticité). Un bruit de $5$cm sur la position de la plate-forme et de $2^{\circ}$ sur son orientation a été ajouté pour tester la robustesse du contrôle. A nouveau, la loi de commande permet au manipulateur de converger vers la pose désirée, avec une erreur moyenne de $8$mm et de $0.05^{\circ}$, pour un déplacement pouvant aller jusqu'à $2.5$m et $0.4^{\circ}$. 
+\end{itemize}
+
+Un contrôle hybride en force/position a également été proposé dernièrement dans  \cite{chellal2015} \cite{chellal2014}. La commande se décompose en deux étapes : dans un premier temps, un système de {\it motion-capture} est utilisé pour estimer la pose de l'organe terminal en complément d'une méthode de découplage des vitesses pour chaque actionneur ; puis la distribution des tensions est ajustée de manière à optimiser un critère favorisant la qualité de la manipulation.
 
 \subsection{Asservissements articulaires}
+
+
 
 
 \section{Sch\'ema classique}
@@ -120,21 +115,4 @@ commande sont d\'eduites.
 \subsection{Initialisation}
 
 \subsection{Exemples}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
